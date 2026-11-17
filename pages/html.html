@@ -1,0 +1,275 @@
+﻿<!DOCTYPE html>
+<html lang="uz">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>HTML Darslari – W3Learn</title>
+  <link rel="stylesheet" href="../css/style.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"/>
+  <style>
+    .cat-label{font-size:11px;font-weight:700;padding:0 4px;}
+    .cat-fe{color:#04AA6D;} .cat-be{color:#2196F3;} .cat-db{color:#FF9800;}
+  </style>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="logo">W3<span>Learn</span></a>
+  <nav class="top-nav">
+    <span class="cat-label cat-fe">Frontend:</span>
+    <a href="html.html" class="active">HTML</a><a href="css.html">CSS</a><a href="javascript.html">JavaScript</a>
+    <a href="react.html">React</a><a href="vue.html">Vue</a><a href="bootstrap.html">Bootstrap</a><a href="typescript.html">TypeScript</a><a href="jquery.html">jQuery</a>
+    <span class="cat-label cat-be">Backend:</span>
+    <a href="python.html">Python</a><a href="nodejs.html">Node.js</a><a href="php.html">PHP</a><a href="java.html">Java</a><a href="django.html">Django</a><a href="cpp.html">C++</a><a href="csharp.html">C#</a>
+    <span class="cat-label cat-db">DB:</span>
+    <a href="sql.html">SQL</a><a href="mongodb.html">MongoDB</a><a href="postgresql.html">PostgreSQL</a>
+  </nav>
+  <div style="display:flex;align-items:center;gap:6px;margin-right:8px;"><a href="../editor.html" style="background:rgba(4,170,109,0.15);color:var(--green-light);padding:4px 8px;border-radius:6px;font-size:12px;font-weight:700;text-decoration:none;"><i class="fa-solid fa-code"></i> Editor</a><a href="../certificate.html" style="background:rgba(255,183,77,0.15);color:#FFB74D;padding:4px 8px;border-radius:6px;font-size:12px;font-weight:700;text-decoration:none;"><i class="fa-solid fa-award"></i> Sertifikat</a></div><div class="search-wrap"><input type="text" id="searchInput" placeholder="Qidirish..."/><button onclick="doSearch()">🔍</button></div>
+  <button class="dark-btn" id="darkBtn">🌙</button>
+</header>
+
+<div class="layout">
+<aside class="sidebar">
+  <div class="sb-header">🌐 HTML Darslari</div>
+  <div class="sb-section">Kirish</div>
+  <ul>
+    <li><a href="#kirish" class="active">HTML Nima?</a></li>
+    <li><a href="#tarix">HTML Tarixi</a></li>
+    <li><a href="#brauzer">Brauzer va HTML</a></li>
+    <li><a href="#muharrir">Muharrir tanlash</a></li>
+  </ul>
+  <div class="sb-section">Asoslar</div>
+  <ul>
+    <li><a href="#tuzilma">HTML Tuzilmasi</a></li>
+    <li><a href="#elementlar">HTML Elementlari</a></li>
+    <li><a href="#atributlar">HTML Atributlari</a></li>
+    <li><a href="#sarlavhalar">HTML Sarlavhalar</a></li>
+    <li><a href="#paragraflar">HTML Paragraflar</a></li>
+    <li><a href="#stillar">HTML Stillar</a></li>
+    <li><a href="#formatlash">HTML Formatlash</a></li>
+    <li><a href="#ranglar">HTML Ranglar</a></li>
+    <li><a href="#css">HTML CSS</a></li>
+    <li><a href="#link">HTML Havolalar</a></li>
+  </ul>
+  <div class="sb-section">Mazmun</div>
+  <ul>
+    <li><a href="#rasmlar">HTML Rasmlar</a></li>
+    <li><a href="#jadvallar">HTML Jadvallar</a></li>
+    <li><a href="#royxatlar">HTML Ro'yxatlar</a></li>
+    <li><a href="#bloklar">HTML Bloklar</a></li>
+    <li><a href="#div">HTML Div</a></li>
+    <li><a href="#sinflar">HTML Sinflar</a></li>
+    <li><a href="#id">HTML Id</a></li>
+    <li><a href="#iframe">HTML Iframe</a></li>
+    <li><a href="#fayl">HTML Fayllar</a></li>
+  </ul>
+  <div class="sb-section">Formalar</div>
+  <ul>
+    <li><a href="#formalar">HTML Formalar</a></li>
+    <li><a href="#form-attr">Form Atributlari</a></li>
+    <li><a href="#input">Input Elementlari</a></li>
+    <li><a href="#input-tur">Input Turlari</a></li>
+    <li><a href="#validatsiya">Form Validatsiya</a></li>
+  </ul>
+  <div class="sb-section">HTML5</div>
+  <ul>
+    <li><a href="#semantik">Semantik Teglar</a></li>
+    <li><a href="#audio">Audio</a></li>
+    <li><a href="#video">Video</a></li>
+    <li><a href="#canvas">Canvas</a></li>
+    <li><a href="#svg">SVG</a></li>
+    <li><a href="#geolocation">Geolocation API</a></li>
+    <li><a href="#storage">Web Storage</a></li>
+    <li><a href="#dragdrop">Drag & Drop</a></li>
+    <li><a href="#workers">Web Workers</a></li>
+  </ul>
+  <div class="sb-section">Ilg'or</div>
+  <ul>
+    <li><a href="#responsive">Responsiv Dizayn</a></li>
+    <li><a href="#accessibility">Accessibility</a></li>
+    <li><a href="#seo">SEO Asoslari</a></li>
+    <li><a href="#meta">Meta Teglar</a></li>
+    <li><a href="#charset">Charset va Encoding</a></li>
+  </ul>
+</aside>
+
+<main class="main">
+  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">HTML</a> › HTML Nima?</div>
+
+  <h1 id="kirish">HTML Nima?</h1>
+  <div class="meta-tags">
+    <span class="tag tag-green">⏱ 5 daqiqa</span>
+    <span class="tag tag-blue">🟢 Boshlang'ich</span>
+    <span class="tag tag-orange">👁 15,420 marta ko'rilgan</span>
+  </div>
+
+  <p><strong>HTML</strong> (HyperText Markup Language) — web sahifalar yaratish uchun standart <em>belgilash tili</em>. HTML sahifaning tuzilmasini belgilaydi. Brauzer HTML kodini o'qib, uni vizual ko'rinishga aylantiradi.</p>
+  <p>HTML <strong>teglar</strong> (tags) orqali ishlaydi. Teglar qavs ichida yoziladi va odatda juft bo'ladi: ochiluvchi teg va yopiluvchi teg.</p>
+
+  <div class="note">💡 <strong>Eslatma:</strong> HTML — dasturlash tili emas, <em>belgilash tili</em>dir. U sahifaning tuzilmasini belgilaydi, mantiqini emas.</div>
+
+  <h2 id="tuzilma">HTML Tuzilmasi</h2>
+  <p>Har bir HTML fayli quyidagi asosiy tuzilmaga ega:</p>
+
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">HTML</span>
+      <div class="code-actions">
+        <button class="btn-copy" onclick="copyCode('code1')">📋 Nusxa</button>
+        <button class="btn-run" onclick="runCode('code1','res1')">▶ Run</button>
+      </div>
+    </div>
+    <div class="code-body">
+      <pre id="code1">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+  &lt;head&gt;
+    &lt;title&gt;Mening sahifam&lt;/title&gt;
+  &lt;/head&gt;
+  &lt;body&gt;
+    &lt;h1&gt;Salom, Dunyo!&lt;/h1&gt;
+    &lt;p&gt;Bu mening birinchi HTML sahifam.&lt;/p&gt;
+  &lt;/body&gt;
+&lt;/html&gt;</pre>
+    </div>
+  </div>
+  <div class="result-box" id="res1"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+  <h2 id="elementlar">HTML Elementlari</h2>
+  <p>HTML elementi — ochiluvchi teg, mazmun va yopiluvchi tegdan iborat:</p>
+
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">HTML</span>
+      <div class="code-actions">
+        <button class="btn-copy" onclick="copyCode('code2')">📋 Nusxa</button>
+        <button class="btn-run" onclick="runCode('code2','res2')">▶ Run</button>
+      </div>
+    </div>
+    <div class="code-body">
+      <pre id="code2">&lt;h1&gt;Sarlavha 1&lt;/h1&gt;
+&lt;h2&gt;Sarlavha 2&lt;/h2&gt;
+&lt;h3&gt;Sarlavha 3&lt;/h3&gt;
+&lt;p&gt;Bu oddiy &lt;strong&gt;qalin&lt;/strong&gt; va &lt;em&gt;qiya&lt;/em&gt; matni.&lt;/p&gt;
+&lt;hr&gt;
+&lt;p&gt;Ikkinchi paragraf.&lt;/p&gt;</pre>
+    </div>
+  </div>
+  <div class="result-box" id="res2"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+  <h2 id="link">HTML Havolalar</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">HTML</span>
+      <div class="code-actions">
+        <button class="btn-copy" onclick="copyCode('code3')">📋 Nusxa</button>
+        <button class="btn-run" onclick="runCode('code3','res3')">▶ Run</button>
+      </div>
+    </div>
+    <div class="code-body">
+      <pre id="code3">&lt;!-- Oddiy havola --&gt;
+&lt;a href="https://www.google.com"&gt;Google&lt;/a&gt;
+
+&lt;!-- Yangi tabda ochish --&gt;
+&lt;a href="https://www.google.com" target="_blank"&gt;
+  Google (yangi tabda)
+&lt;/a&gt;
+
+&lt;!-- Tugma ko'rinishida --&gt;
+&lt;a href="#" style="background:#04AA6D;color:#fff;padding:8px 16px;
+   border-radius:4px;text-decoration:none;"&gt;
+  Tugma ko'rinishidagi havola
+&lt;/a&gt;</pre>
+    </div>
+  </div>
+  <div class="result-box" id="res3"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+  <h2 id="formalar">HTML Formalar</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">HTML</span>
+      <div class="code-actions">
+        <button class="btn-copy" onclick="copyCode('code4')">📋 Nusxa</button>
+        <button class="btn-run" onclick="runCode('code4','res4')">▶ Run</button>
+      </div>
+    </div>
+    <div class="code-body">
+      <pre id="code4">&lt;form&gt;
+  &lt;label&gt;Ismingiz:&lt;/label&gt;&lt;br&gt;
+  &lt;input type="text" placeholder="Ismingizni kiriting"&gt;&lt;br&gt;&lt;br&gt;
+
+  &lt;label&gt;Emailingiz:&lt;/label&gt;&lt;br&gt;
+  &lt;input type="email" placeholder="email@example.com"&gt;&lt;br&gt;&lt;br&gt;
+
+  &lt;label&gt;Xabar:&lt;/label&gt;&lt;br&gt;
+  &lt;textarea rows="3" placeholder="Xabaringiz..."&gt;&lt;/textarea&gt;&lt;br&gt;&lt;br&gt;
+
+  &lt;button type="submit"
+    style="background:#04AA6D;color:#fff;padding:8px 20px;border:none;border-radius:4px;cursor:pointer;"&gt;
+    Yuborish
+  &lt;/button&gt;
+&lt;/form&gt;</pre>
+    </div>
+  </div>
+  <div class="result-box" id="res4"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+  <div class="note note-blue">📌 <strong>Keyingi qadam:</strong> HTML o'rganib bo'lgach, <a href="css.html" style="color:var(--green)">CSS</a> orqali sahifangizni chiroyli qiling!</div>
+
+  <div class="quiz-box">
+    <div class="quiz-q">🧪 Test: HTML qisqartmasi nima?</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qr1')">High Text Markup Language</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, true, 'qr1')">HyperText Markup Language</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qr1')">Home Tool Markup Language</div>
+    <div class="quiz-result" id="qr1"></div>
+  </div>
+
+  <div class="nav-btns">
+    <a href="../index.html" class="btn-prev">← Bosh sahifa</a>
+    <a href="css.html" class="btn-next">CSS →</a>
+  </div>
+</main>
+
+<aside class="right-panel">
+  <div class="rp-title">📈 Progress</div>
+  <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressFill" style="width:3%"></div></div>
+  <div class="progress-text" id="progressTxt">1 / 32 dars</div>
+  <div class="rp-title">🎯 Frontend</div>
+  <a href="html.html" class="topic-pill done" data-key="html">HTML ✓</a>
+  <a href="css.html" class="topic-pill" data-key="css">CSS</a>
+  <a href="javascript.html" class="topic-pill" data-key="js">JavaScript</a>
+  <a href="react.html" class="topic-pill" data-key="react">React</a>
+  <a href="vue.html" class="topic-pill" data-key="vue">Vue.js</a>
+  <a href="bootstrap.html" class="topic-pill" data-key="bootstrap">Bootstrap</a>
+  <a href="typescript.html" class="topic-pill" data-key="ts">TypeScript</a>
+  <a href="jquery.html" class="topic-pill" data-key="jquery">jQuery</a>
+  <div class="rp-title">⚙️ Backend</div>
+  <a href="python.html" class="topic-pill" data-key="python">Python</a>
+  <a href="nodejs.html" class="topic-pill" data-key="nodejs">Node.js</a>
+  <a href="php.html" class="topic-pill" data-key="php">PHP</a>
+  <a href="java.html" class="topic-pill" data-key="java">Java</a>
+  <a href="django.html" class="topic-pill" data-key="django">Django</a>
+  <a href="cpp.html" class="topic-pill" data-key="cpp">C++</a>
+  <a href="csharp.html" class="topic-pill" data-key="csharp">C#</a>
+  <div class="rp-title">🗄️ Database</div>
+  <a href="sql.html" class="topic-pill" data-key="sql">SQL</a>
+  <a href="mongodb.html" class="topic-pill" data-key="mongo">MongoDB</a>
+  <a href="postgresql.html" class="topic-pill" data-key="pg">PostgreSQL</a>
+  <a href="redis.html" class="topic-pill" data-key="redis">Redis</a>
+  <div class="rp-title">🛠️ DevOps</div>
+  <a href="git.html" class="topic-pill" data-key="git">Git</a>
+  <a href="docker.html" class="topic-pill" data-key="docker">Docker</a>
+  <a href="linux.html" class="topic-pill" data-key="linux">Linux</a>
+  <a href="restapi.html" class="topic-pill" data-key="api">REST API</a>
+</aside>
+</div>
+
+<footer><div style="text-align:center;color:#aaa;font-size:13px;padding:28px;">
+  <p>© 2026 W3Learn — O'zbek dasturchilar uchun ta'lim platformasi</p>
+  <div style="display:flex;justify-content:center;gap:20px;margin-top:10px;flex-wrap:wrap;">
+    <a href="../index.html" style="color:#04AA6D;">Bosh sahifa</a>
+    <a href="#" style="color:#04AA6D;">Biz haqimizda</a>
+    <a href="#" style="color:#04AA6D;">Bog'lanish</a>
+  </div>
+</div></footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

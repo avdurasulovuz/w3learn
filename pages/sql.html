@@ -1,0 +1,427 @@
+﻿<!DOCTYPE html>
+<html lang="uz">
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>SQL Darslari – W3Learn</title>
+<link rel="stylesheet" href="../css/style.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"/>
+<style>
+.cat-label{font-size:11px;font-weight:700;padding:0 4px;}
+.cat-fe{color:#04AA6D;}.cat-be{color:#2196F3;}.cat-db{color:#FF9800;}.cat-dv{color:#9C27B0;}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="logo">W3<span>Learn</span></a>
+  <nav class="top-nav">
+    <span class="cat-label cat-fe">Frontend:</span>
+    <a href="html.html">HTML</a><a href="css.html">CSS</a><a href="javascript.html">JavaScript</a>
+    <a href="react.html">React</a><a href="vue.html">Vue</a><a href="bootstrap.html">Bootstrap</a><a href="typescript.html">TypeScript</a><a href="jquery.html">jQuery</a>
+    <span class="cat-label cat-be">Backend:</span>
+    <a href="python.html">Python</a><a href="nodejs.html">Node.js</a><a href="php.html">PHP</a><a href="java.html">Java</a><a href="django.html">Django</a><a href="cpp.html">C++</a><a href="csharp.html">C#</a>
+    <span class="cat-label cat-db">DB:</span>
+    <a href="sql.html">SQL</a><a href="mongodb.html">MongoDB</a><a href="postgresql.html">PostgreSQL</a><a href="redis.html">Redis</a>
+    <span class="cat-label cat-dv">DevOps:</span>
+    <a href="git.html">Git</a><a href="docker.html">Docker</a><a href="linux.html">Linux</a><a href="restapi.html">REST API</a>
+  </nav>
+  <div style="display:flex;align-items:center;gap:6px;margin-right:8px;"><a href="../editor.html" style="background:rgba(4,170,109,0.15);color:var(--green-light);padding:4px 8px;border-radius:6px;font-size:12px;font-weight:700;text-decoration:none;"><i class="fa-solid fa-code"></i> Editor</a><a href="../certificate.html" style="background:rgba(255,183,77,0.15);color:#FFB74D;padding:4px 8px;border-radius:6px;font-size:12px;font-weight:700;text-decoration:none;"><i class="fa-solid fa-award"></i> Sertifikat</a></div><div class="search-wrap"><input type="text" id="searchInput" placeholder="Qidirish..."/><button onclick="doSearch()">🔍</button></div>
+  <button class="dark-btn" id="darkBtn">🌙</button>
+</header>
+<div class="layout">
+<aside class="sidebar">
+  <div class="sb-header">🗄️ SQL</div>
+  <div class="sb-section">Kirish</div>
+  <ul>
+    <li><a href="#kirish" class="active">SQL Nima?</a></li>
+    <li><a href="#dbms">DBMS Turlari</a></li>
+    <li><a href="#syntax">Sintaksis</a></li>
+  </ul>
+  <div class="sb-section">DDL</div>
+  <ul>
+    <li><a href="#create-db">CREATE DATABASE</a></li>
+    <li><a href="#create-table">CREATE TABLE</a></li>
+    <li><a href="#datatypes">Ma'lumot Turlari</a></li>
+    <li><a href="#alter">ALTER TABLE</a></li>
+    <li><a href="#drop">DROP TABLE</a></li>
+  </ul>
+  <div class="sb-section">DML</div>
+  <ul>
+    <li><a href="#insert">INSERT</a></li>
+    <li><a href="#select">SELECT</a></li>
+    <li><a href="#where">WHERE</a></li>
+    <li><a href="#update">UPDATE</a></li>
+    <li><a href="#delete">DELETE</a></li>
+  </ul>
+  <div class="sb-section">Filtrlash</div>
+  <ul>
+    <li><a href="#orderby">ORDER BY</a></li>
+    <li><a href="#limit">LIMIT / OFFSET</a></li>
+    <li><a href="#like">LIKE / IN / BETWEEN</a></li>
+    <li><a href="#null">NULL tekshirish</a></li>
+  </ul>
+  <div class="sb-section">Agregatsiya</div>
+  <ul>
+    <li><a href="#agg">COUNT / SUM / AVG</a></li>
+    <li><a href="#groupby">GROUP BY</a></li>
+    <li><a href="#having">HAVING</a></li>
+  </ul>
+  <div class="sb-section">JOIN</div>
+  <ul>
+    <li><a href="#inner">INNER JOIN</a></li>
+    <li><a href="#left">LEFT JOIN</a></li>
+    <li><a href="#right">RIGHT JOIN</a></li>
+    <li><a href="#full">FULL OUTER JOIN</a></li>
+  </ul>
+  <div class="sb-section">Ilg'or</div>
+  <ul>
+    <li><a href="#subquery">Subquery</a></li>
+    <li><a href="#indexes">Index</a></li>
+    <li><a href="#transactions">Tranzaksiya</a></li>
+    <li><a href="#views">VIEW</a></li>
+    <li><a href="#functions">Funksiyalar</a></li>
+  </ul>
+</aside>
+<main class="main">
+  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">SQL</a> › SQL Nima?</div>
+  <h1 id="kirish">SQL Nima?</h1>
+  <div class="meta-tags">
+    <span class="tag tag-green">⏱ 10 daqiqa</span>
+    <span class="tag tag-blue">🟢 Boshlang'ich</span>
+    <span class="tag tag-orange">👁 29,500 marta ko'rilgan</span>
+  </div>
+  <p><strong>SQL</strong> (Structured Query Language) — relyatsion ma'lumotlar bazalarini boshqarish uchun standart til. 1974-yilda IBM tomonidan yaratilgan.</p>
+  <p>SQL yordamida ma'lumotlar yaratish, o'qish, yangilash va o'chirish (CRUD) amallarini bajarish mumkin. MySQL, PostgreSQL, SQLite, SQL Server, Oracle — bularning barchasi SQL dan foydalanadi.</p>
+  <div class="note">💡 <strong>SQL turlari:</strong> DDL (tuzilma), DML (ma'lumot), DCL (ruxsat), TCL (tranzaksiya).</div>
+
+  <h2 id="create-table">Jadval Yaratish (CREATE TABLE)</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">sql</span>
+      <button class="copy-btn" onclick="copyCode('code1')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code1">-- Ma'lumotlar bazasi yaratish
+CREATE DATABASE maktab;
+USE maktab;
+
+-- Jadval yaratish
+CREATE TABLE talabalar (
+    id          INT PRIMARY KEY AUTO_INCREMENT,
+    ism         VARCHAR(50) NOT NULL,
+    familiya    VARCHAR(50) NOT NULL,
+    email       VARCHAR(100) UNIQUE,
+    yoshi       INT CHECK (yoshi >= 16 AND yoshi <= 60),
+    kurs        TINYINT DEFAULT 1,
+    tug_sana    DATE,
+    yaratilgan  TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+-- Bog'liq jadval (Foreign Key)
+CREATE TABLE kurslar (
+    id    INT PRIMARY KEY AUTO_INCREMENT,
+    nomi  VARCHAR(100) NOT NULL,
+    narxi DECIMAL(10, 2)
+);
+
+CREATE TABLE yozilishlar (
+    id         INT PRIMARY KEY AUTO_INCREMENT,
+    talaba_id  INT NOT NULL,
+    kurs_id    INT NOT NULL,
+    sana       DATE DEFAULT (CURRENT_DATE),
+    FOREIGN KEY (talaba_id) REFERENCES talabalar(id),
+    FOREIGN KEY (kurs_id) REFERENCES kurslar(id)
+);</pre>
+    </div>
+  </div>
+
+  <h2 id="insert">Ma'lumot Qo'shish (INSERT)</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">sql</span>
+      <button class="copy-btn" onclick="copyCode('code2')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code2">-- Bitta qator qo'shish
+INSERT INTO talabalar (ism, familiya, email, yoshi, kurs)
+VALUES ('Ali', 'Karimov', 'ali@mail.uz', 20, 2);
+
+-- Ko'p qator qo'shish
+INSERT INTO talabalar (ism, familiya, yoshi, kurs)
+VALUES 
+  ('Vali', 'Rahimov', 22, 3),
+  ('Soli', 'Hasanov', 19, 1),
+  ('Nozima', 'Yusupova', 21, 2);
+
+-- SELECT dan INSERT
+INSERT INTO arxiv_talabalar
+SELECT * FROM talabalar WHERE kurs = 4;
+
+-- UPSERT (mavjud bo'lsa yangilash)
+INSERT INTO talabalar (email, ism, familiya)
+VALUES ('ali@mail.uz', 'Ali', 'Karimov')
+ON DUPLICATE KEY UPDATE ism = VALUES(ism);</pre>
+    </div>
+  </div>
+
+  <h2 id="select">Ma'lumot O'qish (SELECT)</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">sql</span>
+      <button class="copy-btn" onclick="copyCode('code3')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code3">-- Barcha ustunlar
+SELECT * FROM talabalar;
+
+-- Tanlangan ustunlar
+SELECT ism, familiya, email FROM talabalar;
+
+-- Taxallus (alias)
+SELECT 
+    ism AS "Ismi",
+    familiya AS "Familiyasi",
+    yoshi AS "Yoshi"
+FROM talabalar;
+
+-- Hisoblash
+SELECT 
+    ism,
+    yoshi,
+    yoshi + 5 AS "5 yildan keyin"
+FROM talabalar;
+
+-- DISTINCT — takrorlanmaslar
+SELECT DISTINCT kurs FROM talabalar;
+
+-- Shart bilan
+SELECT * FROM talabalar WHERE kurs = 2;
+SELECT * FROM talabalar WHERE yoshi BETWEEN 18 AND 25;
+SELECT * FROM talabalar WHERE ism LIKE 'A%';
+SELECT * FROM talabalar WHERE kurs IN (1, 2, 3);
+SELECT * FROM talabalar WHERE email IS NOT NULL;</pre>
+    </div>
+  </div>
+
+  <h2 id="update">Yangilash va O'chirish</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">sql</span>
+      <button class="copy-btn" onclick="copyCode('code4')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code4">-- UPDATE — yangilash
+UPDATE talabalar
+SET kurs = 3, email = 'yangi@mail.uz'
+WHERE id = 1;
+
+-- Ko'p qatorni yangilash
+UPDATE talabalar
+SET kurs = kurs + 1
+WHERE kurs < 4;
+
+-- ⚠️ Ehtiyot: WHERE siz BARCHA qatorlar yangilanadi!
+
+-- DELETE — o'chirish
+DELETE FROM talabalar WHERE id = 5;
+
+-- Shartli o'chirish
+DELETE FROM talabalar 
+WHERE kurs = 4 AND yoshi > 30;
+
+-- TRUNCATE — jadvalning barcha ma'lumotlarini o'chirish (tez)
+TRUNCATE TABLE log_jadval;
+
+-- ⚠️ DROP — jadvalning o'zi bilan ma'lumotlar
+DROP TABLE eski_jadval;</pre>
+    </div>
+  </div>
+
+  <h2 id="agg">Agregat Funksiyalar</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">sql</span>
+      <button class="copy-btn" onclick="copyCode('code5')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code5">-- Soni
+SELECT COUNT(*) AS "Talabalar soni" FROM talabalar;
+SELECT COUNT(email) AS "Emailli talabalar" FROM talabalar;
+
+-- Yig'indisi
+SELECT SUM(narxi) AS "Jami narx" FROM kurslar;
+
+-- O'rtacha
+SELECT AVG(yoshi) AS "O'rtacha yosh" FROM talabalar;
+
+-- Maksimum / Minimum
+SELECT MAX(yoshi), MIN(yoshi) FROM talabalar;
+
+-- GROUP BY — guruhlab hisoblash
+SELECT kurs, COUNT(*) AS soni, AVG(yoshi) AS ort_yosh
+FROM talabalar
+GROUP BY kurs
+ORDER BY kurs;
+
+-- HAVING — guruh uchun shart (WHERE emas!)
+SELECT kurs, COUNT(*) AS soni
+FROM talabalar
+GROUP BY kurs
+HAVING COUNT(*) > 5
+ORDER BY soni DESC;</pre>
+    </div>
+  </div>
+
+  <h2 id="inner">JOIN — Jadvallarni Birlashtirish</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">sql</span>
+      <button class="copy-btn" onclick="copyCode('code6')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code6">-- INNER JOIN — ikkala jadvalda mavjud bo'lganlar
+SELECT t.ism, t.familiya, k.nomi AS kurs_nomi
+FROM talabalar t
+INNER JOIN yozilishlar y ON t.id = y.talaba_id
+INNER JOIN kurslar k ON y.kurs_id = k.id;
+
+-- LEFT JOIN — chap jadvalning barchasi + o'ng moslar
+SELECT t.ism, k.nomi
+FROM talabalar t
+LEFT JOIN yozilishlar y ON t.id = y.talaba_id
+LEFT JOIN kurslar k ON y.kurs_id = k.id;
+-- Hech qaysi kursga yozilmagan talabalar ham chiqadi (NULL bilan)
+
+-- Murakkab JOIN misoli
+SELECT 
+    t.ism || ' ' || t.familiya AS to_liq_ism,
+    COUNT(y.kurs_id) AS yozilgan_kurslar,
+    GROUP_CONCAT(k.nomi SEPARATOR ', ') AS kurs_nomlari
+FROM talabalar t
+LEFT JOIN yozilishlar y ON t.id = y.talaba_id
+LEFT JOIN kurslar k ON y.kurs_id = k.id
+GROUP BY t.id
+ORDER BY yozilgan_kurslar DESC;</pre>
+    </div>
+  </div>
+
+  <h2 id="subquery">Subquery va VIEW</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">sql</span>
+      <button class="copy-btn" onclick="copyCode('code7')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code7">-- Subquery — ichki so'rov
+SELECT ism, yoshi
+FROM talabalar
+WHERE yoshi > (SELECT AVG(yoshi) FROM talabalar);
+
+-- IN bilan subquery
+SELECT ism FROM talabalar
+WHERE id IN (
+    SELECT talaba_id FROM yozilishlar
+    WHERE kurs_id = 3
+);
+
+-- EXISTS
+SELECT ism FROM talabalar t
+WHERE EXISTS (
+    SELECT 1 FROM yozilishlar y WHERE y.talaba_id = t.id
+);
+
+-- VIEW — virtual jadval
+CREATE VIEW faol_talabalar AS
+SELECT t.ism, t.familiya, COUNT(y.id) AS kurslar_soni
+FROM talabalar t
+JOIN yozilishlar y ON t.id = y.talaba_id
+GROUP BY t.id
+HAVING kurslar_soni > 0;
+
+-- VIEW dan foydalanish
+SELECT * FROM faol_talabalar ORDER BY kurslar_soni DESC;
+
+-- INDEX — tezlashtirishuchun
+CREATE INDEX idx_email ON talabalar(email);
+CREATE INDEX idx_kurs_yosh ON talabalar(kurs, yoshi);</pre>
+    </div>
+  </div>
+
+  <h2 id="transactions">Tranzaksiyalar</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">sql</span>
+      <button class="copy-btn" onclick="copyCode('code8')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code8">-- Tranzaksiya — atomik amallar guruhi
+BEGIN TRANSACTION;
+
+-- Bank o'tkazmasi misoli
+UPDATE hisoblar SET balans = balans - 500 WHERE id = 1;
+UPDATE hisoblar SET balans = balans + 500 WHERE id = 2;
+
+-- Agar muvaffaqiyatli
+COMMIT;
+
+-- Agar xato yuz berdi — bekor qilish
+ROLLBACK;
+
+-- SAVEPOINT — qisman bekor qilish
+BEGIN;
+INSERT INTO talabalar (ism) VALUES ('Test1');
+SAVEPOINT sp1;
+INSERT INTO talabalar (ism) VALUES ('Test2');
+ROLLBACK TO SAVEPOINT sp1;  -- faqat Test2 bekor
+COMMIT;  -- Test1 saqlanadi</pre>
+    </div>
+  </div>
+
+  <!-- Quiz -->
+  <div class="quiz-box">
+    <div class="quiz-q">🧠 SQL da guruh uchun shart qo'yish uchun qaysi kalit so'z ishlatiladi?</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'q1')">WHERE</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, true, 'q1')">HAVING</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'q1')">FILTER</div>
+    <div class="quiz-result" id="q1"></div>
+  </div>
+
+  <div class="nav-btns">
+    <a href="csharp.html" class="btn-prev">← C#</a>
+    <a href="mongodb.html" class="btn-next">MongoDB →</a>
+  </div>
+</main>
+<aside class="right-panel">
+  <div class="rp-title">📊 Kurs bo'limlari</div>
+  <div class="rp-section">Frontend</div>
+  <a href="html.html" class="topic-pill">HTML</a>
+  <a href="css.html" class="topic-pill">CSS</a>
+  <a href="javascript.html" class="topic-pill">JavaScript</a>
+  <a href="react.html" class="topic-pill">React</a>
+  <a href="vue.html" class="topic-pill">Vue.js</a>
+  <a href="bootstrap.html" class="topic-pill">Bootstrap</a>
+  <a href="typescript.html" class="topic-pill">TypeScript</a>
+  <a href="jquery.html" class="topic-pill">jQuery</a>
+  <div class="rp-section">Backend</div>
+  <a href="python.html" class="topic-pill">Python</a>
+  <a href="nodejs.html" class="topic-pill">Node.js</a>
+  <a href="php.html" class="topic-pill">PHP</a>
+  <a href="java.html" class="topic-pill">Java</a>
+  <a href="django.html" class="topic-pill">Django</a>
+  <a href="cpp.html" class="topic-pill">C++</a>
+  <a href="csharp.html" class="topic-pill">C#</a>
+  <div class="rp-section">Ma'lumotlar Bazasi</div>
+  <a href="sql.html" class="topic-pill active-pill">SQL ✓</a>
+  <a href="mongodb.html" class="topic-pill">MongoDB</a>
+  <a href="postgresql.html" class="topic-pill">PostgreSQL</a>
+  <a href="redis.html" class="topic-pill">Redis</a>
+  <div class="rp-section">DevOps</div>
+  <a href="git.html" class="topic-pill">Git & GitHub</a>
+  <a href="docker.html" class="topic-pill">Docker</a>
+  <a href="linux.html" class="topic-pill">Linux</a>
+  <a href="restapi.html" class="topic-pill">REST API</a>
+</aside>
+</div>
+<footer style="text-align:center;padding:20px;color:#888;font-size:13px;">© 2024 W3Learn — Barcha huquqlar himoyalangan</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

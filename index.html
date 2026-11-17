@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta name="description" content="W3Learn — O'zbekcha dasturlash o'quv platformasi. 23+ kurs, 600+ dars, bepul."/>
+<title>W3Learn — O'zbek Dasturlash Platformasi</title>
+<link rel="stylesheet" href="css/style.css"/>
+<!-- Font Awesome ikonalar -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<!-- Devicons (til logolari) -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"/>
+<style>
+/* Fallback: internet bo'lmasa emoji ikonalar ko'rinadi */
+.card-icon i { font-size: 48px; }
+.hero-floating {
+  position:absolute; pointer-events:none;
+  animation: float 4s ease-in-out infinite;
+}
+.f1{top:15%;left:8%;font-size:40px;opacity:0.12;animation-delay:0s;}
+.f2{top:25%;right:10%;font-size:50px;opacity:0.1;animation-delay:1s;}
+.f3{bottom:20%;left:15%;font-size:35px;opacity:0.1;animation-delay:2s;}
+.f4{bottom:30%;right:8%;font-size:45px;opacity:0.08;animation-delay:0.5s;}
+.f5{top:50%;left:3%;font-size:30px;opacity:0.1;animation-delay:1.5s;}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0deg)}50%{transform:translateY(-12px) rotate(5deg)}}
+
+/* Category section heading */
+.cat-section-title {
+  font-size:13px;font-weight:800;letter-spacing:2px;text-transform:uppercase;
+  color:var(--text3);padding:0 4px;margin:40px 0 16px;
+  display:flex;align-items:center;gap:10px;
+}
+.cat-section-title::after {
+  content:'';flex:1;height:1px;background:var(--border);
+}
+/* Gradient cards */
+.course-card.fe:hover{box-shadow:0 20px 60px rgba(0,0,0,0.5),0 0 40px rgba(97,218,251,0.08);}
+.course-card.be:hover{box-shadow:0 20px 60px rgba(0,0,0,0.5),0 0 40px rgba(104,160,99,0.08);}
+.course-card.db:hover{box-shadow:0 20px 60px rgba(0,0,0,0.5),0 0 40px rgba(255,152,0,0.08);}
+.course-card.dv:hover{box-shadow:0 20px 60px rgba(0,0,0,0.5),0 0 40px rgba(156,39,176,0.08);}
+
+/* Lang banner */
+.lang-banner {
+  background: linear-gradient(135deg, rgba(4,170,109,0.1), rgba(97,218,251,0.05));
+  border: 1px solid rgba(4,170,109,0.2);
+  border-radius:16px;padding:32px;text-align:center;
+  margin:0 auto 60px;max-width:600px;
+}
+.lang-flags {font-size:36px;margin-bottom:12px;letter-spacing:8px;}
+.lang-title {font-size:20px;font-weight:800;color:var(--white);margin-bottom:8px;}
+.lang-sub {font-size:14px;color:var(--text2);}
+</style>
+</head>
+<body>
+
+<!-- ── TOPBAR ── -->
+<header class="topbar">
+  <button class="menu-toggle" id="menuToggle">☰</button>
+  <a href="index.html" class="logo">W3<span>Learn</span></a>
+  <nav class="top-nav">
+    <span class="cat-label cat-fe">Frontend:</span>
+    <a href="pages/html.html"><i class="devicon-html5-plain"></i> HTML</a>
+    <a href="pages/css.html"><i class="devicon-css3-plain"></i> CSS</a>
+    <a href="pages/javascript.html"><i class="devicon-javascript-plain"></i> JS</a>
+    <a href="pages/react.html"><i class="devicon-react-original"></i> React</a>
+    <a href="pages/vue.html"><i class="devicon-vuejs-plain"></i> Vue</a>
+    <a href="pages/bootstrap.html"><i class="devicon-bootstrap-plain"></i> Bootstrap</a>
+    <a href="pages/typescript.html"><i class="devicon-typescript-plain"></i> TypeScript</a>
+    <a href="pages/jquery.html"><i class="devicon-jquery-plain"></i> jQuery</a>
+    <span class="cat-label cat-be">Backend:</span>
+    <a href="pages/python.html"><i class="devicon-python-plain"></i> Python</a>
+    <a href="pages/nodejs.html"><i class="devicon-nodejs-plain"></i> Node.js</a>
+    <a href="pages/php.html"><i class="devicon-php-plain"></i> PHP</a>
+    <a href="pages/java.html"><i class="devicon-java-plain"></i> Java</a>
+    <a href="pages/django.html"><i class="devicon-django-plain"></i> Django</a>
+    <a href="pages/cpp.html"><i class="devicon-cplusplus-plain"></i> C++</a>
+    <a href="pages/csharp.html"><i class="devicon-csharp-plain"></i> C#</a>
+    <span class="cat-label cat-db">DB:</span>
+    <a href="pages/sql.html"><i class="devicon-mysql-plain"></i> SQL</a>
+    <a href="pages/mongodb.html"><i class="devicon-mongodb-plain"></i> MongoDB</a>
+    <a href="pages/postgresql.html"><i class="devicon-postgresql-plain"></i> PostgreSQL</a>
+    <a href="pages/redis.html"><i class="devicon-redis-plain"></i> Redis</a>
+    <span class="cat-label cat-dv">DevOps:</span>
+    <a href="pages/git.html"><i class="devicon-git-plain"></i> Git</a>
+    <a href="pages/docker.html"><i class="devicon-docker-plain"></i> Docker</a>
+    <a href="pages/linux.html"><i class="devicon-linux-plain"></i> Linux</a>
+    <a href="pages/restapi.html"><i class="fa-solid fa-plug"></i> REST API</a>
+  </nav>
+  <div style="display:flex;align-items:center;gap:6px;flex-shrink:0;">
+    <a href="editor.html" style="background:rgba(4,170,109,0.15);border:1px solid rgba(4,170,109,0.3);color:var(--green-light);padding:5px 10px;border-radius:6px;font-size:12px;font-weight:700;display:inline-flex;align-items:center;gap:5px;">
+      <i class="fa-solid fa-code"></i> Editor
+    </a>
+    <a href="certificate.html" style="background:rgba(255,183,77,0.15);border:1px solid rgba(255,183,77,0.3);color:#FFB74D;padding:5px 10px;border-radius:6px;font-size:12px;font-weight:700;display:inline-flex;align-items:center;gap:5px;">
+      <i class="fa-solid fa-award"></i> Sertifikat
+    </a>
+    <a href="admin/index.html" style="background:rgba(99,102,241,0.15);border:1px solid rgba(99,102,241,0.3);color:#818cf8;padding:5px 10px;border-radius:6px;font-size:12px;font-weight:700;display:inline-flex;align-items:center;gap:5px;">
+      <i class="fa-solid fa-lock"></i> Admin
+    </a>
+  </div>
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Qidirish... (Ctrl+K)"/>
+    <button onclick="doSearch()"><i class="fa-solid fa-magnifying-glass"></i></button>
+  </div>
+  <button class="dark-btn" id="darkBtn">🌙</button>
+</header>
+
+<!-- Mobile overlay -->
+<div class="overlay" id="overlay"></div>
+
+<!-- ── HERO ── -->
+<section class="hero">
+  <!-- Floating background icons -->
+  <span class="hero-floating f1">⚡</span>
+  <span class="hero-floating f2">🐍</span>
+  <span class="hero-floating f3">🐳</span>
+  <span class="hero-floating f4">⚛️</span>
+  <span class="hero-floating f5">🔥</span>
+
+  <div class="hero-badge">
+    <i class="fa-solid fa-star" style="color:#FFB74D"></i>
+    O'zbekistondagi #1 dasturlash platformasi
+  </div>
+
+  <h1>
+    Kod yozing.<br>
+    <span class="gradient-text">Kelajakni quring.</span>
+  </h1>
+
+  <p>
+    23+ kurs, 600+ dars — HTML dan Docker gacha.<br>
+    O'zbek tilida, bepul, interaktiv darslar bilan.
+  </p>
+
+  <div class="hero-btns">
+    <a href="pages/html.html" class="hero-btn-green">
+      <i class="fa-solid fa-play"></i> O'rganishni boshlash
+    </a>
+    <a href="editor.html" class="hero-btn-outline" style="border-color:var(--green);color:var(--green-light);">
+      <i class="fa-solid fa-code"></i> Live Kod Muharriri
+    </a>
+    <a href="#courses" class="hero-btn-outline">
+      <i class="fa-solid fa-book-open"></i> Kurslarni ko'rish
+    </a>
+  </div>
+
+  <div class="stats-bar">
+    <div class="stat-item">
+      <div class="stat-num" data-count="23" data-suffix="+">0</div>
+      <div class="stat-label">Kurslar</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" data-count="600" data-suffix="+">0</div>
+      <div class="stat-label">Darslar</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num" data-count="3">0</div>
+      <div class="stat-label">Til</div>
+    </div>
+    <div class="stat-item">
+      <div class="stat-num">Bepul</div>
+      <div class="stat-label">Narx</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── FEATURES ── -->
+<section class="features-section">
+  <div class="section-header">
+    <span class="section-label">Nima uchun W3Learn?</span>
+    <h2 class="section-title">O'rganish yangicha ko'rinishda</h2>
+    <p class="section-sub">Interaktiv, amaliy va o'zbek tilida</p>
+  </div>
+  <div class="features-grid">
+    <div class="feature-item reveal">
+      <span class="feature-icon">▶️</span>
+      <div class="feature-title">Interaktiv kod</div>
+      <div class="feature-desc">Har bir darsda Run tugmasi — kodni o'zgartirib, natijani ko'ring</div>
+    </div>
+    <div class="feature-item reveal">
+      <span class="feature-icon">🧠</span>
+      <div class="feature-title">Quiz testlar</div>
+      <div class="feature-desc">Har dars oxirida bilimni sinash uchun savol-javob</div>
+    </div>
+    <div class="feature-item reveal">
+      <span class="feature-icon">🌙</span>
+      <div class="feature-title">Dark / Light mode</div>
+      <div class="feature-desc">Ko'zga qulay qoʻngʻir va yorug' rejimlar</div>
+    </div>
+    <div class="feature-item reveal">
+      <span class="feature-icon">📊</span>
+      <div class="feature-title">Progress tracker</div>
+      <div class="feature-desc">Qaysi darslarni o'tganingiz saqlanib qoladi</div>
+    </div>
+    <div class="feature-item reveal">
+      <span class="feature-icon">🔖</span>
+      <div class="feature-title">Bookmark</div>
+      <div class="feature-desc">Yoqgan darslarni saqlang va tez toping</div>
+    </div>
+    <div class="feature-item reveal">
+      <span class="feature-icon">📱</span>
+      <div class="feature-title">Mobil moslashuv</div>
+      <div class="feature-desc">Telefon, planshet yoki kompyuterda bir xil ishlaydi</div>
+    </div>
+  </div>
+</section>
+
+<!-- ── COURSES ── -->
+<section class="courses-section" id="courses">
+  <div class="section-header">
+    <span class="section-label">Barcha kurslar</span>
+    <h2 class="section-title">23 ta yo'nalish, barchasi bepul</h2>
+    <p class="section-sub">Boshlang'ichdan professional darajagacha</p>
+  </div>
+
+  <!-- Category tabs -->
+  <div class="cat-tabs">
+    <button class="cat-tab active" data-cat="all" onclick="filterCat('all')">Hammasi</button>
+    <button class="cat-tab" data-cat="fe" onclick="filterCat('fe')">🎨 Frontend</button>
+    <button class="cat-tab" data-cat="be" onclick="filterCat('be')">⚙️ Backend</button>
+    <button class="cat-tab" data-cat="db" onclick="filterCat('db')">🗄️ Database</button>
+    <button class="cat-tab" data-cat="dv" onclick="filterCat('dv')">🚀 DevOps</button>
+  </div>
+
+  <!-- FRONTEND -->
+  <div class="cat-section-title">🎨 Frontend</div>
+  <div class="cards-grid">
+
+    <a href="pages/html.html" class="course-card fe reveal" data-cat="fe" style="--accent:#E44D26;">
+      <span class="card-icon"><i class="devicon-html5-plain" style="color:#E44D26"></i></span>
+      <div class="card-title">HTML</div>
+      <div class="card-desc">Veb sahifalarning tuzilmasi. Taglar, atributlar, formalar.</div>
+      <div class="card-meta">
+        <i class="fa-regular fa-clock"></i> 35+ dars
+        <i class="fa-solid fa-signal" style="margin-left:8px"></i> Boshlang'ich
+        <span class="card-badge badge-green">Bepul</span>
+      </div>
+    </a>
+
+    <a href="pages/css.html" class="course-card fe reveal" data-cat="fe" style="--accent:#264de4;">
+      <span class="card-icon"><i class="devicon-css3-plain" style="color:#264de4"></i></span>
+      <div class="card-title">CSS</div>
+      <div class="card-desc">Dizayn, Flexbox, Grid, animatsiyalar va responsive.</div>
+      <div class="card-meta">
+        <i class="fa-regular fa-clock"></i> 35+ dars
+        <i class="fa-solid fa-signal" style="margin-left:8px"></i> Boshlang'ich
+        <span class="card-badge badge-green">Bepul</span>
+      </div>
+    </a>
+
+    <a href="pages/javascript.html" class="course-card fe reveal" data-cat="fe" style="--accent:#f7df1e;">
+      <span class="card-icon"><i class="devicon-javascript-plain" style="color:#f7df1e"></i></span>
+      <div class="card-title">JavaScript</div>
+      <div class="card-desc">DOM, ES6+, async/await, OOP va zamonaviy JS.</div>
+      <div class="card-meta">
+        <i class="fa-regular fa-clock"></i> 45+ dars
+        <i class="fa-solid fa-signal" style="margin-left:8px"></i> O'rta
+        <span class="card-badge badge-blue">Mashhur</span>
+      </div>
+    </a>
+
+    <a href="pages/react.html" class="course-card fe reveal" data-cat="fe" style="--accent:#61DAFB;">
+      <span class="card-icon"><i class="devicon-react-original" style="color:#61DAFB"></i></span>
+      <div class="card-title">React</div>
+      <div class="card-desc">UI komponentlar, hooks, state management va Router.</div>
+      <div class="card-meta">
+        <i class="fa-regular fa-clock"></i> 30+ dars
+        <i class="fa-solid fa-signal" style="margin-left:8px"></i> O'rta
+        <span class="card-badge badge-blue">Mashhur</span>
+      </div>
+    </a>
+
+    <a href="pages/vue.html" class="course-card fe reveal" data-cat="fe" style="--accent:#42b883;">
+      <span class="card-icon"><i class="devicon-vuejs-plain" style="color:#42b883"></i></span>
+      <div class="card-title">Vue.js</div>
+      <div class="card-desc">Reaktiv UI, Composition API, Vuex va Vue Router.</div>
+      <div class="card-meta">
+        <i class="fa-regular fa-clock"></i> 28+ dars
+        <i class="fa-solid fa-signal" style="margin-left:8px"></i> O'rta
+        <span class="card-badge badge-green">Bepul</span>
+      </div>
+    </a>
+
+    <a href="pages/bootstrap.html" class="course-card fe reveal" data-cat="fe" style="--accent:#7952B3;">
+      <span class="card-icon"><i class="devicon-bootstrap-plain" style="color:#7952B3"></i></span>
+      <div class="card-title">Bootstrap</div>
+      <div class="card-desc">Grid tizimi, komponentlar va responsive dizayn.</div>
+      <div class="card-meta">
+        <i class="fa-regular fa-clock"></i> 22+ dars
+        <i class="fa-solid fa-signal" style="margin-left:8px"></i> Boshlang'ich
+        <span class="card-badge badge-green">Bepul</span>
+      </div>
+    </a>
+
+    <a href="pages/typescript.html" class="course-card fe reveal" data-cat="fe" style="--accent:#3178C6;">
+      <span class="card-icon"><i class="devicon-typescript-plain" style="color:#3178C6"></i></span>
+      <div class="card-title">TypeScript</div>
+      <div class="card-desc">Statik tiplar, interfeys, generics va dekoratorlar.</div>
+      <div class="card-meta">
+        <i class="fa-regular fa-clock"></i> 25+ dars
+        <i class="fa-solid fa-signal" style="margin-left:8px"></i> O'rta
+        <span class="card-badge badge-blue">Mashhur</span>
+      </div>
+    </a>
+
+    <a href="pages/jquery.html" class="course-card fe reveal" data-cat="fe" style="--accent:#0769ad;">
+      <span class="card-icon"><i class="devicon-jquery-plain" style="color:#0769ad"></i></span>
+      <div class="card-title">jQuery</div>
+      <div class="card-desc">DOM manipulyatsiya, AJAX, animatsiyalar.</div>
+      <div class="card-meta">
+        <i class="fa-regular fa-clock"></i> 20+ dars
+        <i class="fa-solid fa-signal" style="margin-left:8px"></i> Boshlang'ich
+        <span class="card-badge badge-green">Bepul</span>
+      </div>
+    </a>
+  </div>
+
+  <!-- BACKEND -->
+  <div class="cat-section-title">⚙️ Backend</div>
+  <div class="cards-grid">
+
+    <a href="pages/python.html" class="course-card be reveal" data-cat="be" style="--accent:#3776ab;">
+      <span class="card-icon"><i class="devicon-python-plain" style="color:#3776ab"></i></span>
+      <div class="card-title">Python</div>
+      <div class="card-desc">OOP, funksiyalar, kutubxonalar, pandas va requests.</div>
+      <div class="card-meta">
+        <i class="fa-regular fa-clock"></i> 38+ dars
+        <i class="fa-solid fa-signal" style="margin-left:8px"></i> Boshlang'ich
+        <span class="card-badge badge-blue">Mashhur</span>
+      </div>
+    </a>
+
+    <a href="pages/nodejs.html" class="course-card be reveal" data-cat="be" style="--accent:#68a063;">
+      <span class="card-icon"><i class="devicon-nodejs-plain" style="color:#68a063"></i></span>
+      <div class="card-title">Node.js</div>
+      <div class="card-desc">Server yaratish, Express, JWT va asinxron dasturlash.</div>
+      <div class="card-meta">
+        <i class="fa-regular fa-clock"></i> 33+ dars
+        <i class="fa-solid fa-signal" style="margin-left:8px"></i> O'rta
+        <span class="card-badge badge-blue">Mashhur</span>
+      </div>
+    </a>
+
+    <a href="pages/php.html" class="course-card be reveal" data-cat="be" style="--accent:#777BB3;">
+      <span class="card-icon"><i class="devicon-php-plain" style="color:#777BB3"></i></span>
+      <div class="card-title">PHP</div>
+      <div class="card-desc">Web backend, PDO, OOP va Laravel asoslari.</div>
+      <div class="card-meta">
+        <i class="fa-regular fa-clock"></i> 28+ dars
+        <i class="fa-solid fa-signal" style="margin-left:8px"></i> O'rta
+        <span class="card-badge badge-green">Bepul</span>
+      </div>
+    </a>
+
+    <a href="pages/java.html" class="course-card be reveal" data-cat="be" style="--accent:#E76F00;">
+      <span class="card-icon"><i class="devicon-java-plain" style="color:#E76F00"></i></span>
+      <div class="card-title">Java</div>
+      <div class="card-desc">OOP, Streams, Collections va Spring asoslari.</div>
+      <div class="card-meta">
+        <i class="fa-regular fa-clock"></i> 35+ dars
+        <i class="fa-solid fa-signal" style="margin-left:8px"></i> O'rta
+        <span class="card-badge badge-orange">Ilg'or</span>
+      </div>
+    </a>
+
+    <a href="pages/django.html" class="course-card be reveal" data-cat="be" style="--accent:#092E20;">
+      <span class="card-icon"><i class="devicon-django-plain" style="color:#44B78B"></i></span>
+      <div class="card-title">Django</div>
+      <div class="card-desc">MVT, modellar, DRF va autentifikatsiya.</div>
+      <div class="card-meta">
+        <i class="fa-regular fa-clock"></i> 30+ dars
+        <i class="fa-solid fa-signal" style="margin-left:8px"></i> O'rta
+        <span class="card-badge badge-blue">Mashhur</span>
+      </div>
+    </a>
+
+    <a href="pages/cpp.html" class="course-card be reveal" data-cat="be" style="--accent:#004482;">
+      <span class="card-icon"><i class="devicon-cplusplus-plain" style="color:#004482"></i></span>
+      <div class="card-title">C++</div>
+      <div class="card-desc">Ko'rsatkichlar, STL, OOP va xotira boshqaruvi.</div>
+      <div class="card-meta">
+        <i class="fa-regular fa-clock"></i> 30+ dars
+        <i class="fa-solid fa-signal" style="margin-left:8px"></i> Ilg'or
+        <span class="card-badge badge-orange">Ilg'or</span>
+      </div>
+    </a>
+
+    <a href="pages/csharp.html" class="course-card be reveal" data-cat="be" style="--accent:#512BD4;">
+      <span class="card-icon"><i class="devicon-csharp-plain" style="color:#512BD4"></i></span>
+      <div class="card-title">C#</div>
+      <div class="card-desc">LINQ, async/await, .NET va Unity asoslari.</div>
+      <div class="card-meta">
+        <i class="fa-regular fa-clock"></i> 28+ dars
+        <i class="fa-solid fa-signal" style="margin-left:8px"></i> O'rta
+        <span class="card-badge badge-green">Bepul</span>
+      </div>
+    </a>
+  </div>
+
+  <!-- DATABASE -->
+  <div class="cat-section-title">🗄️ Ma'lumotlar Bazasi</div>
+  <div class="cards-grid">
+
+    <a href="pages/sql.html" class="course-card db reveal" data-cat="db" style="--accent:#336791;">
+      <span class="card-icon"><i class="devicon-mysql-plain" style="color:#336791"></i></span>
+      <div class="card-title">SQL</div>
+      <div class="card-desc">SELECT, JOIN, indekslar, tranzaksiyalar va VIEW.</div>
+      <div class="card-meta">
+        <i class="fa-regular fa-clock"></i> 30+ dars
+        <i class="fa-solid fa-signal" style="margin-left:8px"></i> Boshlang'ich
+        <span class="card-badge badge-blue">Mashhur</span>
+      </div>
+    </a>
+
+    <a href="pages/mongodb.html" class="course-card db reveal" data-cat="db" style="--accent:#47A248;">
+      <span class="card-icon"><i class="devicon-mongodb-plain" style="color:#47A248"></i></span>
+      <div class="card-title">MongoDB</div>
+      <div class="card-desc">NoSQL, CRUD, Mongoose va aggregation pipeline.</div>
+      <div class="card-meta">
+        <i class="fa-regular fa-clock"></i> 20+ dars
+        <i class="fa-solid fa-signal" style="margin-left:8px"></i> O'rta
+        <span class="card-badge badge-green">Bepul</span>
+      </div>
+    </a>
+
+    <a href="pages/postgresql.html" class="course-card db reveal" data-cat="db" style="--accent:#336791;">
+      <span class="card-icon"><i class="devicon-postgresql-plain" style="color:#336791"></i></span>
+      <div class="card-title">PostgreSQL</div>
+      <div class="card-desc">DDL, murakkab JOIN, JSONB va to'liq qidirish.</div>
+      <div class="card-meta">
+        <i class="fa-regular fa-clock"></i> 22+ dars
+        <i class="fa-solid fa-signal" style="margin-left:8px"></i> O'rta
+        <span class="card-badge badge-orange">Ilg'or</span>
+      </div>
+    </a>
+
+    <a href="pages/redis.html" class="course-card db reveal" data-cat="db" style="--accent:#DC382D;">
+      <span class="card-icon"><i class="devicon-redis-plain" style="color:#DC382D"></i></span>
+      <div class="card-title">Redis</div>
+      <div class="card-desc">In-memory kesh, Pub/Sub, tranzaksiyalar va caching.</div>
+      <div class="card-meta">
+        <i class="fa-regular fa-clock"></i> 20+ dars
+        <i class="fa-solid fa-signal" style="margin-left:8px"></i> O'rta
+        <span class="card-badge badge-green">Bepul</span>
+      </div>
+    </a>
+  </div>
+
+  <!-- DEVOPS -->
+  <div class="cat-section-title">🚀 DevOps & Tools</div>
+  <div class="cards-grid">
+
+    <a href="pages/git.html" class="course-card dv reveal" data-cat="dv" style="--accent:#F05032;">
+      <span class="card-icon"><i class="devicon-git-plain" style="color:#F05032"></i></span>
+      <div class="card-title">Git & GitHub</div>
+      <div class="card-desc">Versiya boshqaruvi, branch, merge va GitHub Actions.</div>
+      <div class="card-meta">
+        <i class="fa-regular fa-clock"></i> 18+ dars
+        <i class="fa-solid fa-signal" style="margin-left:8px"></i> Boshlang'ich
+        <span class="card-badge badge-blue">Mashhur</span>
+      </div>
+    </a>
+
+    <a href="pages/docker.html" class="course-card dv reveal" data-cat="dv" style="--accent:#2496ED;">
+      <span class="card-icon"><i class="devicon-docker-plain" style="color:#2496ED"></i></span>
+      <div class="card-title">Docker</div>
+      <div class="card-desc">Konteynerlar, Dockerfile, Volumes va Compose.</div>
+      <div class="card-meta">
+        <i class="fa-regular fa-clock"></i> 22+ dars
+        <i class="fa-solid fa-signal" style="margin-left:8px"></i> O'rta
+        <span class="card-badge badge-orange">Ilg'or</span>
+      </div>
+    </a>
+
+    <a href="pages/linux.html" class="course-card dv reveal" data-cat="dv" style="--accent:#FCC624;">
+      <span class="card-icon"><i class="devicon-linux-plain" style="color:#FCC624"></i></span>
+      <div class="card-title">Linux</div>
+      <div class="card-desc">Terminal, fayllar, SSH, Bash skript va Cron.</div>
+      <div class="card-meta">
+        <i class="fa-regular fa-clock"></i> 25+ dars
+        <i class="fa-solid fa-signal" style="margin-left:8px"></i> O'rta
+        <span class="card-badge badge-green">Bepul</span>
+      </div>
+    </a>
+
+    <a href="pages/restapi.html" class="course-card dv reveal" data-cat="dv" style="--accent:#FF6B35;">
+      <span class="card-icon"><i class="fa-solid fa-plug" style="color:#FF6B35;font-size:44px"></i></span>
+      <div class="card-title">REST API</div>
+      <div class="card-desc">HTTP, JWT autentifikatsiya, CORS va API dizayn.</div>
+      <div class="card-meta">
+        <i class="fa-regular fa-clock"></i> 20+ dars
+        <i class="fa-solid fa-signal" style="margin-left:8px"></i> O'rta
+        <span class="card-badge badge-blue">Mashhur</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ── LANGUAGE BANNER ── -->
+<section style="padding:60px 20px;background:var(--bg2);border-top:1px solid var(--border);">
+  <div class="lang-banner reveal">
+    <div class="lang-flags">🇺🇿🇷🇺🇬🇧</div>
+    <div class="lang-title">3 tilda o'qing</div>
+    <div class="lang-sub">O'zbek, Rus va Ingliz tillarida barcha darslar mavjud</div>
+    <div style="display:flex;gap:10px;justify-content:center;margin-top:18px;flex-wrap:wrap;">
+      <span style="background:rgba(4,170,109,0.1);border:1px solid rgba(4,170,109,0.2);color:var(--green);padding:6px 18px;border-radius:20px;font-weight:600;font-size:13px;">🇺🇿 O'zbek</span>
+      <span style="background:rgba(33,150,243,0.1);border:1px solid rgba(33,150,243,0.2);color:#64B5F6;padding:6px 18px;border-radius:20px;font-weight:600;font-size:13px;">🇷🇺 Ruscha</span>
+      <span style="background:rgba(255,152,0,0.1);border:1px solid rgba(255,152,0,0.2);color:#FFB74D;padding:6px 18px;border-radius:20px;font-weight:600;font-size:13px;">🇬🇧 English</span>
+    </div>
+  </div>
+</section>
+
+<!-- ── CTA ── -->
+<section style="padding:80px 20px;text-align:center;background:var(--bg);">
+  <div style="max-width:600px;margin:0 auto;" class="reveal">
+    <div class="stat-num" style="font-size:48px;margin-bottom:16px;">🚀</div>
+    <h2 class="section-title">Hoziroq boshlang!</h2>
+    <p style="color:var(--text2);font-size:16px;margin:16px 0 32px;">
+      Birinchi darsdan boshlang. HTML dan Docker gacha — hammasi bir joyda.
+    </p>
+    <a href="pages/html.html" class="hero-btn-green" style="display:inline-flex;">
+      <i class="fa-solid fa-rocket"></i> Darsni boshlash
+    </a>
+  </div>
+</section>
+
+<!-- ── FOOTER ── -->
+<footer>
+  <div class="footer-inner">
+    <div class="footer-logo">W3<span>Learn</span></div>
+    <div class="footer-links">
+      <a href="pages/html.html">HTML</a>
+      <a href="pages/css.html">CSS</a>
+      <a href="pages/javascript.html">JavaScript</a>
+      <a href="pages/python.html">Python</a>
+      <a href="pages/nodejs.html">Node.js</a>
+      <a href="pages/sql.html">SQL</a>
+      <a href="pages/docker.html">Docker</a>
+      <a href="pages/linux.html">Linux</a>
+    </div>
+    <div class="footer-copy">© 2024 W3Learn — Barcha huquqlar himoyalangan. O'zbekiston 🇺🇿</div>
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>

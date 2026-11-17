@@ -1,0 +1,424 @@
+﻿<!DOCTYPE html>
+<html lang="uz">
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Python Darslari – W3Learn</title>
+<link rel="stylesheet" href="../css/style.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"/>
+<style>
+.cat-label{font-size:11px;font-weight:700;padding:0 4px;}
+.cat-fe{color:#04AA6D;}.cat-be{color:#2196F3;}.cat-db{color:#FF9800;}.cat-dv{color:#9C27B0;}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="logo">W3<span>Learn</span></a>
+  <nav class="top-nav">
+    <span class="cat-label cat-fe">Frontend:</span>
+    <a href="html.html">HTML</a><a href="css.html">CSS</a><a href="javascript.html">JavaScript</a>
+    <a href="react.html">React</a><a href="vue.html">Vue</a><a href="bootstrap.html">Bootstrap</a><a href="typescript.html">TypeScript</a><a href="jquery.html">jQuery</a>
+    <span class="cat-label cat-be">Backend:</span>
+    <a href="python.html">Python</a><a href="nodejs.html">Node.js</a><a href="php.html">PHP</a><a href="java.html">Java</a><a href="django.html">Django</a><a href="cpp.html">C++</a><a href="csharp.html">C#</a>
+    <span class="cat-label cat-db">DB:</span>
+    <a href="sql.html">SQL</a><a href="mongodb.html">MongoDB</a><a href="postgresql.html">PostgreSQL</a><a href="redis.html">Redis</a>
+    <span class="cat-label cat-dv">DevOps:</span>
+    <a href="git.html">Git</a><a href="docker.html">Docker</a><a href="linux.html">Linux</a><a href="restapi.html">REST API</a>
+  </nav>
+  <div style="display:flex;align-items:center;gap:6px;margin-right:8px;"><a href="../editor.html" style="background:rgba(4,170,109,0.15);color:var(--green-light);padding:4px 8px;border-radius:6px;font-size:12px;font-weight:700;text-decoration:none;"><i class="fa-solid fa-code"></i> Editor</a><a href="../certificate.html" style="background:rgba(255,183,77,0.15);color:#FFB74D;padding:4px 8px;border-radius:6px;font-size:12px;font-weight:700;text-decoration:none;"><i class="fa-solid fa-award"></i> Sertifikat</a></div><div class="search-wrap"><input type="text" id="searchInput" placeholder="Qidirish..."/><button onclick="doSearch()">🔍</button></div>
+  <button class="dark-btn" id="darkBtn">🌙</button>
+</header>
+<div class="layout">
+<aside class="sidebar">
+  <div class="sb-header">🐍 Python</div>
+  <div class="sb-section">Kirish</div>
+  <ul>
+    <li><a href="#kirish" class="active">Python Nima?</a></li>
+    <li><a href="#install">O'rnatish</a></li>
+    <li><a href="#run">Dastur Ishga Tushirish</a></li>
+  </ul>
+  <div class="sb-section">Asoslar</div>
+  <ul>
+    <li><a href="#variables">O'zgaruvchilar</a></li>
+    <li><a href="#datatypes">Ma'lumot Turlari</a></li>
+    <li><a href="#input">input() / print()</a></li>
+    <li><a href="#operators">Operatorlar</a></li>
+    <li><a href="#strings">Satrlar (Strings)</a></li>
+  </ul>
+  <div class="sb-section">Boshqaruv Oqimi</div>
+  <ul>
+    <li><a href="#if-else">if / elif / else</a></li>
+    <li><a href="#for">for tsikli</a></li>
+    <li><a href="#while">while tsikli</a></li>
+    <li><a href="#break">break / continue</a></li>
+    <li><a href="#comprehension">List Comprehension</a></li>
+  </ul>
+  <div class="sb-section">Funksiyalar</div>
+  <ul>
+    <li><a href="#def">def — Funksiya</a></li>
+    <li><a href="#args">Args / Kwargs</a></li>
+    <li><a href="#lambda">Lambda</a></li>
+    <li><a href="#decorators">Dekoratorlar</a></li>
+  </ul>
+  <div class="sb-section">Ma'lumot Tuzilmalari</div>
+  <ul>
+    <li><a href="#list">List</a></li>
+    <li><a href="#tuple">Tuple</a></li>
+    <li><a href="#dict">Dictionary</a></li>
+    <li><a href="#set">Set</a></li>
+  </ul>
+  <div class="sb-section">OOP</div>
+  <ul>
+    <li><a href="#class">Class</a></li>
+    <li><a href="#inheritance">Meros</a></li>
+    <li><a href="#magic">Magic Metodlar</a></li>
+  </ul>
+  <div class="sb-section">Fayllar</div>
+  <ul>
+    <li><a href="#file-read">Fayl O'qish</a></li>
+    <li><a href="#file-write">Fayl Yozish</a></li>
+    <li><a href="#json-mod">JSON moduli</a></li>
+  </ul>
+  <div class="sb-section">Kutubxonalar</div>
+  <ul>
+    <li><a href="#pip">pip</a></li>
+    <li><a href="#venv">Virtual Muhit</a></li>
+    <li><a href="#requests">requests</a></li>
+    <li><a href="#pandas">pandas</a></li>
+    <li><a href="#regex">re (Regex)</a></li>
+  </ul>
+</aside>
+<main class="main">
+  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">Python</a> › Python Nima?</div>
+  <h1 id="kirish">Python Nima?</h1>
+  <div class="meta-tags">
+    <span class="tag tag-green">⏱ 10 daqiqa</span>
+    <span class="tag tag-blue">🟢 Boshlang'ich</span>
+    <span class="tag tag-orange">👁 38,700 marta ko'rilgan</span>
+  </div>
+  <p><strong>Python</strong> — oddiy sintaksisga ega, kuchli va ko'p qirrali dasturlash tili. Guido van Rossum tomonidan 1991-yilda yaratilgan.</p>
+  <p>Veb dasturlash (Django, Flask), ma'lumotlar ilmi (pandas, numpy), sun'iy intellekt (TensorFlow), avtomatlashtirish va boshqa ko'p sohalarda qo'llaniladi.</p>
+  <div class="note">💡 <strong>Python falsafasi (Zen of Python):</strong> "Oddiy yaxshi. Murakkab yomondan yaxshi. O'qilishi muhim."</div>
+
+  <h2 id="variables">O'zgaruvchilar va Ma'lumot Turlari</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">python</span>
+      <button class="copy-btn" onclick="copyCode('code1')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code1"># O'zgaruvchilar (tur belgilash shart emas)
+ism = "Ali"           # str
+yosh = 25             # int
+oy_maosh = 3500.50    # float
+talaba = True         # bool
+manzil = None         # NoneType
+
+# Ko'p o'zgaruvchi bir qatorda
+x, y, z = 1, 2, 3
+
+# Ma'lumot turini bilish
+print(type(ism))      # <class 'str'>
+print(type(yosh))     # <class 'int'>
+
+# Konversiya
+son = int("42")       # str -> int
+matn = str(100)       # int -> str
+kasr = float("3.14")  # str -> float
+
+# f-string (formatlash)
+print(f"Salom, {ism}! Yoshingiz {yosh}.")
+# Salom, Ali! Yoshingiz 25.</pre>
+    </div>
+  </div>
+
+  <h2 id="if-else">if / elif / else</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">python</span>
+      <button class="copy-btn" onclick="copyCode('code2')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code2">ball = 85
+
+if ball >= 90:
+    print("A'lo ⭐")
+elif ball >= 70:
+    print("Yaxshi ✅")
+elif ball >= 50:
+    print("Qoniqarli 🆗")
+else:
+    print("Yaxon ❌")
+
+# Bir qatorli (ternary)
+natija = "O'tdi" if ball >= 50 else "O'tmadi"
+print(natija)
+
+# Mantiqiy operatorlar
+yosh = 20
+if yosh >= 18 and yosh < 65:
+    print("Ishchi yoshi")
+
+# in operatori
+mevalar = ["olma", "nok", "uzum"]
+if "olma" in mevalar:
+    print("Olma bor!")</pre>
+    </div>
+  </div>
+
+  <h2 id="for">Tsikllar</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">python</span>
+      <button class="copy-btn" onclick="copyCode('code3')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code3"># for tsikli
+for i in range(5):
+    print(i)  # 0, 1, 2, 3, 4
+
+# range(start, stop, step)
+for i in range(1, 10, 2):
+    print(i)  # 1, 3, 5, 7, 9
+
+# Ro'yxat bo'ylab
+tillar = ["Python", "JS", "Java"]
+for til in tillar:
+    print(f"🔹 {til}")
+
+# enumerate — indeks bilan
+for i, til in enumerate(tillar):
+    print(f"{i+1}. {til}")
+
+# while tsikli
+son = 1
+while son <= 5:
+    print(son)
+    son += 1
+
+# List Comprehension
+kvadratlar = [x**2 for x in range(1, 6)]
+print(kvadratlar)  # [1, 4, 9, 16, 25]
+
+juftlar = [x for x in range(20) if x % 2 == 0]
+print(juftlar)  # [0, 2, 4, 6, ..., 18]</pre>
+    </div>
+  </div>
+
+  <h2 id="def">Funksiyalar</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">python</span>
+      <button class="copy-btn" onclick="copyCode('code4')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code4"># Oddiy funksiya
+def salomlash(ism):
+    return f"Salom, {ism}!"
+
+print(salomlash("Ali"))  # Salom, Ali!
+
+# Default parametr
+def quvvat(son, daraja=2):
+    return son ** daraja
+
+print(quvvat(3))     # 9
+print(quvvat(2, 10)) # 1024
+
+# *args — ixtiyoriy miqdordagi argumentlar
+def yigindi(*sonlar):
+    return sum(sonlar)
+
+print(yigindi(1, 2, 3, 4, 5))  # 15
+
+# **kwargs — kalit-qiymat argumentlar
+def profil(**ma_lumot):
+    for kalit, qiymat in ma_lumot.items():
+        print(f"{kalit}: {qiymat}")
+
+profil(ism="Ali", yosh=25, shahar="Toshkent")
+
+# Lambda (anonim funksiya)
+kvadrat = lambda x: x ** 2
+print(kvadrat(5))  # 25
+
+# sorted bilan lambda
+odamlar = [{"ism": "Ali", "yosh": 25}, {"ism": "Vali", "yosh": 20}]
+sortlangan = sorted(odamlar, key=lambda x: x["yosh"])
+print(sortlangan)</pre>
+    </div>
+  </div>
+
+  <h2 id="dict">Dictionary (Lug'at)</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">python</span>
+      <button class="copy-btn" onclick="copyCode('code5')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code5">foydalanuvchi = {
+    "ism": "Ali",
+    "yosh": 25,
+    "email": "ali@example.com",
+    "faol": True
+}
+
+# O'qish
+print(foydalanuvchi["ism"])           # Ali
+print(foydalanuvchi.get("telefon", "Yo'q"))  # Yo'q
+
+# Qo'shish / yangilash
+foydalanuvchi["shahar"] = "Toshkent"
+foydalanuvchi.update({"yosh": 26, "lavozim": "Dasturchi"})
+
+# O'chirish
+del foydalanuvchi["faol"]
+yosh = foydalanuvchi.pop("yosh")
+
+# Aylanish
+for kalit in foydalanuvchi:
+    print(f"{kalit}: {foydalanuvchi[kalit]}")
+
+for kalit, qiymat in foydalanuvchi.items():
+    print(f"{kalit} = {qiymat}")
+
+# Dict Comprehension
+kvadratlar = {x: x**2 for x in range(1, 6)}
+print(kvadratlar)  # {1:1, 2:4, 3:9, 4:16, 5:25}</pre>
+    </div>
+  </div>
+
+  <h2 id="class">OOP — Sinflar</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">python</span>
+      <button class="copy-btn" onclick="copyCode('code6')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code6">class Avtomobil:
+    # Sinf atributi
+    g'ildirak_soni = 4
+    
+    def __init__(self, marka, model, yil):
+        self.marka = marka
+        self.model = model
+        self.yil = yil
+        self.__tezlik = 0  # private
+    
+    def tezlashtir(self, miqdor):
+        self.__tezlik += miqdor
+        return self
+    
+    def __str__(self):
+        return f"{self.yil} {self.marka} {self.model}"
+    
+    @property
+    def tezlik(self):
+        return self.__tezlik
+
+
+# Meros (Inheritance)
+class ElektrikAvto(Avtomobil):
+    def __init__(self, marka, model, yil, batareya_quvvati):
+        super().__init__(marka, model, yil)
+        self.batareya = batareya_quvvati
+    
+    def quvvatlash(self):
+        return f"{self.marka} quvvatlanmoqda... ⚡"
+
+
+tesla = ElektrikAvto("Tesla", "Model 3", 2023, 75)
+print(tesla)              # 2023 Tesla Model 3
+print(tesla.quvvatlash()) # Tesla quvvatlanmoqda... ⚡
+tesla.tezlashtir(60)
+print(tesla.tezlik)       # 60</pre>
+    </div>
+  </div>
+
+  <h2 id="requests">requests Kutubxonasi</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">python</span>
+      <button class="copy-btn" onclick="copyCode('code7')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code7"># pip install requests
+import requests
+
+# GET so'rov
+javob = requests.get('https://jsonplaceholder.typicode.com/users/1')
+print(javob.status_code)  # 200
+foydalanuvchi = javob.json()
+print(foydalanuvchi['name'])  # Leanne Graham
+
+# POST so'rov
+yangi_post = requests.post(
+    'https://jsonplaceholder.typicode.com/posts',
+    json={'title': 'Salom', 'body': 'Mazmun', 'userId': 1}
+)
+print(yangi_post.status_code)  # 201
+print(yangi_post.json())
+
+# Sarlavhalar bilan
+headers = {'Authorization': 'Bearer mytoken123'}
+ma_lumot = requests.get('https://api.example.com/profile', headers=headers)
+
+# Xatolarni ushlash
+try:
+    r = requests.get('https://api.example.com', timeout=5)
+    r.raise_for_status()
+except requests.exceptions.Timeout:
+    print("So'rov vaqti tugadi")
+except requests.exceptions.HTTPError as e:
+    print(f"HTTP xatosi: {e}")</pre>
+    </div>
+  </div>
+
+  <!-- Quiz -->
+  <div class="quiz-box">
+    <div class="quiz-q">🧠 Python da ro'yxat (list) yaratishning to'g'ri usuli qaysi?</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'q1')">meva = (1, 2, 3)</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, true, 'q1')">meva = [1, 2, 3]</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'q1')">meva = {1, 2, 3}</div>
+    <div class="quiz-result" id="q1"></div>
+  </div>
+
+  <div class="nav-btns">
+    <a href="jquery.html" class="btn-prev">← jQuery</a>
+    <a href="nodejs.html" class="btn-next">Node.js →</a>
+  </div>
+</main>
+<aside class="right-panel">
+  <div class="rp-title">📊 Kurs bo'limlari</div>
+  <div class="rp-section">Frontend</div>
+  <a href="html.html" class="topic-pill">HTML</a>
+  <a href="css.html" class="topic-pill">CSS</a>
+  <a href="javascript.html" class="topic-pill">JavaScript</a>
+  <a href="react.html" class="topic-pill">React</a>
+  <a href="vue.html" class="topic-pill">Vue.js</a>
+  <a href="bootstrap.html" class="topic-pill">Bootstrap</a>
+  <a href="typescript.html" class="topic-pill">TypeScript</a>
+  <a href="jquery.html" class="topic-pill">jQuery</a>
+  <div class="rp-section">Backend</div>
+  <a href="python.html" class="topic-pill active-pill">Python ✓</a>
+  <a href="nodejs.html" class="topic-pill">Node.js</a>
+  <a href="php.html" class="topic-pill">PHP</a>
+  <a href="java.html" class="topic-pill">Java</a>
+  <a href="django.html" class="topic-pill">Django</a>
+  <a href="cpp.html" class="topic-pill">C++</a>
+  <a href="csharp.html" class="topic-pill">C#</a>
+  <div class="rp-section">Ma'lumotlar Bazasi</div>
+  <a href="sql.html" class="topic-pill">SQL</a>
+  <a href="mongodb.html" class="topic-pill">MongoDB</a>
+  <a href="postgresql.html" class="topic-pill">PostgreSQL</a>
+  <a href="redis.html" class="topic-pill">Redis</a>
+  <div class="rp-section">DevOps</div>
+  <a href="git.html" class="topic-pill">Git & GitHub</a>
+  <a href="docker.html" class="topic-pill">Docker</a>
+  <a href="linux.html" class="topic-pill">Linux</a>
+  <a href="restapi.html" class="topic-pill">REST API</a>
+</aside>
+</div>
+<footer style="text-align:center;padding:20px;color:#888;font-size:13px;">© 2024 W3Learn — Barcha huquqlar himoyalangan</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

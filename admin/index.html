@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Admin Dashboard – W3Learn Boshqaruv Markazi</title>
+<link rel="stylesheet" href="../css/style.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<style>
+  :root {
+    --admin-sidebar-w: 260px;
+  }
+  body {
+    background: #0b0f19;
+    color: #e2e8f0;
+  }
+  .admin-layout {
+    display: flex;
+    min-height: 100vh;
+  }
+  .admin-sidebar {
+    width: var(--admin-sidebar-w);
+    background: #111827;
+    border-right: 1px solid #1f2937;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 0; bottom: 0; left: 0;
+    z-index: 50;
+  }
+  .admin-brand {
+    padding: 20px;
+    font-size: 20px;
+    font-weight: 800;
+    color: #fff;
+    border-bottom: 1px solid #1f2937;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .admin-brand span { color: var(--green); }
+  .admin-badge {
+    font-size: 10px;
+    background: rgba(4,170,109,0.2);
+    color: #00d4a0;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-weight: bold;
+    margin-left: auto;
+  }
+  .admin-nav {
+    padding: 16px 12px;
+    flex: 1;
+    overflow-y: auto;
+  }
+  .admin-nav-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 14px;
+    border-radius: 8px;
+    color: #9ca3af;
+    font-size: 13.5px;
+    font-weight: 500;
+    cursor: pointer;
+    margin-bottom: 4px;
+    transition: all 0.2s;
+  }
+  .admin-nav-item:hover, .admin-nav-item.active {
+    background: #1f2937;
+    color: #00d4a0;
+    font-weight: 600;
+  }
+  .admin-nav-item i { width: 18px; text-align: center; }
+
+  .admin-content {
+    flex: 1;
+    margin-left: var(--admin-sidebar-w);
+    padding: 28px 36px 60px;
+    min-width: 0;
+  }
+  .admin-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 28px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #1f2937;
+  }
+  .admin-user-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+  .admin-avatar {
+    width: 38px; height: 38px;
+    background: linear-gradient(135deg, var(--green), #3b82f6);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    color: #fff;
+  }
+
+  /* Stats Grid */
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+    margin-bottom: 32px;
+  }
+  .stat-card {
+    background: #111827;
+    border: 1px solid #1f2937;
+    border-radius: 12px;
+    padding: 20px;
+    position: relative;
+    overflow: hidden;
+  }
+  .stat-card::after {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; height: 3px;
+    background: var(--card-color, var(--green));
+  }
+  .stat-card-title {
+    font-size: 13px;
+    color: #9ca3af;
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .stat-card-value {
+    font-size: 28px;
+    font-weight: 800;
+    color: #fff;
+  }
+  .stat-card-change {
+    font-size: 11px;
+    color: #10b981;
+    margin-top: 6px;
+  }
+
+  /* Table styling */
+  .table-box {
+    background: #111827;
+    border: 1px solid #1f2937;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 30px;
+  }
+  .table-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+  }
+  .custom-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 13.5px;
+  }
+  .custom-table th {
+    text-align: left;
+    padding: 10px 14px;
+    color: #9ca3af;
+    border-bottom: 1px solid #1f2937;
+    font-weight: 600;
+  }
+  .custom-table td {
+    padding: 12px 14px;
+    border-bottom: 1px solid #1f2937;
+    color: #e5e7eb;
+  }
+  .custom-table tr:hover {
+    background: rgba(255, 255, 255, 0.02);
+  }
+  .status-badge {
+    padding: 3px 8px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+  }
+  .status-active { background: rgba(16, 185, 129, 0.15); color: #10b981; }
+  .status-draft  { background: rgba(245, 158, 11, 0.15); color: #f59e0b; }
+
+  /* Modal Form */
+  .modal-overlay {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.7);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+    backdrop-filter: blur(4px);
+  }
+  .modal-overlay.open { display: flex; }
+  .modal-box {
+    background: #111827;
+    border: 1px solid #1f2937;
+    border-radius: 14px;
+    width: 500px;
+    max-width: 90%;
+    padding: 28px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.7);
+  }
+  .modal-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+
+  @media (max-width: 850px) {
+    .admin-sidebar { display: none; }
+    .admin-content { margin-left: 0; padding: 20px; }
+  }
+</style>
+</head>
+<body>
+
+<div class="admin-layout">
+  <!-- Sidebar -->
+  <aside class="admin-sidebar">
+    <div class="admin-brand">
+      <i class="fa-solid fa-graduation-cap" style="color:var(--green)"></i>
+      W3<span>Learn</span>
+      <span class="admin-badge">ADMIN</span>
+    </div>
+
+    <nav class="admin-nav">
+      <div class="admin-nav-item active" onclick="switchTab('dashboard')">
+        <i class="fa-solid fa-chart-line"></i> Dashboard (Ko'rsatkichlar)
+      </div>
+      <div class="admin-nav-item" onclick="switchTab('courses')">
+        <i class="fa-solid fa-book"></i> Kurslar Boshqaruvi
+      </div>
+      <div class="admin-nav-item" onclick="switchTab('quizzes')">
+        <i class="fa-solid fa-clipboard-question"></i> Testlar va Savollar
+      </div>
+      <div class="admin-nav-item" onclick="switchTab('students')">
+        <i class="fa-solid fa-users"></i> Foydalanuvchilar
+      </div>
+      <div class="admin-nav-item" onclick="switchTab('settings')">
+        <i class="fa-solid fa-gear"></i> Tizim Sozlamalari
+      </div>
+      <div style="margin-top:20px;border-top:1px solid #1f2937;padding-top:12px;">
+        <a href="../index.html" class="admin-nav-item" style="color:#60a5fa;">
+          <i class="fa-solid fa-arrow-left"></i> Asosiy Saytga Qaytish
+        </a>
+      </div>
+    </nav>
+  </aside>
+
+  <!-- Main Admin Area -->
+  <main class="admin-content">
+    <div class="admin-header">
+      <div>
+        <h1 style="font-size:24px;font-weight:800;color:#fff;">Admin Boshqaruv Paneli</h1>
+        <p style="color:#9ca3af;font-size:13px;">Platforma kontenti, darslar va talabalar monitoringi</p>
+      </div>
+      <div class="admin-user-info">
+        <div class="admin-avatar">AD</div>
+        <div>
+          <div style="font-size:13px;font-weight:700;color:#fff;">Hojiakbar Sodiqov</div>
+          <div style="font-size:11px;color:#10b981;">Bosh Administrator</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STATS -->
+    <div class="stats-grid">
+      <div class="stat-card" style="--card-color:#10b981;">
+        <div class="stat-card-title">
+          <span>Jami Kurslar</span>
+          <i class="fa-solid fa-book-bookmark" style="color:#10b981;"></i>
+        </div>
+        <div class="stat-card-value">23 ta</div>
+        <div class="stat-card-change">↑ 4 ta yangi qo'shildi</div>
+      </div>
+
+      <div class="stat-card" style="--card-color:#3b82f6;">
+        <div class="stat-card-title">
+          <span>Jami Darslar</span>
+          <i class="fa-solid fa-file-code" style="color:#3b82f6;"></i>
+        </div>
+        <div class="stat-card-value">645 ta</div>
+        <div class="stat-card-change">Barcha bo'limlar to'liq</div>
+      </div>
+
+      <div class="stat-card" style="--card-color:#f59e0b;">
+        <div class="stat-card-title">
+          <span>Faol O'quvchilar</span>
+          <i class="fa-solid fa-user-graduate" style="color:#f59e0b;"></i>
+        </div>
+        <div class="stat-card-value">14,280+</div>
+        <div class="stat-card-change">↑ Bugun 340 yangi</div>
+      </div>
+
+      <div class="stat-card" style="--card-color:#8b5cf6;">
+        <div class="stat-card-title">
+          <span>Berilgan Sertifikatlar</span>
+          <i class="fa-solid fa-award" style="color:#8b5cf6;"></i>
+        </div>
+        <div class="stat-card-value">2,150+</div>
+        <div class="stat-card-change">O'rtacha ball: 91%</div>
+      </div>
+    </div>
+
+    <!-- COURSES TABLE -->
+    <div class="table-box">
+      <div class="table-header">
+        <div>
+          <h2 style="font-size:16px;font-weight:700;color:#fff;">Kurslar Ro'yxati & Holati</h2>
+          <span style="font-size:12px;color:#9ca3af;">Platformadagi barcha faol texnologiyalar</span>
+        </div>
+        <button class="hero-btn-green" onclick="openAddModal()" style="padding:8px 16px;font-size:13px;border:none;cursor:pointer;">
+          <i class="fa-solid fa-plus"></i> Yangi Dars Qo'shish
+        </button>
+      </div>
+
+      <table class="custom-table" id="coursesTable">
+        <thead>
+          <tr>
+            <th>Kurs Nomi</th>
+            <th>Bo'lim</th>
+            <th>Darslar</th>
+            <th>Daraja</th>
+            <th>Holat</th>
+            <th>Amallar</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>HTML5</strong></td>
+            <td>Frontend</td>
+            <td>35 dars</td>
+            <td>Boshlang'ich</td>
+            <td><span class="status-badge status-active">Faol</span></td>
+            <td>
+              <a href="../pages/html.html" target="_blank" style="color:#60a5fa;margin-right:8px;"><i class="fa-solid fa-eye"></i></a>
+              <button onclick="deleteRow(this)" style="background:none;border:none;color:#ef4444;cursor:pointer;"><i class="fa-solid fa-trash"></i></button>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>CSS3 & Flexbox</strong></td>
+            <td>Frontend</td>
+            <td>35 dars</td>
+            <td>Boshlang'ich</td>
+            <td><span class="status-badge status-active">Faol</span></td>
+            <td>
+              <a href="../pages/css.html" target="_blank" style="color:#60a5fa;margin-right:8px;"><i class="fa-solid fa-eye"></i></a>
+              <button onclick="deleteRow(this)" style="background:none;border:none;color:#ef4444;cursor:pointer;"><i class="fa-solid fa-trash"></i></button>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>JavaScript (ES6+)</strong></td>
+            <td>Frontend</td>
+            <td>45 dars</td>
+            <td>O'rta</td>
+            <td><span class="status-badge status-active">Faol</span></td>
+            <td>
+              <a href="../pages/javascript.html" target="_blank" style="color:#60a5fa;margin-right:8px;"><i class="fa-solid fa-eye"></i></a>
+              <button onclick="deleteRow(this)" style="background:none;border:none;color:#ef4444;cursor:pointer;"><i class="fa-solid fa-trash"></i></button>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Python Dasturlash</strong></td>
+            <td>Backend</td>
+            <td>38 dars</td>
+            <td>Boshlang'ich</td>
+            <td><span class="status-badge status-active">Faol</span></td>
+            <td>
+              <a href="../pages/python.html" target="_blank" style="color:#60a5fa;margin-right:8px;"><i class="fa-solid fa-eye"></i></a>
+              <button onclick="deleteRow(this)" style="background:none;border:none;color:#ef4444;cursor:pointer;"><i class="fa-solid fa-trash"></i></button>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Docker & Konteynerlar</strong></td>
+            <td>DevOps</td>
+            <td>22 dars</td>
+            <td>Ilg'or</td>
+            <td><span class="status-badge status-active">Faol</span></td>
+            <td>
+              <a href="../pages/docker.html" target="_blank" style="color:#60a5fa;margin-right:8px;"><i class="fa-solid fa-eye"></i></a>
+              <button onclick="deleteRow(this)" style="background:none;border:none;color:#ef4444;cursor:pointer;"><i class="fa-solid fa-trash"></i></button>
+            </td>
+          </tr>
+          <tr>
+            <td><strong>Redis Caching</strong></td>
+            <td>Ma'lumotlar Bazasi</td>
+            <td>20 dars</td>
+            <td>O'rta</td>
+            <td><span class="status-badge status-active">Faol</span></td>
+            <td>
+              <a href="../pages/redis.html" target="_blank" style="color:#60a5fa;margin-right:8px;"><i class="fa-solid fa-eye"></i></a>
+              <button onclick="deleteRow(this)" style="background:none;border:none;color:#ef4444;cursor:pointer;"><i class="fa-solid fa-trash"></i></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+
+<!-- Modal: Yangi Dars Qo'shish -->
+<div class="modal-overlay" id="addModal">
+  <div class="modal-box">
+    <div class="modal-header">
+      <h3 style="font-size:18px;font-weight:700;color:#fff;">Yangi Kurs / Dars Qo'shish</h3>
+      <button onclick="closeAddModal()" style="background:none;border:none;color:#9ca3af;font-size:18px;cursor:pointer;">✕</button>
+    </div>
+    <form onsubmit="handleNewCourse(event)">
+      <div class="form-group" style="margin-bottom:14px;">
+        <label>Kurs Nomi:</label>
+        <input type="text" id="newCourseName" required placeholder="Masalan: Go (Golang) Darslari" style="background:#1f2937;border:1px solid #374151;color:#fff;padding:8px 12px;border-radius:6px;width:100%;box-sizing:border-box;"/>
+      </div>
+      <div class="form-group" style="margin-bottom:14px;">
+        <label>Yo'nalish / Bo'lim:</label>
+        <select id="newCourseCat" style="background:#1f2937;border:1px solid #374151;color:#fff;padding:8px 12px;border-radius:6px;width:100%;box-sizing:border-box;">
+          <option value="Frontend">Frontend</option>
+          <option value="Backend">Backend</option>
+          <option value="Ma'lumotlar Bazasi">Ma'lumotlar Bazasi</option>
+          <option value="DevOps">DevOps</option>
+        </select>
+      </div>
+      <div class="form-group" style="margin-bottom:14px;">
+        <label>Darslar soni:</label>
+        <input type="text" id="newCourseLessons" required placeholder="Masalan: 25 dars" style="background:#1f2937;border:1px solid #374151;color:#fff;padding:8px 12px;border-radius:6px;width:100%;box-sizing:border-box;"/>
+      </div>
+      <div class="form-group" style="margin-bottom:20px;">
+        <label>Qiyinlik darajasi:</label>
+        <select id="newCourseLevel" style="background:#1f2937;border:1px solid #374151;color:#fff;padding:8px 12px;border-radius:6px;width:100%;box-sizing:border-box;">
+          <option value="Boshlang'ich">Boshlang'ich</option>
+          <option value="O'rta">O'rta</option>
+          <option value="Ilg'or">Ilg'or</option>
+        </select>
+      </div>
+      <div style="display:flex;justify-content:flex-end;gap:10px;">
+        <button type="button" onclick="closeAddModal()" style="padding:8px 16px;background:#374151;color:#fff;border:none;border-radius:6px;cursor:pointer;">Bekor qilish</button>
+        <button type="submit" class="hero-btn-green" style="padding:8px 20px;border:none;cursor:pointer;">Qo'shish</button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script>
+  function openAddModal() {
+    document.getElementById('addModal').classList.add('open');
+  }
+  function closeAddModal() {
+    document.getElementById('addModal').classList.remove('open');
+  }
+  function handleNewCourse(e) {
+    e.preventDefault();
+    const name = document.getElementById('newCourseName').value;
+    const cat = document.getElementById('newCourseCat').value;
+    const lessons = document.getElementById('newCourseLessons').value;
+    const level = document.getElementById('newCourseLevel').value;
+
+    const tbody = document.querySelector('#coursesTable tbody');
+    const tr = document.createElement('tr');
+    tr.innerHTML = `
+      <td><strong>${name}</strong></td>
+      <td>${cat}</td>
+      <td>${lessons}</td>
+      <td>${level}</td>
+      <td><span class="status-badge status-active">Faol</span></td>
+      <td>
+        <button onclick="deleteRow(this)" style="background:none;border:none;color:#ef4444;cursor:pointer;"><i class="fa-solid fa-trash"></i></button>
+      </td>
+    `;
+    tbody.appendChild(tr);
+    closeAddModal();
+    alert("Yangi kurs muvaffaqiyatli qo'shildi!");
+  }
+  function deleteRow(btn) {
+    if (confirm("Ushbu kursni o'chirishni tasdiqlaysizmi?")) {
+      btn.closest('tr').remove();
+    }
+  }
+  function switchTab(tab) {
+    document.querySelectorAll('.admin-nav-item').forEach(el => el.classList.remove('active'));
+    event.currentTarget.classList.add('active');
+  }
+</script>
+
+</body>
+</html>

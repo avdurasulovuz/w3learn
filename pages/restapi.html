@@ -1,0 +1,462 @@
+﻿<!DOCTYPE html>
+<html lang="uz">
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>REST API Darslari – W3Learn</title>
+<link rel="stylesheet" href="../css/style.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"/>
+<style>
+.cat-label{font-size:11px;font-weight:700;padding:0 4px;}
+.cat-fe{color:#04AA6D;}.cat-be{color:#2196F3;}.cat-db{color:#FF9800;}.cat-dv{color:#9C27B0;}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="logo">W3<span>Learn</span></a>
+  <nav class="top-nav">
+    <span class="cat-label cat-fe">Frontend:</span>
+    <a href="html.html">HTML</a><a href="css.html">CSS</a><a href="javascript.html">JavaScript</a>
+    <a href="react.html">React</a><a href="vue.html">Vue</a><a href="bootstrap.html">Bootstrap</a><a href="typescript.html">TypeScript</a><a href="jquery.html">jQuery</a>
+    <span class="cat-label cat-be">Backend:</span>
+    <a href="python.html">Python</a><a href="nodejs.html">Node.js</a><a href="php.html">PHP</a><a href="java.html">Java</a><a href="django.html">Django</a><a href="cpp.html">C++</a><a href="csharp.html">C#</a>
+    <span class="cat-label cat-db">DB:</span>
+    <a href="sql.html">SQL</a><a href="mongodb.html">MongoDB</a><a href="postgresql.html">PostgreSQL</a><a href="redis.html">Redis</a>
+    <span class="cat-label cat-dv">DevOps:</span>
+    <a href="git.html">Git</a><a href="docker.html">Docker</a><a href="linux.html">Linux</a><a href="restapi.html">REST API</a>
+  </nav>
+  <div style="display:flex;align-items:center;gap:6px;margin-right:8px;"><a href="../editor.html" style="background:rgba(4,170,109,0.15);color:var(--green-light);padding:4px 8px;border-radius:6px;font-size:12px;font-weight:700;text-decoration:none;"><i class="fa-solid fa-code"></i> Editor</a><a href="../certificate.html" style="background:rgba(255,183,77,0.15);color:#FFB74D;padding:4px 8px;border-radius:6px;font-size:12px;font-weight:700;text-decoration:none;"><i class="fa-solid fa-award"></i> Sertifikat</a></div><div class="search-wrap"><input type="text" id="searchInput" placeholder="Qidirish..."/><button onclick="doSearch()">🔍</button></div>
+  <button class="dark-btn" id="darkBtn">🌙</button>
+</header>
+<div class="layout">
+<aside class="sidebar">
+  <div class="sb-header">🌐 REST API</div>
+  <div class="sb-section">Kirish</div>
+  <ul>
+    <li><a href="#kirish" class="active">REST API Nima?</a></li>
+    <li><a href="#http">HTTP Asoslari</a></li>
+    <li><a href="#url">URL Tuzilmasi</a></li>
+    <li><a href="#json">JSON Format</a></li>
+  </ul>
+  <div class="sb-section">HTTP Metodlar</div>
+  <ul>
+    <li><a href="#get">GET — Olish</a></li>
+    <li><a href="#post">POST — Yaratish</a></li>
+    <li><a href="#put">PUT — Yangilash</a></li>
+    <li><a href="#patch">PATCH — Qisman yangilash</a></li>
+    <li><a href="#delete">DELETE — O'chirish</a></li>
+  </ul>
+  <div class="sb-section">Status Kodlar</div>
+  <ul>
+    <li><a href="#2xx">2xx — Muvaffaqiyat</a></li>
+    <li><a href="#3xx">3xx — Yo'naltirish</a></li>
+    <li><a href="#4xx">4xx — Mijoz xatosi</a></li>
+    <li><a href="#5xx">5xx — Server xatosi</a></li>
+  </ul>
+  <div class="sb-section">Headers</div>
+  <ul>
+    <li><a href="#headers">So'rov Sarlavhalari</a></li>
+    <li><a href="#content-type">Content-Type</a></li>
+    <li><a href="#cors">CORS</a></li>
+  </ul>
+  <div class="sb-section">Autentifikatsiya</div>
+  <ul>
+    <li><a href="#basic-auth">Basic Auth</a></li>
+    <li><a href="#bearer">Bearer Token</a></li>
+    <li><a href="#jwt">JWT</a></li>
+    <li><a href="#oauth">OAuth 2.0</a></li>
+  </ul>
+  <div class="sb-section">API Dizayn</div>
+  <ul>
+    <li><a href="#versioning">Versioning</a></li>
+    <li><a href="#pagination">Pagination</a></li>
+    <li><a href="#filtering">Filtering</a></li>
+    <li><a href="#swagger">Swagger / OpenAPI</a></li>
+    <li><a href="#best-practices">Best Practices</a></li>
+  </ul>
+</aside>
+<main class="main">
+  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">REST API</a> › REST API Nima?</div>
+  <h1 id="kirish">REST API Nima?</h1>
+  <div class="meta-tags">
+    <span class="tag tag-green">⏱ 10 daqiqa</span>
+    <span class="tag tag-blue">🟡 O'rta</span>
+    <span class="tag tag-orange">👁 21,300 marta ko'rilgan</span>
+  </div>
+  <p><strong>REST</strong> (Representational State Transfer) — veb xizmatlarni loyihalash arxitektura uslubi. <strong>API</strong> (Application Programming Interface) — dasturlar o'rtasida ma'lumot almashish interfeysi.</p>
+  <p>REST API orqali frontend (brauzer/mobil ilova) va backend server o'rtasida HTTP protokoli yordamida ma'lumotlar almashiladi.</p>
+  <div class="note">💡 <strong>REST prinsiplari:</strong> Stateless (holatsiz), Client-Server, Cacheable (keshlanishi mumkin), Uniform Interface (bir xil interfeys), Layered System.</div>
+
+  <h2 id="http">HTTP Asoslari</h2>
+  <p>REST API HTTP protokoli ustida ishlaydi. So'rov va javob tuzilmasi:</p>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">http</span>
+      <button class="copy-btn" onclick="copyCode('code1')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code1">### HTTP SO'ROV (Request)
+GET /api/users/1 HTTP/1.1
+Host: example.com
+Authorization: Bearer eyJhbGc...
+Content-Type: application/json
+Accept: application/json
+
+### HTTP JAVOB (Response)
+HTTP/1.1 200 OK
+Content-Type: application/json
+X-RateLimit-Remaining: 99
+
+{
+  "id": 1,
+  "name": "Ali Karimov",
+  "email": "ali@example.com",
+  "createdAt": "2024-01-15T10:30:00Z"
+}</pre>
+    </div>
+  </div>
+
+  <h2 id="url">URL Tuzilmasi</h2>
+  <p>REST API URL lari resurs nomlaridan (ot) iborat bo'lishi kerak:</p>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">http</span>
+      <button class="copy-btn" onclick="copyCode('code2')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code2"># ✅ TO'G'RI — ko'plik ot, kichik harf
+GET    /api/v1/users          # Barcha foydalanuvchilar
+GET    /api/v1/users/42       # Bitta foydalanuvchi
+POST   /api/v1/users          # Yangi foydalanuvchi
+PUT    /api/v1/users/42       # Yangilash
+DELETE /api/v1/users/42       # O'chirish
+
+# Ichma-ich resurslar
+GET    /api/v1/users/42/posts       # Foydalanuvchi postlari
+GET    /api/v1/users/42/posts/5     # Bitta post
+
+# ❌ NOTO'G'RI — fe'l ishlatish
+GET /api/getUsers
+POST /api/createUser
+DELETE /api/deleteUser/42</pre>
+    </div>
+  </div>
+
+  <h2 id="get">GET — Ma'lumot Olish</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">javascript</span>
+      <button class="copy-btn" onclick="copyCode('code3')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code3">// JavaScript Fetch API bilan GET so'rov
+const getUsers = async () => {
+  const response = await fetch('https://api.example.com/users', {
+    method: 'GET',
+    headers: {
+      'Authorization': 'Bearer ' + token,
+      'Content-Type': 'application/json'
+    }
+  });
+
+  if (!response.ok) {
+    throw new Error(`HTTP xato: ${response.status}`);
+  }
+
+  const data = await response.json();
+  console.log(data);
+};
+
+// Axios bilan (npm install axios)
+const { data } = await axios.get('/api/users', {
+  params: { page: 1, limit: 10 },
+  headers: { Authorization: `Bearer ${token}` }
+});
+
+// curl bilan (terminal)
+// curl -H "Authorization: Bearer TOKEN" https://api.example.com/users</pre>
+    </div>
+  </div>
+
+  <h2 id="post">POST — Yangi Ma'lumot Yaratish</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">javascript</span>
+      <button class="copy-btn" onclick="copyCode('code4')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code4">// POST — yangi foydalanuvchi yaratish
+const createUser = async (userData) => {
+  const response = await fetch('/api/users', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+      'Authorization': 'Bearer ' + token
+    },
+    body: JSON.stringify({
+      name: 'Ali Karimov',
+      email: 'ali@example.com',
+      password: 'SecurePass123'
+    })
+  });
+
+  const newUser = await response.json();
+  // Javob: { id: 123, name: 'Ali Karimov', ... }
+  console.log('Yaratildi:', newUser);
+};
+
+// PUT — to'liq yangilash
+await fetch('/api/users/123', {
+  method: 'PUT',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ name: 'Vali', email: 'vali@example.com' })
+});
+
+// PATCH — qisman yangilash
+await fetch('/api/users/123', {
+  method: 'PATCH',
+  headers: { 'Content-Type': 'application/json' },
+  body: JSON.stringify({ name: 'Yangi Ism' }) // faqat ismni o'zgartirish
+});
+
+// DELETE
+await fetch('/api/users/123', { method: 'DELETE' });</pre>
+    </div>
+  </div>
+
+  <h2 id="2xx">HTTP Status Kodlar</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">http</span>
+      <button class="copy-btn" onclick="copyCode('code5')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code5">### 2xx — MUVAFFAQIYAT
+200 OK            # GET, PUT, PATCH muvaffaqiyatli
+201 Created       # POST — yangi resurs yaratildi
+204 No Content    # DELETE — o'chirildi, javob yo'q
+
+### 3xx — YO'NALTIRISH
+301 Moved Permanently  # Doimiy ko'chirish
+302 Found              # Vaqtinchalik ko'chirish
+304 Not Modified       # Kesh ishlatildi
+
+### 4xx — MIJOZ XATOSI
+400 Bad Request        # Noto'g'ri so'rov (validatsiya xatosi)
+401 Unauthorized       # Autentifikatsiya kerak
+403 Forbidden          # Ruxsat yo'q (autentifikatsiya bor, lekin huquq yo'q)
+404 Not Found          # Resurs topilmadi
+405 Method Not Allowed # Bu URL da bu metod yo'q
+409 Conflict           # Ziddiyat (email allaqachon mavjud)
+422 Unprocessable      # Ma'lumot formati noto'g'ri
+429 Too Many Requests  # Rate limit oshib ketdi
+
+### 5xx — SERVER XATOSI
+500 Internal Server Error  # Umumiy server xatosi
+502 Bad Gateway            # Proksi xatosi
+503 Service Unavailable    # Server vaqtincha ishlamayapti</pre>
+    </div>
+  </div>
+
+  <h2 id="jwt">JWT Autentifikatsiya</h2>
+  <p>JWT (JSON Web Token) — API autentifikatsiyasining eng keng tarqalgan usuli:</p>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">javascript</span>
+      <button class="copy-btn" onclick="copyCode('code6')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code6">// 1. LOGIN — token olish
+const login = async () => {
+  const res = await fetch('/api/auth/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email: 'ali@gmail.com', password: '1234' })
+  });
+  const { token } = await res.json();
+  localStorage.setItem('token', token);
+  // token: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9..."
+};
+
+// 2. TOKEN BILAN SO'ROV
+const getProfile = async () => {
+  const token = localStorage.getItem('token');
+  const res = await fetch('/api/users/me', {
+    headers: { 'Authorization': `Bearer ${token}` }
+  });
+  return res.json();
+};
+
+// Node.js da JWT yaratish (jsonwebtoken)
+const jwt = require('jsonwebtoken');
+
+// Token yaratish
+const token = jwt.sign(
+  { userId: 42, role: 'admin' },   // payload
+  process.env.JWT_SECRET,           // maxfiy kalit
+  { expiresIn: '7d' }              // muddati
+);
+
+// Tokenni tekshirish
+const decoded = jwt.verify(token, process.env.JWT_SECRET);
+console.log(decoded); // { userId: 42, role: 'admin', iat: ..., exp: ... }</pre>
+    </div>
+  </div>
+
+  <h2 id="cors">CORS</h2>
+  <p>CORS (Cross-Origin Resource Sharing) — boshqa domaindan API ga so'rov yuborishga ruxsat berish:</p>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">javascript</span>
+      <button class="copy-btn" onclick="copyCode('code7')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code7">// Express.js da CORS sozlash
+const cors = require('cors');
+
+// Barcha domenlar uchun (development)
+app.use(cors());
+
+// Faqat ruxsat etilgan domenlar (production)
+app.use(cors({
+  origin: ['https://myapp.uz', 'https://www.myapp.uz'],
+  methods: ['GET', 'POST', 'PUT', 'DELETE'],
+  allowedHeaders: ['Content-Type', 'Authorization'],
+  credentials: true  // cookie/session uchun
+}));
+
+// HTTP sarlavhalari qo'lda qo'shish
+app.use((req, res, next) => {
+  res.header('Access-Control-Allow-Origin', 'https://myapp.uz');
+  res.header('Access-Control-Allow-Methods', 'GET,POST,PUT,DELETE');
+  res.header('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+  next();
+});</pre>
+    </div>
+  </div>
+
+  <h2 id="pagination">Pagination va Filtering</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">http</span>
+      <button class="copy-btn" onclick="copyCode('code8')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code8"># Pagination (sahifalash)
+GET /api/users?page=2&limit=20
+GET /api/users?offset=40&limit=20
+
+# Javob formati
+{
+  "data": [...],
+  "pagination": {
+    "total": 150,
+    "page": 2,
+    "limit": 20,
+    "totalPages": 8,
+    "hasNext": true,
+    "hasPrev": true
+  }
+}
+
+# Filtering (filtrlash)
+GET /api/products?category=electronics&minPrice=100&maxPrice=500
+GET /api/users?role=admin&status=active
+
+# Sorting (tartiblash)
+GET /api/products?sortBy=price&order=asc
+GET /api/users?sortBy=createdAt&order=desc
+
+# Qidirish
+GET /api/products?search=iphone
+
+# Maydonlarni tanlash (sparse fieldsets)
+GET /api/users?fields=id,name,email</pre>
+    </div>
+  </div>
+
+  <h2 id="best-practices">Best Practices</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">javascript</span>
+      <button class="copy-btn" onclick="copyCode('code9')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code9">// ✅ 1. Izchil xato javob formati
+{
+  "error": {
+    "code": "VALIDATION_ERROR",
+    "message": "Email noto'g'ri formatda",
+    "field": "email"
+  }
+}
+
+// ✅ 2. Versioning
+// URL: /api/v1/users
+// Header: Accept: application/vnd.myapi.v1+json
+
+// ✅ 3. Rate Limiting sarlavhalari
+// X-RateLimit-Limit: 100
+// X-RateLimit-Remaining: 95
+// X-RateLimit-Reset: 1699200000
+
+// ✅ 4. Idempotency — bir xil natija
+// GET har doim bir xil natija
+// PUT bir xil so'rovni qayta yuborsangiz ham bir xil holat
+// DELETE — o'chirilgan narsani yana o'chirish 404 emas, 204
+
+// ✅ 5. HTTPS majburiy (hech qachon HTTP)
+// ✅ 6. Parollarni hech qachon javobda qaytarma
+// ✅ 7. So'rovlarni validatsiya qil (server tomonda)
+// ✅ 8. Katta fayllar uchun streaming ishlet</pre>
+    </div>
+  </div>
+
+  <!-- Quiz -->
+  <div class="quiz-box">
+    <div class="quiz-q">🧠 Yangi resurs muvaffaqiyatli yaratilganda qaysi HTTP status kodi qaytariladi?</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'q1')">200 OK</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, true, 'q1')">201 Created</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'q1')">204 No Content</div>
+    <div class="quiz-result" id="q1"></div>
+  </div>
+
+  <div class="nav-btns">
+    <a href="linux.html" class="btn-prev">← Linux</a>
+    <a href="../index.html" class="btn-next">🏠 Bosh sahifa →</a>
+  </div>
+</main>
+<aside class="right-panel">
+  <div class="rp-title">📊 Kurs bo'limlari</div>
+  <div class="rp-section">Frontend</div>
+  <a href="html.html" class="topic-pill">HTML</a>
+  <a href="css.html" class="topic-pill">CSS</a>
+  <a href="javascript.html" class="topic-pill">JavaScript</a>
+  <a href="react.html" class="topic-pill">React</a>
+  <a href="vue.html" class="topic-pill">Vue.js</a>
+  <a href="bootstrap.html" class="topic-pill">Bootstrap</a>
+  <a href="typescript.html" class="topic-pill">TypeScript</a>
+  <a href="jquery.html" class="topic-pill">jQuery</a>
+  <div class="rp-section">Backend</div>
+  <a href="python.html" class="topic-pill">Python</a>
+  <a href="nodejs.html" class="topic-pill">Node.js</a>
+  <a href="php.html" class="topic-pill">PHP</a>
+  <a href="java.html" class="topic-pill">Java</a>
+  <a href="django.html" class="topic-pill">Django</a>
+  <a href="cpp.html" class="topic-pill">C++</a>
+  <a href="csharp.html" class="topic-pill">C#</a>
+  <div class="rp-section">Ma'lumotlar Bazasi</div>
+  <a href="sql.html" class="topic-pill">SQL</a>
+  <a href="mongodb.html" class="topic-pill">MongoDB</a>
+  <a href="postgresql.html" class="topic-pill">PostgreSQL</a>
+  <a href="redis.html" class="topic-pill">Redis</a>
+  <div class="rp-section">DevOps</div>
+  <a href="git.html" class="topic-pill">Git & GitHub</a>
+  <a href="docker.html" class="topic-pill">Docker</a>
+  <a href="linux.html" class="topic-pill">Linux</a>
+  <a href="restapi.html" class="topic-pill active-pill">REST API ✓</a>
+</aside>
+</div>
+<footer style="text-align:center;padding:20px;color:#888;font-size:13px;">© 2024 W3Learn — Barcha huquqlar himoyalangan</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

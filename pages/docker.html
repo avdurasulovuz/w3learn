@@ -1,0 +1,425 @@
+﻿<!DOCTYPE html>
+<html lang="uz">
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Docker Darslari – W3Learn</title>
+<link rel="stylesheet" href="../css/style.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"/>
+<style>
+.cat-label{font-size:11px;font-weight:700;padding:0 4px;}
+.cat-fe{color:#04AA6D;}.cat-be{color:#2196F3;}.cat-db{color:#FF9800;}.cat-dv{color:#9C27B0;}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="logo">W3<span>Learn</span></a>
+  <nav class="top-nav">
+    <span class="cat-label cat-fe">Frontend:</span>
+    <a href="html.html">HTML</a><a href="css.html">CSS</a><a href="javascript.html">JavaScript</a>
+    <a href="react.html">React</a><a href="vue.html">Vue</a><a href="bootstrap.html">Bootstrap</a><a href="typescript.html">TypeScript</a><a href="jquery.html">jQuery</a>
+    <span class="cat-label cat-be">Backend:</span>
+    <a href="python.html">Python</a><a href="nodejs.html">Node.js</a><a href="php.html">PHP</a><a href="java.html">Java</a><a href="django.html">Django</a><a href="cpp.html">C++</a><a href="csharp.html">C#</a>
+    <span class="cat-label cat-db">DB:</span>
+    <a href="sql.html">SQL</a><a href="mongodb.html">MongoDB</a><a href="postgresql.html">PostgreSQL</a><a href="redis.html">Redis</a>
+    <span class="cat-label cat-dv">DevOps:</span>
+    <a href="git.html">Git</a><a href="docker.html">Docker</a><a href="linux.html">Linux</a><a href="restapi.html">REST API</a>
+  </nav>
+  <div style="display:flex;align-items:center;gap:6px;margin-right:8px;"><a href="../editor.html" style="background:rgba(4,170,109,0.15);color:var(--green-light);padding:4px 8px;border-radius:6px;font-size:12px;font-weight:700;text-decoration:none;"><i class="fa-solid fa-code"></i> Editor</a><a href="../certificate.html" style="background:rgba(255,183,77,0.15);color:#FFB74D;padding:4px 8px;border-radius:6px;font-size:12px;font-weight:700;text-decoration:none;"><i class="fa-solid fa-award"></i> Sertifikat</a></div><div class="search-wrap"><input type="text" id="searchInput" placeholder="Qidirish..."/><button onclick="doSearch()">🔍</button></div>
+  <button class="dark-btn" id="darkBtn">🌙</button>
+</header>
+<div class="layout">
+<aside class="sidebar">
+  <div class="sb-header">🐳 Docker</div>
+  <div class="sb-section">Kirish</div>
+  <ul>
+    <li><a href="#kirish" class="active">Docker Nima?</a></li>
+    <li><a href="#install">O'rnatish</a></li>
+    <li><a href="#arxitektura">Arxitektura</a></li>
+    <li><a href="#terminology">Atamalar</a></li>
+  </ul>
+  <div class="sb-section">Image</div>
+  <ul>
+    <li><a href="#image-nima">Image Nima?</a></li>
+    <li><a href="#pull">docker pull</a></li>
+    <li><a href="#images">docker images</a></li>
+    <li><a href="#rmi">docker rmi</a></li>
+  </ul>
+  <div class="sb-section">Container</div>
+  <ul>
+    <li><a href="#run">docker run</a></li>
+    <li><a href="#ps">docker ps</a></li>
+    <li><a href="#stop">docker stop / rm</a></li>
+    <li><a href="#exec">docker exec</a></li>
+    <li><a href="#logs">docker logs</a></li>
+  </ul>
+  <div class="sb-section">Dockerfile</div>
+  <ul>
+    <li><a href="#dockerfile">Dockerfile Nima?</a></li>
+    <li><a href="#instructions">Ko'rsatmalar</a></li>
+    <li><a href="#build">docker build</a></li>
+    <li><a href="#multistage">Multi-stage Build</a></li>
+  </ul>
+  <div class="sb-section">Volumes & Networks</div>
+  <ul>
+    <li><a href="#volumes">Volumes</a></li>
+    <li><a href="#bind-mount">Bind Mounts</a></li>
+    <li><a href="#networks">Networks</a></li>
+  </ul>
+  <div class="sb-section">Docker Compose</div>
+  <ul>
+    <li><a href="#compose">Compose Nima?</a></li>
+    <li><a href="#compose-file">docker-compose.yml</a></li>
+    <li><a href="#compose-cmds">Compose Buyruqlari</a></li>
+  </ul>
+  <div class="sb-section">Ilg'or</div>
+  <ul>
+    <li><a href="#registry">Docker Hub</a></li>
+    <li><a href="#push">Image Yuklash</a></li>
+    <li><a href="#best-practices">Best Practices</a></li>
+  </ul>
+</aside>
+<main class="main">
+  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">Docker</a> › Docker Nima?</div>
+  <h1 id="kirish">Docker Nima?</h1>
+  <div class="meta-tags">
+    <span class="tag tag-green">⏱ 10 daqiqa</span>
+    <span class="tag tag-blue">🟡 O'rta</span>
+    <span class="tag tag-orange">👁 14,800 marta ko'rilgan</span>
+  </div>
+  <p><strong>Docker</strong> — ilovalarni konteynerlar ichida ishga tushirish imkonini beruvchi platforma. Konteyner — ilovangiz va uning barcha bog'liqliklari (libraries, configs) birgalikda joylashgan izolyatsiyalangan muhit.</p>
+  <p>Docker bilan "menda ishladi, serverda ishlamadi" muammosi yo'qoladi — chunki muhit hamma joyda bir xil bo'ladi.</p>
+  <div class="note">💡 <strong>VM vs Docker:</strong> Virtual Mashina butun OS ni o'z ichiga oladi (GB). Docker esa faqat ilovani va uning bog'liqliklarini saqlaydi (MB). Docker ancha yengil va tez.</div>
+
+  <h2 id="install">Docker O'rnatish</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">bash</span>
+      <button class="copy-btn" onclick="copyCode('code1')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code1"># Ubuntu ga o'rnatish
+sudo apt update
+sudo apt install docker.io -y
+
+# Xizmatni ishga tushirish
+sudo systemctl start docker
+sudo systemctl enable docker
+
+# Foydalanuvchiga ruxsat berish (sudo siz)
+sudo usermod -aG docker $USER
+newgrp docker
+
+# Tekshirish
+docker --version
+# Docker version 24.x.x
+
+docker run hello-world
+# Hello from Docker! — muvaffaqiyatli!</pre>
+    </div>
+  </div>
+
+  <h2 id="terminology">Asosiy Atamalar</h2>
+  <ul>
+    <li>🖼️ <strong>Image</strong> — ilovaning "qolipi" (blueprint). O'zgarmas.</li>
+    <li>📦 <strong>Container</strong> — Image dan yaratilgan ishlaydigan nusxa.</li>
+    <li>📄 <strong>Dockerfile</strong> — Image yaratish uchun ko'rsatmalar fayli.</li>
+    <li>🌐 <strong>Registry</strong> — Image lar saqlanadigan omborxona (Docker Hub).</li>
+    <li>🔗 <strong>Volume</strong> — konteyner o'chirilsa ham qoladigan doimiy xotira.</li>
+    <li>🕸️ <strong>Network</strong> — konteynerlar o'rtasidagi aloqa tarmog'i.</li>
+  </ul>
+
+  <h2 id="run">docker run — Konteyner Ishga Tushirish</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">bash</span>
+      <button class="copy-btn" onclick="copyCode('code2')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code2"># Oddiy ishga tushirish
+docker run nginx
+
+# Fon rejimida (-d = detached)
+docker run -d nginx
+
+# Port ulash (host:konteyner)
+docker run -d -p 8080:80 nginx
+# Brauzerda: http://localhost:8080
+
+# Nom berish
+docker run -d --name myweb -p 8080:80 nginx
+
+# Muhit o'zgaruvchilari (-e)
+docker run -d \
+  --name mydb \
+  -e POSTGRES_PASSWORD=secret \
+  -e POSTGRES_DB=myapp \
+  -p 5432:5432 \
+  postgres
+
+# Interaktiv rejim (-it)
+docker run -it ubuntu bash</pre>
+    </div>
+  </div>
+
+  <h2 id="ps">Konteynerlarni Boshqarish</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">bash</span>
+      <button class="copy-btn" onclick="copyCode('code3')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code3"># Ishlaydigan konteynerlar
+docker ps
+
+# Barcha konteynerlar (to'xtatilganlar ham)
+docker ps -a
+
+# Konteynerni to'xtatish
+docker stop myweb
+
+# Konteynerni o'chirish
+docker rm myweb
+
+# Bir vaqtda to'xtatish va o'chirish
+docker rm -f myweb
+
+# Konteyner ichiga kirish
+docker exec -it myweb bash
+
+# Loglarni ko'rish
+docker logs myweb
+docker logs -f myweb   # real-vaqtli
+
+# Konteyner haqida ma'lumot
+docker inspect myweb</pre>
+    </div>
+  </div>
+
+  <h2 id="dockerfile">Dockerfile Yozish</h2>
+  <p>Dockerfile — o'z Image ingizni yaratish uchun ko'rsatmalar to'plami:</p>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">dockerfile</span>
+      <button class="copy-btn" onclick="copyCode('code4')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code4"># Node.js ilovasi uchun Dockerfile
+
+# Asosiy image (FROM)
+FROM node:18-alpine
+
+# Ish papkasi (WORKDIR)
+WORKDIR /app
+
+# Fayllarni nusxalash (COPY)
+COPY package*.json ./
+
+# Buyruq bajarish (RUN)
+RUN npm install --production
+
+# Qolgan fayllarni nusxalash
+COPY . .
+
+# Port ochish (EXPOSE)
+EXPOSE 3000
+
+# Muhit o'zgaruvchisi
+ENV NODE_ENV=production
+
+# Ishga tushirish buyrug'i (CMD)
+CMD ["node", "server.js"]</pre>
+    </div>
+  </div>
+
+  <h2 id="build">docker build</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">bash</span>
+      <button class="copy-btn" onclick="copyCode('code5')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code5"># Image yaratish (-t = tag/nom)
+docker build -t myapp:1.0 .
+
+# Dockerfile boshqa joyda bo'lsa
+docker build -t myapp -f ./docker/Dockerfile .
+
+# Yaratilgan imagelarni ko'rish
+docker images
+
+# Image ni ishga tushirish
+docker run -d -p 3000:3000 myapp:1.0
+
+# Image ni o'chirish
+docker rmi myapp:1.0</pre>
+    </div>
+  </div>
+
+  <h2 id="volumes">Volumes</h2>
+  <p>Volume — konteyner o'chirilganda ham ma'lumotlar saqlanib qoladi:</p>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">bash</span>
+      <button class="copy-btn" onclick="copyCode('code6')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code6"># Volume yaratish
+docker volume create mydata
+
+# Volume bilan konteyner ishga tushirish
+docker run -d \
+  --name mydb \
+  -v mydata:/var/lib/postgresql/data \
+  postgres
+
+# Bind mount (lokal papkani ulash)
+docker run -d \
+  -v $(pwd)/html:/usr/share/nginx/html \
+  -p 8080:80 \
+  nginx
+
+# Barcha volumelarni ko'rish
+docker volume ls
+
+# Volume ni o'chirish
+docker volume rm mydata</pre>
+    </div>
+  </div>
+
+  <h2 id="compose">Docker Compose</h2>
+  <p>Docker Compose — bir nechta konteynerlarni birgalikda boshqarish vositasi:</p>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">yaml</span>
+      <button class="copy-btn" onclick="copyCode('code7')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code7"># docker-compose.yml
+version: '3.8'
+
+services:
+  # Web ilovasi
+  web:
+    build: .
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - DATABASE_URL=postgres://user:pass@db:5432/myapp
+    depends_on:
+      - db
+      - redis
+    volumes:
+      - .:/app
+
+  # PostgreSQL
+  db:
+    image: postgres:15
+    environment:
+      POSTGRES_USER: user
+      POSTGRES_PASSWORD: pass
+      POSTGRES_DB: myapp
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  # Redis
+  redis:
+    image: redis:7-alpine
+    ports:
+      - "6379:6379"
+
+volumes:
+  pgdata:</pre>
+    </div>
+  </div>
+
+  <h2 id="compose-cmds">Compose Buyruqlari</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">bash</span>
+      <button class="copy-btn" onclick="copyCode('code8')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code8"># Barcha xizmatlarni ishga tushirish
+docker compose up -d
+
+# Loglarni ko'rish
+docker compose logs -f
+
+# Xizmat holatini ko'rish
+docker compose ps
+
+# Xizmatni qayta ishga tushirish
+docker compose restart web
+
+# Barcha xizmatlarni to'xtatish
+docker compose down
+
+# To'xtatish + volume lar o'chirish
+docker compose down -v
+
+# Faqat bitta xizmat
+docker compose up -d db</pre>
+    </div>
+  </div>
+
+  <h2 id="best-practices">Best Practices</h2>
+  <ul>
+    <li>✅ <strong>Alpine</strong> asosli imagelardan foydalaning — kichikroq hajm</li>
+    <li>✅ <strong>.dockerignore</strong> fayl yarating — node_modules, .git ni chiqarib tashlang</li>
+    <li>✅ <strong>Multi-stage build</strong> — build va runtime imageni ajrating</li>
+    <li>✅ <strong>Bir konteyner — bir xizmat</strong> printsipiga rioya qiling</li>
+    <li>✅ Sirlarni (parollarni) <strong>muhit o'zgaruvchilari</strong> orqali uzating</li>
+    <li>✅ <strong>Doimiy ma'lumotlar</strong> uchun Volume ishlatng, konteyner ichiga emas</li>
+    <li>✅ Layer cachingdan foydalanish uchun <code>COPY package.json</code> ni avval qiling</li>
+  </ul>
+
+  <!-- Quiz -->
+  <div class="quiz-box">
+    <div class="quiz-q">🧠 Docker Image va Container farqi nima?</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'q1')">Ikkalasi bir xil narsa</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, true, 'q1')">Image — qolip (blueprint), Container — ishlaydigan nusxa</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'q1')">Container — qolip, Image — ishlaydigan nusxa</div>
+    <div class="quiz-result" id="q1"></div>
+  </div>
+
+  <div class="nav-btns">
+    <a href="git.html" class="btn-prev">← Git & GitHub</a>
+    <a href="linux.html" class="btn-next">Linux →</a>
+  </div>
+</main>
+<aside class="right-panel">
+  <div class="rp-title">📊 Kurs bo'limlari</div>
+  <div class="rp-section">Frontend</div>
+  <a href="html.html" class="topic-pill">HTML</a>
+  <a href="css.html" class="topic-pill">CSS</a>
+  <a href="javascript.html" class="topic-pill">JavaScript</a>
+  <a href="react.html" class="topic-pill">React</a>
+  <a href="vue.html" class="topic-pill">Vue.js</a>
+  <a href="bootstrap.html" class="topic-pill">Bootstrap</a>
+  <a href="typescript.html" class="topic-pill">TypeScript</a>
+  <a href="jquery.html" class="topic-pill">jQuery</a>
+  <div class="rp-section">Backend</div>
+  <a href="python.html" class="topic-pill">Python</a>
+  <a href="nodejs.html" class="topic-pill">Node.js</a>
+  <a href="php.html" class="topic-pill">PHP</a>
+  <a href="java.html" class="topic-pill">Java</a>
+  <a href="django.html" class="topic-pill">Django</a>
+  <a href="cpp.html" class="topic-pill">C++</a>
+  <a href="csharp.html" class="topic-pill">C#</a>
+  <div class="rp-section">Ma'lumotlar Bazasi</div>
+  <a href="sql.html" class="topic-pill">SQL</a>
+  <a href="mongodb.html" class="topic-pill">MongoDB</a>
+  <a href="postgresql.html" class="topic-pill">PostgreSQL</a>
+  <a href="redis.html" class="topic-pill">Redis</a>
+  <div class="rp-section">DevOps</div>
+  <a href="git.html" class="topic-pill">Git & GitHub</a>
+  <a href="docker.html" class="topic-pill active-pill">Docker ✓</a>
+  <a href="linux.html" class="topic-pill">Linux</a>
+  <a href="restapi.html" class="topic-pill">REST API</a>
+</aside>
+</div>
+<footer style="text-align:center;padding:20px;color:#888;font-size:13px;">© 2024 W3Learn — Barcha huquqlar himoyalangan</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

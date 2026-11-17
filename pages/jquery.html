@@ -1,0 +1,208 @@
+﻿<!DOCTYPE html>
+<html lang="uz">
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>jQuery Darslari – W3Learn</title>
+<link rel="stylesheet" href="../css/style.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"/>
+<style>.cat-label{font-size:11px;font-weight:700;padding:0 4px;}.cat-fe{color:#04AA6D;}.cat-be{color:#2196F3;}.cat-db{color:#FF9800;}</style>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="logo">W3<span>Learn</span></a>
+  <nav class="top-nav">
+    <span class="cat-label cat-fe">Frontend:</span>
+    <a href="html.html">HTML</a><a href="css.html">CSS</a><a href="javascript.html">JavaScript</a>
+    <a href="react.html">React</a><a href="vue.html">Vue</a><a href="bootstrap.html">Bootstrap</a><a href="typescript.html">TypeScript</a><a href="jquery.html" class="active">jQuery</a>
+    <span class="cat-label cat-be">Backend:</span>
+    <a href="python.html">Python</a><a href="nodejs.html">Node.js</a><a href="php.html">PHP</a><a href="java.html">Java</a><a href="django.html">Django</a><a href="cpp.html">C++</a><a href="csharp.html">C#</a>
+    <span class="cat-label cat-db">DB:</span>
+    <a href="sql.html">SQL</a><a href="mongodb.html">MongoDB</a><a href="postgresql.html">PostgreSQL</a>
+  </nav>
+  <div style="display:flex;align-items:center;gap:6px;margin-right:8px;"><a href="../editor.html" style="background:rgba(4,170,109,0.15);color:var(--green-light);padding:4px 8px;border-radius:6px;font-size:12px;font-weight:700;text-decoration:none;"><i class="fa-solid fa-code"></i> Editor</a><a href="../certificate.html" style="background:rgba(255,183,77,0.15);color:#FFB74D;padding:4px 8px;border-radius:6px;font-size:12px;font-weight:700;text-decoration:none;"><i class="fa-solid fa-award"></i> Sertifikat</a></div><div class="search-wrap"><input type="text" id="searchInput" placeholder="Qidirish..."/><button onclick="doSearch()">🔍</button></div>
+  <button class="dark-btn" id="darkBtn">🌙</button>
+</header>
+<div class="layout">
+<aside class="sidebar">
+  <div class="sb-header">💲 jQuery Darslari</div>
+  <div class="sb-section">Kirish</div>
+  <ul>
+    <li><a href="#kirish" class="active">jQuery Nima?</a></li>
+    <li><a href="#install">CDN va NPM</a></li>
+    <li><a href="#sintaksis">Asosiy Sintaksis</a></li>
+  </ul>
+  <div class="sb-section">Selektorlar</div>
+  <ul>
+    <li><a href="#element-sel">Element Selektor</a></li>
+    <li><a href="#id-sel">ID Selektor</a></li>
+    <li><a href="#class-sel">Class Selektor</a></li>
+    <li><a href="#filter-sel">Filter Selektori</a></li>
+  </ul>
+  <div class="sb-section">DOM</div>
+  <ul>
+    <li><a href="#html-text">html() va text()</a></li>
+    <li><a href="#val">val()</a></li>
+    <li><a href="#attr">attr() va prop()</a></li>
+    <li><a href="#css">css()</a></li>
+    <li><a href="#addClass">addClass / removeClass</a></li>
+    <li><a href="#append">append / prepend</a></li>
+    <li><a href="#remove">remove / empty</a></li>
+  </ul>
+  <div class="sb-section">Hodisalar</div>
+  <ul>
+    <li><a href="#click">click()</a></li>
+    <li><a href="#on">on()</a></li>
+    <li><a href="#hover">hover()</a></li>
+    <li><a href="#submit">submit()</a></li>
+    <li><a href="#keypress">keypress()</a></li>
+  </ul>
+  <div class="sb-section">Effektlar</div>
+  <ul>
+    <li><a href="#hide">hide() va show()</a></li>
+    <li><a href="#toggle">toggle()</a></li>
+    <li><a href="#fadein">fadeIn / fadeOut</a></li>
+    <li><a href="#slidein">slideUp / slideDown</a></li>
+    <li><a href="#animate">animate()</a></li>
+  </ul>
+  <div class="sb-section">AJAX</div>
+  <ul>
+    <li><a href="#ajax">$.ajax()</a></li>
+    <li><a href="#get">$.get()</a></li>
+    <li><a href="#post">$.post()</a></li>
+    <li><a href="#getjson">$.getJSON()</a></li>
+  </ul>
+</aside>
+<main class="main">
+  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">jQuery</a> › jQuery Nima?</div>
+  <h1 id="kirish">jQuery Nima?</h1>
+  <div class="meta-tags">
+    <span class="tag tag-green">⏱ 6 daqiqa</span>
+    <span class="tag tag-blue">🟢 Boshlang'ich</span>
+    <span class="tag tag-orange">👁 7,340 marta ko'rilgan</span>
+  </div>
+  <p><strong>jQuery</strong> — DOM boshqaruvi, hodisalar va AJAX ni osonlashtiruvchi JavaScript kutubxona. "Write less, do more" — shiorida ishlaydi.</p>
+  <div class="note">💡 <strong>Eslatma:</strong> Zamonaviy loyihalarda React/Vue afzalroq, ammo jQuery hali ko'plab saytlarda ishlatiladi.</div>
+
+  <h2 id="sintaksis">Asosiy Sintaksis</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar"><span class="code-lang">HTML + jQuery</span>
+      <div class="code-actions">
+        <button class="btn-copy" onclick="copyCode('code1')">📋 Nusxa</button>
+        <button class="btn-run" onclick="runCode('code1','res1')">▶ Run</button>
+      </div>
+    </div>
+    <div class="code-body"><pre id="code1">&lt;script src="https://code.jquery.com/jquery-3.7.0.min.js"&gt;&lt;/script&gt;
+
+&lt;p id="matn"&gt;Boshlang'ich matn&lt;/p&gt;
+&lt;button id="btn1"&gt;Matnni o'zgartir&lt;/button&gt;
+&lt;button id="btn2"&gt;Yashir/Ko'rsat&lt;/button&gt;
+&lt;button id="btn3"&gt;Rang o'zgartir&lt;/button&gt;
+
+&lt;script&gt;
+$(document).ready(function() {
+
+  // Matnni o'zgartirish
+  $("#btn1").click(function() {
+    $("#matn").text("jQuery bilan o'zgardi! ✅");
+  });
+
+  // Yashirish / Ko'rsatish
+  $("#btn2").click(function() {
+    $("#matn").toggle(400);
+  });
+
+  // CSS o'zgartirish
+  $("#btn3").click(function() {
+    $("#matn").css({
+      "color": "#04AA6D",
+      "font-weight": "bold",
+      "font-size": "20px"
+    });
+  });
+
+});
+&lt;/script&gt;</pre></div>
+  </div>
+  <div class="result-box" id="res1"><div class="result-label">📺 Natija:</div><iframe class="result-iframe" style="min-height:100px;"></iframe></div>
+
+  <h2 id="ajax">AJAX bilan ma'lumot olish</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar"><span class="code-lang">jQuery AJAX</span>
+      <div class="code-actions"><button class="btn-copy" onclick="copyCode('code2')">📋 Nusxa</button></div>
+    </div>
+    <div class="code-body"><pre id="code2">// $.get() — GET so'rov
+$.get("https://jsonplaceholder.typicode.com/posts/1", function(data) {
+  console.log("Sarlavha:", data.title);
+});
+
+// $.ajax() — to'liq nazorat
+$.ajax({
+  url: "https://api.example.com/foydalanuvchilar",
+  method: "POST",
+  contentType: "application/json",
+  data: JSON.stringify({ ism: "Ali", email: "ali@test.com" }),
+  success: function(javob) {
+    console.log("Muvaffaqiyat:", javob);
+    $("#natija").html("&lt;p&gt;Muvaffaqiyatli yuborildi!&lt;/p&gt;");
+  },
+  error: function(xhr) {
+    console.error("Xato:", xhr.status);
+  }
+});</pre></div>
+  </div>
+
+  <div class="quiz-box">
+    <div class="quiz-q">🧪 Test: jQuery da elementni tanlash uchun qaysi belgi ishlatiladi?</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qr1')">@ belgisi</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, true, 'qr1')">$ belgisi</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qr1')"># belgisi</div>
+    <div class="quiz-result" id="qr1"></div>
+  </div>
+  <div class="nav-btns">
+    <a href="typescript.html" class="btn-prev">← TypeScript</a>
+    <a href="python.html" class="btn-next">Python →</a>
+  </div>
+</main>
+<aside class="right-panel">
+  <div class="rp-title">📈 Progress</div>
+  <div class="progress-bar-wrap"><div class="progress-bar-fill" id="progressFill" style="width:5%"></div></div>
+  <div class="progress-text" id="progressTxt">1 / 20 dars</div>
+  <div class="rp-title">🎯 Frontend</div>
+  <a href="html.html" class="topic-pill" data-key="html">HTML</a>
+  <a href="css.html" class="topic-pill" data-key="css">CSS</a>
+  <a href="javascript.html" class="topic-pill" data-key="js">JavaScript</a>
+  <a href="react.html" class="topic-pill" data-key="react">React</a>
+  <a href="vue.html" class="topic-pill" data-key="vue">Vue.js</a>
+  <a href="bootstrap.html" class="topic-pill" data-key="bootstrap">Bootstrap</a>
+  <a href="typescript.html" class="topic-pill" data-key="ts">TypeScript</a>
+  <a href="jquery.html" class="topic-pill done" data-key="jquery">jQuery ✓</a>
+  <div class="rp-title">⚙️ Backend</div>
+  <a href="python.html" class="topic-pill" data-key="python">Python</a>
+  <a href="nodejs.html" class="topic-pill" data-key="nodejs">Node.js</a>
+  <a href="php.html" class="topic-pill" data-key="php">PHP</a>
+  <a href="java.html" class="topic-pill" data-key="java">Java</a>
+  <a href="django.html" class="topic-pill" data-key="django">Django</a>
+  <a href="cpp.html" class="topic-pill" data-key="cpp">C++</a>
+  <a href="csharp.html" class="topic-pill" data-key="csharp">C#</a>
+  <div class="rp-title">🗄️ Database</div>
+  <a href="sql.html" class="topic-pill" data-key="sql">SQL</a>
+  <a href="mongodb.html" class="topic-pill" data-key="mongo">MongoDB</a>
+  <a href="postgresql.html" class="topic-pill" data-key="pg">PostgreSQL</a>
+  <a href="redis.html" class="topic-pill" data-key="redis">Redis</a>
+  <div class="rp-title">🛠️ DevOps</div>
+  <a href="git.html" class="topic-pill" data-key="git">Git</a>
+  <a href="docker.html" class="topic-pill" data-key="docker">Docker</a>
+  <a href="linux.html" class="topic-pill" data-key="linux">Linux</a>
+  <a href="restapi.html" class="topic-pill" data-key="api">REST API</a>
+</aside>
+</div>
+<footer><div style="text-align:center;color:#aaa;font-size:13px;padding:28px;">
+  <p>© 2026 W3Learn — O'zbek dasturchilar uchun ta'lim platformasi</p>
+  <div style="display:flex;justify-content:center;gap:20px;margin-top:10px;">
+    <a href="../index.html" style="color:#04AA6D;">Bosh sahifa</a>
+    <a href="#" style="color:#04AA6D;">Bog'lanish</a>
+  </div>
+</div></footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

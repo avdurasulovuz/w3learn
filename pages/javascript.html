@@ -1,0 +1,441 @@
+﻿<!DOCTYPE html>
+<html lang="uz">
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>JavaScript Darslari – W3Learn</title>
+<link rel="stylesheet" href="../css/style.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"/>
+<style>
+.cat-label{font-size:11px;font-weight:700;padding:0 4px;}
+.cat-fe{color:#04AA6D;}.cat-be{color:#2196F3;}.cat-db{color:#FF9800;}.cat-dv{color:#9C27B0;}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="logo">W3<span>Learn</span></a>
+  <nav class="top-nav">
+    <span class="cat-label cat-fe">Frontend:</span>
+    <a href="html.html">HTML</a><a href="css.html">CSS</a><a href="javascript.html">JavaScript</a>
+    <a href="react.html">React</a><a href="vue.html">Vue</a><a href="bootstrap.html">Bootstrap</a><a href="typescript.html">TypeScript</a><a href="jquery.html">jQuery</a>
+    <span class="cat-label cat-be">Backend:</span>
+    <a href="python.html">Python</a><a href="nodejs.html">Node.js</a><a href="php.html">PHP</a><a href="java.html">Java</a><a href="django.html">Django</a><a href="cpp.html">C++</a><a href="csharp.html">C#</a>
+    <span class="cat-label cat-db">DB:</span>
+    <a href="sql.html">SQL</a><a href="mongodb.html">MongoDB</a><a href="postgresql.html">PostgreSQL</a><a href="redis.html">Redis</a>
+    <span class="cat-label cat-dv">DevOps:</span>
+    <a href="git.html">Git</a><a href="docker.html">Docker</a><a href="linux.html">Linux</a><a href="restapi.html">REST API</a>
+  </nav>
+  <div style="display:flex;align-items:center;gap:6px;margin-right:8px;"><a href="../editor.html" style="background:rgba(4,170,109,0.15);color:var(--green-light);padding:4px 8px;border-radius:6px;font-size:12px;font-weight:700;text-decoration:none;"><i class="fa-solid fa-code"></i> Editor</a><a href="../certificate.html" style="background:rgba(255,183,77,0.15);color:#FFB74D;padding:4px 8px;border-radius:6px;font-size:12px;font-weight:700;text-decoration:none;"><i class="fa-solid fa-award"></i> Sertifikat</a></div><div class="search-wrap"><input type="text" id="searchInput" placeholder="Qidirish..."/><button onclick="doSearch()">🔍</button></div>
+  <button class="dark-btn" id="darkBtn">🌙</button>
+</header>
+<div class="layout">
+<aside class="sidebar">
+  <div class="sb-header">⚡ JavaScript</div>
+  <div class="sb-section">Kirish</div>
+  <ul>
+    <li><a href="#kirish" class="active">JS Nima?</a></li>
+    <li><a href="#qoshtish">Qo'shish Usullari</a></li>
+    <li><a href="#console">Console</a></li>
+  </ul>
+  <div class="sb-section">O'zgaruvchilar</div>
+  <ul>
+    <li><a href="#var-let-const">var / let / const</a></li>
+    <li><a href="#datatypes">Ma'lumot Turlari</a></li>
+    <li><a href="#typecoercion">Type Coercion</a></li>
+    <li><a href="#operators">Operatorlar</a></li>
+  </ul>
+  <div class="sb-section">Boshqaruv Oqimi</div>
+  <ul>
+    <li><a href="#if-else">if / else</a></li>
+    <li><a href="#switch">switch</a></li>
+    <li><a href="#for">for tsikli</a></li>
+    <li><a href="#while">while tsikli</a></li>
+    <li><a href="#break">break / continue</a></li>
+  </ul>
+  <div class="sb-section">Funksiyalar</div>
+  <ul>
+    <li><a href="#function">Function Declaration</a></li>
+    <li><a href="#arrow">Arrow Function</a></li>
+    <li><a href="#params">Parametrlar</a></li>
+    <li><a href="#scope">Scope</a></li>
+    <li><a href="#closure">Closure</a></li>
+    <li><a href="#hof">Higher-Order Funksiyalar</a></li>
+  </ul>
+  <div class="sb-section">Massivlar</div>
+  <ul>
+    <li><a href="#array">Array Asoslari</a></li>
+    <li><a href="#array-methods">map / filter / reduce</a></li>
+    <li><a href="#spread">Spread / Rest</a></li>
+    <li><a href="#destructuring">Destructuring</a></li>
+  </ul>
+  <div class="sb-section">Obyektlar</div>
+  <ul>
+    <li><a href="#object">Obyekt</a></li>
+    <li><a href="#methods">Metodlar</a></li>
+    <li><a href="#this">this</a></li>
+  </ul>
+  <div class="sb-section">OOP</div>
+  <ul>
+    <li><a href="#class">Class</a></li>
+    <li><a href="#inheritance">Meros (Inheritance)</a></li>
+    <li><a href="#prototype">Prototype</a></li>
+  </ul>
+  <div class="sb-section">DOM</div>
+  <ul>
+    <li><a href="#dom">DOM Nima?</a></li>
+    <li><a href="#select">Element Tanlash</a></li>
+    <li><a href="#manipulate">Manipulyatsiya</a></li>
+  </ul>
+  <div class="sb-section">Hodisalar</div>
+  <ul>
+    <li><a href="#events">addEventListener</a></li>
+    <li><a href="#event-types">Hodisa Turlari</a></li>
+    <li><a href="#bubbling">Bubbling</a></li>
+  </ul>
+  <div class="sb-section">Async JS</div>
+  <ul>
+    <li><a href="#callback">Callback</a></li>
+    <li><a href="#promise">Promise</a></li>
+    <li><a href="#async-await">async / await</a></li>
+    <li><a href="#fetch">Fetch API</a></li>
+  </ul>
+  <div class="sb-section">ES6+</div>
+  <ul>
+    <li><a href="#template">Template Literals</a></li>
+    <li><a href="#modules">Modullar</a></li>
+    <li><a href="#optional">Optional Chaining</a></li>
+    <li><a href="#nullish">Nullish Coalescing</a></li>
+  </ul>
+</aside>
+<main class="main">
+  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">JavaScript</a> › JS Nima?</div>
+  <h1 id="kirish">JavaScript Nima?</h1>
+  <div class="meta-tags">
+    <span class="tag tag-green">⏱ 10 daqiqa</span>
+    <span class="tag tag-blue">🟢 Boshlang'ich</span>
+    <span class="tag tag-orange">👁 42,100 marta ko'rilgan</span>
+  </div>
+  <p><strong>JavaScript</strong> — veb sahifalarni interaktiv qiluvchi dasturlash tili. Brauzerda to'g'ridan-to'g'ri ishlaydi. Node.js bilan server tomonda ham qo'llaniladi.</p>
+  <p>HTML — tuzilma, CSS — ko'rinish, JavaScript — xatti-harakat (behavior). Bu uchlik zamonaviy veb dasturlashning asosi.</p>
+  <div class="note">💡 <strong>Qiziq fakt:</strong> JavaScript Java bilan bog'liq emas. Brendan Eich tomonidan 1995-yilda 10 kunda yaratilgan!</div>
+
+  <h2 id="var-let-const">var / let / const</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">javascript</span>
+      <button class="copy-btn" onclick="copyCode('code1')">📋 Nusxa</button>
+      <button class="run-btn" onclick="runCode('code1','res1')">▶ Run</button>
+    </div>
+    <div class="code-body">
+      <pre id="code1">// let — o'zgaruvchan qiymat
+let ism = "Ali";
+ism = "Vali"; // mumkin
+
+// const — o'zgarmas qiymat
+const PI = 3.14159;
+// PI = 3; // Xato!
+
+// var — eski usul (scope muammolari bor)
+var yosh = 25;
+
+// Ma'lumot turlari
+let son = 42;           // number
+let matn = "Salom";    // string
+let mantiqiy = true;   // boolean
+let noma = null;       // null
+let aniqsiz;           // undefined
+let ob = { a: 1 };    // object
+let arr = [1, 2, 3];  // array
+
+console.log(typeof son);      // "number"
+console.log(typeof matn);     // "string"
+console.log(typeof mantiqiy); // "boolean"</pre>
+    </div>
+    <div class="result-box"><div class="result-label">Natija:</div><iframe class="result-iframe" id="res1"></iframe></div>
+  </div>
+
+  <h2 id="if-else">if / else / switch</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">javascript</span>
+      <button class="copy-btn" onclick="copyCode('code2')">📋 Nusxa</button>
+      <button class="run-btn" onclick="runCode('code2','res2')">▶ Run</button>
+    </div>
+    <div class="code-body">
+      <pre id="code2">// if-else
+let ball = 85;
+if (ball >= 90) {
+  document.write("A'lo");
+} else if (ball >= 70) {
+  document.write("Yaxshi");
+} else if (ball >= 50) {
+  document.write("Qoniqarli");
+} else {
+  document.write("Yaxon");
+}
+
+// Ternary operator
+let status = ball >= 50 ? "O'tdi ✅" : "O'tmadi ❌";
+document.write("<br>" + status);
+
+// switch
+let kun = "Dushanba";
+switch(kun) {
+  case "Dushanba": document.write("<br>Hafta boshi"); break;
+  case "Juma": document.write("<br>Hafta oxiri yaqin"); break;
+  default: document.write("<br>Oddiy kun");
+}</pre>
+    </div>
+    <div class="result-box"><div class="result-label">Natija:</div><iframe class="result-iframe" id="res2"></iframe></div>
+  </div>
+
+  <h2 id="arrow">Funksiyalar</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">javascript</span>
+      <button class="copy-btn" onclick="copyCode('code3')">📋 Nusxa</button>
+      <button class="run-btn" onclick="runCode('code3','res3')">▶ Run</button>
+    </div>
+    <div class="code-body">
+      <pre id="code3">// Function declaration
+function qosh(a, b) {
+  return a + b;
+}
+
+// Arrow function
+const kopayt = (a, b) => a * b;
+
+// Default parametr
+const salomlash = (ism = "Mehmon") => `Salom, ${ism}!`;
+
+// Rest parametr
+const yigindi = (...sonlar) => sonlar.reduce((s, n) => s + n, 0);
+
+document.write(qosh(5, 3) + "<br>");       // 8
+document.write(kopayt(4, 6) + "<br>");     // 24
+document.write(salomlash("Ali") + "<br>"); // Salom, Ali!
+document.write(salomlash() + "<br>");      // Salom, Mehmon!
+document.write(yigindi(1,2,3,4,5) + "<br>"); // 15</pre>
+    </div>
+    <div class="result-box"><div class="result-label">Natija:</div><iframe class="result-iframe" id="res3"></iframe></div>
+  </div>
+
+  <h2 id="array-methods">Massiv Metodlari</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">javascript</span>
+      <button class="copy-btn" onclick="copyCode('code4')">📋 Nusxa</button>
+      <button class="run-btn" onclick="runCode('code4','res4')">▶ Run</button>
+    </div>
+    <div class="code-body">
+      <pre id="code4">const sonlar = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+// map — har elementni o'zgartirish
+const kvadratlar = sonlar.map(n => n * n);
+document.write("Kvadratlar: " + kvadratlar + "<br>");
+
+// filter — shartga moslarni tanlash
+const juftlar = sonlar.filter(n => n % 2 === 0);
+document.write("Juft sonlar: " + juftlar + "<br>");
+
+// reduce — yig'indi
+const jami = sonlar.reduce((acc, n) => acc + n, 0);
+document.write("Yig'indisi: " + jami + "<br>");
+
+// find — birinchi moslashuvchi
+const topildi = sonlar.find(n => n > 5);
+document.write("5 dan katta: " + topildi + "<br>");
+
+// every / some
+const hammaBijum = sonlar.every(n => n > 0);
+document.write("Hammasi musbat: " + hammaBijum + "<br>");
+
+// includes
+document.write("7 bormi: " + sonlar.includes(7) + "<br>");</pre>
+    </div>
+    <div class="result-box"><div class="result-label">Natija:</div><iframe class="result-iframe" id="res4"></iframe></div>
+  </div>
+
+  <h2 id="class">OOP — Class</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">javascript</span>
+      <button class="copy-btn" onclick="copyCode('code5')">📋 Nusxa</button>
+      <button class="run-btn" onclick="runCode('code5','res5')">▶ Run</button>
+    </div>
+    <div class="code-body">
+      <pre id="code5">class Hayvon {
+  constructor(ism, ovoz) {
+    this.ism = ism;
+    this.ovoz = ovoz;
+  }
+  gapir() {
+    return `${this.ism} deydi: ${this.ovoz}!`;
+  }
+}
+
+class It extends Hayvon {
+  constructor(ism) {
+    super(ism, "Vov");
+  }
+  poygalamoq() {
+    return `${this.ism} yuguryapti!`;
+  }
+}
+
+const sharik = new It("Sharik");
+document.write(sharik.gapir() + "<br>");
+document.write(sharik.poygalamoq() + "<br>");
+document.write("Hayvonmi? " + (sharik instanceof Hayvon));</pre>
+    </div>
+    <div class="result-box"><div class="result-label">Natija:</div><iframe class="result-iframe" id="res5"></iframe></div>
+  </div>
+
+  <h2 id="dom">DOM Manipulyatsiya</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">javascript</span>
+      <button class="copy-btn" onclick="copyCode('code6')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code6">// Element tanlash
+const sarlavha = document.getElementById('title');
+const tugmalar = document.querySelectorAll('.btn');
+const birinchi = document.querySelector('p');
+
+// Matn o'zgartirish
+sarlavha.textContent = 'Yangi sarlavha';
+sarlavha.innerHTML = '<strong>Qalin sarlavha</strong>';
+
+// Style o'zgartirish
+sarlavha.style.color = 'red';
+sarlavha.style.fontSize = '24px';
+
+// Class qo'shish/olib tashlash
+sarlavha.classList.add('active');
+sarlavha.classList.remove('hidden');
+sarlavha.classList.toggle('dark');
+
+// Element yaratish
+const yangi = document.createElement('p');
+yangi.textContent = 'Yangi paragraf';
+document.body.appendChild(yangi);
+
+// Event listener
+document.getElementById('btn').addEventListener('click', () => {
+  alert('Bosildi!');
+});</pre>
+    </div>
+  </div>
+
+  <h2 id="async-await">async / await va Fetch</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">javascript</span>
+      <button class="copy-btn" onclick="copyCode('code7')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code7">// Promise
+const kuting = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+
+// async/await
+async function maʼlumotOl() {
+  try {
+    const javob = await fetch('https://jsonplaceholder.typicode.com/users/1');
+    
+    if (!javob.ok) {
+      throw new Error(`Xato: ${javob.status}`);
+    }
+    
+    const foydalanuvchi = await javob.json();
+    console.log(foydalanuvchi.name);
+    return foydalanuvchi;
+  } catch (xato) {
+    console.error('So'rov xatosi:', xato.message);
+  }
+}
+
+// Parallel so'rovlar
+const [users, posts] = await Promise.all([
+  fetch('/api/users').then(r => r.json()),
+  fetch('/api/posts').then(r => r.json())
+]);</pre>
+    </div>
+  </div>
+
+  <h2 id="modules">ES6 Modullar</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">javascript</span>
+      <button class="copy-btn" onclick="copyCode('code8')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code8">// utils.js — eksport
+export const qosh = (a, b) => a + b;
+export const ayir = (a, b) => a - b;
+export default class Hisob {
+  constructor(qiymat = 0) { this.qiymat = qiymat; }
+  qoshish(n) { this.qiymat += n; return this; }
+  natija() { return this.qiymat; }
+}
+
+// main.js — import
+import Hisob, { qosh, ayir } from './utils.js';
+
+console.log(qosh(5, 3));   // 8
+console.log(ayir(10, 4));  // 6
+
+const hisob = new Hisob(100);
+hisob.qoshish(50).qoshish(25);
+console.log(hisob.natija()); // 175</pre>
+    </div>
+  </div>
+
+  <!-- Quiz -->
+  <div class="quiz-box">
+    <div class="quiz-q">🧠 JavaScript da qayta belgilab bo'lmaydigan o'zgaruvchi e'lon qilish uchun qaysi kalit so'z ishlatiladi?</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'q1')">var</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'q1')">let</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, true, 'q1')">const</div>
+    <div class="quiz-result" id="q1"></div>
+  </div>
+
+  <div class="nav-btns">
+    <a href="css.html" class="btn-prev">← CSS</a>
+    <a href="react.html" class="btn-next">React →</a>
+  </div>
+</main>
+<aside class="right-panel">
+  <div class="rp-title">📊 Kurs bo'limlari</div>
+  <div class="rp-section">Frontend</div>
+  <a href="html.html" class="topic-pill">HTML</a>
+  <a href="css.html" class="topic-pill">CSS</a>
+  <a href="javascript.html" class="topic-pill active-pill">JavaScript ✓</a>
+  <a href="react.html" class="topic-pill">React</a>
+  <a href="vue.html" class="topic-pill">Vue.js</a>
+  <a href="bootstrap.html" class="topic-pill">Bootstrap</a>
+  <a href="typescript.html" class="topic-pill">TypeScript</a>
+  <a href="jquery.html" class="topic-pill">jQuery</a>
+  <div class="rp-section">Backend</div>
+  <a href="python.html" class="topic-pill">Python</a>
+  <a href="nodejs.html" class="topic-pill">Node.js</a>
+  <a href="php.html" class="topic-pill">PHP</a>
+  <a href="java.html" class="topic-pill">Java</a>
+  <a href="django.html" class="topic-pill">Django</a>
+  <a href="cpp.html" class="topic-pill">C++</a>
+  <a href="csharp.html" class="topic-pill">C#</a>
+  <div class="rp-section">Ma'lumotlar Bazasi</div>
+  <a href="sql.html" class="topic-pill">SQL</a>
+  <a href="mongodb.html" class="topic-pill">MongoDB</a>
+  <a href="postgresql.html" class="topic-pill">PostgreSQL</a>
+  <a href="redis.html" class="topic-pill">Redis</a>
+  <div class="rp-section">DevOps</div>
+  <a href="git.html" class="topic-pill">Git & GitHub</a>
+  <a href="docker.html" class="topic-pill">Docker</a>
+  <a href="linux.html" class="topic-pill">Linux</a>
+  <a href="restapi.html" class="topic-pill">REST API</a>
+</aside>
+</div>
+<footer style="text-align:center;padding:20px;color:#888;font-size:13px;">© 2024 W3Learn — Barcha huquqlar himoyalangan</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,496 @@
+﻿<!DOCTYPE html>
+<html lang="uz">
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Linux Darslari – W3Learn</title>
+<link rel="stylesheet" href="../css/style.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"/>
+<style>
+.cat-label{font-size:11px;font-weight:700;padding:0 4px;}
+.cat-fe{color:#04AA6D;}.cat-be{color:#2196F3;}.cat-db{color:#FF9800;}.cat-dv{color:#9C27B0;}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="logo">W3<span>Learn</span></a>
+  <nav class="top-nav">
+    <span class="cat-label cat-fe">Frontend:</span>
+    <a href="html.html">HTML</a><a href="css.html">CSS</a><a href="javascript.html">JavaScript</a>
+    <a href="react.html">React</a><a href="vue.html">Vue</a><a href="bootstrap.html">Bootstrap</a><a href="typescript.html">TypeScript</a><a href="jquery.html">jQuery</a>
+    <span class="cat-label cat-be">Backend:</span>
+    <a href="python.html">Python</a><a href="nodejs.html">Node.js</a><a href="php.html">PHP</a><a href="java.html">Java</a><a href="django.html">Django</a><a href="cpp.html">C++</a><a href="csharp.html">C#</a>
+    <span class="cat-label cat-db">DB:</span>
+    <a href="sql.html">SQL</a><a href="mongodb.html">MongoDB</a><a href="postgresql.html">PostgreSQL</a><a href="redis.html">Redis</a>
+    <span class="cat-label cat-dv">DevOps:</span>
+    <a href="git.html">Git</a><a href="docker.html">Docker</a><a href="linux.html">Linux</a><a href="restapi.html">REST API</a>
+  </nav>
+  <div style="display:flex;align-items:center;gap:6px;margin-right:8px;"><a href="../editor.html" style="background:rgba(4,170,109,0.15);color:var(--green-light);padding:4px 8px;border-radius:6px;font-size:12px;font-weight:700;text-decoration:none;"><i class="fa-solid fa-code"></i> Editor</a><a href="../certificate.html" style="background:rgba(255,183,77,0.15);color:#FFB74D;padding:4px 8px;border-radius:6px;font-size:12px;font-weight:700;text-decoration:none;"><i class="fa-solid fa-award"></i> Sertifikat</a></div><div class="search-wrap"><input type="text" id="searchInput" placeholder="Qidirish..."/><button onclick="doSearch()">🔍</button></div>
+  <button class="dark-btn" id="darkBtn">🌙</button>
+</header>
+<div class="layout">
+<aside class="sidebar">
+  <div class="sb-header">🐧 Linux</div>
+  <div class="sb-section">Kirish</div>
+  <ul>
+    <li><a href="#kirish" class="active">Linux Nima?</a></li>
+    <li><a href="#distros">Distributivlar</a></li>
+    <li><a href="#terminal">Terminal</a></li>
+    <li><a href="#fayl-tizim">Fayl Tizimi</a></li>
+  </ul>
+  <div class="sb-section">Asosiy Buyruqlar</div>
+  <ul>
+    <li><a href="#ls">ls — Ko'rish</a></li>
+    <li><a href="#cd">cd — Papkaga kirish</a></li>
+    <li><a href="#pwd">pwd — Joylashuv</a></li>
+    <li><a href="#mkdir">mkdir — Papka yaratish</a></li>
+    <li><a href="#touch">touch — Fayl yaratish</a></li>
+    <li><a href="#cp-mv">cp / mv — Ko'chirish</a></li>
+    <li><a href="#rm">rm — O'chirish</a></li>
+  </ul>
+  <div class="sb-section">Fayl Boshqaruvi</div>
+  <ul>
+    <li><a href="#cat">cat / less / more</a></li>
+    <li><a href="#nano">nano / vim</a></li>
+    <li><a href="#find">find — Qidirish</a></li>
+    <li><a href="#grep">grep — Qatorsearch</a></li>
+    <li><a href="#tar">tar — Arxiv</a></li>
+  </ul>
+  <div class="sb-section">Ruxsatlar</div>
+  <ul>
+    <li><a href="#chmod">chmod</a></li>
+    <li><a href="#chown">chown</a></li>
+    <li><a href="#sudo">sudo</a></li>
+    <li><a href="#users">Foydalanuvchilar</a></li>
+  </ul>
+  <div class="sb-section">Jarayonlar</div>
+  <ul>
+    <li><a href="#ps">ps / top / htop</a></li>
+    <li><a href="#kill">kill / killall</a></li>
+    <li><a href="#jobs">jobs / bg / fg</a></li>
+    <li><a href="#systemctl">systemctl</a></li>
+  </ul>
+  <div class="sb-section">Tarmoq</div>
+  <ul>
+    <li><a href="#ssh">SSH</a></li>
+    <li><a href="#scp">scp — Fayl uzatish</a></li>
+    <li><a href="#curl-wget">curl / wget</a></li>
+    <li><a href="#netstat">netstat / ss</a></li>
+  </ul>
+  <div class="sb-section">Ilg'or</div>
+  <ul>
+    <li><a href="#pipes">Pipe |</a></li>
+    <li><a href="#redirect">Yo'naltirish &gt;</a></li>
+    <li><a href="#bash">Bash Skript</a></li>
+    <li><a href="#cron">Cron</a></li>
+    <li><a href="#package">Paket Menejeri</a></li>
+  </ul>
+</aside>
+<main class="main">
+  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">Linux</a> › Linux Nima?</div>
+  <h1 id="kirish">Linux Nima?</h1>
+  <div class="meta-tags">
+    <span class="tag tag-green">⏱ 10 daqiqa</span>
+    <span class="tag tag-blue">🟢 Boshlang'ich</span>
+    <span class="tag tag-orange">👁 18,600 marta ko'rilgan</span>
+  </div>
+  <p><strong>Linux</strong> — ochiq manbali (open-source) operatsion tizim yadrosi (kernel). Linus Torvalds tomonidan 1991-yilda yaratilgan.</p>
+  <p>Dunyo serverlarining 90% dan ortig'i Linux da ishlaydi. Android ham Linux yadrosi asosida qurilgan. Dasturchi sifatida Linux ni bilish zarur.</p>
+  <div class="note">💡 <strong>Nima uchun Linux?</strong> Bepul, xavfsiz, tez, moslashuvchan va deyarli barcha serverlar Linux da ishlaydi.</div>
+
+  <h2 id="fayl-tizim">Linux Fayl Tizimi</h2>
+  <p>Linux da hamma narsa fayl. Asosiy papkalar:</p>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">bash</span>
+      <button class="copy-btn" onclick="copyCode('code0')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code0">/           # Ildiz (root) papkasi
+/home/      # Foydalanuvchi papkalari (/home/ali)
+/root/      # Root foydalanuvchi uy papkasi
+/etc/       # Konfiguratsiya fayllar
+/var/       # O'zgaruvchan ma'lumotlar (loglar, DB)
+/tmp/       # Vaqtinchalik fayllar
+/usr/       # Dasturlar va kutubxonalar
+/bin/       # Asosiy buyruqlar (ls, cp, mv)
+/sbin/      # Tizim buyruqlari (sudo, fdisk)
+/opt/       # Uchinchi tomon dasturlar
+/proc/      # Jarayonlar haqida virtual fayllar
+/dev/       # Qurilma fayllari</pre>
+    </div>
+  </div>
+
+  <h2 id="ls">ls — Papka Tarkibini Ko'rish</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">bash</span>
+      <button class="copy-btn" onclick="copyCode('code1')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code1"># Hozirgi papka tarkibi
+ls
+
+# Batafsil ko'rsatish (-l)
+ls -l
+
+# Yashirin fayllar ham (-a)
+ls -la
+
+# Hajmni o'qilishi qulay formatda (-h)
+ls -lh
+
+# Ma'lum papkani ko'rish
+ls /var/log
+
+# Tartiblash — hajmi bo'yicha
+ls -lhS
+
+# Vaqti bo'yicha (yangi birinchi)
+ls -lt</pre>
+    </div>
+  </div>
+
+  <h2 id="cd">cd / pwd / mkdir</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">bash</span>
+      <button class="copy-btn" onclick="copyCode('code2')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code2"># Papkaga kirish
+cd /var/log
+cd projects/myapp
+
+# Oldingi papkaga qaytish
+cd ..
+
+# Uy papkasiga qaytish
+cd ~
+cd
+
+# Oldingi joyga qaytish
+cd -
+
+# Hozirgi joylashuvni ko'rish
+pwd
+# /home/ali/projects
+
+# Papka yaratish
+mkdir myproject
+
+# Ichma-ich papkalar yaratish (-p)
+mkdir -p projects/web/assets/css
+
+# Papkani o'chirish (bo'sh)
+rmdir mydir</pre>
+    </div>
+  </div>
+
+  <h2 id="touch">Fayl Yaratish va Nusxalash</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">bash</span>
+      <button class="copy-btn" onclick="copyCode('code3')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code3"># Bo'sh fayl yaratish
+touch index.html
+touch file1.txt file2.txt
+
+# Faylni nusxalash
+cp index.html backup.html
+
+# Papkani nusxalash (-r = recursive)
+cp -r myproject myproject_backup
+
+# Faylni ko'chirish / qayta nomlash
+mv oldname.txt newname.txt
+mv file.txt /var/www/html/
+
+# Faylni o'chirish
+rm file.txt
+
+# Papkani o'chirish (-r)
+rm -r myproject
+
+# Majburan o'chirish (-f = force)
+rm -rf old_project
+
+# Faylni ko'rish
+cat file.txt
+
+# Sahifa-sahifa ko'rish
+less bigfile.log
+# q — chiqish, Space — keyingi sahifa</pre>
+    </div>
+  </div>
+
+  <h2 id="grep">grep — Matn Qidirish</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">bash</span>
+      <button class="copy-btn" onclick="copyCode('code4')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code4"># Fayldan matn qidirish
+grep "error" app.log
+
+# Katta-kichik harfga e'tiborsiz (-i)
+grep -i "error" app.log
+
+# Qator raqamlari bilan (-n)
+grep -n "ERROR" app.log
+
+# Papka ichida rekursiv (-r)
+grep -r "TODO" ./src/
+
+# Faqat fayl nomini ko'rsatish (-l)
+grep -rl "password" ./config/
+
+# Naqsh bilan (regex)
+grep -E "^[0-9]{4}" data.txt
+
+# Inversiya — mos kelmaydigan qatorlar (-v)
+grep -v "DEBUG" app.log
+
+# Pipe bilan birga
+ps aux | grep nginx
+cat access.log | grep "404"</pre>
+    </div>
+  </div>
+
+  <h2 id="chmod">Ruxsatlar: chmod</h2>
+  <p>Linux da har bir faylning ruxsatlari (permissions) bor:</p>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">bash</span>
+      <button class="copy-btn" onclick="copyCode('code5')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code5"># Ruxsatlarni ko'rish
+ls -l
+# -rwxr-xr-- 1 ali users 1234 Nov 1 file.sh
+#  rwx = owner: o'qish+yozish+bajarish
+#  r-x = group: o'qish+bajarish
+#  r-- = others: faqat o'qish
+
+# Ruxsat berish (chmod)
+chmod 755 script.sh
+# 7 = rwx (owner), 5 = r-x (group), 5 = r-x (others)
+
+# Hamma bajarishi uchun
+chmod +x script.sh
+
+# Faqat owner yozishi uchun
+chmod 644 config.txt
+
+# Rekursiv (papka va tarkibi)
+chmod -R 755 /var/www/html
+
+# Ruxsatlar jadvali:
+# 4 = r (read)
+# 2 = w (write)
+# 1 = x (execute)
+# 7 = rwx, 6 = rw-, 5 = r-x, 4 = r--</pre>
+    </div>
+  </div>
+
+  <h2 id="ssh">SSH — Masofaviy Ulanish</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">bash</span>
+      <button class="copy-btn" onclick="copyCode('code6')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code6"># SSH kalit juftligi yaratish
+ssh-keygen -t rsa -b 4096 -C "email@example.com"
+
+# Kalitni serverga yuklash
+ssh-copy-id user@server_ip
+
+# Serverga ulanish
+ssh ali@192.168.1.100
+
+# Port ko'rsatib ulanish
+ssh -p 2222 ali@example.com
+
+# Fayl yuklash (scp)
+scp local_file.txt ali@server:/home/ali/
+
+# Papka yuklash (-r)
+scp -r ./myproject ali@server:/var/www/
+
+# Serverdan fayl olish
+scp ali@server:/etc/nginx/nginx.conf ./
+
+# SSH config fayl (~/.ssh/config)
+# Host myserver
+#   HostName 192.168.1.100
+#   User ali
+#   Port 22
+#   IdentityFile ~/.ssh/id_rsa</pre>
+    </div>
+  </div>
+
+  <h2 id="bash">Bash Skript Yozish</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">bash</span>
+      <button class="copy-btn" onclick="copyCode('code7')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code7">#!/bin/bash
+# Birinchi satr — shebang (qaysi interpreter)
+
+# O'zgaruvchi
+NAME="Ali"
+echo "Salom, $NAME!"
+
+# Foydalanuvchi kiritishi
+read -p "Ismingizni kiriting: " USER_NAME
+echo "Xush kelibsiz, $USER_NAME!"
+
+# Shart (if-else)
+AGE=20
+if [ $AGE -ge 18 ]; then
+  echo "Voyaga yetgan"
+else
+  echo "Voyaga yetmagan"
+fi
+
+# Tsikl (for)
+for i in 1 2 3 4 5; do
+  echo "Raqam: $i"
+done
+
+# Fayl mavjudligini tekshirish
+FILE="/etc/nginx/nginx.conf"
+if [ -f "$FILE" ]; then
+  echo "Fayl mavjud"
+else
+  echo "Fayl topilmadi"
+fi
+
+# Funksiya
+greet() {
+  echo "Salom, $1!"
+}
+greet "Vali"</pre>
+    </div>
+  </div>
+
+  <h2 id="cron">Cron — Avtomatik Vazifalar</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">bash</span>
+      <button class="copy-btn" onclick="copyCode('code8')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code8"># Cron jadvalini ko'rish/tahrirlash
+crontab -e
+
+# Format: daqiqa soat kun oy hafta_kuni buyruq
+# *  *  *  *  *  /path/to/command
+# │  │  │  │  └─ hafta kuni (0=yakshanba, 6=shanba)
+# │  │  │  └──── oy (1-12)
+# │  │  └─────── kun (1-31)
+# │  └────────── soat (0-23)
+# └───────────── daqiqa (0-59)
+
+# Misollar:
+# Har daqiqada
+* * * * * /home/ali/script.sh
+
+# Har soatda (soat boshi)
+0 * * * * /home/ali/cleanup.sh
+
+# Har kuni ertalab 6:00 da
+0 6 * * * /home/ali/backup.sh
+
+# Har dushanba kuni 9:00 da
+0 9 * * 1 /home/ali/weekly.sh
+
+# Cron loglarini ko'rish
+grep CRON /var/log/syslog</pre>
+    </div>
+  </div>
+
+  <h2 id="package">Paket Menejeri</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">bash</span>
+      <button class="copy-btn" onclick="copyCode('code9')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code9"># Ubuntu / Debian — apt
+sudo apt update              # Ro'yxatni yangilash
+sudo apt upgrade             # Dasturlarni yangilash
+sudo apt install nginx       # O'rnatish
+sudo apt remove nginx        # O'chirish
+sudo apt autoremove          # Keraksizlarni tozalash
+apt search nodejs            # Qidirish
+
+# CentOS / RHEL — yum / dnf
+sudo dnf install nginx
+sudo dnf remove nginx
+sudo dnf update
+
+# Snap paketlar (barcha distributivlar)
+sudo snap install code       # VS Code
+
+# Dastur versiyasini bilish
+nginx -v
+node --version
+python3 --version</pre>
+    </div>
+  </div>
+
+  <!-- Quiz -->
+  <div class="quiz-box">
+    <div class="quiz-q">🧠 Linux da faylga bajarilish ruxsati berish uchun qaysi buyruqdan foydalanamiz?</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'q1')">chown +x file.sh</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, true, 'q1')">chmod +x file.sh</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'q1')">sudo run file.sh</div>
+    <div class="quiz-result" id="q1"></div>
+  </div>
+
+  <div class="nav-btns">
+    <a href="docker.html" class="btn-prev">← Docker</a>
+    <a href="restapi.html" class="btn-next">REST API →</a>
+  </div>
+</main>
+<aside class="right-panel">
+  <div class="rp-title">📊 Kurs bo'limlari</div>
+  <div class="rp-section">Frontend</div>
+  <a href="html.html" class="topic-pill">HTML</a>
+  <a href="css.html" class="topic-pill">CSS</a>
+  <a href="javascript.html" class="topic-pill">JavaScript</a>
+  <a href="react.html" class="topic-pill">React</a>
+  <a href="vue.html" class="topic-pill">Vue.js</a>
+  <a href="bootstrap.html" class="topic-pill">Bootstrap</a>
+  <a href="typescript.html" class="topic-pill">TypeScript</a>
+  <a href="jquery.html" class="topic-pill">jQuery</a>
+  <div class="rp-section">Backend</div>
+  <a href="python.html" class="topic-pill">Python</a>
+  <a href="nodejs.html" class="topic-pill">Node.js</a>
+  <a href="php.html" class="topic-pill">PHP</a>
+  <a href="java.html" class="topic-pill">Java</a>
+  <a href="django.html" class="topic-pill">Django</a>
+  <a href="cpp.html" class="topic-pill">C++</a>
+  <a href="csharp.html" class="topic-pill">C#</a>
+  <div class="rp-section">Ma'lumotlar Bazasi</div>
+  <a href="sql.html" class="topic-pill">SQL</a>
+  <a href="mongodb.html" class="topic-pill">MongoDB</a>
+  <a href="postgresql.html" class="topic-pill">PostgreSQL</a>
+  <a href="redis.html" class="topic-pill">Redis</a>
+  <div class="rp-section">DevOps</div>
+  <a href="git.html" class="topic-pill">Git & GitHub</a>
+  <a href="docker.html" class="topic-pill">Docker</a>
+  <a href="linux.html" class="topic-pill active-pill">Linux ✓</a>
+  <a href="restapi.html" class="topic-pill">REST API</a>
+</aside>
+</div>
+<footer style="text-align:center;padding:20px;color:#888;font-size:13px;">© 2024 W3Learn — Barcha huquqlar himoyalangan</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,514 @@
+﻿<!DOCTYPE html>
+<html lang="uz">
+<head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Redis Darslari – W3Learn</title>
+<link rel="stylesheet" href="../css/style.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"/>
+<style>
+.cat-label{font-size:11px;font-weight:700;padding:0 4px;}
+.cat-fe{color:#04AA6D;}.cat-be{color:#2196F3;}.cat-db{color:#FF9800;}.cat-dv{color:#9C27B0;}
+</style>
+</head>
+<body>
+<header class="topbar">
+  <a href="../index.html" class="logo">W3<span>Learn</span></a>
+  <nav class="top-nav">
+    <span class="cat-label cat-fe">Frontend:</span>
+    <a href="html.html">HTML</a><a href="css.html">CSS</a><a href="javascript.html">JavaScript</a>
+    <a href="react.html">React</a><a href="vue.html">Vue</a><a href="bootstrap.html">Bootstrap</a><a href="typescript.html">TypeScript</a><a href="jquery.html">jQuery</a>
+    <span class="cat-label cat-be">Backend:</span>
+    <a href="python.html">Python</a><a href="nodejs.html">Node.js</a><a href="php.html">PHP</a><a href="java.html">Java</a><a href="django.html">Django</a><a href="cpp.html">C++</a><a href="csharp.html">C#</a>
+    <span class="cat-label cat-db">DB:</span>
+    <a href="sql.html">SQL</a><a href="mongodb.html">MongoDB</a><a href="postgresql.html">PostgreSQL</a><a href="redis.html">Redis</a>
+    <span class="cat-label cat-dv">DevOps:</span>
+    <a href="git.html">Git</a><a href="docker.html">Docker</a><a href="linux.html">Linux</a><a href="restapi.html">REST API</a>
+  </nav>
+  <div style="display:flex;align-items:center;gap:6px;margin-right:8px;"><a href="../editor.html" style="background:rgba(4,170,109,0.15);color:var(--green-light);padding:4px 8px;border-radius:6px;font-size:12px;font-weight:700;text-decoration:none;"><i class="fa-solid fa-code"></i> Editor</a><a href="../certificate.html" style="background:rgba(255,183,77,0.15);color:#FFB74D;padding:4px 8px;border-radius:6px;font-size:12px;font-weight:700;text-decoration:none;"><i class="fa-solid fa-award"></i> Sertifikat</a></div><div class="search-wrap"><input type="text" id="searchInput" placeholder="Qidirish..."/><button onclick="doSearch()">🔍</button></div>
+  <button class="dark-btn" id="darkBtn">🌙</button>
+</header>
+<div class="layout">
+<aside class="sidebar">
+  <div class="sb-header">🔴 Redis</div>
+  <div class="sb-section">Kirish</div>
+  <ul>
+    <li><a href="#kirish" class="active">Redis Nima?</a></li>
+    <li><a href="#install">O'rnatish</a></li>
+    <li><a href="#cli">Redis CLI</a></li>
+    <li><a href="#datatypes">Ma'lumot Turlari</a></li>
+  </ul>
+  <div class="sb-section">Strings</div>
+  <ul>
+    <li><a href="#set-get">SET / GET</a></li>
+    <li><a href="#expire">EXPIRE / TTL</a></li>
+    <li><a href="#incr">INCR / DECR</a></li>
+    <li><a href="#mset">MSET / MGET</a></li>
+  </ul>
+  <div class="sb-section">Lists</div>
+  <ul>
+    <li><a href="#lpush">LPUSH / RPUSH</a></li>
+    <li><a href="#lrange">LRANGE</a></li>
+    <li><a href="#lpop">LPOP / RPOP</a></li>
+    <li><a href="#llen">LLEN</a></li>
+  </ul>
+  <div class="sb-section">Hashes</div>
+  <ul>
+    <li><a href="#hset">HSET / HGET</a></li>
+    <li><a href="#hgetall">HGETALL</a></li>
+    <li><a href="#hdel">HDEL</a></li>
+  </ul>
+  <div class="sb-section">Sets</div>
+  <ul>
+    <li><a href="#sadd">SADD / SMEMBERS</a></li>
+    <li><a href="#sinter">SINTER / SUNION</a></li>
+    <li><a href="#srem">SREM</a></li>
+  </ul>
+  <div class="sb-section">Sorted Sets</div>
+  <ul>
+    <li><a href="#zadd">ZADD / ZRANGE</a></li>
+    <li><a href="#zscore">ZSCORE</a></li>
+    <li><a href="#zrank">ZRANK</a></li>
+  </ul>
+  <div class="sb-section">Ilg'or</div>
+  <ul>
+    <li><a href="#pubsub">Pub/Sub</a></li>
+    <li><a href="#transactions">Tranzaksiyalar</a></li>
+    <li><a href="#persistence">Persistence</a></li>
+    <li><a href="#caching">Caching Pattern</a></li>
+    <li><a href="#nodejs">Node.js bilan</a></li>
+  </ul>
+</aside>
+<main class="main">
+  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">Redis</a> › Redis Nima?</div>
+  <h1 id="kirish">Redis Nima?</h1>
+  <div class="meta-tags">
+    <span class="tag tag-green">⏱ 8 daqiqa</span>
+    <span class="tag tag-blue">🟢 Boshlang'ich</span>
+    <span class="tag tag-orange">👁 9,400 marta ko'rilgan</span>
+  </div>
+  <p><strong>Redis</strong> (Remote Dictionary Server) — in-memory ma'lumotlar tuzilmasi do'koni. U ma'lumotlarni disk o'rniga <strong>operativ xotirada (RAM)</strong> saqlaydi, shu sababli juda tez ishlaydi.</p>
+  <p>Redis kesh (cache), sessiya boshqaruvi, real-vaqtli analitika, navbatlar (queues) va boshqa ko'p hollarda ishlatiladi.</p>
+  <div class="note">💡 <strong>Qachon ishlatish kerak?</strong> Tez-tez o'qiladigan, kamdan-kam o'zgaradigan ma'lumotlar uchun ideal — masalan, foydalanuvchi sessiyalari, mahsulot ro'yxatlari, API javoblari.</div>
+
+  <h2 id="install">Redis O'rnatish</h2>
+  <p>Redis Linux, macOS va Windows (WSL) da ishlaydi:</p>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">bash</span>
+      <button class="copy-btn" onclick="copyCode('code1')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code1"># Ubuntu/Debian
+sudo apt update
+sudo apt install redis-server
+
+# Redis ni ishga tushirish
+sudo systemctl start redis
+sudo systemctl enable redis
+
+# Tekshirish
+redis-cli ping
+# Javob: PONG
+
+# macOS (Homebrew)
+brew install redis
+brew services start redis</pre>
+    </div>
+  </div>
+
+  <h2 id="cli">Redis CLI</h2>
+  <p>Redis CLI orqali Redis serveriga ulaning va buyruqlarni to'g'ridan-to'g'ri kiriting:</p>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">bash</span>
+      <button class="copy-btn" onclick="copyCode('code2')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code2"># Redis CLI ni ochish
+redis-cli
+
+# Yoki port ko'rsatib
+redis-cli -h 127.0.0.1 -p 6379
+
+# Autentifikatsiya (parol bo'lsa)
+redis-cli -a yourpassword
+
+# Barcha kalitlarni ko'rish
+KEYS *
+
+# Ma'lumot turini bilish
+TYPE mykey
+
+# Kalitni o'chirish
+DEL mykey
+
+# Serverga ping
+PING</pre>
+    </div>
+  </div>
+
+  <h2 id="datatypes">Ma'lumot Turlari</h2>
+  <p>Redis quyidagi ma'lumot turlarini qo'llab-quvvatlaydi:</p>
+  <ul>
+    <li>🔤 <strong>Strings</strong> — oddiy qiymatlar (matn, raqam)</li>
+    <li>📋 <strong>Lists</strong> — tartibli elementlar ro'yxati</li>
+    <li>#️⃣ <strong>Hashes</strong> — kalit-qiymat juftliklari (obyekt kabi)</li>
+    <li>🔵 <strong>Sets</strong> — takrorlanmaydigan elementlar to'plami</li>
+    <li>🏆 <strong>Sorted Sets</strong> — ball (score) bilan tartiblangan to'plam</li>
+    <li>📡 <strong>Pub/Sub</strong> — xabar almashish kanallari</li>
+  </ul>
+
+  <h2 id="set-get">Strings: SET / GET</h2>
+  <p>Strings — Redis da eng oddiy va keng tarqalgan ma'lumot turi:</p>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">redis</span>
+      <button class="copy-btn" onclick="copyCode('code3')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code3"># Qiymat saqlash
+SET username "Ali"
+# OK
+
+# Qiymatni olish
+GET username
+# "Ali"
+
+# Vaqtinchalik saqlash (10 soniya)
+SET token "abc123" EX 10
+
+# Faqat mavjud bo'lmasa o'rnatish
+SET counter 1 NX
+
+# Hozirgi qiymatni olish va yangi qiymat o'rnatish
+GETSET username "Vali"
+# "Ali" (eski qiymat)
+
+# Qiymat uzunligi
+STRLEN username
+# 4</pre>
+    </div>
+  </div>
+
+  <h2 id="expire">EXPIRE / TTL</h2>
+  <p>Kalitlarga amal qilish muddati (TTL — Time To Live) belgilash:</p>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">redis</span>
+      <button class="copy-btn" onclick="copyCode('code4')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code4">SET session_token "xyz789"
+
+# 3600 soniya (1 soat) muddati belgilash
+EXPIRE session_token 3600
+
+# Qolgan vaqtni ko'rish (soniyada)
+TTL session_token
+# 3598
+
+# Muddatni olib tashlash (abadiy qilish)
+PERSIST session_token
+
+# Millisekundda muddati belgilash
+PEXPIRE session_token 10000
+
+# Millisekunda qolgan vaqt
+PTTL session_token</pre>
+    </div>
+  </div>
+
+  <h2 id="lpush">Lists: LPUSH / RPUSH</h2>
+  <p>Listlar — tartibli elementlar ro'yxati (Deque tuzilmasi):</p>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">redis</span>
+      <button class="copy-btn" onclick="copyCode('code5')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code5"># Chapdan qo'shish
+LPUSH tasks "vazifa1" "vazifa2" "vazifa3"
+
+# O'ngdan qo'shish
+RPUSH tasks "vazifa4"
+
+# Ro'yxatni ko'rish (0 dan oxirigacha)
+LRANGE tasks 0 -1
+# 1) "vazifa3"
+# 2) "vazifa2"
+# 3) "vazifa1"
+# 4) "vazifa4"
+
+# Uzunlik
+LLEN tasks
+# 4
+
+# Chapdan o'chirish
+LPOP tasks
+# "vazifa3"
+
+# O'ngdan o'chirish
+RPOP tasks
+# "vazifa4"</pre>
+    </div>
+  </div>
+
+  <h2 id="hset">Hashes: HSET / HGET</h2>
+  <p>Hash — obyektga o'xshash kalit-qiymat juftliklari:</p>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">redis</span>
+      <button class="copy-btn" onclick="copyCode('code6')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code6"># Hash yaratish
+HSET user:1 name "Ali" age 25 city "Toshkent"
+
+# Bitta maydonni olish
+HGET user:1 name
+# "Ali"
+
+# Barcha maydonlarni olish
+HGETALL user:1
+# 1) "name"
+# 2) "Ali"
+# 3) "age"
+# 4) "25"
+# 5) "city"
+# 6) "Toshkent"
+
+# Maydon mavjudligini tekshirish
+HEXISTS user:1 email
+# 0 (mavjud emas)
+
+# Maydonni o'chirish
+HDEL user:1 city
+
+# Barcha maydon nomlari
+HKEYS user:1</pre>
+    </div>
+  </div>
+
+  <h2 id="sadd">Sets: SADD / SMEMBERS</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">redis</span>
+      <button class="copy-btn" onclick="copyCode('code7')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code7"># Set yaratish (takrorlanmaydi)
+SADD hobbies "kitob o'qish" "dasturlash" "sport"
+
+# Barcha elementlar
+SMEMBERS hobbies
+# 1) "sport"
+# 2) "dasturlash"
+# 3) "kitob o'qish"
+
+# Element mavjudligini tekshirish
+SISMEMBER hobbies "sport"
+# 1 (bor)
+
+# Set A va Set B kesishmasi
+SADD set1 "a" "b" "c"
+SADD set2 "b" "c" "d"
+SINTER set1 set2
+# "b", "c"
+
+# Birlashma
+SUNION set1 set2
+# "a", "b", "c", "d"</pre>
+    </div>
+  </div>
+
+  <h2 id="zadd">Sorted Sets: ZADD / ZRANGE</h2>
+  <p>Sorted Sets — har bir elementga ball (score) beriladi va tartiblanadi:</p>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">redis</span>
+      <button class="copy-btn" onclick="copyCode('code8')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code8"># Leaderboard yaratish (score: ball)
+ZADD leaderboard 1500 "Ali"
+ZADD leaderboard 2300 "Vali"
+ZADD leaderboard 1800 "Soli"
+
+# Balldan kamiga tartibda
+ZRANGE leaderboard 0 -1 WITHSCORES
+# 1) "Ali"      2) "1500"
+# 3) "Soli"     4) "1800"
+# 5) "Vali"     6) "2300"
+
+# Ko'pdan kamiga
+ZREVRANGE leaderboard 0 -1 WITHSCORES
+
+# Foydalanuvchi reytingini bilish
+ZRANK leaderboard "Ali"
+# 0 (birinchi o'rin)
+
+# Ball qo'shish
+ZINCRBY leaderboard 500 "Ali"</pre>
+    </div>
+  </div>
+
+  <h2 id="pubsub">Pub/Sub</h2>
+  <p>Redis Pub/Sub — real-vaqtli xabar almashish tizimi:</p>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">redis</span>
+      <button class="copy-btn" onclick="copyCode('code9')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code9"># Terminal 1 — Obunachi (subscriber)
+SUBSCRIBE notifications
+
+# Terminal 2 — Nashriyotchi (publisher)
+PUBLISH notifications "Yangi xabar bor!"
+
+# Terminal 1 da natija:
+# 1) "message"
+# 2) "notifications"
+# 3) "Yangi xabar bor!"
+
+# Pattern bilan obuna bo'lish
+PSUBSCRIBE user:*
+
+# Barcha kanallarni ko'rish
+PUBSUB CHANNELS
+
+# Obunani bekor qilish
+UNSUBSCRIBE notifications</pre>
+    </div>
+  </div>
+
+  <h2 id="caching">Caching Pattern</h2>
+  <p>Redis kesh sifatida ishlatish — eng keng tarqalgan foydalanish holati:</p>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">javascript</span>
+      <button class="copy-btn" onclick="copyCode('code10')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code10">// Node.js + ioredis bilan kesh pattern
+const Redis = require('ioredis');
+const redis = new Redis();
+
+async function getUserData(userId) {
+  const cacheKey = `user:${userId}`;
+  
+  // 1. Avval keshdan tekshir
+  const cached = await redis.get(cacheKey);
+  if (cached) {
+    console.log('Keshdan olindi ✅');
+    return JSON.parse(cached);
+  }
+  
+  // 2. Ma'lumotlar bazasidan ol
+  const user = await db.query('SELECT * FROM users WHERE id = ?', [userId]);
+  
+  // 3. Keshga saqlash (1 soat)
+  await redis.set(cacheKey, JSON.stringify(user), 'EX', 3600);
+  
+  console.log('DB dan olindi 📦');
+  return user;
+}
+
+// Cache invalidation (yangilanishda o'chirish)
+async function updateUser(userId, data) {
+  await db.update('users', data, userId);
+  await redis.del(`user:${userId}`); // Keshni o'chirish
+}</pre>
+    </div>
+  </div>
+
+  <h2 id="nodejs">Node.js bilan Redis</h2>
+  <div class="code-wrap">
+    <div class="code-toolbar">
+      <span class="code-lang">javascript</span>
+      <button class="copy-btn" onclick="copyCode('code11')">📋 Nusxa</button>
+    </div>
+    <div class="code-body">
+      <pre id="code11">// npm install ioredis
+const Redis = require('ioredis');
+
+const redis = new Redis({
+  host: '127.0.0.1',
+  port: 6379,
+  // password: 'your_password',
+});
+
+// Asosiy amallar
+async function main() {
+  // String
+  await redis.set('name', 'Ali', 'EX', 60);
+  const name = await redis.get('name');
+  console.log(name); // Ali
+
+  // Hash
+  await redis.hset('user:1', 'name', 'Ali', 'age', '25');
+  const user = await redis.hgetall('user:1');
+  console.log(user); // { name: 'Ali', age: '25' }
+
+  // List
+  await redis.rpush('queue', 'task1', 'task2');
+  const task = await redis.lpop('queue');
+  console.log(task); // task1
+
+  // Ulanishni yopish
+  redis.disconnect();
+}
+
+main().catch(console.error);</pre>
+    </div>
+  </div>
+
+  <!-- Quiz -->
+  <div class="quiz-box">
+    <div class="quiz-q">🧠 Redis da ma'lumotlar qayerda saqlanadi?</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'q1')">💾 Diskda (SSD)</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, true, 'q1')">🧠 Operativ xotirada (RAM)</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'q1')">☁️ Bulutda</div>
+    <div class="quiz-result" id="q1"></div>
+  </div>
+
+  <div class="nav-btns">
+    <a href="postgresql.html" class="btn-prev">← PostgreSQL</a>
+    <a href="git.html" class="btn-next">Git →</a>
+  </div>
+</main>
+<aside class="right-panel">
+  <div class="rp-title">📊 Kurs bo'limlari</div>
+  <div class="rp-section">Frontend</div>
+  <a href="html.html" class="topic-pill">HTML</a>
+  <a href="css.html" class="topic-pill">CSS</a>
+  <a href="javascript.html" class="topic-pill">JavaScript</a>
+  <a href="react.html" class="topic-pill">React</a>
+  <a href="vue.html" class="topic-pill">Vue.js</a>
+  <a href="bootstrap.html" class="topic-pill">Bootstrap</a>
+  <a href="typescript.html" class="topic-pill">TypeScript</a>
+  <a href="jquery.html" class="topic-pill">jQuery</a>
+  <div class="rp-section">Backend</div>
+  <a href="python.html" class="topic-pill">Python</a>
+  <a href="nodejs.html" class="topic-pill">Node.js</a>
+  <a href="php.html" class="topic-pill">PHP</a>
+  <a href="java.html" class="topic-pill">Java</a>
+  <a href="django.html" class="topic-pill">Django</a>
+  <a href="cpp.html" class="topic-pill">C++</a>
+  <a href="csharp.html" class="topic-pill">C#</a>
+  <div class="rp-section">Ma'lumotlar Bazasi</div>
+  <a href="sql.html" class="topic-pill">SQL</a>
+  <a href="mongodb.html" class="topic-pill">MongoDB</a>
+  <a href="postgresql.html" class="topic-pill">PostgreSQL</a>
+  <a href="redis.html" class="topic-pill active-pill">Redis ✓</a>
+  <div class="rp-section">DevOps</div>
+  <a href="git.html" class="topic-pill">Git & GitHub</a>
+  <a href="docker.html" class="topic-pill">Docker</a>
+  <a href="linux.html" class="topic-pill">Linux</a>
+  <a href="restapi.html" class="topic-pill">REST API</a>
+</aside>
+</div>
+<footer style="text-align:center;padding:20px;color:#888;font-size:13px;">© 2024 W3Learn — Barcha huquqlar himoyalangan</footer>
+<script src="../js/main.js"></script>
+</body>
+</html>

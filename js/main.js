@@ -496,10 +496,15 @@ function initAIMentor() {
           </div>
           <div>
             <div>W3Bot — AI Ustoz</div>
-            <div style="font-size:10.5px;color:#10b981;font-weight:500;">● Real-vaqtli yordamchi</div>
+            <div style="font-size:10.5px;color:#10b981;font-weight:500;">● ChatGPT / Real-vaqtli AI</div>
           </div>
         </div>
-        <button class="ai-close-btn" onclick="toggleAIChat()">✕</button>
+        <div style="display:flex;align-items:center;gap:6px;">
+          <button onclick="openAPIKeyPrompt()" title="OpenAI API Kalitni kiritish" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#fbbf24;font-size:11px;font-weight:600;padding:3px 8px;border-radius:6px;cursor:pointer;">
+            <i class="fa-solid fa-key"></i> API Kalit
+          </button>
+          <button class="ai-close-btn" onclick="toggleAIChat()">✕</button>
+        </div>
       </div>
 
       <!-- Quick Chips -->
@@ -513,8 +518,8 @@ function initAIMentor() {
       <!-- Messages -->
       <div class="ai-messages" id="aiMessages">
         <div class="ai-msg bot">
-          Assalomu alaykum! Men sizning <strong>${page}</strong> bo'yicha sun'iy intellekt mentoriman. 
-          Savollaringiz bo'lsa yoki kodni tushunmay qolsangiz, bemalol so'rang! 👋
+          Assalomu alaykum! Men sizning <strong>${page}</strong> bo'yicha sun'iy intellekt mentoriman (ChatGPT quvvatida). 
+          Kodingizdagi xatolar, yangi tushunchalar yoki savollaringizni bemalol so'rang! 👋
         </div>
       </div>
 
@@ -540,7 +545,7 @@ function toggleAIChat() {
   }
 }
 
-function sendAIMessage() {
+async function sendAIMessage() {
   const input = document.getElementById('aiInput');
   const text = input?.value?.trim();
   if (!text) return;
@@ -553,16 +558,70 @@ function sendAIMessage() {
   const typingDiv = document.createElement('div');
   typingDiv.className = 'ai-msg bot';
   typingDiv.id = 'aiTyping';
-  typingDiv.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> O\'ylamoqda...';
+  typingDiv.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> ChatGPT javob tayyorlamoqda...';
   messages.appendChild(typingDiv);
   messages.scrollTop = messages.scrollHeight;
 
-  setTimeout(() => {
+  const page = location.pathname.split('/').pop().replace('.html','').toUpperCase() || 'HTML';
+  const customKey = localStorage.getItem('w3_openai_key') || '';
+
+  try {
+    const res = await fetch('/api/chat', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({
+        message: text,
+        pageContext: page,
+        apiKey: customKey
+      })
+    });
+
     typingDiv.remove();
-    const reply = generateAIResponse(text);
-    appendBotMsg(reply);
-    addXP(5, "AI bilan suhbat");
-  }, 500);
+
+    if (res.ok) {
+      const data = await res.json();
+      const formatted = formatMarkdown(data.reply || '');
+      appendBotMsg(formatted);
+      addXP(10, "AI bilan suhbat");
+    } else {
+      const fallback = generateAIResponse(text);
+      appendBotMsg(fallback);
+    }
+  } catch (err) {
+    typingDiv.remove();
+    const fallback = generateAIResponse(text);
+    appendBotMsg(fallback);
+  }
+}
+
+function openAPIKeyPrompt() {
+  const current = localStorage.getItem('w3_openai_key') || '';
+  const key = prompt("OpenAI API Kalitingizni kiriting (sk-proj-...):", current);
+  if (key !== null) {
+    if (key.trim()) {
+      localStorage.setItem('w3_openai_key', key.trim());
+      showToast("OpenAI API kaliti muvaffaqiyatli saqlandi! ✅");
+      appendBotMsg("🎉 <strong>OpenAI ChatGPT muvaffaqiyatli ulandi!</strong> Endi barcha savollaringizga to'g'ridan-to'g'ri ChatGPT jonli javob beradi.");
+    } else {
+      localStorage.removeItem('w3_openai_key');
+      showToast("API kalit o'chirildi.");
+    }
+  }
+}
+
+function formatMarkdown(text) {
+  if (!text) return '';
+  let html = text.replace(/```([a-zA-Z]*)\n([\s\S]*?)```/g, (m, lang, code) => {
+    return `<pre><code>${escapeHtml(code.trim())}</code></pre>`;
+  });
+  html = html.replace(/`([^`]+)`/g, '<code>$1</code>');
+  html = html.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+  html = html.replace(/\n/g, '<br/>');
+  return html;
+}
+
+function escapeHtml(str) {
+  return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
 }
 
 function appendUserMsg(text) {
@@ -585,38 +644,18 @@ function appendBotMsg(html) {
 
 function askQuickPrompt(type) {
   const page = location.pathname.split('/').pop().replace('.html','').toUpperCase() || 'HTML';
+  const input = document.getElementById('aiInput');
+  if (!input) return;
   if (type === 'tushuntir') {
-    appendUserMsg(`${page} darsini sodda qilib tushuntirib ber.`);
-    setTimeout(() => {
-      appendBotMsg(`<strong>${page} bo'yicha qisqa tushuncha:</strong><br/>
-Ushbu darsda ko'rsatilgan kodlar veb sahifaning asosiy elementlari hisoblanadi. Kodni tahrirlash oynasida o'zgartirishingiz bilan pastdagi natijada darhol uning natijasi chiqadi! O'zgartirib ko'ring! 🚀`);
-    }, 400);
+    input.value = `${page} darsini sodda va tushunarli qilib o'zbek tilida tushuntirib ber.`;
   } else if (type === 'xato') {
-    appendUserMsg("Koddagi eng ko'p uchraydigan xatolar qaysilar?");
-    setTimeout(() => {
-      appendBotMsg(`<strong>Eng ko'p uchraydigan xatolar:</strong><br/>
-1. Yopiluvchi tegni (masalan: <code>&lt;/h1&gt;</code> yoki <code>&lt;/div&gt;</code>) unutish.<br/>
-2. Qavslar yoki qo'shtirnoqlarni to'g'ri yopmaslik.<br/>
-3. Katta-kichik harflarga e'tibor bermaslik.<br/>
-Kodingizni tekshirib ko'ring! 🧐`);
-    }, 400);
+    input.value = `${page} kodlarida dasturchilar eng ko'p qanday xatolarga yo'l qo'yishadi?`;
   } else if (type === 'misol') {
-    appendUserMsg("Qo'shimcha amaliy misol ko'rsat.");
-    setTimeout(() => {
-      appendBotMsg(`Mana yangi amaliy misol:<br/>
-<pre>&lt;div style="background:#04AA6D;color:#fff;padding:15px;border-radius:8px;"&gt;
-  &lt;h2&gt;Ajoyib Natija!&lt;/h2&gt;
-  &lt;p&gt;Bu W3Learn misoli.&lt;/p&gt;
-&lt;/div&gt;</pre>
-Buni yuqoridagi kod oynasiga qo'yib ko'ring, natija pastda darhol chiqadi! 💻`);
-    }, 400);
+    input.value = `${page} bo'yicha chiroyli va qiziqarli yangi kod namunasi ko'rsat.`;
   } else if (type === 'masala') {
-    appendUserMsg("Bilimimni sinash uchun masala ber.");
-    setTimeout(() => {
-      appendBotMsg(`<strong>🧩 Kichik topshiriq:</strong><br/>
-Kodingiz ichiga yangi <code>&lt;button&gt;Meni bosing!&lt;/button&gt;</code> tugmasini qo'shing va natijada qanday ko'rinishini tekshiring! Qani, sinab ko'ring-chi? 🎯`);
-    }, 400);
+    input.value = `${page} bo'yicha bilimimni sinash uchun bitta amaliy dasturlash masalasi ber.`;
   }
+  sendAIMessage();
 }
 
 function generateAIResponse(query) {

@@ -214,6 +214,24 @@
 
   <div class="note note-blue">📌 <strong>Keyingi qadam:</strong> HTML o'rganib bo'lgach, <a href="css.html" style="color:var(--green)">CSS</a> orqali sahifangizni chiroyli qiling!</div>
 
+  <!-- Interactive Exercise (Bo'sh joyni to'ldiring) -->
+  <div class="exercise-box">
+    <div class="exercise-header">
+      <i class="fa-solid fa-puzzle-piece" style="color:#6366f1;"></i>
+      <span>Amaliy Mashq: Bo'sh joyni to'ldiring</span>
+    </div>
+    <p style="font-size:13.5px;color:var(--text2);margin-bottom:10px;">
+      Google qidiruv tizimiga havola (link) yaratish uchun to'g'ri teg nomini kiriting:
+    </p>
+    <div class="exercise-code-container">
+      &lt;<input type="text" class="exercise-input" id="exInput1" placeholder="..." style="width:40px;"/> href="https://google.com"&gt;Google ga o'tish&lt;/<input type="text" class="exercise-input" id="exInput2" placeholder="..." style="width:40px;"/>&gt;
+    </div>
+    <button class="btn-check-exercise" onclick="checkExerciseDouble('exInput1', 'exInput2', 'a', 'exRes1')">
+      <i class="fa-solid fa-circle-check"></i> Javobni tekshirish
+    </button>
+    <div class="exercise-result" id="exRes1"></div>
+  </div>
+
   <div class="quiz-box">
     <div class="quiz-q">🧪 Test: HTML qisqartmasi nima?</div>
     <div class="quiz-opt" onclick="checkQuiz(this, false, 'qr1')">High Text Markup Language</div>

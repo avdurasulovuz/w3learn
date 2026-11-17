@@ -93,12 +93,15 @@ body.light .topbar {
 .logo {
   font-size: 22px;
   font-weight: 800;
-  color: var(--white);
+  color: #ffffff;
   letter-spacing: -0.5px;
   flex-shrink: 0;
   display: flex;
   align-items: center;
   gap: 2px;
+}
+body.light .logo {
+  color: #0f172a;
 }
 .logo span {
   color: var(--green);
@@ -431,7 +434,22 @@ body.light .code-wrap { background: #1e2535; }
   border-radius: 50%;
   background: #ff5f57;
   box-shadow: 18px 0 0 #febc2e, 36px 0 0 #28c840;
+  margin-right: 42px;
   flex-shrink: 0;
+}
+
+.edit-badge {
+  font-size: 11px;
+  color: var(--green-light);
+  background: rgba(4,170,109,0.1);
+  border: 1px solid rgba(4,170,109,0.25);
+  padding: 3px 8px;
+  border-radius: 4px;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  margin-right: auto;
 }
 
 .copy-btn, .run-btn {
@@ -476,7 +494,14 @@ body.light .code-wrap { background: #1e2535; }
   padding: 20px 24px;
   margin: 0;
   counter-reset: line;
-  white-space: pre;
+  white-space: pre-wrap;
+  outline: none;
+  cursor: text;
+  transition: background 0.2s, box-shadow 0.2s;
+}
+.code-body pre:focus {
+  background: rgba(4, 170, 109, 0.04);
+  box-shadow: inset 0 0 0 1px rgba(4, 170, 109, 0.3);
 }
 
 /* Result box */

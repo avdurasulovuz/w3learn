@@ -53,7 +53,8 @@ function copyCode(id) {
 
 // ── RUN CODE ──
 function runCode(codeId, resultId) {
-  const code = document.getElementById(codeId)?.textContent || '';
+  const el = document.getElementById(codeId);
+  const code = el ? (el.innerText || el.textContent) : '';
   const iframe = document.getElementById(resultId);
   if (!iframe) return;
   const doc = iframe.contentDocument || iframe.contentWindow.document;
@@ -64,9 +65,36 @@ function runCode(codeId, resultId) {
   setTimeout(() => {
     try {
       const h = doc.body.scrollHeight;
-      iframe.style.height = Math.max(80, Math.min(h + 20, 400)) + 'px';
+      iframe.style.height = Math.max(80, Math.min(h + 20, 500)) + 'px';
     } catch(e) {}
   }, 200);
+}
+
+// ── EDITABLE CODE BLOCKS ──
+function setupEditableCode() {
+  document.querySelectorAll('.code-body pre').forEach(pre => {
+    pre.setAttribute('contenteditable', 'true');
+    pre.setAttribute('spellcheck', 'false');
+  });
+  document.querySelectorAll('.code-toolbar').forEach(toolbar => {
+    if (!toolbar.querySelector('.edit-badge')) {
+      const badge = document.createElement('span');
+      badge.className = 'edit-badge';
+      badge.innerHTML = '✏️ Jonli tahrirlash';
+      badge.title = 'Kodni to\'g\'ridan-to\'g\'ri o\'zgartirib, Run tugmasini bosing!';
+      const copyBtn = toolbar.querySelector('.copy-btn');
+      if (copyBtn) {
+        toolbar.insertBefore(badge, copyBtn);
+      } else {
+        toolbar.appendChild(badge);
+      }
+    }
+  });
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', setupEditableCode);
+} else {
+  setupEditableCode();
 }
 
 // ── QUIZ ──

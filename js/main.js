@@ -558,12 +558,12 @@ async function sendAIMessage() {
   const typingDiv = document.createElement('div');
   typingDiv.className = 'ai-msg bot';
   typingDiv.id = 'aiTyping';
-  typingDiv.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> ChatGPT javob tayyorlamoqda...';
+  typingDiv.innerHTML = '<i class="fa-solid fa-circle-notch fa-spin"></i> AI javob tayyorlamoqda...';
   messages.appendChild(typingDiv);
   messages.scrollTop = messages.scrollHeight;
 
   const page = location.pathname.split('/').pop().replace('.html','').toUpperCase() || 'HTML';
-  const customKey = localStorage.getItem('w3_openai_key') || '';
+  const customKey = localStorage.getItem('w3_ai_key') || localStorage.getItem('w3_openai_key') || '';
 
   try {
     const res = await fetch('/api/chat', {
@@ -595,14 +595,16 @@ async function sendAIMessage() {
 }
 
 function openAPIKeyPrompt() {
-  const current = localStorage.getItem('w3_openai_key') || '';
-  const key = prompt("OpenAI API Kalitingizni kiriting (sk-proj-...):", current);
+  const current = localStorage.getItem('w3_ai_key') || localStorage.getItem('w3_openai_key') || '';
+  const key = prompt("Google Gemini (AIzaSy...) yoki OpenAI (sk-...) API kalitini kiriting:\n\n💡 Google Gemini kalitini mutlaqo bepul olish manzili: https://aistudio.google.com/app/apikey", current);
   if (key !== null) {
     if (key.trim()) {
-      localStorage.setItem('w3_openai_key', key.trim());
-      showToast("OpenAI API kaliti muvaffaqiyatli saqlandi! ✅");
-      appendBotMsg("🎉 <strong>OpenAI ChatGPT muvaffaqiyatli ulandi!</strong> Endi barcha savollaringizga to'g'ridan-to'g'ri ChatGPT jonli javob beradi.");
+      localStorage.setItem('w3_ai_key', key.trim());
+      showToast("API kalit muvaffaqiyatli saqlandi! ✅");
+      const provider = key.startsWith('AIza') ? 'Google Gemini' : 'OpenAI ChatGPT';
+      appendBotMsg(`🎉 <strong>${provider} muvaffaqiyatli ulandi!</strong> Endi barcha savollaringizga sun'iy intellekt jonli javob beradi.`);
     } else {
+      localStorage.removeItem('w3_ai_key');
       localStorage.removeItem('w3_openai_key');
       showToast("API kalit o'chirildi.");
     }

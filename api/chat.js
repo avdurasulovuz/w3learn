@@ -1,8 +1,7 @@
 // Vercel Serverless Function: /api/chat
-// Supports OpenAI (ChatGPT) and fallback contextual AI responses
+// Supports Google Gemini API, OpenAI ChatGPT, and Smart Fallback
 
 export default async function handler(req, res) {
-  // CORS sarlavhalari
   res.setHeader('Access-Control-Allow-Origin', '*');
   res.setHeader('Access-Control-Allow-Methods', 'POST, OPTIONS');
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
@@ -21,24 +20,64 @@ export default async function handler(req, res) {
     return res.status(400).json({ error: 'Xabar kiritilmadi' });
   }
 
-  // 1. OpenAI API kalitini tekshirish (Vercel muhitidan yoki foydalanuvchi kiritganidan)
-  const activeKey = apiKey || process.env.OPENAI_API_KEY;
+  const activeKey = (apiKey || process.env.GEMINI_API_KEY || process.env.OPENAI_API_KEY || '').trim();
 
-  if (activeKey) {
+  const systemPrompt = `Siz W3Learn dasturlash platformasining shaxsiy sun'iy intellekt ustozi (AI Mentor) siz.
+Mavzu konteksti: ${pageContext || 'Umumiy dasturlash'}.
+Qoidalar:
+1. O'quvchiga aniq, samimiy, sodda va toza o'zbek tilida javob bering.
+2. Kod so'ralsa yoki xato ko'rsatilsa, eng zamonaviy va tushunarli formatda ko'rsating.
+3. Javoblarni chiroyli Markdown formatida qaytaring (kodlarni \`\`\`til ... \`\`\` bloklariga oling).`;
+
+  // 1. Google Gemini API (agar kalit AIza bilan boshlansa yoki Gemini sozlangan bo'lsa)
+  if (activeKey.startsWith('AIza') || process.env.GEMINI_API_KEY) {
+    const geminiKey = activeKey.startsWith('AIza') ? activeKey : process.env.GEMINI_API_KEY;
     try {
-      const systemPrompt = `Siz W3Learn dasturlash ta'lim platformasining shaxsiy sun'iy intellekt ustozi (AI Mentor) siz.
-Hozirgi mavzu konteksti: ${pageContext || 'Umumiy dasturlash'}.
-Vazifangiz:
-1. O'quvchiga savollariga aniq, qisqa, sodda va o'zbek tilida javob berish.
-2. Kod misollari so'ralsa, eng toza va zamonaviy sintaksisda ko'rsatish.
-3. Agar kodda xato bo'lsa, xatoni tushuntirib, to'g'irlangan variantini berish.
-4. Javoblaringizni markdown formatida yozing (kodlarni \`\`\` til kodi bloklariga oling).`;
+      const response = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${geminiKey}`,
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({
+            contents: [
+              {
+                parts: [
+                  { text: `${systemPrompt}\n\nFoydalanuvchi savoli: ${message}` }
+                ]
+              }
+            ],
+            generationConfig: {
+              temperature: 0.7,
+              maxOutputTokens: 1000
+            }
+          })
+        }
+      );
 
+      if (response.ok) {
+        const data = await response.json();
+        const reply = data.candidates?.[0]?.content?.parts?.[0]?.text;
+        if (reply) {
+          return res.status(200).json({ reply, source: 'gemini' });
+        }
+      } else {
+        const err = await response.json().catch(() => ({}));
+        console.error('Gemini API Error:', err);
+      }
+    } catch (e) {
+      console.error('Gemini fetch error:', e);
+    }
+  }
+
+  // 2. OpenAI (agar sk- bilan boshlansa)
+  if (activeKey.startsWith('sk-') || process.env.OPENAI_API_KEY) {
+    const openaiKey = activeKey.startsWith('sk-') ? activeKey : process.env.OPENAI_API_KEY;
+    try {
       const response = await fetch('https://api.openai.com/v1/chat/completions', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${activeKey}`
+          'Authorization': `Bearer ${openaiKey}`
         },
         body: JSON.stringify({
           model: 'gpt-4o-mini',
@@ -57,18 +96,15 @@ Vazifangiz:
         if (reply) {
           return res.status(200).json({ reply, source: 'openai' });
         }
-      } else {
-        const errData = await response.json().catch(() => ({}));
-        console.error('OpenAI Error:', errData);
       }
-    } catch (err) {
-      console.error('Fetch Error:', err);
+    } catch (e) {
+      console.error('OpenAI fetch error:', e);
     }
   }
 
-  // 2. Agar API kaliti kiritilmagan bo'lsa yoki xato bersa — aqlli mahalliy javob qaytarish
-  const fallbackReply = generateSmartFallback(message, pageContext);
-  return res.status(200).json({ reply: fallbackReply, source: 'local' });
+  // 3. Fallback: Kengaytirilgan o'zbekcha dasturchi AI javobi
+  const fallback = generateSmartFallback(message, pageContext);
+  return res.status(200).json({ reply: fallback, source: 'local' });
 }
 
 function generateSmartFallback(message, context = '') {
@@ -76,16 +112,16 @@ function generateSmartFallback(message, context = '') {
   const topic = context ? context.toUpperCase() : 'DASTURLASH';
 
   if (q.includes('salom') || q.includes('assalom') || q.includes('qalaysan')) {
-    return `Assalomu alaykum! Men W3Learn AI mentoriman. Bugun **${topic}** bo'yicha qanday mavzuni o'rganamiz yoki qaysi kodni tekshiramiz? 😊`;
+    return `Assalomu alaykum! Men W3Learn AI mentoriman (Gemini). Bugun **${topic}** bo'yicha qanday kod yozamiz yoki qaysi savolingizga javob beray? 😊`;
   }
 
   if (q.includes('xato') || q.includes('ishlamayapti') || q.includes('error')) {
-    return `Kodingizda xatolik bormi? Xavotir olmang! Dasturlashda eng ko'p uchraydigan 3 ta xato:\n\n1. Ochilgan teglar yoki qavslarning yopilmay qolishi (\`</teg>\` yoki \`}\`)\n2. O'zgaruvchi yoki funksiya nomidagi orfografik xatoliklar\n3. Qo'shtirnoqlar yoki nuqta-vergullarning to'g'ri qo'yilmasligi.\n\nKodingizni menga yuboring, birgalikda tekshirib beraman! 🧐`;
+    return `Kodingizda xatolik bormi? Xavotir olmang! Dasturlashda eng ko'p uchraydigan 3 ta sabab:\n\n1. Ochilgan teglar yoki qavslarning to'g'ri yopilmay qolishi (\`</teg>\` yoki \`}\`)\n2. O'zgaruvchi yoki klass nomidagi imlo xatolar\n3. Qo'shtirnoqlar juft emasligi.\n\nKodingizni menga yuboring, birgalikda to'g'rilaymiz! 🧐`;
   }
 
-  if (q.includes('misol') || q.includes('kod')) {
-    return `Mana **${topic}** bo'yicha amaliy va toza kod namunasi:\n\n\`\`\`html\n<div class="box">\n  <h3>Salom, Dunyo!</h3>\n  <p>Bu W3Learn misoli.</p>\n</div>\n\`\`\`\n\nBuni sahifadagi kod tahrirlash oynasiga qo'yib, pastda natijasini ko'rishingiz mumkin! 🚀`;
+  if (q.includes('misol') || q.includes('kod') || q.includes('namuna')) {
+    return `Mana **${topic}** bo'yicha toza va zamonaviy kod namunasi:\n\n\`\`\`html\n<div style="background:#04AA6D;color:#fff;padding:20px;border-radius:12px;text-align:center;">\n  <h2>Salom, W3Learn! 👋</h2>\n  <p>Bu jonli ishlaydigan kod namunasi.</p>\n  <button style="padding:10px 20px;background:#fff;color:#04AA6D;border:none;border-radius:6px;font-weight:bold;cursor:pointer;">Bosing</button>\n</div>\n\`\`\`\n\nBuni sahifadagi kod tahrirlash oynasiga qo'yib ko'ring, natija pastda bir zumda aks etadi! 🚀`;
   }
 
-  return `Savolingiz: **"${message}"**\n\n**${topic}** bo'yicha asosiy maslahat: har bir yangi buyruqni bevosita amaliyotda yozib ko'rish eng tez o'rganish usulidir. Sahifadagi kod blokida tahrir qilib, natijani jonli kuzating!\n\n*(Agar to'liq ChatGPT ulanishini xohlasangiz, chat tepasidagi ⚙️ tugmasi orqali OpenAI API kalitingizni kiriting).*`;
+  return `Savolingiz: **"${message}"**\n\n**${topic}** bo'yicha tavsiya: dasturlashda eng samarali o'rganish yo'li — kodni sahifadagi tahrirlagichda o'zgartirib, natijani jonli sinab ko'rishdir. \n\n*(Gemini API kalitingiz bo'lsa, chat tepasidagi 🔑 tugmasiga kiritishingiz mumkin, mutlaqo bepul!)*`;
 }

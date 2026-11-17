@@ -54,35 +54,73 @@ function copyCode(id) {
 // ── RUN CODE ──
 function runCode(codeId, resultId) {
   const el = document.getElementById(codeId);
-  const code = el ? (el.innerText || el.textContent) : '';
-  const iframe = document.getElementById(resultId);
+  if (!el) return;
+  const rawCode = el.innerText || el.textContent || '';
+  let resEl = document.getElementById(resultId);
+  if (!resEl) return;
+  const iframe = resEl.tagName === 'IFRAME' ? resEl : resEl.querySelector('iframe');
   if (!iframe) return;
+
+  // Clean wrapper with modern typography
+  let code = rawCode;
+  if (!code.includes('<html') && !code.includes('<!DOCTYPE')) {
+    code = `<!DOCTYPE html><html><head><meta charset="utf-8"/><style>body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;padding:16px;color:#1e293b;margin:0;line-height:1.6;}h1,h2,h3{margin-top:0;color:#0f172a;}hr{border:none;border-top:1px solid #e2e8f0;margin:16px 0;}</style></head><body>${code}</body></html>`;
+  }
+
   const doc = iframe.contentDocument || iframe.contentWindow.document;
   doc.open();
   doc.write(code);
   doc.close();
+
   // Auto-resize
   setTimeout(() => {
     try {
       const h = doc.body.scrollHeight;
-      iframe.style.height = Math.max(80, Math.min(h + 20, 500)) + 'px';
+      iframe.style.height = Math.max(120, Math.min(h + 24, 600)) + 'px';
     } catch(e) {}
-  }, 200);
+  }, 100);
 }
 
-// ── EDITABLE CODE BLOCKS ──
+// ── EDITABLE CODE BLOCKS & LIVE AUTO-UPDATE ──
 function setupEditableCode() {
   document.querySelectorAll('.code-body pre').forEach(pre => {
     pre.setAttribute('contenteditable', 'true');
     pre.setAttribute('spellcheck', 'false');
+
+    // Find associated result box or button
+    const wrap = pre.closest('.code-wrap');
+    let targetResultId = null;
+
+    if (wrap) {
+      const runBtn = wrap.querySelector('.run-btn, .btn-run');
+      if (runBtn && runBtn.getAttribute('onclick')) {
+        const match = runBtn.getAttribute('onclick').match(/runCode\(['"]([^'"]+)['"],\s*['"]([^'"]+)['"]\)/);
+        if (match) targetResultId = match[2];
+      }
+      if (!targetResultId && wrap.nextElementSibling && wrap.nextElementSibling.classList.contains('result-box')) {
+        targetResultId = wrap.nextElementSibling.id;
+      }
+    }
+
+    if (targetResultId) {
+      // 1. Live auto-update when user edits code!
+      pre.addEventListener('input', () => {
+        runCode(pre.id, targetResultId);
+      });
+      // 2. Initial run on page load so result box is already filled!
+      setTimeout(() => {
+        runCode(pre.id, targetResultId);
+      }, 150);
+    }
   });
+
   document.querySelectorAll('.code-toolbar').forEach(toolbar => {
     if (!toolbar.querySelector('.edit-badge')) {
       const badge = document.createElement('span');
       badge.className = 'edit-badge';
       badge.innerHTML = '✏️ Jonli tahrirlash';
-      badge.title = 'Kodni to\'g\'ridan-to\'g\'ri o\'zgartirib, Run tugmasini bosing!';
-      const copyBtn = toolbar.querySelector('.copy-btn');
+      badge.title = 'Kodni o\'zgartirishingiz bilan natija darhol o\'zgaradi!';
+      const copyBtn = toolbar.querySelector('.copy-btn, .btn-copy');
       if (copyBtn) {
         toolbar.insertBefore(badge, copyBtn);
       } else {

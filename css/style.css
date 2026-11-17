@@ -412,7 +412,8 @@ body.light .code-wrap { background: #1e2535; }
   padding: 10px 16px;
   background: rgba(255,255,255,0.03);
   border-bottom: 1px solid var(--border);
-  gap: 8px;
+  gap: 10px;
+  flex-wrap: wrap;
 }
 .code-lang {
   font-size: 11px;
@@ -421,65 +422,78 @@ body.light .code-wrap { background: #1e2535; }
   text-transform: uppercase;
   color: var(--green);
   background: rgba(4,170,109,0.12);
-  padding: 3px 10px;
-  border-radius: 20px;
+  padding: 4px 10px;
+  border-radius: 6px;
   border: 1px solid rgba(4,170,109,0.25);
-  flex: 1;
+  display: inline-flex;
+  align-items: center;
 }
 
 /* Dot buttons (Mac style) */
 .code-toolbar::before {
   content: '';
-  width: 12px; height: 12px;
+  width: 10px; height: 10px;
   border-radius: 50%;
   background: #ff5f57;
-  box-shadow: 18px 0 0 #febc2e, 36px 0 0 #28c840;
-  margin-right: 42px;
+  box-shadow: 16px 0 0 #febc2e, 32px 0 0 #28c840;
+  margin-right: 36px;
   flex-shrink: 0;
 }
 
 .edit-badge {
   font-size: 11px;
   color: var(--green-light);
-  background: rgba(4,170,109,0.1);
-  border: 1px solid rgba(4,170,109,0.25);
-  padding: 3px 8px;
-  border-radius: 4px;
+  background: rgba(4,170,109,0.12);
+  border: 1px solid rgba(4,170,109,0.3);
+  padding: 4px 10px;
+  border-radius: 6px;
   font-weight: 600;
   display: inline-flex;
   align-items: center;
   gap: 4px;
-  margin-right: auto;
 }
 
-.copy-btn, .run-btn {
-  border: 1px solid var(--border);
+.code-actions {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: auto;
+}
+
+.copy-btn, .btn-copy, .run-btn, .btn-run {
   border-radius: 6px;
   font-size: 12px;
   font-weight: 600;
-  padding: 5px 12px;
+  padding: 6px 14px;
   cursor: pointer;
-  transition: var(--transition);
+  transition: all 0.2s cubic-bezier(0.4,0,0.2,1);
   letter-spacing: 0.3px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  outline: none;
 }
-.copy-btn {
-  background: transparent;
-  color: var(--text2);
+.copy-btn, .btn-copy {
+  background: #1f293d;
+  color: #e2e8f0;
+  border: 1px solid #334155;
 }
-.copy-btn:hover {
-  background: var(--bg3);
-  color: var(--white);
-  border-color: var(--text3);
-}
-.run-btn {
-  background: linear-gradient(135deg, var(--green), var(--green-dark));
-  color: white;
-  border-color: var(--green-dark);
-  box-shadow: 0 2px 8px rgba(4,170,109,0.3);
-}
-.run-btn:hover {
+.copy-btn:hover, .btn-copy:hover {
+  background: #334155;
+  color: #ffffff;
+  border-color: #64748b;
   transform: translateY(-1px);
-  box-shadow: 0 4px 16px rgba(4,170,109,0.4);
+}
+.run-btn, .btn-run {
+  background: linear-gradient(135deg, #04AA6D, #028a55);
+  color: #ffffff;
+  border: 1px solid #04AA6D;
+  box-shadow: 0 2px 10px rgba(4,170,109,0.35);
+}
+.run-btn:hover, .btn-run:hover {
+  background: linear-gradient(135deg, #00d4a0, #04AA6D);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 16px rgba(4,170,109,0.5);
 }
 
 .code-body {
@@ -506,25 +520,41 @@ body.light .code-wrap { background: #1e2535; }
 
 /* Result box */
 .result-box {
-  border-top: 1px solid var(--border);
-  background: #fff;
+  border: 1px solid #cbd5e1;
+  border-radius: var(--radius);
+  overflow: hidden;
+  margin: 16px 0 32px;
+  background: #ffffff;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.06);
 }
 .result-label {
-  font-size: 11px;
+  font-size: 11.5px;
   font-weight: 700;
-  color: var(--text3);
+  color: #334155;
   text-transform: uppercase;
   letter-spacing: 1px;
-  padding: 6px 16px;
-  background: rgba(0,0,0,0.3);
-  border-bottom: 1px solid var(--border);
+  padding: 10px 16px;
+  background: #f1f5f9;
+  border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 .result-iframe {
   width: 100%;
-  height: 120px;
+  min-height: 140px;
   border: none;
   display: block;
-  background: #fff;
+  background: #ffffff;
+}
+body:not(.light) .result-box {
+  border-color: #2a3450;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.25);
+}
+body:not(.light) .result-label {
+  background: #161b27;
+  color: #94a3b8;
+  border-bottom-color: #2a3450;
 }
 
 /* ══════════════════════════════════════

@@ -1671,3 +1671,150 @@ footer {
   }
 }
 
+
+/* ===== MOBIL MOSLASHUV ===== */
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .topbar { flex-wrap: wrap; gap: 8px; padding: 8px 12px; }
+  .logo { font-size: 20px; }
+  .search-wrap input { width: 120px; }
+  
+  .page-layout { flex-direction: column; }
+  .sidebar { position: fixed; left: -260px; top: 0; bottom: 0; z-index: 100; transition: left 0.3s; width: 240px; }
+  .sidebar.open { left: 0; }
+  .right-panel { display: none; }
+  
+  main { padding: 12px; }
+  .code-block pre { font-size: 12px; overflow-x: auto; }
+  .result-box { min-height: 100px; }
+  
+  .nav-btns { flex-direction: column; gap: 8px; }
+  .btn-prev, .btn-next { text-align: center; }
+  
+  .quiz-box { padding: 16px; }
+  .quiz-opt { font-size: 14px; }
+  
+  /* Hamburger menu */
+  .hamburger { display: flex !important; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
+  .hamburger span { width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: 0.3s; }
+  
+  /* AI Chat mobil */
+  .ai-chat-window { width: calc(100vw - 24px) !important; right: 12px !important; bottom: 70px !important; max-height: 60vh; }
+  
+  /* Hero section */
+  .hero h1 { font-size: 28px; }
+  .hero p { font-size: 15px; }
+  .cards-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
+}
+
+@media (max-width: 480px) {
+  .cards-grid { grid-template-columns: 1fr; }
+  .hero { padding: 40px 16px; }
+  .hero h1 { font-size: 24px; }
+  .features-grid { grid-template-columns: 1fr; }
+  .code-block { margin: 8px 0; }
+}
+
+/* ===== YAXSHILANGAN DIZAYN ===== */
+
+/* Topbar gradient */
+.topbar {
+  background: linear-gradient(90deg, #0d1117 0%, #111827 100%) !important;
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255,255,255,0.06) !important;
+}
+
+/* Yaxshilangan kurs kartlari */
+.course-card {
+  transition: transform 0.25s cubic-bezier(.4,0,.2,1), box-shadow 0.25s !important;
+  border: 1px solid rgba(255,255,255,0.05) !important;
+}
+.course-card:hover {
+  transform: translateY(-6px) scale(1.02) !important;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(4,170,109,0.2) !important;
+}
+
+/* Yaxshilangan sidebar */
+.sidebar {
+  scrollbar-width: thin;
+  scrollbar-color: rgba(4,170,109,0.3) transparent;
+}
+.sidebar a:hover {
+  background: rgba(4,170,109,0.12) !important;
+  color: #04AA6D !important;
+  border-left: 3px solid #04AA6D;
+  padding-left: 13px;
+  transition: all 0.2s;
+}
+
+/* Yaxshilangan quiz */
+.quiz-box {
+  border: 1px solid rgba(255,255,255,0.06);
+  background: linear-gradient(135deg, #1a2235 0%, #111827 100%);
+}
+.quiz-opt {
+  transition: all 0.2s cubic-bezier(.4,0,.2,1) !important;
+}
+.quiz-opt:hover {
+  border-color: #04AA6D !important;
+  transform: translateX(4px);
+}
+
+/* Yaxshilangan nav buttons */
+.btn-prev, .btn-next {
+  font-weight: 700 !important;
+  letter-spacing: 0.3px;
+  transition: all 0.2s !important;
+}
+.btn-next:hover {
+  background: #038a56 !important;
+  transform: translateX(3px);
+}
+.btn-prev:hover {
+  transform: translateX(-3px);
+}
+
+/* Code block yaxshilash */
+.code-block {
+  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* Hero gradient animatsiya */
+.hero {
+  background: linear-gradient(135deg, #0d1117 0%, #0f1f14 50%, #0d1117 100%);
+  position: relative;
+  overflow: hidden;
+}
+.hero::before {
+  content: '';
+  position: absolute;
+  width: 600px; height: 600px;
+  background: radial-gradient(circle, rgba(4,170,109,0.08) 0%, transparent 70%);
+  top: -200px; right: -200px;
+  pointer-events: none;
+}
+
+/* Scrollbar yaxshilash */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: #0d1117; }
+::-webkit-scrollbar-thumb { background: rgba(4,170,109,0.4); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #04AA6D; }
+
+/* AI chat yaxshilash */
+.ai-chat-window {
+  border: 1px solid rgba(4,170,109,0.2) !important;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.6) !important;
+}
+
+/* Exercise box */
+.exercise-box {
+  border: 1px solid rgba(99,102,241,0.2);
+  background: linear-gradient(135deg, #1a1a2e 0%, #111827 100%);
+}
+
+/* Progress bar animatsiya */
+.progress-bar-fill {
+  transition: width 0.6s cubic-bezier(.4,0,.2,1) !important;
+  background: linear-gradient(90deg, #04AA6D, #00d4a0) !important;
+}

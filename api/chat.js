@@ -1,5 +1,7 @@
 // Vercel Serverless Function: /api/chat
-// Supports Google Gemini API, OpenAI ChatGPT, and Smart Fallback
+// Powered by Google Gemini 1.5 Flash (Rasmiy integratsiya)
+
+const GEMINI_SERVER_KEY = "AIzaSyCbt9gFAN2HBA-w6OYvaTzNR8D5OPN7gCI";
 
 export default async function handler(req, res) {
   res.setHeader('Access-Control-Allow-Origin', '*');
@@ -14,114 +16,78 @@ export default async function handler(req, res) {
     return res.status(405).json({ error: 'Faqat POST so\'rov qabul qilinadi' });
   }
 
-  const { message, pageContext, apiKey } = req.body || {};
+  const { message, pageContext } = req.body || {};
 
   if (!message) {
     return res.status(400).json({ error: 'Xabar kiritilmadi' });
   }
 
-  const activeKey = (apiKey || process.env.GEMINI_API_KEY || process.env.OPENAI_API_KEY || '').trim();
+  const systemPrompt = `Siz W3Learn (O'zbek dasturlash o'quv platformasi)ning rasmiy Sun'iy Intellekt Ustozi (AI Mentor) siz.
+Hozirgi o'rganilayotgan dars: ${pageContext || 'Dasturlash'}.
+Asosiy qoidalar:
+1. Har doim o'zbek tilida, do'stona, aniq va tushunarli javob bering.
+2. Agar o'quvchi biror teg (masalan, <div>, <span>), funksiya yoki sintaksis haqida so'rasa, uning vazifasini sodda tilda tushuntiring va kichik amaliy kod namunasi bering.
+3. Koddagi xatoni so'rasa, xatoni qayerdaligini ko'rsatib, to'g'ri variantini taqdim eting.
+4. Javoblarni chiroyli Markdown formatida yozing (kodlarni \`\`\`html ... \`\`\` bloklariga oling).`;
 
-  const systemPrompt = `Siz W3Learn dasturlash platformasining shaxsiy sun'iy intellekt ustozi (AI Mentor) siz.
-Mavzu konteksti: ${pageContext || 'Umumiy dasturlash'}.
-Qoidalar:
-1. O'quvchiga aniq, samimiy, sodda va toza o'zbek tilida javob bering.
-2. Kod so'ralsa yoki xato ko'rsatilsa, eng zamonaviy va tushunarli formatda ko'rsating.
-3. Javoblarni chiroyli Markdown formatida qaytaring (kodlarni \`\`\`til ... \`\`\` bloklariga oling).`;
-
-  // 1. Google Gemini API (agar kalit AIza bilan boshlansa yoki Gemini sozlangan bo'lsa)
-  if (activeKey.startsWith('AIza') || process.env.GEMINI_API_KEY) {
-    const geminiKey = activeKey.startsWith('AIza') ? activeKey : process.env.GEMINI_API_KEY;
-    try {
-      const response = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${geminiKey}`,
-        {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({
-            contents: [
-              {
-                parts: [
-                  { text: `${systemPrompt}\n\nFoydalanuvchi savoli: ${message}` }
-                ]
-              }
-            ],
-            generationConfig: {
-              temperature: 0.7,
-              maxOutputTokens: 1000
-            }
-          })
-        }
-      );
-
-      if (response.ok) {
-        const data = await response.json();
-        const reply = data.candidates?.[0]?.content?.parts?.[0]?.text;
-        if (reply) {
-          return res.status(200).json({ reply, source: 'gemini' });
-        }
-      } else {
-        const err = await response.json().catch(() => ({}));
-        console.error('Gemini API Error:', err);
-      }
-    } catch (e) {
-      console.error('Gemini fetch error:', e);
-    }
-  }
-
-  // 2. OpenAI (agar sk- bilan boshlansa)
-  if (activeKey.startsWith('sk-') || process.env.OPENAI_API_KEY) {
-    const openaiKey = activeKey.startsWith('sk-') ? activeKey : process.env.OPENAI_API_KEY;
-    try {
-      const response = await fetch('https://api.openai.com/v1/chat/completions', {
+  // 1. Google Gemini API chaqiruvi
+  try {
+    const key = process.env.GEMINI_API_KEY || GEMINI_SERVER_KEY;
+    const response = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${key}`,
+      {
         method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${openaiKey}`
-        },
+        headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          model: 'gpt-4o-mini',
-          messages: [
-            { role: 'system', content: systemPrompt },
-            { role: 'user', content: message }
+          contents: [
+            {
+              parts: [
+                { text: `${systemPrompt}\n\nO'quvchi savoli: ${message}` }
+              ]
+            }
           ],
-          temperature: 0.7,
-          max_tokens: 800
+          generationConfig: {
+            temperature: 0.7,
+            maxOutputTokens: 1200
+          }
         })
-      });
-
-      if (response.ok) {
-        const data = await response.json();
-        const reply = data.choices?.[0]?.message?.content;
-        if (reply) {
-          return res.status(200).json({ reply, source: 'openai' });
-        }
       }
-    } catch (e) {
-      console.error('OpenAI fetch error:', e);
+    );
+
+    if (response.ok) {
+      const data = await response.json();
+      const reply = data.candidates?.[0]?.content?.parts?.[0]?.text;
+      if (reply) {
+        return res.status(200).json({ reply, source: 'gemini' });
+      }
+    } else {
+      const err = await response.json().catch(() => ({}));
+      console.error('Gemini API Error:', err);
     }
+  } catch (err) {
+    console.error('Gemini Fetch Error:', err);
   }
 
-  // 3. Fallback: Kengaytirilgan o'zbekcha dasturchi AI javobi
+  // 2. Favqulodda aqlli mahalliy zaxira (Fallback)
   const fallback = generateSmartFallback(message, pageContext);
-  return res.status(200).json({ reply: fallback, source: 'local' });
+  return res.status(200).json({ reply: fallback, source: 'fallback' });
 }
 
 function generateSmartFallback(message, context = '') {
   const q = message.toLowerCase();
   const topic = context ? context.toUpperCase() : 'DASTURLASH';
 
+  if (q.includes('div')) {
+    return `**HTML \`<div>\` elementi haqida:**\n\n\`<div>\` (division - bo'lim) — HTML dagi eng asosiy **blokli konteyner** tegi hisoblanadi. U boshqa elementlarni (matnlar, rasmlar, tugmalar) bitta blokga guruhlash va ularga CSS orqali stil berish uchun ishlatiladi.\n\n\`\`\`html\n<div style="background:#1e293b; color:#fff; padding:15px; border-radius:8px;">\n  <h3>Bu sarlavha</h3>\n  <p>Bu div konteyner ichidagi matn.</p>\n</div>\n\`\`\`\n\nUni sahifadagi kod tahrirlash oynasiga qo'yib, natijasini jonli ko'rishingiz mumkin! 🚀`;
+  }
+
+  if (q.includes('span')) {
+    return `**HTML \`<span>\` elementi:**\n\n\`<span>\` — **qatorli (inline)** konteyner bo'lib, butun blokni emas, matnning aynan ma'lum bir so'zi yoki qismiga stil (masalan, alohida rang) berish uchun ishlatiladi.\n\n\`\`\`html\n<p>Bu matnda <span style="color:#04AA6D; font-weight:bold;">yashil so'z</span> mavjud.</p>\n\`\`\``;
+  }
+
   if (q.includes('salom') || q.includes('assalom') || q.includes('qalaysan')) {
-    return `Assalomu alaykum! Men W3Learn AI mentoriman (Gemini). Bugun **${topic}** bo'yicha qanday kod yozamiz yoki qaysi savolingizga javob beray? 😊`;
+    return `Assalomu alaykum! Men sizning **${topic}** bo'yicha sun'iy intellekt ustozingizman. Qanday savolingiz bor? 😊`;
   }
 
-  if (q.includes('xato') || q.includes('ishlamayapti') || q.includes('error')) {
-    return `Kodingizda xatolik bormi? Xavotir olmang! Dasturlashda eng ko'p uchraydigan 3 ta sabab:\n\n1. Ochilgan teglar yoki qavslarning to'g'ri yopilmay qolishi (\`</teg>\` yoki \`}\`)\n2. O'zgaruvchi yoki klass nomidagi imlo xatolar\n3. Qo'shtirnoqlar juft emasligi.\n\nKodingizni menga yuboring, birgalikda to'g'rilaymiz! 🧐`;
-  }
-
-  if (q.includes('misol') || q.includes('kod') || q.includes('namuna')) {
-    return `Mana **${topic}** bo'yicha toza va zamonaviy kod namunasi:\n\n\`\`\`html\n<div style="background:#04AA6D;color:#fff;padding:20px;border-radius:12px;text-align:center;">\n  <h2>Salom, W3Learn! 👋</h2>\n  <p>Bu jonli ishlaydigan kod namunasi.</p>\n  <button style="padding:10px 20px;background:#fff;color:#04AA6D;border:none;border-radius:6px;font-weight:bold;cursor:pointer;">Bosing</button>\n</div>\n\`\`\`\n\nBuni sahifadagi kod tahrirlash oynasiga qo'yib ko'ring, natija pastda bir zumda aks etadi! 🚀`;
-  }
-
-  return `Savolingiz: **"${message}"**\n\n**${topic}** bo'yicha tavsiya: dasturlashda eng samarali o'rganish yo'li — kodni sahifadagi tahrirlagichda o'zgartirib, natijani jonli sinab ko'rishdir. \n\n*(Gemini API kalitingiz bo'lsa, chat tepasidagi 🔑 tugmasiga kiritishingiz mumkin, mutlaqo bepul!)*`;
+  return `Savolingiz: **"${message}"**\n\n**${topic}** darsida har bir kodni to'g'ridan-to'g'ri tahrirlab ko'rishingiz mumkin. Natija pastdagi oynada bir zumda aks etadi! 💡`;
 }

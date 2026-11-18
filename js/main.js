@@ -158,6 +158,9 @@ function checkQuiz(el, isCorrect, resultId) {
   }
   if (isCorrect) {
     addXP(25, "To'g'ri test javobi");
+    const pg = window.location.pathname.split('/').pop().replace('.html','');
+    const done = JSON.parse(localStorage.getItem('w3completedCourses')||'[]');
+    if(!done.includes(pg)){done.push(pg);localStorage.setItem('w3completedCourses',JSON.stringify(done));}
   }
   // Update progress
   updateProgress();
@@ -496,15 +499,10 @@ function initAIMentor() {
           </div>
           <div>
             <div>W3Bot — AI Ustoz</div>
-            <div style="font-size:10.5px;color:#10b981;font-weight:500;">● ChatGPT / Real-vaqtli AI</div>
+            <div style="font-size:10.5px;color:#10b981;font-weight:500;">● Google Gemini / Jonli AI</div>
           </div>
         </div>
-        <div style="display:flex;align-items:center;gap:6px;">
-          <button onclick="openAPIKeyPrompt()" title="OpenAI API Kalitni kiritish" style="background:rgba(255,255,255,0.08);border:1px solid rgba(255,255,255,0.15);color:#fbbf24;font-size:11px;font-weight:600;padding:3px 8px;border-radius:6px;cursor:pointer;">
-            <i class="fa-solid fa-key"></i> API Kalit
-          </button>
-          <button class="ai-close-btn" onclick="toggleAIChat()">✕</button>
-        </div>
+        <button class="ai-close-btn" onclick="toggleAIChat()">✕</button>
       </div>
 
       <!-- Quick Chips -->
@@ -518,8 +516,8 @@ function initAIMentor() {
       <!-- Messages -->
       <div class="ai-messages" id="aiMessages">
         <div class="ai-msg bot">
-          Assalomu alaykum! Men sizning <strong>${page}</strong> bo'yicha sun'iy intellekt mentoriman (ChatGPT quvvatida). 
-          Kodingizdagi xatolar, yangi tushunchalar yoki savollaringizni bemalol so'rang! 👋
+          Assalomu alaykum! Men sizning <strong>${page}</strong> bo'yicha sun'iy intellekt mentoriman (Google Gemini quvvatida). 
+          Kodingizdagi xatolar, teglar yoki istalgan dasturlash savollaringizni bemalol so'rang! 👋
         </div>
       </div>
 
@@ -591,23 +589,6 @@ async function sendAIMessage() {
     typingDiv.remove();
     const fallback = generateAIResponse(text);
     appendBotMsg(fallback);
-  }
-}
-
-function openAPIKeyPrompt() {
-  const current = localStorage.getItem('w3_ai_key') || localStorage.getItem('w3_openai_key') || '';
-  const key = prompt("Google Gemini (AIzaSy...) yoki OpenAI (sk-...) API kalitini kiriting:\n\n💡 Google Gemini kalitini mutlaqo bepul olish manzili: https://aistudio.google.com/app/apikey", current);
-  if (key !== null) {
-    if (key.trim()) {
-      localStorage.setItem('w3_ai_key', key.trim());
-      showToast("API kalit muvaffaqiyatli saqlandi! ✅");
-      const provider = key.startsWith('AIza') ? 'Google Gemini' : 'OpenAI ChatGPT';
-      appendBotMsg(`🎉 <strong>${provider} muvaffaqiyatli ulandi!</strong> Endi barcha savollaringizga sun'iy intellekt jonli javob beradi.`);
-    } else {
-      localStorage.removeItem('w3_ai_key');
-      localStorage.removeItem('w3_openai_key');
-      showToast("API kalit o'chirildi.");
-    }
   }
 }
 
@@ -747,3 +728,16 @@ if (document.readyState !== 'loading') {
   initAIMentor();
 }
 
+
+function toggleSidebar(){
+  const sb = document.querySelector('.sidebar');
+  if(sb) sb.classList.toggle('open');
+}
+// Sidebar tashqarisini bossanda yopish
+document.addEventListener('click', function(e){
+  const sb = document.querySelector('.sidebar');
+  const hb = document.getElementById('hamburgerBtn');
+  if(sb && sb.classList.contains('open') && !sb.contains(e.target) && e.target !== hb){
+    sb.classList.remove('open');
+  }
+});

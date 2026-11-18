@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="uz">
 <head>
 <meta charset="UTF-8"/>
@@ -221,6 +221,39 @@
 </style>
 </head>
 <body>
+<div id="adminLoginOverlay" style="display:none;position:fixed;inset:0;background:#0b0f19;z-index:9999;display:flex;align-items:center;justify-content:center;">
+  <div style="background:#111827;border:1px solid #1f2937;border-radius:16px;padding:40px;width:360px;max-width:90%;text-align:center;">
+    <div style="font-size:48px;margin-bottom:16px;">&#128274;</div>
+    <h2 style="color:#fff;margin-bottom:8px;font-size:22px;">Admin Panel</h2>
+    <p style="color:#9ca3af;font-size:14px;margin-bottom:24px;">Kirish uchun hisob ma'lumotlarini kiriting</p>
+    <input type="text" id="adminUser" placeholder="Foydalanuvchi nomi" style="width:100%;padding:12px;border-radius:8px;border:1px solid #374151;background:#1f2937;color:#fff;font-size:14px;margin-bottom:12px;box-sizing:border-box;"/>
+    <input type="password" id="adminPass" placeholder="Parol" style="width:100%;padding:12px;border-radius:8px;border:1px solid #374151;background:#1f2937;color:#fff;font-size:14px;margin-bottom:16px;box-sizing:border-box;" onkeydown="if(event.key==='Enter')adminLogin()"/>
+    <div id="adminErr" style="color:#ef4444;font-size:13px;margin-bottom:12px;display:none;">&#10060; Noto'g'ri login yoki parol!</div>
+    <button onclick="adminLogin()" style="width:100%;padding:12px;background:#04AA6D;color:#fff;border:none;border-radius:8px;font-size:15px;font-weight:700;cursor:pointer;">Kirish</button>
+  </div>
+</div>
+<script>
+(function(){
+  if(sessionStorage.getItem('w3admin')==='true'){
+    document.getElementById('adminLoginOverlay').style.display='none';
+  } else {
+    document.getElementById('adminLoginOverlay').style.display='flex';
+    document.addEventListener('DOMContentLoaded',function(){
+      document.getElementById('adminLoginOverlay').style.display='flex';
+    });
+  }
+})();
+function adminLogin(){
+  const u=document.getElementById('adminUser').value.trim();
+  const p=document.getElementById('adminPass').value;
+  if(u==='admin'&&p==='w3learn2024'){
+    sessionStorage.setItem('w3admin','true');
+    document.getElementById('adminLoginOverlay').style.display='none';
+  } else {
+    document.getElementById('adminErr').style.display='block';
+  }
+}
+</script>
 
 <div class="admin-layout">
   <!-- Sidebar -->
@@ -252,7 +285,7 @@
           <i class="fa-solid fa-arrow-left"></i> Asosiy Saytga Qaytish
         </a>
       </div>
-    </nav>
+    <button onclick="sessionStorage.removeItem('w3admin');location.reload();" style="margin:20px;padding:10px;background:#ef4444;color:#fff;border:none;border-radius:8px;cursor:pointer;width:calc(100% - 40px);font-weight:700;">&#128682; Chiqish</button>
   </aside>
 
   <!-- Main Admin Area -->

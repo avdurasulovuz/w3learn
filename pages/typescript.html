@@ -73,136 +73,1052 @@
   </ul>
 </aside>
 <main class="main">
-  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">TypeScript</a> › TypeScript Nima?</div>
-  <h1 id="kirish">TypeScript Nima?</h1>
-  <div class="meta-tags">
-    <span class="tag tag-green">⏱ 10 daqiqa</span>
-    <span class="tag tag-blue">🔴 Ilg'or</span>
-    <span class="tag tag-orange">👁 4,780 marta ko'rilgan</span>
-  </div>
-  <p><strong>TypeScript</strong> — Microsoft tomonidan yaratilgan JavaScript ning kengaytmasi (superset). TypeScript <strong>statik tiplash</strong> ni qo'shib, katta loyihalarda xatolarni oldindan aniqlash imkonini beradi.</p>
-  <div class="note">💡 <strong>Eslatma:</strong> Har qanday JavaScript kodi — to'g'ri TypeScript koddir. TS ni tsc kompilyatori JS ga aylantiradi.</div>
+  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">TypeScript</a> › Barcha Mavzular</div>
 
-  <h2 id="primitiv">Asosiy Typlar</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar"><span class="code-lang">TypeScript</span>
-      <div class="code-actions"><button class="btn-copy" onclick="copyCode('code1')">📋 Nusxa</button></div>
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Asosiy</span>
+      <span style="font-size:12px; color:var(--text2);">TS Mavzu #1</span>
     </div>
-    <div class="code-body"><pre id="code1">// Primitiv typlar
-let ism: string = "Ali";
-let yosh: number = 25;
-let faol: boolean = true;
+    <h2 id="kirish" style="color:#38bdf8; margin-top:0; font-size:24px;">TypeScript Nima?</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>TypeScript</strong> — bu Microsoft tomonidan ishlab chiqilgan va JavaScript ustiga qurilgan ochiq kodli dasturlash tili. U JavaScriptga <strong>statik tiplash (Static Typing)</strong> imkoniyatini qo'shadi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>TypeScript — bu JavaScriptning kengaytmasi (Superset of JS). Har qanday to'g'ri JavaScript kodi avtomatik TypeScript kodi ham hisoblanadi.</li>
+      <li>Koddagi xatolarni dastur ishga tushmasidan oldin (kompilyatsiya bosqichida) aniqlaydi.</li>
+      <li>Katta jamoaviy va korporativ loyihalarda kod xavfsizligi va qulayligini ta'minlaydi.</li>
+    </ul>
 
-// Array
-let sonlar: number[] = [1, 2, 3, 4, 5];
-let ismlar: Array&lt;string&gt; = ["Ali", "Zulfiya", "Kamol"];
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">TypeScript Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('tsCode1')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('tsCode1','tsRes1')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="tsCode1" contenteditable="true" spellcheck="false">// TypeScript kodi namunasi
+let ism: string = "Anvar";
+let yosh: number = 24;
+let dasturchimi: boolean = true;
 
-// Tuple (aniq uzunlik va typlar)
-let koordinata: [number, number] = [41.2995, 69.2401];
+console.log(`Dasturchi: ${ism}, Yoshi: ${yosh}`);</pre>
+      </div>
+    </div>
+    <div class="result-box" id="tsRes1"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
-// Union type
-let id: number | string = 123;
-id = "ABC-456"; // ham ishlaydi
+    <div class="note" style="margin-top:16px;">💡 Brauzerlar TypeScriptni to'g'ridan-to'g'ri tushunmaydi. TypeScript kompilyatori (tsc) uni oddiy JavaScript kodiga o'girib beradi.</div>
+  </section>
 
-// Optional
-function salomlash(ism: string, unvon?: string): string {
-  return unvon ? `${unvon} ${ism}` : ism;
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">O'rnatish</span>
+      <span style="font-size:12px; color:var(--text2);">TS Mavzu #2</span>
+    </div>
+    <h2 id="install" style="color:#38bdf8; margin-top:0; font-size:24px;">O'rnatish va Sozlash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">TypeScriptni kompyuterga o'rnatish uchun Node.js va npm kerak bo'ladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Global o'rnatish: <code>npm install -g typescript</code>.</li>
+      <li>Versiyani tekshirish: <code>tsc -v</code>.</li>
+      <li>TypeScript fayllarini JavaScriptga o'girish: <code>tsc faylNomi.ts</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">TypeScript Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('tsCode2')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('tsCode2','tsRes2')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="tsCode2" contenteditable="true" spellcheck="false">// Terminalda bajariladigan buyruqlar:
+// 1. O'rnatish:
+// npm install -g typescript
+
+// 2. index.ts faylini index.js ga kompilyatsiya qilish:
+// tsc index.ts</pre>
+      </div>
+    </div>
+    <div class="result-box" id="tsRes2"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">⚡ Agar kodni har safar qo'lda kompilyatsiya qilishni xohlamasangiz, <code>tsc -w</code> (watch mode) buyrug'ini ishlating.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Konfiguratsiya</span>
+      <span style="font-size:12px; color:var(--text2);">TS Mavzu #3</span>
+    </div>
+    <h2 id="tsconfig" style="color:#38bdf8; margin-top:0; font-size:24px;">tsconfig.json Fayli</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Loyihada TypeScript qoidalarini, qaysi JavaScript versiyasiga o'girilishini va qat'iylik darajasini belgilovchi boshqaruv fayli.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Yaratish buyrug'i: <code>tsc --init</code>.</li>
+      <li><code>target: "ES6"</code> — chiqadigan JS versiyasi.</li>
+      <li><code>strict: true</code> — tiplarni maksimal darajada qat'iy tekshirish.</li>
+      <li><code>outDir: "./dist"</code> — tayyor JS fayllar saqlanadigan papka.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">TypeScript Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('tsCode3')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('tsCode3','tsRes3')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="tsCode3" contenteditable="true" spellcheck="false">{
+  "compilerOptions": {
+    "target": "es2022",
+    "module": "commonjs",
+    "strict": true,
+    "outDir": "./dist"
+  }
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="tsRes3"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 <code>"strict": true</code> parametri yangi loyihalarda xatolarni minimallashtirish uchun eng tavsiya etilgan qoidadir.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Tiplar</span>
+      <span style="font-size:12px; color:var(--text2);">TS Mavzu #4</span>
+    </div>
+    <h2 id="primitiv" style="color:#38bdf8; margin-top:0; font-size:24px;">Primitiv Tiplar (Primitive Types)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">TypeScriptdagi asosiy ma'lumot turlari bo'lib, o'zgaruvchi e'lon qilinayotganda ikki nuqta (<code>:</code>) dan keyin ko'rsatiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>string</code>: matnlar uchun (<code>let til: string = 'TS';</code>).</li>
+      <li><code>number</code>: butun va o'nlik sonlar (<code>let ball: number = 95.5;</code>).</li>
+      <li><code>boolean</code>: rost yoki yolg'on (<code>let aktiv: boolean = true;</code>).</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">TypeScript Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('tsCode4')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('tsCode4','tsRes4')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="tsCode4" contenteditable="true" spellcheck="false">let kurs: string = "TypeScript Pro";
+let darslarSoni: number = 28;
+let bepulmi: boolean = true;
+
+// Xato beradi:
+// kurs = 123; // Error: Type 'number' is not assignable to type 'string'</pre>
+      </div>
+    </div>
+    <div class="result-box" id="tsRes4"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">⚠️ Agar noto'g'ri turdagi qiymat berilsa, TypeScript darhol qizil to'lqinli chiziq bilan xatoni ko'rsatadi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Tiplar</span>
+      <span style="font-size:12px; color:var(--text2);">TS Mavzu #5</span>
+    </div>
+    <h2 id="array" style="color:#38bdf8; margin-top:0; font-size:24px;">Array va Tuple (Massivlar va Kortejlar)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Massiv ichida faqat ma'lum bir turdagi ma'lumotlar saqlanishini ta'minlash.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><strong>Array sintaksisi:</strong> <code>number[]</code> yoki <code>Array&lt;string&gt;</code>.</li>
+      <li><strong>Tuple (Kortej):</strong> aniq o'lchamga va aniq tartibdagi tiplarga ega maxsus massiv: <code>[string, number]</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">TypeScript Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('tsCode5')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('tsCode5','tsRes5')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="tsCode5" contenteditable="true" spellcheck="false">// Oddiy massiv
+let baholar: number[] = [5, 4, 5, 3];
+
+// Tuple (birinchi matn, ikkinchi son bo'lishi shart)
+let foydalanuvchi: [string, number] = ["Sherzod", 27];
+
+// foydalanuvchi = [27, "Sherzod"]; // XATO! Tartib buzildi.</pre>
+      </div>
+    </div>
+    <div class="result-box" id="tsRes5"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Tuple funksiyadan bir vaqtning o'zida ikkita har xil turdagi natija qaytarishda juda qulay (React useState aynan tuple qaytaradi).</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Tiplar</span>
+      <span style="font-size:12px; color:var(--text2);">TS Mavzu #6</span>
+    </div>
+    <h2 id="object" style="color:#38bdf8; margin-top:0; font-size:24px;">Object Type (Obyekt Tiplari)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Obyekt ichidagi kalitlar va ularning har birining turi qanday bo'lishini qat'iy belgilash.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Obyekt skeleti jingalak qavsda ko'rsatiladi.</li>
+      <li>Belgilanmagan qo'shimcha maydonlarni kiritishga ruxsat bermaydi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">TypeScript Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('tsCode6')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('tsCode6','tsRes6')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="tsCode6" contenteditable="true" spellcheck="false">let xodim: {
+  id: number;
+  ism: string;
+  oylik: number;
+} = {
+  id: 101,
+  ism: "Bekzod",
+  oylik: 1200
+};</pre>
+      </div>
+    </div>
+    <div class="result-box" id="tsRes6"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 Katta loyihalarda obyekt tiplarini alohida <code>interface</code> yoki <code>type</code> orqali e'lon qilish toza kod yozish qoidasidir.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Tiplar</span>
+      <span style="font-size:12px; color:var(--text2);">TS Mavzu #7</span>
+    </div>
+    <h2 id="any" style="color:#38bdf8; margin-top:0; font-size:24px;">any va unknown Tiplari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Qaysi turdagi ma'lumot kelishi oldindan noma'lum bo'lgan holatlar uchun mo'ljallangan.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>any:</code> har qanday qiymatni qabul qiladi va TypeScript tekshiruvini butunlay o'chirib qo'yadi (tavsiya etilmaydi!).</li>
+      <li><code>unknown:</code> xavfsiz 'any'. U bilan ishlashdan oldin uning turini aniq tekshirish (type checking) talab qilinadi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">TypeScript Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('tsCode7')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('tsCode7','tsRes7')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="tsCode7" contenteditable="true" spellcheck="false">let xavfli: any = "Salom";
+xavfli = 42; // Hech qanday xatolik bermaydi
+
+let xavfsiz: unknown = "Salom Dunyo";
+if (typeof xavfsiz === "string") {
+  console.log(xavfsiz.toUpperCase());
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="tsRes7"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">🛑 <code>any</code> dan iloji boricha qoching! Kodingiz to'la 'any' bo'lsa, TypeScript ishlatishdan ma'no qolmaydi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Tiplar</span>
+      <span style="font-size:12px; color:var(--text2);">TS Mavzu #8</span>
+    </div>
+    <h2 id="void" style="color:#38bdf8; margin-top:0; font-size:24px;">void va never Tiplari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Funksiyalarning natija qaytarishi bilan bog'liq maxsus tiplar.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>void:</code> hech qanday qiymat qaytarmaydigan funksiyalar (masalan, faqat console.log qiladigan).</li>
+      <li><code>never:</code> hech qachon normal yakunlanmaydigan funksiyalar (doimiy xato tashlovchi yoki cheksiz sikl).</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">TypeScript Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('tsCode8')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('tsCode8','tsRes8')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="tsCode8" contenteditable="true" spellcheck="false">function logChiqar(xabar: string): void {
+  console.log("Xabar:", xabar);
 }
 
-console.log(salomlash("Ali"));           // Ali
-console.log(salomlash("Ali", "Janob")); // Janob Ali</pre></div>
-  </div>
-
-  <h2 id="interface">Interface</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar"><span class="code-lang">TypeScript</span>
-      <div class="code-actions"><button class="btn-copy" onclick="copyCode('code2')">📋 Nusxa</button></div>
+function xatoTashla(xatolik: string): never {
+  throw new Error(xatolik);
+}</pre>
+      </div>
     </div>
-    <div class="code-body"><pre id="code2">// Interface — obyekt tuzilmasini belgilash
-interface Foydalanuvchi {
+    <div class="result-box" id="tsRes8"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Agar funksiyangiz oxirida <code>return</code> bo'lmasa, uning qaytarish turi avtomatik <code>void</code> deb olinadi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Tiplar</span>
+      <span style="font-size:12px; color:var(--text2);">TS Mavzu #9</span>
+    </div>
+    <h2 id="union" style="color:#38bdf8; margin-top:0; font-size:24px;">Union Types (Birlashma Tiplar |)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">O'zgaruvchi bir vaqtning o'zida bir nechta ruxsat etilgan tiplardan birini qabul qilishi mumkin bo'lgan holat.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Tik chiziq <code>|</code> belgisi orqali yoziladi.</li>
+      <li>Masalan: <code>id: string | number</code> — ID matn ham, son ham bo'lishi mumkin.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">TypeScript Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('tsCode9')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('tsCode9','tsRes9')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="tsCode9" contenteditable="true" spellcheck="false">function chopEt(id: number | string) {
+  if (typeof id === "string") {
+    console.log("Matnli ID: " + id.toUpperCase());
+  } else {
+    console.log("Raqamli ID: " + id.toFixed(0));
+  }
+}
+chopEt(101);
+chopEt("usr_998");</pre>
+      </div>
+    </div>
+    <div class="result-box" id="tsRes9"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">✨ Union tiplar yordamida bitta funksiyani ko'p qirrali qilish mumkin.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Tiplar</span>
+      <span style="font-size:12px; color:var(--text2);">TS Mavzu #10</span>
+    </div>
+    <h2 id="intersection" style="color:#38bdf8; margin-top:0; font-size:24px;">Intersection Types (Kesishma Tiplar &)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Bir nechta har xil tiplarni bitta yangi tip ostida birlashtirish (amalgamation).</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Ampersand <code>&amp;</code> belgisi bilan belgilanadi.</li>
+      <li>Natijaviy obyekt har ikkala tipning barcha maydonlariga ega bo'lishi shart.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">TypeScript Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('tsCode10')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('tsCode10','tsRes10')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="tsCode10" contenteditable="true" spellcheck="false">type Shaxs = { ism: string };
+type Aloqa = { email: string; tel: string };
+
+type Mijoz = Shaxs &amp; Aloqa;
+
+const yangiMijoz: Mijoz = {
+  ism: "Jamshid",
+  email: "jamshid@mail.uz",
+  tel: "+998901234567"
+};</pre>
+      </div>
+    </div>
+    <div class="result-box" id="tsRes10"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 Turli modullardan kelgan kichik tiplarni bitta katta modelga yig'ishda Intersection tengsizdir.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Struktura</span>
+      <span style="font-size:12px; color:var(--text2);">TS Mavzu #11</span>
+    </div>
+    <h2 id="interface" style="color:#38bdf8; margin-top:0; font-size:24px;">Interface (Interfeyslar)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Obyektlarning aniq tuzilishini e'lon qilish uchun eng asosiy vosita.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Sintaksis: <code>interface Talaba { ism: string; kurs: number; }</code></li>
+      <li>Kengaytirilishi (extends) va birlashishi (declaration merging) mumkin.</li>
+      <li>Obyektga yo'naltirilgan dasturlashda kontrakt vazifasini bajaradi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">TypeScript Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('tsCode11')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('tsCode11','tsRes11')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="tsCode11" contenteditable="true" spellcheck="false">interface Avtomobil {
+  brend: string;
+  yil: number;
+  tezlik?: number;
+}
+
+const mashina: Avtomobil = {
+  brend: "Chevrolet Tracker",
+  yil: 2024
+};</pre>
+      </div>
+    </div>
+    <div class="result-box" id="tsRes11"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Obyektlar uchun TypeScript jamoasi doimo <code>interface</code> dan foydalanishni tavsiya qiladi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Struktura</span>
+      <span style="font-size:12px; color:var(--text2);">TS Mavzu #12</span>
+    </div>
+    <h2 id="type-alias" style="color:#38bdf8; margin-top:0; font-size:24px;">Type Alias (Tip Taxallusi)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Istalgan murakkab tipga o'zingiz tushunarli yangi nom (taxallus) berish imkoniyati.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>type Nom = ...</code> sintaksisi orqali yoziladi.</li>
+      <li>Primitivlar, unionlar, tuplar va obyektlar uchun ham bemalol ishlatiladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">TypeScript Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('tsCode12')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('tsCode12','tsRes12')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="tsCode12" contenteditable="true" spellcheck="false">type ID = string | number;
+type FoydalanuvchiRoli = "admin" | "moderator" | "talaba";
+
+let joriyRol: FoydalanuvchiRoli = "talaba";
+// joriyRol = "boshliq"; // XATO! Faqat ko'rsatilgan 3 ta so'zdan biri bo'lishi mumkin.</pre>
+      </div>
+    </div>
+    <div class="result-box" id="tsRes12"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">✨ Literal tiplar (aniq so'zlar to'plami) yaratishda <code>type</code> juda qulay.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Sintaksis</span>
+      <span style="font-size:12px; color:var(--text2);">TS Mavzu #13</span>
+    </div>
+    <h2 id="optional" style="color:#38bdf8; margin-top:0; font-size:24px;">Optional Properties (Ixtiyoriy Maydonlar ?)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Obyekt yoki funksiya parametrida kiritilishi majburiy bo'lmagan xususiyatlarni belgilash.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Nomdan keyin so'roq belgisi <code>?</code> qo'yiladi.</li>
+      <li>Qiymat kiritilmasa, u avtomatik ravishda <code>undefined</code> bo'ladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">TypeScript Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('tsCode13')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('tsCode13','tsRes13')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="tsCode13" contenteditable="true" spellcheck="false">interface Profil {
+  foydalanuvchiNomi: string;
+  bio?: string; // Ixtiyoriy!
+}
+
+const user1: Profil = { foydalanuvchiNomi: "akbar_dev" }; // To'g'ri</pre>
+      </div>
+    </div>
+    <div class="result-box" id="tsRes13"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Foydalanuvchi profilidagi telefon raqam yoki fotosurat kabi majburiy bo'lmagan ma'lumotlar uchun ishlatiladi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Xavfsizlik</span>
+      <span style="font-size:12px; color:var(--text2);">TS Mavzu #14</span>
+    </div>
+    <h2 id="readonly" style="color:#38bdf8; margin-top:0; font-size:24px;">Readonly (Faqat O'qish Uchun)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Obyekt xususiyatlarini faqat bir marta boshida yaratish va keyinchalik uni o'zgartirishni taqiqlash.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Xususiyat oldiga <code>readonly</code> so'zi qo'yiladi.</li>
+      <li>Massivlar uchun: <code>ReadonlyArray&lt;number&gt;</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">TypeScript Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('tsCode14')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('tsCode14','tsRes14')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="tsCode14" contenteditable="true" spellcheck="false">interface Konfiguratsiya {
+  readonly apiKey: string;
+  readonly port: number;
+}
+
+const config: Konfiguratsiya = {
+  apiKey: "AIzaSySecretKey",
+  port: 8080
+};
+
+// config.port = 3000; // XATO: Cannot assign to 'port' because it is a read-only property</pre>
+      </div>
+    </div>
+    <div class="result-box" id="tsRes14"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">🔒 Tizim sozlamalari va o'zgarmas bazaviy konfiguratsiyalar uchun readonly majburiydir.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Merosxo'rlik</span>
+      <span style="font-size:12px; color:var(--text2);">TS Mavzu #15</span>
+    </div>
+    <h2 id="extends" style="color:#38bdf8; margin-top:0; font-size:24px;">extends (Interfeysni Kengaytirish)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Mavjud interfeysning barcha qoidalarini yangi interfeysga meros qilib o'tkazish.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>interface Bolasi extends Otasi { ... }</code></li>
+      <li>Kodni qayta yozmasdan, modulli kengaytirish imkonini beradi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">TypeScript Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('tsCode15')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('tsCode15','tsRes15')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="tsCode15" contenteditable="true" spellcheck="false">interface BazaFoydalanuvchi {
+  id: number;
+  ism: string;
+}
+
+interface Admin extends BazaFoydalanuvchi {
+  huquqlar: string[];
+}
+
+const boshliq: Admin = {
+  id: 1,
+  ism: "Rustam",
+  huquqlar: ["DELETE_USER", "ADD_COURSE"]
+};</pre>
+      </div>
+    </div>
+    <div class="result-box" id="tsRes15"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">🚀 Kodni toza saqlash va DRY (Don't Repeat Yourself) tamoyiliga amal qilishning eng to'g'ri yo'li.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Funksiyalar</span>
+      <span style="font-size:12px; color:var(--text2);">TS Mavzu #16</span>
+    </div>
+    <h2 id="funksiya-tip" style="color:#38bdf8; margin-top:0; font-size:24px;">Funksiya Tiplari (Function Types)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Funksiyaning qabul qiladigan parametrlariga va qaytaradigan natijasiga qat'iy tip berish.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Sintaksis: <code>function nom(a: number, b: number): number { ... }</code></li>
+      <li>Funksiya turi imzosi: <code>type Hisobla = (x: number, y: number) =&gt; number;</code></li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">TypeScript Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('tsCode16')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('tsCode16','tsRes16')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="tsCode16" contenteditable="true" spellcheck="false">const qosh: (x: number, y: number) =&gt; number = (x, y) =&gt; {
+  return x + y;
+};
+
+console.log(qosh(15, 25)); // 40</pre>
+      </div>
+    </div>
+    <div class="result-box" id="tsRes16"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 TypeScript funksiyaning qaytarish turini o'zi ham mustaqil tahlil qila oladi (Type Inference).</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Ilg'or</span>
+      <span style="font-size:12px; color:var(--text2);">TS Mavzu #17</span>
+    </div>
+    <h2 id="generics" style="color:#38bdf8; margin-top:0; font-size:24px;">Generics (Umumlashgan Tiplar <T>)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">TypeScriptning eng qudratli imkoniyatlaridan biri bo'lib, har xil tiplar bilan birdek ishlay oladigan universal funksiya va sinflar yaratish imkonini beradi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Burchakli qavsda o'zgaruvchi tip belgilanadi: <code>&lt;T&gt;</code> (Type so'zidan).</li>
+      <li><code>any</code> dan farqi: u uzatilgan turning o'zini to'liq eslab qoladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">TypeScript Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('tsCode17')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('tsCode17','tsRes17')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="tsCode17" contenteditable="true" spellcheck="false">function birinchisiniOlish&lt;T&gt;(massiv: T[]): T {
+  return massiv[0];
+}
+
+const son = birinchisiniOlish&lt;number&gt;([10, 20, 30]); // number
+const matn = birinchisiniOlish&lt;string&gt;(["Salom", "Dunyo"]); // string</pre>
+      </div>
+    </div>
+    <div class="result-box" id="tsRes17"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">🌟 Reactda <code>useState&lt;string&gt;("")</code> yozganingizda aynan Generics dan foydalanasiz!</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Funksiyalar</span>
+      <span style="font-size:12px; color:var(--text2);">TS Mavzu #18</span>
+    </div>
+    <h2 id="overloading" style="color:#38bdf8; margin-top:0; font-size:24px;">Function Overloading (Haddan Tashqari Yuklash)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Bitta funksiya turli xil parametrlar to'plami bilan chaqirilganda har xil turdagi natijalar qaytarishi mumkinligini e'lon qilish.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Bir nechta deklaratsiya imzolari va bitta umumiy realizatsiya tanasi yoziladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">TypeScript Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('tsCode18')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('tsCode18','tsRes18')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="tsCode18" contenteditable="true" spellcheck="false">function birlashtir(a: string, b: string): string;
+function birlashtir(a: number, b: number): number;
+function birlashtir(a: any, b: any): any {
+  return a + b;
+}
+
+console.log(birlashtir("Salom ", "O'zbekiston")); // "Salom O'zbekiston"
+console.log(birlashtir(50, 50)); // 100</pre>
+      </div>
+    </div>
+    <div class="result-box" id="tsRes18"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Foydalanuvchiga turli xil parametrlar berish imkonini taqdim etuvchi qulay vosita.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">OOP</span>
+      <span style="font-size:12px; color:var(--text2);">TS Mavzu #19</span>
+    </div>
+    <h2 id="class" style="color:#38bdf8; margin-top:0; font-size:24px;">TypeScript Classes (Sinflar)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">TypeScriptda sinflar qat'iy tiplash, konstruktorlar va xususiyatlar bilan to'liq qurollangan.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Xususiyatlar konstruktordan oldin e'lon qilinishi shart.</li>
+      <li>Metodlar va ularning parametrlariga ham tiplar beriladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">TypeScript Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('tsCode19')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('tsCode19','tsRes19')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="tsCode19" contenteditable="true" spellcheck="false">class Talaba {
+  ism: string;
+  kurs: number;
+
+  constructor(ism: string, kurs: number) {
+    this.ism = ism;
+    this.kurs = kurs;
+  }
+
+  malumot(): string {
+    return `${this.ism} ${this.kurs}-kurs talabasi`;
+  }
+}
+
+const t1 = new Talaba("Javohir", 3);</pre>
+      </div>
+    </div>
+    <div class="result-box" id="tsRes19"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 TypeScript sinflari toza JavaScript kodiga (ES6 class yoki ES5 function prototype) kompilyatsiya bo'ladi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">OOP</span>
+      <span style="font-size:12px; color:var(--text2);">TS Mavzu #20</span>
+    </div>
+    <h2 id="access" style="color:#38bdf8; margin-top:0; font-size:24px;">Access Modifiers (public, private, protected)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Sinf maydonlari va metodlarining tashqi dunyodan himoyalanish darajasi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>public</code>: hamma joydan erkin foydalanish mumkin (standart holat).</li>
+      <li><code>private</code>: faqat shu sinfning o'z ichida ko'rinadi (tashqaridan o'zgartirib bo'lmaydi).</li>
+      <li><code>protected</code>: shu sinf va undan meros olgan bolalar sinflarida ko'rinadi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">TypeScript Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('tsCode20')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('tsCode20','tsRes20')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="tsCode20" contenteditable="true" spellcheck="false">class BankHisobi {
+  public egasi: string;
+  private balans: number;
+
+  constructor(egasi: string, balans: number) {
+    this.egasi = egasi;
+    this.balans = balans;
+  }
+
+  public balansniKorish(): number {
+    return this.balans;
+  }
+}
+
+const hisob = new BankHisobi("Alisher", 5000);
+// console.log(hisob.balans); // XATO: 'balans' is private!</pre>
+      </div>
+    </div>
+    <div class="result-box" id="tsRes20"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">🔒 Ma'lumotlar xavfsizligi va inkapsulyatsiyaning asosi hisoblanadi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">OOP</span>
+      <span style="font-size:12px; color:var(--text2);">TS Mavzu #21</span>
+    </div>
+    <h2 id="abstract" style="color:#38bdf8; margin-top:0; font-size:24px;">Abstract Classes (Abstrakt Sinflar)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">O'zidan to'g'ridan-to'g'ri obyekt yaratib bo'lmaydigan, faqat boshqa sinflar uchun andoza (baza) bo'lib xizmat qiluvchi sinflar.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>abstract class</code> kalit so'zi bilan belgilanadi.</li>
+      <li><code>abstract</code> metodlar bolalar sinfida majburiy ravishda realizatsiya qilinishi shart.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">TypeScript Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('tsCode21')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('tsCode21','tsRes21')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="tsCode21" contenteditable="true" spellcheck="false">abstract class Shakl {
+  abstract maydonniHisobla(): number;
+}
+
+class Tortburchak extends Shakl {
+  constructor(public eni: number, public boyi: number) { super(); }
+  maydonniHisobla(): number {
+    return this.eni * this.boyi;
+  }
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="tsRes21"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Barcha bolalar sinflari ma'lum bir metodga ega bo'lishini qat'iy majburlash uchun ishlatiladi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">OOP</span>
+      <span style="font-size:12px; color:var(--text2);">TS Mavzu #22</span>
+    </div>
+    <h2 id="implements" style="color:#38bdf8; margin-top:0; font-size:24px;">implements (Interfeysni Qo'llash)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Sinf muayyan interfeysda ko'rsatilgan barcha qoidalarni 100% bajarishini ta'minlash.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>class MeningSinfim implements MeningInterfeysim</code></li>
+      <li>Bitta sinf bir nechta interfeyslarni qabul qilishi mumkin (vergul bilan).</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">TypeScript Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('tsCode22')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('tsCode22','tsRes22')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="tsCode22" contenteditable="true" spellcheck="false">interface Haydovchi {
+  haydash(): void;
+}
+
+class Shofyor implements Haydovchi {
+  haydash() {
+    console.log("Mashina harakatlanmoqda...");
+  }
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="tsRes22"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 Arxitektura va API dizaynida interfeys orqali dasturlash eng ilg'or usul sanaladi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Ilg'or</span>
+      <span style="font-size:12px; color:var(--text2);">TS Mavzu #23</span>
+    </div>
+    <h2 id="decorators" style="color:#38bdf8; margin-top:0; font-size:24px;">Decorators (Dekoratorlar @)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Sinflar, metodlar va xususiyatlarga yangi funksionallik qo'shish imkonini beruvchi maxsus ifodalar.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Kuchukcha <code>@</code> belgisi bilan yoziladi.</li>
+      <li>Angular va NestJS freymvorklarining poydevori aynan dekoratorlar ustiga qurilgan.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">TypeScript Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('tsCode23')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('tsCode23','tsRes23')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="tsCode23" contenteditable="true" spellcheck="false">// Dekorator namunasi (NestJS uslubi)
+// @Controller('/users')
+// class UserController {
+//   @Get()
+//   getAllUsers() { ... }
+// }</pre>
+      </div>
+    </div>
+    <div class="result-box" id="tsRes23"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">⚡ tsconfig.json faylida <code>"experimentalDecorators": true</code> yoqilgan bo'lishi shart.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Standart Tiplar</span>
+      <span style="font-size:12px; color:var(--text2);">TS Mavzu #24</span>
+    </div>
+    <h2 id="utility" style="color:#38bdf8; margin-top:0; font-size:24px;">Utility Types (Yordamchi Tiplar)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Mavjud tiplardan yangi hosilaviy tiplar yasash uchun TypeScript ichida o'rnatilgan tayyor yordamchilar.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>Partial&lt;T&gt;</code>: barcha maydonlarni ixtiyoriy (optional) qiladi.</li>
+      <li><code>Required&lt;T&gt;</code>: barcha maydonlarni majburiy qiladi.</li>
+      <li><code>Pick&lt;T, 'maydon1' | 'maydon2'&gt;</code>: faqat kerakli maydonlarni tanlab oladi.</li>
+      <li><code>Omit&lt;T, 'parol'&gt;</code>: ko'rsatilgan maydonni o'chirib, qolganlarini oladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">TypeScript Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('tsCode24')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('tsCode24','tsRes24')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="tsCode24" contenteditable="true" spellcheck="false">interface Foydalanuvchi {
   id: number;
   ism: string;
   email: string;
-  yosh?: number;         // optional
-  readonly yaratildi: Date; // faqat o'qish
+  parol: string;
 }
 
-// Interface ni kengaytirish
-interface Admin extends Foydalanuvchi {
-  ruxsatlar: string[];
-  darajasi: "super" | "oddiy";
-}
-
-// Funksiya interface
-interface ApiJavob&lt;T&gt; {
-  success: boolean;
-  data: T;
-  xabar?: string;
-}
-
-// Ishlatish
-const user: Foydalanuvchi = {
-  id: 1,
-  ism: "Ali Karimov",
-  email: "ali@test.com",
-  yaratildi: new Date()
-};
-
-const javob: ApiJavob&lt;Foydalanuvchi&gt; = {
-  success: true,
-  data: user
-};</pre></div>
-  </div>
-
-  <h2 id="generics">Generics</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar"><span class="code-lang">TypeScript</span>
-      <div class="code-actions"><button class="btn-copy" onclick="copyCode('code3')">📋 Nusxa</button></div>
+// Parolsiz ochiq profil
+type OchiqProfil = Omit&lt;Foydalanuvchi, "parol"&gt;;</pre>
+      </div>
     </div>
-    <div class="code-body"><pre id="code3">// Generic funksiya — har qanday type bilan ishlaydi
-function birinchi&lt;T&gt;(arr: T[]): T {
-  return arr[0];
-}
+    <div class="result-box" id="tsRes24"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
-console.log(birinchi([1, 2, 3]));       // 1 (number)
-console.log(birinchi(["a", "b", "c"])); // "a" (string)
+    <div class="note" style="margin-top:16px;">🚀 Utility types kodni takroran yozishdan asraydi va yuzlab qator ortiqcha interfeyslardan xalos qiladi.</div>
+  </section>
 
-// Generic class
-class Stack&lt;T&gt; {
-  private items: T[] = [];
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Chuqurlashtirilgan</span>
+      <span style="font-size:12px; color:var(--text2);">TS Mavzu #25</span>
+    </div>
+    <h2 id="conditional" style="color:#38bdf8; margin-top:0; font-size:24px;">Conditional Types (Shartli Tiplar)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Tiplar darajasidagi ternar operator (<code>T extends U ? X : Y</code>).</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Uzatilgan tipga qarab avtomatik ravishda boshqa bir mos tipni qaytaradi.</li>
+    </ul>
 
-  push(item: T): void {
-    this.items.push(item);
-  }
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">TypeScript Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('tsCode25')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('tsCode25','tsRes25')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="tsCode25" contenteditable="true" spellcheck="false">type Matnmi&lt;T&gt; = T extends string ? "Ha, bu matn" : "Yo'q, boshqa tip";
 
-  pop(): T | undefined {
-    return this.items.pop();
-  }
+type Test1 = Matnmi&lt;string&gt;; // "Ha, bu matn"
+type Test2 = Matnmi&lt;number&gt;; // "Yo'q, boshqa tip"</pre>
+      </div>
+    </div>
+    <div class="result-box" id="tsRes25"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
-  get uzunlik(): number {
-    return this.items.length;
-  }
-}
+    <div class="note" style="margin-top:16px;">💡 Katta kutubxona va freymvork mualliflari tomonidan murakkab tiplarni loyihalashda ishlatiladi.</div>
+  </section>
 
-const sonStack = new Stack&lt;number&gt;();
-sonStack.push(10);
-sonStack.push(20);
-console.log(sonStack.pop()); // 20</pre></div>
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Chuqurlashtirilgan</span>
+      <span style="font-size:12px; color:var(--text2);">TS Mavzu #26</span>
+    </div>
+    <h2 id="mapped" style="color:#38bdf8; margin-top:0; font-size:24px;">Mapped Types (Akslantirilgan Tiplar)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Mavjud tipdagi har bir kalit ustida aylanib chiqib, uning xususiyatlarini yangicha shaklga keltirish.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Sintaksis: <code>[K in keyof T]</code>.</li>
+      <li>Utility types (Partial, Readonly) larning o'zi ham Mapped Types asosida yozilgan.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">TypeScript Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('tsCode26')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('tsCode26','tsRes26')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="tsCode26" contenteditable="true" spellcheck="false">type HammaString&lt;T&gt; = {
+  [K in keyof T]: string;
+};</pre>
+      </div>
+    </div>
+    <div class="result-box" id="tsRes26"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">✨ Obyektning barcha maydonlari turlarini bir zumda o'zgartirish uchun ishlatiladi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">ES2021</span>
+      <span style="font-size:12px; color:var(--text2);">TS Mavzu #27</span>
+    </div>
+    <h2 id="template-lit" style="color:#38bdf8; margin-top:0; font-size:24px;">Template Literal Types</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Matnli literal tiplarni xuddi JavaScript template literallari kabi birlashtirish.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Kombinatsiyalangan hodisalar nomlarini yaratish uchun qulay: <code>`on${Capitalize&lt;Hodisa&gt;}`</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">TypeScript Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('tsCode27')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('tsCode27','tsRes27')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="tsCode27" contenteditable="true" spellcheck="false">type Holat = "boshlandi" | "tugadi";
+type Xabar = `kurs_${Holat}`; // "kurs_boshlandi" | "kurs_tugadi"</pre>
+      </div>
+    </div>
+    <div class="result-box" id="tsRes27"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 UI hodisalari va CSS rang/o'lchamlariga xatolarsiz aniq tiplar berishda juda asqotadi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Arxitektura</span>
+      <span style="font-size:12px; color:var(--text2);">TS Mavzu #28</span>
+    </div>
+    <h2 id="modules" style="color:#38bdf8; margin-top:0; font-size:24px;">TypeScript Modullari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Katta dasturlarni bir nechta mustaqil fayllarga bo'lib, ular orasida tiplar va kodlarni almashish.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>export interface ...</code> va <code>import { ... } from './fayl'</code>.</li>
+      <li><code>import type { ... }</code>: faqat tiplarni import qilish (JS kodiga kirmaydi, fayl hajmi kamayadi).</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">TypeScript Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('tsCode28')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('tsCode28','tsRes28')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="tsCode28" contenteditable="true" spellcheck="false">// types.ts faylida:
+// export interface Kurs { id: number; nomi: string; }
+
+// app.ts faylida:
+// import type { Kurs } from './types';</pre>
+      </div>
+    </div>
+    <div class="result-box" id="tsRes28"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">⚡ <code>import type</code> orqali import qilingan narsalar yakuniy JavaScript faylida butunlay tozalab tashlanadi.</div>
+  </section>
+
+  <!-- Amaliy Mashq -->
+  <div class="exercise-box">
+    <div class="exercise-header">
+      <i class="fa-solid fa-puzzle-piece" style="color:#6366f1;"></i>
+      <span>Amaliy Mashq: Tip Belgilash</span>
+    </div>
+    <p style="font-size:13.5px;color:var(--text2);margin-bottom:10px;">
+      Yosh o'zgaruvchisiga son (number) turini to'g'ri belgilang:
+    </p>
+    <div class="exercise-code-container">
+      let yosh<input type="text" class="exercise-input" id="exInputTs" placeholder=": type" style="width:75px;"/> = 25;
+    </div>
+    <button class="btn-check-exercise" onclick="checkExercise('exInputTs', ': number', 'exResTs')">
+      <i class="fa-solid fa-circle-check"></i> Javobni tekshirish
+    </button>
+    <div class="exercise-result" id="exResTs"></div>
   </div>
 
+  <!-- Test Bo'limi -->
   <div class="quiz-box">
-    <div class="quiz-q">🧪 Test: TypeScript qaysi kompaniya tomonidan yaratilgan?</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qr1')">Google</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, true, 'qr1')">Microsoft</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qr1')">Meta (Facebook)</div>
-    <div class="quiz-result" id="qr1"></div>
+    <div class="quiz-q">🧪 Test: Qaysi TypeScript tipi har qanday qiymatni qabul qiladi lekin xavfsiz (tekshirishni talab qiladi)?</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qrTs')">any</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, true, 'qrTs')">unknown</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qrTs')">never</div>
+    <div class="quiz-result" id="qrTs"></div>
   </div>
-  
 
-<div class="nav-btns">
-  <a href="javascript.html" class="btn-prev">&#8592; JavaScript</a>
-  <a href="react.html" class="btn-next">React &#8594;</a>
-</div>
+  <div class="nav-btns" style="margin-top: 30px;">
+    <a href="javascript.html" class="btn-prev">← JavaScript Darsiga Qaytish</a>
+    <a href="react.html" class="btn-next">React Darsiga O'tish →</a>
+  </div>
+
+  <div class="note note-blue" style="margin-top: 25px;">
+    📌 <strong>Keyingi qadam:</strong> TypeScriptning mustahkam tiplash tizimini o'rgangach, zamonaviy frontend kutubxonasi bo'lmish <a href="react.html" style="color:var(--green)">React darslariga</a> o'ting!
+  </div>
 </main>
 <aside class="right-panel">
   <div class="rp-title">📈 Progress</div>

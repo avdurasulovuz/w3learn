@@ -77,115 +77,1176 @@
   </ul>
 </aside>
 <main class="main">
-  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">React</a> › React Nima?</div>
-  <h1 id="kirish">React Nima?</h1>
-  <div class="meta-tags">
-    <span class="tag tag-green">⏱ 8 daqiqa</span>
-    <span class="tag tag-blue">🟡 O'rta</span>
-    <span class="tag tag-orange">👁 9,230 marta ko'rilgan</span>
-  </div>
-  <p><strong>React</strong> — Facebook (Meta) tomonidan yaratilgan JavaScript kutubxonasi bo'lib, foydalanuvchi interfeyslari (UI) yaratish uchun ishlatiladi. React <strong>komponentlarga asoslangan</strong> arxitekturani qo'llaydi.</p>
-  <p>React Virtual DOM texnologiyasi yordamida sahifani juda tez yangilaydi — faqat o'zgargan qismlarni qayta chizadi.</p>
-  <div class="note">💡 <strong>Eslatma:</strong> React — kutubxona (library), framework emas. U faqat UI qatlami uchun javobgar.</div>
+  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">React</a> › Barcha Mavzular</div>
 
-  <h2 id="jsx">JSX — JavaScript XML</h2>
-  <p>JSX — JavaScript ichida HTML yozish imkonini beruvchi sintaksis kengaytmasi. Brauzer JSX ni tushunmaydi, Babel uni oddiy JS ga aylantiradi.</p>
-  <div class="code-wrap">
-    <div class="code-toolbar"><span class="code-lang">JSX</span>
-      <div class="code-actions"><button class="btn-copy" onclick="copyCode('code1')">📋 Nusxa</button></div>
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Asosiy</span>
+      <span style="font-size:12px; color:var(--text2);">React Mavzu #1</span>
     </div>
-    <div class="code-body"><pre id="code1">// Oddiy JSX komponenti
-function Salomlash() {
-  const ism = "Ali";
+    <h2 id="kirish" style="color:#61dafb; margin-top:0; font-size:24px;">React Nima?</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>React</strong> — Meta (Facebook) kompaniyasi tomonidan yaratilgan, zamonaviy va tezkor foydalanuvchi interfeyslari (UI) yaratishga mo'ljallangan eng mashhur JavaScript kutubxonasidir.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><strong>Komponentlarga asoslangan (Component-Based):</strong> butun interfeys alohida, mustaqil va qayta ishlatiluvchi g'ishtchalarga bo'linadi.</li>
+      <li><strong>Virtual DOM:</strong> faqat o'zgargan elementnigina qayta chizadi (re-render), shuning uchun juda tez ishlaydi.</li>
+      <li><strong>Deklarativ (Declarative):</strong> siz faqat natija qanday ko'rinishi kerakligini aytasiz, brauzer bilan ishlashni React o'zi hal qiladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">React &amp; JSX Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('reactCode1')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('reactCode1','reactRes1')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="reactCode1" contenteditable="true" spellcheck="false">// React oddiy komponenti
+function Salom() {
+  return (
+    &lt;div style={{ background: '#0f172a', color: '#61dafb', padding: '15px', borderRadius: '8px' }}&gt;
+      &lt;h2&gt;Salom, React Dunyosi! ⚛️&lt;/h2&gt;
+      &lt;p&gt;React yordamida interfeyslar yaratish juda oson.&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="reactRes1"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Dunyodagi eng mashhur saytlar: Instagram, Facebook, Netflix, Airbnb aynan React ustiga qurilgan.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">O'rnatish</span>
+      <span style="font-size:12px; color:var(--text2);">React Mavzu #2</span>
+    </div>
+    <h2 id="install" style="color:#61dafb; margin-top:0; font-size:24px;">React O'rnatish (Vite va CRA)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Yangi React loyihasini kompyuterda boshlash uchun Node.js o'rnatilgan bo'lishi kerak.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><strong>Vite (Tavsiya etiladi):</strong> zamonaviy, bir soniyada ochiluvchi o'ta tez vosita: <code>npm create vite@latest mening-app -- --template react</code></li>
+      <li>Loyihaga kirish va ishga tushirish: <code>cd mening-app &amp;&amp; npm install &amp;&amp; npm run dev</code></li>
+      <li><strong>Create React App (CRA):</strong> eskiroq klassik usul (hozirda Vite tavsiya etiladi).</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">React &amp; JSX Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('reactCode2')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('reactCode2','reactRes2')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="reactCode2" contenteditable="true" spellcheck="false">// Terminalda 3 ta buyruq:
+// 1. Yangi loyiha ochish:
+// npm create vite@latest mening-app -- --template react
+
+// 2. Kutubxonalarni yuklash:
+// cd mening-app
+// npm install
+
+// 3. Ishga tushirish:
+// npm run dev</pre>
+      </div>
+    </div>
+    <div class="result-box" id="reactRes2"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">⚡ Vite bilan loyihani ishga tushirish atigi 300 millisekund vaqt oladi!</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Tuzilma</span>
+      <span style="font-size:12px; color:var(--text2);">React Mavzu #3</span>
+    </div>
+    <h2 id="struktura" style="color:#61dafb; margin-top:0; font-size:24px;">React Loyiha Tuzilmasi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">React loyihasining ichidagi asosiy papka va fayllarning vazifalari.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>node_modules/</code>: barcha tashqi o'rnatilgan kutubxonalar saqlanadigan papka.</li>
+      <li><code>public/</code>: rasm va faviconlar kabi statik fayllar.</li>
+      <li><code>src/</code>: asosiy kodlar yoziladigan yurak qismi.</li>
+      <li><code>src/App.jsx</code>: asosiy bosh komponent.</li>
+      <li><code>src/main.jsx</code>: Reactni haqiqiy HTML sahifaga (root elementga) ulovchi fayl.</li>
+      <li><code>package.json</code>: loyihaning passporti (nomi, versiyasi, paketlar).</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">React &amp; JSX Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('reactCode3')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('reactCode3','reactRes3')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="reactCode3" contenteditable="true" spellcheck="false">// src/main.jsx
+import React from 'react'
+import ReactDOM from 'react-dom/client'
+import App from './App.jsx'
+
+ReactDOM.createRoot(document.getElementById('root')).render(
+  &lt;React.StrictMode&gt;
+    &lt;App /&gt;
+  &lt;/React.StrictMode&gt;
+)</pre>
+      </div>
+    </div>
+    <div class="result-box" id="reactRes3"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 Butun React ilovangiz <code>index.html</code> dagi yagona <code>&lt;div id="root"&gt;&lt;/div&gt;</code> ichiga render qilinadi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Asoslar</span>
+      <span style="font-size:12px; color:var(--text2);">React Mavzu #4</span>
+    </div>
+    <h2 id="jsx" style="color:#61dafb; margin-top:0; font-size:24px;">JSX Nima? (JavaScript XML)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">JSX — bu JavaScript kodining ichida xuddi HTML kabi teglarni to'g'ridan-to'g'ri yozish imkonini beruvchi sintaksisdir.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>JSX na toza HTML, na toza JavaScript emas.</li>
+      <li>Babel kompilyatori uni <code>React.createElement()</code> funksiyalariga aylantirib beradi.</li>
+      <li>Kodni vizual tushunishni nihoyatda osonlashtiradi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">React &amp; JSX Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('reactCode4')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('reactCode4','reactRes4')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="reactCode4" contenteditable="true" spellcheck="false">// JSX kodi:
+const element = &lt;h1 className="sarlavha"&gt;Salom, JSX!&lt;/h1&gt;;
+
+// Orqa fonda u quyidagiga aylanadi:
+// const element = React.createElement('h1', {className: 'sarlavha'}, 'Salom, JSX!');</pre>
+      </div>
+    </div>
+    <div class="result-box" id="reactRes4"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 JSX tufayli HTML va JavaScript mantiqini bitta fayl ichida uyg'un holda yozish mumkin bo'ldi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Sintaksis</span>
+      <span style="font-size:12px; color:var(--text2);">React Mavzu #5</span>
+    </div>
+    <h2 id="jsx-syntax" style="color:#61dafb; margin-top:0; font-size:24px;">JSX Asosiy Qoidalari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">JSX da yozayotganda qat'iy amal qilinishi kerak bo'lgan bir nechta muhim qoidalar mavjud.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><strong>Yagona ota element:</strong> komponent har doim bitta umumiy ota teg yoki Fragment (<code>&lt;&gt; ... &lt;/&gt;</code>) ichida bo'lishi shart.</li>
+      <li><strong>Barcha teglar yopilishi shart:</strong> hatto <code>&lt;img /&gt;</code>, <code>&lt;br /&gt;</code>, <code>&lt;input /&gt;</code> ham <code>/&gt;</code> bilan yopilishi lozim.</li>
+      <li><strong>camelCase nomlar:</strong> <code>onclick</code> o'rniga <code>onClick</code>, <code>tabindex</code> o'rniga <code>tabIndex</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">React &amp; JSX Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('reactCode5')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('reactCode5','reactRes5')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="reactCode5" contenteditable="true" spellcheck="false">function MeningSahifam() {
+  return (
+    &lt;&gt;
+      &lt;h2&gt;Fragment ichidagi sarlavha&lt;/h2&gt;
+      &lt;p&gt;Ikkita teg bitta ota fragmentda o'ralgan.&lt;/p&gt;
+      &lt;input type="text" placeholder="Yopiq input" /&gt;
+    &lt;/&gt;
+  );
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="reactRes5"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">⚠️ <code>&lt;&gt;...&lt;/&gt;</code> (React Fragment) DOMga ortiqcha div qo'shmasdan elementlarni guruhlash imkonini beradi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Sintaksis</span>
+      <span style="font-size:12px; color:var(--text2);">React Mavzu #6</span>
+    </div>
+    <h2 id="jsx-ifoda" style="color:#61dafb; margin-top:0; font-size:24px;">JSX da JavaScript Ifodalari ({ })</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">JSX ichida istalgan JavaScript o'zgaruvchisi, matematik hisob-kitob yoki funksiyani ishlatish uchun jingalak qavs <code>{ }</code> qo'yiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Jingalak qavs ichiga istalgan JS ifodasini (expression) yozish mumkin.</li>
+      <li>O'zgaruvchi qiymatini chiqarish: <code>&lt;h1&gt;Salom, {ism}!&lt;/h1&gt;</code>.</li>
+      <li>Matematik amal: <code>&lt;p&gt;Natija: {5 * 10}&lt;/p&gt;</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">React &amp; JSX Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('reactCode6')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('reactCode6','reactRes6')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="reactCode6" contenteditable="true" spellcheck="false">function Hisoblagich() {
+  const foydalanuvchi = "Malika";
+  const ball = 95;
+
   return (
     &lt;div&gt;
-      &lt;h1&gt;Salom, {ism}!&lt;/h1&gt;
-      &lt;p&gt;React bilan tanishing.&lt;/p&gt;
+      &lt;h3&gt;Talaba: {foydalanuvchi}&lt;/h3&gt;
+      &lt;p&gt;Foiz natijasi: {ball}% — {ball &gt;= 70 ? 'O'tdi ✅' : 'Qayta topshirish ❌'}&lt;/p&gt;
+    &lt;/div&gt;
+  );
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="reactRes6"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">✨ Jingalak qavs ichida if/else yozib bo'lmaydi, lekin ternar operator (<code>? :</code>) yoki <code>&amp;&amp;</code> bemalol ishlaydi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Sintaksis</span>
+      <span style="font-size:12px; color:var(--text2);">React Mavzu #7</span>
+    </div>
+    <h2 id="jsx-atribut" style="color:#61dafb; margin-top:0; font-size:24px;">JSX Atributlari (className va htmlFor)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">JavaScriptda <code>class</code> va <code>for</code> maxfiy so'zlar bo'lgani sababli, JSX da ularning o'rniga maxsus nomlar ishlatiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>class</code> o'rniga <code>className</code> yoziladi.</li>
+      <li><code>for</code> o'rniga <code>htmlFor</code> yoziladi.</li>
+      <li>Inline stillar ob'ekt ko'rinishida beriladi: <code>style={{ color: 'red', fontSize: '20px' }}</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">React &amp; JSX Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('reactCode7')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('reactCode7','reactRes7')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="reactCode7" contenteditable="true" spellcheck="false">&lt;div className="card-box" style={{ background: '#1e293b', padding: '15px', borderRadius: '8px' }}&gt;
+  &lt;label htmlFor="userEmail" style={{ color: '#04AA6D' }}&gt;Email:&lt;/label&gt;
+  &lt;input id="userEmail" className="input-field" type="email" /&gt;
+&lt;/div&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="reactRes7"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 Inline CSSda ikkita jingalak qavs <code>{{ }}</code> bo'lishi sababi: tashqi qavs JSX ifodasi, ichkisi esa oddiy JS ob'ektidir.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Komponentlar</span>
+      <span style="font-size:12px; color:var(--text2);">React Mavzu #8</span>
+    </div>
+    <h2 id="funksional" style="color:#61dafb; margin-top:0; font-size:24px;">Funksional Komponentlar</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Bugungi zamonaviy Reactning asosi bo'lib, JSX qaytaruvchi oddiy JavaScript funksiyasidir.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Komponent nomi DOIMO bosh harf bilan boshlanishi shart (masalan: <code>Button</code>, <code>UserProfile</code>).</li>
+      <li>Kodni qisqa, tushunarli va test qilishga oson qiladi.</li>
+      <li>Hooklar (useState, useEffect) aynan funksional komponentlarda ishlaydi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">React &amp; JSX Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('reactCode8')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('reactCode8','reactRes8')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="reactCode8" contenteditable="true" spellcheck="false">function XushKelibsiz() {
+  return (
+    &lt;div style={{ border: '1px solid #04AA6D', padding: '10px', borderRadius: '6px' }}&gt;
+      &lt;h4&gt;Funksional Komponent Ishlamoqda!&lt;/h4&gt;
+    &lt;/div&gt;
+  );
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="reactRes8"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">⚠️ Agar komponent nomini kichik harf bilan boshlasangiz (masalan, <code>myComponent</code>), React uni oddiy HTML tegi deb o'ylab xato beradi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Tarix</span>
+      <span style="font-size:12px; color:var(--text2);">React Mavzu #9</span>
+    </div>
+    <h2 id="class-comp" style="color:#61dafb; margin-top:0; font-size:24px;">Class Komponentlar (Eski Uslub)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">React 16.8 versiyasidan oldin holat (state) bilan ishlash uchun <code>React.Component</code> dan meros oluvchi sinflar ishlatilgan.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>render()</code> metodi orqali JSX qaytaradi.</li>
+      <li>Hozirda yangi loyihalarda ishlatilmaydi, lekin eski (legacy) loyihalarda uchrashi mumkin.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">React &amp; JSX Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('reactCode9')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('reactCode9','reactRes9')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="reactCode9" contenteditable="true" spellcheck="false">// Klassik Class komponent namunasi
+/*
+class Salom extends React.Component {
+  render() {
+    return &lt;h1&gt;Salom, {this.props.ism}!&lt;/h1&gt;;
+  }
+}
+*/</pre>
+      </div>
+    </div>
+    <div class="result-box" id="reactRes9"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Yangi React loyihalaringizda faqat Funksional Komponentlar va Hooklardan foydalaning.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Ma'lumot Oqimi</span>
+      <span style="font-size:12px; color:var(--text2);">React Mavzu #10</span>
+    </div>
+    <h2 id="props" style="color:#61dafb; margin-top:0; font-size:24px;">Props (Parametrlar)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Props (Properties) — ota komponentdan bola komponentga ma'lumot uzatishning yagona usulidir.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Props faqat yuqoridan pastga qarab oqadi (Unidirectional Data Flow).</li>
+      <li><strong>Read-Only:</strong> Bola komponent o'ziga kelgan propsni o'zgartira olmaydi (faqat o'qiy oladi).</li>
+      <li>Destructuring orqali qabul qilish juda qulay: <code>function Karta({ sarlavha, narx })</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">React &amp; JSX Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('reactCode10')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('reactCode10','reactRes10')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="reactCode10" contenteditable="true" spellcheck="false">function Mahsulot({ nomi, narxi }) {
+  return (
+    &lt;div style={{ background: '#1e293b', padding: '10px', margin: '6px 0', borderRadius: '4px' }}&gt;
+      &lt;strong&gt;{nomi}&lt;/strong&gt; — &lt;span style={{ color: '#04AA6D' }}&gt;${narxi}&lt;/span&gt;
     &lt;/div&gt;
   );
 }
 
-// Eksport qilish
-export default Salomlash;</pre></div>
-  </div>
-
-  <h2 id="usestate">useState Hook</h2>
-  <p><strong>useState</strong> — komponent ichida o'zgaruvchi holat (state) saqlash uchun ishlatiladigan eng asosiy hook.</p>
-  <div class="code-wrap">
-    <div class="code-toolbar"><span class="code-lang">JSX</span>
-      <div class="code-actions"><button class="btn-copy" onclick="copyCode('code2')">📋 Nusxa</button></div>
+// Ishlatilishi:
+// &lt;Mahsulot nomi="Noutbuk" narxi={850} /&gt;
+// &lt;Mahsulot nomi="Sichqoncha" narxi={25} /&gt;</pre>
+      </div>
     </div>
-    <div class="code-body"><pre id="code2">import { useState } from 'react';
+    <div class="result-box" id="reactRes10"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">✨ Props yordamida bitta komponentni yuzlab turli xil ma'lumotlar bilan qayta-qayta ishlatish mumkin.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Komponentlar</span>
+      <span style="font-size:12px; color:var(--text2);">React Mavzu #11</span>
+    </div>
+    <h2 id="children" style="color:#61dafb; margin-top:0; font-size:24px;">Children Props</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Komponentning ochiluvchi va yopiluvchi teglari orasiga qo'yilgan har qanday kontent bola komponent ichida <code>props.children</code> orqali olinadi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Konteyner, Modal oyna yoki Karta kabi universal qobiq komponentlar yasash uchun ishlatiladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">React &amp; JSX Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('reactCode11')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('reactCode11','reactRes11')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="reactCode11" contenteditable="true" spellcheck="false">function ChiroyliQuti({ children }) {
+  return (
+    &lt;div style={{ border: '2px solid #38bdf8', padding: '12px', borderRadius: '8px' }}&gt;
+      {children}
+    &lt;/div&gt;
+  );
+}
+
+// Ishlatilishi:
+// &lt;ChiroyliQuti&gt;
+//   &lt;h3&gt;Quti ichidagi sarlavha&lt;/h3&gt;
+//   &lt;p&gt;Istalgan kontent joylashishi mumkin.&lt;/p&gt;
+// &lt;/ChiroyliQuti&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="reactRes11"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 <code>children</code> Reactdagi eng moslashuvchan qoliplash (composition) vositasidir.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Props</span>
+      <span style="font-size:12px; color:var(--text2);">React Mavzu #12</span>
+    </div>
+    <h2 id="default-props" style="color:#61dafb; margin-top:0; font-size:24px;">Default Props (Standart Parametrlar)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Agar ota komponentdan props uzatilmasa, xatolik yuz bermasligi uchun standart qiymatlarni belgilash.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Zamonaviy usul: JavaScriptning standart parametrlari orqali (<code>{ rang = 'ko\'k' }</code>).</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">React &amp; JSX Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('reactCode12')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('reactCode12','reactRes12')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="reactCode12" contenteditable="true" spellcheck="false">function Tugma({ matn = "Bosish", rang = "#04AA6D" }) {
+  return (
+    &lt;button style={{ background: rang, color: 'white', padding: '8px 16px', border: 'none', borderRadius: '4px' }}&gt;
+      {matn}
+    &lt;/button&gt;
+  );
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="reactRes12"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 Standart qiymatlar komponentingizni xavfsiz va ishonchli qiladi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Hooklar</span>
+      <span style="font-size:12px; color:var(--text2);">React Mavzu #13</span>
+    </div>
+    <h2 id="usestate" style="color:#61dafb; margin-top:0; font-size:24px;">useState Hook (Holat Boshqaruvi)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Komponent ichida o'zgaruvchi ma'lumotlarni (state) saqlash va ular o'zgarganda ekranni avtomatik qayta chizish uchun eng ko'p ishlatiladigan hook.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Sintaksis: <code>const [qiymat, setQiymat] = useState(boshlangichQiymat);</code></li>
+      <li><code>setQiymat()</code> chaqirilishi bilan React komponentni yangi qiymat bilan qayta render qiladi.</li>
+      <li>Hech qachon <code>qiymat = 5</code> deb to'g'ridan-to'g'ri o'zgartirmang, faqat setter funksiya orqali o'zgartiring!</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">React &amp; JSX Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('reactCode13')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('reactCode13','reactRes13')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="reactCode13" contenteditable="true" spellcheck="false">import { useState } from 'react';
 
 function Hisoblagich() {
-  // [qiymat, o'zgartiruvchi] = useState(boshlang'ich_qiymat)
   const [son, setSon] = useState(0);
 
   return (
     &lt;div&gt;
-      &lt;h2&gt;Son: {son}&lt;/h2&gt;
-      &lt;button onClick={() =&gt; setSon(son + 1)}&gt;
-        ➕ Oshirish
-      &lt;/button&gt;
-      &lt;button onClick={() =&gt; setSon(son - 1)}&gt;
-        ➖ Kamaytirish
-      &lt;/button&gt;
-      &lt;button onClick={() =&gt; setSon(0)}&gt;
-        🔄 Nolga qaytarish
+      &lt;h3&gt;Hisob: {son}&lt;/h3&gt;
+      &lt;button onClick={() =&gt; setSon(son + 1)} style={{ background: '#04AA6D', color: '#fff', border: 'none', padding: '6px 12px', borderRadius: '4px' }}&gt;
+        +1 Qo'shish
       &lt;/button&gt;
     &lt;/div&gt;
   );
-}
-
-export default Hisoblagich;</pre></div>
-  </div>
-
-  <h2 id="useeffect">useEffect Hook</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar"><span class="code-lang">JSX</span>
-      <div class="code-actions"><button class="btn-copy" onclick="copyCode('code3')">📋 Nusxa</button></div>
+}</pre>
+      </div>
     </div>
-    <div class="code-body"><pre id="code3">import { useState, useEffect } from 'react';
+    <div class="result-box" id="reactRes13"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
-function FoydalanuvchiList() {
-  const [foydalanuvchilar, setFoydalanuvchilar] = useState([]);
-  const [yuklanmoqda, setYuklanmoqda] = useState(true);
+    <div class="note" style="margin-top:16px;">🌟 Reactning sehri aynan shu yerda: ma'lumot o'zgarsa, interfeys bir zumda o'z-o'zidan yangilanadi!</div>
+  </section>
 
-  // Komponent chiqqanda API dan ma'lumot olish
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Hooklar</span>
+      <span style="font-size:12px; color:var(--text2);">React Mavzu #14</span>
+    </div>
+    <h2 id="useeffect" style="color:#61dafb; margin-top:0; font-size:24px;">useEffect Hook (Yon Ta'sirlar)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Serverdan API orqali ma'lumot tortish, taymerlar o'rnatish yoki DOM bilan to'g'ridan-to'g'ri ishlash (Side Effects) uchun ishlatiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>useEffect(() =&gt; { ... }, [dependencies]);</code></li>
+      <li>Bo'sh massiv <code>[]</code>: kod faqat komponent ekranga chiqqanda bir marta ishlaydi (mount).</li>
+      <li>Tozalash (cleanup): komponent yopilganda taymerlarni o'chirish uchun funksiya qaytariladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">React &amp; JSX Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('reactCode14')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('reactCode14','reactRes14')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="reactCode14" contenteditable="true" spellcheck="false">import { useState, useEffect } from 'react';
+
+function Foydalanuvchilar() {
+  const [data, setData] = useState([]);
+
   useEffect(() =&gt; {
     fetch('https://jsonplaceholder.typicode.com/users')
       .then(res =&gt; res.json())
-      .then(data =&gt; {
-        setFoydalanuvchilar(data.slice(0, 5));
-        setYuklanmoqda(false);
-      });
-  }, []); // [] — faqat bir marta ishlaydi
+      .then(users =&gt; setData(users));
+  }, []); // Faqat bir marta ishlaydi!
 
-  if (yuklanmoqda) return &lt;p&gt;⏳ Yuklanmoqda...&lt;/p&gt;;
+  return &lt;div&gt;Yuklangan foydalanuvchilar soni: {data.length}&lt;/div&gt;;
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="reactRes14"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">⚠️ <code>[]</code> bog'liqliklar massivini qo'yishni unutsangiz, cheksiz so'rovlar tsikli yuzaga kelib serveringizni qulatishi mumkin!</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Hooklar</span>
+      <span style="font-size:12px; color:var(--text2);">React Mavzu #15</span>
+    </div>
+    <h2 id="usecontext" style="color:#61dafb; margin-top:0; font-size:24px;">useContext Hook (Global Holat)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Ma'lumotni o'rtadagi komponentlarga birma-bir props orqali uzatib o'tirmasdan (Prop Drilling siz), to'g'ridan-to'g'ri istalgan bola komponentga yetkazish.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Sayt tili (O'zbek/Rus), Tungi rejim (Dark/Light) va Autentifikatsiya (Login/User) uchun ideal yechim.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">React &amp; JSX Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('reactCode15')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('reactCode15','reactRes15')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="reactCode15" contenteditable="true" spellcheck="false">import { createContext, useContext } from 'react';
+
+const MavzuContext = createContext('dark');
+
+function Sahifa() {
+  const mavzu = useContext(MavzuContext);
+  return &lt;div&gt;Joriy rejim: {mavzu}&lt;/div&gt;;
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="reactRes15"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Prop Drilling (propslarni 5 ta qavat pastga behuda uzatish) dardiga eng sodda davo — bu useContext.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Hooklar</span>
+      <span style="font-size:12px; color:var(--text2);">React Mavzu #16</span>
+    </div>
+    <h2 id="useref" style="color:#61dafb; margin-top:0; font-size:24px;">useRef Hook</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Qayta render chaqirmasdan o'zgaruvchi qiymatni saqlash yoki haqiqiy DOM elementiga to'g'ridan-to'g'ri bog'lanish (masalan, inputga fokus berish).</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>const myRef = useRef(boshlangich);</code></li>
+      <li>Qiymat <code>myRef.current</code> ichida yotadi.</li>
+      <li><code>inputRef.current.focus()</code> — maydonni faollashtirish.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">React &amp; JSX Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('reactCode16')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('reactCode16','reactRes16')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="reactCode16" contenteditable="true" spellcheck="false">import { useRef } from 'react';
+
+function QidiruvMaydoni() {
+  const inputRef = useRef(null);
+
+  const fokusBer = () =&gt; {
+    inputRef.current.focus();
+  };
 
   return (
-    &lt;ul&gt;
-      {foydalanuvchilar.map(user =&gt; (
-        &lt;li key={user.id}&gt;{user.name} — {user.email}&lt;/li&gt;
-      ))}
-    &lt;/ul&gt;
+    &lt;div&gt;
+      &lt;input ref={inputRef} type="text" placeholder="Qidiruv..." /&gt;
+      &lt;button onClick={fokusBer}&gt;Klaviatura Fokusini Ochish&lt;/button&gt;
+    &lt;/div&gt;
   );
-}</pre></div>
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="reactRes16"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 <code>useRef</code> qiymati o'zgarganda komponent qayta render bo'lmaydi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Optimizatsiya</span>
+      <span style="font-size:12px; color:var(--text2);">React Mavzu #17</span>
+    </div>
+    <h2 id="usememo" style="color:#61dafb; margin-top:0; font-size:24px;">useMemo Hook (Optimizatsiya)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Og'ir va sekin ishlaydigan matematik hisob-kitoblar natijasini xotiraga saqlab qolish (memoizatsiya) va behuda qayta hisoblashdan saqlanish.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Faqat bog'liq bo'lgan parametrlar o'zgargandagina qayta hisoblaydi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">React &amp; JSX Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('reactCode17')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('reactCode17','reactRes17')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="reactCode17" contenteditable="true" spellcheck="false">import { useMemo } from 'react';
+
+function Saralash({ royxat }) {
+  const saralangan = useMemo(() =&gt; {
+    return royxat.sort((a, b) =&gt; b.ball - a.ball);
+  }, [royxat]);
+
+  return &lt;div&gt;Top natija: {saralangan[0]?.ism}&lt;/div&gt;;
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="reactRes17"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">⚡ Har bir narsaga useMemo ishlatavermang, faqatgina haqiqatan og'ir operatsiyalardagina samara beradi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Optimizatsiya</span>
+      <span style="font-size:12px; color:var(--text2);">React Mavzu #18</span>
+    </div>
+    <h2 id="usecallback" style="color:#61dafb; margin-top:0; font-size:24px;">useCallback Hook</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Komponent har safar qayta render bo'lganda funksiyaning xotirada qaytadan yangi obyekt bo'lib yaratilishini oldini olish.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Funksiyaning o'zini keshlab oladi.</li>
+      <li>Bola komponentlarga parametr sifatida funksiya uzatganda uning behuda render bo'lishidan asraydi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">React &amp; JSX Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('reactCode18')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('reactCode18','reactRes18')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="reactCode18" contenteditable="true" spellcheck="false">import { useCallback } from 'react';
+
+function Asosiy({ id }) {
+  const ochirish = useCallback(() =&gt; {
+    console.log("O'chirildi:", id);
+  }, [id]);
+
+  return &lt;Tugma onClick={ochirish} /&gt;;
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="reactRes18"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 <code>useMemo</code> hisoblangan qiymatni saqlasa, <code>useCallback</code> funksiyaning o'zini saqlaydi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Modullik</span>
+      <span style="font-size:12px; color:var(--text2);">React Mavzu #19</span>
+    </div>
+    <h2 id="custom-hook" style="color:#61dafb; margin-top:0; font-size:24px;">Custom Hooklar (O'z Shaxsiy Hookingiz)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Bir nechta komponentlar o'rtasida takrorlanuvchi holat mantiqini (stateful logic) alohida ajratib olish.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Custom hook nomi doimo <code>use</code> so'zi bilan boshlanishi shart (masalan: <code>useFetch</code>, <code>useWindowSize</code>).</li>
+      <li>Ichida boshqa standart hooklardan erkin foydalanishi mumkin.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">React &amp; JSX Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('reactCode19')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('reactCode19','reactRes19')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="reactCode19" contenteditable="true" spellcheck="false">import { useState, useEffect } from 'react';
+
+function useOynaKengligi() {
+  const [width, setWidth] = useState(window.innerWidth);
+  useEffect(() =&gt; {
+    const handleResize = () =&gt; setWidth(window.innerWidth);
+    window.addEventListener('resize', handleResize);
+    return () =&gt; window.removeEventListener('resize', handleResize);
+  }, []);
+  return width;
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="reactRes19"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">🚀 Kodni modulli qilish va DRY qoidasiga amal qilishning eng oliy usuli.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Arxitektura</span>
+      <span style="font-size:12px; color:var(--text2);">React Mavzu #20</span>
+    </div>
+    <h2 id="state" style="color:#61dafb; margin-top:0; font-size:24px;">State Boshqaruvi Tamoyillari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Reactda ilova holatini to'g'ri tashkil etish va uning o'zgarishlarini nazorat qilish.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Holatni iloji boricha uni ishlatadigan komponentga eng yaqin joyda saqlang.</li>
+      <li>Ortiqcha (keraksiz) statelarni yaratmang, hisoblab chiqarish mumkin bo'lsa oddiy o'zgaruvchi qiling.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">React &amp; JSX Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('reactCode20')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('reactCode20','reactRes20')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="reactCode20" contenteditable="true" spellcheck="false">// Yaxshi amaliyot:
+const [narx, setNarx] = useState(100);
+const [miqdor, setMiqdor] = useState(2);
+// Jami narx uchun yangi state shart emas:
+const jami = narx * miqdor;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="reactRes20"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Kamroq state = kamroq xatolar va tezroq ilova.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Arxitektura</span>
+      <span style="font-size:12px; color:var(--text2);">React Mavzu #21</span>
+    </div>
+    <h2 id="lifting" style="color:#61dafb; margin-top:0; font-size:24px;">Lifting State Up (Holatni Yuqoriga Ko'tarish)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Ikkita yonma-yon turgan (aka-uka) komponent bir xil ma'lumotdan foydalanishi kerak bo'lsa, bu holatni ularning eng yaqin umumiy ota komponentiga ko'tarish kerak.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Ota komponent stateni saqlaydi va uni bolalariga props orqali uzatadi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">React &amp; JSX Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('reactCode21')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('reactCode21','reactRes21')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="reactCode21" contenteditable="true" spellcheck="false">function Ota() {
+  const [matn, setMatn] = useState("");
+  return (
+    &lt;&gt;
+      &lt;KiritishMaydoni matn={matn} onOzgarish={setMatn} /&gt;
+      &lt;JonliAks matn={matn} /&gt;
+    &lt;/&gt;
+  );
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="reactRes21"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 Bu Reactdagi ma'lumotlar almashishning eng klassik va xatosiz usulidir.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Global State</span>
+      <span style="font-size:12px; color:var(--text2);">React Mavzu #22</span>
+    </div>
+    <h2 id="context" style="color:#61dafb; margin-top:0; font-size:24px;">Context API</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Katta dasturlarda alohida kutubxona o'rnatmasdan global holatni boshqarish uchun Reactning o'z ichki tizimi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>createContext()</code> orqali kontekst yaratiladi.</li>
+      <li><code>&lt;MeningContext.Provider value={...}&gt;</code> orqali ma'lumot taqsimlanadi.</li>
+      <li>Bolalar <code>useContext()</code> orqali uni qabul qiladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">React &amp; JSX Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('reactCode22')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('reactCode22','reactRes22')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="reactCode22" contenteditable="true" spellcheck="false">// AuthContext orqali kirgan foydalanuvchini bilish
+export const AuthContext = createContext(null);
+
+export function AuthProvider({ children }) {
+  const [user, setUser] = useState({ ism: "Dilmurod", rol: "admin" });
+  return (
+    &lt;AuthContext.Provider value={{ user, setUser }}&gt;
+      {children}
+    &lt;/AuthContext.Provider&gt;
+  );
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="reactRes22"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">✨ O'rta miqyosli loyihalar uchun Redux keraksiz, Context API ning o'zi to'liq yetarlidir.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Global State</span>
+      <span style="font-size:12px; color:var(--text2);">React Mavzu #23</span>
+    </div>
+    <h2 id="redux" style="color:#61dafb; margin-top:0; font-size:24px;">Redux va Redux Toolkit (RTK)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Yirik korporativ loyihalarda butun ilovaning holatini bitta yagona markaziy omborda (Store) saqlash tizimi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><strong>Redux Toolkit (RTK):</strong> zamonaviy va soddalashtirilgan Redux.</li>
+      <li><code>createSlice()</code>: holat va uning o'zgartiruvchilarini (reducers) bitta joyda e'lon qilish.</li>
+      <li><code>useSelector()</code>: ma'lumotni o'qish, <code>useDispatch()</code>: harakatni (action) yuborish.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">React &amp; JSX Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('reactCode23')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('reactCode23','reactRes23')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="reactCode23" contenteditable="true" spellcheck="false">// Redux Toolkit qisqacha ko'rinishi
+// const savatSlice = createSlice({
+//   name: 'savat',
+//   initialState: [],
+//   reducers: {
+//     qoshish: (state, action) =&gt; { state.push(action.payload); }
+//   }
+// });</pre>
+      </div>
+    </div>
+    <div class="result-box" id="reactRes23"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">🛒 Katta internet-do'konlar (savatcha, buyurtmalar, to'lovlar) uchun Redux standart hisoblanadi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Global State</span>
+      <span style="font-size:12px; color:var(--text2);">React Mavzu #24</span>
+    </div>
+    <h2 id="zustand" style="color:#61dafb; margin-top:0; font-size:24px;">Zustand (Zamonaviy Yengil State)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Reduxning ortiqcha murakkabliklarisiz (boilerplate siz), juda yengil, tez va sodda global holat boshqaruvchisi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Providerlar kerak emas, o'rnatish hajmi atigi 1 KB.</li>
+      <li>Bitta funksiya orqali global store yaratiladi: <code>create((set) =&gt; ({ ... }))</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">React &amp; JSX Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('reactCode24')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('reactCode24','reactRes24')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="reactCode24" contenteditable="true" spellcheck="false">// import { create } from 'zustand';
+// const useStore = create((set) =&gt; ({
+//   tangalar: 0,
+//   yutish: () =&gt; set((state) =&gt; ({ tangalar: state.tangalar + 10 }))
+// }));</pre>
+      </div>
+    </div>
+    <div class="result-box" id="reactRes24"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">🚀 Bugungi kunda ko'plab dasturchilar Redux o'rniga aynan Zustandni tanlamoqda.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Navigatsiya</span>
+      <span style="font-size:12px; color:var(--text2);">React Mavzu #25</span>
+    </div>
+    <h2 id="router" style="color:#61dafb; margin-top:0; font-size:24px;">React Router (Sahifalararo Navigatsiya)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Sahifani qayta yuklamasdan (SPA rejimida) URL manzilni o'zgartirish va kerakli komponentni ko'rsatish kutubxonasi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>&lt;BrowserRouter&gt;</code>, <code>&lt;Routes&gt;</code>, <code>&lt;Route path="/" element={&lt;BoshSahifa /&gt;} /&gt;</code>.</li>
+      <li><code>&lt;Link to="/kurslar"&gt;</code> — brauzerni yuklamasdan silliq o'tish.</li>
+      <li><code>useParams()</code>: URL dagi dinamik id larni o'qish (<code>/kurslar/:id</code>).</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">React &amp; JSX Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('reactCode25')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('reactCode25','reactRes25')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="reactCode25" contenteditable="true" spellcheck="false">// import { Routes, Route, Link } from 'react-router-dom';
+// function App() {
+//   return (
+//     &lt;nav&gt;
+//       &lt;Link to="/"&gt;Bosh sahifa&lt;/Link&gt;
+//       &lt;Link to="/about"&gt;Biz haqimizda&lt;/Link&gt;
+//     &lt;/nav&gt;
+//   );
+// }</pre>
+      </div>
+    </div>
+    <div class="result-box" id="reactRes25"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Oddiy <code>&lt;a href="..."&gt;</code> o'rniga doimo <code>&lt;Link to="..."&gt;</code> ishlating, shunda sahifa miltillamasdan bir zumda ochiladi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Formalar</span>
+      <span style="font-size:12px; color:var(--text2);">React Mavzu #26</span>
+    </div>
+    <h2 id="forms" style="color:#61dafb; margin-top:0; font-size:24px;">Reactda Formalar (Controlled Components)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Forma inputlarining qiymatini to'liq React statei orqali nazorat qilish.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>value={state}</code> va <code>onChange={(e) =&gt; setState(e.target.value)}</code>.</li>
+      <li>Har bir bosilgan klaviatura harfi React nazoratida bo'ladi.</li>
+      <li>Murakkab formalar uchun: React Hook Form kutubxonasi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">React &amp; JSX Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('reactCode26')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('reactCode26','reactRes26')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="reactCode26" contenteditable="true" spellcheck="false">function Login() {
+  const [email, setEmail] = useState('');
+
+  const submit = (e) =&gt; {
+    e.preventDefault();
+    alert('Yuborildi: ' + email);
+  };
+
+  return (
+    &lt;form onSubmit={submit}&gt;
+      &lt;input value={email} onChange={(e) =&gt; setEmail(e.target.value)} placeholder="Email kiriting" /&gt;
+      &lt;button type="submit"&gt;Kirish&lt;/button&gt;
+    &lt;/form&gt;
+  );
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="reactRes26"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 <code>e.preventDefault()</code> formaning sahifani qayta yuklab yuborishini to'xtatadi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Server</span>
+      <span style="font-size:12px; color:var(--text2);">React Mavzu #27</span>
+    </div>
+    <h2 id="api" style="color:#61dafb; margin-top:0; font-size:24px;">API Bilan Ishlash (Fetch va Axios)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Backend serverlar bilan bog'lanish, ma'lumotlarni yuklash va yuklanish holatini (loading, error) ko'rsatish.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Uchta holat: Yuklanmoqda (loading: true), Muvaffaqiyat (data), Xatolik (error).</li>
+      <li>React Query (TanStack Query): keshlaydigan va avtomatik yangilaydigan zamonaviy yechim.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">React &amp; JSX Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('reactCode27')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('reactCode27','reactRes27')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="reactCode27" contenteditable="true" spellcheck="false">function Darslar() {
+  const [yuklanmoqda, setYuklanmoqda] = useState(true);
+
+  useEffect(() =&gt; {
+    fetch('/api/kurslar')
+      .then(r =&gt; r.json())
+      .finally(() =&gt; setYuklanmoqda(false));
+  }, []);
+
+  if (yuklanmoqda) return &lt;div&gt;Yuklanmoqda... ⏳&lt;/div&gt;;
+  return &lt;div&gt;Darslar ro'yxati tayyor!&lt;/div&gt;;
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="reactRes27"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">🌟 Foydalanuvchiga har doim yuklanish indikatorini (spinner yoki skeleton) ko'rsatish kerak.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Optimizatsiya</span>
+      <span style="font-size:12px; color:var(--text2);">React Mavzu #28</span>
+    </div>
+    <h2 id="lazy" style="color:#61dafb; margin-top:0; font-size:24px;">Lazy Loading va Code Splitting</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Butun ilova kodini bitta katta bo'lakda emas, foydalanuvchi aynan o'sha sahifani ochgandagina bo'lib-bo'lib yuklash.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>React.lazy(() =&gt; import('./AdminPanel'))</code>.</li>
+      <li><code>&lt;Suspense fallback={&lt;Spinner /&gt;}&gt;</code>.</li>
+      <li>Saytning dastlabki ochilish tezligini bir necha barobar oshiradi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">React &amp; JSX Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('reactCode28')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('reactCode28','reactRes28')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="reactCode28" contenteditable="true" spellcheck="false">// import { lazy, Suspense } from 'react';
+// const KattaSahifa = lazy(() =&gt; import('./KattaSahifa'));
+
+// function App() {
+//   return (
+//     &lt;Suspense fallback={&lt;div&gt;Yuklanmoqda...&lt;/div&gt;}&gt;
+//       &lt;KattaSahifa /&gt;
+//     &lt;/Suspense&gt;
+//   );
+// }</pre>
+      </div>
+    </div>
+    <div class="result-box" id="reactRes28"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">⚡ Foydalanuvchi kirmaydigan admin panel kabi og'ir sahifalarni doimo lazy yuklash lozim.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Sifat</span>
+      <span style="font-size:12px; color:var(--text2);">React Mavzu #29</span>
+    </div>
+    <h2 id="testing" style="color:#61dafb; margin-top:0; font-size:24px;">React Komponentlarini Testlash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Yozilgan kodning xatolarsiz ishlashini avtomatik tekshiruvchi testlar yozish.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Vositalar: <strong>Vitest</strong>, <strong>Jest</strong> va <strong>React Testing Library</strong>.</li>
+      <li>Tugma bosilganda son o'zgaradimi, matn chiqadimi — barchasini robotlar tekshiradi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">React &amp; JSX Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('reactCode29')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('reactCode29','reactRes29')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="reactCode29" contenteditable="true" spellcheck="false">// Test namunasi (Vitest):
+// test('Tugma bosilganda son 1 ga oshadi', () =&gt; {
+//   render(&lt;Hisoblagich /&gt;);
+//   fireEvent.click(screen.getByText('+1'));
+//   expect(screen.getByText('Hisob: 1')).toBeDefined();
+// });</pre>
+      </div>
+    </div>
+    <div class="result-box" id="reactRes29"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">🔒 Katta jamoalarda test yozilmagan kod ishlab chiqarishga (production) chiqarilmaydi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Freymvork</span>
+      <span style="font-size:12px; color:var(--text2);">React Mavzu #30</span>
+    </div>
+    <h2 id="nextjs" style="color:#61dafb; margin-top:0; font-size:24px;">Next.js ga Kirish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">React ustiga qurilgan, Server-Side Rendering (SSR) va SEO imkoniyatlariga ega bo'lgan to'liq stak (Full-stack) veb freymvork.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Server Components (RSC): kodlar to'g'ridan-to'g'ri serverda ishlaydi, brauzerga ortiqcha JS yuborilmaydi.</li>
+      <li>Fayl tizimiga asoslangan marshrutlash (App Router).</li>
+      <li>Mukammal SEO va avtomatik rasm/shrift optimizatsiyasi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">React &amp; JSX Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('reactCode30')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('reactCode30','reactRes30')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="reactCode30" contenteditable="true" spellcheck="false">// Next.js da yangi sahifa ochish juda oson:
+// app/kurslar/page.js fayli yaratilsa,
+// avtomatik /kurslar URL manzili ishlaydi!</pre>
+      </div>
+    </div>
+    <div class="result-box" id="reactRes30"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">🚀 Bugungi kunda eng ilg'or React dasturlari aynan Next.js da qurilmoqda.</div>
+  </section>
+
+  <!-- Amaliy Mashq -->
+  <div class="exercise-box">
+    <div class="exercise-header">
+      <i class="fa-solid fa-puzzle-piece" style="color:#6366f1;"></i>
+      <span>Amaliy Mashq: React useState</span>
+    </div>
+    <p style="font-size:13.5px;color:var(--text2);margin-bottom:10px;">
+      Holat (state) yaratish uchun to'g'ri hook nomini kiriting:
+    </p>
+    <div class="exercise-code-container">
+      const [ball, setBall] = <input type="text" class="exercise-input" id="exInputReact" placeholder="hook" style="width:85px;"/>(0);
+    </div>
+    <button class="btn-check-exercise" onclick="checkExercise('exInputReact', 'useState', 'exResReact')">
+      <i class="fa-solid fa-circle-check"></i> Javobni tekshirish
+    </button>
+    <div class="exercise-result" id="exResReact"></div>
   </div>
 
+  <!-- Test Bo'limi -->
   <div class="quiz-box">
-    <div class="quiz-q">🧪 Test: React da holat saqlash uchun qaysi hook ishlatiladi?</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qr1')">useEffect</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, true, 'qr1')">useState</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qr1')">useContext</div>
-    <div class="quiz-result" id="qr1"></div>
+    <div class="quiz-q">🧪 Test: Ota komponentdan bola komponentga ma'lumot uzatish nima orqali amalga oshiriladi?</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qrReact')">State</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, true, 'qrReact')">Props</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qrReact')">DOM</div>
+    <div class="quiz-result" id="qrReact"></div>
   </div>
-  
 
-<div class="nav-btns">
-  <a href="typescript.html" class="btn-prev">&#8592; TypeScript</a>
-  <a href="vue.html" class="btn-next">Vue &#8594;</a>
-</div>
+  <div class="nav-btns" style="margin-top: 30px;">
+    <a href="typescript.html" class="btn-prev">← TypeScript Darsiga Qaytish</a>
+    <a href="vue.html" class="btn-next">Vue.js Darsiga O'tish →</a>
+  </div>
+
+  <div class="note note-blue" style="margin-top: 25px;">
+    📌 <strong>Keyingi qadam:</strong> Reactni o'zlashtirgach, yana bir juda mashhur va qulay frontend freymvorki bo'lmish <a href="vue.html" style="color:var(--green)">Vue.js darslariga</a> o'ting!
+  </div>
 </main>
 <aside class="right-panel">
   <div class="rp-title">📈 Progress</div>

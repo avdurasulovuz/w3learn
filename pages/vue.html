@@ -67,97 +67,956 @@
   </ul>
 </aside>
 <main class="main">
-  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">Vue.js</a> › Vue.js Nima?</div>
-  <h1 id="kirish">Vue.js Nima?</h1>
-  <div class="meta-tags">
-    <span class="tag tag-green">⏱ 8 daqiqa</span>
-    <span class="tag tag-blue">🟡 O'rta</span>
-    <span class="tag tag-orange">👁 5,890 marta ko'rilgan</span>
-  </div>
-  <p><strong>Vue.js</strong> — Evan You tomonidan yaratilgan progressiv JavaScript framework. Vue React dan oddiyroq va o'rganish uchun qulay bo'lib, kichik loyihalardan tortib yirik dasturlargacha ishlatiladi.</p>
-  <p>Vue 3 <strong>Composition API</strong> va <strong>Options API</strong> ikkalasini ham qo'llab-quvvatlaydi. Zamonaviy loyihalarda Composition API tavsiya etiladi.</p>
+  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">Vue.js</a> › Barcha Mavzular</div>
 
-  <h2 id="v-model">v-model — Ikki tomonlama bog'lash</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar"><span class="code-lang">Vue 3 (SFC)</span>
-      <div class="code-actions"><button class="btn-copy" onclick="copyCode('code1')">📋 Nusxa</button></div>
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Asosiy</span>
+      <span style="font-size:12px; color:var(--text2);">Vue Mavzu #1</span>
     </div>
-    <div class="code-body"><pre id="code1">&lt;template&gt;
-  &lt;div&gt;
-    &lt;h2&gt;Salom, {{ ism }}!&lt;/h2&gt;
-    &lt;input v-model="ism" placeholder="Ismingizni kiriting" /&gt;
+    <h2 id="kirish" style="color:#42b883; margin-top:0; font-size:24px;">Vue.js Nima?</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Vue.js</strong> — foydalanuvchi interfeyslarini yaratish uchun mo'ljallangan ilg'or (progressive) JavaScript freymvorki. Evan You tomonidan yaratilgan bo'lib, o'rganishga eng oson va intuitiv frontend vositalaridan biridir.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><strong>Progressive:</strong> bitta oddiy HTML sahifaga kutubxona sifatida ulab ishlatish ham, ulkan Single Page Application (SPA) lar qurish ham mumkin.</li>
+      <li><strong>Reaktivlik (Reactivity System):</strong> ma'lumotlar o'zgarganda DOM avtomatik va bir zumda yangilanadi.</li>
+      <li><strong>Single-File Components (SFC):</strong> HTML (template), CSS (style) va JS (script) bitta <code>.vue</code> faylda birlashadi.</li>
+    </ul>
 
-    &lt;!-- v-if / v-else --&gt;
-    &lt;p v-if="ism.length &gt; 0"&gt;Sizning ismingiz: {{ ism }}&lt;/p&gt;
-    &lt;p v-else&gt;Iltimos, ismingizni kiriting.&lt;/p&gt;
-  &lt;/div&gt;
-&lt;/template&gt;
-
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Vue 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('vueCode1')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('vueCode1','vueRes1')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="vueCode1" contenteditable="true" spellcheck="false">&lt;!-- Vue 3 oddiy komponenti --&gt;
 &lt;script setup&gt;
-import { ref } from 'vue'
+import { ref } from 'vue';
+const xabar = ref('Salom, Vue 3! 💚');
+&lt;/script&gt;
 
-const ism = ref('')
-&lt;/script&gt;</pre></div>
-  </div>
-
-  <h2 id="v-for">v-for — Ro'yxat chiqarish</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar"><span class="code-lang">Vue 3 (SFC)</span>
-      <div class="code-actions"><button class="btn-copy" onclick="copyCode('code2')">📋 Nusxa</button></div>
+&lt;template&gt;
+  &lt;div style="background: #1e293b; padding: 15px; border-radius: 8px;"&gt;
+    &lt;h2 style="color: #42b883;"&gt;{{ xabar }}&lt;/h2&gt;
+    &lt;button @click="xabar = 'Vue o'rganish juda qulay!'" style="background: #42b883; color: white; border: none; padding: 6px 12px; border-radius: 4px; cursor: pointer;"&gt;
+      Xabarni O'zgartirish
+    &lt;/button&gt;
+  &lt;/div&gt;
+&lt;/template&gt;</pre>
+      </div>
     </div>
-    <div class="code-body"><pre id="code2">&lt;template&gt;
-  &lt;div&gt;
-    &lt;h3&gt;Vazifalar ro'yxati ({{ bajarilmagan }} ta qoldi)&lt;/h3&gt;
-    &lt;input v-model="yangiVazifa" @keyup.enter="qoshish" placeholder="Yangi vazifa..." /&gt;
-    &lt;button @click="qoshish"&gt;Qo'shish&lt;/button&gt;
+    <div class="result-box" id="vueRes1"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
-    &lt;ul&gt;
-      &lt;li v-for="(vazifa, i) in vazifalar" :key="i"&gt;
-        &lt;input type="checkbox" v-model="vazifa.bajarildi" /&gt;
-        &lt;span :style="{ textDecoration: vazifa.bajarildi ? 'line-through' : 'none' }"&gt;
-          {{ vazifa.matn }}
-        &lt;/span&gt;
-      &lt;/li&gt;
-    &lt;/ul&gt;
+    <div class="note" style="margin-top:16px;">💡 Vue.js dunyodagi eng oson va qulay sintaksisga ega bo'lgani uchun yangi boshlovchilar orasida juda mashhur.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">O'rnatish</span>
+      <span style="font-size:12px; color:var(--text2);">Vue Mavzu #2</span>
+    </div>
+    <h2 id="install" style="color:#42b883; margin-top:0; font-size:24px;">Vue.js O'rnatish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Vue loyihasini kompyuterda ishga tushirish uchun rasmiy tezkor vosita mavjud.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Rasmiy yaratish vositasi: <code>npm create vue@latest</code>.</li>
+      <li>Kutubxonalarni o'rnatish: <code>cd mening-loyiha &amp;&amp; npm install</code>.</li>
+      <li>Ishga tushirish: <code>npm run dev</code>.</li>
+      <li>CDN orqali HTMLga oddiy ulab ishlatish: <code>&lt;script src="https://unpkg.com/vue@3"&gt;&lt;/script&gt;</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Vue 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('vueCode2')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('vueCode2','vueRes2')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="vueCode2" contenteditable="true" spellcheck="false">// Terminalda bajarish:
+// npm create vue@latest
+// Loyiha nomi: mening-app
+// TypeScript: Yes / No
+// Vue Router, Pinia: Yes
+
+// cd mening-app
+// npm install
+// npm run dev</pre>
+      </div>
+    </div>
+    <div class="result-box" id="vueRes2"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">⚡ Vite vositasi tufayli Vue loyihalari bir zumda ishga tushadi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Tuzilma</span>
+      <span style="font-size:12px; color:var(--text2);">Vue Mavzu #3</span>
+    </div>
+    <h2 id="struktura" style="color:#42b883; margin-top:0; font-size:24px;">Vue Loyiha Tuzilmasi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Standart Vue 3 loyihasining ichki arxitekturasi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>src/App.vue</code>: asosiy bosh komponent.</li>
+      <li><code>src/main.js</code>: Vuedan <code>createApp()</code> orqali ilovani yaratib HTMLga ulovchi fayl.</li>
+      <li><code>src/components/</code>: qayta ishlatiluvchi komponentlar papkasi.</li>
+      <li><code>src/assets/</code>: rasmlar, CSS stillari va shriftlar.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Vue 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('vueCode3')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('vueCode3','vueRes3')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="vueCode3" contenteditable="true" spellcheck="false">// src/main.js
+import { createApp } from 'vue';
+import App from './App.vue';
+import './assets/main.css';
+
+const app = createApp(App);
+app.mount('#app');</pre>
+      </div>
+    </div>
+    <div class="result-box" id="vueRes3"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 Barcha komponentlar <code>index.html</code> dagi <code>&lt;div id="app"&gt;&lt;/div&gt;</code> ichiga joylashadi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Shablon</span>
+      <span style="font-size:12px; color:var(--text2);">Vue Mavzu #4</span>
+    </div>
+    <h2 id="interpolation" style="color:#42b883; margin-top:0; font-size:24px;">Text Interpolation (Mustache {{ }})</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">HTML shabloni (template) ichida JavaScript o'zgaruvchilarini chiqarish uchun qo'shaloq jingalak qavslar <code>{{ }}</code> ishlatiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>O'zgaruvchini chiqarish: <code>{{ ism }}</code>.</li>
+      <li>Matematik ifodalar: <code>{{ narx * 1.12 }}</code>.</li>
+      <li>JavaScript metodlari: <code>{{ matn.toUpperCase() }}</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Vue 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('vueCode4')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('vueCode4','vueRes4')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="vueCode4" contenteditable="true" spellcheck="false">&lt;template&gt;
+  &lt;p&gt;Ism: {{ foydalanuvchi }}&lt;/p&gt;
+  &lt;p&gt;Status: {{ ball &gt;= 60 ? 'Topshirdi ✅' : 'Yiqildi ❌' }}&lt;/p&gt;
+&lt;/template&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="vueRes4"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Qo'shaloq qavs xuddi mo'ylovga (mustache) o'xshagani sababli uni 'Mustache syntax' deb ham atashadi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Direktivalar</span>
+      <span style="font-size:12px; color:var(--text2);">Vue Mavzu #5</span>
+    </div>
+    <h2 id="v-bind" style="color:#42b883; margin-top:0; font-size:24px;">v-bind Direktisasi (Qisqartmasi :)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">HTML atributlariga (href, src, class, disabled) dinamik JavaScript qiymatlarini bog'lash vositasi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>To'liq sintaksis: <code>v-bind:href="url"</code>.</li>
+      <li>Qisqa sintaksis (har doim ishlatiladi): <code>:href="url"</code>.</li>
+      <li>Rasmlarga dinamik yo'l berish: <code>:src="rasmManzili"</code>.</li>
+      <li>Tugmani faolsizlantirish: <code>:disabled="yuklanmoqda"</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Vue 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('vueCode5')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('vueCode5','vueRes5')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="vueCode5" contenteditable="true" spellcheck="false">&lt;template&gt;
+  &lt;a :href="saytManzili" target="_blank" style="color: #42b883; font-weight: bold;"&gt;
+    W3Learn Saytiga O'tish
+  &lt;/a&gt;
+  &lt;br&gt;&lt;br&gt;
+  &lt;button :disabled="tugmaOchiqmi" style="padding: 6px 12px; border-radius: 4px;"&gt;
+    Holatga bog'liq tugma
+  &lt;/button&gt;
+&lt;/template&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="vueRes5"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">⚡ Professional Vue dasturchilari hech qachon 'v-bind' deb yozishmaydi, faqatgina ikki nuqta <code>:</code> qo'yishadi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Shartlar</span>
+      <span style="font-size:12px; color:var(--text2);">Vue Mavzu #6</span>
+    </div>
+    <h2 id="v-if" style="color:#42b883; margin-top:0; font-size:24px;">v-if / v-else-if / v-else</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Shartga qarab HTML elementlarini DOMga qo'shish yoki butunlay DOMdan o'chirib tashlash.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>v-if="shart":</code> shart rost bo'lsa element yaratiladi.</li>
+      <li><code>v-else-if="boshqa_shart":</code> ikkinchi shart.</li>
+      <li><code>v-else:</code> yuqoridagilar bajarilmaganda chiqadi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Vue 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('vueCode6')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('vueCode6','vueRes6')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="vueCode6" contenteditable="true" spellcheck="false">&lt;template&gt;
+  &lt;div v-if="tizimgaKirganmi" style="color: #42b883;"&gt;
+    Hush kelibsiz, Admin! 👋
   &lt;/div&gt;
-&lt;/template&gt;
+  &lt;div v-else style="color: #ef4444;"&gt;
+    Iltimos, avval tizimga kiring! 🔒
+  &lt;/div&gt;
+&lt;/template&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="vueRes6"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
-&lt;script setup&gt;
-import { ref, computed } from 'vue'
+    <div class="note" style="margin-top:16px;">📌 <code>v-if</code> elementni yashirib qo'ymaydi, balki DOMdan to'liq olib tashlaydi.</div>
+  </section>
 
-const vazifalar = ref([
-  { matn: 'HTML o\'rganish', bajarildi: true },
-  { matn: 'CSS o\'rganish', bajarildi: true },
-  { matn: 'Vue.js o\'rganish', bajarildi: false },
-])
-const yangiVazifa = ref('')
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Sikllar</span>
+      <span style="font-size:12px; color:var(--text2);">Vue Mavzu #7</span>
+    </div>
+    <h2 id="v-for" style="color:#42b883; margin-top:0; font-size:24px;">v-for Direktisasi (Sikllar)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Massivdagi har bir element bo'yicha aylanib chiqib, ro'yxat yoki kartalarni hosil qilish.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Sintaksis: <code>v-for="element in massiv" :key="element.id"</code>.</li>
+      <li><strong>:key majburiydir!</strong> Virtual DOM elementlarni to'g'ri kuzatib borishi uchun har bir elementga unikal <code>:key</code> berilishi shart.</li>
+    </ul>
 
-const bajarilmagan = computed(() =>
-  vazifalar.value.filter(v => !v.bajarildi).length
-)
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Vue 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('vueCode7')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('vueCode7','vueRes7')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="vueCode7" contenteditable="true" spellcheck="false">&lt;template&gt;
+  &lt;ul style="padding-left: 20px; color: #cbd5e1;"&gt;
+    &lt;li v-for="kurs in kurslar" :key="kurs.id"&gt;
+      {{ kurs.nomi }} — &lt;span style="color: #42b883;"&gt;{{ kurs.daraja }}&lt;/span&gt;
+    &lt;/li&gt;
+  &lt;/ul&gt;
+&lt;/template&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="vueRes7"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
-function qoshish() {
-  if (yangiVazifa.value.trim()) {
-    vazifalar.value.push({ matn: yangiVazifa.value, bajarildi: false })
-    yangiVazifa.value = ''
-  }
+    <div class="note" style="margin-top:16px;">⚠️ <code>:key</code> atributiga hech qachon massiv indeksini bermang, ma'lumotning o'zining unikal ID sini bering.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Hodisalar</span>
+      <span style="font-size:12px; color:var(--text2);">Vue Mavzu #8</span>
+    </div>
+    <h2 id="v-on" style="color:#42b883; margin-top:0; font-size:24px;">v-on Direktisasi (Qisqartmasi @)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Foydalanuvchi harakatlarini (click, submit, keyup) tinglash va unga javob qaytarish.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>To'liq: <code>v-on:click="bosildi"</code>.</li>
+      <li>Qisqa (tavsiya etiladi): <code>@click="bosildi"</code>.</li>
+      <li>Modifikatorlar: <code>@submit.prevent</code> (sahifani qayta yuklanishini to'xtatadi), <code>@keyup.enter</code> (Enter bosilganda).</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Vue 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('vueCode8')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('vueCode8','vueRes8')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="vueCode8" contenteditable="true" spellcheck="false">&lt;template&gt;
+  &lt;button @click="sanash" style="background: #42b883; color: white; border: none; padding: 8px 14px; border-radius: 4px; cursor: pointer;"&gt;
+    Bosildi: {{ hisob }} marta
+  &lt;/button&gt;
+&lt;/template&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="vueRes8"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">✨ <code>@submit.prevent</code> bilan JavaScriptdagi <code>e.preventDefault()</code> ni yozishdan butunlay qutulasiz.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Formalar</span>
+      <span style="font-size:12px; color:var(--text2);">Vue Mavzu #9</span>
+    </div>
+    <h2 id="v-model" style="color:#42b883; margin-top:0; font-size:24px;">v-model Direktisasi (Ikki tomonlama bog'lanish)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Input maydonidagi matn bilan JavaScriptdagi o'zgaruvchini ikki tomonlama (Two-Way Data Binding) uzviy bog'lash.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Foydalanuvchi inputga yozsa — o'zgaruvchi o'zgaradi.</li>
+      <li>Koddagi o'zgaruvchi o'zgarsa — inputdagi matn darhol yangilanadi.</li>
+      <li>Modifikatorlar: <code>v-model.lazy</code>, <code>v-model.number</code>, <code>v-model.trim</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Vue 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('vueCode9')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('vueCode9','vueRes9')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="vueCode9" contenteditable="true" spellcheck="false">&lt;template&gt;
+  &lt;input v-model="ism" placeholder="Ismingizni yozing" style="padding: 6px; border-radius: 4px; background: #1e293b; color: white; border: 1px solid #475569;" /&gt;
+  &lt;p style="color: #42b883;"&gt;Jonli aks: Salom, {{ ism }}!&lt;/p&gt;
+&lt;/template&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="vueRes9"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">🌟 Reactda buning uchun value va onChange yozish kerak, Vueda esa bitta <code>v-model</code> ning o'zi yetarli!</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Shartlar</span>
+      <span style="font-size:12px; color:var(--text2);">Vue Mavzu #10</span>
+    </div>
+    <h2 id="v-show" style="color:#42b883; margin-top:0; font-size:24px;">v-show Direktisasi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Elementni ko'rsatish yoki yashirish, lekin uni DOMdan o'chirmasdan faqat CSS <code>display: none</code> berish.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>v-if</code> elementni butunlay o'chiradi/yaratadi (og'ir amal).</li>
+      <li><code>v-show</code> elementni doim DOMda saqlaydi, faqat ko'rinmas qilib turadi (juda yengil).</li>
+      <li>Tez-tez ochilib-yopiladigan menyu va tablar uchun <code>v-show</code> ancha samarali.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Vue 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('vueCode10')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('vueCode10','vueRes10')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="vueCode10" contenteditable="true" spellcheck="false">&lt;template&gt;
+  &lt;button @click="ochiq = !ochiq"&gt;Menyuni ochish/yopish&lt;/button&gt;
+  &lt;div v-show="ochiq" style="background: #1e293b; padding: 10px; margin-top: 6px;"&gt;
+    Bu menyu v-show orqali boshqarilmoqda!
+  &lt;/div&gt;
+&lt;/template&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="vueRes10"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Agar element sahifada tez-tez ko'rinib-yashirinishi kerak bo'lsa, har doim <code>v-show</code> ishlating.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Composition API</span>
+      <span style="font-size:12px; color:var(--text2);">Vue Mavzu #11</span>
+    </div>
+    <h2 id="ref" style="color:#42b883; margin-top:0; font-size:24px;">ref() — Reaktiv Primitivlar</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Vue 3 Composition API da oddiy primitiv qiymatlarni (son, matn, boolean) reaktiv qilish vositasi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Sintaksis: <code>const hisob = ref(0);</code></li>
+      <li>JavaScript ichida o'qish va o'zgartirish uchun: <code>hisob.value = 5;</code> (<code>.value</code> shart!).</li>
+      <li>HTML shablonida (template) esa <code>.value</code> yozish shart emas, to'g'ridan-to'g'ri <code>{{ hisob }}</code> deb yoziladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Vue 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('vueCode11')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('vueCode11','vueRes11')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="vueCode11" contenteditable="true" spellcheck="false">&lt;script setup&gt;
+import { ref } from 'vue';
+
+const son = ref(10);
+function oshir() {
+  son.value++; // JS ichida .value orqali
 }
-&lt;/script&gt;</pre></div>
+&lt;/script&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="vueRes11"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">⚠️ Ko'p yangi boshlovchilar skript ichida <code>.value</code> ni yozishni unutib xatoga yo'l qo'yishadi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Composition API</span>
+      <span style="font-size:12px; color:var(--text2);">Vue Mavzu #12</span>
+    </div>
+    <h2 id="reactive" style="color:#42b883; margin-top:0; font-size:24px;">reactive() — Reaktiv Obyektlar</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Murakkab obyektlar va massivlarni chuqur reaktiv qilish uchun ishlatiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Faqat obyekt va massivlarni qabul qiladi (son yoki matn qabul qilmaydi).</li>
+      <li>Undan foydalanishda <code>.value</code> yozish shart emas: <code>shaxs.ism = 'Aziz';</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Vue 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('vueCode12')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('vueCode12','vueRes12')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="vueCode12" contenteditable="true" spellcheck="false">&lt;script setup&gt;
+import { reactive } from 'vue';
+
+const profil = reactive({
+  ism: 'Doston',
+  ball: 85
+});
+&lt;/script&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="vueRes12"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 Primitivlar uchun <code>ref()</code>, obyektlar guruhi uchun esa <code>reactive()</code> qo'llaniladi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Composition API</span>
+      <span style="font-size:12px; color:var(--text2);">Vue Mavzu #13</span>
+    </div>
+    <h2 id="computed" style="color:#42b883; margin-top:0; font-size:24px;">computed() — Hisoblangan Qiymatlar</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Mavjud reaktiv ma'lumotlar asosida yangi qiymatni hisoblab chiqarish va natijani keshlab saqlash.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Oddiy funksiyadan farqi: agar bog'liq o'zgaruvchilar o'zgarmasa, qayta hisoblamasdan keshdagi tayyor javobni beradi.</li>
+      <li>Read-only (faqat o'qish uchun) bo'ladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Vue 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('vueCode13')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('vueCode13','vueRes13')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="vueCode13" contenteditable="true" spellcheck="false">&lt;script setup&gt;
+import { ref, computed } from 'vue';
+
+const narx = ref(100);
+const miqdor = ref(3);
+
+const jamiNarx = computed(() =&gt; {
+  return narx.value * miqdor.value;
+});
+&lt;/script&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="vueRes13"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">🚀 Murakkab filtrlashlar va savatchadagi umumiy summani hisoblashda computed tengsiz vositadir.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Composition API</span>
+      <span style="font-size:12px; color:var(--text2);">Vue Mavzu #14</span>
+    </div>
+    <h2 id="watch" style="color:#42b883; margin-top:0; font-size:24px;">watch() — Kuzatuvchilar</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Muayyan o'zgaruvchining o'zgarishini poylab (kuzatib) turish va u o'zgarganda biror amalni (masalan, serverga so'rov yuborish) bajarish.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Eski va yangi qiymatlarni beradi: <code>watch(manba, (yangi, eski) =&gt; { ... })</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Vue 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('vueCode14')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('vueCode14','vueRes14')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="vueCode14" contenteditable="true" spellcheck="false">&lt;script setup&gt;
+import { ref, watch } from 'vue';
+
+const qidiruv = ref('');
+
+watch(qidiruv, (yangiSoz) =&gt; {
+  console.log("Foydalanuvchi qidirmoqda:", yangiSoz);
+});
+&lt;/script&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="vueRes14"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Qidiruv matni kiritilganda avtomatik serverga qidiruv jo'natish aynan <code>watch</code> bilan qilinadi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Composition API</span>
+      <span style="font-size:12px; color:var(--text2);">Vue Mavzu #15</span>
+    </div>
+    <h2 id="watcheffect" style="color:#42b883; margin-top:0; font-size:24px;">watchEffect()</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Ichida ishlatilgan har qanday reaktiv o'zgaruvchini avtomatik tarzda o'zi aniqlab kuzatuvga oluvchi qulay funksiya.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Qaysi o'zgaruvchini kuzatishni qo'lda ko'rsatish shart emas.</li>
+      <li>Komponent ochilishi bilan darhol bir marta ishga tushadi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Vue 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('vueCode15')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('vueCode15','vueRes15')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="vueCode15" contenteditable="true" spellcheck="false">&lt;script setup&gt;
+import { ref, watchEffect } from 'vue';
+
+const id = ref(1);
+
+watchEffect(() =&gt; {
+  console.log("ID o'zgardi, ma'lumot olinmoqda:", id.value);
+});
+&lt;/script&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="vueRes15"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">✨ Bir nechta o'zgaruvchilarga bog'liq operatsiyalarda watch o'rniga watchEffect yozish ancha oson.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Komponentlar</span>
+      <span style="font-size:12px; color:var(--text2);">Vue Mavzu #16</span>
+    </div>
+    <h2 id="component" style="color:#42b883; margin-top:0; font-size:24px;">Komponent Yaratish va Ishlatish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Katta sahifani kichik, mustaqil <code>.vue</code> fayllarga bo'lib chiqish.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Har bir fayl o'zining shaxsiy <code>&lt;template&gt;</code>, <code>&lt;script setup&gt;</code> va <code>&lt;style scoped&gt;</code> qismlariga ega.</li>
+      <li>Vue 3 da komponentni shunchaki import qilish kifoya, ro'yxatdan o'tkazish (registration) shart emas.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Vue 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('vueCode16')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('vueCode16','vueRes16')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="vueCode16" contenteditable="true" spellcheck="false">&lt;script setup&gt;
+import MeningTugmam from './components/MeningTugmam.vue';
+&lt;/script&gt;
+
+&lt;template&gt;
+  &lt;MeningTugmam /&gt;
+&lt;/template&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="vueRes16"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">🔒 <code>&lt;style scoped&gt;</code> xususiyati stillarning faqat shu komponent ichida qolishini ta'minlaydi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Ma'lumot Oqimi</span>
+      <span style="font-size:12px; color:var(--text2);">Vue Mavzu #17</span>
+    </div>
+    <h2 id="props" style="color:#42b883; margin-top:0; font-size:24px;">Vue Props</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Ota komponentdan bola komponentga ma'lumotlarni xavfsiz uzatish usuli.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Vue 3 da <code>defineProps()</code> makrosi orqali qabul qilinadi.</li>
+      <li>Tiplarni tekshirish imkoniyati mavjud.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Vue 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('vueCode17')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('vueCode17','vueRes17')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="vueCode17" contenteditable="true" spellcheck="false">&lt;script setup&gt;
+defineProps({
+  sarlavha: String,
+  narx: {
+    type: Number,
+    default: 0
+  }
+});
+&lt;/script&gt;
+
+&lt;template&gt;
+  &lt;h3&gt;{{ sarlavha }} — ${{ narx }}&lt;/h3&gt;
+&lt;/template&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="vueRes17"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 Bolalar komponenti propsni o'zgartira olmaydi (bir tomonlama ma'lumot oqimi).</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Ma'lumot Oqimi</span>
+      <span style="font-size:12px; color:var(--text2);">Vue Mavzu #18</span>
+    </div>
+    <h2 id="emits" style="color:#42b883; margin-top:0; font-size:24px;">Emits (Boladan Otaga Xabar)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Bola komponentda hodisa yuz berganda (masalan, tugma bosilganda), ota komponentni xabardor qilish mexanizmi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>defineEmits()</code> orqali e'lon qilinadi.</li>
+      <li><code>emit('hodisaNomi', ma'lumot)</code> orqali yuboriladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Vue 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('vueCode18')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('vueCode18','vueRes18')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="vueCode18" contenteditable="true" spellcheck="false">&lt;script setup&gt;
+const emit = defineEmits(['ochir']);
+
+function ochirishniYubor() {
+  emit('ochir', 42); // ID 42 ni otaga yuboramiz
+}
+&lt;/script&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="vueRes18"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Props ota komponentdan bolaga kelsa, Emits boladan ota komponentga xabar uzatadi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Komponentlar</span>
+      <span style="font-size:12px; color:var(--text2);">Vue Mavzu #19</span>
+    </div>
+    <h2 id="slots" style="color:#42b883; margin-top:0; font-size:24px;">Slots (Slotlar)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Komponent ichiga tashqaridan xohlagan HTML yoki boshqa komponentlarni joylash uchun qoldiriladigan 'ochiq eshik'.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Oddiy slot: <code>&lt;slot&gt;&lt;/slot&gt;</code>.</li>
+      <li>Nomlangan slotlar: <code>&lt;slot name="header"&gt;</code>.</li>
+      <li>Scoped slots: boladagi ma'lumotni tashqi slotga berish.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Vue 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('vueCode19')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('vueCode19','vueRes19')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="vueCode19" contenteditable="true" spellcheck="false">&lt;!-- Modal.vue --&gt;
+&lt;template&gt;
+  &lt;div class="modal"&gt;
+    &lt;slot name="sarlavha"&gt;&lt;/slot&gt;
+    &lt;div class="tana"&gt;
+      &lt;slot&gt;&lt;/slot&gt; &lt;!-- Asosiy kontent --&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/template&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="vueRes19"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">✨ Slotlar yordamida har qanday kontentni qabul qila oladigan universal modallar yasash mumkin.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Arxitektura</span>
+      <span style="font-size:12px; color:var(--text2);">Vue Mavzu #20</span>
+    </div>
+    <h2 id="provide" style="color:#42b883; margin-top:0; font-size:24px;">provide / inject (Chuqur Uzatish)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Ma'lumotni eng yuqori ota komponentdan 5-qavatdagi eng quyi nabira komponentga oraliq komponentlarni bezovta qilmasdan yetkazish.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Ota komponent: <code>provide('kalit', qiymat);</code></li>
+      <li>Istalgan chuqurlikdagi bola: <code>const val = inject('kalit');</code></li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Vue 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('vueCode20')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('vueCode20','vueRes20')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="vueCode20" contenteditable="true" spellcheck="false">// Ota komponentda:
+// provide('foydalanuvchi', { ism: 'Laziz' });
+
+// Nabira komponentda:
+// const user = inject('foydalanuvchi');</pre>
+      </div>
+    </div>
+    <div class="result-box" id="vueRes20"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">🚀 Reactdagi Context API ning Vuedagi aniq va qulay muqobili.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Navigatsiya</span>
+      <span style="font-size:12px; color:var(--text2);">Vue Mavzu #21</span>
+    </div>
+    <h2 id="router" style="color:#42b883; margin-top:0; font-size:24px;">Vue Router (Sahifalararo O'tish)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Veb ilovani sahifalarga bo'lish va sahifani qayta yuklamasdan navigatsiya qilish.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>&lt;router-link to="/kurs"&gt;</code>: o'tish havolasi.</li>
+      <li><code>&lt;router-view&gt;&lt;/router-view&gt;</code>: joriy sahifa komponenti ochiladigan joy.</li>
+      <li><code>useRouter()</code> va <code>useRoute()</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Vue 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('vueCode21')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('vueCode21','vueRes21')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="vueCode21" contenteditable="true" spellcheck="false">&lt;!-- App.vue --&gt;
+&lt;template&gt;
+  &lt;nav&gt;
+    &lt;router-link to="/"&gt;Bosh sahifa&lt;/router-link&gt; |
+    &lt;router-link to="/aloqa"&gt;Aloqa&lt;/router-link&gt;
+  &lt;/nav&gt;
+  &lt;router-view&gt;&lt;/router-view&gt;
+&lt;/template&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="vueRes21"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Single Page Application (SPA) yaratishda Vue Router ajralmas qismdir.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Global State</span>
+      <span style="font-size:12px; color:var(--text2);">Vue Mavzu #22</span>
+    </div>
+    <h2 id="pinia" style="color:#42b883; margin-top:0; font-size:24px;">Pinia (Zamonaviy Global State)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Vue 3 uchun rasmiy tavsiya etilgan, o'ta yengil, intuitiv va TypeScriptni mukammal qo'llab-quvvatlovchi global holat ombori (Store).</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Eski Vuex ning o'rnini to'liq egallagan.</li>
+      <li><strong>State:</strong> ma'lumotlar.</li>
+      <li><strong>Getters:</strong> hisoblangan natijalar (computed).</li>
+      <li><strong>Actions:</strong> ma'lumotlarni o'zgartiruvchi asinxron funksiyalar.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Vue 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('vueCode22')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('vueCode22','vueRes22')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="vueCode22" contenteditable="true" spellcheck="false">import { defineStore } from 'pinia';
+
+export const useSavatStore = defineStore('savat', {
+  state: () =&gt; ({ buyumlar: [] }),
+  actions: {
+    qosh(mahsulot) { this.buyumlar.push(mahsulot); }
+  }
+});</pre>
+      </div>
+    </div>
+    <div class="result-box" id="vueRes22"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">🌟 Pinia Redux va Vuex ga qaraganda 5 barobar soddaroq va qulayroqdir.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Hayotiy Sikl</span>
+      <span style="font-size:12px; color:var(--text2);">Vue Mavzu #23</span>
+    </div>
+    <h2 id="lifecycle" style="color:#42b883; margin-top:0; font-size:24px;">Lifecycle Hooks (Hayotiy Sikl)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Komponent yaratilayotganda, ekranga chiqayotganda va yopilayotganda ma'lum bir kodlarni ishga tushirish.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>onMounted():</code> komponent ekranda paydo bo'lganda (API dan ma'lumot olish uchun eng asosiy joy).</li>
+      <li><code>onUpdated():</code> DOM yangilanganda.</li>
+      <li><code>onUnmounted():</code> komponent ekrandan yo'qolayotganda (taymerlarni tozalash).</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Vue 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('vueCode23')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('vueCode23','vueRes23')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="vueCode23" contenteditable="true" spellcheck="false">&lt;script setup&gt;
+import { onMounted, onUnmounted } from 'vue';
+
+onMounted(() =&gt; {
+  console.log("Komponent ekranda muvaffaqiyatli chizildi!");
+});
+
+onUnmounted(() =&gt; {
+  console.log("Komponent yopildi.");
+});
+&lt;/script&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="vueRes23"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 Serverdan ma'lumotlarni yuklab olishni doimo <code>onMounted</code> ichida bajaring.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Modullik</span>
+      <span style="font-size:12px; color:var(--text2);">Vue Mavzu #24</span>
+    </div>
+    <h2 id="composables" style="color:#42b883; margin-top:0; font-size:24px;">Composables (Qayta Ishlatiluvchi Mantiq)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Reactdagi Custom Hooklarning Vuedagi muqobili bo'lib, reaktiv mantiqni alohida <code>use...</code> funksiyalariga ajratish.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Kodni qayta ishlatish (reusability) va toza arxitektura uchun eng zo'r vosita.</li>
+      <li>Masalan, <code>useMouse()</code>, <code>useLocalStorage()</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Vue 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('vueCode24')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('vueCode24','vueRes24')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="vueCode24" contenteditable="true" spellcheck="false">// useHisoblagich.js
+import { ref } from 'vue';
+
+export function useHisoblagich() {
+  const son = ref(0);
+  const oshir = () =&gt; son.value++;
+  return { son, oshir };
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="vueRes24"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">🚀 Vue 3 ning eng kuchli jihati aynan mana shu Composables arxitekturasidir.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Freymvork</span>
+      <span style="font-size:12px; color:var(--text2);">Vue Mavzu #25</span>
+    </div>
+    <h2 id="nuxt" style="color:#42b883; margin-top:0; font-size:24px;">Nuxt.js ga Kirish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Vue.js ustiga qurilgan, Server-Side Rendering (SSR) va to'liq SEO optimizatsiyasiga ega Full-stack freymvork.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Fayl tizimiga asoslangan avtomatik marshrutlash (pages/ papkasi).</li>
+      <li>Avtomatik importlar: ref, computed larni qo'lda import qilib o'tirish shart emas.</li>
+      <li>Google qidiruvida saytingiz 1-o'rinda chiqishi uchun mukammal yechim.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Vue 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('vueCode25')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('vueCode25','vueRes25')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="vueCode25" contenteditable="true" spellcheck="false">// Nuxt 3 da bitta pages/kurslar.vue fayli yaratilsa,
+// /kurslar sahifasi avtomatik ishlaydi!</pre>
+      </div>
+    </div>
+    <div class="result-box" id="vueRes25"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">✨ React uchun Next.js nima bo'lsa, Vue uchun Nuxt.js xuddi shunday qiymatga ega.</div>
+  </section>
+
+  <!-- Amaliy Mashq -->
+  <div class="exercise-box">
+    <div class="exercise-header">
+      <i class="fa-solid fa-puzzle-piece" style="color:#6366f1;"></i>
+      <span>Amaliy Mashq: Vue Reaktivlik</span>
+    </div>
+    <p style="font-size:13.5px;color:var(--text2);margin-bottom:10px;">
+      Primitiv qiymatni reaktiv qilish uchun to'g'ri funksiya nomini yozing:
+    </p>
+    <div class="exercise-code-container">
+      const ball = <input type="text" class="exercise-input" id="exInputVue" placeholder="funksiya" style="width:65px;"/>(100);
+    </div>
+    <button class="btn-check-exercise" onclick="checkExercise('exInputVue', 'ref', 'exResVue')">
+      <i class="fa-solid fa-circle-check"></i> Javobni tekshirish
+    </button>
+    <div class="exercise-result" id="exResVue"></div>
   </div>
 
+  <!-- Test Bo'limi -->
   <div class="quiz-box">
-    <div class="quiz-q">🧪 Test: Vue da ikki tomonlama ma'lumot bog'lash uchun qaysi direktiva ishlatiladi?</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qr1')">v-bind</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, true, 'qr1')">v-model</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qr1')">v-on</div>
-    <div class="quiz-result" id="qr1"></div>
+    <div class="quiz-q">🧪 Test: Vueda input maydonini o'zgaruvchi bilan ikki tomonlama bog'lovchi direktiva qaysi?</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qrVue')">v-bind</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, true, 'qrVue')">v-model</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qrVue')">v-on</div>
+    <div class="quiz-result" id="qrVue"></div>
   </div>
-  
 
-<div class="nav-btns">
-  <a href="react.html" class="btn-prev">&#8592; React</a>
-  <a href="bootstrap.html" class="btn-next">Bootstrap &#8594;</a>
-</div>
+  <div class="nav-btns" style="margin-top: 30px;">
+    <a href="react.html" class="btn-prev">← React Darsiga Qaytish</a>
+    <a href="bootstrap.html" class="btn-next">Bootstrap Darsiga O'tish →</a>
+  </div>
+
+  <div class="note note-blue" style="margin-top: 25px;">
+    📌 <strong>Keyingi qadam:</strong> Vue.js freymvorkini egallagach, tayyor dizayn bloklari va to'rlari bilan tezkor sahifa yasash imkonini beruvchi <a href="bootstrap.html" style="color:var(--green)">Bootstrap darslariga</a> o'ting!
+  </div>
 </main>
 <aside class="right-panel">
   <div class="rp-title">📈 Progress</div>

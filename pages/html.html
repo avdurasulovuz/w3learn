@@ -94,129 +94,1550 @@
 </aside>
 
 <main class="main">
-  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">HTML</a> › HTML Nima?</div>
+  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">HTML</a> › Barcha Mavzular</div>
 
-  <h1 id="kirish">HTML Nima?</h1>
-  <div class="meta-tags">
-    <span class="tag tag-green">⏱ 5 daqiqa</span>
-    <span class="tag tag-blue">🟢 Boshlang'ich</span>
-    <span class="tag tag-orange">👁 15,420 marta ko'rilgan</span>
-  </div>
-
-  <p><strong>HTML</strong> (HyperText Markup Language) — web sahifalar yaratish uchun standart <em>belgilash tili</em>. HTML sahifaning tuzilmasini belgilaydi. Brauzer HTML kodini o'qib, uni vizual ko'rinishga aylantiradi.</p>
-  <p>HTML <strong>teglar</strong> (tags) orqali ishlaydi. Teglar qavs ichida yoziladi va odatda juft bo'ladi: ochiluvchi teg va yopiluvchi teg.</p>
-
-  <div class="note">💡 <strong>Eslatma:</strong> HTML — dasturlash tili emas, <em>belgilash tili</em>dir. U sahifaning tuzilmasini belgilaydi, mantiqini emas.</div>
-
-  <h2 id="tuzilma">HTML Tuzilmasi</h2>
-  <p>Har bir HTML fayli quyidagi asosiy tuzilmaga ega:</p>
-
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">HTML</span>
-      <div class="code-actions">
-        <button class="btn-copy" onclick="copyCode('code1')">📋 Nusxa</button>
-        <button class="btn-run" onclick="runCode('code1','res1')">▶ Run</button>
-      </div>
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Asosiy</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #1</span>
     </div>
-    <div class="code-body">
-      <pre id="code1">&lt;!DOCTYPE html&gt;
+    <h2 id="kirish" style="color:var(--green-light); margin-top:0; font-size:24px;">HTML Nima?</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>HTML</strong> (HyperText Markup Language) — veb sahifalar tuzilishini yaratish uchun ishlatiladigan xalqaro standart belgilash tili. U brauzerlarga matn, rasm, video, jadvallar va havolalarni qanday ko'rsatishni buyuradi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>HTML dasturlash tili emas, balki sahifadagi axborotlar tuzilmasini yaratuvchi belgilash tilidir.</li>
+      <li>Veb-sahifadagi har bir element maxsus <strong>teglar</strong> (tags) yordamida hosil qilinadi.</li>
+      <li>HTML5 — hozirgi eng zamonaviy va qulay versiya bo'lib, audio, video va semantik teglarni to'g'ridan-to'g'ri qo'llab-quvvatlaydi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code1')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code1','res1')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code1" contenteditable="true" spellcheck="false">&lt;!DOCTYPE html&gt;
 &lt;html&gt;
-  &lt;head&gt;
-    &lt;title&gt;Mening sahifam&lt;/title&gt;
-  &lt;/head&gt;
-  &lt;body&gt;
-    &lt;h1&gt;Salom, Dunyo!&lt;/h1&gt;
-    &lt;p&gt;Bu mening birinchi HTML sahifam.&lt;/p&gt;
-  &lt;/body&gt;
+&lt;head&gt;
+  &lt;title&gt;Mening Birinchi Sahifam&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Salom, O'zbekiston!&lt;/h1&gt;
+  &lt;p&gt;Men W3Learn orqali HTML o'rganishni boshladim.&lt;/p&gt;
+&lt;/body&gt;
 &lt;/html&gt;</pre>
-    </div>
-  </div>
-  <div class="result-box" id="res1"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
-
-  <h2 id="elementlar">HTML Elementlari</h2>
-  <p>HTML elementi — ochiluvchi teg, mazmun va yopiluvchi tegdan iborat:</p>
-
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">HTML</span>
-      <div class="code-actions">
-        <button class="btn-copy" onclick="copyCode('code2')">📋 Nusxa</button>
-        <button class="btn-run" onclick="runCode('code2','res2')">▶ Run</button>
       </div>
     </div>
-    <div class="code-body">
-      <pre id="code2">&lt;h1&gt;Sarlavha 1&lt;/h1&gt;
-&lt;h2&gt;Sarlavha 2&lt;/h2&gt;
-&lt;h3&gt;Sarlavha 3&lt;/h3&gt;
-&lt;p&gt;Bu oddiy &lt;strong&gt;qalin&lt;/strong&gt; va &lt;em&gt;qiya&lt;/em&gt; matni.&lt;/p&gt;
+    <div class="result-box" id="res1"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Har bir HTML hujjati &lt;!DOCTYPE html&gt; bilan boshlanishi shart. Bu brauzerga eng so'nggi HTML5 standartidan foydalanayotganingizni bildiradi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Tarix</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #2</span>
+    </div>
+    <h2 id="tarix" style="color:var(--green-light); margin-top:0; font-size:24px;">HTML Tarixi va Rivojlanishi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">HTML 1991-yilda CERN ilmiy markazida britaniyalik fizik va olim <strong>Tim Berners-Lee</strong> tomonidan olimlar o'rtasida hujjat almashish maqsadida yaratilgan.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><strong>1991:</strong> HTML 1.0 — atigi 18 ta oddiy tegdan iborat edi.</li>
+      <li><strong>1995:</strong> HTML 2.0 va 1997-yil HTML 3.2 — jadvallar va stillar kiritildi.</li>
+      <li><strong>1999:</strong> HTML 4.01 — ko'p yillar davomida internetning asosi bo'lib xizmat qildi.</li>
+      <li><strong>2014:</strong> HTML5 rasmiy tavsiya sifatida qabul qilindi. Unda yangi audio, video, canvas va semantik teglar paydo bo'ldi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code2')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code2','res2')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code2" contenteditable="true" spellcheck="false">&lt;!-- 1991-yildagi eng sodda hujjat namunasi --&gt;
+&lt;title&gt;HTML Tarixi&lt;/title&gt;
+&lt;h1&gt;Tim Berners-Lee&lt;/h1&gt;
+&lt;p&gt;Dunyodagi birinchi veb sahifa info.cern.ch manzilida ishga tushirilgan.&lt;/p&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res2"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 Bugungi kunda HTML standartlarini WHATWG (Web Hypertext Application Technology Working Group) guruhi doimiy yangilab boradi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Arxitektura</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #3</span>
+    </div>
+    <h2 id="brauzer" style="color:var(--green-light); margin-top:0; font-size:24px;">Brauzer va HTML Qanday Ishlaydi?</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Google Chrome, Mozilla Firefox, Apple Safari, Microsoft Edge kabi veb brauzerlar HTML kodini o'qib, uni inson ko'zi ko'ra oladigan vizual sahifaga (render) aylantiradi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Brauzer HTML teglarni o'zini ekranda ko'rsatmaydi, ularni mazmunni qanday formatlash bo'yicha ko'rsatma deb biladi.</li>
+      <li>Brauzer sahifani o'qishda <strong>DOM (Document Object Model)</strong> deb ataluvchi daraxtsimon tuzilma yaratadi.</li>
+      <li>Agar HTML kodingizda xatolik bo'lsa ham brauzer sahifani butunlay to'xtatmaydi, uni imkon qadar tuzatib ko'rsatishga urinadi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code3')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code3','res3')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code3" contenteditable="true" spellcheck="false">&lt;!-- Brauzer tegni o'qiydi va formatlaydi --&gt;
+&lt;h2 style="color: #04AA6D;"&gt;Brauzer bu sarlavhani yashil rangda ko'rsatadi&lt;/h2&gt;
+&lt;p&gt;Brauzer teg nomlarini yashiradi, faqatgina ushbu matnni ekranga chiqaradi.&lt;/p&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res3"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">🔍 Har qanday veb sahifada sichqonchaning o'ng tugmasini bosib 'Inspect' (Tekshirish) bo'limiga kirsangiz, brauzer yaratgan DOM tuzilmasini jonli ko'rishingiz mumkin.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Amaliyot</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #4</span>
+    </div>
+    <h2 id="muharrir" style="color:var(--green-light); margin-top:0; font-size:24px;">Kod Muharrirlari (IDE)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">HTML yozish uchun kompyuterdagi oddiy Bloknot (Notepad) ham yetarli, ammo professional dasturchilar tezkorlik va qulaylik uchun maxsus dasturlardan foydalanadilar.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><strong>Visual Studio Code (VS Code):</strong> Eng mashhur bepul muharrir. Sintaksisni ranglash, xatolarni ko'rsatish va plaginlar qo'llab-quvvatlaydi.</li>
+      <li><strong>Emmet:</strong> VS Code ichida o'rnatilgan vosita bo'lib, <code>!</code> belgisini bosib <code>Tab</code> tugmasini bossangiz, tayyor HTML skeletini chiqarib beradi.</li>
+      <li><strong>Live Server kengaytmasi:</strong> Kodni saqlaganingizda brauzer avtomatik tarzda sahifani yangilaydi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code4')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code4','res4')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code4" contenteditable="true" spellcheck="false">&lt;!-- Emmet orqali 1 soniyada yoziladigan kod --&gt;
+&lt;div class="card"&gt;
+  &lt;h3&gt;VS Code va Emmet&lt;/h3&gt;
+  &lt;p&gt;Emmet tezlikni 10 barobarga oshiradi!&lt;/p&gt;
+&lt;/div&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res4"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">⚡ Maslahat: VS Code dasturida faylingizni doimo <code>index.html</code> deb nomlang. Har qanday server dastlab aynan shu nomli faylni qidiradi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Standart</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #5</span>
+    </div>
+    <h2 id="tuzilma" style="color:var(--green-light); margin-top:0; font-size:24px;">HTML Asosiy Tuzilmasi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Har bir to'g'ri tuzilgan HTML hujjati muayyan qat'iy iyerarxiyaga amal qilishi shart. Bu tuzilma boshqaruv qismi (head) va ko'rinuvchi qism (body)dan iborat.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>&lt;!DOCTYPE html&gt;</code> — Hujjat HTML5 ekanligini e'lon qiladi.</li>
+      <li><code>&lt;html&gt;</code> — Barcha kodlarni o'z ichiga oluvchi ildiz (root) element.</li>
+      <li><code>&lt;head&gt;</code> — Sahifa haqidagi metadata, sarlavha, shriftlar va CSS fayllar ulanadigan ko'rinmas qism.</li>
+      <li><code>&lt;body&gt;</code> — Sayt foydalanuvchisi ko'radigan barcha matnlar, rasmlar, tugmalar va kontent shu yerda yoziladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code5')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code5','res5')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code5" contenteditable="true" spellcheck="false">&lt;!DOCTYPE html&gt;
+&lt;html lang="uz"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Sahifa Tuzilmasi&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;h1&gt;Asosiy Kontent Boshlandi&lt;/h1&gt;
+  &lt;p&gt;Body ichidagi hamma narsa ekranda ko'rinadi.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res5"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 <code>lang="uz"</code> atributi qidiruv tizimlariga va ekran o'quvchi dasturlarga sahifa o'zbek tilida ekanligini bildiradi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Asoslar</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #6</span>
+    </div>
+    <h2 id="elementlar" style="color:var(--green-light); margin-top:0; font-size:24px;">HTML Elementlari va Teglar</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">HTML elementi odatda <strong>ochiluvchi teg</strong>, uning ichidagi <strong>mazmun</strong> va <strong>yopiluvchi teg</strong>dan tashkil topadi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><strong>Sintaksis:</strong> <code>&lt;teg_nomi&gt; Mazmun &lt;/teg_nomi&gt;</code></li>
+      <li><strong>Juft teglar:</strong> Ochiladi va yopiladi (masalan: <code>&lt;p&gt;...&lt;/p&gt;</code>, <code>&lt;h1&gt;...&lt;/h1&gt;</code>).</li>
+      <li><strong>Yopilmaydigan (Bo'sh) teglar:</strong> Ichida kontenti bo'lmagan, faqatgina o'zi vazifa bajaruvchi teglar (masalan: <code>&lt;img&gt;</code>, <code>&lt;br&gt;</code>, <code>&lt;hr&gt;</code>, <code>&lt;input&gt;</code>).</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code6')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code6','res6')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code6" contenteditable="true" spellcheck="false">&lt;p&gt;Bu to'liq element: ochiluvchi teg, kontent va yopiluvchi teg.&lt;/p&gt;
+&lt;hr&gt; &lt;!-- Bo'sh teg: chiziq tortadi --&gt;
+&lt;p&gt;Pastdagi qatorga o'tish uchun: &lt;br&gt; mana yangi qator!&lt;/p&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res6"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">⚠️ Yopiluvchi teglarni unutib qoldirmang, aks holda sahifangiz kutilmagan ko'rinishga kirib qolishi mumkin.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Asoslar</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #7</span>
+    </div>
+    <h2 id="atributlar" style="color:var(--green-light); margin-top:0; font-size:24px;">HTML Atributlari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Atributlar elementlar haqida qo'shimcha ma'lumot beradi yoki ularning xatti-harakatini o'zgartiradi. Atributlar doimo <strong>ochiluvchi teg</strong> ichida yoziladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Atributlar odatda <code>nom="qiymat"</code> ko'rinishida bo'ladi.</li>
+      <li><strong>href:</strong> havolaning manzilini belgilaydi.</li>
+      <li><strong>src:</strong> yuklanayotgan rasm yoki fayl yo'li.</li>
+      <li><strong>alt:</strong> rasm yuklanmay qolganda uning o'rniga chiqadigan muqobil matn.</li>
+      <li><strong>title:</strong> sichqoncha element ustiga borganda ko'rinadigan qo'shimcha eslatma.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code7')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code7','res7')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code7" contenteditable="true" spellcheck="false">&lt;a href="https://google.com" target="_blank" title="Google qidiruvi"&gt;Google sahifasiga o'tish&lt;/a&gt;
+&lt;br&gt;&lt;br&gt;
+&lt;img src="https://via.placeholder.com/150/04AA6D/ffffff?text=W3Learn" alt="W3Learn Logotipi" width="150" height="50"&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res7"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Qiymatlarni doimo qo'shtirnoq ichida yozish yaxshi odat (best practice) hisoblanadi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Matn</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #8</span>
+    </div>
+    <h2 id="sarlavhalar" style="color:var(--green-light); margin-top:0; font-size:24px;">HTML Sarlavhalari (h1 — h6)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">HTMLda sarlavhalar 6 xil darajaga ega bo'lib, <code>&lt;h1&gt;</code> dan <code>&lt;h6&gt;</code> gacha teglarda belgilanadi. Ular sarlavhaning hajmi va ahamiyat darajasini belgilaydi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>&lt;h1&gt;</code> — eng muhim, eng katta sarlavha. Har bir sahifada faqat bitta <code>&lt;h1&gt;</code> bo'lishi maqsadga muvofiq.</li>
+      <li><code>&lt;h2&gt;</code> — asosiy bo'lim sarlavhalari.</li>
+      <li><code>&lt;h3&gt; ... &lt;h6&gt;</code> — kichik mavzuchalar va pastki bo'limlar.</li>
+      <li>Qidiruv tizimlari (Google, Yandex) saytingiz mazmunini aynan sarlavhalar iyerarxiyasiga qarab tushunadi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code8')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code8','res8')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code8" contenteditable="true" spellcheck="false">&lt;h1&gt;1-Darajali Sarlavha (Eng muhim)&lt;/h1&gt;
+&lt;h2&gt;2-Darajali Katta Bo'lim&lt;/h2&gt;
+&lt;h3&gt;3-Darajali Kichik Bo'lim&lt;/h3&gt;
+&lt;h4&gt;4-Darajali Sarlavha&lt;/h4&gt;
+&lt;h5&gt;5-Darajali Kichik Sarlavha&lt;/h5&gt;
+&lt;h6&gt;6-Darajali Eng Kichik Sarlavha&lt;/h6&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res8"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">🛑 Sarlavhalardan shunchaki matnni kattaroq qilib ko'rsatish uchun foydalanmang! Matn hajmini CSS orqali o'zgartiring, sarlavha esa faqat mantiqiy tartib uchun ishlatilsin.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Matn</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #9</span>
+    </div>
+    <h2 id="paragraflar" style="color:var(--green-light); margin-top:0; font-size:24px;">HTML Paragraflar va Qator Ajratish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Paragraflar <code>&lt;p&gt;</code> tegi orqali yoziladi. Brauzer har bir paragrafdan oldin va keyin avtomatik ravishda bo'sh joy (margin) qoldiradi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>&lt;p&gt;</code> — yangi xatboshi boshlaydi.</li>
+      <li><code>&lt;br&gt;</code> (Break) — yangi paragraf ochmasdan, joriy satrni pastga tushiradi.</li>
+      <li><code>&lt;hr&gt;</code> (Horizontal Rule) — mavzularni ajratish uchun gorizontal chiziq chizadi.</li>
+      <li><code>&lt;pre&gt;</code> (Preformatted) — matndagi barcha probellar va qator o'tishlarini asl holicha saqlaydi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code9')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code9','res9')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code9" contenteditable="true" spellcheck="false">&lt;p&gt;Bu birinchi paragraf matni. Undan keyin bo'sh joy qoldiriladi.&lt;/p&gt;
 &lt;hr&gt;
-&lt;p&gt;Ikkinchi paragraf.&lt;/p&gt;</pre>
-    </div>
-  </div>
-  <div class="result-box" id="res2"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
-
-  <h2 id="link">HTML Havolalar</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">HTML</span>
-      <div class="code-actions">
-        <button class="btn-copy" onclick="copyCode('code3')">📋 Nusxa</button>
-        <button class="btn-run" onclick="runCode('code3','res3')">▶ Run</button>
+&lt;p&gt;Bu matnda &lt;br&gt; br tegi yordamida &lt;br&gt; yangi qatorga tushildi.&lt;/p&gt;
+&lt;pre&gt;
+  Pre tegi ichida
+    probel va qatorlar
+      o'zgarmaydi!
+&lt;/pre&gt;</pre>
       </div>
     </div>
-    <div class="code-body">
-      <pre id="code3">&lt;!-- Oddiy havola --&gt;
-&lt;a href="https://www.google.com"&gt;Google&lt;/a&gt;
+    <div class="result-box" id="res9"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
-&lt;!-- Yangi tabda ochish --&gt;
-&lt;a href="https://www.google.com" target="_blank"&gt;
-  Google (yangi tabda)
-&lt;/a&gt;
+    <div class="note" style="margin-top:16px;">💡 Oddiy HTML faylda matn orasiga 10 ta probel qo'ysangiz ham, brauzer ularni faqat 1 ta probel deb hisoblaydi. Ko'p bo'sh joy qoldirish uchun &amp;nbsp; yoki &lt;pre&gt; ishlatiladi.</div>
+  </section>
 
-&lt;!-- Tugma ko'rinishida --&gt;
-&lt;a href="#" style="background:#04AA6D;color:#fff;padding:8px 16px;
-   border-radius:4px;text-decoration:none;"&gt;
-  Tugma ko'rinishidagi havola
-&lt;/a&gt;</pre>
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Dizayn</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #10</span>
     </div>
-  </div>
-  <div class="result-box" id="res3"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+    <h2 id="stillar" style="color:var(--green-light); margin-top:0; font-size:24px;">HTML Stillar (style atributi)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">HTML elementiga bevosita rang, shrift, hajm va fon berish uchun <code>style</code> atributidan foydalanish mumkin (Inline CSS).</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><strong>color:</strong> matn rangini o'zgartiradi.</li>
+      <li><strong>background-color:</strong> orqa fon rangini belgilaydi.</li>
+      <li><strong>font-size:</strong> matn shriftining hajmini o'zgartiradi (masalan, 20px).</li>
+      <li><strong>text-align:</strong> matnni chapga, o'rtaga (center) yoki o'ngga suradi.</li>
+    </ul>
 
-  <h2 id="formalar">HTML Formalar</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">HTML</span>
-      <div class="code-actions">
-        <button class="btn-copy" onclick="copyCode('code4')">📋 Nusxa</button>
-        <button class="btn-run" onclick="runCode('code4','res4')">▶ Run</button>
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code10')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code10','res10')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code10" contenteditable="true" spellcheck="false">&lt;p style="color: #04AA6D; font-weight: bold;"&gt;Bu yashil va qalin matn.&lt;/p&gt;
+&lt;div style="background-color: #1e293b; color: #fff; padding: 15px; border-radius: 8px; text-align: center;"&gt;
+  &lt;h3&gt;Markazga tekislangan blok&lt;/h3&gt;
+  &lt;p style="font-size: 14px; color: #94a3b8;"&gt;Foni to'q rangda va burchaklari yumaloq.&lt;/p&gt;
+&lt;/div&gt;</pre>
       </div>
     </div>
-    <div class="code-body">
-      <pre id="code4">&lt;form&gt;
-  &lt;label&gt;Ismingiz:&lt;/label&gt;&lt;br&gt;
-  &lt;input type="text" placeholder="Ismingizni kiriting"&gt;&lt;br&gt;&lt;br&gt;
+    <div class="result-box" id="res10"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
-  &lt;label&gt;Emailingiz:&lt;/label&gt;&lt;br&gt;
-  &lt;input type="email" placeholder="email@example.com"&gt;&lt;br&gt;&lt;br&gt;
+    <div class="note" style="margin-top:16px;">📌 Real loyihalarda har bir elementga alohida inline style yozish o'rniga, alohida CSS fayllardan foydalanish tavsiya etiladi.</div>
+  </section>
 
-  &lt;label&gt;Xabar:&lt;/label&gt;&lt;br&gt;
-  &lt;textarea rows="3" placeholder="Xabaringiz..."&gt;&lt;/textarea&gt;&lt;br&gt;&lt;br&gt;
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Matn</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #11</span>
+    </div>
+    <h2 id="formatlash" style="color:var(--green-light); margin-top:0; font-size:24px;">HTML Matn Formatlash Teglari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">HTMLda matnning ma'lum bir qismini ajratib ko'rsatish, chizib tashlash yoki matematik ifodalarni yozish uchun maxsus semantik va vizual teglar mavjud.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>&lt;b&gt;</code> va <code>&lt;strong&gt;</code> — qalin matn (strong ma'no jihatdan muhimlikni bildiradi).</li>
+      <li><code>&lt;i&gt;</code> va <code>&lt;em&gt;</code> — kursiv / qiya matn.</li>
+      <li><code>&lt;mark&gt;</code> — sariq marker bilan belgilangan matn.</li>
+      <li><code>&lt;del&gt;</code> — ustidan chizilgan (eskirgan yoki o'chirilgan) so'z.</li>
+      <li><code>&lt;ins&gt;</code> — tagiga chizilgan yangi kiritilgan matn.</li>
+      <li><code>&lt;sub&gt;</code> va <code>&lt;sup&gt;</code> — pastki va yuqori indeks (masalan: H<sub>2</sub>O va 2<sup>3</sup>).</li>
+    </ul>
 
-  &lt;button type="submit"
-    style="background:#04AA6D;color:#fff;padding:8px 20px;border:none;border-radius:4px;cursor:pointer;"&gt;
-    Yuborish
-  &lt;/button&gt;
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code11')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code11','res11')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code11" contenteditable="true" spellcheck="false">&lt;p&gt;Bu matnda &lt;strong&gt;juda muhim so'z&lt;/strong&gt; bor.&lt;/p&gt;
+&lt;p&gt;Eski narx: &lt;del&gt;500,000 so'm&lt;/del&gt; Yangi narx: &lt;ins&gt;350,000 so'm&lt;/ins&gt;&lt;/p&gt;
+&lt;p&gt;Diqqat: Ushbu &lt;mark&gt;maxsus dars&lt;/mark&gt; hammaga bepul!&lt;/p&gt;
+&lt;p&gt;Kimyoviy formula: H&lt;sub&gt;2&lt;/sub&gt;O | Matematik daraja: 5&lt;sup&gt;2&lt;/sup&gt; = 25&lt;/p&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res11"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Qidiruv robotlari va ko'zi ojizlar uchun ekran o'qigichlar &lt;strong&gt; va &lt;em&gt; teglariga alohida urg'u beradi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Dizayn</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #12</span>
+    </div>
+    <h2 id="ranglar" style="color:var(--green-light); margin-top:0; font-size:24px;">HTMLda Ranglar Bilan Ishlash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">HTML va CSSda ranglar bir necha xil formatda ifodalanishi mumkin: Rang nomlari, HEX kodlari, RGB, RGBA va HSL.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><strong>Rang nomi:</strong> Red, Blue, Green, Coral, Tomato kabi 140 dan ortiq tayyor nomlar.</li>
+      <li><strong>HEX (O'n oltilik tizim):</strong> Masalan, <code>#04AA6D</code> (yashil), <code>#ffffff</code> (oq), <code>#000000</code> (qora).</li>
+      <li><strong>RGB:</strong> <code>rgb(qizil, yashil, ko'k)</code> — har biri 0 dan 255 gacha qiymat oladi.</li>
+      <li><strong>RGBA:</strong> RGB ga shaffoflik (Alpha: 0 dan 1 gacha) qo'shilgan ko'rinishi (masalan, <code>rgba(0,0,0,0.5)</code>).</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code12')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code12','res12')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code12" contenteditable="true" spellcheck="false">&lt;div style="display: flex; gap: 10px; font-weight: bold; color: white;"&gt;
+  &lt;div style="background-color: Tomato; padding: 15px; border-radius: 6px;"&gt;Tomato&lt;/div&gt;
+  &lt;div style="background-color: #04AA6D; padding: 15px; border-radius: 6px;"&gt;#04AA6D&lt;/div&gt;
+  &lt;div style="background-color: rgb(33, 150, 243); padding: 15px; border-radius: 6px;"&gt;RGB(33,150,243)&lt;/div&gt;
+  &lt;div style="background-color: rgba(103, 58, 183, 0.7); padding: 15px; border-radius: 6px;"&gt;RGBA Shaffof&lt;/div&gt;
+&lt;/div&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res12"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">🎨 Dizaynerlar eng ko'p HEX va RGBA formatlaridan foydalanadilar, chunki ular rangni aniq ifodalash imkonini beradi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Integratsiya</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #13</span>
+    </div>
+    <h2 id="css" style="color:var(--green-light); margin-top:0; font-size:24px;">HTML ga CSS Ulash Usullari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">HTML sahifasiga dizayn berish uchun CSS (Cascading Style Sheets) 3 xil usul bilan ulanadi: Inline, Internal va External.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><strong>Inline:</strong> Teg ichida <code>style="..."</code> yordamida (faqat bitta element uchun).</li>
+      <li><strong>Internal:</strong> &lt;head&gt; ichida <code>&lt;style&gt;</code> tegi yordamida (butun bitta sahifa uchun).</li>
+      <li><strong>External (Eng to'g'ri usul):</strong> Alohida <code>.css</code> fayl yaratib, <code>&lt;link rel="stylesheet" href="style.css"&gt;</code> orqali ulash.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code13')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code13','res13')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code13" contenteditable="true" spellcheck="false">&lt;!-- Internal CSS namunasi --&gt;
+&lt;style&gt;
+  .btn-demo {
+    background-color: #04AA6D;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  .btn-demo:hover {
+    background-color: #059862;
+  }
+&lt;/style&gt;
+
+&lt;button class="btn-demo"&gt;CSS Bilan Chiroyli Tugma&lt;/button&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res13"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">🚀 Professional loyihalarda har doim External (tashqi) CSS fayllar ishlatiladi, chunki ular kodni tartibli va tez yuklanadigan qiladi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Navigatsiya</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #14</span>
+    </div>
+    <h2 id="link" style="color:var(--green-light); margin-top:0; font-size:24px;">HTML Havolalar (Links - a tegi)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Veb sahifalarni bir-biriga bog'lovchi asosiy element bu havola (link) bo'lib, u <code>&lt;a&gt;</code> (anchor) tegi orqali yaratiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>href="..."</code> — havolaning qayerga olib borishini belgilovchi asosiy atribut.</li>
+      <li><code>target="_blank"</code> — sahifani yangi brauzer yorlig'ida (tab) ochadi.</li>
+      <li><strong>Ichki langar havolalar:</strong> <code>href="#tuzilma"</code> orqali sahifaning boshqa bo'limiga bir zumda sakrab o'tish mumkin.</li>
+      <li><strong>Telefon va Pochta:</strong> <code>href="mailto:info@w3learn.uz"</code> va <code>href="tel:+998901234567"</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code14')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code14','res14')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code14" contenteditable="true" spellcheck="false">&lt;p&gt;&lt;a href="https://w3learn-rho.vercel.app" target="_blank" style="color: #04AA6D; font-weight: bold;"&gt;
+  Yangi oynada W3Learn ni ochish ↗
+&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="mailto:support@w3learn.uz" style="color: #2196F3;"&gt;Bizga xat yozing (Email)&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;&lt;a href="tel:+998901234567" style="color: #ff9800;"&gt;Qo'ng'iroq qilish (+998 90 123 45 67)&lt;/a&gt;&lt;/p&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res14"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">🔒 Xavfsizlik qoidasi: Agar <code>target="_blank"</code> ishlatsangiz, yoniga doimo <code>rel="noopener noreferrer"</code> qo'shing.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Media</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #15</span>
+    </div>
+    <h2 id="rasmlar" style="color:var(--green-light); margin-top:0; font-size:24px;">HTML Rasmlar (img tegi)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Sahifaga tasvirlar joylash uchun <code>&lt;img&gt;</code> tegi ishlatiladi. Ushbu teg yopiluvchi qismga ega emas.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>src="..."</code> — rasm faylining internetdagi yoki kompyuterdagi manzili.</li>
+      <li><code>alt="..."</code> — rasm ko'rinmay qolsa o'rniga chiqadigan tavsif (SEO va qulaylik uchun majburiy).</li>
+      <li><code>width</code> va <code>height</code> — rasmning eni va bo'yini piksellarda ko'rsatish.</li>
+      <li><code>loading="lazy"</code> — sahifa ochilganda rasmni darhol emas, foydalanuvchi pastga skroll qilganda yuklaydi (sahifa tez ochiladi).</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code15')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code15','res15')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code15" contenteditable="true" spellcheck="false">&lt;img src="https://images.unsplash.com/photo-1517694712202-14dd9538aa97?w=300" 
+     alt="Dasturchi noutbuk qarshisida kod yozmoqda" 
+     width="280" 
+     style="border-radius: 8px; box-shadow: 0 4px 12px rgba(0,0,0,0.3);"&gt;
+&lt;p style="font-size: 13px; color: #888;"&gt;Surat: Dasturlash jarayoni&lt;/p&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res15"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 Doimo rasmlarga aniq va tushunarli <code>alt</code> atributini yozing. Bu Google qidiruvida rasmingiz chiqishiga yordam beradi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Struktura</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #16</span>
+    </div>
+    <h2 id="jadvallar" style="color:var(--green-light); margin-top:0; font-size:24px;">HTML Jadvallar (Tables)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Ma'lumotlarni qator va ustunlar ko'rinishida tartibli taqdim etish uchun <code>&lt;table&gt;</code> teglar oilasidan foydalaniladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>&lt;table&gt;</code> — jadvalning boshlanishi.</li>
+      <li><code>&lt;tr&gt;</code> (Table Row) — jadvalning bitta gorizontal qatori.</li>
+      <li><code>&lt;th&gt;</code> (Table Header) — sarlavha katakchasi (qalin va o'rtaga tekislangan bo'ladi).</li>
+      <li><code>&lt;td&gt;</code> (Table Data) — oddiy ma'lumot katakchasi.</li>
+      <li><code>colspan</code> va <code>rowspan</code> — bir nechta ustun yoki qatorlarni birlashtirish.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code16')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code16','res16')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code16" contenteditable="true" spellcheck="false">&lt;table border="1" cellpadding="8" style="border-collapse: collapse; width: 100%; border-color: #334155; text-align: left;"&gt;
+  &lt;tr style="background-color: #1e293b; color: #04AA6D;"&gt;
+    &lt;th&gt;Kurs Nomi&lt;/th&gt;
+    &lt;th&gt;Daraja&lt;/th&gt;
+    &lt;th&gt;Davomiyligi&lt;/th&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;HTML Asoslari&lt;/td&gt;
+    &lt;td&gt;Boshlang'ich&lt;/td&gt;
+    &lt;td&gt;2 hafta&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;CSS Masterklassi&lt;/td&gt;
+    &lt;td&gt;O'rta&lt;/td&gt;
+    &lt;td&gt;3 hafta&lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+    &lt;td&gt;JavaScript Pro&lt;/td&gt;
+    &lt;td&gt;Ilg'or&lt;/td&gt;
+    &lt;td&gt;4 hafta&lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/table&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res16"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Jadval chegaralarini chiroyli qilish uchun CSSda <code>border-collapse: collapse;</code> xususiyatidan foydalanish shart.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Struktura</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #17</span>
+    </div>
+    <h2 id="royxatlar" style="color:var(--green-light); margin-top:0; font-size:24px;">HTML Ro'yxatlar (Lists)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Elementlarni ketma-ketlikda ro'yxat ko'rinishida chiqarish uchun 3 xil ro'yxat turi mavjud: Tartibsiz, Tartibli va Ta'rifli.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>&lt;ul&gt;</code> (Unordered List) — nuqtali, tartibsiz ro'yxat.</li>
+      <li><code>&lt;ol&gt;</code> (Ordered List) — raqamlangan (1, 2, 3...) tartibli ro'yxat.</li>
+      <li><code>&lt;li&gt;</code> (List Item) — ro'yxatdagi har bir element.</li>
+      <li><code>&lt;dl&gt;</code>, <code>&lt;dt&gt;</code>, <code>&lt;dd&gt;</code> — atamalar va ularning ta'riflari ro'yxati.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code17')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code17','res17')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code17" contenteditable="true" spellcheck="false">&lt;h4&gt;Frontend Bosqichlari (Tartibli ro'yxat):&lt;/h4&gt;
+&lt;ol style="padding-left: 20px;"&gt;
+  &lt;li&gt;HTML — skelet yaratish&lt;/li&gt;
+  &lt;li&gt;CSS — bezatish va chiroyli dizayn&lt;/li&gt;
+  &lt;li&gt;JavaScript — sahifaga jon kiritish&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h4&gt;Dasturchi Qurollari (Tartibsiz ro'yxat):&lt;/h4&gt;
+&lt;ul style="padding-left: 20px;"&gt;
+  &lt;li&gt;VS Code muharriri&lt;/li&gt;
+  &lt;li&gt;Git va GitHub&lt;/li&gt;
+  &lt;li&gt;Chrome DevTools&lt;/li&gt;
+&lt;/ul&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res17"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 Veb-saytlardagi barcha bosh menyular (navbar) odatda &lt;ul&gt; va &lt;li&gt; ro'yxatlari asosida quriladi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Layout</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #18</span>
+    </div>
+    <h2 id="bloklar" style="color:var(--green-light); margin-top:0; font-size:24px;">Blok va Inline Elementlar</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">HTMLdagi deyarli har bir element ko'rsatilish xususiyatiga ko'ra ikkita katta guruhga bo'linadi: Blok (Block-level) va Qator ichi (Inline).</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><strong>Block elementlar:</strong> Har doim yangi qatordan boshlanadi va mavjud butun kenglikni (100%) egallaydi. Masalan: <code>&lt;div&gt;</code>, <code>&lt;p&gt;</code>, <code>&lt;h1&gt;</code>, <code>&lt;ul&gt;</code>.</li>
+      <li><strong>Inline elementlar:</strong> Yangi qatorga tushmaydi, faqat o'z mazmuniga yetadigan joyni egallaydi. Masalan: <code>&lt;span&gt;</code>, <code>&lt;a&gt;</code>, <code>&lt;strong&gt;</code>, <code>&lt;img&gt;</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code18')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code18','res18')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code18" contenteditable="true" spellcheck="false">&lt;div style="background-color: #334155; padding: 10px; margin-bottom: 8px;"&gt;
+  Men Blok elementman (butun kenglikni egalladim)
+&lt;/div&gt;
+
+&lt;p&gt;
+  Men matn ichidagi &lt;span style="background-color: #04AA6D; color: white; padding: 2px 6px; border-radius: 4px;"&gt;Inline Span&lt;/span&gt; elementiman.
+  Yonimda boshqa so'zlar bemalol joylashaveradi.
+&lt;/p&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res18"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Blok element ichiga boshqa blok va inline elementlarni qo'ysa bo'ladi, lekin inline element ichiga blok element qo'yish tavsiya etilmaydi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Konteyner</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #19</span>
+    </div>
+    <h2 id="div" style="color:var(--green-light); margin-top:0; font-size:24px;">HTML Div Elementi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><code>&lt;div&gt;</code> (Division) — veb sahifadagi eng ko'p ishlatiladigan konteyner elementi. U boshqa elementlarni bitta blok ostiga birlashtirish va ularga guruhlab stil berish uchun xizmat qiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Div elementi o'zi hech qanday vizual o'zgarish hosil qilmaydi.</li>
+      <li>CSS bilan birga ishlatilganda saytning butun maketini (layout) yaratishda asosiy rol o'ynaydi.</li>
+      <li>Kartochkalar (cards), modal oynalar va grid tizimlari div asosida yasaladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code19')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code19','res19')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code19" contenteditable="true" spellcheck="false">&lt;div style="border: 2px solid #04AA6D; border-radius: 10px; padding: 15px; max-width: 320px; background: #111827;"&gt;
+  &lt;h3 style="margin-top:0; color:#04AA6D;"&gt;Dasturlash Karti&lt;/h3&gt;
+  &lt;p style="color:#cbd5e1; font-size:14px;"&gt;Ushbu barcha ma'lumotlar bitta div konteyneri ichida jamlangan.&lt;/p&gt;
+  &lt;button style="background:#04AA6D; color:white; border:none; padding:8px 14px; border-radius:4px; cursor:pointer;"&gt;Ko'proq&lt;/button&gt;
+&lt;/div&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res19"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 Zamonaviy HTML5 da har joyga div ishlatavermasdan, iloji boricha semantik teglardan (&lt;section&gt;, &lt;article&gt;) foydalanish to'g'riroq.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Identifikatsiya</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #20</span>
+    </div>
+    <h2 id="sinflar" style="color:var(--green-light); margin-top:0; font-size:24px;">HTML Class (Sinflar) Atributi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><code>class</code> atributi bir nechta HTML elementlariga bir xil nom berish va ularning barchasiga CSS yoki JS orqali birdaniga ta'sir o'tkazish uchun ishlatiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Bitta sinf nomini sahifada istalgancha ko'p elementlarga berish mumkin.</li>
+      <li>Bitta element bir nechta sinfga ega bo'lishi mumkin (probel bilan ajratiladi: <code>class="btn primary large"</code>).</li>
+      <li>CSSda sinf nomidan oldin nuqta qo'yiladi: <code>.card { color: red; }</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code20')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code20','res20')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code20" contenteditable="true" spellcheck="false">&lt;style&gt;
+  .badge { padding: 4px 8px; border-radius: 4px; font-size: 12px; font-weight: bold; }
+  .success { background: #04AA6D; color: white; }
+  .warning { background: #f59e0b; color: black; }
+&lt;/style&gt;
+
+&lt;span class="badge success"&gt;Bajarildi ✓&lt;/span&gt;
+&lt;span class="badge warning"&gt;Kutilmoqda ⏳&lt;/span&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res20"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">⚡ Class nomlarini tushunarli, kichik lotin harflarida va defis bilan yozish tavsiya qilinadi (masalan: <code>main-header</code>).</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Identifikatsiya</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #21</span>
+    </div>
+    <h2 id="id" style="color:var(--green-light); margin-top:0; font-size:24px;">HTML ID Atributi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><code>id</code> atributi sahifadagi faqat bitta elementga beriladigan <strong>noyob (unikal)</strong> identifikator hisoblanadi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Bitta sahifada ayni bir xil ID ikki marta takrorlanishi mumkin emas!</li>
+      <li>CSSda ID nomidan oldin panjara (#) belgisi qo'yiladi: <code>#header { background: black; }</code>.</li>
+      <li>JavaScriptda elementni topish uchun eng tezkor usul: <code>document.getElementById('myId')</code>.</li>
+      <li>Sahifa ichidagi navigatsiya (langarlar) aynan ID orqali amalga oshiriladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code21')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code21','res21')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code21" contenteditable="true" spellcheck="false">&lt;div id="maxsusBlok" style="background:#1e293b; color:#38bdf8; padding:12px; border-radius:6px;"&gt;
+  Bu blok unikal ID ga ega: #maxsusBlok
+&lt;/div&gt;
+&lt;br&gt;
+&lt;button onclick="document.getElementById('maxsusBlok').style.backgroundColor='#04AA6D'; document.getElementById('maxsusBlok').style.color='#fff';"&gt;
+  JavaScript orqali ID rangini o'zgartirish
+&lt;/button&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res21"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">⚠️ Hech qachon bir sahifada bir nechta elementga bir xil ID bermang. Bu JavaScriptda jiddiy xatoliklarga olib keladi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Media</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #22</span>
+    </div>
+    <h2 id="iframe" style="color:var(--green-light); margin-top:0; font-size:24px;">HTML Iframe (Boshqa sahifani kiritish)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><code>&lt;iframe&gt;</code> (Inline Frame) joriy HTML hujjati ichida boshqa veb sahifani yoki YouTube videoni ko'rsatish uchun ishlatiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>src="..."</code> — ochilishi kerak bo'lgan sahifa yoki video havolasi.</li>
+      <li><code>width</code> va <code>height</code> — oynaning eni va bo'yi.</li>
+      <li><code>frameborder="0"</code> — chegara chizig'ini olib tashlaydi.</li>
+      <li>Xavfsizlik: <code>sandbox</code> atributi yuklanayotgan begona sahifaning xavfsizlik cheklovlarini belgilaydi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code22')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code22','res22')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code22" contenteditable="true" spellcheck="false">&lt;!-- Wikipedia yoki xarita namunasi --&gt;
+&lt;iframe src="https://example.com" 
+        width="100%" 
+        height="140" 
+        style="border: 2px solid #334155; border-radius: 8px;"&gt;
+&lt;/iframe&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res22"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">🔒 Eslatma: Ko'pgina yirik saytlar (Google, Facebook) xavfsizlik sababli o'z saytlarini begona iframeda ochishni taqiqlab qo'ygan (X-Frame-Options).</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Asoslar</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #23</span>
+    </div>
+    <h2 id="fayl" style="color:var(--green-light); margin-top:0; font-size:24px;">Fayl Yo'llari (File Paths)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Rasmlar, CSS yoki boshqa sahifalarni ulashda fayl yo'llarini to'g'ri ko'rsatish juda muhim. Ular Nisbiy (Relative) va Mutlaq (Absolute) bo'ladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><strong>Mutlaq yo'l:</strong> To'liq internet manzili: <code>https://mysite.uz/images/logo.png</code>.</li>
+      <li><strong>Nisbiy yo'l (Joriy papka):</strong> <code>picture.jpg</code> yoki <code>./picture.jpg</code>.</li>
+      <li><strong>Bitta papka ichiga kirish:</strong> <code>images/photo.png</code>.</li>
+      <li><strong>Bitta papka yuqoriga chiqish:</strong> <code>../style.css</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code23')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code23','res23')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code23" contenteditable="true" spellcheck="false">&lt;!-- Nisbiy yo'llarga misollar --&gt;
+&lt;p&gt;Bitta papka yuqoridagi rasm: &lt;code&gt;&amp;lt;img src="../images/logo.png"&amp;gt;&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;Ichki papkadagi rasm: &lt;code&gt;&amp;lt;img src="assets/banner.jpg"&amp;gt;&lt;/code&gt;&lt;/p&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res23"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">⚡ Agar rasmingiz ochilmay qizil xato bo'lib qolsa, 99% ehtimol bilan fayl yo'lidagi nuqtalar yoki papka nomida xatolik qilgansiz.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Interaktiv</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #24</span>
+    </div>
+    <h2 id="formalar" style="color:var(--green-light); margin-top:0; font-size:24px;">HTML Formalar (Forms)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Formalar foydalanuvchidan ma'lumot qabul qilish (login, ro'yxatdan o'tish, xabar yuborish, fikr bildirish) uchun ishlatiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>&lt;form&gt;</code> — barcha kiritish maydonlarini o'rab turuvchi asosiy konteyner.</li>
+      <li><code>action="..."</code> — forma ma'lumotlari qaysi server manziliga yuborilishi kerakligini bildiradi.</li>
+      <li><code>method="..."</code> — yuborish usuli: <strong>GET</strong> (URL orqali ochiq) yoki <strong>POST</strong> (xavfsiz, yopiq tana orqali).</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code24')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code24','res24')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code24" contenteditable="true" spellcheck="false">&lt;form action="/submit" method="POST" style="background:#1e293b; padding:15px; border-radius:8px;"&gt;
+  &lt;label style="color:#cbd5e1; display:block; margin-bottom:5px;"&gt;Ismingiz:&lt;/label&gt;
+  &lt;input type="text" placeholder="Ali Valiyev" style="padding:8px; border-radius:4px; border:1px solid #475569; width:100%; box-sizing:border-box; margin-bottom:10px; background:#0f172a; color:#fff;"&gt;
+  &lt;button type="submit" style="background:#04AA6D; color:#fff; border:none; padding:8px 16px; border-radius:4px; cursor:pointer;"&gt;Yuborish&lt;/button&gt;
 &lt;/form&gt;</pre>
+      </div>
     </div>
-  </div>
-  <div class="result-box" id="res4"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
+    <div class="result-box" id="res24"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
-  <!-- Interactive Exercise (Bo'sh joyni to'ldiring) -->
+    <div class="note" style="margin-top:16px;">🔒 Parol, karta raqami kabi maxfiy ma'lumotlar yuboriladigan formalarda doimo <code>method="POST"</code> ishlatilishi shart.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Formalar</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #25</span>
+    </div>
+    <h2 id="form-attr" style="color:var(--green-light); margin-top:0; font-size:24px;">Form Atributlari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Formaning ishlash mexanizmini boshqarish uchun bir nechta muhim atributlar mavjud.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>autocomplete="on|off"</code> — brauzer avval kiritilgan ma'lumotlarni eslab qolishi yoki yo'qligini belgilaydi.</li>
+      <li><code>novalidate</code> — brauzerning avtomatik tekshiruvini o'chirib qo'yadi.</li>
+      <li><code>enctype="multipart/form-data"</code> — formadan serverga rasm yoki fayl yuklashda majburiy atribut.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code25')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code25','res25')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code25" contenteditable="true" spellcheck="false">&lt;form autocomplete="on" style="background:#1e293b; padding:12px; border-radius:6px;"&gt;
+  &lt;input type="email" placeholder="Elektron pochtangiz" autocomplete="email" style="padding:6px; border-radius:4px; background:#0f172a; color:white; border:1px solid #475569;"&gt;
+&lt;/form&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res25"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Foydalanuvchilarga qulay bo'lishi uchun ko'pincha <code>autocomplete="on"</code> qoldiriladi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Formalar</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #26</span>
+    </div>
+    <h2 id="input" style="color:var(--green-light); margin-top:0; font-size:24px;">Input Elementlari (Kiritish maydonlari)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Forma ichida ma'lumotlarni kiritish uchun bir qator turli teglardan foydalaniladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>&lt;input&gt;</code> — eng ko'p qirrali kiritish elementi.</li>
+      <li><code>&lt;label&gt;</code> — kiritish maydonining sarlavhasi (uning ustiga bossa input faollashadi).</li>
+      <li><code>&lt;textarea&gt;</code> — ko'p qatorli uzun matn yozish maydoni.</li>
+      <li><code>&lt;select&gt;</code> va <code>&lt;option&gt;</code> — ochiluvchi tanlov ro'yxati (dropdown).</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code26')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code26','res26')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code26" contenteditable="true" spellcheck="false">&lt;label for="kasb" style="color:#cbd5e1;"&gt;Kasbingizni tanlang:&lt;/label&gt;
+&lt;select id="kasb" style="padding:8px; border-radius:4px; background:#1e293b; color:#fff; border:1px solid #475569; margin: 6px 0 12px 0; display:block;"&gt;
+  &lt;option&gt;Frontend Dasturchi&lt;/option&gt;
+  &lt;option&gt;Backend Dasturchi&lt;/option&gt;
+  &lt;option&gt;UI/UX Dizayner&lt;/option&gt;
+&lt;/select&gt;
+
+&lt;label style="color:#cbd5e1;"&gt;Xabar qoldiring:&lt;/label&gt;
+&lt;textarea rows="3" placeholder="Fikringizni yozing..." style="width:100%; padding:8px; border-radius:4px; background:#1e293b; color:#fff; border:1px solid #475569; box-sizing:border-box;"&gt;&lt;/textarea&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res26"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 <code>label</code> tegining <code>for</code> atributi bilan <code>input</code>ning <code>id</code>si bir xil bo'lsa, foydalanuvchi matnga bosganda ham kiritish maydoni faollashadi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Formalar</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #27</span>
+    </div>
+    <h2 id="input-tur" style="color:var(--green-light); margin-top:0; font-size:24px;">HTML Input Turlari (type)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><code>type</code> atributi input maydonining vazifasini tubdan o'zgartiradi. HTML5 da juda ko'p foydali turlar mavjud.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>text</code> — oddiy bir qatorli matn.</li>
+      <li><code>password</code> — belgilar yulduzcha (*) yoki nuqta qilib yashiriladi.</li>
+      <li><code>number</code> — faqat sonlar kiritish imkoni.</li>
+      <li><code>date</code> — kalendar oynasi ochiladi.</li>
+      <li><code>color</code> — rang tanlash palitrasi.</li>
+      <li><code>checkbox</code> — bir nechta variantni belgilash.</li>
+      <li><code>radio</code> — faqat bitta variantni tanlash.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code27')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code27','res27')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code27" contenteditable="true" spellcheck="false">&lt;div style="display:flex; flex-direction:column; gap:10px; max-width:280px; color:#cbd5e1;"&gt;
+  &lt;input type="password" placeholder="Parolingiz" style="padding:6px; background:#1e293b; color:#fff; border:1px solid #475569; border-radius:4px;"&gt;
+  &lt;input type="date" style="padding:6px; background:#1e293b; color:#fff; border:1px solid #475569; border-radius:4px;"&gt;
+  &lt;div style="display:flex; align-items:center; gap:8px;"&gt;
+    &lt;span&gt;Sevimli rangingiz:&lt;/span&gt;
+    &lt;input type="color" value="#04AA6D"&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res27"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📱 Smartfonlarda input turiga qarab mos klaviatura (masalan, number tanlansa faqat raqamlar klaviaturasi) avtomatik ochiladi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Formalar</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #28</span>
+    </div>
+    <h2 id="validatsiya" style="color:var(--green-light); margin-top:0; font-size:24px;">Form Validatsiya (Tekshirish)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Foydalanuvchi ma'lumotlarni to'g'ri kiritganligini brauzerning o'zida tekshirish imkoniyati.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>required</code> — maydonni to'ldirishni majburiy qiladi.</li>
+      <li><code>minlength</code> va <code>maxlength</code> — minimal va maksimal belgilar soni.</li>
+      <li><code>min</code> va <code>max</code> — raqamlar uchun chegaralar.</li>
+      <li><code>pattern</code> — maxsus RegEx qoidalari orqali tekshirish.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code28')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code28','res28')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code28" contenteditable="true" spellcheck="false">&lt;form onsubmit="event.preventDefault(); alert('Hammasi to'g'ri kiritildi!');"&gt;
+  &lt;input type="text" placeholder="Kamida 3 ta harf kiriting" required minlength="3" style="padding:8px; border-radius:4px; background:#1e293b; color:#fff; border:1px solid #475569;"&gt;
+  &lt;button type="submit" style="background:#04AA6D; color:#fff; border:none; padding:8px 12px; border-radius:4px; cursor:pointer;"&gt;Tekshirish&lt;/button&gt;
+&lt;/form&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res28"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">⚠️ Brauzer tekshiruvi yetarli emas! Xavfsizlik uchun server tomonida ham (PHP, Node.js) har doim ma'lumotlar qayta tekshirilishi shart.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">HTML5</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #29</span>
+    </div>
+    <h2 id="semantik" style="color:var(--green-light); margin-top:0; font-size:24px;">HTML5 Semantik Teglar</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Semantik teglar o'z nomidan qanday vazifani bajarishi aniq anglashiladigan teglardir. Ular sayt tuzilishini odamlar va qidiruv tizimlari uchun shaffof qiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>&lt;header&gt;</code> — sayt yoki maqolaning yuqori qismi (bosh qism).</li>
+      <li><code>&lt;nav&gt;</code> — asosiy navigatsiya menyusi.</li>
+      <li><code>&lt;main&gt;</code> — sahifaning takrorlanmas asosiy mazmuni.</li>
+      <li><code>&lt;section&gt;</code> — bitta umumiy mavzuga oid bo'lim.</li>
+      <li><code>&lt;article&gt;</code> — mustaqil, alohida o'qilishi mumkin bo'lgan post yoki maqola.</li>
+      <li><code>&lt;aside&gt;</code> — yon panel (sidebar) yoki qo'shimcha ma'lumotlar.</li>
+      <li><code>&lt;footer&gt;</code> — sahifa pastki qismi (mualliflik huquqi, havolalar).</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code29')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code29','res29')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code29" contenteditable="true" spellcheck="false">&lt;div style="border:1px dashed #64748b; padding:12px; border-radius:6px; color:#cbd5e1;"&gt;
+  &lt;header style="background:#334155; padding:6px; margin-bottom:6px; text-align:center;"&gt;&amp;lt;header&amp;gt; Sayt Boshlanishi&lt;/header&gt;
+  &lt;nav style="background:#04AA6D; padding:6px; margin-bottom:6px; text-align:center; color:white;"&gt;&amp;lt;nav&amp;gt; Menyu&lt;/nav&gt;
+  &lt;main style="background:#1e293b; padding:10px; margin-bottom:6px;"&gt;
+    &amp;lt;main&amp;gt; Asosiy Maqola va Kontent
+  &lt;/main&gt;
+  &lt;footer style="background:#334155; padding:6px; text-align:center;"&gt;&amp;lt;footer&amp;gt; Mualliflik Huquqi © 2026&lt;/footer&gt;
+&lt;/div&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res29"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">🚀 Google semantik teglardan to'g'ri foydalanilgan saytlarni qidiruv natijalarida yuqoriroq o'rinlarga ko'taradi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Media</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #30</span>
+    </div>
+    <h2 id="audio" style="color:var(--green-light); margin-top:0; font-size:24px;">HTML Audio Integratsiyasi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">HTML5 orqali tashqi plaginlarsiz (Flash keraksiz) sahifaga to'g'ridan-to'g'ri musiqa va ovozli fayllarni joylashtirish mumkin.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>&lt;audio controls&gt;</code> — ijro etish, to'xtatish va ovoz balandligini sozlash tugmalarini chiqaradi.</li>
+      <li><code>autoplay</code> — sahifa ochilishi bilan avtomatik o'ynash (brauzerlar odatda ovozsiz holatdagina ruxsat beradi).</li>
+      <li><code>loop</code> — audio tugagach qaytadan boshlash.</li>
+      <li>Eng ommabop formatlar: MP3, WAV, OGG.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code30')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code30','res30')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code30" contenteditable="true" spellcheck="false">&lt;audio controls style="width:100%; max-width:320px;"&gt;
+  &lt;source src="https://www.w3schools.com/html/horse.mp3" type="audio/mpeg"&gt;
+  Sizning brauzeringiz audio tegini qo'llab-quvvatlamaydi.
+&lt;/audio&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res30"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Har doim &lt;source&gt; tegidan foydalaning va ichiga bir nechta formatlarni ko'rsating, shunda har qanday brauzer o'ziga mosini tanlab oladi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Media</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #31</span>
+    </div>
+    <h2 id="video" style="color:var(--green-light); margin-top:0; font-size:24px;">HTML Video Integratsiyasi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Sahifada videoroliklar ko'rsatish uchun <code>&lt;video&gt;</code> tegi ishlatiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>controls</code> — videoni boshqarish panelini chiqaradi.</li>
+      <li><code>poster="rasm.jpg"</code> — video boshlanishidan oldin ko'rinib turadigan muqova rasmi.</li>
+      <li><code>muted</code> — ovozni o'chirib qo'yish.</li>
+      <li>Eng keng qo'llab-quvvatlanadigan format: MP4 (H.264).</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code31')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code31','res31')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code31" contenteditable="true" spellcheck="false">&lt;video width="100%" height="160" controls poster="https://via.placeholder.com/400x200/04AA6D/ffffff?text=Video+Muqovasi" style="border-radius:8px; background:#000;"&gt;
+  &lt;source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4"&gt;
+  Brauzeringiz videoni qo'llab-quvvatlamaydi.
+&lt;/video&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res31"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📱 Mobil qurilmalarda avtomatik o'ynashi uchun &lt;video autoplay muted playsinline&gt; atributlarini birga ishlatish lozim.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Grafika</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #32</span>
+    </div>
+    <h2 id="canvas" style="color:var(--green-light); margin-top:0; font-size:24px;">HTML5 Canvas (Chizish Maydoni)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><code>&lt;canvas&gt;</code> tegi JavaScript yordamida real vaqt rejimida grafikalar, diagrammalar va hatto 2D/3D o'yinlar chizish imkonini beradi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Canvas faqat rasm chiziladigan bo'sh konteynerdir, butun chizish ishlari JavaScript orqali bajariladi.</li>
+      <li><code>getContext('2d')</code> metodi orqali chizish qurollari olinadi.</li>
+      <li>Chiziqlar, aylanalar, to'rtburchaklar va matnlar chizish mumkin.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code32')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code32','res32')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code32" contenteditable="true" spellcheck="false">&lt;canvas id="demoCanvas" width="260" height="100" style="border:1px solid #475569; background:#0f172a; border-radius:6px;"&gt;&lt;/canvas&gt;
+&lt;script&gt;
+  const canvas = document.getElementById('demoCanvas');
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = '#04AA6D';
+  ctx.fillRect(20, 20, 80, 60);
+  ctx.fillStyle = '#38bdf8';
+  ctx.font = '14px Arial';
+  ctx.fillText('Canvas 2D!', 120, 55);
+&lt;/script&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res32"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">🎮 Chart.js kabi mashhur diagramma kutubxonalari va ko'plab brauzer o'yinlari aynan Canvas ustida qurilgan.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Grafika</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #33</span>
+    </div>
+    <h2 id="svg" style="color:var(--green-light); margin-top:0; font-size:24px;">HTML SVG (Vektor Grafikasi)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">SVG (Scalable Vector Graphics) — sifatini yo'qotmaydigan, har qanday o'lchamda tiniq ko'rinuvchi XML formatidagi vektor grafika.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>PNG yoki JPEG dan farqli ravishda SVG kattalashtirilganda xiralashmaydi (pikselga aylanmaydi).</li>
+      <li>Kod ichida yozilgani sababli CSS orqali rangini o'zgartirish va animatsiya qilish juda oson.</li>
+      <li>Ikonkalar, logotiplar va illyustratsiyalar uchun eng mukammal yechim.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code33')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code33','res33')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code33" contenteditable="true" spellcheck="false">&lt;svg width="120" height="80"&gt;
+  &lt;circle cx="40" cy="40" r="30" fill="#04AA6D" /&gt;
+  &lt;rect x="80" y="15" width="30" height="50" rx="4" fill="#38bdf8" /&gt;
+&lt;/svg&gt;
+&lt;p style="font-size:13px; color:#94a3b8;"&gt;Ushbu doira va to'rtburchak toza SVG kodida chizilgan.&lt;/p&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res33"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">⚡ Font Awesome kabi barcha zamonaviy ikonkalar kutubxonalari ichida aynan SVG ishlatiladi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">API</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #34</span>
+    </div>
+    <h2 id="geolocation" style="color:var(--green-light); margin-top:0; font-size:24px;">HTML5 Geolocation API</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Foydalanuvchining roziligi bilan uning joriy geografik koordinatalarini (kenglik va uzunlik) aniqlash imkonini beruvchi API.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Maxfiylik: Brauzer har doim foydalanuvchidan 'Joylashuvingizdan foydalanishga ruxsat berasizmi?' deb so'raydi.</li>
+      <li>Faqat HTTPS xavfsiz protokoli orqali ishlaydi.</li>
+      <li>Yetkazib berish xizmatlari (Yandex Go, Uzum Tezkor) va xaritalar uchun zarur.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code34')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code34','res34')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code34" contenteditable="true" spellcheck="false">&lt;button onclick="getLocation()" style="background:#04AA6D; color:#fff; border:none; padding:8px 14px; border-radius:6px; cursor:pointer;"&gt;
+  📍 Koordinatamni ko'rish
+&lt;/button&gt;
+&lt;p id="geoResult" style="color:#38bdf8; margin-top:8px; font-weight:bold;"&gt;&lt;/p&gt;
+
+&lt;script&gt;
+function getLocation() {
+  if (navigator.geolocation) {
+    navigator.geolocation.getCurrentPosition((pos) =&gt; {
+      document.getElementById('geoResult').innerHTML = 
+        'Kenglik: ' + pos.coords.latitude.toFixed(4) + '&lt;br&gt;Uzunlik: ' + pos.coords.longitude.toFixed(4);
+    }, () =&gt; {
+      document.getElementById('geoResult').innerText = 'Ruxsat berilmadi yoki xatolik yuz berdi.';
+    });
+  }
+}
+&lt;/script&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res34"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">🔒 Foydalanuvchi ruxsat bermasa, siz uning manzilini hech qanday usul bilan bila olmaysiz.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Xotira</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #35</span>
+    </div>
+    <h2 id="storage" style="color:var(--green-light); margin-top:0; font-size:24px;">Web Storage (LocalStorage va SessionStorage)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Brauzer ichida foydalanuvchi ma'lumotlarini (masalan, tanlangan til, tungi rejim, savatchadagi tovarlar) xavfsiz saqlash mexanizmi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><strong>localStorage:</strong> Ma'lumotlar muddatsiz saqlanadi. Brauzer yopilib ochilsa ham o'chib ketmaydi (5-10 MB hajm).</li>
+      <li><strong>sessionStorage:</strong> Ma'lumot faqat bitta vkladka ochiqligida yashaydi. Vkladka yopilsa o'chadi.</li>
+      <li>Eski Cookielarga qaraganda ancha katta hajmga ega va serverga behuda yuborilmaydi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code35')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code35','res35')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code35" contenteditable="true" spellcheck="false">&lt;button onclick="localStorage.setItem('demoUser', 'Sardor'); alert('Saqlandi: demoUser = Sardor');" style="background:#334155; color:white; border:none; padding:6px 12px; border-radius:4px; cursor:pointer;"&gt;
+  Saqlash
+&lt;/button&gt;
+&lt;button onclick="alert('Olingan ma\'lumot: ' + localStorage.getItem('demoUser'));" style="background:#04AA6D; color:white; border:none; padding:6px 12px; border-radius:4px; cursor:pointer;"&gt;
+  O'qib ko'rish
+&lt;/button&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res35"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Saytimizdagi qorong'u rejim (Dark Mode) va yig'ilgan XP ballaringiz aynan localStorage da saqlanadi!</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Interaktiv</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #36</span>
+    </div>
+    <h2 id="dragdrop" style="color:var(--green-light); margin-top:0; font-size:24px;">HTML5 Drag and Drop (Surab Tashlash)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Sahifadagi ob'ektlarni sichqoncha bilan ushlab, boshqa bir joyga surib olib borib tashlash (drag & drop) qobiliyati.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Istalgan elementga <code>draggable="true"</code> atributi berilsa, u harakatlanuvchi bo'ladi.</li>
+      <li><code>ondragstart</code>, <code>ondragover</code>, <code>ondrop</code> hodisalari orqali boshqariladi.</li>
+      <li>Trello kabi vazifalar taxtasi yoki fayllarni yuklash maydonlarida keng qo'llaniladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code36')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code36','res36')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code36" contenteditable="true" spellcheck="false">&lt;div id="dragItem" draggable="true" ondragstart="event.dataTransfer.setData('text', event.target.id)" style="background:#04AA6D; color:white; padding:10px; width:140px; text-align:center; border-radius:6px; cursor:grab; margin-bottom:10px;"&gt;
+  Meni suring ✋
+&lt;/div&gt;
+&lt;div ondragover="event.preventDefault()" ondrop="event.preventDefault(); this.appendChild(document.getElementById(event.dataTransfer.getData('text')));" style="border:2px dashed #475569; padding:20px; border-radius:8px; min-height:40px; text-align:center; color:#94a3b8;"&gt;
+  Shu yerga tashlang!
+&lt;/div&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res36"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 <code>ondragover</code> hodisasida <code>event.preventDefault()</code> yozilmasa, brauzer elementni tashlashga ruxsat bermaydi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Ilg'or</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #37</span>
+    </div>
+    <h2 id="workers" style="color:var(--green-light); margin-top:0; font-size:24px;">HTML5 Web Workers</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Web Worker — bu sahifaning vizual qismini qotirib qo'ymasdan (UI bloklamasdan), fonda og'ir matematik hisob-kitoblarni bajaruvchi alohida JavaScript oqimi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Odatda JavaScript bitta oqimda (single-threaded) ishlaydi va og'ir sikl aylanganda sayt qotib qolishi mumkin.</li>
+      <li>Web Worker orqa fonda alohida ishlaydi va tayyor natijani asosiy oynaga xabar sifatida yuboradi.</li>
+      <li>Katta hajmli ma'lumotlarni saralash, video/audio qayta ishlash uchun juda foydali.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code37')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code37','res37')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code37" contenteditable="true" spellcheck="false">&lt;!-- Web Worker qisqacha sintaksisi --&gt;
+&lt;script&gt;
+  // Yangi worker yaratish
+  // const myWorker = new Worker('worker.js');
+  // myWorker.postMessage('Hisobla');
+  // myWorker.onmessage = function(e) { console.log(e.data); };
+&lt;/script&gt;
+&lt;p style="color:#cbd5e1;"&gt;Web Worker og'ir skriptlarni fon rejimida tez va qotmasdan bajarishga xizmat qiladi.&lt;/p&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res37"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">⚡ Web Workerlar DOM (HTML elementlar) bilan bevosita ishlay olmaydi, ular faqat sof ma'lumotlar bilan hisob-kitob olib boradi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Moslashuvchanlik</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #38</span>
+    </div>
+    <h2 id="responsive" style="color:var(--green-light); margin-top:0; font-size:24px;">Responsiv Dizayn va Viewport</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Sahifaning nafaqat kompyuterda, balki planshet va smartfonlarda ham chiroyli va qulay ochilishini ta'minlash responsiv (moslashuvchan) dizayn deyiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Eng muhim qadam: <code>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;</code> tegini head ichiga qo'yish.</li>
+      <li>Bu teg brauzerga sahifa kengligini mobil qurilmaning haqiqiy ekran o'lchamiga tenglashtirishni buyuradi.</li>
+      <li>Rasmlarga <code>max-width: 100%; height: auto;</code> berilsa, ular ekranning chetidan chiqib ketmaydi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code38')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code38','res38')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code38" contenteditable="true" spellcheck="false">&lt;!-- Responsiv konteyner misoli --&gt;
+&lt;div style="width: 100%; max-width: 400px; background: #1e293b; padding: 15px; border-radius: 8px; box-sizing: border-box; color: #fff;"&gt;
+  &lt;h4 style="margin-top:0;"&gt;Moslashuvchan Karta&lt;/h4&gt;
+  &lt;p style="font-size:13px; color:#94a3b8;"&gt;Katta ekranda 400px, telefonda esa ekranning butun eni bo'yicha moslashadi.&lt;/p&gt;
+&lt;/div&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res38"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📱 Agar viewport meta tegi qo'yilmasa, telefonlar saytni kichiklashtirib, o'ta mayda ko'rinishda ochadi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Standart</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #39</span>
+    </div>
+    <h2 id="accessibility" style="color:var(--green-light); margin-top:0; font-size:24px;">Vebga Kirish Qulayligi (Accessibility - a11y)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Accessibility — bu internet sahifalaridan imkoniyati cheklangan (ko'zi xira, rang ajratolmaydigan va klaviaturadan foydalanuvchi) insonlar ham bemalol foydalana olishini ta'minlashdir.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Barcha rasmlarda ma'noli <code>alt</code> atributi bo'lishi kerak.</li>
+      <li>Tugma va havolalar faqat sichqoncha bilan emas, <code>Tab</code> tugmasi orqali ham bosilishi shart.</li>
+      <li><strong>ARIA (Accessible Rich Internet Applications):</strong> Maxsus <code>aria-label</code>, <code>role</code> atributlari orqali ekran o'quvchi dasturlarga tushuntirish beriladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code39')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code39','res39')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code39" contenteditable="true" spellcheck="false">&lt;!-- Qulaylik bilan yasalgan yopish tugmasi --&gt;
+&lt;button aria-label="Oynani yopish" style="background:#ef4444; color:white; border:none; width:36px; height:36px; border-radius:50%; font-size:16px; cursor:pointer;"&gt;
+  ✕
+&lt;/button&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res39"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">🌍 Dunyo miqyosida davlat va yirik kompaniyalar saytlari qonuniy ravishda a11y standartlariga (WCAG) javob berishi shart.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Marketing</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #40</span>
+    </div>
+    <h2 id="seo" style="color:var(--green-light); margin-top:0; font-size:24px;">HTML va SEO Asoslari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">SEO (Search Engine Optimization) — saytingizni Google va boshqa qidiruv tizimlarida eng yuqori o'rinlarga olib chiqish uchun HTMLni to'g'ri loyihalash san'atidir.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Bitta sahifada faqat bitta va mazmunli <code>&lt;h1&gt;</code> sarlavha bo'lishi zarur.</li>
+      <li><code>&lt;title&gt;</code> tegi 60 belgidan oshmasligi va asosiy kalit so'zlarni o'z ichiga olishi kerak.</li>
+      <li>Semantik teglardan unumli foydalanish robotlarga saytni to'g'ri indekslashga yordam beradi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code40')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code40','res40')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code40" contenteditable="true" spellcheck="false">&lt;!-- Qidiruvda chiqadigan namunaviy struktura --&gt;
+&lt;head&gt;
+  &lt;title&gt;W3Learn - O'zbekistonda Dasturlashni Bepul O'rganing&lt;/title&gt;
+  &lt;meta name="description" content="HTML, CSS, JavaScript va boshqa dasturlash tillarini o'zbek tilida bepul o'rganing. Interaktiv kod muharriri va sertifikatlar."&gt;
+&lt;/head&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res40"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📈 Foydalanuvchilar qidiruvda ko'radigan ko'k sarlavha aynan &lt;title&gt; tegi hisoblanadi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Ijtimoiy Tarmoq</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #41</span>
+    </div>
+    <h2 id="meta" style="color:var(--green-light); margin-top:0; font-size:24px;">Meta Teglar va Open Graph (OG)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Telegram, Facebook, Twitter kabi tarmoqlarda saytingiz havolasini yuborganingizda chiroyli rasm, sarlavha va ta'rif chiqishi uchun Open Graph meta teglari ishlatiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>&lt;meta name="description" content="..."&gt;</code> — sayt haqida qisqa ma'lumot.</li>
+      <li><code>og:title</code> — ijtimoiy tarmoqda ko'rinadigan sarlavha.</li>
+      <li><code>og:image</code> — havola tashlanganda chiqadigan jozibador rasm.</li>
+      <li><code>og:url</code> — rasmiy sahifa manzili.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code41')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code41','res41')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code41" contenteditable="true" spellcheck="false">&lt;!-- Telegramda chiroyli ko'rinish uchun meta teglar --&gt;
+&lt;meta property="og:title" content="W3Learn Ta'lim Portali" /&gt;
+&lt;meta property="og:description" content="Dasturlashni 0 dan professional darajagacha o'rganing." /&gt;
+&lt;meta property="og:image" content="https://w3learn-rho.vercel.app/images/banner.jpg" /&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res41"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">🚀 Telegramda postingiz rasm va sarlavha bilan chiroyli chiqishi uchun ushbu OG teglar majburiydir.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Kodirovka</span>
+      <span style="font-size:12px; color:var(--text2);">Mavzu #42</span>
+    </div>
+    <h2 id="charset" style="color:var(--green-light); margin-top:0; font-size:24px;">Charset va Maxsus HTML Belgilari (Entities)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Saytda o'zbekcha harflar (o' g' sh ch), emojilar va maxsus matematik belgilar to'g'ri ko'rinishi uchun kodirovkalar va HTML belgilari ishlatiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>&lt;meta charset="UTF-8"&gt;</code> — dunyodagi barcha alifbolar, jumladan kirill, lotin va emojilarni xatosiz ko'rsatadi.</li>
+      <li>HTMLda <code>&lt;</code> va <code>&gt;</code> belgilarini matnda chiqarish uchun maxsus kodlar kerak, aks holda brauzer ularni teg deb o'ylaydi.</li>
+      <li><code>&amp;lt;</code> — kichik belgisi (&lt;)</li>
+      <li><code>&amp;gt;</code> — katta belgisi (&gt;)</li>
+      <li><code>&amp;amp;</code> — ampersand (&amp;)</li>
+      <li><code>&amp;copy;</code> — mualliflik belgisi (&copy;)</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML &amp; Live Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code42')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code42','res42')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code42" contenteditable="true" spellcheck="false">&lt;p&gt;&amp;copy; 2026 Barcha huquqlar himoyalangan.&lt;/p&gt;
+&lt;p&gt;5 &amp;lt; 10 va 20 &amp;gt; 15 tengsizliklari to'g'ri.&lt;/p&gt;
+&lt;p&gt;Dasturlash teglari: &amp;lt;h1&amp;gt; va &amp;lt;/h1&amp;gt;&lt;/p&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res42"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Agar sahifangizda 'sh', 'g'' yoki boshqa harflar o'rniga g'alati qora romblar () chiqib qolsa, &lt;meta charset="UTF-8"&gt; tegini qo'yishni unutgansiz.</div>
+  </section>
+
+  <!-- Amaliy Mashq -->
   <div class="exercise-box">
     <div class="exercise-header">
       <i class="fa-solid fa-puzzle-piece" style="color:#6366f1;"></i>
-      <span>Amaliy Mashq: Bo'sh joyni to'ldiring</span>
+      <span>Amaliy Mashq: Havola Yaratish</span>
     </div>
     <p style="font-size:13.5px;color:var(--text2);margin-bottom:10px;">
       Google qidiruv tizimiga havola (link) yaratish uchun to'g'ri teg nomini kiriting:
@@ -230,21 +1651,23 @@
     <div class="exercise-result" id="exRes1"></div>
   </div>
 
+  <!-- Test Bo'limi -->
   <div class="quiz-box">
-    <div class="quiz-q">🧪 Test: HTML qisqartmasi nima?</div>
+    <div class="quiz-q">🧪 Test: HTML qisqartmasining to'g'ri ma'nosi nima?</div>
     <div class="quiz-opt" onclick="checkQuiz(this, false, 'qr1')">High Text Markup Language</div>
     <div class="quiz-opt" onclick="checkQuiz(this, true, 'qr1')">HyperText Markup Language</div>
     <div class="quiz-opt" onclick="checkQuiz(this, false, 'qr1')">Home Tool Markup Language</div>
     <div class="quiz-result" id="qr1"></div>
   </div>
 
-  
+  <div class="nav-btns" style="margin-top: 30px;">
+    <a href="../index.html" class="btn-prev">← Bosh sahifa</a>
+    <a href="css.html" class="btn-next">CSS Darsiga O'tish →</a>
+  </div>
 
-<div class="nav-btns">
-  <a href="../index.html" class="btn-prev">&#8592; Bosh sahifa</a>
-  <a href="css.html" class="btn-next">CSS &#8594;</a>
-</div>
-<div class="note note-blue">📌 <strong>Keyingi qadam:</strong> HTML o'rganib bo'lgach, <a href="css.html" style="color:var(--green)">CSS</a> orqali sahifangizni chiroyli qiling!</div>
+  <div class="note note-blue" style="margin-top: 25px;">
+    📌 <strong>Keyingi qadam:</strong> HTML strukturasini to'liq o'rgangach, <a href="css.html" style="color:var(--green)">CSS darslariga</a> o'tib saytingizga zamonaviy rang va stillar berishni boshlang!
+  </div>
 </main>
 
 <aside class="right-panel">

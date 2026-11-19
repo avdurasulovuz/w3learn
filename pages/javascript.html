@@ -107,304 +107,1597 @@
   </ul>
 </aside>
 <main class="main">
-  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">JavaScript</a> › JS Nima?</div>
-  <h1 id="kirish">JavaScript Nima?</h1>
-  <div class="meta-tags">
-    <span class="tag tag-green">⏱ 10 daqiqa</span>
-    <span class="tag tag-blue">🟢 Boshlang'ich</span>
-    <span class="tag tag-orange">👁 42,100 marta ko'rilgan</span>
-  </div>
-  <p><strong>JavaScript</strong> — veb sahifalarni interaktiv qiluvchi dasturlash tili. Brauzerda to'g'ridan-to'g'ri ishlaydi. Node.js bilan server tomonda ham qo'llaniladi.</p>
-  <p>HTML — tuzilma, CSS — ko'rinish, JavaScript — xatti-harakat (behavior). Bu uchlik zamonaviy veb dasturlashning asosi.</p>
-  <div class="note">💡 <strong>Qiziq fakt:</strong> JavaScript Java bilan bog'liq emas. Brendan Eich tomonidan 1995-yilda 10 kunda yaratilgan!</div>
+  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">JavaScript</a> › Barcha Mavzular</div>
 
-  <h2 id="var-let-const">var / let / const</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">javascript</span>
-      <button class="copy-btn" onclick="copyCode('code1')">📋 Nusxa</button>
-      <button class="run-btn" onclick="runCode('code1','res1')">▶ Run</button>
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Asosiy</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #1</span>
     </div>
-    <div class="code-body">
-      <pre id="code1">// let — o'zgaruvchan qiymat
-let ism = "Ali";
-ism = "Vali"; // mumkin
+    <h2 id="kirish" style="color:var(--green-light); margin-top:0; font-size:24px;">JavaScript Nima?</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>JavaScript</strong> — dunyodagi eng ommabop va dinamik dasturlash tili. U veb-sahifalarga 'jon' kiritadi: tugmalarni bosganda ishlaydigan qilish, animatsiyalar, server bilan ma'lumot almashish (AJAX), o'yinlar va to'liq interaktiv ilovalar yaratish imkonini beradi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>HTML — saytning skeleti, CSS — uning tashqi kiyimi, JavaScript esa uning miyasi va harakatlaridir.</li>
+      <li>Brauzerlar ichida (Chrome V8 dvigateli) to'g'ridan-to'g'ri hech qanday qo'shimcha o'rnatishlarsiz ishlaydi.</li>
+      <li>Bugungi kunda Node.js orqali nafaqat brauzerda, balki kuchli Backend serverlarda ham ishlatiladi.</li>
+    </ul>
 
-// const — o'zgarmas qiymat
-const PI = 3.14159;
-// PI = 3; // Xato!
-
-// var — eski usul (scope muammolari bor)
-var yosh = 25;
-
-// Ma'lumot turlari
-let son = 42;           // number
-let matn = "Salom";    // string
-let mantiqiy = true;   // boolean
-let noma = null;       // null
-let aniqsiz;           // undefined
-let ob = { a: 1 };    // object
-let arr = [1, 2, 3];  // array
-
-console.log(typeof son);      // "number"
-console.log(typeof matn);     // "string"
-console.log(typeof mantiqiy); // "boolean"</pre>
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode1')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode1','jsRes1')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode1" contenteditable="true" spellcheck="false">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;body&gt;
+  &lt;h2&gt;JavaScript Jonli Natijasi&lt;/h2&gt;
+  &lt;p id="salomMatn"&gt;Tugmani bosing va matn o'zgarishini ko'ring!&lt;/p&gt;
+  &lt;button onclick="document.getElementById('salomMatn').innerText = '🎉 Tabriklaymiz, siz JavaScriptni boshladingiz!'; document.getElementById('salomMatn').style.color='#04AA6D';" 
+          style="background:#04AA6D; color:white; border:none; padding:8px 16px; border-radius:6px; cursor:pointer;"&gt;
+    Meni Bosing
+  &lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
     </div>
-    <div class="result-box"><div class="result-label">Natija:</div><iframe class="result-iframe" id="res1"></iframe></div>
-  </div>
+    <div class="result-box" id="jsRes1"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
-  <h2 id="if-else">if / else / switch</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">javascript</span>
-      <button class="copy-btn" onclick="copyCode('code2')">📋 Nusxa</button>
-      <button class="run-btn" onclick="runCode('code2','res2')">▶ Run</button>
+    <div class="note" style="margin-top:16px;">💡 JavaScript 1995-yilda Brendan Eich tomonidan atigi 10 kunda yaratilgan va dastlab 'Mocha', so'ng 'LiveScript' deb nomlangan.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Integratsiya</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #2</span>
     </div>
-    <div class="code-body">
-      <pre id="code2">// if-else
-let ball = 85;
-if (ball >= 90) {
-  document.write("A'lo");
-} else if (ball >= 70) {
-  document.write("Yaxshi");
-} else if (ball >= 50) {
-  document.write("Qoniqarli");
-} else {
-  document.write("Yaxon");
-}
+    <h2 id="qoshtish" style="color:var(--green-light); margin-top:0; font-size:24px;">JavaScriptni HTMLga Qo'shish Usullari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">JavaScript kodini sahifaga ulashning 3 xil usuli mavjud: Ichki (Internal), Tashqi (External) va Qator ichi (Inline).</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><strong>Tashqi (External - Eng yaxshi usul):</strong> <code>&lt;script src="app.js"&gt;&lt;/script&gt;</code> — odatda &lt;/body&gt; yopilishidan oldin qo'yiladi.</li>
+      <li><strong>Ichki (Internal):</strong> <code>&lt;script&gt; // JS kod &lt;/script&gt;</code> teglari orasida yoziladi.</li>
+      <li><strong>Inline:</strong> HTML tegi ichida <code>onclick="alert('Salom')"</code> kabi hodisalar orqali chaqiriladi.</li>
+    </ul>
 
-// Ternary operator
-let status = ball >= 50 ? "O'tdi ✅" : "O'tmadi ❌";
-document.write("<br>" + status);
-
-// switch
-let kun = "Dushanba";
-switch(kun) {
-  case "Dushanba": document.write("<br>Hafta boshi"); break;
-  case "Juma": document.write("<br>Hafta oxiri yaqin"); break;
-  default: document.write("<br>Oddiy kun");
-}</pre>
-    </div>
-    <div class="result-box"><div class="result-label">Natija:</div><iframe class="result-iframe" id="res2"></iframe></div>
-  </div>
-
-  <h2 id="arrow">Funksiyalar</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">javascript</span>
-      <button class="copy-btn" onclick="copyCode('code3')">📋 Nusxa</button>
-      <button class="run-btn" onclick="runCode('code3','res3')">▶ Run</button>
-    </div>
-    <div class="code-body">
-      <pre id="code3">// Function declaration
-function qosh(a, b) {
-  return a + b;
-}
-
-// Arrow function
-const kopayt = (a, b) => a * b;
-
-// Default parametr
-const salomlash = (ism = "Mehmon") => `Salom, ${ism}!`;
-
-// Rest parametr
-const yigindi = (...sonlar) => sonlar.reduce((s, n) => s + n, 0);
-
-document.write(qosh(5, 3) + "<br>");       // 8
-document.write(kopayt(4, 6) + "<br>");     // 24
-document.write(salomlash("Ali") + "<br>"); // Salom, Ali!
-document.write(salomlash() + "<br>");      // Salom, Mehmon!
-document.write(yigindi(1,2,3,4,5) + "<br>"); // 15</pre>
-    </div>
-    <div class="result-box"><div class="result-label">Natija:</div><iframe class="result-iframe" id="res3"></iframe></div>
-  </div>
-
-  <h2 id="array-methods">Massiv Metodlari</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">javascript</span>
-      <button class="copy-btn" onclick="copyCode('code4')">📋 Nusxa</button>
-      <button class="run-btn" onclick="runCode('code4','res4')">▶ Run</button>
-    </div>
-    <div class="code-body">
-      <pre id="code4">const sonlar = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
-
-// map — har elementni o'zgartirish
-const kvadratlar = sonlar.map(n => n * n);
-document.write("Kvadratlar: " + kvadratlar + "<br>");
-
-// filter — shartga moslarni tanlash
-const juftlar = sonlar.filter(n => n % 2 === 0);
-document.write("Juft sonlar: " + juftlar + "<br>");
-
-// reduce — yig'indi
-const jami = sonlar.reduce((acc, n) => acc + n, 0);
-document.write("Yig'indisi: " + jami + "<br>");
-
-// find — birinchi moslashuvchi
-const topildi = sonlar.find(n => n > 5);
-document.write("5 dan katta: " + topildi + "<br>");
-
-// every / some
-const hammaBijum = sonlar.every(n => n > 0);
-document.write("Hammasi musbat: " + hammaBijum + "<br>");
-
-// includes
-document.write("7 bormi: " + sonlar.includes(7) + "<br>");</pre>
-    </div>
-    <div class="result-box"><div class="result-label">Natija:</div><iframe class="result-iframe" id="res4"></iframe></div>
-  </div>
-
-  <h2 id="class">OOP — Class</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">javascript</span>
-      <button class="copy-btn" onclick="copyCode('code5')">📋 Nusxa</button>
-      <button class="run-btn" onclick="runCode('code5','res5')">▶ Run</button>
-    </div>
-    <div class="code-body">
-      <pre id="code5">class Hayvon {
-  constructor(ism, ovoz) {
-    this.ism = ism;
-    this.ovoz = ovoz;
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode2')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode2','jsRes2')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode2" contenteditable="true" spellcheck="false">&lt;!-- Tashqi va ichki skript namunasi --&gt;
+&lt;script&gt;
+  function salomBer() {
+    alert('Salom! Bu ichki script orqali ishga tushdi.');
   }
-  gapir() {
-    return `${this.ism} deydi: ${this.ovoz}!`;
+&lt;/script&gt;
+&lt;button onclick="salomBer()" style="background:#3b82f6; color:white; border:none; padding:8px 14px; border-radius:4px; cursor:pointer;"&gt;
+  Skriptni Ishlatish
+&lt;/button&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jsRes2"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">⚡ Nega &lt;script&gt; faylini sahifa oxiriga qo'yishadi? Chunki brauzer avval barcha HTML elementlarni yuklab oladi, shundan so'ng JS ularni bemalol topa oladi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Dasturchi Qurollari</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #3</span>
+    </div>
+    <h2 id="console" style="color:var(--green-light); margin-top:0; font-size:24px;">Brauzer Konsoli (console.log)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Dasturdagi xatolarni topish, o'zgaruvchilar qiymatini tekshirish va ma'lumotlarni chiqarish uchun <code>console</code> ob'ektidan foydalaniladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>console.log()</code> — oddiy axborot xabarini chiqaradi.</li>
+      <li><code>console.error()</code> — qizil rangdagi jiddiy xato xabari.</li>
+      <li><code>console.warn()</code> — sariq ogohlantirish xabari.</li>
+      <li><code>console.table()</code> — massiv yoki obyektlarni chiroyli jadval ko'rinishida chiqaradi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode3')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode3','jsRes3')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode3" contenteditable="true" spellcheck="false">&lt;button onclick="
+  console.log('Foydalanuvchi tugmani bosdi!');
+  console.table([{ism: 'Ali', yosh: 22}, {ism: 'Vali', yosh: 25}]);
+  alert('Konsolga ma\'lumot chiqarildi! F12 tugmasini bosib Console bo\'limini tekshiring.');
+" style="background:#1e293b; color:#38bdf8; border:1px solid #38bdf8; padding:8px 14px; border-radius:6px; cursor:pointer;"&gt;
+  Konsolga ma'lumot yuborish
+&lt;/button&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jsRes3"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">🔍 Klaviatura orqali <code>F12</code> yoki <code>Ctrl + Shift + I</code> tugmalarini bosib istalgan saytning Console bo'limini ochishingiz mumkin.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Asoslar</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #4</span>
+    </div>
+    <h2 id="var-let-const" style="color:var(--green-light); margin-top:0; font-size:24px;">O'zgaruvchilar: var / let / const</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">O'zgaruvchi — bu kompyuter xotirasidagi ma'lumotlarni saqlash uchun mo'ljallangan maxsus 'quti' dir.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>const:</code> (Konstanta) — qiymati keyinchalik O'ZGARMAS o'zgaruvchilar uchun. Har doim dastlab <code>const</code> ishlatish tavsiya qilinadi.</li>
+      <li><code>let:</code> qiymati keyin o'zgarishi mumkin bo'lgan o'zgaruvchilar uchun (masalan: hisoblagich, ball).</li>
+      <li><code>var:</code> eski uslub (ES6 dan oldingi). Funksiya doirasiga (function-scoped) ega va zamonaviy kodda ishlatilmaydi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode4')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode4','jsRes4')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode4" contenteditable="true" spellcheck="false">&lt;script&gt;
+  const saytNomi = "W3Learn";
+  let foydalanuvchiBall = 100;
+  foydalanuvchiBall = foydalanuvchiBall + 25; // O'zgardi: 125
+&lt;/script&gt;
+&lt;p style="color:#cbd5e1;"&gt;const qiymati o'zgarmas, let qiymatini esa keyinchalik xohlagancha o'zgartirish mumkin.&lt;/p&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jsRes4"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">⚠️ <code>const</code> bilan e'lon qilingan o'zgaruvchiga qayta qiymat berishga urinsangiz, brauzer <code>TypeError: Assignment to constant variable</code> xatosini beradi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Ma'lumotlar</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #5</span>
+    </div>
+    <h2 id="datatypes" style="color:var(--green-light); margin-top:0; font-size:24px;">Ma'lumot Turlari (Data Types)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">JavaScriptda barcha ma'lumotlar ikkita katta toifaga bo'linadi: <strong>Primitive</strong> (Oddiy) va <strong>Non-primitive / Reference</strong> (Murakkab).</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><strong>String:</strong> matnli ma'lumotlar: <code>'Salom'</code> yoki <code>"Dunyo"</code>.</li>
+      <li><strong>Number:</strong> butun va kasr sonlar: <code>42</code>, <code>3.14</code>.</li>
+      <li><strong>Boolean:</strong> mantiqiy qiymat: faqat <code>true</code> (rost) yoki <code>false</code> (yolg'on).</li>
+      <li><strong>Undefined:</strong> e'lon qilingan lekin qiymati berilmagan o'zgaruvchi.</li>
+      <li><strong>Null:</strong> qasddan bo'sh qoldirilgan qiymat.</li>
+      <li><strong>Object:</strong> murakkab ma'lumot tuzilmalari (massivlar, obyektlar, funksiyalar).</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode5')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode5','jsRes5')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode5" contenteditable="true" spellcheck="false">&lt;button onclick="
+  let x = 'Matn';
+  let y = 100;
+  let z = true;
+  alert('x turi: ' + typeof x + '\ny turi: ' + typeof y + '\nz turi: ' + typeof z);
+" style="background:#04AA6D; color:white; border:none; padding:8px 14px; border-radius:6px; cursor:pointer;"&gt;
+  typeof bilan turlarni tekshirish
+&lt;/button&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jsRes5"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 <code>typeof null === 'object'</code> — bu JavaScriptning 1995-yildan beri saqlanib qolgan mashhur tarixiy xatoligidir (bug).</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Xususiyatlar</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #6</span>
+    </div>
+    <h2 id="typecoercion" style="color:var(--green-light); margin-top:0; font-size:24px;">Type Coercion (Turlarni O'zgartirish)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">JavaScript zaif tiplangan (dynamically typed) til bo'lib, ba'zida turlarni avtomatik tarzda o'zi o'zgartirib yuboradi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>'5' + 2 = '52'</code> — qo'shishda matn ko'rinsa, son ham matnga aylanib ulanadi (konkatenatsiya).</li>
+      <li><code>'5' - 2 = 3</code> — ayirish, ko'paytirish va bo'lishda esa matn songa aylanadi!</li>
+      <li>Qo'lda aniq o'zgartirish: <code>Number('100')</code>, <code>String(50)</code>, <code>Boolean(1)</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode6')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode6','jsRes6')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode6" contenteditable="true" spellcheck="false">&lt;p style="color:#cbd5e1; font-family:monospace; line-height:1.8;"&gt;
+  '10' + 5 = &lt;span style="color:#f59e0b;"&gt;'105' (String)&lt;/span&gt;&lt;br&gt;
+  '10' - 5 = &lt;span style="color:#04AA6D;"&gt;5 (Number)&lt;/span&gt;&lt;br&gt;
+  Number('45') + 5 = &lt;span style="color:#38bdf8;"&gt;50 (Aniq Number)&lt;/span&gt;
+&lt;/p&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jsRes6"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">⚡ Input maydonidan (input.value) olingan qiymat doimo matn (String) bo'ladi. U bilan hisob-kitob qilishdan oldin <code>Number()</code> yoki <code>+</code> belgisi orqali songa aylantirib oling.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Mantiq</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #7</span>
+    </div>
+    <h2 id="operators" style="color:var(--green-light); margin-top:0; font-size:24px;">JavaScript Operatorlari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Qiymatlar ustida matematik amallar bajarish va ularni taqqoslash vositalari.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><strong>Arifmetik:</strong> <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code> (qoldiqli bo'lish), <code>**</code> (darajaga ko'tarish).</li>
+      <li><strong>Taqqoslovchi:</strong> <code>==</code> (faqat qiymat), <code>===</code> (qat'iy: ham qiymat, ham turini tekshiradi).</li>
+      <li><strong>Mantiqiy:</strong> <code>&amp;&amp;</code> (VA - ikkalasi ham rost bo'lishi shart), <code>||</code> (YOKI - bittasi rost bo'lsa yetarli), <code>!</code> (INKOR).</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode7')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode7','jsRes7')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode7" contenteditable="true" spellcheck="false">&lt;script&gt;
+  // 5 == '5' -&gt; true (chunki turlar tenglashtiriladi)
+  // 5 === '5' -&gt; false (chunki biri son, biri matn!)
+&lt;/script&gt;
+&lt;p style="color:#cbd5e1;"&gt;Doimo &lt;code&gt;===&lt;/code&gt; (qat'iy tenglik) dan foydalaning. Bu kutilmagan mantiqiy xatolarning oldini oladi.&lt;/p&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jsRes7"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">🛑 Hech qachon <code>==</code> ishlatmang, professional kodda har doim uchta tenglik <code>===</code> qo'llaniladi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Mantiq</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #8</span>
+    </div>
+    <h2 id="if-else" style="color:var(--green-light); margin-top:0; font-size:24px;">Shartli Operatorlar: if / else</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Dasturda ma'lum bir shart bajarilgandagina ma'lum bir kod qismini ishga tushirish qarorlarini qabul qiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>if (shart) { ... }</code> — shart rost (true) bo'lsa ishlaydi.</li>
+      <li><code>else if (yangi_shart) { ... }</code> — birinchi shart xato bo'lsa, ikkinchisini tekshiradi.</li>
+      <li><code>else { ... }</code> — hech qaysi shart bajarilmaganda ishlaydigan zaxira qism.</li>
+      <li><strong>Ternary Operator (Qisqa if):</strong> <code>shart ? rost : yolg'on</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode8')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode8','jsRes8')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode8" contenteditable="true" spellcheck="false">&lt;input type="number" id="yoshInput" placeholder="Yoshingiz" style="padding:6px; background:#1e293b; color:#fff; border:1px solid #475569; border-radius:4px; width:120px;"&gt;
+&lt;button onclick="
+  const y = Number(document.getElementById('yoshInput').value);
+  if (y &gt;= 18) {
+    alert('Hush kelibsiz! Siz voyaga yetgansiz ✅');
+  } else {
+    alert('Kechirasiz, siz hali 18 yoshga to\'lmagansiz ❌');
   }
-}
+" style="background:#04AA6D; color:white; border:none; padding:6px 12px; border-radius:4px; cursor:pointer;"&gt;Tekshirish&lt;/button&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jsRes8"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
-class It extends Hayvon {
-  constructor(ism) {
-    super(ism, "Vov");
+    <div class="note" style="margin-top:16px;">💡 Qisqa shartlar uchun Ternary operator kodni juda ixcham qiladi: <code>const status = yosh >= 18 ? 'Katta' : 'Kichik';</code></div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Mantiq</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #9</span>
+    </div>
+    <h2 id="switch" style="color:var(--green-light); margin-top:0; font-size:24px;">Switch / Case Operatori</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Bitta o'zgaruvchining qiymatini ko'p sonli variantlar (keyslar) bilan taqqoslash kerak bo'lganda <code>switch</code> dan foydalanish <code>if/else</code> dan ko'ra ancha tartibli bo'ladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>case qiymat:</code> — mos keladigan holat.</li>
+      <li><code>break;</code> — tekshirishni to'xtatib switch blokidan chiqish (agar qo'yilmasa, keyingi barcha keyslar ham ishlab ketadi).</li>
+      <li><code>default:</code> — hech qaysi variant mos kelmasa ishlaydigan standart blok.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode9')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode9','jsRes9')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode9" contenteditable="true" spellcheck="false">&lt;script&gt;
+  const haftaKuni = 1;
+  let kunNomi;
+  switch (haftaKuni) {
+    case 1: kunNomi = 'Dushanba'; break;
+    case 2: kunNomi = 'Seshanba'; break;
+    default: kunNomi = 'Boshqa kun';
   }
-  poygalamoq() {
-    return `${this.ism} yuguryapti!`;
+&lt;/script&gt;
+&lt;p style="color:#04AA6D; font-weight:bold;"&gt;Switch ko'p variantli menyularda juda qulay.&lt;/p&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jsRes9"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">⚠️ Har bir case oxiriga <code>break;</code> qo'yishni unutmang, aks holda dastur boshqa keyslarga ham o'tib ketadi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Tsikllar</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #10</span>
+    </div>
+    <h2 id="for" style="color:var(--green-light); margin-top:0; font-size:24px;">For Tsikli (Sikllar)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Bir xil amalni ma'lum bir sondagi marta takror va takror bajarish uchun tsikllar ishlatiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>for (boshlanish; shart; qadam) { ... }</code></li>
+      <li>Massivlar bilan ishlash uchun: <code>for...of</code> (qiymatlar bo'yicha).</li>
+      <li>Obyektlar bilan ishlash uchun: <code>for...in</code> (kalitlar bo'yicha).</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode10')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode10','jsRes10')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode10" contenteditable="true" spellcheck="false">&lt;div id="forNatija" style="background:#1e293b; padding:10px; border-radius:6px; color:#cbd5e1; font-family:monospace;"&gt;&lt;/div&gt;
+&lt;script&gt;
+  let matn = '';
+  for (let i = 1; i &lt;= 5; i++) {
+    matn += 'Qadam #' + i + '&lt;br&gt;';
   }
-}
-
-const sharik = new It("Sharik");
-document.write(sharik.gapir() + "<br>");
-document.write(sharik.poygalamoq() + "<br>");
-document.write("Hayvonmi? " + (sharik instanceof Hayvon));</pre>
+  document.getElementById('forNatija').innerHTML = matn;
+&lt;/script&gt;</pre>
+      </div>
     </div>
-    <div class="result-box"><div class="result-label">Natija:</div><iframe class="result-iframe" id="res5"></iframe></div>
-  </div>
+    <div class="result-box" id="jsRes10"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
-  <h2 id="dom">DOM Manipulyatsiya</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">javascript</span>
-      <button class="copy-btn" onclick="copyCode('code6')">📋 Nusxa</button>
+    <div class="note" style="margin-top:16px;">📌 Sikl shartini to'g'ri yozing, aks holda dastur 'abadiy tsikl'ga (infinite loop) tushib, brauzeringizni butunlay qotirib qo'yishi mumkin.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Tsikllar</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #11</span>
     </div>
-    <div class="code-body">
-      <pre id="code6">// Element tanlash
-const sarlavha = document.getElementById('title');
-const tugmalar = document.querySelectorAll('.btn');
-const birinchi = document.querySelector('p');
+    <h2 id="while" style="color:var(--green-light); margin-top:0; font-size:24px;">While va Do...While Tsikllari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Qadamlar soni oldindan noma'lum bo'lib, ma'lum bir shart qanoatlantirilguncha aylanishi kerak bo'lgan holatlarda ishlatiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>while (shart)</code> — avval shartni tekshiradi, keyin kodni ishlatadi.</li>
+      <li><code>do { ... } while (shart)</code> — kamida 1 marta kodni albatta ishga tushiradi, keyin shartni tekshiradi.</li>
+    </ul>
 
-// Matn o'zgartirish
-sarlavha.textContent = 'Yangi sarlavha';
-sarlavha.innerHTML = '<strong>Qalin sarlavha</strong>';
-
-// Style o'zgartirish
-sarlavha.style.color = 'red';
-sarlavha.style.fontSize = '24px';
-
-// Class qo'shish/olib tashlash
-sarlavha.classList.add('active');
-sarlavha.classList.remove('hidden');
-sarlavha.classList.toggle('dark');
-
-// Element yaratish
-const yangi = document.createElement('p');
-yangi.textContent = 'Yangi paragraf';
-document.body.appendChild(yangi);
-
-// Event listener
-document.getElementById('btn').addEventListener('click', () => {
-  alert('Bosildi!');
-});</pre>
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode11')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode11','jsRes11')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode11" contenteditable="true" spellcheck="false">&lt;script&gt;
+  let hisob = 0;
+  while (hisob &lt; 3) {
+    console.log('While aylanmoqda: ' + hisob);
+    hisob++;
+  }
+&lt;/script&gt;
+&lt;p style="color:#cbd5e1;"&gt;do...while har qanday holatda ham kamida bir marotaba bajariladi.&lt;/p&gt;</pre>
+      </div>
     </div>
-  </div>
+    <div class="result-box" id="jsRes11"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
-  <h2 id="async-await">async / await va Fetch</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">javascript</span>
-      <button class="copy-btn" onclick="copyCode('code7')">📋 Nusxa</button>
+    <div class="note" style="margin-top:16px;">💡 Tsikl ichida hisoblagichni oshirishni (<code>i++</code>) unutsangiz, abadiy sikl yuzaga keladi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Tsikllar</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #12</span>
     </div>
-    <div class="code-body">
-      <pre id="code7">// Promise
-const kuting = (ms) => new Promise(resolve => setTimeout(resolve, ms));
+    <h2 id="break" style="color:var(--green-light); margin-top:0; font-size:24px;">Break va Continue Operatorlari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Sikllarning ishlash jarayonini nazorat qilish va ularni muddatidan oldin to'xtatish yoki ma'lum bir qadamni tashlab ketish imkoniyati.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>break:</code> tsiklni butunlay to'xtatadi va undan chiqib ketadi.</li>
+      <li><code>continue:</code> joriy qadamni shu joyida tashlab o'tib, darhol keyingi qadamga sakraydi.</li>
+    </ul>
 
-// async/await
-async function maʼlumotOl() {
-  try {
-    const javob = await fetch('https://jsonplaceholder.typicode.com/users/1');
-    
-    if (!javob.ok) {
-      throw new Error(`Xato: ${javob.status}`);
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode12')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode12','jsRes12')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode12" contenteditable="true" spellcheck="false">&lt;script&gt;
+  // 3-raqamni tashlab ketadi, 7-raqamda butunlay to'xtaydi
+  for (let i = 1; i &lt;= 10; i++) {
+    if (i === 3) continue;
+    if (i === 7) break;
+    // console.log(i); // 1, 2, 4, 5, 6
+  }
+&lt;/script&gt;
+&lt;p style="color:#38bdf8;"&gt;break qidiruv natijasi topilganda siklni behuda davom ettirmaslik uchun ideal.&lt;/p&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jsRes12"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">⚡ Ro'yxatdan kerakli element topilgan zahoti <code>break</code> qilsangiz, kompyuter xotirasi va vaqti tejaladi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Funksiyalar</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #13</span>
+    </div>
+    <h2 id="function" style="color:var(--green-light); margin-top:0; font-size:24px;">Funksiyalar (Functions)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Funksiya — bu ma'lum bir aniq vazifani bajaruvchi va sahifaning istalgan joyidan qayta-qayta chaqirilishi mumkin bo'lgan kod blokidir.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><strong>E'lon qilish:</strong> <code>function funksiyaNomi(parametr) { return natija; }</code></li>
+      <li>Kodni tartibli qiladi va bitta yozilgan kodni qayta ishlatish (reusability) imkonini beradi.</li>
+      <li><code>return</code> operatori funksiya natijasini qaytaradi va uni tugatadi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode13')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode13','jsRes13')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode13" contenteditable="true" spellcheck="false">&lt;script&gt;
+  function kvadratiniHisobla(son) {
+    return son * son;
+  }
+&lt;/script&gt;
+&lt;button onclick="alert('8 ning kvadrati: ' + kvadratiniHisobla(8))" style="background:#04AA6D; color:white; border:none; padding:8px 14px; border-radius:4px; cursor:pointer;"&gt;
+  8 ning kvadratini ko'rish
+&lt;/button&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jsRes13"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 Agar funksiyada <code>return</code> yozilmasa, u avtomatik tarzda <code>undefined</code> qiymat qaytaradi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">ES6</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #14</span>
+    </div>
+    <h2 id="arrow" style="color:var(--green-light); margin-top:0; font-size:24px;">Arrow Functions (O'qsimon Funksiyalar)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">ES6 (2015) da kiritilgan zamonaviy, ixcham va chiroyli funksiya yozish usuli (<code>() =&gt; {}</code>).</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Sintaksis: <code>const salom = () =&gt; 'Salom, Dunyo!';</code></li>
+      <li>Bitta qatordan iborat bo'lsa, jingalak qavs <code>{}</code> va <code>return</code> so'zi shart emas.</li>
+      <li>Arrow funksiyalarda o'zining shaxsiy <code>this</code> konteksti bo'lmaydi (leksik this).</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode14')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode14','jsRes14')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode14" contenteditable="true" spellcheck="false">&lt;script&gt;
+  const qoshish = (a, b) =&gt; a + b;
+&lt;/script&gt;
+&lt;button onclick="alert('5 + 7 = ' + qoshish(5, 7))" style="background:#3b82f6; color:white; border:none; padding:8px 14px; border-radius:4px; cursor:pointer;"&gt;
+  Arrow Function bilan Hisoblash
+&lt;/button&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jsRes14"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">🚀 Zamonaviy React, Vue va Node.js dasturlashda 90% funksiyalar aynan Arrow Function ko'rinishida yoziladi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Funksiyalar</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #15</span>
+    </div>
+    <h2 id="params" style="color:var(--green-light); margin-top:0; font-size:24px;">Parametrlar va Standart Qiymatlar</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Funksiyaga tashqaridan ma'lumot uzatish va agar ma'lumot berilmasa standart (default) qiymatni qo'llash qoidalari.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Parametr — funksiya e'lon qilinayotgandagi o'zgaruvchi nomi.</li>
+      <li>Argument — funksiya chaqirilayotganda unga uzatilgan haqiqiy qiymat.</li>
+      <li>Standart qiymat: <code>function salom(ism = 'Mehmon') { ... }</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode15')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode15','jsRes15')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode15" contenteditable="true" spellcheck="false">&lt;script&gt;
+  function kutibOlish(ism = 'Qadrli Do\'stim') {
+    return 'Assalomu alaykum, ' + ism + '!';
+  }
+&lt;/script&gt;
+&lt;button onclick="alert(kutibOlish())" style="background:#1e293b; color:#fff; border:1px solid #475569; padding:6px 12px; border-radius:4px; cursor:pointer;"&gt;
+  Standart parametrni sinash
+&lt;/button&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jsRes15"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Standart qiymatlar funksiyani 'undefined' xatolaridan himoya qiladi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Arxitektura</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #16</span>
+    </div>
+    <h2 id="scope" style="color:var(--green-light); margin-top:0; font-size:24px;">Scope (Ko'rinish Sohasi)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Scope o'zgaruvchining kodning qaysi qismida ko'rinishi va undan foydalanish mumkinligini belgilaydi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><strong>Global Scope:</strong> har qanday funksiyadan tashqarida e'lon qilingan o'zgaruvchi. Butun dastur bo'ylab ko'rinadi.</li>
+      <li><strong>Function Scope:</strong> faqat o'sha funksiya ichida mavjud bo'lgan o'zgaruvchi.</li>
+      <li><strong>Block Scope:</strong> jingalak qavslar <code>{}</code> ichidagi o'zgaruvchi (faqat <code>let</code> va <code>const</code> uchun amal qiladi).</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode16')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode16','jsRes16')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode16" contenteditable="true" spellcheck="false">&lt;script&gt;
+  let global = 'Men hamma joyda ko'rinaman';
+  function testScope() {
+    let lokal = 'Men faqat funksiya ichidaman';
+  }
+&lt;/script&gt;
+&lt;p style="color:#cbd5e1;"&gt;Global o'zgaruvchilarni iloji boricha kamroq ishlatish yaxshi odatdir.&lt;/p&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jsRes16"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">🔒 <code>let</code> va <code>const</code> blok sohasiga ega, eski <code>var</code> esa blokdan tashqariga chiqib ketishi mumkin.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Ilg'or</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #17</span>
+    </div>
+    <h2 id="closure" style="color:var(--green-light); margin-top:0; font-size:24px;">Closure (Yopiq Muhit)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Closure — bu ichki funksiyaning o'zini o'rab turgan tashqi funksiyaning o'zgaruvchilarini hatto tashqi funksiya ishlab bo'lganidan keyin ham eslab qolish qobiliyatidir.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Ma'lumotlarni yopiq (private) saqlash va inkapsulyatsiya qilish uchun ishlatiladi.</li>
+      <li>Hisoblagichlar (counter), zavod funksiyalari aynan closure ustiga quriladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode17')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode17','jsRes17')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode17" contenteditable="true" spellcheck="false">&lt;script&gt;
+  function hisoblagichYarat() {
+    let son = 0;
+    return function() {
+      son++;
+      return son;
+    };
+  }
+  const hisobla = hisoblagichYarat();
+&lt;/script&gt;
+&lt;button onclick="alert('Joriy son: ' + hisobla())" style="background:#04AA6D; color:white; border:none; padding:8px 14px; border-radius:4px; cursor:pointer;"&gt;
+  Closure Hisoblagichni Bosish
+&lt;/button&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jsRes17"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">🌟 Closure dasturlash suhbatlarida (job interviews) eng ko'p so'raladigan #1 savol hisoblanadi!</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Ilg'or</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #18</span>
+    </div>
+    <h2 id="hof" style="color:var(--green-light); margin-top:0; font-size:24px;">Higher-Order Functions</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Boshqa bir funksiyani parametr sifatida qabul qiluvchi yoki o'zidan yangi funksiya qaytaruvchi funksiyalar Oliy darajali (Higher-Order) funksiyalar deyiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Funksional dasturlashning asosiy poydevoridir.</li>
+      <li>Masalan: <code>setTimeout</code>, <code>map</code>, <code>filter</code>, <code>addEventListener</code> barchasi Higher-Order funksiyalardir.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode18')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode18','jsRes18')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode18" contenteditable="true" spellcheck="false">&lt;script&gt;
+  function amaliyot(a, b, harakat) {
+    return harakat(a, b);
+  }
+  const kopaytirish = (x, y) =&gt; x * y;
+&lt;/script&gt;
+&lt;button onclick="alert('Natija: ' + amaliyot(6, 7, kopaytirish))" style="background:#3b82f6; color:white; border:none; padding:8px 14px; border-radius:4px; cursor:pointer;"&gt;
+  Funksiyani uzatish
+&lt;/button&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jsRes18"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 JavaScriptda funksiyalarga birinchi darajali fuqaro (First-Class Citizens) kabi qaraladi — ularni o'zgaruvchiga tenglash, parametr sifatida uzatish mumkin.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Massivlar</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #19</span>
+    </div>
+    <h2 id="array" style="color:var(--green-light); margin-top:0; font-size:24px;">Massivlar (Arrays) Asoslari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Massiv — bu bir nechta qiymatlarni bitta o'zgaruvchi ichida tartiblangan ro'yxat ko'rinishida saqlash vositasidir.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Massivlar to'rtburchak qavsda yoziladi: <code>const mevalar = ['Olma', 'Anor', 'Boran'];</code></li>
+      <li>Elementlar 0 dan boshlab indekslanadi (<code>mevalar[0]</code> — birinchi element).</li>
+      <li><code>push()</code> — oxiriga qo'shish, <code>pop()</code> — oxiridagini o'chirish.</li>
+      <li><code>unshift()</code> — boshiga qo'shish, <code>shift()</code> — boshidagini o'chirish.</li>
+      <li><code>length</code> — massivdagi elementlar soni.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode19')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode19','jsRes19')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode19" contenteditable="true" spellcheck="false">&lt;script&gt;
+  const fanlar = ['HTML', 'CSS', 'JS'];
+&lt;/script&gt;
+&lt;button onclick="alert('Fanlar: ' + fanlar.join(', ') + '\nJami: ' + fanlar.length + ' ta')" style="background:#04AA6D; color:white; border:none; padding:8px 14px; border-radius:4px; cursor:pointer;"&gt;
+  Massivni ko'rish
+&lt;/button&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jsRes19"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 Bitta massiv ichida turli xil ma'lumot turlarini (son, matn, obyekt) aralashtirib saqlash ham mumkin.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Massivlar</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #20</span>
+    </div>
+    <h2 id="array-methods" style="color:var(--green-light); margin-top:0; font-size:24px;">Massiv Metodlari: map / filter / reduce</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Massivlar bilan ishlashda for tsikllarini butunlay o'rnini bosuvchi zamonaviy va kuchli metodlar.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>map():</code> har bir elementni o'zgartirib yangi massiv hosil qiladi.</li>
+      <li><code>filter():</code> shartga mos keladigan elementlarni saralab yangi massivga oladi.</li>
+      <li><code>reduce():</code> butun massivni bitta umumiy qiymatga (masalan, yig'indiga) aylantiradi.</li>
+      <li><code>find():</code> shartga mos kelgan birinchi elementni qaytaradi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode20')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode20','jsRes20')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode20" contenteditable="true" spellcheck="false">&lt;script&gt;
+  const sonlar = [1, 2, 3, 4, 5];
+  const juftlar = sonlar.filter(s =&gt; s % 2 === 0); // [2, 4]
+  const ikkiBarobar = sonlar.map(s =&gt; s * 2); // [2, 4, 6, 8, 10]
+&lt;/script&gt;
+&lt;button onclick="alert('Juft sonlar: ' + juftlar.join(', '))" style="background:#3b82f6; color:white; border:none; padding:8px 14px; border-radius:4px; cursor:pointer;"&gt;
+  Filter natijasini ko'rish
+&lt;/button&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jsRes20"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">🚀 Ushbu metodlar asl massivni o'zgartirmaydi (immutable), balki yangi toza massiv qaytaradi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">ES6</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #21</span>
+    </div>
+    <h2 id="spread" style="color:var(--green-light); margin-top:0; font-size:24px;">Spread va Rest Operatorlari (...)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Uchta nuqta (<code>...</code>) yordamida massiv va obyektlarni yoyish (spread) yoki yig'ish (rest) amallari.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><strong>Spread:</strong> elementlarni ochib sochib yuborish. <code>const yangi = [...eski1, ...eski2];</code></li>
+      <li><strong>Rest:</strong> cheksiz miqdordagi argumentlarni bitta massivga yig'ib olish: <code>function yigindi(...sonlar)</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode21')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode21','jsRes21')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode21" contenteditable="true" spellcheck="false">&lt;script&gt;
+  const noutbuklar = ['MacBook', 'Lenovo'];
+  const barcha = [...noutbuklar, 'Asus', 'HP'];
+&lt;/script&gt;
+&lt;button onclick="alert(barcha.join(' - '))" style="background:#1e293b; color:#fff; border:1px solid #475569; padding:8px 14px; border-radius:4px; cursor:pointer;"&gt;
+  Spread operatori
+&lt;/button&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jsRes21"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Massiv yoki obyektni xotirada chuqur ko'chirish (clone qilish) ning eng oson yo'li: <code>const nusxa = {...original};</code></div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">ES6</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #22</span>
+    </div>
+    <h2 id="destructuring" style="color:var(--green-light); margin-top:0; font-size:24px;">Destructuring (Qismlarga Ajratish)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Massiv yoki obyekt ichidagi qiymatlarni tez va qulay tarzda alohida o'zgaruvchilarga ajratib olish usuli.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Massiv destructuring: <code>const [birinchi, ikkinchi] = [10, 20];</code></li>
+      <li>Obyekt destructuring: <code>const {ism, yosh} = {ism: 'Ali', yosh: 20};</code></li>
+      <li>Kodni bir necha satrlardan bitta satrga qisqartiradi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode22')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode22','jsRes22')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode22" contenteditable="true" spellcheck="false">&lt;script&gt;
+  const user = { username: 'dilshod', role: 'admin' };
+  const { username, role } = user;
+&lt;/script&gt;
+&lt;p style="color:#04AA6D; font-weight:bold;"&gt;username: ${username}, role: ${role}&lt;/p&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jsRes22"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">✨ React dasturchilar useState va prop larni aynan shu destructuring orqali qabul qilishadi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Obyektlar</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #23</span>
+    </div>
+    <h2 id="object" style="color:var(--green-light); margin-top:0; font-size:24px;">Obyektlar (Objects)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Obyekt — bu ma'lumotlarni kalit-qiymat (key-value) juftliklari ko'rinishida saqlaydigan tuzilma.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Sintaksis: <code>const mashina = { brend: 'Tesla', model: 'Model 3', yil: 2024 };</code></li>
+      <li>Nuqta orqali o'qish: <code>mashina.brend</code>.</li>
+      <li>Qavs orqali o'qish: <code>mashina['model']</code>.</li>
+      <li>Yangi xususiyat qo'shish: <code>mashina.rang = 'oq';</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode23')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode23','jsRes23')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode23" contenteditable="true" spellcheck="false">&lt;script&gt;
+  const telefon = {
+    nomi: 'iPhone 15',
+    xotira: '256GB',
+    narx: 900
+  };
+&lt;/script&gt;
+&lt;button onclick="alert('Telefon: ' + telefon.nomi + ' | Narxi: $' + telefon.narx)" style="background:#04AA6D; color:white; border:none; padding:8px 14px; border-radius:4px; cursor:pointer;"&gt;
+  Obyekt ma'lumotini ko'rish
+&lt;/button&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jsRes23"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 Real veb ilovalarda serverdan keladigan barcha ma'lumotlar aynan obyektlar va massivlar shaklida bo'ladi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Obyektlar</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #24</span>
+    </div>
+    <h2 id="methods" style="color:var(--green-light); margin-top:0; font-size:24px;">Obyekt Metodlari va Object Sinflari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Obyekt ichida funksiya yozilsa, u metod deb ataladi. Shuningdek, obyektlarni boshqarish uchun maxsus global metodlar mavjud.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>Object.keys(obj):</code> obyektning barcha kalitlarini massiv qilib beradi.</li>
+      <li><code>Object.values(obj):</code> barcha qiymatlarini massiv qilib beradi.</li>
+      <li><code>Object.entries(obj):</code> kalit va qiymatlar juftliklarini qaytaradi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode24')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode24','jsRes24')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode24" contenteditable="true" spellcheck="false">&lt;script&gt;
+  const talaba = {
+    ism: 'Sardor',
+    salomBer: function() {
+      return 'Salom, mening ismim ' + this.ism;
     }
-    
-    const foydalanuvchi = await javob.json();
-    console.log(foydalanuvchi.name);
-    return foydalanuvchi;
-  } catch (xato) {
-    console.error('So'rov xatosi:', xato.message);
+  };
+&lt;/script&gt;
+&lt;button onclick="alert(talaba.salomBer())" style="background:#3b82f6; color:white; border:none; padding:8px 14px; border-radius:4px; cursor:pointer;"&gt;
+  Obyekt metodini ishlatish
+&lt;/button&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jsRes24"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Metod ichida obyektning o'z ma'lumotlariga murojaat qilish uchun <code>this</code> dan foydalaniladi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Kontekst</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #25</span>
+    </div>
+    <h2 id="this" style="color:var(--green-light); margin-top:0; font-size:24px;">this Kalit So'zi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><code>this</code> — kod ayni damda qaysi ob'ekt kontekstida ishlayotganligini ko'rsatuvchi maxsus ko'rsatkichdir.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Oddiy funksiya ichida <code>this</code> chaqiruvchi obyektga teng.</li>
+      <li>Global doirada <code>this</code> brauzerning <code>window</code> ob'ektiga teng.</li>
+      <li>Hodisada (event listener): hodisa yuz bergan aynan o'sha HTML elementini bildiradi.</li>
+      <li>Arrow funksiyalarda <code>this</code> bog'lanmaydi (tashqi sohadan olinadi).</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode25')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode25','jsRes25')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode25" contenteditable="true" spellcheck="false">&lt;button onclick="this.style.backgroundColor='#ef4444'; this.innerText='Bosildi!';" style="background:#04AA6D; color:white; border:none; padding:8px 14px; border-radius:4px; cursor:pointer;"&gt;
+  Tugmani bosing (this o'zgaradi)
+&lt;/button&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jsRes25"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">⚠️ <code>this</code> tushunchasini to'g'ri boshqarish uchun <code>call()</code>, <code>apply()</code> va <code>bind()</code> metodlari qo'llaniladi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">OOP</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #26</span>
+    </div>
+    <h2 id="class" style="color:var(--green-light); margin-top:0; font-size:24px;">ES6 Classlar (Sinflar)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Obyektga Yo'naltirilgan Dasturlash (OOP) tamoyillari asosida yangi obyektlar andozasini yaratish vositasi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>class Foydalanuvchi { constructor(ism) { this.ism = ism; } }</code></li>
+      <li><code>constructor:</code> yangi nusxa (instance) yaratilganda avtomatik ishlaydigan maxsus metod.</li>
+      <li><code>new</code> operatori orqali yangi obyekt yaratiladi: <code>const u = new Foydalanuvchi('Ali');</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode26')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode26','jsRes26')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode26" contenteditable="true" spellcheck="false">&lt;script&gt;
+  class Inson {
+    constructor(ism, yosh) {
+      this.ism = ism;
+      this.yosh = yosh;
+    }
+    tanishtir() {
+      return 'Men ' + this.ism + 'man, yoshim ' + this.yosh + ' da.';
+    }
   }
-}
-
-// Parallel so'rovlar
-const [users, posts] = await Promise.all([
-  fetch('/api/users').then(r => r.json()),
-  fetch('/api/posts').then(r => r.json())
-]);</pre>
+  const ali = new Inson('Ali', 21);
+&lt;/script&gt;
+&lt;button onclick="alert(ali.tanishtir())" style="background:#04AA6D; color:white; border:none; padding:8px 14px; border-radius:4px; cursor:pointer;"&gt;
+  Class metodini chaqirish
+&lt;/button&gt;</pre>
+      </div>
     </div>
+    <div class="result-box" id="jsRes26"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 JavaScriptdagi classlar sintaktik qulaylik (syntactic sugar) bo'lib, ular ostida eski prototipik merosxo'rlik ishlaydi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">OOP</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #27</span>
+    </div>
+    <h2 id="inheritance" style="color:var(--green-light); margin-top:0; font-size:24px;">Meros Olish (Inheritance - extends)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Bitta asosiy sinf xususiyatlarini yangi sinfga meros qilib o'tkazish.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>extends:</code> meros olish kalit so'zi.</li>
+      <li><code>super():</code> ota (parent) sinfning konstruktorini ishga tushirish.</li>
+      <li>Kodni qayta yozmasdan, mavjud kodni kengaytirish imkonini beradi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode27')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode27','jsRes27')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode27" contenteditable="true" spellcheck="false">&lt;script&gt;
+  class Hayvon {
+    constructor(nom) { this.nom = nom; }
+    ovozBer() { return this.nom + ' ovoz chiqarmoqda'; }
+  }
+  class Kuchuk extends Hayvon {
+    vovulla() { return this.nom + ': Vov-vov!'; }
+  }
+  const it = new Kuchuk('Bobik');
+&lt;/script&gt;
+&lt;button onclick="alert(it.vovulla())" style="background:#3b82f6; color:white; border:none; padding:8px 14px; border-radius:4px; cursor:pointer;"&gt;
+  Merosxo'r sinfni sinash
+&lt;/button&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jsRes27"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Bolalar sinfi ota sinfning barcha metodlariga ega bo'ladi va ustiga o'zining yangi metodlarini qo'shadi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Chuqurlashtirilgan</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #28</span>
+    </div>
+    <h2 id="prototype" style="color:var(--green-light); margin-top:0; font-size:24px;">Prototiplar (Prototypes)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">JavaScriptda har bir ob'ekt o'zining ichki yashirin prototipiga (prototype) ega bo'lib, undan metod va xususiyatlarni meros qilib oladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Massivdagi <code>.push()</code> yoki <code>.pop()</code> metodlari aynan <code>Array.prototype</code> da joylashgan.</li>
+      <li>Prototype zanjiri (chain): ob'ektdan narsa qidirilganda, topilmaguncha uning prototipiga qarab yuqoriga chiqib boradi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode28')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode28','jsRes28')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode28" contenteditable="true" spellcheck="false">&lt;p style="color:#cbd5e1; font-family:monospace;"&gt;
+  const massiv = [1, 2];&lt;br&gt;
+  massiv.__proto__ === Array.prototype (true!)
+&lt;/p&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jsRes28"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">⚡ Prototip orqali metod qo'shish kompyuter xotirasini tejaydi, chunki metod har bir nusxada qayta yaratilmaydi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">DOM</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #29</span>
+    </div>
+    <h2 id="dom" style="color:var(--green-light); margin-top:0; font-size:24px;">DOM Nima? (Document Object Model)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">DOM — bu HTML hujjatining brauzer tomonidan tuzilgan obyektlar daraxtidir. JavaScript DOM orqali sahifadagi har qanday elementni o'zgartira oladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Butun sahifa <code>document</code> nomli katta obyekt orqali taqdim etiladi.</li>
+      <li>JS yordamida teglarni o'chirish, yangisini yaratish, rangini va matnini o'zgartirish mumkin.</li>
+      <li>Zamonaviy dinamik veb-saytlar butunlay DOM manipulyatsiyasi asosida ishlaydi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode29')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode29','jsRes29')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode29" contenteditable="true" spellcheck="false">&lt;p id="domMisol" style="color:#f59e0b; font-weight:bold;"&gt;Men DOM elementiman!&lt;/p&gt;
+&lt;button onclick="document.getElementById('domMisol').innerText = 'Matn DOM orqali yangilandi!';" style="background:#1e293b; color:#fff; border:1px solid #475569; padding:6px 12px; border-radius:4px; cursor:pointer;"&gt;
+  DOM orqali o'zgartirish
+&lt;/button&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jsRes29"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">🌟 DOM — bu HTML va JavaScript o'rtasidagi ko'prikdir.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">DOM</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #30</span>
+    </div>
+    <h2 id="select" style="color:var(--green-light); margin-top:0; font-size:24px;">Elementlarni Tanlash (Selecting Elements)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Sahifadagi kerakli elementni topish va uni o'zgaruvchiga olish metodlari.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>document.getElementById('id'):</code> ID bo'yicha tezkor topish.</li>
+      <li><code>document.querySelector('.sinf'):</code> CSS selektori bo'yicha birinchi mos kelgan elementni topish (eng qulay).</li>
+      <li><code>document.querySelectorAll('p'):</code> mos kelgan BARCHA elementlarni ro'yxat (NodeList) qilib beradi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode30')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode30','jsRes30')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode30" contenteditable="true" spellcheck="false">&lt;script&gt;
+  // const sarlavha = document.querySelector('h2');
+  // const tugmalar = document.querySelectorAll('.btn');
+&lt;/script&gt;
+&lt;p style="color:#cbd5e1;"&gt;&lt;code&gt;querySelector&lt;/code&gt; universal bo'lib, har qanday murakkab CSS selektorni qabul qiladi.&lt;/p&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jsRes30"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Zamonaviy frontend dasturchilar deyarli faqat <code>querySelector</code> va <code>querySelectorAll</code> ishlatishadi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">DOM</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #31</span>
+    </div>
+    <h2 id="manipulate" style="color:var(--green-light); margin-top:0; font-size:24px;">DOM Manipulyatsiyasi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Topilgan elementlarning matnini, HTML tuzilishini, CSS stillarini va atributlarini o'zgartirish.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>element.textContent = '...':</code> xavfsiz toza matn kiritish.</li>
+      <li><code>element.innerHTML = '&lt;b&gt;...&lt;/b&gt;':</code> ichiga yangi HTML teglari joylash.</li>
+      <li><code>element.style.color = 'red':</code> to'g'ridan-to'g'ri stil berish.</li>
+      <li><code>element.classList.add('faol')</code> va <code>.remove('faol')</code>: sinflarni qo'shish va olib tashlash.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode31')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode31','jsRes31')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode31" contenteditable="true" spellcheck="false">&lt;div id="quti" style="padding:10px; background:#1e293b; color:#fff; border-radius:6px; margin-bottom:8px;"&gt;
+  Oddiy holat
+&lt;/div&gt;
+&lt;button onclick="
+  const q = document.getElementById('quti');
+  q.style.background = '#04AA6D';
+  q.innerHTML = '&lt;strong&gt;Ajoyib! Rang va matn o\'zgardi!&lt;/strong&gt;';
+" style="background:#3b82f6; color:white; border:none; padding:6px 12px; border-radius:4px; cursor:pointer;"&gt;
+  Manipulyatsiya qilish
+&lt;/button&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jsRes31"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">🔒 Foydalanuvchi kiritgan begona matnlarni chiqarishda hech qachon <code>innerHTML</code> ishlatmang, aks holda XSS xakerlik hujumi xavfi tug'iladi. Har doim <code>textContent</code> ishlating.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Hodisalar</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #32</span>
+    </div>
+    <h2 id="events" style="color:var(--green-light); margin-top:0; font-size:24px;">Hodisalarni Tinglash (addEventListener)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Foydalanuvchi sahifada nima ish qilsa (bosish, yozish, surish), dastur uni 'eshitib' (tinglab) turadi va mos javob qaytaradi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Sintaksis: <code>element.addEventListener('hodisa_nomi', funksiya);</code></li>
+      <li>Bitta elementga bir nechta har xil hodisalar ulash mumkin.</li>
+      <li>HTML ichiga inline onclick yozishdan ko'ra ancha toza va professional yondashuv.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode32')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode32','jsRes32')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode32" contenteditable="true" spellcheck="false">&lt;button id="tinglovchiTugma" style="background:#04AA6D; color:white; border:none; padding:8px 16px; border-radius:6px; cursor:pointer;"&gt;
+  addEventListener orqali ishlaydi
+&lt;/button&gt;
+&lt;script&gt;
+  document.getElementById('tinglovchiTugma').addEventListener('click', function() {
+    alert('Hodisa muvaffaqiyatli ushlandi!');
+  });
+&lt;/script&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jsRes32"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">✨ Hodisani bekor qilish uchun <code>removeEventListener()</code> ishlatiladi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Hodisalar</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #33</span>
+    </div>
+    <h2 id="event-types" style="color:var(--green-light); margin-top:0; font-size:24px;">Hodisa Turlari (Event Types)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Veb ilovalarda eng ko'p ishlatiladigan foydalanuvchi hodisalari.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><strong>Sichqoncha:</strong> <code>click</code>, <code>dblclick</code>, <code>mouseenter</code>, <code>mouseleave</code>.</li>
+      <li><strong>Klaviatura:</strong> <code>keydown</code>, <code>keyup</code> (bosilgan tugma: <code>e.key</code>).</li>
+      <li><strong>Forma:</strong> <code>submit</code> (yuborish), <code>input</code> (harf yozilganda), <code>change</code> (qiymat o'zgarganda).</li>
+      <li><strong>Oyna:</strong> <code>scroll</code>, <code>resize</code>, <code>DOMContentLoaded</code> (sahifa to'liq yuklanganda).</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode33')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode33','jsRes33')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode33" contenteditable="true" spellcheck="false">&lt;input type="text" id="jonliInput" placeholder="Harf yozib ko'ring..." style="padding:8px; background:#1e293b; color:#fff; border:1px solid #475569; border-radius:4px;"&gt;
+&lt;p id="jonliAks" style="color:#38bdf8; font-weight:bold;"&gt;&lt;/p&gt;
+&lt;script&gt;
+  document.getElementById('jonliInput').addEventListener('input', function(e) {
+    document.getElementById('jonliAks').innerText = 'Siz yozdingiz: ' + e.target.value;
+  });
+&lt;/script&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jsRes33"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">⚡ Qidiruv maydonlarida har bir harf kiritilganda natijani filtrlab ko'rsatish aynan <code>input</code> hodisasi bilan qilinadi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Hodisalar</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #34</span>
+    </div>
+    <h2 id="bubbling" style="color:var(--green-light); margin-top:0; font-size:24px;">Event Bubbling va stopPropagation</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Hodisa yuz berganda u eng ichki elementdan boshlanib, suv pufakchasi kabi yuqoriga — uning ota elementlariga qarab ko'tariladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Agar tugmani bossangiz, tugmaning, so'ng uni o'rab turgan divning, oxirida body ning click hodisasi ishlab ketadi.</li>
+      <li><code>e.stopPropagation():</code> bu pufakchalanishni to'xtatadi.</li>
+      <li><code>e.preventDefault():</code> brauzerning standart harakatini (masalan, formani qayta yuklashini yoki link bo'yicha sakrashini) bekor qiladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode34')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode34','jsRes34')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode34" contenteditable="true" spellcheck="false">&lt;script&gt;
+  // e.preventDefault() formani sahifani yangilamasdan AJAX yuborishda kerak
+&lt;/script&gt;
+&lt;p style="color:#cbd5e1;"&gt;&lt;code&gt;e.preventDefault()&lt;/code&gt; yozilmasa, har safar formadagi tugma bosilganda sahifa yangilanib ketadi.&lt;/p&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jsRes34"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 Single Page Application (SPA) lar sahifani yangilamasdan ishlashi aynan preventDefault ga tayanadi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Asinxronlik</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #35</span>
+    </div>
+    <h2 id="callback" style="color:var(--green-light); margin-top:0; font-size:24px;">Callback Funksiyalar va Asinxronlik</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">JavaScript bitta oqimli til bo'lib, uzoq davom etadigan operatsiyalarda (fayl yuklash, serverga so'rov) sahifa qotib qolmasligi uchun asinxron callbacklar ishlatiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Callback — boshqa bir funksiyaga argument sifatida uzatilib, ma'lum vaqt o'tgach yoki ish bitgach chaqiriladigan funksiya.</li>
+      <li><code>setTimeout(funksiya, 2000):</code> 2 soniyadan so'ng ishga tushirish.</li>
+      <li><code>setInterval(funksiya, 1000):</code> har 1 soniyada to'xtovsiz takrorlash.</li>
+      <li><strong>Callback Hell:</strong> bir-birining ichiga ketma-ket yozilgan tushunarsiz piramida kod.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode35')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode35','jsRes35')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode35" contenteditable="true" spellcheck="false">&lt;button onclick="
+  this.innerText = 'Kutilmoqda... ⏳';
+  setTimeout(() =&gt; {
+    this.innerText = 'Bajarildi! ✅ (2 soniyadan so\'ng)';
+  }, 2000);
+" style="background:#04AA6D; color:white; border:none; padding:8px 14px; border-radius:4px; cursor:pointer;"&gt;
+  2 soniyali kechikishni sinash
+&lt;/button&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jsRes35"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">⚠️ Callback Hell muammosini hal qilish uchun ES6 da Promise va async/await yaratildi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Asinxronlik</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #36</span>
+    </div>
+    <h2 id="promise" style="color:var(--green-light); margin-top:0; font-size:24px;">Promise (Va'dalar)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Promise — asinxron operatsiyaning kelajakda muvaffaqiyatli (resolve) yoki xato (reject) bilan yakunlanishini ifodalovchi ob'ekt.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Uchta holat: <strong>Pending</strong> (kutilmoqda), <strong>Fulfilled</strong> (bajarildi), <strong>Rejected</strong> (rad etildi).</li>
+      <li><code>.then():</code> muvaffaqiyatli yakunlanganda natijani olish.</li>
+      <li><code>.catch():</code> xatolik yuz berganda uni ushlash.</li>
+      <li><code>.finally():</code> har qanday holatda ham oxirida albatta ishga tushadigan blok.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode36')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode36','jsRes36')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode36" contenteditable="true" spellcheck="false">&lt;script&gt;
+  const meningVadam = new Promise((resolve, reject) =&gt; {
+    let muvaffaqiyat = true;
+    if (muvaffaqiyat) resolve('Hamma ma\'lumotlar keldi!');
+    else reject('Internet uzildi.');
+  });
+&lt;/script&gt;
+&lt;button onclick="meningVadam.then(res =&gt; alert(res));" style="background:#3b82f6; color:white; border:none; padding:8px 14px; border-radius:4px; cursor:pointer;"&gt;
+  Promise ni chaqirish
+&lt;/button&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jsRes36"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">🌟 Serverdan ma'lumot olish bo'yicha barcha zamonaviy kutubxonalar (masalan, Axios, Fetch) aynan Promise qaytaradi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Asinxronlik</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #37</span>
+    </div>
+    <h2 id="async-await" style="color:var(--green-light); margin-top:0; font-size:24px;">async / await (Zamonaviy Asinxron Kod)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Asinxron kodni xuddi oddiy sinxron kod kabi sodda, chiroyli va o'qishga oson ko'rinishda yozish imkonini beruvchi sintaksis.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>async</code> so'zi funksiya oldidan qo'yiladi va u har doim Promise qaytaradi.</li>
+      <li><code>await</code> faqat <code>async</code> funksiya ichida ishlaydi va Promise natijasi kelguncha kod ijrosini kutib turadi.</li>
+      <li>Xatolarni ushlash uchun oddiy <code>try...catch</code> bloklaridan foydalaniladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode37')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode37','jsRes37')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode37" contenteditable="true" spellcheck="false">&lt;script&gt;
+  async function malumotOlish() {
+    return 'Ma\'lumot keldi!';
+  }
+&lt;/script&gt;
+&lt;button onclick="malumotOlish().then(x =&gt; alert(x))" style="background:#04AA6D; color:white; border:none; padding:8px 14px; border-radius:4px; cursor:pointer;"&gt;
+  async funksiyani sinash
+&lt;/button&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jsRes37"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">🚀 Bugungi kunda barcha professional dasturchilar .then() o'rniga aynan <code>async/await</code> sintaksisidan foydalanishadi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">API & Server</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #38</span>
+    </div>
+    <h2 id="fetch" style="color:var(--green-light); margin-top:0; font-size:24px;">Fetch API va Backend bilan Bog'lanish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Brauzerdan turib serverlarga HTTP so'rovlar (GET, POST) yuborish va JSON ma'lumotlarni qabul qilish mexanizmi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>fetch(url)</code> — standart holda GET so'rovi yuboradi.</li>
+      <li><code>response.json()</code> — serverdan kelgan matnni JavaScript obyektiga aylantiradi.</li>
+      <li>Ob-havo, valyuta kurslari, AI javoblari aynan Fetch API orqali tortib olinadi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode38')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode38','jsRes38')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode38" contenteditable="true" spellcheck="false">&lt;button onclick="
+  this.innerText = 'Yuklanmoqda...';
+  fetch('https://jsonplaceholder.typicode.com/todos/1')
+    .then(r =&gt; r.json())
+    .then(data =&gt; {
+      alert('Serverdan javob:\nID: ' + data.id + '\nSarlavha: ' + data.title);
+      this.innerText = 'Qayta olish';
+    });
+" style="background:#1e293b; color:#38bdf8; border:1px solid #38bdf8; padding:8px 14px; border-radius:6px; cursor:pointer;"&gt;
+  Haqiqiy API dan ma'lumot olish
+&lt;/button&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jsRes38"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Saytimizdagi AI Ustoz (W3Bot) ham sizning savollaringizni serverga yuborish uchun aynan <code>fetch('/api/chat', ...)</code> dan foydalanadi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">ES6</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #39</span>
+    </div>
+    <h2 id="template" style="color:var(--green-light); margin-top:0; font-size:24px;">Template Literals (Bek-tiklar ``)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Klaviatura chap yuqori qismidagi qiyshiq qo'shtirnoq (<code>``</code>) orqali matnlar ichiga o'zgaruvchilarni qulay joylashtirish.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Eski noqulay usul: <code>'Salom ' + ism + ', siz ' + yosh + ' dasiz'</code>.</li>
+      <li>Zamonaviy usul: <code>`Salom ${ism}, siz ${yosh} dasiz`</code>.</li>
+      <li>Ko'p qatorli matnlarni (multiline) hech qanday <code>\n</code> siz erkin yozish imkoniyati.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode39')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode39','jsRes39')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode39" contenteditable="true" spellcheck="false">&lt;script&gt;
+  const til = 'JavaScript';
+  const daraja = 'A\'lo';
+  const xabar = `Men ${til} tilini ${daraja} darajada o'rganmoqdaman!`;
+&lt;/script&gt;
+&lt;button onclick="alert(xabar)" style="background:#04AA6D; color:white; border:none; padding:8px 14px; border-radius:4px; cursor:pointer;"&gt;
+  Template Literal Natijasi
+&lt;/button&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jsRes39"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">✨ Matn ichida matematik amallarni ham to'g'ridan-to'g'ri bajarish mumkin: <code>`Narx: ${narx * 1.12} so'm`</code>.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Modullar</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #40</span>
+    </div>
+    <h2 id="modules" style="color:var(--green-light); margin-top:0; font-size:24px;">ES6 Modullar (import va export)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Katta dasturlarni bitta ulkan faylda emas, kichik-kichik mustaqil fayllarga (modullarga) bo'lib dasturlash usuli.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>export const funksiya = ...</code> — fayldan tashqariga chiqarish.</li>
+      <li><code>import { funksiya } from './fayl.js'</code> — boshqa fayldan chaqirib olish.</li>
+      <li>HTML da ulash uchun: <code>&lt;script type="module" src="app.js"&gt;&lt;/script&gt;</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode40')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode40','jsRes40')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode40" contenteditable="true" spellcheck="false">&lt;p style="color:#cbd5e1; font-family:monospace; line-height:1.7;"&gt;
+  // hisob.js faylida:&lt;br&gt;
+  export const qosh = (a, b) =&gt; a + b;&lt;br&gt;&lt;br&gt;
+  // main.js faylida:&lt;br&gt;
+  import { qosh } from './hisob.js';
+&lt;/p&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jsRes40"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 Modullar o'zgaruvchilarning global muhitga tushib, boshqa fayllar bilan to'qnashib ketishini 100% oldini oladi.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">ES2020</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #41</span>
+    </div>
+    <h2 id="optional" style="color:var(--green-light); margin-top:0; font-size:24px;">Optional Chaining (?.)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Chuqur ichma-ich joylashgan ob'ekt xususiyatlarini xavfsiz o'qish imkoniyati (xato berib dastur to'xtab qolmaydi).</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Agar qidirilayotgan xususiyat mavjud bo'lmasa, dastur 'Cannot read property of undefined' xatosi bermaydi, balki <code>undefined</code> qaytaradi.</li>
+      <li>Sintaksis: <code>user?.address?.city</code>.</li>
+      <li>Funksiyalarni tekshirishda ham ishlaydi: <code>myFunc?.()</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode41')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode41','jsRes41')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode41" contenteditable="true" spellcheck="false">&lt;script&gt;
+  const profile = { ism: 'Temur' };
+  // Xavfsiz o'qish:
+  const shahar = profile?.manzil?.shahar; // undefined qaytadi, xato bo'lmaydi!
+&lt;/script&gt;
+&lt;p style="color:#38bdf8;"&gt;Optional Chaining dasturni qulashdan saqlaydi.&lt;/p&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jsRes41"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">🚀 Serverdan kelayotgan ma'lumotlarning barcha maydonlari mavjudligiga ishonchingiz komil bo'lmaganda doimo <code>?.</code> ishlating.</div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">ES2020</span>
+      <span style="font-size:12px; color:var(--text2);">JS Mavzu #42</span>
+    </div>
+    <h2 id="nullish" style="color:var(--green-light); margin-top:0; font-size:24px;">Nullish Coalescing (??)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Faqatgina qiymat <code>null</code> yoki <code>undefined</code> bo'lgandagina zaxira (standart) qiymatni qabul qiluvchi mantiqiy operator.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Eski <code>||</code> operatoridan farqi: <code>0</code>, <code>false</code> yoki bo'sh matn <code>""</code> larni qonuniy qiymat deb biladi va ularni o'chirmaydi.</li>
+      <li>Masalan: <code>const ball = userBall ?? 50;</code> (agar userBall 0 bo'lsa, 0 qoladi, 50 bo'lib ketmaydi!).</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">JavaScript &amp; HTML Live Run</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jsCode42')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jsCode42','jsRes42')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jsCode42" contenteditable="true" spellcheck="false">&lt;script&gt;
+  let tezlik = 0;
+  let natijaOR = tezlik || 60; // 60 bo'ladi (noto'g'ri!)
+  let natijaNullish = tezlik ?? 60; // 0 bo'ladi (to'g'ri!)
+&lt;/script&gt;
+&lt;p style="color:#04AA6D; font-family:monospace;"&gt;0 ?? 100 = 0 | null ?? 100 = 100&lt;/p&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jsRes42"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Sozlamalar va hisoblagichlarda 0 yoki bo'sh matnni haqiqiy qiymat sifatida saqlab qolish uchun har doim <code>??</code> dan foydalaning.</div>
+  </section>
+
+  <!-- Amaliy Mashq -->
+  <div class="exercise-box">
+    <div class="exercise-header">
+      <i class="fa-solid fa-puzzle-piece" style="color:#6366f1;"></i>
+      <span>Amaliy Mashq: O'zgarmas Qiymat</span>
+    </div>
+    <p style="font-size:13.5px;color:var(--text2);margin-bottom:10px;">
+      O'zgarmas (konstanta) o'zgaruvchi e'lon qilish uchun to'g'ri kalit so'zni yozing:
+    </p>
+    <div class="exercise-code-container">
+      <input type="text" class="exercise-input" id="exInputJs" placeholder="..." style="width:70px;"/> pi = 3.14;
+    </div>
+    <button class="btn-check-exercise" onclick="checkExercise('exInputJs', 'const', 'exResJs')">
+      <i class="fa-solid fa-circle-check"></i> Javobni tekshirish
+    </button>
+    <div class="exercise-result" id="exResJs"></div>
   </div>
 
-  <h2 id="modules">ES6 Modullar</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">javascript</span>
-      <button class="copy-btn" onclick="copyCode('code8')">📋 Nusxa</button>
-    </div>
-    <div class="code-body">
-      <pre id="code8">// utils.js — eksport
-export const qosh = (a, b) => a + b;
-export const ayir = (a, b) => a - b;
-export default class Hisob {
-  constructor(qiymat = 0) { this.qiymat = qiymat; }
-  qoshish(n) { this.qiymat += n; return this; }
-  natija() { return this.qiymat; }
-}
-
-// main.js — import
-import Hisob, { qosh, ayir } from './utils.js';
-
-console.log(qosh(5, 3));   // 8
-console.log(ayir(10, 4));  // 6
-
-const hisob = new Hisob(100);
-hisob.qoshish(50).qoshish(25);
-console.log(hisob.natija()); // 175</pre>
-    </div>
-  </div>
-
-  <!-- Quiz -->
+  <!-- Test Bo'limi -->
   <div class="quiz-box">
-    <div class="quiz-q">🧠 JavaScript da qayta belgilab bo'lmaydigan o'zgaruvchi e'lon qilish uchun qaysi kalit so'z ishlatiladi?</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'q1')">var</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'q1')">let</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, true, 'q1')">const</div>
-    <div class="quiz-result" id="q1"></div>
+    <div class="quiz-q">🧪 Test: JavaScriptda qaysi biri ham qiymatni, ham ma'lumot turini qat'iy tekshiradi?</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qrJs')">==</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, true, 'qrJs')">===</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qrJs')">=</div>
+    <div class="quiz-result" id="qrJs"></div>
   </div>
 
-  
+  <div class="nav-btns" style="margin-top: 30px;">
+    <a href="css.html" class="btn-prev">← CSS Darsiga Qaytish</a>
+    <a href="typescript.html" class="btn-next">TypeScript Darsiga O'tish →</a>
+  </div>
 
-<div class="nav-btns">
-  <a href="css.html" class="btn-prev">&#8592; CSS</a>
-  <a href="typescript.html" class="btn-next">TypeScript &#8594;</a>
-</div>
+  <div class="note note-blue" style="margin-top: 25px;">
+    📌 <strong>Keyingi qadam:</strong> JavaScriptni mukammal egallagach, uni yanada kuchliroq va qat'iy tipli qiluvchi <a href="typescript.html" style="color:var(--green)">TypeScript</a> yoki frontend freymvorklari (<a href="react.html" style="color:var(--green)">React</a>, <a href="vue.html" style="color:var(--green)">Vue</a>) darslariga o'ting!
+  </div>
 </main>
 <aside class="right-panel">
   <div class="rp-title">📊 Kurs bo'limlari</div>

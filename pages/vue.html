@@ -9,7 +9,7 @@
 </head>
 <body>
 <header class="topbar">
-  <a href="../index.html" class="logo">W3<span>Learn</span></a>
+  <button class="menu-toggle" id="menuToggle" onclick="toggleSidebar()" aria-label="Mavzular" style="background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:6px 10px;border-radius:6px;cursor:pointer;font-size:16px;margin-right:8px;">☰</button><a href="../index.html" class="logo">W3<span>Learn</span></a>
   <nav class="top-nav">
     <span class="cat-label cat-fe">Frontend:</span>
     <a href="html.html">HTML</a><a href="css.html">CSS</a><a href="javascript.html">JavaScript</a>
@@ -110,6 +110,19 @@ const xabar = ref('Salom, Vue 3! 💚');
     <div class="result-box" id="vueRes1"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 Vue.js dunyodagi eng oson va qulay sintaksisga ega bo'lgani uchun yangi boshlovchilar orasida juda mashhur.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="react.html" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← React Darslari
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 Vue.js | 1 / 25
+      </span>
+      <a href="#install" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Vue.js O'rnatish →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -149,6 +162,19 @@ const xabar = ref('Salom, Vue 3! 💚');
     <div class="result-box" id="vueRes2"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">⚡ Vite vositasi tufayli Vue loyihalari bir zumda ishga tushadi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#kirish" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Vue.js Nima?
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 Vue.js | 2 / 25
+      </span>
+      <a href="#struktura" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Vue Loyiha Tuzilmasi →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -186,6 +212,19 @@ app.mount('#app');</pre>
     <div class="result-box" id="vueRes3"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">📌 Barcha komponentlar <code>index.html</code> dagi <code>&lt;div id="app"&gt;&lt;/div&gt;</code> ichiga joylashadi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#install" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Vue.js O'rnatish
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 Vue.js | 3 / 25
+      </span>
+      <a href="#interpolation" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Text Interpolation (Mustache {{ }}) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -219,6 +258,19 @@ app.mount('#app');</pre>
     <div class="result-box" id="vueRes4"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 Qo'shaloq qavs xuddi mo'ylovga (mustache) o'xshagani sababli uni 'Mustache syntax' deb ham atashadi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#struktura" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Vue Loyiha Tuzilmasi
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 Vue.js | 4 / 25
+      </span>
+      <a href="#v-bind" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: v-bind Direktisasi (Qisqartmasi :) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -258,6 +310,19 @@ app.mount('#app');</pre>
     <div class="result-box" id="vueRes5"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">⚡ Professional Vue dasturchilari hech qachon 'v-bind' deb yozishmaydi, faqatgina ikki nuqta <code>:</code> qo'yishadi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#interpolation" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Text Interpolation (Mustache {{ }})
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 Vue.js | 5 / 25
+      </span>
+      <a href="#v-if" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: v-if / v-else-if / v-else →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -295,6 +360,19 @@ app.mount('#app');</pre>
     <div class="result-box" id="vueRes6"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">📌 <code>v-if</code> elementni yashirib qo'ymaydi, balki DOMdan to'liq olib tashlaydi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#v-bind" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: v-bind Direktisasi (Qisqartmasi :)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 Vue.js | 6 / 25
+      </span>
+      <a href="#v-for" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: v-for Direktisasi (Sikllar) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -330,6 +408,19 @@ app.mount('#app');</pre>
     <div class="result-box" id="vueRes7"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">⚠️ <code>:key</code> atributiga hech qachon massiv indeksini bermang, ma'lumotning o'zining unikal ID sini bering.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#v-if" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: v-if / v-else-if / v-else
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 Vue.js | 7 / 25
+      </span>
+      <a href="#v-on" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: v-on Direktisasi (Qisqartmasi @) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -364,6 +455,19 @@ app.mount('#app');</pre>
     <div class="result-box" id="vueRes8"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">✨ <code>@submit.prevent</code> bilan JavaScriptdagi <code>e.preventDefault()</code> ni yozishdan butunlay qutulasiz.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#v-for" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: v-for Direktisasi (Sikllar)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 Vue.js | 8 / 25
+      </span>
+      <a href="#v-model" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: v-model Direktisasi (Ikki tomonlama bog'lanish) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -397,6 +501,19 @@ app.mount('#app');</pre>
     <div class="result-box" id="vueRes9"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🌟 Reactda buning uchun value va onChange yozish kerak, Vueda esa bitta <code>v-model</code> ning o'zi yetarli!</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#v-on" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: v-on Direktisasi (Qisqartmasi @)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 Vue.js | 9 / 25
+      </span>
+      <a href="#v-show" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: v-show Direktisasi →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -432,6 +549,19 @@ app.mount('#app');</pre>
     <div class="result-box" id="vueRes10"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 Agar element sahifada tez-tez ko'rinib-yashirinishi kerak bo'lsa, har doim <code>v-show</code> ishlating.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#v-model" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: v-model Direktisasi (Ikki tomonlama bog'lanish)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 Vue.js | 10 / 25
+      </span>
+      <a href="#ref" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: ref() — Reaktiv Primitivlar →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -469,6 +599,19 @@ function oshir() {
     <div class="result-box" id="vueRes11"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">⚠️ Ko'p yangi boshlovchilar skript ichida <code>.value</code> ni yozishni unutib xatoga yo'l qo'yishadi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#v-show" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: v-show Direktisasi
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 Vue.js | 11 / 25
+      </span>
+      <a href="#reactive" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: reactive() — Reaktiv Obyektlar →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -505,6 +648,19 @@ const profil = reactive({
     <div class="result-box" id="vueRes12"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">📌 Primitivlar uchun <code>ref()</code>, obyektlar guruhi uchun esa <code>reactive()</code> qo'llaniladi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#ref" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: ref() — Reaktiv Primitivlar
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 Vue.js | 12 / 25
+      </span>
+      <a href="#computed" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: computed() — Hisoblangan Qiymatlar →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -543,6 +699,19 @@ const jamiNarx = computed(() =&gt; {
     <div class="result-box" id="vueRes13"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🚀 Murakkab filtrlashlar va savatchadagi umumiy summani hisoblashda computed tengsiz vositadir.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#reactive" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: reactive() — Reaktiv Obyektlar
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 Vue.js | 13 / 25
+      </span>
+      <a href="#watch" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: watch() — Kuzatuvchilar →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -579,6 +748,19 @@ watch(qidiruv, (yangiSoz) =&gt; {
     <div class="result-box" id="vueRes14"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 Qidiruv matni kiritilganda avtomatik serverga qidiruv jo'natish aynan <code>watch</code> bilan qilinadi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#computed" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: computed() — Hisoblangan Qiymatlar
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 Vue.js | 14 / 25
+      </span>
+      <a href="#watcheffect" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: watchEffect() →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -616,6 +798,19 @@ watchEffect(() =&gt; {
     <div class="result-box" id="vueRes15"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">✨ Bir nechta o'zgaruvchilarga bog'liq operatsiyalarda watch o'rniga watchEffect yozish ancha oson.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#watch" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: watch() — Kuzatuvchilar
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 Vue.js | 15 / 25
+      </span>
+      <a href="#component" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Komponent Yaratish va Ishlatish →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -651,6 +846,19 @@ import MeningTugmam from './components/MeningTugmam.vue';
     <div class="result-box" id="vueRes16"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🔒 <code>&lt;style scoped&gt;</code> xususiyati stillarning faqat shu komponent ichida qolishini ta'minlaydi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#watcheffect" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: watchEffect()
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 Vue.js | 16 / 25
+      </span>
+      <a href="#props" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Vue Props →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -692,6 +900,19 @@ defineProps({
     <div class="result-box" id="vueRes17"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">📌 Bolalar komponenti propsni o'zgartira olmaydi (bir tomonlama ma'lumot oqimi).</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#component" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Komponent Yaratish va Ishlatish
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 Vue.js | 17 / 25
+      </span>
+      <a href="#emits" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Emits (Boladan Otaga Xabar) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -727,6 +948,19 @@ function ochirishniYubor() {
     <div class="result-box" id="vueRes18"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 Props ota komponentdan bolaga kelsa, Emits boladan ota komponentga xabar uzatadi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#props" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Vue Props
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 Vue.js | 18 / 25
+      </span>
+      <a href="#slots" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Slots (Slotlar) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -765,6 +999,19 @@ function ochirishniYubor() {
     <div class="result-box" id="vueRes19"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">✨ Slotlar yordamida har qanday kontentni qabul qila oladigan universal modallar yasash mumkin.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#emits" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Emits (Boladan Otaga Xabar)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 Vue.js | 19 / 25
+      </span>
+      <a href="#provide" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: provide / inject (Chuqur Uzatish) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -798,6 +1045,19 @@ function ochirishniYubor() {
     <div class="result-box" id="vueRes20"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🚀 Reactdagi Context API ning Vuedagi aniq va qulay muqobili.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#slots" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Slots (Slotlar)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 Vue.js | 20 / 25
+      </span>
+      <a href="#router" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Vue Router (Sahifalararo O'tish) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -835,6 +1095,19 @@ function ochirishniYubor() {
     <div class="result-box" id="vueRes21"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 Single Page Application (SPA) yaratishda Vue Router ajralmas qismdir.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#provide" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: provide / inject (Chuqur Uzatish)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 Vue.js | 21 / 25
+      </span>
+      <a href="#pinia" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Pinia (Zamonaviy Global State) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -873,6 +1146,19 @@ export const useSavatStore = defineStore('savat', {
     <div class="result-box" id="vueRes22"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🌟 Pinia Redux va Vuex ga qaraganda 5 barobar soddaroq va qulayroqdir.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#router" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Vue Router (Sahifalararo O'tish)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 Vue.js | 22 / 25
+      </span>
+      <a href="#lifecycle" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Lifecycle Hooks (Hayotiy Sikl) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -913,6 +1199,19 @@ onUnmounted(() =&gt; {
     <div class="result-box" id="vueRes23"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">📌 Serverdan ma'lumotlarni yuklab olishni doimo <code>onMounted</code> ichida bajaring.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#pinia" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Pinia (Zamonaviy Global State)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 Vue.js | 23 / 25
+      </span>
+      <a href="#composables" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Composables (Qayta Ishlatiluvchi Mantiq) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -949,6 +1248,19 @@ export function useHisoblagich() {
     <div class="result-box" id="vueRes24"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🚀 Vue 3 ning eng kuchli jihati aynan mana shu Composables arxitekturasidir.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#lifecycle" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Lifecycle Hooks (Hayotiy Sikl)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 Vue.js | 24 / 25
+      </span>
+      <a href="#nuxt" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Nuxt.js ga Kirish →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -980,6 +1292,19 @@ export function useHisoblagich() {
     <div class="result-box" id="vueRes25"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">✨ React uchun Next.js nima bo'lsa, Vue uchun Nuxt.js xuddi shunday qiymatga ega.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#composables" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Composables (Qayta Ishlatiluvchi Mantiq)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 Vue.js | 25 / 25
+      </span>
+      <a href="typescript.html" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi kurs: TypeScript Darslari →
+      </a>
+    </div>
   </section>
 
   <!-- Amaliy Mashq -->

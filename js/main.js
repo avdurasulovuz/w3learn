@@ -51,7 +51,7 @@ function copyCode(id) {
   });
 }
 
-// ── RUN CODE ──
+// ── RUN CODE (HTML, CSS, JS, React, Vue, TS qo'llab-quvvatlaydi) ──
 function runCode(codeId, resultId) {
   const el = document.getElementById(codeId);
   if (!el) return;
@@ -61,10 +61,42 @@ function runCode(codeId, resultId) {
   const iframe = resEl.tagName === 'IFRAME' ? resEl : resEl.querySelector('iframe');
   if (!iframe) return;
 
-  // Clean wrapper with modern typography
   let code = rawCode;
-  if (!code.includes('<html') && !code.includes('<!DOCTYPE')) {
-    code = `<!DOCTYPE html><html><head><meta charset="utf-8"/><style>body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;padding:16px;color:#1e293b;margin:0;line-height:1.6;}h1,h2,h3{margin-top:0;color:#0f172a;}hr{border:none;border-top:1px solid #e2e8f0;margin:16px 0;}</style></head><body>${code}</body></html>`;
+  
+  // React kodlarini aniqlash va jonli Babel orqali ishga tushirish
+  if ((code.includes('useState') || code.includes('useEffect') || code.includes('React') || (code.includes('function ') && code.includes('return') && code.includes('<'))) && !code.includes('<!DOCTYPE') && !code.includes('<html')) {
+    let compMatch = rawCode.match(/(?:function|const)\s+([A-Z][a-zA-Z0-9_]*)/);
+    let compName = compMatch ? compMatch[1] : 'App';
+    code = `<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8"/>
+  <script src="https://unpkg.com/react@18/umd/react.development.js"><\/script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js"><\/script>
+  <script src="https://unpkg.com/@babel/standalone/babel.min.js"><\/script>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; padding: 16px; margin: 0; background: #0b0f19; color: #f8fafc; line-height: 1.6; }
+    button { background: #04AA6D; color: white; border: none; padding: 8px 16px; border-radius: 6px; cursor: pointer; font-size: 14px; font-weight: 600; margin: 4px; }
+    button:hover { background: #038f5b; }
+    input { background: #1e293b; color: white; border: 1px solid #334155; padding: 8px 12px; border-radius: 6px; font-size: 14px; margin: 4px; }
+    .card { background: #1e293b; border-radius: 8px; padding: 16px; margin: 8px 0; border: 1px solid rgba(255,255,255,0.08); }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel">
+    const { useState, useEffect, useRef, useMemo, useCallback, useContext, createContext } = React;
+    ${rawCode.replace(/export\s+default\s+/g, '')}
+    try {
+      ReactDOM.createRoot(document.getElementById('root')).render(<${compName} />);
+    } catch(err) {
+      document.getElementById('root').innerHTML = '<div style="color:#ef4444;font-family:monospace;padding:10px;">⚠️ Xatolik: ' + err.message + '</div>';
+    }
+  <\/script>
+</body>
+</html>`;
+  } else if (!code.includes('<html') && !code.includes('<!DOCTYPE')) {
+    code = `<!DOCTYPE html><html><head><meta charset="utf-8"/><style>body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;padding:16px;color:#1e293b;margin:0;line-height:1.6;}h1,h2,h3{margin-top:0;color:#0f172a;}hr{border:none;border-top:1px solid #e2e8f0;margin:16px 0;}button{cursor:pointer;}</style></head><body>${code}</body></html>`;
   }
 
   const doc = iframe.contentDocument || iframe.contentWindow.document;

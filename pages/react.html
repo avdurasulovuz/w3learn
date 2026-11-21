@@ -11,7 +11,7 @@
 </head>
 <body>
 <header class="topbar">
-  <a href="../index.html" class="logo">W3<span>Learn</span></a>
+  <button class="menu-toggle" id="menuToggle" onclick="toggleSidebar()" aria-label="Mavzular" style="background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:6px 10px;border-radius:6px;cursor:pointer;font-size:16px;margin-right:8px;">☰</button><a href="../index.html" class="logo">W3<span>Learn</span></a>
   <nav class="top-nav">
     <span class="cat-label cat-fe">Frontend:</span>
     <a href="html.html">HTML</a><a href="css.html">CSS</a><a href="javascript.html">JavaScript</a>
@@ -115,6 +115,19 @@ function Salom() {
     <div class="result-box" id="reactRes1"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 Dunyodagi eng mashhur saytlar: Instagram, Facebook, Netflix, Airbnb aynan React ustiga qurilgan.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="javascript.html" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← JavaScript Darslari
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 React | 1 / 30
+      </span>
+      <a href="#install" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: React O'rnatish (Vite va CRA) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -154,6 +167,19 @@ function Salom() {
     <div class="result-box" id="reactRes2"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">⚡ Vite bilan loyihani ishga tushirish atigi 300 millisekund vaqt oladi!</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#kirish" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: React Nima?
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 React | 2 / 30
+      </span>
+      <a href="#struktura" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: React Loyiha Tuzilmasi →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -196,6 +222,19 @@ ReactDOM.createRoot(document.getElementById('root')).render(
     <div class="result-box" id="reactRes3"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">📌 Butun React ilovangiz <code>index.html</code> dagi yagona <code>&lt;div id="root"&gt;&lt;/div&gt;</code> ichiga render qilinadi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#install" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: React O'rnatish (Vite va CRA)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 React | 3 / 30
+      </span>
+      <a href="#jsx" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: JSX Nima? (JavaScript XML) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -230,6 +269,19 @@ const element = &lt;h1 className="sarlavha"&gt;Salom, JSX!&lt;/h1&gt;;
     <div class="result-box" id="reactRes4"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 JSX tufayli HTML va JavaScript mantiqini bitta fayl ichida uyg'un holda yozish mumkin bo'ldi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#struktura" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: React Loyiha Tuzilmasi
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 React | 4 / 30
+      </span>
+      <a href="#jsx-syntax" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: JSX Asosiy Qoidalari →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -268,6 +320,19 @@ const element = &lt;h1 className="sarlavha"&gt;Salom, JSX!&lt;/h1&gt;;
     <div class="result-box" id="reactRes5"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">⚠️ <code>&lt;&gt;...&lt;/&gt;</code> (React Fragment) DOMga ortiqcha div qo'shmasdan elementlarni guruhlash imkonini beradi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#jsx" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: JSX Nima? (JavaScript XML)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 React | 5 / 30
+      </span>
+      <a href="#jsx-ifoda" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: JSX da JavaScript Ifodalari ({ }) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -308,6 +373,19 @@ const element = &lt;h1 className="sarlavha"&gt;Salom, JSX!&lt;/h1&gt;;
     <div class="result-box" id="reactRes6"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">✨ Jingalak qavs ichida if/else yozib bo'lmaydi, lekin ternar operator (<code>? :</code>) yoki <code>&amp;&amp;</code> bemalol ishlaydi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#jsx-syntax" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: JSX Asosiy Qoidalari
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 React | 6 / 30
+      </span>
+      <a href="#jsx-atribut" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: JSX Atributlari (className va htmlFor) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -341,6 +419,19 @@ const element = &lt;h1 className="sarlavha"&gt;Salom, JSX!&lt;/h1&gt;;
     <div class="result-box" id="reactRes7"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">📌 Inline CSSda ikkita jingalak qavs <code>{{ }}</code> bo'lishi sababi: tashqi qavs JSX ifodasi, ichkisi esa oddiy JS ob'ektidir.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#jsx-ifoda" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: JSX da JavaScript Ifodalari ({ })
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 React | 7 / 30
+      </span>
+      <a href="#funksional" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Funksional Komponentlar →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -377,6 +468,19 @@ const element = &lt;h1 className="sarlavha"&gt;Salom, JSX!&lt;/h1&gt;;
     <div class="result-box" id="reactRes8"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">⚠️ Agar komponent nomini kichik harf bilan boshlasangiz (masalan, <code>myComponent</code>), React uni oddiy HTML tegi deb o'ylab xato beradi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#jsx-atribut" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: JSX Atributlari (className va htmlFor)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 React | 8 / 30
+      </span>
+      <a href="#class-comp" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Class Komponentlar (Eski Uslub) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -413,6 +517,19 @@ class Salom extends React.Component {
     <div class="result-box" id="reactRes9"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 Yangi React loyihalaringizda faqat Funksional Komponentlar va Hooklardan foydalaning.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#funksional" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Funksional Komponentlar
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 React | 9 / 30
+      </span>
+      <a href="#props" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Props (Parametrlar) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -453,6 +570,19 @@ class Salom extends React.Component {
     <div class="result-box" id="reactRes10"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">✨ Props yordamida bitta komponentni yuzlab turli xil ma'lumotlar bilan qayta-qayta ishlatish mumkin.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#class-comp" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Class Komponentlar (Eski Uslub)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 React | 10 / 30
+      </span>
+      <a href="#children" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Children Props →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -493,6 +623,19 @@ class Salom extends React.Component {
     <div class="result-box" id="reactRes11"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 <code>children</code> Reactdagi eng moslashuvchan qoliplash (composition) vositasidir.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#props" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Props (Parametrlar)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 React | 11 / 30
+      </span>
+      <a href="#default-props" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Default Props (Standart Parametrlar) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -527,6 +670,19 @@ class Salom extends React.Component {
     <div class="result-box" id="reactRes12"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">📌 Standart qiymatlar komponentingizni xavfsiz va ishonchli qiladi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#children" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Children Props
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 React | 12 / 30
+      </span>
+      <a href="#usestate" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: useState Hook (Holat Boshqaruvi) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -570,6 +726,19 @@ function Hisoblagich() {
     <div class="result-box" id="reactRes13"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🌟 Reactning sehri aynan shu yerda: ma'lumot o'zgarsa, interfeys bir zumda o'z-o'zidan yangilanadi!</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#default-props" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Default Props (Standart Parametrlar)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 React | 13 / 30
+      </span>
+      <a href="#useeffect" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: useEffect Hook (Yon Ta'sirlar) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -612,6 +781,19 @@ function Foydalanuvchilar() {
     <div class="result-box" id="reactRes14"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">⚠️ <code>[]</code> bog'liqliklar massivini qo'yishni unutsangiz, cheksiz so'rovlar tsikli yuzaga kelib serveringizni qulatishi mumkin!</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#usestate" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: useState Hook (Holat Boshqaruvi)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 React | 14 / 30
+      </span>
+      <a href="#usecontext" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: useContext Hook (Global Holat) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -647,6 +829,19 @@ function Sahifa() {
     <div class="result-box" id="reactRes15"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 Prop Drilling (propslarni 5 ta qavat pastga behuda uzatish) dardiga eng sodda davo — bu useContext.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#useeffect" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: useEffect Hook (Yon Ta'sirlar)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 React | 15 / 30
+      </span>
+      <a href="#useref" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: useRef Hook →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -692,6 +887,19 @@ function QidiruvMaydoni() {
     <div class="result-box" id="reactRes16"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">📌 <code>useRef</code> qiymati o'zgarganda komponent qayta render bo'lmaydi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#usecontext" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: useContext Hook (Global Holat)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 React | 16 / 30
+      </span>
+      <a href="#usememo" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: useMemo Hook (Optimizatsiya) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -728,6 +936,19 @@ function Saralash({ royxat }) {
     <div class="result-box" id="reactRes17"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">⚡ Har bir narsaga useMemo ishlatavermang, faqatgina haqiqatan og'ir operatsiyalardagina samara beradi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#useref" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: useRef Hook
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 React | 17 / 30
+      </span>
+      <a href="#usecallback" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: useCallback Hook →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -765,6 +986,19 @@ function Asosiy({ id }) {
     <div class="result-box" id="reactRes18"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 <code>useMemo</code> hisoblangan qiymatni saqlasa, <code>useCallback</code> funksiyaning o'zini saqlaydi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#usememo" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: useMemo Hook (Optimizatsiya)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 React | 18 / 30
+      </span>
+      <a href="#custom-hook" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Custom Hooklar (O'z Shaxsiy Hookingiz) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -804,6 +1038,19 @@ function useOynaKengligi() {
     <div class="result-box" id="reactRes19"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🚀 Kodni modulli qilish va DRY qoidasiga amal qilishning eng oliy usuli.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#usecallback" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: useCallback Hook
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 React | 19 / 30
+      </span>
+      <a href="#state" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: State Boshqaruvi Tamoyillari →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -837,6 +1084,19 @@ const jami = narx * miqdor;</pre>
     <div class="result-box" id="reactRes20"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 Kamroq state = kamroq xatolar va tezroq ilova.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#custom-hook" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Custom Hooklar (O'z Shaxsiy Hookingiz)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 React | 20 / 30
+      </span>
+      <a href="#lifting" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Lifting State Up (Holatni Yuqoriga Ko'tarish) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -873,6 +1133,19 @@ const jami = narx * miqdor;</pre>
     <div class="result-box" id="reactRes21"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">📌 Bu Reactdagi ma'lumotlar almashishning eng klassik va xatosiz usulidir.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#state" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: State Boshqaruvi Tamoyillari
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 React | 21 / 30
+      </span>
+      <a href="#context" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Context API →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -913,6 +1186,19 @@ export function AuthProvider({ children }) {
     <div class="result-box" id="reactRes22"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">✨ O'rta miqyosli loyihalar uchun Redux keraksiz, Context API ning o'zi to'liq yetarlidir.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#lifting" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Lifting State Up (Holatni Yuqoriga Ko'tarish)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 React | 22 / 30
+      </span>
+      <a href="#redux" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Redux va Redux Toolkit (RTK) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -950,6 +1236,19 @@ export function AuthProvider({ children }) {
     <div class="result-box" id="reactRes23"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🛒 Katta internet-do'konlar (savatcha, buyurtmalar, to'lovlar) uchun Redux standart hisoblanadi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#context" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Context API
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 React | 23 / 30
+      </span>
+      <a href="#zustand" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Zustand (Zamonaviy Yengil State) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -983,6 +1282,19 @@ export function AuthProvider({ children }) {
     <div class="result-box" id="reactRes24"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🚀 Bugungi kunda ko'plab dasturchilar Redux o'rniga aynan Zustandni tanlamoqda.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#redux" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Redux va Redux Toolkit (RTK)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 React | 24 / 30
+      </span>
+      <a href="#router" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: React Router (Sahifalararo Navigatsiya) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1021,6 +1333,19 @@ export function AuthProvider({ children }) {
     <div class="result-box" id="reactRes25"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 Oddiy <code>&lt;a href="..."&gt;</code> o'rniga doimo <code>&lt;Link to="..."&gt;</code> ishlating, shunda sahifa miltillamasdan bir zumda ochiladi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#zustand" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Zustand (Zamonaviy Yengil State)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 React | 25 / 30
+      </span>
+      <a href="#forms" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Reactda Formalar (Controlled Components) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1065,6 +1390,19 @@ export function AuthProvider({ children }) {
     <div class="result-box" id="reactRes26"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">📌 <code>e.preventDefault()</code> formaning sahifani qayta yuklab yuborishini to'xtatadi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#router" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: React Router (Sahifalararo Navigatsiya)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 React | 26 / 30
+      </span>
+      <a href="#api" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: API Bilan Ishlash (Fetch va Axios) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1105,6 +1443,19 @@ export function AuthProvider({ children }) {
     <div class="result-box" id="reactRes27"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🌟 Foydalanuvchiga har doim yuklanish indikatorini (spinner yoki skeleton) ko'rsatish kerak.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#forms" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Reactda Formalar (Controlled Components)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 React | 27 / 30
+      </span>
+      <a href="#lazy" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Lazy Loading va Code Splitting →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1144,6 +1495,19 @@ export function AuthProvider({ children }) {
     <div class="result-box" id="reactRes28"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">⚡ Foydalanuvchi kirmaydigan admin panel kabi og'ir sahifalarni doimo lazy yuklash lozim.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#api" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: API Bilan Ishlash (Fetch va Axios)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 React | 28 / 30
+      </span>
+      <a href="#testing" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: React Komponentlarini Testlash →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1178,6 +1542,19 @@ export function AuthProvider({ children }) {
     <div class="result-box" id="reactRes29"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🔒 Katta jamoalarda test yozilmagan kod ishlab chiqarishga (production) chiqarilmaydi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#lazy" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Lazy Loading va Code Splitting
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 React | 29 / 30
+      </span>
+      <a href="#nextjs" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Next.js ga Kirish →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1210,6 +1587,19 @@ export function AuthProvider({ children }) {
     <div class="result-box" id="reactRes30"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🚀 Bugungi kunda eng ilg'or React dasturlari aynan Next.js da qurilmoqda.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#testing" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: React Komponentlarini Testlash
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 React | 30 / 30
+      </span>
+      <a href="vue.html" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi kurs: Vue.js Darslari →
+      </a>
+    </div>
   </section>
 
   <!-- Amaliy Mashq -->

@@ -9,7 +9,7 @@
 </head>
 <body>
 <header class="topbar">
-  <a href="../index.html" class="logo">W3<span>Learn</span></a>
+  <button class="menu-toggle" id="menuToggle" onclick="toggleSidebar()" aria-label="Mavzular" style="background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:6px 10px;border-radius:6px;cursor:pointer;font-size:16px;margin-right:8px;">☰</button><a href="../index.html" class="logo">W3<span>Learn</span></a>
   <nav class="top-nav">
     <span class="cat-label cat-fe">Frontend:</span>
     <a href="html.html">HTML</a><a href="css.html">CSS</a><a href="javascript.html">JavaScript</a>
@@ -108,6 +108,19 @@ console.log(`Dasturchi: ${ism}, Yoshi: ${yosh}`);</pre>
     <div class="result-box" id="tsRes1"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 Brauzerlar TypeScriptni to'g'ridan-to'g'ri tushunmaydi. TypeScript kompilyatori (tsc) uni oddiy JavaScript kodiga o'girib beradi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="vue.html" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Vue.js Darslari
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 TypeScript | 1 / 28
+      </span>
+      <a href="#install" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: O'rnatish va Sozlash →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -143,6 +156,19 @@ console.log(`Dasturchi: ${ism}, Yoshi: ${yosh}`);</pre>
     <div class="result-box" id="tsRes2"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">⚡ Agar kodni har safar qo'lda kompilyatsiya qilishni xohlamasangiz, <code>tsc -w</code> (watch mode) buyrug'ini ishlating.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#kirish" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: TypeScript Nima?
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 TypeScript | 2 / 28
+      </span>
+      <a href="#tsconfig" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: tsconfig.json Fayli →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -181,6 +207,19 @@ console.log(`Dasturchi: ${ism}, Yoshi: ${yosh}`);</pre>
     <div class="result-box" id="tsRes3"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">📌 <code>"strict": true</code> parametri yangi loyihalarda xatolarni minimallashtirish uchun eng tavsiya etilgan qoidadir.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#install" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: O'rnatish va Sozlash
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 TypeScript | 3 / 28
+      </span>
+      <a href="#primitiv" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Primitiv Tiplar (Primitive Types) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -216,6 +255,19 @@ let bepulmi: boolean = true;
     <div class="result-box" id="tsRes4"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">⚠️ Agar noto'g'ri turdagi qiymat berilsa, TypeScript darhol qizil to'lqinli chiziq bilan xatoni ko'rsatadi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#tsconfig" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: tsconfig.json Fayli
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 TypeScript | 4 / 28
+      </span>
+      <a href="#array" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Array va Tuple (Massivlar va Kortejlar) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -251,6 +303,19 @@ let foydalanuvchi: [string, number] = ["Sherzod", 27];
     <div class="result-box" id="tsRes5"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 Tuple funksiyadan bir vaqtning o'zida ikkita har xil turdagi natija qaytarishda juda qulay (React useState aynan tuple qaytaradi).</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#primitiv" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Primitiv Tiplar (Primitive Types)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 TypeScript | 5 / 28
+      </span>
+      <a href="#object" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Object Type (Obyekt Tiplari) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -288,6 +353,19 @@ let foydalanuvchi: [string, number] = ["Sherzod", 27];
     <div class="result-box" id="tsRes6"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">📌 Katta loyihalarda obyekt tiplarini alohida <code>interface</code> yoki <code>type</code> orqali e'lon qilish toza kod yozish qoidasidir.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#array" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Array va Tuple (Massivlar va Kortejlar)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 TypeScript | 6 / 28
+      </span>
+      <a href="#any" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: any va unknown Tiplari →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -323,6 +401,19 @@ if (typeof xavfsiz === "string") {
     <div class="result-box" id="tsRes7"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🛑 <code>any</code> dan iloji boricha qoching! Kodingiz to'la 'any' bo'lsa, TypeScript ishlatishdan ma'no qolmaydi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#object" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Object Type (Obyekt Tiplari)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 TypeScript | 7 / 28
+      </span>
+      <a href="#void" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: void va never Tiplari →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -358,6 +449,19 @@ function xatoTashla(xatolik: string): never {
     <div class="result-box" id="tsRes8"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 Agar funksiyangiz oxirida <code>return</code> bo'lmasa, uning qaytarish turi avtomatik <code>void</code> deb olinadi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#any" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: any va unknown Tiplari
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 TypeScript | 8 / 28
+      </span>
+      <a href="#union" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Union Types (Birlashma Tiplar |) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -395,6 +499,19 @@ chopEt("usr_998");</pre>
     <div class="result-box" id="tsRes9"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">✨ Union tiplar yordamida bitta funksiyani ko'p qirrali qilish mumkin.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#void" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: void va never Tiplari
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 TypeScript | 9 / 28
+      </span>
+      <a href="#intersection" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Intersection Types (Kesishma Tiplar &) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -433,6 +550,19 @@ const yangiMijoz: Mijoz = {
     <div class="result-box" id="tsRes10"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">📌 Turli modullardan kelgan kichik tiplarni bitta katta modelga yig'ishda Intersection tengsizdir.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#union" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Union Types (Birlashma Tiplar |)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 TypeScript | 10 / 28
+      </span>
+      <a href="#interface" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Interface (Interfeyslar) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -472,6 +602,19 @@ const mashina: Avtomobil = {
     <div class="result-box" id="tsRes11"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 Obyektlar uchun TypeScript jamoasi doimo <code>interface</code> dan foydalanishni tavsiya qiladi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#intersection" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Intersection Types (Kesishma Tiplar &)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 TypeScript | 11 / 28
+      </span>
+      <a href="#type-alias" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Type Alias (Tip Taxallusi) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -505,6 +648,19 @@ let joriyRol: FoydalanuvchiRoli = "talaba";
     <div class="result-box" id="tsRes12"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">✨ Literal tiplar (aniq so'zlar to'plami) yaratishda <code>type</code> juda qulay.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#interface" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Interface (Interfeyslar)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 TypeScript | 12 / 28
+      </span>
+      <a href="#optional" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Optional Properties (Ixtiyoriy Maydonlar ?) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -539,6 +695,19 @@ const user1: Profil = { foydalanuvchiNomi: "akbar_dev" }; // To'g'ri</pre>
     <div class="result-box" id="tsRes13"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 Foydalanuvchi profilidagi telefon raqam yoki fotosurat kabi majburiy bo'lmagan ma'lumotlar uchun ishlatiladi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#type-alias" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Type Alias (Tip Taxallusi)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 TypeScript | 13 / 28
+      </span>
+      <a href="#readonly" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Readonly (Faqat O'qish Uchun) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -578,6 +747,19 @@ const config: Konfiguratsiya = {
     <div class="result-box" id="tsRes14"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🔒 Tizim sozlamalari va o'zgarmas bazaviy konfiguratsiyalar uchun readonly majburiydir.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#optional" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Optional Properties (Ixtiyoriy Maydonlar ?)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 TypeScript | 14 / 28
+      </span>
+      <a href="#extends" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: extends (Interfeysni Kengaytirish) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -620,6 +802,19 @@ const boshliq: Admin = {
     <div class="result-box" id="tsRes15"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🚀 Kodni toza saqlash va DRY (Don't Repeat Yourself) tamoyiliga amal qilishning eng to'g'ri yo'li.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#readonly" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Readonly (Faqat O'qish Uchun)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 TypeScript | 15 / 28
+      </span>
+      <a href="#funksiya-tip" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Funksiya Tiplari (Function Types) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -653,6 +848,19 @@ console.log(qosh(15, 25)); // 40</pre>
     <div class="result-box" id="tsRes16"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">📌 TypeScript funksiyaning qaytarish turini o'zi ham mustaqil tahlil qila oladi (Type Inference).</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#extends" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: extends (Interfeysni Kengaytirish)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 TypeScript | 16 / 28
+      </span>
+      <a href="#generics" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Generics (Umumlashgan Tiplar ) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -687,6 +895,19 @@ const matn = birinchisiniOlish&lt;string&gt;(["Salom", "Dunyo"]); // string</pre
     <div class="result-box" id="tsRes17"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🌟 Reactda <code>useState&lt;string&gt;("")</code> yozganingizda aynan Generics dan foydalanasiz!</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#funksiya-tip" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Funksiya Tiplari (Function Types)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 TypeScript | 17 / 28
+      </span>
+      <a href="#overloading" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Function Overloading (Haddan Tashqari Yuklash) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -722,6 +943,19 @@ console.log(birlashtir(50, 50)); // 100</pre>
     <div class="result-box" id="tsRes18"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 Foydalanuvchiga turli xil parametrlar berish imkonini taqdim etuvchi qulay vosita.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#generics" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Generics (Umumlashgan Tiplar )
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 TypeScript | 18 / 28
+      </span>
+      <a href="#class" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: TypeScript Classes (Sinflar) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -765,6 +999,19 @@ const t1 = new Talaba("Javohir", 3);</pre>
     <div class="result-box" id="tsRes19"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">📌 TypeScript sinflari toza JavaScript kodiga (ES6 class yoki ES5 function prototype) kompilyatsiya bo'ladi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#overloading" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Function Overloading (Haddan Tashqari Yuklash)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 TypeScript | 19 / 28
+      </span>
+      <a href="#access" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Access Modifiers (public, private, protected) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -810,6 +1057,19 @@ const hisob = new BankHisobi("Alisher", 5000);
     <div class="result-box" id="tsRes20"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🔒 Ma'lumotlar xavfsizligi va inkapsulyatsiyaning asosi hisoblanadi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#class" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: TypeScript Classes (Sinflar)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 TypeScript | 20 / 28
+      </span>
+      <a href="#abstract" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Abstract Classes (Abstrakt Sinflar) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -848,6 +1108,19 @@ class Tortburchak extends Shakl {
     <div class="result-box" id="tsRes21"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 Barcha bolalar sinflari ma'lum bir metodga ega bo'lishini qat'iy majburlash uchun ishlatiladi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#access" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Access Modifiers (public, private, protected)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 TypeScript | 21 / 28
+      </span>
+      <a href="#implements" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: implements (Interfeysni Qo'llash) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -885,6 +1158,19 @@ class Shofyor implements Haydovchi {
     <div class="result-box" id="tsRes22"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">📌 Arxitektura va API dizaynida interfeys orqali dasturlash eng ilg'or usul sanaladi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#abstract" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Abstract Classes (Abstrakt Sinflar)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 TypeScript | 22 / 28
+      </span>
+      <a href="#decorators" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Decorators (Dekoratorlar @) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -919,6 +1205,19 @@ class Shofyor implements Haydovchi {
     <div class="result-box" id="tsRes23"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">⚡ tsconfig.json faylida <code>"experimentalDecorators": true</code> yoqilgan bo'lishi shart.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#implements" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: implements (Interfeysni Qo'llash)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 TypeScript | 23 / 28
+      </span>
+      <a href="#utility" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Utility Types (Yordamchi Tiplar) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -958,6 +1257,19 @@ type OchiqProfil = Omit&lt;Foydalanuvchi, "parol"&gt;;</pre>
     <div class="result-box" id="tsRes24"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🚀 Utility types kodni takroran yozishdan asraydi va yuzlab qator ortiqcha interfeyslardan xalos qiladi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#decorators" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Decorators (Dekoratorlar @)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 TypeScript | 24 / 28
+      </span>
+      <a href="#conditional" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Conditional Types (Shartli Tiplar) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -989,6 +1301,19 @@ type Test2 = Matnmi&lt;number&gt;; // "Yo'q, boshqa tip"</pre>
     <div class="result-box" id="tsRes25"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 Katta kutubxona va freymvork mualliflari tomonidan murakkab tiplarni loyihalashda ishlatiladi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#utility" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Utility Types (Yordamchi Tiplar)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 TypeScript | 25 / 28
+      </span>
+      <a href="#mapped" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Mapped Types (Akslantirilgan Tiplar) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1020,6 +1345,19 @@ type Test2 = Matnmi&lt;number&gt;; // "Yo'q, boshqa tip"</pre>
     <div class="result-box" id="tsRes26"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">✨ Obyektning barcha maydonlari turlarini bir zumda o'zgartirish uchun ishlatiladi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#conditional" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Conditional Types (Shartli Tiplar)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 TypeScript | 26 / 28
+      </span>
+      <a href="#template-lit" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Template Literal Types →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1049,6 +1387,19 @@ type Xabar = `kurs_${Holat}`; // "kurs_boshlandi" | "kurs_tugadi"</pre>
     <div class="result-box" id="tsRes27"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">📌 UI hodisalari va CSS rang/o'lchamlariga xatolarsiz aniq tiplar berishda juda asqotadi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#mapped" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Mapped Types (Akslantirilgan Tiplar)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 TypeScript | 27 / 28
+      </span>
+      <a href="#modules" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: TypeScript Modullari →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1082,6 +1433,19 @@ type Xabar = `kurs_${Holat}`; // "kurs_boshlandi" | "kurs_tugadi"</pre>
     <div class="result-box" id="tsRes28"><div class="result-label">📺 Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">⚡ <code>import type</code> orqali import qilingan narsalar yakuniy JavaScript faylida butunlay tozalab tashlanadi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#template-lit" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Template Literal Types
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 TypeScript | 28 / 28
+      </span>
+      <a href="bootstrap.html" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi kurs: Bootstrap Darslari →
+      </a>
+    </div>
   </section>
 
   <!-- Amaliy Mashq -->

@@ -12,7 +12,7 @@
 </head>
 <body>
 <header class="topbar">
-  <a href="../index.html" class="logo">W3<span>Learn</span></a>
+  <button class="menu-toggle" id="menuToggle" onclick="toggleSidebar()" aria-label="Mavzular" style="background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:6px 10px;border-radius:6px;cursor:pointer;font-size:16px;margin-right:8px;">☰</button><a href="../index.html" class="logo">W3<span>Learn</span></a>
   <nav class="top-nav">
     <span class="cat-label cat-fe">Frontend:</span>
     <a href="html.html">HTML</a><a href="css.html">CSS</a><a href="javascript.html">JavaScript</a>
@@ -147,6 +147,19 @@
     <div class="result-box" id="jsRes1"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 JavaScript 1995-yilda Brendan Eich tomonidan atigi 10 kunda yaratilgan va dastlab 'Mocha', so'ng 'LiveScript' deb nomlangan.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="css.html" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← CSS Darslari
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 1 / 42
+      </span>
+      <a href="#qoshtish" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: JavaScriptni HTMLga Qo'shish Usullari →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -185,6 +198,19 @@
     <div class="result-box" id="jsRes2"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">⚡ Nega &lt;script&gt; faylini sahifa oxiriga qo'yishadi? Chunki brauzer avval barcha HTML elementlarni yuklab oladi, shundan so'ng JS ularni bemalol topa oladi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#kirish" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: JavaScript Nima?
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 2 / 42
+      </span>
+      <a href="#console" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Brauzer Konsoli (console.log) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -222,6 +248,19 @@
     <div class="result-box" id="jsRes3"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🔍 Klaviatura orqali <code>F12</code> yoki <code>Ctrl + Shift + I</code> tugmalarini bosib istalgan saytning Console bo'limini ochishingiz mumkin.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#qoshtish" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: JavaScriptni HTMLga Qo'shish Usullari
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 3 / 42
+      </span>
+      <a href="#var-let-const" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: O'zgaruvchilar: var / let / const →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -257,6 +296,19 @@
     <div class="result-box" id="jsRes4"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">⚠️ <code>const</code> bilan e'lon qilingan o'zgaruvchiga qayta qiymat berishga urinsangiz, brauzer <code>TypeError: Assignment to constant variable</code> xatosini beradi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#console" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Brauzer Konsoli (console.log)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 4 / 42
+      </span>
+      <a href="#datatypes" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Ma'lumot Turlari (Data Types) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -297,6 +349,19 @@
     <div class="result-box" id="jsRes5"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">📌 <code>typeof null === 'object'</code> — bu JavaScriptning 1995-yildan beri saqlanib qolgan mashhur tarixiy xatoligidir (bug).</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#var-let-const" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: O'zgaruvchilar: var / let / const
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 5 / 42
+      </span>
+      <a href="#typecoercion" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Type Coercion (Turlarni O'zgartirish) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -331,6 +396,19 @@
     <div class="result-box" id="jsRes6"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">⚡ Input maydonidan (input.value) olingan qiymat doimo matn (String) bo'ladi. U bilan hisob-kitob qilishdan oldin <code>Number()</code> yoki <code>+</code> belgisi orqali songa aylantirib oling.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#datatypes" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Ma'lumot Turlari (Data Types)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 6 / 42
+      </span>
+      <a href="#operators" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: JavaScript Operatorlari →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -365,6 +443,19 @@
     <div class="result-box" id="jsRes7"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🛑 Hech qachon <code>==</code> ishlatmang, professional kodda har doim uchta tenglik <code>===</code> qo'llaniladi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#typecoercion" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Type Coercion (Turlarni O'zgartirish)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 7 / 42
+      </span>
+      <a href="#if-else" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Shartli Operatorlar: if / else →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -404,6 +495,19 @@
     <div class="result-box" id="jsRes8"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 Qisqa shartlar uchun Ternary operator kodni juda ixcham qiladi: <code>const status = yosh >= 18 ? 'Katta' : 'Kichik';</code></div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#operators" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: JavaScript Operatorlari
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 8 / 42
+      </span>
+      <a href="#switch" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Switch / Case Operatori →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -443,6 +547,19 @@
     <div class="result-box" id="jsRes9"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">⚠️ Har bir case oxiriga <code>break;</code> qo'yishni unutmang, aks holda dastur boshqa keyslarga ham o'tib ketadi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#if-else" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Shartli Operatorlar: if / else
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 9 / 42
+      </span>
+      <a href="#for" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: For Tsikli (Sikllar) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -480,6 +597,19 @@
     <div class="result-box" id="jsRes10"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">📌 Sikl shartini to'g'ri yozing, aks holda dastur 'abadiy tsikl'ga (infinite loop) tushib, brauzeringizni butunlay qotirib qo'yishi mumkin.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#switch" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Switch / Case Operatori
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 10 / 42
+      </span>
+      <a href="#while" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: While va Do...While Tsikllari →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -516,6 +646,19 @@
     <div class="result-box" id="jsRes11"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 Tsikl ichida hisoblagichni oshirishni (<code>i++</code>) unutsangiz, abadiy sikl yuzaga keladi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#for" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: For Tsikli (Sikllar)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 11 / 42
+      </span>
+      <a href="#break" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Break va Continue Operatorlari →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -553,6 +696,19 @@
     <div class="result-box" id="jsRes12"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">⚡ Ro'yxatdan kerakli element topilgan zahoti <code>break</code> qilsangiz, kompyuter xotirasi va vaqti tejaladi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#while" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: While va Do...While Tsikllari
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 12 / 42
+      </span>
+      <a href="#function" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Funksiyalar (Functions) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -590,6 +746,19 @@
     <div class="result-box" id="jsRes13"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">📌 Agar funksiyada <code>return</code> yozilmasa, u avtomatik tarzda <code>undefined</code> qiymat qaytaradi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#break" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Break va Continue Operatorlari
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 13 / 42
+      </span>
+      <a href="#arrow" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Arrow Functions (O'qsimon Funksiyalar) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -625,6 +794,19 @@
     <div class="result-box" id="jsRes14"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🚀 Zamonaviy React, Vue va Node.js dasturlashda 90% funksiyalar aynan Arrow Function ko'rinishida yoziladi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#function" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Funksiyalar (Functions)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 14 / 42
+      </span>
+      <a href="#params" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Parametrlar va Standart Qiymatlar →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -662,6 +844,19 @@
     <div class="result-box" id="jsRes15"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 Standart qiymatlar funksiyani 'undefined' xatolaridan himoya qiladi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#arrow" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Arrow Functions (O'qsimon Funksiyalar)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 15 / 42
+      </span>
+      <a href="#scope" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Scope (Ko'rinish Sohasi) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -698,6 +893,19 @@
     <div class="result-box" id="jsRes16"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🔒 <code>let</code> va <code>const</code> blok sohasiga ega, eski <code>var</code> esa blokdan tashqariga chiqib ketishi mumkin.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#params" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Parametrlar va Standart Qiymatlar
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 16 / 42
+      </span>
+      <a href="#closure" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Closure (Yopiq Muhit) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -739,6 +947,19 @@
     <div class="result-box" id="jsRes17"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🌟 Closure dasturlash suhbatlarida (job interviews) eng ko'p so'raladigan #1 savol hisoblanadi!</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#scope" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Scope (Ko'rinish Sohasi)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 17 / 42
+      </span>
+      <a href="#hof" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Higher-Order Functions →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -776,6 +997,19 @@
     <div class="result-box" id="jsRes18"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 JavaScriptda funksiyalarga birinchi darajali fuqaro (First-Class Citizens) kabi qaraladi — ularni o'zgaruvchiga tenglash, parametr sifatida uzatish mumkin.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#closure" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Closure (Yopiq Muhit)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 18 / 42
+      </span>
+      <a href="#array" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Massivlar (Arrays) Asoslari →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -813,6 +1047,19 @@
     <div class="result-box" id="jsRes19"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">📌 Bitta massiv ichida turli xil ma'lumot turlarini (son, matn, obyekt) aralashtirib saqlash ham mumkin.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#hof" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Higher-Order Functions
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 19 / 42
+      </span>
+      <a href="#array-methods" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Massiv Metodlari: map / filter / reduce →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -851,6 +1098,19 @@
     <div class="result-box" id="jsRes20"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🚀 Ushbu metodlar asl massivni o'zgartirmaydi (immutable), balki yangi toza massiv qaytaradi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#array" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Massivlar (Arrays) Asoslari
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 20 / 42
+      </span>
+      <a href="#spread" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Spread va Rest Operatorlari (...) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -886,6 +1146,19 @@
     <div class="result-box" id="jsRes21"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 Massiv yoki obyektni xotirada chuqur ko'chirish (clone qilish) ning eng oson yo'li: <code>const nusxa = {...original};</code></div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#array-methods" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Massiv Metodlari: map / filter / reduce
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 21 / 42
+      </span>
+      <a href="#destructuring" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Destructuring (Qismlarga Ajratish) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -920,6 +1193,19 @@
     <div class="result-box" id="jsRes22"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">✨ React dasturchilar useState va prop larni aynan shu destructuring orqali qabul qilishadi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#spread" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Spread va Rest Operatorlari (...)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 22 / 42
+      </span>
+      <a href="#object" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Obyektlar (Objects) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -960,6 +1246,19 @@
     <div class="result-box" id="jsRes23"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">📌 Real veb ilovalarda serverdan keladigan barcha ma'lumotlar aynan obyektlar va massivlar shaklida bo'ladi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#destructuring" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Destructuring (Qismlarga Ajratish)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 23 / 42
+      </span>
+      <a href="#methods" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Obyekt Metodlari va Object Sinflari →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1000,6 +1299,19 @@
     <div class="result-box" id="jsRes24"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 Metod ichida obyektning o'z ma'lumotlariga murojaat qilish uchun <code>this</code> dan foydalaniladi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#object" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Obyektlar (Objects)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 24 / 42
+      </span>
+      <a href="#this" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: this Kalit So'zi →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1033,6 +1345,19 @@
     <div class="result-box" id="jsRes25"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">⚠️ <code>this</code> tushunchasini to'g'ri boshqarish uchun <code>call()</code>, <code>apply()</code> va <code>bind()</code> metodlari qo'llaniladi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#methods" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Obyekt Metodlari va Object Sinflari
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 25 / 42
+      </span>
+      <a href="#class" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: ES6 Classlar (Sinflar) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1077,6 +1402,19 @@
     <div class="result-box" id="jsRes26"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">📌 JavaScriptdagi classlar sintaktik qulaylik (syntactic sugar) bo'lib, ular ostida eski prototipik merosxo'rlik ishlaydi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#this" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: this Kalit So'zi
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 26 / 42
+      </span>
+      <a href="#inheritance" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Meros Olish (Inheritance - extends) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1119,6 +1457,19 @@
     <div class="result-box" id="jsRes27"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 Bolalar sinfi ota sinfning barcha metodlariga ega bo'ladi va ustiga o'zining yangi metodlarini qo'shadi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#class" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: ES6 Classlar (Sinflar)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 27 / 42
+      </span>
+      <a href="#prototype" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Prototiplar (Prototypes) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1151,6 +1502,19 @@
     <div class="result-box" id="jsRes28"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">⚡ Prototip orqali metod qo'shish kompyuter xotirasini tejaydi, chunki metod har bir nusxada qayta yaratilmaydi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#inheritance" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Meros Olish (Inheritance - extends)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 28 / 42
+      </span>
+      <a href="#dom" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: DOM Nima? (Document Object Model) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1184,6 +1548,19 @@
     <div class="result-box" id="jsRes29"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🌟 DOM — bu HTML va JavaScript o'rtasidagi ko'prikdir.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#prototype" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Prototiplar (Prototypes)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 29 / 42
+      </span>
+      <a href="#select" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Elementlarni Tanlash (Selecting Elements) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1218,6 +1595,19 @@
     <div class="result-box" id="jsRes30"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 Zamonaviy frontend dasturchilar deyarli faqat <code>querySelector</code> va <code>querySelectorAll</code> ishlatishadi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#dom" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: DOM Nima? (Document Object Model)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 30 / 42
+      </span>
+      <a href="#manipulate" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: DOM Manipulyatsiyasi →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1258,6 +1648,19 @@
     <div class="result-box" id="jsRes31"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🔒 Foydalanuvchi kiritgan begona matnlarni chiqarishda hech qachon <code>innerHTML</code> ishlatmang, aks holda XSS xakerlik hujumi xavfi tug'iladi. Har doim <code>textContent</code> ishlating.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#select" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Elementlarni Tanlash (Selecting Elements)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 31 / 42
+      </span>
+      <a href="#events" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Hodisalarni Tinglash (addEventListener) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1295,6 +1698,19 @@
     <div class="result-box" id="jsRes32"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">✨ Hodisani bekor qilish uchun <code>removeEventListener()</code> ishlatiladi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#manipulate" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: DOM Manipulyatsiyasi
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 32 / 42
+      </span>
+      <a href="#event-types" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Hodisa Turlari (Event Types) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1332,6 +1748,19 @@
     <div class="result-box" id="jsRes33"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">⚡ Qidiruv maydonlarida har bir harf kiritilganda natijani filtrlab ko'rsatish aynan <code>input</code> hodisasi bilan qilinadi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#events" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Hodisalarni Tinglash (addEventListener)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 33 / 42
+      </span>
+      <a href="#bubbling" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Event Bubbling va stopPropagation →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1365,6 +1794,19 @@
     <div class="result-box" id="jsRes34"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">📌 Single Page Application (SPA) lar sahifani yangilamasdan ishlashi aynan preventDefault ga tayanadi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#event-types" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Hodisa Turlari (Event Types)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 34 / 42
+      </span>
+      <a href="#callback" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Callback Funksiyalar va Asinxronlik →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1403,6 +1845,19 @@
     <div class="result-box" id="jsRes35"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">⚠️ Callback Hell muammosini hal qilish uchun ES6 da Promise va async/await yaratildi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#bubbling" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Event Bubbling va stopPropagation
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 35 / 42
+      </span>
+      <a href="#promise" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Promise (Va'dalar) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1443,6 +1898,19 @@
     <div class="result-box" id="jsRes36"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🌟 Serverdan ma'lumot olish bo'yicha barcha zamonaviy kutubxonalar (masalan, Axios, Fetch) aynan Promise qaytaradi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#callback" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Callback Funksiyalar va Asinxronlik
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 36 / 42
+      </span>
+      <a href="#async-await" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: async / await (Zamonaviy Asinxron Kod) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1480,6 +1948,19 @@
     <div class="result-box" id="jsRes37"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🚀 Bugungi kunda barcha professional dasturchilar .then() o'rniga aynan <code>async/await</code> sintaksisidan foydalanishadi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#promise" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Promise (Va'dalar)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 37 / 42
+      </span>
+      <a href="#fetch" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Fetch API va Backend bilan Bog'lanish →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1520,6 +2001,19 @@
     <div class="result-box" id="jsRes38"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 Saytimizdagi AI Ustoz (W3Bot) ham sizning savollaringizni serverga yuborish uchun aynan <code>fetch('/api/chat', ...)</code> dan foydalanadi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#async-await" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: async / await (Zamonaviy Asinxron Kod)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 38 / 42
+      </span>
+      <a href="#template" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Template Literals (Bek-tiklar ``) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1557,6 +2051,19 @@
     <div class="result-box" id="jsRes39"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">✨ Matn ichida matematik amallarni ham to'g'ridan-to'g'ri bajarish mumkin: <code>`Narx: ${narx * 1.12} so'm`</code>.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#fetch" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Fetch API va Backend bilan Bog'lanish
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 39 / 42
+      </span>
+      <a href="#modules" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: ES6 Modullar (import va export) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1592,6 +2099,19 @@
     <div class="result-box" id="jsRes40"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">📌 Modullar o'zgaruvchilarning global muhitga tushib, boshqa fayllar bilan to'qnashib ketishini 100% oldini oladi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#template" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Template Literals (Bek-tiklar ``)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 40 / 42
+      </span>
+      <a href="#optional" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Optional Chaining (?.) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1627,6 +2147,19 @@
     <div class="result-box" id="jsRes41"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🚀 Serverdan kelayotgan ma'lumotlarning barcha maydonlari mavjudligiga ishonchingiz komil bo'lmaganda doimo <code>?.</code> ishlating.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#modules" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: ES6 Modullar (import va export)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 41 / 42
+      </span>
+      <a href="#nullish" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Nullish Coalescing (??) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1661,6 +2194,19 @@
     <div class="result-box" id="jsRes42"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 Sozlamalar va hisoblagichlarda 0 yoki bo'sh matnni haqiqiy qiymat sifatida saqlab qolish uchun har doim <code>??</code> dan foydalaning.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#optional" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Optional Chaining (?.)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 JavaScript | 42 / 42
+      </span>
+      <a href="react.html" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi kurs: React Darslari →
+      </a>
+    </div>
   </section>
 
   <!-- Amaliy Mashq -->

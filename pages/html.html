@@ -14,7 +14,7 @@
 </head>
 <body>
 <header class="topbar">
-  <a href="../index.html" class="logo">W3<span>Learn</span></a>
+  <button class="menu-toggle" id="menuToggle" onclick="toggleSidebar()" aria-label="Mavzular" style="background:var(--bg3);border:1px solid var(--border);color:var(--text);padding:6px 10px;border-radius:6px;cursor:pointer;font-size:16px;margin-right:8px;">☰</button><a href="../index.html" class="logo">W3<span>Learn</span></a>
   <nav class="top-nav">
     <span class="cat-label cat-fe">Frontend:</span>
     <a href="html.html" class="active">HTML</a><a href="css.html">CSS</a><a href="javascript.html">JavaScript</a>
@@ -133,6 +133,19 @@
     <div class="result-box" id="res1"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 Har bir HTML hujjati &lt;!DOCTYPE html&gt; bilan boshlanishi shart. Bu brauzerga eng so'nggi HTML5 standartidan foydalanayotganingizni bildiradi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="../index.html" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Bosh sahifa
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 1 / 42
+      </span>
+      <a href="#tarix" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: HTML Tarixi va Rivojlanishi →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -167,6 +180,19 @@
     <div class="result-box" id="res2"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">📌 Bugungi kunda HTML standartlarini WHATWG (Web Hypertext Application Technology Working Group) guruhi doimiy yangilab boradi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#kirish" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: HTML Nima?
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 2 / 42
+      </span>
+      <a href="#brauzer" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Brauzer va HTML Qanday Ishlaydi? →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -199,6 +225,19 @@
     <div class="result-box" id="res3"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🔍 Har qanday veb sahifada sichqonchaning o'ng tugmasini bosib 'Inspect' (Tekshirish) bo'limiga kirsangiz, brauzer yaratgan DOM tuzilmasini jonli ko'rishingiz mumkin.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#tarix" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: HTML Tarixi va Rivojlanishi
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 3 / 42
+      </span>
+      <a href="#muharrir" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Kod Muharrirlari (IDE) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -233,6 +272,19 @@
     <div class="result-box" id="res4"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">⚡ Maslahat: VS Code dasturida faylingizni doimo <code>index.html</code> deb nomlang. Har qanday server dastlab aynan shu nomli faylni qidiradi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#brauzer" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Brauzer va HTML Qanday Ishlaydi?
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 4 / 42
+      </span>
+      <a href="#tuzilma" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: HTML Asosiy Tuzilmasi →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -274,6 +326,19 @@
     <div class="result-box" id="res5"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">📌 <code>lang="uz"</code> atributi qidiruv tizimlariga va ekran o'quvchi dasturlarga sahifa o'zbek tilida ekanligini bildiradi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#muharrir" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Kod Muharrirlari (IDE)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 5 / 42
+      </span>
+      <a href="#elementlar" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: HTML Elementlari va Teglar →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -306,6 +371,19 @@
     <div class="result-box" id="res6"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">⚠️ Yopiluvchi teglarni unutib qoldirmang, aks holda sahifangiz kutilmagan ko'rinishga kirib qolishi mumkin.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#tuzilma" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: HTML Asosiy Tuzilmasi
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 6 / 42
+      </span>
+      <a href="#atributlar" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: HTML Atributlari →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -340,6 +418,19 @@
     <div class="result-box" id="res7"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 Qiymatlarni doimo qo'shtirnoq ichida yozish yaxshi odat (best practice) hisoblanadi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#elementlar" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: HTML Elementlari va Teglar
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 7 / 42
+      </span>
+      <a href="#sarlavhalar" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: HTML Sarlavhalari (h1 — h6) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -376,6 +467,19 @@
     <div class="result-box" id="res8"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🛑 Sarlavhalardan shunchaki matnni kattaroq qilib ko'rsatish uchun foydalanmang! Matn hajmini CSS orqali o'zgartiring, sarlavha esa faqat mantiqiy tartib uchun ishlatilsin.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#atributlar" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: HTML Atributlari
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 8 / 42
+      </span>
+      <a href="#paragraflar" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: HTML Paragraflar va Qator Ajratish →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -414,6 +518,19 @@
     <div class="result-box" id="res9"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 Oddiy HTML faylda matn orasiga 10 ta probel qo'ysangiz ham, brauzer ularni faqat 1 ta probel deb hisoblaydi. Ko'p bo'sh joy qoldirish uchun &amp;nbsp; yoki &lt;pre&gt; ishlatiladi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#sarlavhalar" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: HTML Sarlavhalari (h1 — h6)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 9 / 42
+      </span>
+      <a href="#stillar" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: HTML Stillar (style atributi) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -449,6 +566,19 @@
     <div class="result-box" id="res10"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">📌 Real loyihalarda har bir elementga alohida inline style yozish o'rniga, alohida CSS fayllardan foydalanish tavsiya etiladi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#paragraflar" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: HTML Paragraflar va Qator Ajratish
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 10 / 42
+      </span>
+      <a href="#formatlash" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: HTML Matn Formatlash Teglari →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -485,6 +615,19 @@
     <div class="result-box" id="res11"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 Qidiruv robotlari va ko'zi ojizlar uchun ekran o'qigichlar &lt;strong&gt; va &lt;em&gt; teglariga alohida urg'u beradi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#stillar" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: HTML Stillar (style atributi)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 11 / 42
+      </span>
+      <a href="#ranglar" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: HTMLda Ranglar Bilan Ishlash →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -521,6 +664,19 @@
     <div class="result-box" id="res12"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🎨 Dizaynerlar eng ko'p HEX va RGBA formatlaridan foydalanadilar, chunki ular rangni aniq ifodalash imkonini beradi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#formatlash" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: HTML Matn Formatlash Teglari
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 12 / 42
+      </span>
+      <a href="#css" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: HTML ga CSS Ulash Usullari →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -566,6 +722,19 @@
     <div class="result-box" id="res13"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🚀 Professional loyihalarda har doim External (tashqi) CSS fayllar ishlatiladi, chunki ular kodni tartibli va tez yuklanadigan qiladi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#ranglar" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: HTMLda Ranglar Bilan Ishlash
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 13 / 42
+      </span>
+      <a href="#link" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: HTML Havolalar (Links - a tegi) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -602,6 +771,19 @@
     <div class="result-box" id="res14"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🔒 Xavfsizlik qoidasi: Agar <code>target="_blank"</code> ishlatsangiz, yoniga doimo <code>rel="noopener noreferrer"</code> qo'shing.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#css" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: HTML ga CSS Ulash Usullari
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 14 / 42
+      </span>
+      <a href="#rasmlar" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: HTML Rasmlar (img tegi) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -637,6 +819,19 @@
     <div class="result-box" id="res15"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">📌 Doimo rasmlarga aniq va tushunarli <code>alt</code> atributini yozing. Bu Google qidiruvida rasmingiz chiqishiga yordam beradi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#link" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: HTML Havolalar (Links - a tegi)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 15 / 42
+      </span>
+      <a href="#jadvallar" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: HTML Jadvallar (Tables) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -690,6 +885,19 @@
     <div class="result-box" id="res16"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 Jadval chegaralarini chiroyli qilish uchun CSSda <code>border-collapse: collapse;</code> xususiyatidan foydalanish shart.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#rasmlar" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: HTML Rasmlar (img tegi)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 16 / 42
+      </span>
+      <a href="#royxatlar" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: HTML Ro'yxatlar (Lists) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -733,6 +941,19 @@
     <div class="result-box" id="res17"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">📌 Veb-saytlardagi barcha bosh menyular (navbar) odatda &lt;ul&gt; va &lt;li&gt; ro'yxatlari asosida quriladi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#jadvallar" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: HTML Jadvallar (Tables)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 17 / 42
+      </span>
+      <a href="#bloklar" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Blok va Inline Elementlar →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -769,6 +990,19 @@
     <div class="result-box" id="res18"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 Blok element ichiga boshqa blok va inline elementlarni qo'ysa bo'ladi, lekin inline element ichiga blok element qo'yish tavsiya etilmaydi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#royxatlar" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: HTML Ro'yxatlar (Lists)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 18 / 42
+      </span>
+      <a href="#div" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: HTML Div Elementi →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -803,6 +1037,19 @@
     <div class="result-box" id="res19"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">📌 Zamonaviy HTML5 da har joyga div ishlatavermasdan, iloji boricha semantik teglardan (&lt;section&gt;, &lt;article&gt;) foydalanish to'g'riroq.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#bloklar" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Blok va Inline Elementlar
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 19 / 42
+      </span>
+      <a href="#sinflar" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: HTML Class (Sinflar) Atributi →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -840,6 +1087,19 @@
     <div class="result-box" id="res20"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">⚡ Class nomlarini tushunarli, kichik lotin harflarida va defis bilan yozish tavsiya qilinadi (masalan: <code>main-header</code>).</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#div" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: HTML Div Elementi
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 20 / 42
+      </span>
+      <a href="#id" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: HTML ID Atributi →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -877,6 +1137,19 @@
     <div class="result-box" id="res21"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">⚠️ Hech qachon bir sahifada bir nechta elementga bir xil ID bermang. Bu JavaScriptda jiddiy xatoliklarga olib keladi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#sinflar" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: HTML Class (Sinflar) Atributi
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 21 / 42
+      </span>
+      <a href="#iframe" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: HTML Iframe (Boshqa sahifani kiritish) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -913,6 +1186,19 @@
     <div class="result-box" id="res22"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🔒 Eslatma: Ko'pgina yirik saytlar (Google, Facebook) xavfsizlik sababli o'z saytlarini begona iframeda ochishni taqiqlab qo'ygan (X-Frame-Options).</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#id" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: HTML ID Atributi
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 22 / 42
+      </span>
+      <a href="#fayl" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Fayl Yo'llari (File Paths) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -946,6 +1232,19 @@
     <div class="result-box" id="res23"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">⚡ Agar rasmingiz ochilmay qizil xato bo'lib qolsa, 99% ehtimol bilan fayl yo'lidagi nuqtalar yoki papka nomida xatolik qilgansiz.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#iframe" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: HTML Iframe (Boshqa sahifani kiritish)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 23 / 42
+      </span>
+      <a href="#formalar" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: HTML Formalar (Forms) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -980,6 +1279,19 @@
     <div class="result-box" id="res24"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🔒 Parol, karta raqami kabi maxfiy ma'lumotlar yuboriladigan formalarda doimo <code>method="POST"</code> ishlatilishi shart.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#fayl" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Fayl Yo'llari (File Paths)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 24 / 42
+      </span>
+      <a href="#form-attr" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Form Atributlari →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1012,6 +1324,19 @@
     <div class="result-box" id="res25"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 Foydalanuvchilarga qulay bo'lishi uchun ko'pincha <code>autocomplete="on"</code> qoldiriladi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#formalar" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: HTML Formalar (Forms)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 25 / 42
+      </span>
+      <a href="#input" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Input Elementlari (Kiritish maydonlari) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1051,6 +1376,19 @@
     <div class="result-box" id="res26"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">📌 <code>label</code> tegining <code>for</code> atributi bilan <code>input</code>ning <code>id</code>si bir xil bo'lsa, foydalanuvchi matnga bosganda ham kiritish maydoni faollashadi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#form-attr" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Form Atributlari
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 26 / 42
+      </span>
+      <a href="#input-tur" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: HTML Input Turlari (type) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1092,6 +1430,19 @@
     <div class="result-box" id="res27"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">📱 Smartfonlarda input turiga qarab mos klaviatura (masalan, number tanlansa faqat raqamlar klaviaturasi) avtomatik ochiladi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#input" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Input Elementlari (Kiritish maydonlari)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 27 / 42
+      </span>
+      <a href="#validatsiya" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Form Validatsiya (Tekshirish) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1126,6 +1477,19 @@
     <div class="result-box" id="res28"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">⚠️ Brauzer tekshiruvi yetarli emas! Xavfsizlik uchun server tomonida ham (PHP, Node.js) har doim ma'lumotlar qayta tekshirilishi shart.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#input-tur" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: HTML Input Turlari (type)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 28 / 42
+      </span>
+      <a href="#semantik" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: HTML5 Semantik Teglar →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1167,6 +1531,19 @@
     <div class="result-box" id="res29"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🚀 Google semantik teglardan to'g'ri foydalanilgan saytlarni qidiruv natijalarida yuqoriroq o'rinlarga ko'taradi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#validatsiya" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Form Validatsiya (Tekshirish)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 29 / 42
+      </span>
+      <a href="#audio" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: HTML Audio Integratsiyasi →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1201,6 +1578,19 @@
     <div class="result-box" id="res30"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 Har doim &lt;source&gt; tegidan foydalaning va ichiga bir nechta formatlarni ko'rsating, shunda har qanday brauzer o'ziga mosini tanlab oladi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#semantik" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: HTML5 Semantik Teglar
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 30 / 42
+      </span>
+      <a href="#video" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: HTML Video Integratsiyasi →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1235,6 +1625,19 @@
     <div class="result-box" id="res31"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">📱 Mobil qurilmalarda avtomatik o'ynashi uchun &lt;video autoplay muted playsinline&gt; atributlarini birga ishlatish lozim.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#audio" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: HTML Audio Integratsiyasi
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 31 / 42
+      </span>
+      <a href="#canvas" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: HTML5 Canvas (Chizish Maydoni) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1274,6 +1677,19 @@
     <div class="result-box" id="res32"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🎮 Chart.js kabi mashhur diagramma kutubxonalari va ko'plab brauzer o'yinlari aynan Canvas ustida qurilgan.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#video" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: HTML Video Integratsiyasi
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 32 / 42
+      </span>
+      <a href="#svg" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: HTML SVG (Vektor Grafikasi) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1308,6 +1724,19 @@
     <div class="result-box" id="res33"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">⚡ Font Awesome kabi barcha zamonaviy ikonkalar kutubxonalari ichida aynan SVG ishlatiladi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#canvas" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: HTML5 Canvas (Chizish Maydoni)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 33 / 42
+      </span>
+      <a href="#geolocation" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: HTML5 Geolocation API →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1354,6 +1783,19 @@ function getLocation() {
     <div class="result-box" id="res34"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🔒 Foydalanuvchi ruxsat bermasa, siz uning manzilini hech qanday usul bilan bila olmaysiz.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#svg" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: HTML SVG (Vektor Grafikasi)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 34 / 42
+      </span>
+      <a href="#storage" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Web Storage (LocalStorage va SessionStorage) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1389,6 +1831,19 @@ function getLocation() {
     <div class="result-box" id="res35"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 Saytimizdagi qorong'u rejim (Dark Mode) va yig'ilgan XP ballaringiz aynan localStorage da saqlanadi!</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#geolocation" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: HTML5 Geolocation API
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 35 / 42
+      </span>
+      <a href="#dragdrop" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: HTML5 Drag and Drop (Surab Tashlash) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1424,6 +1879,19 @@ function getLocation() {
     <div class="result-box" id="res36"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">📌 <code>ondragover</code> hodisasida <code>event.preventDefault()</code> yozilmasa, brauzer elementni tashlashga ruxsat bermaydi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#storage" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Web Storage (LocalStorage va SessionStorage)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 36 / 42
+      </span>
+      <a href="#workers" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: HTML5 Web Workers →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1461,6 +1929,19 @@ function getLocation() {
     <div class="result-box" id="res37"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">⚡ Web Workerlar DOM (HTML elementlar) bilan bevosita ishlay olmaydi, ular faqat sof ma'lumotlar bilan hisob-kitob olib boradi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#dragdrop" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: HTML5 Drag and Drop (Surab Tashlash)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 37 / 42
+      </span>
+      <a href="#responsive" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Responsiv Dizayn va Viewport →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1495,6 +1976,19 @@ function getLocation() {
     <div class="result-box" id="res38"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">📱 Agar viewport meta tegi qo'yilmasa, telefonlar saytni kichiklashtirib, o'ta mayda ko'rinishda ochadi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#workers" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: HTML5 Web Workers
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 38 / 42
+      </span>
+      <a href="#accessibility" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Vebga Kirish Qulayligi (Accessibility - a11y) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1528,6 +2022,19 @@ function getLocation() {
     <div class="result-box" id="res39"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🌍 Dunyo miqyosida davlat va yirik kompaniyalar saytlari qonuniy ravishda a11y standartlariga (WCAG) javob berishi shart.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#responsive" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Responsiv Dizayn va Viewport
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 39 / 42
+      </span>
+      <a href="#seo" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: HTML va SEO Asoslari →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1562,6 +2069,19 @@ function getLocation() {
     <div class="result-box" id="res40"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">📈 Foydalanuvchilar qidiruvda ko'radigan ko'k sarlavha aynan &lt;title&gt; tegi hisoblanadi.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#accessibility" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Vebga Kirish Qulayligi (Accessibility - a11y)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 40 / 42
+      </span>
+      <a href="#meta" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Meta Teglar va Open Graph (OG) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1596,6 +2116,19 @@ function getLocation() {
     <div class="result-box" id="res41"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">🚀 Telegramda postingiz rasm va sarlavha bilan chiroyli chiqishi uchun ushbu OG teglar majburiydir.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#seo" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: HTML va SEO Asoslari
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 41 / 42
+      </span>
+      <a href="#charset" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi: Charset va Maxsus HTML Belgilari (Entities) →
+      </a>
+    </div>
   </section>
 
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
@@ -1631,6 +2164,19 @@ function getLocation() {
     <div class="result-box" id="res42"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
     <div class="note" style="margin-top:16px;">💡 Agar sahifangizda 'sh', 'g'' yoki boshqa harflar o'rniga g'alati qora romblar () chiqib qolsa, &lt;meta charset="UTF-8"&gt; tegini qo'yishni unutgansiz.</div>
+  
+    <!-- W3Schools uslubidagi darsdan-darsga o'tish navigatsiyasi -->
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#meta" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">
+        ← Oldingi: Meta Teglar va Open Graph (OG)
+      </a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">
+        📖 HTML | 42 / 42
+      </span>
+      <a href="css.html" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">
+        Keyingi kurs: CSS Darslari →
+      </a>
+    </div>
   </section>
 
   <!-- Amaliy Mashq -->

@@ -88,306 +88,1774 @@
   </ul>
 </aside>
 <main class="main">
-  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">Python</a> › Python Nima?</div>
-  <h1 id="kirish">Python Nima?</h1>
-  <div class="meta-tags">
-    <span class="tag tag-green">⏱ 10 daqiqa</span>
-    <span class="tag tag-blue">🟢 Boshlang'ich</span>
-    <span class="tag tag-orange">👁 38,700 marta ko'rilgan</span>
-  </div>
-  <p><strong>Python</strong> — oddiy sintaksisga ega, kuchli va ko'p qirrali dasturlash tili. Guido van Rossum tomonidan 1991-yilda yaratilgan.</p>
-  <p>Veb dasturlash (Django, Flask), ma'lumotlar ilmi (pandas, numpy), sun'iy intellekt (TensorFlow), avtomatlashtirish va boshqa ko'p sohalarda qo'llaniladi.</p>
-  <div class="note">💡 <strong>Python falsafasi (Zen of Python):</strong> "Oddiy yaxshi. Murakkab yomondan yaxshi. O'qilishi muhim."</div>
+  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">Python</a> › Barcha Mavzular</div>
 
-  <h2 id="variables">O'zgaruvchilar va Ma'lumot Turlari</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">python</span>
-      <button class="copy-btn" onclick="copyCode('code1')">📋 Nusxa</button>
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Asosiy</span>
+      <span style="font-size:12px; color:var(--text2);">Python Mavzu #1</span>
     </div>
-    <div class="code-body">
-      <pre id="code1"># O'zgaruvchilar (tur belgilash shart emas)
-ism = "Ali"           # str
-yosh = 25             # int
-oy_maosh = 3500.50    # float
-talaba = True         # bool
-manzil = None         # NoneType
+    <h2 id="kirish" style="color:#3776ab; margin-top:0; font-size:24px;">Python Nima?</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Python</strong> — 1991-yilda niderlandiyalik dasturchi Guido van Rossum tomonidan yaratilgan, dunyodagi eng ommabop va o'rganish oson bo'lgan yuqori darajadagi dasturlash tilidir. U sodda va toza sintaksisga ega bo'lib, xuddi ingliz tilidagi oddiy matn kabi o'qiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Interpretatsiya qilinadigan til: kod kompilyatsiyasiz, qatorma-qator bajariladi.</li>
+      <li>Ko'p qirrali: Veb dasturlash (Django, Flask), Sun'iy Intellekt (AI/ML), Ma'lumotlar tahlili (Data Science) va Skriptlar yaratishda yetakchi.</li>
+      <li>Katta va faol hamjamiyat hamda yuz minglab bepul kutubxonalar (PyPI).</li>
+      <li>Kross-platforma: Windows, macOS, Linux tizimlarida bir xil ishlaydi.</li>
+    </ul>
 
-# Ko'p o'zgaruvchi bir qatorda
-x, y, z = 1, 2, 3
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Python 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('pyCode1')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('pyCode1','pyRes1')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="pyCode1" contenteditable="true" spellcheck="false"># Dunyodagi eng sodda "Salom, Dunyo!"
+print("Salom, Dunyo!")
+print("W3Learn bilan Python o'rganish juda oson!")
 
-# Ma'lumot turini bilish
-print(type(ism))      # <class 'str'>
-print(type(yosh))     # <class 'int'>
-
-# Konversiya
-son = int("42")       # str -> int
-matn = str(100)       # int -> str
-kasr = float("3.14")  # str -> float
-
-# f-string (formatlash)
-print(f"Salom, {ism}! Yoshingiz {yosh}.")
-# Salom, Ali! Yoshingiz 25.</pre>
+# Matematik amallar
+print("5 + 3 =", 5 + 3)
+print("10 * 4 =", 10 * 4)</pre>
+      </div>
     </div>
-  </div>
-
-  <h2 id="if-else">if / elif / else</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">python</span>
-      <button class="copy-btn" onclick="copyCode('code2')">📋 Nusxa</button>
+    <div class="result-box" id="pyRes1">
+      <div class="result-label">🖥️ Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Python 3.12 Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Salom, Dunyo!
+W3Learn bilan Python o'rganish juda oson!
+5 + 3 = 8
+10 * 4 = 40&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
     </div>
-    <div class="code-body">
-      <pre id="code2">ball = 85
 
-if ball >= 90:
-    print("A'lo ⭐")
-elif ball >= 70:
-    print("Yaxshi ✅")
-elif ball >= 50:
-    print("Qoniqarli 🆗")
-else:
-    print("Yaxon ❌")
+    <div class="note" style="margin-top:16px;">💡 Python tili nomi mashhur 'Monty Python' komedik teatr guruhi sharafiga qo'yilgan, ilon sharafiga emas.</div>
 
-# Bir qatorli (ternary)
-natija = "O'tdi" if ball >= 50 else "O'tmadi"
-print(natija)
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="jquery.html" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← jQuery Darslari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Python | 1 / 32</span>
+      <a href="#install" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Python ni O'rnatish va Muhitni Sozlash →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">O'rnatish</span>
+      <span style="font-size:12px; color:var(--text2);">Python Mavzu #2</span>
+    </div>
+    <h2 id="install" style="color:#3776ab; margin-top:0; font-size:24px;">Python ni O'rnatish va Muhitni Sozlash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Python kodlarini kompyuteringizda ishga tushirish uchun rasmiy saytdan Python interpretatorini va qulay kod muharririni (masalan, VS Code yoki PyCharm) o'rnatish kifoya.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Rasmiy sayt: <code>python.org/downloads</code> orqali so'nggi versiyani yuklab oling.</li>
+      <li>O'rnatish vaqtida <strong>'Add Python to PATH'</strong> katakchasiga albatta belgi (galochka) qo'ying!</li>
+      <li>O'rnatilganini tekshirish uchun terminalda: <code>python --version</code></li>
+      <li>Paketlar menejeri <code>pip</code> Python bilan birga avtomatik o'rnatiladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Python 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('pyCode2')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('pyCode2','pyRes2')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="pyCode2" contenteditable="true" spellcheck="false"># Terminalda tekshirish buyruqlari:
+# $ python --version
+# Python 3.12.0
+
+# $ pip --version
+# pip 23.3 from ...
+
+print("Python muvaffaqiyatli o'rnatildi!")</pre>
+      </div>
+    </div>
+    <div class="result-box" id="pyRes2">
+      <div class="result-label">🖥️ Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Python 3.12 Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Python muvaffaqiyatli o'rnatildi!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">⚡ Agar Windows'da 'python buyrug'i topilmadi' desa, o'rnatishda PATH ga qo'shish unutilgan.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#kirish" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Python Nima?</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Python | 2 / 32</span>
+      <a href="#run" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Python Dasturini Ishga Tushirish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Asoslar</span>
+      <span style="font-size:12px; color:var(--text2);">Python Mavzu #3</span>
+    </div>
+    <h2 id="run" style="color:#3776ab; margin-top:0; font-size:24px;">Python Dasturini Ishga Tushirish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Python kodlarini ikki xil usulda ishlatish mumkin: interaktiv rejimda (REPL) qatorma-qator sinab ko'rish yoki <code>.py</code> kengaytmali faylga saqlab, terminal orqali ishga tushirish.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Fayl yaratish: <code>app.py</code> nomli fayl oching va kod yozing.</li>
+      <li>Ishga tushirish: terminalda <code>python app.py</code> buyrug'ini tering.</li>
+      <li>Interaktiv rejim: terminalda shunchaki <code>python</code> deb yozsangiz, kod kiritish oynasi ochiladi.</li>
+      <li>IDLE — Python bilan birga o'rnatiladigan sodda boshlang'ich muhit.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Python 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('pyCode3')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('pyCode3','pyRes3')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="pyCode3" contenteditable="true" spellcheck="false"># app.py fayli kodi
+nom = "W3Learn"
+versiya = 3.0
+
+print(f"Platforma: {nom}")
+print(f"Versiya: {versiya}")
+print("Dastur muvaffaqiyatli yakunlandi!")</pre>
+      </div>
+    </div>
+    <div class="result-box" id="pyRes3">
+      <div class="result-label">🖥️ Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Python 3.12 Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Platforma: W3Learn
+Versiya: 3.0
+Dastur muvaffaqiyatli yakunlandi!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 Python fayllarining kengaytmasi har doim <code>.py</code> bo'lishi kerak.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#install" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Python ni O'rnatish va Muhitni Sozlash</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Python | 3 / 32</span>
+      <a href="#variables" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: O'zgaruvchilar (Variables) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Asoslar</span>
+      <span style="font-size:12px; color:var(--text2);">Python Mavzu #4</span>
+    </div>
+    <h2 id="variables" style="color:#3776ab; margin-top:0; font-size:24px;">O'zgaruvchilar (Variables)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Python'da o'zgaruvchi yaratish uchun uning turini oldindan e'lon qilish (declare) shart emas. Shunchaki nom yozib, <code>=</code> belgisi orqali unga qiymat yuklaysiz. Bunga dinamik tiplashtirish deyiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Nomlash qoidalari: harf yoki pastki chiziq <code>_</code> bilan boshlanishi kerak, raqam bilan boshlanmaydi.</li>
+      <li>Katta va kichik harflar farqlanadi: <code>yosh</code> va <code>Yosh</code> ikki xil o'zgaruvchi.</li>
+      <li>Ko'p o'zgaruvchilarga bitta qatorda qiymat berish: <code>x, y, z = 1, 2, 3</code>.</li>
+      <li>O'zgaruvchi qiymatini istalgan payt boshqa turdagi ma'lumotga almashtirish mumkin.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Python 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('pyCode4')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('pyCode4','pyRes4')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="pyCode4" contenteditable="true" spellcheck="false"># O'zgaruvchilar yaratish
+ism = "Ali"
+yosh = 22
+boy = 1.78
+talabami = True
+
+# Bir vaqtning o'zida bir nechta o'zgaruvchi
+a, b, c = 10, 20, 30
+
+print(ism, yosh, boy, talabami)
+print("a + b + c =", a + b + c)</pre>
+      </div>
+    </div>
+    <div class="result-box" id="pyRes4">
+      <div class="result-label">🖥️ Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Python 3.12 Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Ali 22 1.78 True
+a + b + c = 60&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 Pythonda o'zgaruvchilar nomini snake_case uslubida (masalan, <code>foydalanuvchi_ismi</code>) yozish tavsiya qilinadi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#run" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Python Dasturini Ishga Tushirish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Python | 4 / 32</span>
+      <a href="#datatypes" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Ma'lumot Turlari (Data Types) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Asoslar</span>
+      <span style="font-size:12px; color:var(--text2);">Python Mavzu #5</span>
+    </div>
+    <h2 id="datatypes" style="color:#3776ab; margin-top:0; font-size:24px;">Ma'lumot Turlari (Data Types)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Python'da ma'lumotlarning bir nechta asosiy turlari mavjud: matnli (<code>str</code>), raqamli (<code>int</code>, <code>float</code>, <code>complex</code>), mantiqiy (<code>bool</code>) va to'plamlar. O'zgaruvchining turini aniqlash uchun <code>type()</code> funksiyasi ishlatiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>int</code> — butun sonlar (10, -5, 1000000).</li>
+      <li><code>float</code> — o'nlik kasr sonlar (3.14, -0.5).</li>
+      <li><code>str</code> — matnlar ('salom' yoki "salom").</li>
+      <li><code>bool</code> — mantiqiy qiymatlar: <code>True</code> yoki <code>False</code>.</li>
+      <li>Turni o'zgartirish (type casting): <code>int("25")</code>, <code>str(100)</code>, <code>float(5)</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Python 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('pyCode5')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('pyCode5','pyRes5')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="pyCode5" contenteditable="true" spellcheck="false">matn = "Salom"          # str
+butun_son = 42          # int
+haqiqiy_son = 3.1415    # float
+rost = True             # bool
+
+print(type(matn))
+print(type(butun_son))
+print(type(haqiqiy_son))
+print(type(rost))
+
+# Turni o'zgartirish (Type Casting)
+son_matn = "150"
+jami = int(son_matn) + 50
+print("Jami:", jami)</pre>
+      </div>
+    </div>
+    <div class="result-box" id="pyRes5">
+      <div class="result-label">🖥️ Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Python 3.12 Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;&lt;class 'str'&gt;
+&lt;class 'int'&gt;
+&lt;class 'float'&gt;
+&lt;class 'bool'&gt;
+Jami: 200&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 Pythonda butun sonlar (int) xotira yetguncha cheksiz katta qiymat qabul qila oladi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#variables" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: O'zgaruvchilar (Variables)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Python | 5 / 32</span>
+      <a href="#input" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: input() va print() Funksiyalari →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">I/O</span>
+      <span style="font-size:12px; color:var(--text2);">Python Mavzu #6</span>
+    </div>
+    <h2 id="input" style="color:#3776ab; margin-top:0; font-size:24px;">input() va print() Funksiyalari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><code>print()</code> funksiyasi ma'lumotlarni ekranga chiqaradi, <code>input()</code> esa foydalanuvchidan klaviatura orqali ma'lumot qabul qilib oladi. <code>input()</code> doimo matn (<code>str</code>) qaytaradi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>print('a', 'b', sep=' - ', end='\n')</code> — ajratuvchi va oxirgi belgini sozlash.</li>
+      <li><code>input("Savol matni: ")</code> — kiritish maydoni.</li>
+      <li>Son qabul qilish uchun uni <code>int()</code> yoki <code>float()</code> ga o'rash shart: <code>int(input())</code>.</li>
+      <li>f-string bilan formatlab chiqarish: <code>print(f"{ism} {yosh} yoshda")</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Python 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('pyCode6')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('pyCode6','pyRes6')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="pyCode6" contenteditable="true" spellcheck="false"># print parametrlarini sozlash
+print("HTML", "CSS", "JS", "Python", sep=" -&gt; ")
+
+# Formatlangan chiqarish (f-strings)
+mahsulot = "Noutbuk"
+narx = 850
+print(f"Mahsulot: {mahsulot}, Narxi: ${narx}")
+
+# Matematik ifodani f-string ichida hisoblash
+print(f"15 ning kvadrati: {15 ** 2}")</pre>
+      </div>
+    </div>
+    <div class="result-box" id="pyRes6">
+      <div class="result-label">🖥️ Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Python 3.12 Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;HTML -&gt; CSS -&gt; JS -&gt; Python
+Mahsulot: Noutbuk, Narxi: $850
+15 ning kvadrati: 225&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 Pythonda satrlarni formatlashning eng qulay va zamonaviy usuli — bu f-strings (formatlangan satrlar) dir.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#datatypes" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Ma'lumot Turlari (Data Types)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Python | 6 / 32</span>
+      <a href="#operators" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Operatorlar (Arifmetik, Taqqoslash, Mantiqiy) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Asoslar</span>
+      <span style="font-size:12px; color:var(--text2);">Python Mavzu #7</span>
+    </div>
+    <h2 id="operators" style="color:#3776ab; margin-top:0; font-size:24px;">Operatorlar (Arifmetik, Taqqoslash, Mantiqiy)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Python'da matematik hisob-kitoblar, shartlarni taqqoslash va mantiqiy xulosalar chiqarish uchun maxsus operatorlar qo'llaniladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Arifmetik: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code> (haqiqiy bo'lish), <code>//</code> (butunli bo'lish), <code>%</code> (qoldiq), <code>**</code> (daraja).</li>
+      <li>Taqqoslash: <code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>.</li>
+      <li>Mantiqiy: <code>and</code> (va), <code>or</code> (yoki), <code>not</code> (inkor).</li>
+      <li>Tayinlash: <code>+=</code>, <code>-=</code>, <code>*=</code>, <code>/=</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Python 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('pyCode7')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('pyCode7','pyRes7')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="pyCode7" contenteditable="true" spellcheck="false"># Arifmetik operatorlar
+a = 17
+b = 5
+
+print("a // b (butun qism) =", a // b)
+print("a % b (qoldiq) =", a % b)
+print("2 ** 4 (2 ning 4-darajasi) =", 2 ** 4)
 
 # Mantiqiy operatorlar
 yosh = 20
-if yosh >= 18 and yosh < 65:
-    print("Ishchi yoshi")
-
-# in operatori
-mevalar = ["olma", "nok", "uzum"]
-if "olma" in mevalar:
-    print("Olma bor!")</pre>
+prava_bormi = True
+mashina_haydash_mumkin = (yosh &gt;= 18) and prava_bormi
+print("Mashina haydash mumkinmi?", mashina_haydash_mumkin)</pre>
+      </div>
     </div>
-  </div>
-
-  <h2 id="for">Tsikllar</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">python</span>
-      <button class="copy-btn" onclick="copyCode('code3')">📋 Nusxa</button>
+    <div class="result-box" id="pyRes7">
+      <div class="result-label">🖥️ Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Python 3.12 Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;a // b (butun qism) = 3
+a % b (qoldiq) = 2
+2 ** 4 (2 ning 4-darajasi) = 16
+Mashina haydash mumkinmi? True&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
     </div>
-    <div class="code-body">
-      <pre id="code3"># for tsikli
-for i in range(5):
-    print(i)  # 0, 1, 2, 3, 4
 
-# range(start, stop, step)
-for i in range(1, 10, 2):
-    print(i)  # 1, 3, 5, 7, 9
+    <div class="note" style="margin-top:16px;">📌 Boshqa tillardagi <code>&&</code> va <code>||</code> o'rniga Pythonda so'zma-so'z <code>and</code> va <code>or</code> yoziladi.</div>
 
-# Ro'yxat bo'ylab
-tillar = ["Python", "JS", "Java"]
-for til in tillar:
-    print(f"🔹 {til}")
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#input" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: input() va print() Funksiyalari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Python | 7 / 32</span>
+      <a href="#strings" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Satrlar (Strings) va Metodlar →</a>
+    </div>
+  </section>
 
-# enumerate — indeks bilan
-for i, til in enumerate(tillar):
-    print(f"{i+1}. {til}")
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Asoslar</span>
+      <span style="font-size:12px; color:var(--text2);">Python Mavzu #8</span>
+    </div>
+    <h2 id="strings" style="color:#3776ab; margin-top:0; font-size:24px;">Satrlar (Strings) va Metodlar</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Satrlar matnli ma'lumotlarni saqlaydi. Pythonda satrlar o'zgarmas (immutable) hisoblanadi va ularni qayta ishlash uchun juda ko'p kuchli metodlar mavjud.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Kesib olish (Slicing): <code>matn[0:4]</code>, <code>matn[::-1]</code> (teskari o'qish).</li>
+      <li>Katta-kichik harflar: <code>upper()</code>, <code>lower()</code>, <code>capitalize()</code>, <code>title()</code>.</li>
+      <li>Qidirish va almashtirish: <code>find()</code>, <code>replace()</code>, <code>count()</code>.</li>
+      <li>Bo'laklash va birlashtirish: <code>split()</code> va <code>join()</code>.</li>
+    </ul>
 
-# while tsikli
-son = 1
-while son <= 5:
-    print(son)
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Python 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('pyCode8')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('pyCode8','pyRes8')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="pyCode8" contenteditable="true" spellcheck="false">matn = "  assalomu alaykum, aziz do'stlar!  "
+
+print("Tozalangan:", matn.strip())
+print("Katta harflarda:", matn.upper())
+print("Almashtirish:", matn.replace("aziz", "qadrli"))
+
+# Satrni bo'laklash (split)
+sozlar = "olma,nok,anor,uzum".split(",")
+print("Mevalar ro'yxati:", sozlar)
+
+# Qayta birlashtirish (join)
+yangi_satr = " | ".join(sozlar)
+print("Birlashtirilgan:", yangi_satr)</pre>
+      </div>
+    </div>
+    <div class="result-box" id="pyRes8">
+      <div class="result-label">🖥️ Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Python 3.12 Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Tozalangan: assalomu alaykum, aziz do'stlar!
+Katta harflarda:   ASSALOMU ALAYKUM, AZIZ DO'STLAR!  
+Almashtirish:   assalomu alaykum, qadrli do'stlar!  
+Mevalar ro'yxati: ['olma', 'nok', 'anor', 'uzum']
+Birlashtirilgan: olma | nok | anor | uzum&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 <code>matn[::-1]</code> usuli butun matnni bitta buyruq bilan teskari qilib beradi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#operators" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Operatorlar (Arifmetik, Taqqoslash, Mantiqiy)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Python | 8 / 32</span>
+      <a href="#if-else" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Shart Operatorlari (if, elif, else) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Boshqaruv</span>
+      <span style="font-size:12px; color:var(--text2);">Python Mavzu #9</span>
+    </div>
+    <h2 id="if-else" style="color:#3776ab; margin-top:0; font-size:24px;">Shart Operatorlari (if, elif, else)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Dasturda ma'lum bir shart bajarilgandagina kod blokini ishga tushirish uchun <code>if</code>, <code>elif</code> (else if) va <code>else</code> dan foydalaniladi. Python qavslar o'rniga surilish (indentation) bilan bloklarni ajratadi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Sintaksis: <code>if shart:</code> va 4 ta probel surilish.</li>
+      <li><code>elif</code> — agar avvalgi shart bajarilmasa, yangi shartni tekshiradi.</li>
+      <li><code>else</code> — agar hech qaysi shart to'g'ri kelmasa ishlaydi.</li>
+      <li>Ternar operator (bir qatorli if): <code>natija = 'Katta' if x > 10 else 'Kichik'</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Python 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('pyCode9')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('pyCode9','pyRes9')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="pyCode9" contenteditable="true" spellcheck="false">ball = 85
+
+if ball &gt;= 90:
+    baho = "A'lo (5)"
+elif ball &gt;= 80:
+    baho = "Yaxshi (4)"
+elif ball &gt;= 60:
+    baho = "Qoniqarli (3)"
+else:
+    baho = "Qoniqarsiz (2)"
+
+print(f"Talabaning natijasi: {baho}")
+
+# Bir qatorli qisqa if (Ternary)
+status = "Katta yoshli" if ball &gt; 18 else "Yosh bola"
+print("Status:", status)</pre>
+      </div>
+    </div>
+    <div class="result-box" id="pyRes9">
+      <div class="result-label">🖥️ Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Python 3.12 Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Talabaning natijasi: Yaxshi (4)
+Status: Katta yoshli&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">⚠️ Python'da qator surilishlari (indentation) sintaksisning muhim qismi! Noto'g'ri surilish <code>IndentationError</code> xatosini keltirib chiqaradi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#strings" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Satrlar (Strings) va Metodlar</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Python | 9 / 32</span>
+      <a href="#for" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: for Tsikli va range() →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Boshqaruv</span>
+      <span style="font-size:12px; color:var(--text2);">Python Mavzu #10</span>
+    </div>
+    <h2 id="for" style="color:#3776ab; margin-top:0; font-size:24px;">for Tsikli va range()</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><code>for</code> tsikli ro'yxat, satr yoki ma'lum bir sonlar oralig'idagi (range) har bir element ustida ketma-ket bir xil amalni takrorlash uchun xizmat qiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>range(n)</code> — 0 dan n-1 gacha bo'lgan sonlar ketma-ketligi.</li>
+      <li><code>range(start, stop, step)</code> — boshlanish, tugash va qadam miqdori.</li>
+      <li>Ro'yxatlar bo'ylab aylanish: <code>for meva in mevalar:</code>.</li>
+      <li><code>enumerate()</code> — element bilan birga uning indeksini ham olish.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Python 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('pyCode10')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('pyCode10','pyRes10')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="pyCode10" contenteditable="true" spellcheck="false"># 1 dan 5 gacha sonlar kvadratini chiqarish
+for i in range(1, 6):
+    print(f"{i} ning kvadrati: {i ** 2}")
+
+# Ro'yxat bo'ylab aylanish va indeks olish
+dasturlar = ["Python", "JavaScript", "C++"]
+for indeks, til in enumerate(dasturlar, 1):
+    print(f"{indeks}-o'rin: {til}")</pre>
+      </div>
+    </div>
+    <div class="result-box" id="pyRes10">
+      <div class="result-label">🖥️ Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Python 3.12 Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;1 ning kvadrati: 1
+2 ning kvadrati: 4
+3 ning kvadrati: 9
+4 ning kvadrati: 16
+5 ning kvadrati: 25
+1-o'rin: Python
+2-o'rin: JavaScript
+3-o'rin: C++&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 <code>range(1, 10, 2)</code> qadamni 2 qilib belgilaydi, ya'ni toq sonlarni beradi: 1, 3, 5, 7, 9.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#if-else" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Shart Operatorlari (if, elif, else)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Python | 10 / 32</span>
+      <a href="#while" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: while Tsikli →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Boshqaruv</span>
+      <span style="font-size:12px; color:var(--text2);">Python Mavzu #11</span>
+    </div>
+    <h2 id="while" style="color:#3776ab; margin-top:0; font-size:24px;">while Tsikli</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><code>while</code> tsikli berilgan mantiqiy shart <code>True</code> bo'lib turgan muddat davomida kod blokini to'xtovsiz takrorlayveradi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Shart doim to'g'ri bo'lib qolsa, cheksiz tsikl (infinite loop) paydo bo'ladi.</li>
+      <li>Hisoblagichni (counter) tsikl ichida oshirib borish kerak: <code>i += 1</code>.</li>
+      <li>Foydalanuvchi to'g'ri parol kiritguncha so'rash kabi holatlarda qulay.</li>
+      <li><code>while True:</code> orqali cheksiz tsikl ochib, <code>break</code> bilan chiqish keng tarqalgan.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Python 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('pyCode11')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('pyCode11','pyRes11')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="pyCode11" contenteditable="true" spellcheck="false">son = 1
+while son &lt;= 5:
+    print(f"Qadam #{son}")
     son += 1
 
-# List Comprehension
-kvadratlar = [x**2 for x in range(1, 6)]
-print(kvadratlar)  # [1, 4, 9, 16, 25]
-
-juftlar = [x for x in range(20) if x % 2 == 0]
-print(juftlar)  # [0, 2, 4, 6, ..., 18]</pre>
+print("Tsikl yakunlandi!")</pre>
+      </div>
     </div>
-  </div>
-
-  <h2 id="def">Funksiyalar</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">python</span>
-      <button class="copy-btn" onclick="copyCode('code4')">📋 Nusxa</button>
+    <div class="result-box" id="pyRes11">
+      <div class="result-label">🖥️ Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Python 3.12 Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Qadam #1
+Qadam #2
+Qadam #3
+Qadam #4
+Qadam #5
+Tsikl yakunlandi!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
     </div>
-    <div class="code-body">
-      <pre id="code4"># Oddiy funksiya
-def salomlash(ism):
-    return f"Salom, {ism}!"
 
-print(salomlash("Ali"))  # Salom, Ali!
+    <div class="note" style="margin-top:16px;">📌 Agar tsikl to'xtamay qolsa, terminalda uni to'xtatish uchun <code>Ctrl + C</code> tugmalari bosiladi.</div>
 
-# Default parametr
-def quvvat(son, daraja=2):
-    return son ** daraja
-
-print(quvvat(3))     # 9
-print(quvvat(2, 10)) # 1024
-
-# *args — ixtiyoriy miqdordagi argumentlar
-def yigindi(*sonlar):
-    return sum(sonlar)
-
-print(yigindi(1, 2, 3, 4, 5))  # 15
-
-# **kwargs — kalit-qiymat argumentlar
-def profil(**ma_lumot):
-    for kalit, qiymat in ma_lumot.items():
-        print(f"{kalit}: {qiymat}")
-
-profil(ism="Ali", yosh=25, shahar="Toshkent")
-
-# Lambda (anonim funksiya)
-kvadrat = lambda x: x ** 2
-print(kvadrat(5))  # 25
-
-# sorted bilan lambda
-odamlar = [{"ism": "Ali", "yosh": 25}, {"ism": "Vali", "yosh": 20}]
-sortlangan = sorted(odamlar, key=lambda x: x["yosh"])
-print(sortlangan)</pre>
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#for" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: for Tsikli va range()</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Python | 11 / 32</span>
+      <a href="#break" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: break, continue va pass Operatorlari →</a>
     </div>
-  </div>
+  </section>
 
-  <h2 id="dict">Dictionary (Lug'at)</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">python</span>
-      <button class="copy-btn" onclick="copyCode('code5')">📋 Nusxa</button>
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Boshqaruv</span>
+      <span style="font-size:12px; color:var(--text2);">Python Mavzu #12</span>
     </div>
-    <div class="code-body">
-      <pre id="code5">foydalanuvchi = {
-    "ism": "Ali",
-    "yosh": 25,
-    "email": "ali@example.com",
-    "faol": True
-}
+    <h2 id="break" style="color:#3776ab; margin-top:0; font-size:24px;">break, continue va pass Operatorlari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Tsiklning normal oqimini o'zgartirish uchun uchta maxsus kalit so'z ishlatiladi: <code>break</code>, <code>continue</code> va <code>pass</code>.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>break</code> — tsiklni zudlik bilan to'xtatadi va undan chiqib ketadi.</li>
+      <li><code>continue</code> — joriy takrorlanishni o'tkazib yuborib, keyingi iteratsiyaga o'tadi.</li>
+      <li><code>pass</code> — bo'sh operator (kelajakda kod yozilishi kerak bo'lgan joyda sintaksis xatosini oldini olish uchun).</li>
+      <li>Tsikllardagi <code>else</code> bloki — faqat tsikl o'z vaqtida, break ishlamasdan tugaganda bajariladi.</li>
+    </ul>
 
-# O'qish
-print(foydalanuvchi["ism"])           # Ali
-print(foydalanuvchi.get("telefon", "Yo'q"))  # Yo'q
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Python 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('pyCode12')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('pyCode12','pyRes12')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="pyCode12" contenteditable="true" spellcheck="false"># continue bilan faqat toq sonlarni chiqarish
+print("Toq sonlar:")
+for x in range(1, 8):
+    if x % 2 == 0:
+        continue # Juft sonlarni tashlab o'tish
+    print(x, end=" ")
+print()
 
-# Qo'shish / yangilash
-foydalanuvchi["shahar"] = "Toshkent"
-foydalanuvchi.update({"yosh": 26, "lavozim": "Dasturchi"})
+# break bilan qidiruv
+qidirilayotgan = 4
+for i in range(1, 10):
+    if i == qidirilayotgan:
+        print(f"Topildi: {i}!")
+        break</pre>
+      </div>
+    </div>
+    <div class="result-box" id="pyRes12">
+      <div class="result-label">🖥️ Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Python 3.12 Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Toq sonlar:
+1 3 5 7 
+Topildi: 4!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 <code>pass</code> kalit so'zi hali yozilmagan funksiya yoki klasslar uchun joy band qiluvchi (stub) hisoblanadi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#while" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: while Tsikli</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Python | 12 / 32</span>
+      <a href="#comprehension" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: List Comprehension (Qisqa Ro'yxat Yaratish) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Boshqaruv</span>
+      <span style="font-size:12px; color:var(--text2);">Python Mavzu #13</span>
+    </div>
+    <h2 id="comprehension" style="color:#3776ab; margin-top:0; font-size:24px;">List Comprehension (Qisqa Ro'yxat Yaratish)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>List Comprehension</strong> — mavjud ketma-ketliklar asosida yangi ro'yxat yaratishning Pythoncha eng qisqa, tezkor va chiroyli usulidir.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Sintaksis: <code>[ifoda for element in to'plam if shart]</code>.</li>
+      <li>Oddiy 4-5 qatorli for tsiklini bitta qatorga jamlaydi.</li>
+      <li>Filtrlash va qiymatni o'zgartirishni bittada bajaradi.</li>
+      <li>Oddiy for tsikliga qaraganda ancha tez ishlaydi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Python 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('pyCode13')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('pyCode13','pyRes13')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="pyCode13" contenteditable="true" spellcheck="false"># Oddiy usul
+kvadratlar = []
+for i in range(1, 6):
+    kvadratlar.append(i ** 2)
+
+# List Comprehension usuli
+kvadratlar_tezkor = [i ** 2 for i in range(1, 6)]
+print("Kvadratlar:", kvadratlar_tezkor)
+
+# Shart bilan filtrlash (faqat juft sonlar)
+juft_kvadratlar = [i ** 2 for i in range(1, 11) if i % 2 == 0]
+print("Juft sonlar kvadrati:", juft_kvadratlar)</pre>
+      </div>
+    </div>
+    <div class="result-box" id="pyRes13">
+      <div class="result-label">🖥️ Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Python 3.12 Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Kvadratlar: [1, 4, 9, 16, 25]
+Juft sonlar kvadrati: [4, 16, 36, 64, 100]&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 Xuddi shunday usulda Dict Comprehension <code>{k: v for ...}</code> ham yaratish mumkin.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#break" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: break, continue va pass Operatorlari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Python | 13 / 32</span>
+      <a href="#def" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: def — Funksiyalar (Functions) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Funksiyalar</span>
+      <span style="font-size:12px; color:var(--text2);">Python Mavzu #14</span>
+    </div>
+    <h2 id="def" style="color:#3776ab; margin-top:0; font-size:24px;">def — Funksiyalar (Functions)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Funksiya — ma'lum bir vazifani bajarishga mo'ljallangan va qayta ishlatiladigan kod blokidir. Pythonda funksiya <code>def</code> kalit so'zi yordamida e'lon qilinadi va natija <code>return</code> orqali qaytariladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>E'lon qilish: <code>def funksiya_nomi(parametrlar):</code>.</li>
+      <li>Natija qaytarish: <code>return qiymat</code>.</li>
+      <li>Standart qiymatli parametrlar (default parameters): <code>def salom(ism="Mehmon"):</code>.</li>
+      <li>Funksiyalar bir vaqtning o'zida bir nechta qiymat qaytara oladi (tuple sifatida).</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Python 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('pyCode14')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('pyCode14','pyRes14')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="pyCode14" contenteditable="true" spellcheck="false">def qoshish(a, b):
+    """Ikki sonni qo'shib beruvchi funksiya"""
+    return a + b
+
+def salomlash(ism="Mehmon"):
+    return f"Assalomu alaykum, {ism}!"
+
+print(qoshish(25, 45))
+print(salomlash("Quvondiq"))
+print(salomlash()) # Standart qiymat ishlatiladi
+
+# Bir vaqtning o'zida bir nechta qiymat qaytarish
+def hisobla(x, y):
+    return x + y, x * y
+
+yigindi, kopaytma = hisobla(4, 5)
+print(f"Yig'indi: {yigindi}, Ko'paytma: {kopaytma}")</pre>
+      </div>
+    </div>
+    <div class="result-box" id="pyRes14">
+      <div class="result-label">🖥️ Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Python 3.12 Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;70
+Assalomu alaykum, Quvondiq!
+Assalomu alaykum, Mehmon!
+Yig'indi: 9, Ko'paytma: 20&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 Funksiyaning birinchi qatorida yozilgan uch tirnoqli matn <code>"""docstring"""</code> deb ataladi va funksiya haqida qo'llanma beradi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#comprehension" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: List Comprehension (Qisqa Ro'yxat Yaratish)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Python | 14 / 32</span>
+      <a href="#args" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: *args va **kwargs (Moslashuvchan Argumentlar) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Funksiyalar</span>
+      <span style="font-size:12px; color:var(--text2);">Python Mavzu #15</span>
+    </div>
+    <h2 id="args" style="color:#3776ab; margin-top:0; font-size:24px;">*args va **kwargs (Moslashuvchan Argumentlar)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Funksiyaga oldindan noma'lum miqdordagi argumentlar kelib tushishi mumkin bo'lsa, <code>*args</code> (ixtiyoriy ko'p argumentlar) va <code>**kwargs</code> (kalit so'zli argumentlar) ishlatiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>*args</code> — barcha qo'shimcha argumentlarni bitta <code>tuple</code> (kortej) qilib yig'ib beradi.</li>
+      <li><code>**kwargs</code> — kalit=qiymat ko'rinishidagi argumentlarni bitta <code>dict</code> (lug'at) qilib beradi.</li>
+      <li>Nomlar shartli ravishda args va kwargs deb ataladi, muhimi yulduzchalar sonidir (<code>*</code> va <code>**</code>).</li>
+      <li>Katta kutubxonalar va freymvorklarda universal funksiyalar yozishda keng qo'llaniladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Python 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('pyCode15')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('pyCode15','pyRes15')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="pyCode15" contenteditable="true" spellcheck="false"># *args namunasi (istalgancha son qo'shish)
+def jami_hisobla(*sonlar):
+    jami = sum(sonlar)
+    return f"Kiritilgan {len(sonlar)} ta son yig'indisi: {jami}"
+
+print(jami_hisobla(5, 10, 15, 20))
+
+# **kwargs namunasi (foydalanuvchi profili)
+def profil_yarat(ism, **malumotlar):
+    print(f"👤 Foydalanuvchi: {ism}")
+    for kalit, qiymat in malumotlar.items():
+        print(f"  • {kalit}: {qiymat}")
+
+profil_yarat("Ali", yosh=24, shahar="Toshkent", kasb="Dasturchi")</pre>
+      </div>
+    </div>
+    <div class="result-box" id="pyRes15">
+      <div class="result-label">🖥️ Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Python 3.12 Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Kiritilgan 4 ta son yig'indisi: 50
+👤 Foydalanuvchi: Ali
+  • yosh: 24
+  • shahar: Toshkent
+  • kasb: Dasturchi&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 Argumentlar tartibi: oddiy parametrlar -> <code>*args</code> -> standart parametrlar -> <code>**kwargs</code>.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#def" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: def — Funksiyalar (Functions)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Python | 15 / 32</span>
+      <a href="#lambda" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Lambda — Nomsiz Funksiyalar →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Funksiyalar</span>
+      <span style="font-size:12px; color:var(--text2);">Python Mavzu #16</span>
+    </div>
+    <h2 id="lambda" style="color:#3776ab; margin-top:0; font-size:24px;">Lambda — Nomsiz Funksiyalar</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Lambda</strong> — bu bir qatorda yoziladigan nomsiz, kichik yordamchi funksiyadir. U asosan <code>map()</code>, <code>filter()</code> va <code>sorted()</code> kabi funksiyalar bilan birga qisqa vaqtli operatsiyalar uchun ishlatiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Sintaksis: <code>lambda parametrlar: ifoda</code>.</li>
+      <li><code>return</code> yozilmaydi, ifoda natijasi avtomatik qaytariladi.</li>
+      <li>Faqat bitta ifodadan iborat bo'lishi mumkin.</li>
+      <li>Saralashda (sorting key) maxsus qoida berish uchun juda qulay.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Python 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('pyCode16')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('pyCode16','pyRes16')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="pyCode16" contenteditable="true" spellcheck="false"># Oddiy lambda
+kopaytir = lambda x, y: x * y
+print("5 * 6 =", kopaytir(5, 6))
+
+# Ro'yxatni murakkab saralash
+talabalar = [("Ali", 85), ("Bobur", 92), ("Zarina", 78)]
+# Ball bo'yicha saralash:
+talabalar.sort(key=lambda t: t[1], reverse=True)
+print("Ball bo'yicha saralangan:", talabalar)</pre>
+      </div>
+    </div>
+    <div class="result-box" id="pyRes16">
+      <div class="result-label">🖥️ Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Python 3.12 Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;5 * 6 = 30
+Ball bo'yicha saralangan: [('Bobur', 92), ('Ali', 85), ('Zarina', 78)]&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 Agar funksiyaning logikasi bir qatordan oshsa, lambda o'rniga oddiy <code>def</code> ishlatish kerak.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#args" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: *args va **kwargs (Moslashuvchan Argumentlar)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Python | 16 / 32</span>
+      <a href="#decorators" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Dekoratorlar (Decorators) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Funksiyalar</span>
+      <span style="font-size:12px; color:var(--text2);">Python Mavzu #17</span>
+    </div>
+    <h2 id="decorators" style="color:#3776ab; margin-top:0; font-size:24px;">Dekoratorlar (Decorators)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Dekorator</strong> — mavjud funksiyaning asl kodini o'zgartirmasdan turib, uning imkoniyatlarini kengaytirish yoki unga yangi xatti-harakat qo'shish imkonini beruvchi maxsus mexanizmdir. <code>@dekorator_nomi</code> belgisi bilan qo'yiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Boshqa funksiyani parametr sifatida qabul qiluvchi va yangi funksiya qaytaruvchi funksiya.</li>
+      <li>Loglash (logging), ishlash vaqtini o'lchash, avtorizatsiya va keshlashtirishda ishlatiladi.</li>
+      <li>Pythonning eng go'zal va qudratli imkoniyatlaridan biri.</li>
+      <li>Flask va FastAPI freymvorklarida marshrut (route) belgilashda asosiy vosita.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Python 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('pyCode17')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('pyCode17','pyRes17')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="pyCode17" contenteditable="true" spellcheck="false">import time
+
+def vaqtni_olcha(funksiya):
+    def orab_oluvchi(*args, **kwargs):
+        boshlanish = time.time()
+        natija = funksiya(*args, **kwargs)
+        tugash = time.time()
+        print(f"⏱ '{funksiya.__name__}' ishlash vaqti: {(tugash - boshlanish):.5f} sek")
+        return natija
+    return orab_oluvchi
+
+@vaqtni_olcha
+def sekin_hisobla():
+    yigindi = sum(i ** 2 for i in range(100000))
+    return yigindi
+
+print("Natija:", sekin_hisobla())</pre>
+      </div>
+    </div>
+    <div class="result-box" id="pyRes17">
+      <div class="result-label">🖥️ Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Python 3.12 Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;⏱ 'sekin_hisobla' ishlash vaqti: 0.01500 sek
+Natija: 333328333350000&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 Dekorator ichida <code>functools.wraps</code> ishlatish asl funksiya nomi va hujjatlarini saqlab qolishga yordam beradi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#lambda" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Lambda — Nomsiz Funksiyalar</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Python | 17 / 32</span>
+      <a href="#list" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: List (Ro'yxatlar) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Tuzilmalar</span>
+      <span style="font-size:12px; color:var(--text2);">Python Mavzu #18</span>
+    </div>
+    <h2 id="list" style="color:#3776ab; margin-top:0; font-size:24px;">List (Ro'yxatlar)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>List</strong> — elementlar ketma-ketligini saqlovchi, o'zgartirilishi mumkin bo'lgan (mutable) tartiblangan to'plam. Kvadrat qavslar <code>[]</code> ichida belgilanadi va istalgan turdagi ma'lumotlarni o'z ichiga olishi mumkin.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>O'zgartiriladi: element qo'shish, o'chirish va yangilash mumkin.</li>
+      <li>Element qo'shish: <code>append()</code> (oxiriga), <code>insert()</code> (ixtiyoriy joyga), <code>extend()</code>.</li>
+      <li>Element o'chirish: <code>pop()</code> (indeks bo'yicha), <code>remove()</code> (qiymat bo'yicha).</li>
+      <li>Saralash: <code>sort()</code> (o'zini o'zgartiradi) yoki <code>sorted()</code> (yangi nusxa qaytaradi).</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Python 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('pyCode18')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('pyCode18','pyRes18')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="pyCode18" contenteditable="true" spellcheck="false">sonlar = [10, 45, 2, 88, 19]
+
+# Qo'shish
+sonlar.append(100)
+sonlar.insert(1, 25) # 1-indeksga 25 qo'yish
+print("Qo'shilgach:", sonlar)
+
+# Saralash
+sonlar.sort()
+print("O'sish tartibida:", sonlar)
 
 # O'chirish
-del foydalanuvchi["faol"]
-yosh = foydalanuvchi.pop("yosh")
-
-# Aylanish
-for kalit in foydalanuvchi:
-    print(f"{kalit}: {foydalanuvchi[kalit]}")
-
-for kalit, qiymat in foydalanuvchi.items():
-    print(f"{kalit} = {qiymat}")
-
-# Dict Comprehension
-kvadratlar = {x: x**2 for x in range(1, 6)}
-print(kvadratlar)  # {1:1, 2:4, 3:9, 4:16, 5:25}</pre>
+ochirilgan = sonlar.pop() # Oxirgisini olib tashlash
+print(f"O'chirildi: {ochirilgan}, Qoldi: {sonlar}")</pre>
+      </div>
     </div>
-  </div>
-
-  <h2 id="class">OOP — Sinflar</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">python</span>
-      <button class="copy-btn" onclick="copyCode('code6')">📋 Nusxa</button>
+    <div class="result-box" id="pyRes18">
+      <div class="result-label">🖥️ Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Python 3.12 Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Qo'shilgach: [10, 25, 45, 2, 88, 19, 100]
+O'sish tartibida: [2, 10, 19, 25, 45, 88, 100]
+O'chirildi: 100, Qoldi: [2, 10, 19, 25, 45, 88]&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
     </div>
-    <div class="code-body">
-      <pre id="code6">class Avtomobil:
-    # Sinf atributi
-    g'ildirak_soni = 4
-    
-    def __init__(self, marka, model, yil):
-        self.marka = marka
+
+    <div class="note" style="margin-top:16px;">💡 Ro'yxat uzunligini bilish uchun <code>len(sonlar)</code> funksiyasi ishlatiladi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#decorators" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Dekoratorlar (Decorators)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Python | 18 / 32</span>
+      <a href="#tuple" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Tuple (Kortejlar) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Tuzilmalar</span>
+      <span style="font-size:12px; color:var(--text2);">Python Mavzu #19</span>
+    </div>
+    <h2 id="tuple" style="color:#3776ab; margin-top:0; font-size:24px;">Tuple (Kortejlar)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Tuple</strong> — xuddi ro'yxat kabi elementlar ketma-ketligini saqlaydi, lekin uning elementlarini bir marta yaratilgach o'zgartirib bo'lmaydi (immutable). Dumaloq qavslar <code>()</code> bilan yoziladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>O'zgarmas (Immutable): element qo'shib yoki o'chirib bo'lmaydi.</li>
+      <li>Ro'yxatga qaraganda tezroq ishlaydi va kamroq xotira egallaydi.</li>
+      <li>O'zgarmas ma'lumotlarni (koordinatalar, haftalik kunlar, server sozlamalari) himoya qilish uchun ideal.</li>
+      <li>Bitta elementli tuple: <code>bitta = (5,)</code> — oxirida vergul bo'lishi shart!</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Python 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('pyCode19')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('pyCode19','pyRes19')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="pyCode19" contenteditable="true" spellcheck="false"># Tuple yaratish
+koordinatalar = (41.2995, 69.2401) # Toshkent
+hafta_kunlari = ("Dushanba", "Seshanba", "Chorshanba")
+
+print("Toshkent koordinatalari:", koordinatalar)
+print("1-kun:", hafta_kunlari[0])
+
+# Unpacking (Qiymatlarni bo'lib olish)
+kenglik, uzunlik = koordinatalar
+print(f"Kenglik: {kenglik}, Uzunlik: {uzunlik}")</pre>
+      </div>
+    </div>
+    <div class="result-box" id="pyRes19">
+      <div class="result-label">🖥️ Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Python 3.12 Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Toshkent koordinatalari: (41.2995, 69.2401)
+1-kun: Dushanba
+Kenglik: 41.2995, Uzunlik: 69.2401&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 Agar tuple elementini o'zgartirishga urinsangiz: <code>TypeError: 'tuple' object does not support item assignment</code> xatosi chiqadi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#list" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: List (Ro'yxatlar)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Python | 19 / 32</span>
+      <a href="#dict" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Dictionary (Lug'atlar - Kalit: Qiymat) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Tuzilmalar</span>
+      <span style="font-size:12px; color:var(--text2);">Python Mavzu #20</span>
+    </div>
+    <h2 id="dict" style="color:#3776ab; margin-top:0; font-size:24px;">Dictionary (Lug'atlar - Kalit: Qiymat)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Dictionary (dict)</strong> — ma'lumotlarni <code>kalit: qiymat</code> (key: value) juftliklari ko'rinishida saqlovchi o'ta kuchli ma'lumot tuzilmasi. Jingalak qavslar <code>{}</code> ichida belgilanadi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Kalitlar unikal bo'lishi va o'zgarmas tur (str, int) bo'lishi shart.</li>
+      <li>Qiymat olish: <code>lugat['kalit']</code> yoki xavfsiz <code>lugat.get('kalit', 'Standart')</code>.</li>
+      <li>Metodlar: <code>keys()</code> (barcha kalitlar), <code>values()</code> (barcha qiymatlar), <code>items()</code> (juftliklar).</li>
+      <li>JSON ma'lumotlar bilan ishlashda aynan lug'at tuzilmasi asos bo'ladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Python 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('pyCode20')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('pyCode20','pyRes20')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="pyCode20" contenteditable="true" spellcheck="false">talaba = {
+    "ism": "Jasur",
+    "yosh": 21,
+    "kurs": 3,
+    "fanlar": ["Python", "Algoritmlar"]
+}
+
+# Qiymatni o'qish va yangilash
+print("Talaba ismi:", talaba["ism"])
+talaba["stipendiya"] = 650000 # Yangi kalit qo'shish
+
+# Xavfsiz get() metodi
+print("Telefon:", talaba.get("telefon", "Mavjud emas"))
+
+# Lug'at bo'ylab aylanish
+for kalit, qiymat in talaba.items():
+    print(f"{kalit}: {qiymat}")</pre>
+      </div>
+    </div>
+    <div class="result-box" id="pyRes20">
+      <div class="result-label">🖥️ Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Python 3.12 Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Talaba ismi: Jasur
+Telefon: Mavjud emas
+ism: Jasur
+yosh: 21
+kurs: 3
+fanlar: ['Python', 'Algoritmlar']
+stipendiya: 650000&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 <code>talaba['telefon']</code> deb chaqirilsa va kalit yo'q bo'lsa xato beradi, ammo <code>talaba.get('telefon')</code> xatosiz <code>None</code> qaytaradi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#tuple" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Tuple (Kortejlar)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Python | 20 / 32</span>
+      <a href="#set" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Set (To'plamlar - Takrorlanmas Qiymatlar) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Tuzilmalar</span>
+      <span style="font-size:12px; color:var(--text2);">Python Mavzu #21</span>
+    </div>
+    <h2 id="set" style="color:#3776ab; margin-top:0; font-size:24px;">Set (To'plamlar - Takrorlanmas Qiymatlar)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Set</strong> — faqat takrorlanmaydigan (unikal) elementlarni saqlaydigan, tartiblanmagan to'plamdir. Matematikadagi to'plamlar amallarini (kesishma, birlashma, farq) bajarishda ishlatiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Takroriy qiymatlarni avtomatik tarzda o'chirib tashlaydi.</li>
+      <li>Indeks bilan murojaat qilib bo'lmaydi (tartibsiz).</li>
+      <li>Birlashma (union): <code>a | b</code> yoki <code>a.union(b)</code>.</li>
+      <li>Kesishma (intersection): <code>a & b</code> yoki <code>a.intersection(b)</code>.</li>
+      <li>Farq (difference): <code>a - b</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Python 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('pyCode21')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('pyCode21','pyRes21')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="pyCode21" contenteditable="true" spellcheck="false"># Ro'yxatdan takroriy elementlarni tozalash
+raqamlar = [1, 2, 2, 3, 4, 4, 4, 5]
+unikal = set(raqamlar)
+print("Unikal to'plam:", unikal)
+
+# To'plamlar ustida amallar
+frontend = {"HTML", "CSS", "JavaScript"}
+backend = {"Python", "JavaScript", "SQL"}
+
+print("Har ikkisida bor (kesishma):", frontend &amp; backend)
+print("Barcha texnologiyalar (birlashma):", frontend | backend)
+print("Faqat frontend (farq):", frontend - backend)</pre>
+      </div>
+    </div>
+    <div class="result-box" id="pyRes21">
+      <div class="result-label">🖥️ Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Python 3.12 Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Unikal to'plam: {1, 2, 3, 4, 5}
+Har ikkisida bor (kesishma): {'JavaScript'}
+Barcha texnologiyalar (birlashma): {'HTML', 'SQL', 'CSS', 'JavaScript', 'Python'}
+Faqat frontend (farq): {'HTML', 'CSS'}&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 Bo'sh set yaratish uchun <code>set()</code> yoziladi, chunki <code>{}</code> bo'sh lug'at (dict) yaratadi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#dict" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Dictionary (Lug'atlar - Kalit: Qiymat)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Python | 21 / 32</span>
+      <a href="#class" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Class va Obyektlar (OOP Asoslari) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">OOP</span>
+      <span style="font-size:12px; color:var(--text2);">Python Mavzu #22</span>
+    </div>
+    <h2 id="class" style="color:#3776ab; margin-top:0; font-size:24px;">Class va Obyektlar (OOP Asoslari)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Obyektga Yo'naltirilgan Dasturlash (OOP) real hayotdagi narsalarni kodda aks ettirish imkonini beradi. <strong>Class</strong> — bu qolip (shablon), <strong>Object</strong> esa shu qolipdan yaratilgan aniq nusxadir.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>class Nom:</code> — klass e'lon qilish.</li>
+      <li><code>__init__(self, ...)</code> — konstruktor (obyekt yaratilganda avtomatik ishlaydi).</li>
+      <li><code>self</code> — joriy yaratilayotgan obyekt nusxasiga ishora qiladi.</li>
+      <li>Metodlar — klass ichida e'lon qilingan funksiyalardir.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Python 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('pyCode22')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('pyCode22','pyRes22')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="pyCode22" contenteditable="true" spellcheck="false">class Avtomobil:
+    def __init__(self, model, rang, narx):
         self.model = model
-        self.yil = yil
-        self.__tezlik = 0  # private
-    
-    def tezlashtir(self, miqdor):
-        self.__tezlik += miqdor
-        return self
-    
+        self.rang = rang
+        self.narx = narx
+        self.tezlik = 0
+
+    def gaz_bos(self, miqdor):
+        self.tezlik += miqdor
+        print(f"{self.model} tezlashdi: {self.tezlik} km/soat")
+
+    def malumot(self):
+        return f"{self.rang} {self.model}, Narxi: ${self.narx}"
+
+# Obyektlar yaratish
+mashina1 = Avtomobil("Chevrolet Tracker", "Qora", 22000)
+mashina2 = Avtomobil("BYD Song Plus", "Oq", 31000)
+
+print(mashina1.malumot())
+mashina1.gaz_bos(60)
+print(mashina2.malumot())</pre>
+      </div>
+    </div>
+    <div class="result-box" id="pyRes22">
+      <div class="result-label">🖥️ Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Python 3.12 Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Qora Chevrolet Tracker, Narxi: $22000
+Chevrolet Tracker tezlashdi: 60 km/soat
+Oq BYD Song Plus, Narxi: $31000&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 Har bir metodning birinchi parametri albatta <code>self</code> bo'lishi shart.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#set" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Set (To'plamlar - Takrorlanmas Qiymatlar)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Python | 22 / 32</span>
+      <a href="#inheritance" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Merosxo'rlik (Inheritance) va Polimorfizm →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">OOP</span>
+      <span style="font-size:12px; color:var(--text2);">Python Mavzu #23</span>
+    </div>
+    <h2 id="inheritance" style="color:#3776ab; margin-top:0; font-size:24px;">Merosxo'rlik (Inheritance) va Polimorfizm</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Merosxo'rlik</strong> — bir klassning (bola klass) boshqa klassdagi (ota klass) barcha xossa va metodlarini o'ziga qabul qilib olishidir. Bu kodni qayta yozishdan qutqaradi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Sintaksis: <code>class Bola(Ota):</code>.</li>
+      <li><code>super().__init__()</code> — ota klassning konstruktorini chaqirish.</li>
+      <li>Method Overriding — bola klassda ota klass metodini yangilash (o'zgartirish).</li>
+      <li>Ko'p merosxo'rlik (Multiple Inheritance): bir bola klass bir nechta ota klassdan meros olishi mumkin.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Python 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('pyCode23')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('pyCode23','pyRes23')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="pyCode23" contenteditable="true" spellcheck="false">class Xodim:
+    def __init__(self, ism, maosh):
+        self.ism = ism
+        self.maosh = maosh
+
+    def info(self):
+        return f"Xodim: {self.ism}, Maoshi: ${self.maosh}"
+
+# Xodim klassidan meros olamiz
+class Dasturchi(Xodim):
+    def __init__(self, ism, maosh, asosiy_til):
+        super().__init__(ism, maosh) # Otaning konstruktori
+        self.asosiy_til = asosiy_til
+
+    def info(self): # Metodni yangilash (override)
+        return f"💻 Dasturchi {self.ism} ({self.asosiy_til}), Maoshi: ${self.maosh}"
+
+dev = Dasturchi("Sardor", 2500, "Python")
+print(dev.info())</pre>
+      </div>
+    </div>
+    <div class="result-box" id="pyRes23">
+      <div class="result-label">🖥️ Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Python 3.12 Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;💻 Dasturchi Sardor (Python), Maoshi: $2500&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 <code>super()</code> yordamida ota klass imkoniyatlaridan to'liq foydalangan holda yangi xususiyatlar qo'shiladi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#class" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Class va Obyektlar (OOP Asoslari)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Python | 23 / 32</span>
+      <a href="#magic" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Magic (Dunder) Metodlar (__str__, __len__, __eq__) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">OOP</span>
+      <span style="font-size:12px; color:var(--text2);">Python Mavzu #24</span>
+    </div>
+    <h2 id="magic" style="color:#3776ab; margin-top:0; font-size:24px;">Magic (Dunder) Metodlar (__str__, __len__, __eq__)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Magic metodlar</strong> (yoki double-underscore 'dunder' metodlar) nomining boshi va oxirida ikkitadan pastki chiziq bo'lgan maxsus metodlardir. Ular Python obyektlarini o'rnatilgan funksiyalar bilan moslashuvchan qiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>__str__(self)</code> — obyektni <code>print()</code> qilganda qanday matn chiqishini belgilaydi.</li>
+      <li><code>__len__(self)</code> — obyekt uchun <code>len()</code> funksiyasi ishlashini ta'minlaydi.</li>
+      <li><code>__eq__(self, other)</code> — ikkita obyektni <code>==</code> orqali tenglikka solishtiradi.</li>
+      <li><code>__add__(self, other)</code> — obyektlarni <code>+</code> operatori bilan qo'shish imkonini beradi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Python 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('pyCode24')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('pyCode24','pyRes24')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="pyCode24" contenteditable="true" spellcheck="false">class Kitob:
+    def __init__(self, nom, muallif, sahifalar):
+        self.nom = nom
+        self.muallif = muallif
+        self.sahifalar = sahifalar
+
     def __str__(self):
-        return f"{self.yil} {self.marka} {self.model}"
-    
-    @property
-    def tezlik(self):
-        return self.__tezlik
+        return f"'{self.nom}' — {self.muallif}"
 
+    def __len__(self):
+        return self.sahifalar
 
-# Meros (Inheritance)
-class ElektrikAvto(Avtomobil):
-    def __init__(self, marka, model, yil, batareya_quvvati):
-        super().__init__(marka, model, yil)
-        self.batareya = batareya_quvvati
-    
-    def quvvatlash(self):
-        return f"{self.marka} quvvatlanmoqda... ⚡"
+kitob = Kitob("O'tkan Kunlar", "Abdulla Qodiriy", 420)
 
-
-tesla = ElektrikAvto("Tesla", "Model 3", 2023, 75)
-print(tesla)              # 2023 Tesla Model 3
-print(tesla.quvvatlash()) # Tesla quvvatlanmoqda... ⚡
-tesla.tezlashtir(60)
-print(tesla.tezlik)       # 60</pre>
+print(kitob)        # __str__ ishlaydi
+print("Sahifalar soni:", len(kitob)) # __len__ ishlaydi</pre>
+      </div>
     </div>
-  </div>
-
-  <h2 id="requests">requests Kutubxonasi</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">python</span>
-      <button class="copy-btn" onclick="copyCode('code7')">📋 Nusxa</button>
+    <div class="result-box" id="pyRes24">
+      <div class="result-label">🖥️ Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Python 3.12 Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;'O'tkan Kunlar' — Abdulla Qodiriy
+Sahifalar soni: 420&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
     </div>
-    <div class="code-body">
-      <pre id="code7"># pip install requests
-import requests
 
-# GET so'rov
-javob = requests.get('https://jsonplaceholder.typicode.com/users/1')
-print(javob.status_code)  # 200
-foydalanuvchi = javob.json()
-print(foydalanuvchi['name'])  # Leanne Graham
+    <div class="note" style="margin-top:16px;">💡 <code>__repr__</code> metodi esa dasturchilar uchun obyektning to'liq texnik ko'rinishini chiqarishda xizmat qiladi.</div>
 
-# POST so'rov
-yangi_post = requests.post(
-    'https://jsonplaceholder.typicode.com/posts',
-    json={'title': 'Salom', 'body': 'Mazmun', 'userId': 1}
-)
-print(yangi_post.status_code)  # 201
-print(yangi_post.json())
-
-# Sarlavhalar bilan
-headers = {'Authorization': 'Bearer mytoken123'}
-ma_lumot = requests.get('https://api.example.com/profile', headers=headers)
-
-# Xatolarni ushlash
-try:
-    r = requests.get('https://api.example.com', timeout=5)
-    r.raise_for_status()
-except requests.exceptions.Timeout:
-    print("So'rov vaqti tugadi")
-except requests.exceptions.HTTPError as e:
-    print(f"HTTP xatosi: {e}")</pre>
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#inheritance" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Merosxo'rlik (Inheritance) va Polimorfizm</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Python | 24 / 32</span>
+      <a href="#file-read" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Fayllarni O'qish (open va with) →</a>
     </div>
-  </div>
+  </section>
 
-  <!-- Quiz -->
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Fayllar</span>
+      <span style="font-size:12px; color:var(--text2);">Python Mavzu #25</span>
+    </div>
+    <h2 id="file-read" style="color:#3776ab; margin-top:0; font-size:24px;">Fayllarni O'qish (open va with)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Kompyuterdagi matnli fayllardan ma'lumotlarni o'qish uchun <code>open()</code> funksiyasi va eng xavfsiz hisoblangan <code>with</code> kontekst menejeri qo'llaniladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Rejimlar: <code>'r'</code> (read — faqat o'qish), <code>'rt'</code> (matnli rejim).</li>
+      <li><code>read()</code> — faylning butun matnini birdan o'qiydi.</li>
+      <li><code>readline()</code> — bitta qatorni o'qiydi.</li>
+      <li><code>readlines()</code> — barcha qatorlarni ro'yxat qilib beradi.</li>
+      <li><code>with open(...) as f:</code> — faylni ish tugagach avtomatik xatosiz yopadi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Python 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('pyCode25')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('pyCode25','pyRes25')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="pyCode25" contenteditable="true" spellcheck="false"># Xayoliy fayldan o'qish namunasi
+matn_namunasi = """Python darsi
+HTML darsi
+CSS darsi"""
+
+# Faylni yaratib o'qib ko'ramiz
+with open("kurslar.txt", "w", encoding="utf-8") as f:
+    f.write(matn_namunasi)
+
+# with bilan xavfsiz o'qish
+with open("kurslar.txt", "r", encoding="utf-8") as fayl:
+    qatorlar = fayl.readlines()
+    for nomer, qator in enumerate(qatorlar, 1):
+        print(f"{nomer}-dars: {qator.strip()}")</pre>
+      </div>
+    </div>
+    <div class="result-box" id="pyRes25">
+      <div class="result-label">🖥️ Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Python 3.12 Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;1-dars: Python darsi
+2-dars: HTML darsi
+3-dars: CSS darsi&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">⚠️ Fayllar bilan ishlaganda o'zbek harflari (o', g') to'g'ri chiqishi uchun doimo <code>encoding='utf-8'</code> ko'rsating.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#magic" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Magic (Dunder) Metodlar (__str__, __len__, __eq__)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Python | 25 / 32</span>
+      <a href="#file-write" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Fayllarga Yozish va Qo'shish (w va a) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Fayllar</span>
+      <span style="font-size:12px; color:var(--text2);">Python Mavzu #26</span>
+    </div>
+    <h2 id="file-write" style="color:#3776ab; margin-top:0; font-size:24px;">Fayllarga Yozish va Qo'shish (w va a)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Ma'lumotlarni doimiy xotirada saqlash uchun fayllarga yozish kerak. Buning uchun <code>'w'</code> (write — boshqatdan yozish) yoki <code>'a'</code> (append — oxiriga qo'shish) rejimlari ishlatiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>'w'</code> rejimi: agar fayl mavjud bo'lsa, ichidagi hamma narsani o'chirib yangidan yozadi!</li>
+      <li><code>'a'</code> rejimi: mavjud faylning oxiriga yangi qatorlarni qo'shib boradi.</li>
+      <li><code>'x'</code> rejimi: faqat yangi fayl yaratish uchun (agar fayl oldindan bor bo'lsa xato beradi).</li>
+      <li><code>write()</code> — bitta satr yozadi, <code>writelines()</code> — ro'yxatni yozadi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Python 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('pyCode26')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('pyCode26','pyRes26')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="pyCode26" contenteditable="true" spellcheck="false"># 'a' rejimi bilan jurnalga (log) yozish
+with open("jurnal.log", "a", encoding="utf-8") as log:
+    log.write("Tizimga kirish: 2026-11-21 09:00:01
+")
+    log.write("Foydalanuvchi: admin
+")
+
+# O'qib tekshirish
+with open("jurnal.log", "r", encoding="utf-8") as log:
+    print(log.read())</pre>
+      </div>
+    </div>
+    <div class="result-box" id="pyRes26">
+      <div class="result-label">🖥️ Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Python 3.12 Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Tizimga kirish: 2026-11-21 09:00:01
+Foydalanuvchi: admin&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 <code>write()</code> funksiyasi avtomatik ravishda yangi qatorga o'tmaydi, shuning uchun <code>\n</code> qo'yish kerak.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#file-read" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Fayllarni O'qish (open va with)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Python | 26 / 32</span>
+      <a href="#json-mod" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: JSON Moduli bilan Ishlash →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Fayllar</span>
+      <span style="font-size:12px; color:var(--text2);">Python Mavzu #27</span>
+    </div>
+    <h2 id="json-mod" style="color:#3776ab; margin-top:0; font-size:24px;">JSON Moduli bilan Ishlash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>JSON</strong> (JavaScript Object Notation) — veb ilovalar va API lar o'rtasida ma'lumot almashishning eng mashhur xalqaro formati. Pythonda o'rnatilgan <code>json</code> moduli yordamida Python lug'atlarini JSON formatiga va aksincha aylantirish juda qulay.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>json.dumps()</code> — Python ob'ektini JSON matniga (string) aylantiradi.</li>
+      <li><code>json.loads()</code> — JSON matnini Python ob'ektiga aylantiradi.</li>
+      <li><code>json.dump(obj, f)</code> — to'g'ridan-to'g'ri <code>.json</code> faylga saqlaydi.</li>
+      <li><code>json.load(f)</code> — <code>.json</code> fayldan o'qiydi.</li>
+      <li><code>indent=4</code> — chiroyli va o'qishga qulay formatlaydi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Python 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('pyCode27')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('pyCode27','pyRes27')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="pyCode27" contenteditable="true" spellcheck="false">import json
+
+sozlamalar = {
+    "sayt": "W3Learn",
+    "mavzu": "Qorong'u",
+    "avto_saqlash": True,
+    "tillari": ["uz", "ru", "en"]
+}
+
+# JSON matniga o'girish
+json_matn = json.dumps(sozlamalar, indent=2, ensure_ascii=False)
+print("JSON formati:")
+print(json_matn)
+
+# Qayta Python dict ga o'girish
+qaytgan_malumot = json.loads(json_matn)
+print("Sayt nomi:", qaytgan_malumot["sayt"])</pre>
+      </div>
+    </div>
+    <div class="result-box" id="pyRes27">
+      <div class="result-label">🖥️ Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Python 3.12 Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;JSON formati:
+{
+  "sayt": "W3Learn",
+  "mavzu": "Qorong'u",
+  "avto_saqlash": true,
+  "tillari": [
+    "uz",
+    "ru",
+    "en"
+  ]
+}
+Sayt nomi: W3Learn&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 <code>ensure_ascii=False</code> parametri kirill yoki lotin o'zbek harflarining buzulmasdan toza chiqishini ta'minlaydi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#file-write" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Fayllarga Yozish va Qo'shish (w va a)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Python | 27 / 32</span>
+      <a href="#pip" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: pip — Paketlar Menejeri →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Kutubxonalar</span>
+      <span style="font-size:12px; color:var(--text2);">Python Mavzu #28</span>
+    </div>
+    <h2 id="pip" style="color:#3776ab; margin-top:0; font-size:24px;">pip — Paketlar Menejeri</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>pip</strong> — dunyodagi millionlab dasturchilar yaratgan tayyor Python kutubxonalarini (masalan, requests, django, numpy) birgina buyruq bilan o'rnatish va boshqarish imkonini beruvchi vositadir.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>O'rnatish: <code>pip install kutubxona_nomi</code>.</li>
+      <li>O'chirish: <code>pip uninstall kutubxona_nomi</code>.</li>
+      <li>O'rnatilgan paketlar ro'yxatini ko'rish: <code>pip list</code>.</li>
+      <li>Barcha talablarni bitta faylga saqlash: <code>pip freeze &gt; requirements.txt</code>.</li>
+      <li>Talablarni o'rnatish: <code>pip install -r requirements.txt</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Python 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('pyCode28')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('pyCode28','pyRes28')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="pyCode28" contenteditable="true" spellcheck="false"># Terminalda bajariladigan komandalar:
+# $ pip install requests
+# $ pip install pandas matplotlib
+# $ pip freeze &gt; requirements.txt
+# $ pip install -r requirements.txt
+
+print("pip — eng qulay paket menejeri!")</pre>
+      </div>
+    </div>
+    <div class="result-box" id="pyRes28">
+      <div class="result-label">🖥️ Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Python 3.12 Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;pip — eng qulay paket menejeri!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 Har bir loyiha uchun kutubxonalarni alohida ajratib o'rnatish uchun Virtual Muhitdan (venv) foydalaning.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#json-mod" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: JSON Moduli bilan Ishlash</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Python | 28 / 32</span>
+      <a href="#venv" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Virtual Muhit (venv) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Kutubxonalar</span>
+      <span style="font-size:12px; color:var(--text2);">Python Mavzu #29</span>
+    </div>
+    <h2 id="venv" style="color:#3776ab; margin-top:0; font-size:24px;">Virtual Muhit (venv)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Virtual Muhit (Virtual Environment)</strong> — har bir loyihaning kutubxonalarini bir-biriga xalaqit bermaydigan qilib alohida xavfsiz sandiqcha (sandbox) ichida saqlash usulidir.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Yaratish: <code>python -m venv mening_muhit</code>.</li>
+      <li>Faollashtirish (Windows): <code>mening_muhit\Scripts\activate</code>.</li>
+      <li>Faollashtirish (Mac/Linux): <code>source mening_muhit/bin/activate</code>.</li>
+      <li>Chiqish: <code>deactivate</code>.</li>
+      <li>Turli loyihalardagi paketlar versiyalari to'qnashuvini butunlay bartaraf etadi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Python 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('pyCode29')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('pyCode29','pyRes29')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="pyCode29" contenteditable="true" spellcheck="false"># Loyihada venv ishlatish bosqichlari:
+# 1. Muhit yaratish:
+# python -m venv .venv
+
+# 2. Uni faollashtirish (Windows):
+# .venv\Scripts\activate
+
+# 3. Paketlarni o'rnatish:
+# pip install requests
+
+print("Virtual muhit loyiha xavfsizligini ta'minlaydi!")</pre>
+      </div>
+    </div>
+    <div class="result-box" id="pyRes29">
+      <div class="result-label">🖥️ Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Python 3.12 Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Virtual muhit loyiha xavfsizligini ta'minlaydi!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 <code>.venv</code> papkasini hech qachon Git'ga yuklamang — uni doim <code>.gitignore</code> ga qo'shing.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#pip" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: pip — Paketlar Menejeri</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Python | 29 / 32</span>
+      <a href="#requests" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: requests — HTTP So'rovlar Kutubxonasi →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Kutubxonalar</span>
+      <span style="font-size:12px; color:var(--text2);">Python Mavzu #30</span>
+    </div>
+    <h2 id="requests" style="color:#3776ab; margin-top:0; font-size:24px;">requests — HTTP So'rovlar Kutubxonasi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>requests</strong> — serverlar va REST API lar bilan HTTP orqali (GET, POST, PUT, DELETE) aloqa o'rnatish uchun dunyodagi eng qulay va mashhur Python kutubxonasidir.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>O'rnatish: <code>pip install requests</code>.</li>
+      <li>GET so'rovi: <code>r = requests.get('https://api.site.com')</code>.</li>
+      <li>Status kodi: <code>r.status_code</code> (200 = muvaffaqiyat).</li>
+      <li>JSON ma'lumotni o'qish: <code>r.json()</code>.</li>
+      <li>Parametrlar bilan yuborish: <code>params={'q': 'qidiruv'}</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Python 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('pyCode30')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('pyCode30','pyRes30')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="pyCode30" contenteditable="true" spellcheck="false"># requests kutubxonasidan foydalanish namunasi
+import json
+
+# Xayoliy so'rov strukturasi
+API_URL = "https://jsonplaceholder.typicode.com/posts/1"
+
+print(f"So'rov yuborilmoqda: {API_URL}")
+# r = requests.get(API_URL)
+# data = r.json()
+
+namuna_javob = {
+    "userId": 1,
+    "id": 1,
+    "title": "W3Learn bilan Python o'rganish",
+    "body": "requests moduli orqali API lardan ma'lumot olish juda oson."
+}
+
+print("Status: 200 OK")
+print("Sarlavha:", namuna_javob["title"])</pre>
+      </div>
+    </div>
+    <div class="result-box" id="pyRes30">
+      <div class="result-label">🖥️ Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Python 3.12 Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;So'rov yuborilmoqda: https://jsonplaceholder.typicode.com/posts/1
+Status: 200 OK
+Sarlavha: W3Learn bilan Python o'rganish&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 Har qanday ob-havo, valyuta kursi yoki bot yaratishda aynan <code>requests</code> ishlatiladi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#venv" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Virtual Muhit (venv)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Python | 30 / 32</span>
+      <a href="#pandas" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: pandas — Ma'lumotlar Tahlili →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Kutubxonalar</span>
+      <span style="font-size:12px; color:var(--text2);">Python Mavzu #31</span>
+    </div>
+    <h2 id="pandas" style="color:#3776ab; margin-top:0; font-size:24px;">pandas — Ma'lumotlar Tahlili</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>pandas</strong> — katta hajmdagi jadvalli ma'lumotlarni tahlil qilish, tozalash, Excel va CSV fayllarni qayta ishlash uchun Data Science va analitika sohasidagi 1-raqamli kutubxonadir.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>O'rnatish: <code>pip install pandas</code>.</li>
+      <li>Asosiy tuzilma: <code>DataFrame</code> (ustun va qatorlardan iborat jadval).</li>
+      <li>Excel va CSV o'qish: <code>pd.read_csv('fayl.csv')</code>.</li>
+      <li>Statistika hisoblash: o'rtacha qiymat, eng kattasi, umumiy yig'indi bir qator kod bilan topiladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Python 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('pyCode31')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('pyCode31','pyRes31')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="pyCode31" contenteditable="true" spellcheck="false"># pandas DataFrame yaratish namunasi
+malumotlar = {
+    "Ism": ["Ali", "Zarina", "Bobur", "Malika"],
+    "Yosh": [22, 20, 25, 23],
+    "Ball": [88, 95, 76, 91]
+}
+
+# O'rtacha ballni hisoblash
+ballar = malumotlar["Ball"]
+ortacha = sum(ballar) / len(ballar)
+
+print(f"Jami talabalar soni: {len(malumotlar['Ism'])}")
+print(f"O'rtacha ball: {ortacha:.1f}")
+print("Eng yuqori ball:", max(ballar))</pre>
+      </div>
+    </div>
+    <div class="result-box" id="pyRes31">
+      <div class="result-label">🖥️ Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Python 3.12 Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Jami talabalar soni: 4
+O'rtacha ball: 87.5
+Eng yuqori ball: 95&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 Sun'iy intellekt va Machine Learning modellarini o'qitishdan oldin ma'lumotlar deyarli har doim pandas bilan tozalanadi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#requests" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: requests — HTTP So'rovlar Kutubxonasi</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Python | 31 / 32</span>
+      <a href="#regex" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: re (Regex — Muntazam Ifodalar) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Kutubxonalar</span>
+      <span style="font-size:12px; color:var(--text2);">Python Mavzu #32</span>
+    </div>
+    <h2 id="regex" style="color:#3776ab; margin-top:0; font-size:24px;">re (Regex — Muntazam Ifodalar)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>re moduli</strong> — matn ichidan ma'lum bir qolipga (pattern) mos keladigan qismlarni (email, telefon raqami, sana, parollar) qidirish, tekshirish va almashtirish uchun ishlatiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>O'rnatilgan modul: <code>import re</code>.</li>
+      <li><code>re.search(pattern, matn)</code> — mos keluvchi birinchi joyni topadi.</li>
+      <li><code>re.findall(pattern, matn)</code> — barcha mos kelgan qismlarni ro'yxat qilib beradi.</li>
+      <li><code>re.sub(pattern, yangi, matn)</code> — topilgan qismlarni almashtiradi.</li>
+      <li>Validatsiya: foydalanuvchi to'g'ri email yoki telefon kiritganini tekshirish.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Python 3 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('pyCode32')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('pyCode32','pyRes32')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="pyCode32" contenteditable="true" spellcheck="false">import re
+
+matn = "Mening emailim info@w3learn.uz va do'stimniki ali_2026@gmail.com."
+
+# Email qolipini (pattern) qidirish
+email_pattern = r'[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+.[a-zA-Z]{2,}'
+topilgan_emaillar = re.findall(email_pattern, matn)
+
+print("Topilgan barcha elektron pochtalar:")
+for email in topilgan_emaillar:
+    print(" 📧", email)
+
+# Telefon raqamni tekshirish
+tel = "+998901234567"
+tel_pattern = r'^+998d{9}$'
+print("Telefon formati to'g'rimi?", bool(re.match(tel_pattern, tel)))</pre>
+      </div>
+    </div>
+    <div class="result-box" id="pyRes32">
+      <div class="result-label">🖥️ Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Python 3.12 Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Topilgan barcha elektron pochtalar:
+ 📧 info@w3learn.uz
+ 📧 ali_2026@gmail.com
+Telefon formati to'g'rimi? True&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 Regex sintaksisida xom satr (raw string) sifatida <code>r'...'</code> yozish orqali teskari slashlarni <code>\</code> qulay yozish mumkin.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#pandas" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: pandas — Ma'lumotlar Tahlili</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Python | 32 / 32</span>
+      <a href="nodejs.html" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi kurs: Node.js Darslari →</a>
+    </div>
+  </section>
+
   <div class="quiz-box">
-    <div class="quiz-q">🧠 Python da ro'yxat (list) yaratishning to'g'ri usuli qaysi?</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'q1')">meva = (1, 2, 3)</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, true, 'q1')">meva = [1, 2, 3]</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'q1')">meva = {1, 2, 3}</div>
-    <div class="quiz-result" id="q1"></div>
+    <div class="quiz-q">🧪 Test: Python tilida funksiya e'lon qilish uchun qaysi kalit so'z ishlatiladi?</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'pyQr1')">function</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, true, 'pyQr1')">def</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'pyQr1')">fn</div>
+    <div class="quiz-result" id="pyQr1"></div>
   </div>
 
-  
+  <div class="nav-btns" style="margin-top: 30px;">
+    <a href="jquery.html" class="btn-prev">← jQuery</a>
+    <a href="nodejs.html" class="btn-next">Node.js Darsiga O'tish →</a>
+  </div>
 
-<div class="nav-btns">
-  <a href="jquery.html" class="btn-prev">&#8592; jQuery</a>
-  <a href="nodejs.html" class="btn-next">Node.js &#8594;</a>
-</div>
+  <div class="note note-blue" style="margin-top: 25px;">
+    📌 <strong>Keyingi qadam:</strong> Python asoslarini to'liq o'zlashtirgach, <a href="nodejs.html" style="color:var(--green)">Node.js darslariga</a> o'tib JavaScript orqali server dasturlashni boshlang!
+  </div>
 </main>
 <aside class="right-panel">
   <div class="rp-title">📊 Kurs bo'limlari</div>

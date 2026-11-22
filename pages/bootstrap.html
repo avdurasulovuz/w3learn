@@ -73,89 +73,1563 @@
   </ul>
 </aside>
 <main class="main">
-  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">Bootstrap 5</a> › Bootstrap Nima?</div>
-  <h1 id="kirish">Bootstrap 5 Nima?</h1>
-  <div class="meta-tags">
-    <span class="tag tag-green">⏱ 6 daqiqa</span>
-    <span class="tag tag-blue">🟢 Boshlang'ich</span>
-    <span class="tag tag-orange">👁 8,120 marta ko'rilgan</span>
-  </div>
-  <p><strong>Bootstrap 5</strong> — tez va qulay responsive web saytlar yaratish uchun CSS framework. Twitter tomonidan yaratilgan bo'lib, hozir eng mashhur CSS frameworklaridan biri.</p>
-  <div class="note">💡 <strong>Eslatma:</strong> Bootstrap 5 jQuery ga bog'liq emas — sof JavaScript da ishlaydi.</div>
+  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">Bootstrap 5</a> › Barcha Mavzular</div>
 
-  <h2 id="grid">Grid Tizimi</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar"><span class="code-lang">HTML (Bootstrap 5)</span>
-      <div class="code-actions">
-        <button class="btn-copy" onclick="copyCode('code1')">📋 Nusxa</button>
-        <button class="btn-run" onclick="runCode('code1','res1')">▶ Run</button>
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Asosiy</span>
+      <span style="font-size:12px; color:var(--text2);">Bootstrap Mavzu #1</span>
+    </div>
+    <h2 id="kirish" style="color:#7952b3; margin-top:0; font-size:24px;">Bootstrap 5 Nima?</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Bootstrap 5</strong> — Twitter (hozir Meta) tomonidan yaratilgan, dunyodagi eng mashhur CSS framework. U tayyor klasslar va komponentlar yordamida tez, chiroyli va barcha qurilmalarga moslashadigan (responsive) veb-saytlar yaratish imkonini beradi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>jQuery ga bog'liq emas — sof JavaScript da ishlaydi.</li>
+      <li>12 ustunli Grid tizimi orqali har qanday tartibni (layout) qulay yaratish mumkin.</li>
+      <li>Tugmalar, kartalar, formalar, modallar kabi 20+ tayyor komponent mavjud.</li>
+      <li>Utility klasslar (m-3, p-2, text-center) yordamida CSS yozmasdan dizayn qilish mumkin.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML (Bootstrap 5)</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('bsCode1')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('bsCode1','bsRes1')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="bsCode1" contenteditable="true" spellcheck="false">&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;div class="container mt-3"&gt;
+  &lt;div class="alert alert-success"&gt;
+    &lt;h4 class="alert-heading"&gt;Tabriklaymiz!&lt;/h4&gt;
+    &lt;p&gt;Siz Bootstrap 5 o'rganishni boshladingiz. Bu framework yordamida professional saytlar yaratishingiz mumkin.&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;button class="btn btn-primary me-2"&gt;Primary&lt;/button&gt;
+  &lt;button class="btn btn-success me-2"&gt;Success&lt;/button&gt;
+  &lt;button class="btn btn-danger"&gt;Danger&lt;/button&gt;
+&lt;/div&gt;</pre>
       </div>
     </div>
-    <div class="code-body"><pre id="code1">&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+    <div class="result-box" id="bsRes1"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
-&lt;div class="container"&gt;
+    <div class="note" style="margin-top:16px;">💡 Bootstrap 5 jQuery ni talab qilmaydi — bu avvalgi versiyalardan eng katta farqi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="typescript.html" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← TypeScript Darslari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Bootstrap 5 | 1 / 31</span>
+      <a href="#install" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: CDN va NPM orqali O'rnatish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">O'rnatish</span>
+      <span style="font-size:12px; color:var(--text2);">Bootstrap Mavzu #2</span>
+    </div>
+    <h2 id="install" style="color:#7952b3; margin-top:0; font-size:24px;">CDN va NPM orqali O'rnatish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Bootstrap ni loyihaga qo'shishning ikki asosiy usuli mavjud: <strong>CDN</strong> (Content Delivery Network) orqali tashqi havola sifatida ulash yoki <strong>NPM</strong> orqali mahalliy o'rnatish. CDN usuli eng tez va sodda — faqat bitta link tegi kifoya.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>CDN orqali: <code>&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;</code></li>
+      <li>NPM orqali: <code>npm install bootstrap</code> buyrug'i bilan o'rnatiladi.</li>
+      <li>JS komponentlar (Modal, Dropdown) uchun JS bundle ham kerak: <code>bootstrap.bundle.min.js</code></li>
+      <li>Offline ishlash kerak bo'lsa NPM, tez boshlash uchun CDN tavsiya etiladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML (Bootstrap 5)</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('bsCode2')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('bsCode2','bsRes2')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="bsCode2" contenteditable="true" spellcheck="false">&lt;!-- CDN orqali Bootstrap ulash --&gt;
+&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+
+&lt;div class="container mt-3"&gt;
+  &lt;h3&gt;Bootstrap muvaffaqiyatli ulandi! ✅&lt;/h3&gt;
+  &lt;p class="text-muted"&gt;Endi barcha Bootstrap klasslaridan foydalanishingiz mumkin.&lt;/p&gt;
+  &lt;span class="badge bg-success"&gt;CDN&lt;/span&gt;
+  &lt;span class="badge bg-info"&gt;v5.3.0&lt;/span&gt;
+&lt;/div&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="bsRes2"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">⚡ CDN fayllar butun dunyo serverlarida keshlanadi, shuning uchun sahifangiz tezroq yuklanadi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#kirish" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Bootstrap 5 Nima?</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Bootstrap 5 | 2 / 31</span>
+      <a href="#breakpoints" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Breakpoints (Ekran O'lchamlari) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Responsive</span>
+      <span style="font-size:12px; color:var(--text2);">Bootstrap Mavzu #3</span>
+    </div>
+    <h2 id="breakpoints" style="color:#7952b3; margin-top:0; font-size:24px;">Breakpoints (Ekran O'lchamlari)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Bootstrap ning responsive (moslashuvchan) tizimi <strong>breakpoints</strong> ga asoslangan. Breakpoint — bu ekran kengligi o'zgarganida dizaynni moslashtirish uchun belgilangan chegara nuqtalar.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>xs</code>: 0-575px (telefon)</li>
+      <li><code>sm</code>: ≥576px (katta telefon)</li>
+      <li><code>md</code>: ≥768px (planshet)</li>
+      <li><code>lg</code>: ≥992px (noutbuk)</li>
+      <li><code>xl</code>: ≥1200px, <code>xxl</code>: ≥1400px (katta ekranlar)</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML (Bootstrap 5)</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('bsCode3')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('bsCode3','bsRes3')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="bsCode3" contenteditable="true" spellcheck="false">&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;div class="container mt-3"&gt;
+  &lt;h5&gt;Ekran o'lchamiga qarab rang o'zgaradi:&lt;/h5&gt;
+  &lt;div class="d-block d-sm-none bg-danger text-white p-3 rounded"&gt;📱 XS — Telefon (&lt; 576px)&lt;/div&gt;
+  &lt;div class="d-none d-sm-block d-md-none bg-warning text-dark p-3 rounded"&gt;📱 SM — Katta telefon&lt;/div&gt;
+  &lt;div class="d-none d-md-block d-lg-none bg-info text-white p-3 rounded"&gt;📲 MD — Planshet&lt;/div&gt;
+  &lt;div class="d-none d-lg-block bg-success text-white p-3 rounded"&gt;💻 LG+ — Noutbuk/Desktop&lt;/div&gt;
+&lt;/div&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="bsRes3"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 Breakpointlar Mobile-First tamoyiliga asoslangan — avval kichik ekran uchun yoziladi, keyin kattaroqlarga moslashtiriladi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#install" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: CDN va NPM orqali O'rnatish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Bootstrap 5 | 3 / 31</span>
+      <a href="#container" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Container (Konteyner) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Layout</span>
+      <span style="font-size:12px; color:var(--text2);">Bootstrap Mavzu #4</span>
+    </div>
+    <h2 id="container" style="color:#7952b3; margin-top:0; font-size:24px;">Container (Konteyner)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Container</strong> — Bootstrap ning asosiy o'rash (wrapper) elementi. U ichidagi kontentni markazlashtiradi va ikki chetdan padding qo'yadi. Uch xil container mavjud: <code>.container</code>, <code>.container-fluid</code> va <code>.container-{breakpoint}</code>.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>.container</code> — har bir breakpointda belgilangan max-width ga ega.</li>
+      <li><code>.container-fluid</code> — har doim ekranning 100% kengligini egallaydi.</li>
+      <li><code>.container-md</code> — faqat md breakpointdan boshlab chegaralanadi.</li>
+      <li>Grid tizimi albatta container ichida bo'lishi kerak.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML (Bootstrap 5)</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('bsCode4')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('bsCode4','bsRes4')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="bsCode4" contenteditable="true" spellcheck="false">&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;div class="container bg-light p-3 mb-2 border rounded"&gt;
+  &lt;strong&gt;.container&lt;/strong&gt; — Markazlashtirilgan, max-width chegarali
+&lt;/div&gt;
+&lt;div class="container-fluid bg-info text-white p-3 rounded"&gt;
+  &lt;strong&gt;.container-fluid&lt;/strong&gt; — 100% kenglik, to'liq ekran
+&lt;/div&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="bsRes4"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Deyarli har bir Bootstrap sahifa <code>.container</code> ichida boshlanadi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#breakpoints" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Breakpoints (Ekran O'lchamlari)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Bootstrap 5 | 4 / 31</span>
+      <a href="#grid" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Grid Tizimi (12 Ustunli) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Layout</span>
+      <span style="font-size:12px; color:var(--text2);">Bootstrap Mavzu #5</span>
+    </div>
+    <h2 id="grid" style="color:#7952b3; margin-top:0; font-size:24px;">Grid Tizimi (12 Ustunli)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Bootstrap ning <strong>Grid tizimi</strong> Flexbox ga asoslangan bo'lib, sahifani 12 ta teng ustunga bo'ladi. <code>.row</code> qator, <code>.col-*</code> esa ustunlarni belgilaydi. Bu tizim responsive saytlar yaratishning eng muhim asosi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Jami 12 ustun — ularni istalgancha birlashtirishingiz mumkin (col-6 + col-6 = 12).</li>
+      <li><code>.col</code> — teng kenglikda, <code>.col-auto</code> — kontent kengligida.</li>
+      <li>Breakpointlar bilan: <code>.col-md-4</code> (planshetda 4 ustun, telefonda 12).</li>
+      <li>Ichma-ich (nested) gridlar ham qo'llab-quvvatlanadi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML (Bootstrap 5)</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('bsCode5')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('bsCode5','bsRes5')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="bsCode5" contenteditable="true" spellcheck="false">&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;div class="container mt-3"&gt;
+  &lt;div class="row mb-2"&gt;
+    &lt;div class="col-4 bg-primary text-white p-3 border"&gt;col-4&lt;/div&gt;
+    &lt;div class="col-4 bg-success text-white p-3 border"&gt;col-4&lt;/div&gt;
+    &lt;div class="col-4 bg-danger text-white p-3 border"&gt;col-4&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="row mb-2"&gt;
+    &lt;div class="col-md-8 bg-info text-white p-3 border"&gt;col-md-8&lt;/div&gt;
+    &lt;div class="col-md-4 bg-warning text-dark p-3 border"&gt;col-md-4&lt;/div&gt;
+  &lt;/div&gt;
   &lt;div class="row"&gt;
-    &lt;div class="col-md-4" style="background:#04AA6D22;padding:20px;"&gt;
-      &lt;h5&gt;Ustun 1&lt;/h5&gt;&lt;p&gt;col-md-4&lt;/p&gt;
+    &lt;div class="col bg-secondary text-white p-3 border"&gt;col (teng)&lt;/div&gt;
+    &lt;div class="col bg-dark text-white p-3 border"&gt;col (teng)&lt;/div&gt;
+    &lt;div class="col bg-secondary text-white p-3 border"&gt;col (teng)&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="bsRes5"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 Grid tizimida 12 dan ortiq ustun bir qatorda bo'lsa, ortiqchasi avtomatik keyingi qatorga tushadi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#container" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Container (Konteyner)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Bootstrap 5 | 5 / 31</span>
+      <a href="#columns" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Ustunlar (Columns) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Layout</span>
+      <span style="font-size:12px; color:var(--text2);">Bootstrap Mavzu #6</span>
+    </div>
+    <h2 id="columns" style="color:#7952b3; margin-top:0; font-size:24px;">Ustunlar (Columns)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Ustunlar Grid tizimining asosiy qurilish bloklari. <code>.col-{breakpoint}-{size}</code> sintaksisi orqali har bir ekran o'lchamida ustunning kengligini alohida boshqarishingiz mumkin.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>.col-12</code> — to'liq kenglik (telefonda).</li>
+      <li><code>.col-md-6</code> — planshetda yarim kenglik.</li>
+      <li><code>.col-lg-3</code> — desktopda chorak kenglik.</li>
+      <li>Offset: <code>.offset-md-3</code> — ustunni o'ngga surish.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML (Bootstrap 5)</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('bsCode6')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('bsCode6','bsRes6')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="bsCode6" contenteditable="true" spellcheck="false">&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;div class="container mt-3"&gt;
+  &lt;h6&gt;Responsive ustunlar:&lt;/h6&gt;
+  &lt;div class="row g-2"&gt;
+    &lt;div class="col-12 col-md-6 col-lg-3"&gt;&lt;div class="bg-primary text-white p-3 rounded text-center"&gt;1&lt;/div&gt;&lt;/div&gt;
+    &lt;div class="col-12 col-md-6 col-lg-3"&gt;&lt;div class="bg-success text-white p-3 rounded text-center"&gt;2&lt;/div&gt;&lt;/div&gt;
+    &lt;div class="col-12 col-md-6 col-lg-3"&gt;&lt;div class="bg-info text-white p-3 rounded text-center"&gt;3&lt;/div&gt;&lt;/div&gt;
+    &lt;div class="col-12 col-md-6 col-lg-3"&gt;&lt;div class="bg-warning text-dark p-3 rounded text-center"&gt;4&lt;/div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="bsRes6"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Ekran o'lchamini o'zgartirib ko'ring — ustunlar avtomatik moslashadi!</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#grid" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Grid Tizimi (12 Ustunli)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Bootstrap 5 | 6 / 31</span>
+      <a href="#gutters" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Gutters (Ustunlar Orasidagi Bo'shliq) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Layout</span>
+      <span style="font-size:12px; color:var(--text2);">Bootstrap Mavzu #7</span>
+    </div>
+    <h2 id="gutters" style="color:#7952b3; margin-top:0; font-size:24px;">Gutters (Ustunlar Orasidagi Bo'shliq)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Gutters</strong> — ustunlar orasidagi gorizontal va vertikal bo'shliqlardir. Bootstrap 5 da <code>.g-*</code>, <code>.gx-*</code> (gorizontal) va <code>.gy-*</code> (vertikal) klasslari mavjud.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>.g-0</code> — bo'shliqsiz, <code>.g-5</code> — eng katta bo'shliq.</li>
+      <li><code>.gx-3</code> — faqat gorizontal, <code>.gy-3</code> — faqat vertikal.</li>
+      <li>Row ga qo'shiladi: <code>&lt;div class="row g-3"&gt;</code></li>
+      <li>Bo'shliqni olib tashlash: <code>.g-0</code></li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML (Bootstrap 5)</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('bsCode7')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('bsCode7','bsRes7')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="bsCode7" contenteditable="true" spellcheck="false">&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;div class="container mt-3"&gt;
+  &lt;h6&gt;g-4 (katta bo'shliq):&lt;/h6&gt;
+  &lt;div class="row g-4 mb-3"&gt;
+    &lt;div class="col-6"&gt;&lt;div class="bg-primary text-white p-3 rounded"&gt;A&lt;/div&gt;&lt;/div&gt;
+    &lt;div class="col-6"&gt;&lt;div class="bg-success text-white p-3 rounded"&gt;B&lt;/div&gt;&lt;/div&gt;
+    &lt;div class="col-6"&gt;&lt;div class="bg-info text-white p-3 rounded"&gt;C&lt;/div&gt;&lt;/div&gt;
+    &lt;div class="col-6"&gt;&lt;div class="bg-warning text-dark p-3 rounded"&gt;D&lt;/div&gt;&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="bsRes7"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 Gutters responsive ham bo'lishi mumkin: <code>.g-md-4</code> — faqat planshetdan boshlab.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#columns" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Ustunlar (Columns)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Bootstrap 5 | 7 / 31</span>
+      <a href="#typography" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Typography (Matn Stillari) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Mazmun</span>
+      <span style="font-size:12px; color:var(--text2);">Bootstrap Mavzu #8</span>
+    </div>
+    <h2 id="typography" style="color:#7952b3; margin-top:0; font-size:24px;">Typography (Matn Stillari)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Bootstrap <strong>Typography</strong> klasslari matnni formatlash uchun tayyor stillar beradi: sarlavhalar, paragraflar, blockquote, ro'yxatlar va boshqa matn elementlari uchun.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>.h1</code> — <code>.h6</code> klasslari istalgan tegga sarlavha stili beradi.</li>
+      <li><code>.display-1</code> — <code>.display-6</code> — katta dekorativ sarlavhalar.</li>
+      <li><code>.lead</code> — paragrafni kattaroq va yengil ko'rsatadi.</li>
+      <li><code>.text-muted</code>, <code>.text-primary</code> — matn ranglari.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML (Bootstrap 5)</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('bsCode8')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('bsCode8','bsRes8')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="bsCode8" contenteditable="true" spellcheck="false">&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;div class="container mt-3"&gt;
+  &lt;h1 class="display-4"&gt;Display Sarlavha&lt;/h1&gt;
+  &lt;p class="lead"&gt;Bu "lead" paragraf — kattaroq va yengil ko'rinishda.&lt;/p&gt;
+  &lt;p class="text-muted"&gt;Bu xira matn (text-muted).&lt;/p&gt;
+  &lt;p class="text-primary fw-bold"&gt;Birlamchi rang, qalin (fw-bold).&lt;/p&gt;
+  &lt;blockquote class="blockquote border-start border-success border-4 ps-3"&gt;
+    &lt;p&gt;"Oddiy yaxshi, murakkab yomondan yaxshi."&lt;/p&gt;
+    &lt;footer class="blockquote-footer"&gt;Python falsafasi&lt;/footer&gt;
+  &lt;/blockquote&gt;
+&lt;/div&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="bsRes8"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 <code>.fw-bold</code>, <code>.fst-italic</code>, <code>.text-decoration-underline</code> — matn formatlash klasslari.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#gutters" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Gutters (Ustunlar Orasidagi Bo'shliq)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Bootstrap 5 | 8 / 31</span>
+      <a href="#images" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Rasmlar (Images) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Mazmun</span>
+      <span style="font-size:12px; color:var(--text2);">Bootstrap Mavzu #9</span>
+    </div>
+    <h2 id="images" style="color:#7952b3; margin-top:0; font-size:24px;">Rasmlar (Images)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Bootstrap rasm klasslari rasmlarni responsive, yumaloq yoki chegara bilan chiroyli ko'rsatish imkonini beradi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>.img-fluid</code> — rasm konteyner kengligiga moslashadi (responsive).</li>
+      <li><code>.rounded</code> — yumaloq burchaklar.</li>
+      <li><code>.rounded-circle</code> — to'liq doira shakli (avatar uchun).</li>
+      <li><code>.img-thumbnail</code> — chegara va padding bilan.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML (Bootstrap 5)</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('bsCode9')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('bsCode9','bsRes9')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="bsCode9" contenteditable="true" spellcheck="false">&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;div class="container mt-3"&gt;
+  &lt;div class="row g-3 text-center"&gt;
+    &lt;div class="col-4"&gt;
+      &lt;div style="width:80px;height:80px;background:#04AA6D;color:#fff;display:flex;align-items:center;justify-content:center;margin:auto" class="rounded"&gt;rounded&lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class="col-md-4" style="background:#2196F322;padding:20px;"&gt;
-      &lt;h5&gt;Ustun 2&lt;/h5&gt;&lt;p&gt;col-md-4&lt;/p&gt;
+    &lt;div class="col-4"&gt;
+      &lt;div style="width:80px;height:80px;background:#2196F3;color:#fff;display:flex;align-items:center;justify-content:center;margin:auto" class="rounded-circle"&gt;circle&lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class="col-md-4" style="background:#E91E6322;padding:20px;"&gt;
-      &lt;h5&gt;Ustun 3&lt;/h5&gt;&lt;p&gt;col-md-4&lt;/p&gt;
+    &lt;div class="col-4"&gt;
+      &lt;div style="width:80px;height:80px;background:#E91E63;color:#fff;display:flex;align-items:center;justify-content:center;margin:auto" class="img-thumbnail"&gt;thumb&lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</pre></div>
-  </div>
-  <div class="result-box" id="res1"><div class="result-label">📺 Natija:</div><iframe class="result-iframe" style="min-height:100px;"></iframe></div>
-
-  <h2 id="cards">Cards va Buttons</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar"><span class="code-lang">HTML (Bootstrap 5)</span>
-      <div class="code-actions">
-        <button class="btn-copy" onclick="copyCode('code2')">📋 Nusxa</button>
-        <button class="btn-run" onclick="runCode('code2','res2')">▶ Run</button>
+&lt;/div&gt;</pre>
       </div>
     </div>
-    <div class="code-body"><pre id="code2">&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+    <div class="result-box" id="bsRes9"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 <code>.img-fluid</code> ni har doim responsive rasmlar uchun qo'ying — bu <code>max-width:100%</code> va <code>height:auto</code> beradi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#typography" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Typography (Matn Stillari)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Bootstrap 5 | 9 / 31</span>
+      <a href="#tables" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Jadvallar (Tables) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Mazmun</span>
+      <span style="font-size:12px; color:var(--text2);">Bootstrap Mavzu #10</span>
+    </div>
+    <h2 id="tables" style="color:#7952b3; margin-top:0; font-size:24px;">Jadvallar (Tables)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Bootstrap <strong>jadval</strong> klasslar oddiy HTML <code>&lt;table&gt;</code> ni chiroyli va o'qilishi oson ko'rinishga keltiradi. Qoramtir, chiziqli, hover effektli va responsive jadvallar yaratish mumkin.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>.table</code> — asosiy jadval stili.</li>
+      <li><code>.table-striped</code> — qator almashlab rang.</li>
+      <li><code>.table-hover</code> — sichqoncha ustiga kelganda qator ajralib turadi.</li>
+      <li><code>.table-responsive</code> — kichik ekranlarda gorizontal skroll.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML (Bootstrap 5)</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('bsCode10')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('bsCode10','bsRes10')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="bsCode10" contenteditable="true" spellcheck="false">&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;div class="container mt-3"&gt;
+  &lt;div class="table-responsive"&gt;
+    &lt;table class="table table-striped table-hover table-bordered"&gt;
+      &lt;thead class="table-dark"&gt;
+        &lt;tr&gt;&lt;th&gt;#&lt;/th&gt;&lt;th&gt;Ism&lt;/th&gt;&lt;th&gt;Kurs&lt;/th&gt;&lt;th&gt;Ball&lt;/th&gt;&lt;/tr&gt;
+      &lt;/thead&gt;
+      &lt;tbody&gt;
+        &lt;tr&gt;&lt;td&gt;1&lt;/td&gt;&lt;td&gt;Ali&lt;/td&gt;&lt;td&gt;HTML&lt;/td&gt;&lt;td&gt;&lt;span class="badge bg-success"&gt;95&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;2&lt;/td&gt;&lt;td&gt;Zarina&lt;/td&gt;&lt;td&gt;CSS&lt;/td&gt;&lt;td&gt;&lt;span class="badge bg-primary"&gt;88&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;
+        &lt;tr&gt;&lt;td&gt;3&lt;/td&gt;&lt;td&gt;Bobur&lt;/td&gt;&lt;td&gt;JavaScript&lt;/td&gt;&lt;td&gt;&lt;span class="badge bg-warning text-dark"&gt;72&lt;/span&gt;&lt;/td&gt;&lt;/tr&gt;
+      &lt;/tbody&gt;
+    &lt;/table&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="bsRes10"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 <code>.table-dark</code> — qoramtir jadval, <code>.table-sm</code> — ixcham jadval.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#images" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Rasmlar (Images)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Bootstrap 5 | 10 / 31</span>
+      <a href="#figures" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Figures (Rasm + Izoh) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Mazmun</span>
+      <span style="font-size:12px; color:var(--text2);">Bootstrap Mavzu #11</span>
+    </div>
+    <h2 id="figures" style="color:#7952b3; margin-top:0; font-size:24px;">Figures (Rasm + Izoh)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><code>&lt;figure&gt;</code> elementi rasm bilan uning tagidagi izohni (caption) birlashtiradi. Bootstrap <code>.figure</code> klassi bu juftlikni chiroyli formatlaydi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>.figure</code> — asosiy wrapper.</li>
+      <li><code>.figure-img</code> — rasm uchun.</li>
+      <li><code>.figure-caption</code> — pastdagi izoh uchun.</li>
+      <li>Rasm va izoh semantik jihatdan bog'langan bo'ladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML (Bootstrap 5)</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('bsCode11')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('bsCode11','bsRes11')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="bsCode11" contenteditable="true" spellcheck="false">&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;div class="container mt-3"&gt;
+  &lt;figure class="figure"&gt;
+    &lt;div class="figure-img img-fluid rounded" style="width:200px;height:120px;background:linear-gradient(135deg,#04AA6D,#2196F3);display:flex;align-items:center;justify-content:center;color:#fff;font-size:24px;"&gt;📸&lt;/div&gt;
+    &lt;figcaption class="figure-caption text-center mt-2"&gt;Bootstrap 5 bilan chiroyli saytlar yarating&lt;/figcaption&gt;
+  &lt;/figure&gt;
+&lt;/div&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="bsRes11"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 <code>.figure-caption</code> ga <code>.text-end</code> qo'shib izohni o'ngga surish mumkin.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#tables" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Jadvallar (Tables)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Bootstrap 5 | 11 / 31</span>
+      <a href="#alerts" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Alerts (Bildirishnomalar) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Komponent</span>
+      <span style="font-size:12px; color:var(--text2);">Bootstrap Mavzu #12</span>
+    </div>
+    <h2 id="alerts" style="color:#7952b3; margin-top:0; font-size:24px;">Alerts (Bildirishnomalar)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Alerts</strong> — foydalanuvchiga muhim xabar (muvaffaqiyat, xato, ogohlantirish) ko'rsatish uchun ishlatiladigan komponent. Yopish tugmasi bilan ham ishlaydi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>8 xil rang: <code>success</code>, <code>danger</code>, <code>warning</code>, <code>info</code>, <code>primary</code>, <code>secondary</code>, <code>light</code>, <code>dark</code>.</li>
+      <li><code>.alert-dismissible</code> + yopish tugmasi bilan foydalanuvchi yopishi mumkin.</li>
+      <li><code>.alert-heading</code> — alert ichidagi sarlavha.</li>
+      <li>Ichida havolalar: <code>.alert-link</code> — rangga mos havola.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML (Bootstrap 5)</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('bsCode12')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('bsCode12','bsRes12')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="bsCode12" contenteditable="true" spellcheck="false">&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+&lt;div class="container mt-3"&gt;
+  &lt;div class="alert alert-success"&gt;&lt;strong&gt;✅ Muvaffaqiyat!&lt;/strong&gt; Ma'lumot saqlandi.&lt;/div&gt;
+  &lt;div class="alert alert-danger"&gt;&lt;strong&gt;❌ Xato!&lt;/strong&gt; Parol noto'g'ri.&lt;/div&gt;
+  &lt;div class="alert alert-warning alert-dismissible fade show"&gt;
+    &lt;strong&gt;⚠️ Diqqat!&lt;/strong&gt; Sessiya tugayapti.
+    &lt;button type="button" class="btn-close" data-bs-dismiss="alert"&gt;&lt;/button&gt;
+  &lt;/div&gt;
+  &lt;div class="alert alert-info"&gt;&lt;strong&gt;ℹ️ Ma'lumot:&lt;/strong&gt; Yangi versiya chiqdi. &lt;a href="#" class="alert-link"&gt;Yangilash&lt;/a&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="bsRes12"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 <code>.fade .show</code> klasslari qo'shilsa, alert yopilganda silliq animatsiya bilan yo'qoladi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#figures" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Figures (Rasm + Izoh)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Bootstrap 5 | 12 / 31</span>
+      <a href="#badges" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Badges (Belgilar) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Komponent</span>
+      <span style="font-size:12px; color:var(--text2);">Bootstrap Mavzu #13</span>
+    </div>
+    <h2 id="badges" style="color:#7952b3; margin-top:0; font-size:24px;">Badges (Belgilar)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Badge</strong> — raqam yoki qisqa matn ko'rsatish uchun kichik yorliq. Bildirishnomalar soni, status (Yangi, Sold Out) ko'rsatishda keng ishlatiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Sarlavha ichida: <code>&lt;h3&gt;Mavzu &lt;span class="badge bg-primary"&gt;Yangi&lt;/span&gt;&lt;/h3&gt;</code></li>
+      <li><code>.rounded-pill</code> — yumaloq badge.</li>
+      <li>Tugma ustida: bildirishnoma soni ko'rsatish.</li>
+      <li>8 xil rangda: bg-primary, bg-success, bg-danger va boshqalar.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML (Bootstrap 5)</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('bsCode13')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('bsCode13','bsRes13')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="bsCode13" contenteditable="true" spellcheck="false">&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;div class="container mt-3"&gt;
+  &lt;h4&gt;Xabarlar &lt;span class="badge bg-danger"&gt;4&lt;/span&gt;&lt;/h4&gt;
+  &lt;span class="badge bg-primary me-1"&gt;Primary&lt;/span&gt;
+  &lt;span class="badge bg-success me-1"&gt;Success&lt;/span&gt;
+  &lt;span class="badge bg-warning text-dark me-1"&gt;Warning&lt;/span&gt;
+  &lt;span class="badge bg-info me-1"&gt;Info&lt;/span&gt;
+  &lt;span class="badge rounded-pill bg-danger me-1"&gt;Pill Badge&lt;/span&gt;
+  &lt;hr&gt;
+  &lt;button class="btn btn-primary"&gt;Xabarlar &lt;span class="badge bg-light text-dark"&gt;9+&lt;/span&gt;&lt;/button&gt;
+&lt;/div&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="bsRes13"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 Badge lar inline elementlar — matn ichida yoki tugma ichida ishlatiladi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#alerts" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Alerts (Bildirishnomalar)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Bootstrap 5 | 13 / 31</span>
+      <a href="#buttons" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Buttons (Tugmalar) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Komponent</span>
+      <span style="font-size:12px; color:var(--text2);">Bootstrap Mavzu #14</span>
+    </div>
+    <h2 id="buttons" style="color:#7952b3; margin-top:0; font-size:24px;">Buttons (Tugmalar)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Bootstrap <strong>tugmalar</strong> turli ranglarda, o'lchamlarda va ko'rinishlarda mavjud. Outline, group va toggle variantlari ham bor.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Asosiy ranglar: <code>.btn-primary</code>, <code>.btn-success</code>, <code>.btn-danger</code>, <code>.btn-warning</code>.</li>
+      <li>Outline: <code>.btn-outline-primary</code> — shaffof fon, rangli chegara.</li>
+      <li>O'lchamlar: <code>.btn-sm</code> (kichik), <code>.btn-lg</code> (katta).</li>
+      <li><code>.btn-group</code> — tugmalar guruhini yaratadi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML (Bootstrap 5)</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('bsCode14')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('bsCode14','bsRes14')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="bsCode14" contenteditable="true" spellcheck="false">&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;div class="container mt-3"&gt;
+  &lt;h6&gt;Asosiy tugmalar:&lt;/h6&gt;
+  &lt;button class="btn btn-primary me-1"&gt;Primary&lt;/button&gt;
+  &lt;button class="btn btn-success me-1"&gt;Success&lt;/button&gt;
+  &lt;button class="btn btn-danger me-1"&gt;Danger&lt;/button&gt;
+  &lt;button class="btn btn-warning me-1"&gt;Warning&lt;/button&gt;
+  &lt;button class="btn btn-info me-1"&gt;Info&lt;/button&gt;
+  &lt;hr&gt;
+  &lt;h6&gt;Outline tugmalar:&lt;/h6&gt;
+  &lt;button class="btn btn-outline-primary me-1"&gt;Primary&lt;/button&gt;
+  &lt;button class="btn btn-outline-success me-1"&gt;Success&lt;/button&gt;
+  &lt;button class="btn btn-outline-danger me-1"&gt;Danger&lt;/button&gt;
+  &lt;hr&gt;
+  &lt;h6&gt;O'lchamlar:&lt;/h6&gt;
+  &lt;button class="btn btn-primary btn-sm me-1"&gt;Kichik&lt;/button&gt;
+  &lt;button class="btn btn-primary me-1"&gt;O'rtacha&lt;/button&gt;
+  &lt;button class="btn btn-primary btn-lg"&gt;Katta&lt;/button&gt;
+&lt;/div&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="bsRes14"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 <code>&lt;a&gt;</code>, <code>&lt;button&gt;</code> va <code>&lt;input&gt;</code> teglariga ham <code>.btn</code> klassini qo'shish mumkin.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#badges" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Badges (Belgilar)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Bootstrap 5 | 14 / 31</span>
+      <a href="#cards" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Cards (Kartalar) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Komponent</span>
+      <span style="font-size:12px; color:var(--text2);">Bootstrap Mavzu #15</span>
+    </div>
+    <h2 id="cards" style="color:#7952b3; margin-top:0; font-size:24px;">Cards (Kartalar)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Card</strong> — kontent bloklarini chiroyli ko'rsatish uchun universal komponent. Rasm, sarlavha, matn, tugma va boshqalarni o'z ichiga oladi. Blog postlari, mahsulotlar, profil kartalari uchun ideal.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>.card-body</code> — asosiy kontent qismi.</li>
+      <li><code>.card-header</code> va <code>.card-footer</code> — yuqori va pastki qism.</li>
+      <li><code>.card-img-top</code> — rasm yuqorida.</li>
+      <li>Grid bilan birgalikda: kartalar to'plami yaratish.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML (Bootstrap 5)</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('bsCode15')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('bsCode15','bsRes15')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="bsCode15" contenteditable="true" spellcheck="false">&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
 &lt;div class="container mt-3"&gt;
   &lt;div class="row g-3"&gt;
-    &lt;div class="col-md-6"&gt;
-      &lt;div class="card"&gt;
+    &lt;div class="col-md-4"&gt;
+      &lt;div class="card h-100"&gt;
         &lt;div class="card-body"&gt;
-          &lt;h5 class="card-title"&gt;HTML Kursi&lt;/h5&gt;
-          &lt;p class="card-text"&gt;Web asosi — belgilash tili.&lt;/p&gt;
-          &lt;a href="#" class="btn btn-success"&gt;Boshlash&lt;/a&gt;
+          &lt;h5 class="card-title"&gt;🌐 HTML&lt;/h5&gt;
+          &lt;p class="card-text"&gt;Veb sahifalar tuzilishini yarating.&lt;/p&gt;
+          &lt;a href="#" class="btn btn-success btn-sm"&gt;O'rganish&lt;/a&gt;
         &lt;/div&gt;
       &lt;/div&gt;
     &lt;/div&gt;
-    &lt;div class="col-md-6"&gt;
-      &lt;div class="card"&gt;
+    &lt;div class="col-md-4"&gt;
+      &lt;div class="card h-100 border-primary"&gt;
         &lt;div class="card-body"&gt;
-          &lt;h5 class="card-title"&gt;CSS Kursi&lt;/h5&gt;
-          &lt;p class="card-text"&gt;Dizayn va stillar.&lt;/p&gt;
-          &lt;a href="#" class="btn btn-primary"&gt;Boshlash&lt;/a&gt;
+          &lt;h5 class="card-title"&gt;🎨 CSS&lt;/h5&gt;
+          &lt;p class="card-text"&gt;Chiroyli dizaynlar yarating.&lt;/p&gt;
+          &lt;a href="#" class="btn btn-primary btn-sm"&gt;O'rganish&lt;/a&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-md-4"&gt;
+      &lt;div class="card h-100 bg-dark text-white"&gt;
+        &lt;div class="card-body"&gt;
+          &lt;h5 class="card-title"&gt;⚡ JavaScript&lt;/h5&gt;
+          &lt;p class="card-text"&gt;Interaktiv funksiyalar qo'shing.&lt;/p&gt;
+          &lt;a href="#" class="btn btn-warning btn-sm"&gt;O'rganish&lt;/a&gt;
         &lt;/div&gt;
       &lt;/div&gt;
     &lt;/div&gt;
   &lt;/div&gt;
-&lt;/div&gt;</pre></div>
-  </div>
-  <div class="result-box" id="res2"><div class="result-label">📺 Natija:</div><iframe class="result-iframe" style="min-height:160px;"></iframe></div>
+&lt;/div&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="bsRes15"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 <code>.h-100</code> — barcha kartalarning balandligini tenglaydi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#buttons" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Buttons (Tugmalar)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Bootstrap 5 | 15 / 31</span>
+      <a href="#carousel" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Carousel (Slayder) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Komponent</span>
+      <span style="font-size:12px; color:var(--text2);">Bootstrap Mavzu #16</span>
+    </div>
+    <h2 id="carousel" style="color:#7952b3; margin-top:0; font-size:24px;">Carousel (Slayder)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Carousel</strong> — rasmlar yoki kontentni avtomatik aylantiradigan slayder. Reklama bannerlari, fotogalereyalar, sharhlar uchun ishlatiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>.carousel-indicators</code> — pastdagi nuqtalar.</li>
+      <li><code>.carousel-control-prev/next</code> — oldinga/orqaga tugmalar.</li>
+      <li><code>data-bs-ride="carousel"</code> — avtomatik aylantirish.</li>
+      <li><code>.carousel-caption</code> — slayd ustidagi matn.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML (Bootstrap 5)</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('bsCode16')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('bsCode16','bsRes16')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="bsCode16" contenteditable="true" spellcheck="false">&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+&lt;div class="container mt-3"&gt;
+  &lt;div id="myCarousel" class="carousel slide" data-bs-ride="carousel"&gt;
+    &lt;div class="carousel-inner rounded"&gt;
+      &lt;div class="carousel-item active"&gt;
+        &lt;div style="height:150px;background:linear-gradient(135deg,#04AA6D,#00d4a0);display:flex;align-items:center;justify-content:center;color:#fff;font-size:28px"&gt;📗 HTML Darslari&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="carousel-item"&gt;
+        &lt;div style="height:150px;background:linear-gradient(135deg,#2196F3,#64b5f6);display:flex;align-items:center;justify-content:center;color:#fff;font-size:28px"&gt;🎨 CSS Darslari&lt;/div&gt;
+      &lt;/div&gt;
+      &lt;div class="carousel-item"&gt;
+        &lt;div style="height:150px;background:linear-gradient(135deg,#f7df1e,#f0c000);display:flex;align-items:center;justify-content:center;color:#333;font-size:28px"&gt;⚡ JS Darslari&lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;button class="carousel-control-prev" data-bs-target="#myCarousel" data-bs-slide="prev"&gt;&lt;span class="carousel-control-prev-icon"&gt;&lt;/span&gt;&lt;/button&gt;
+    &lt;button class="carousel-control-next" data-bs-target="#myCarousel" data-bs-slide="next"&gt;&lt;span class="carousel-control-next-icon"&gt;&lt;/span&gt;&lt;/button&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="bsRes16"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 <code>data-bs-interval="3000"</code> — har 3 soniyada almashinadi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#cards" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Cards (Kartalar)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Bootstrap 5 | 16 / 31</span>
+      <a href="#collapse" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Collapse (Yig'ish/Ochish) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Komponent</span>
+      <span style="font-size:12px; color:var(--text2);">Bootstrap Mavzu #17</span>
+    </div>
+    <h2 id="collapse" style="color:#7952b3; margin-top:0; font-size:24px;">Collapse (Yig'ish/Ochish)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Collapse</strong> — kontentni yashirish va ko'rsatish uchun toggle effekti. FAQ bo'limlari, menyu elementlari, accordion uchun ishlatiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>data-bs-toggle="collapse"</code> — tugmaga qo'shiladi.</li>
+      <li><code>data-bs-target="#id"</code> — qaysi blokni ochish/yashirishni belgilaydi.</li>
+      <li><code>.accordion</code> — bir nechta collapse birgalikda.</li>
+      <li>Silliq animatsiya bilan ochiladi/yopiladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML (Bootstrap 5)</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('bsCode17')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('bsCode17','bsRes17')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="bsCode17" contenteditable="true" spellcheck="false">&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+&lt;div class="container mt-3"&gt;
+  &lt;div class="accordion" id="faqAcc"&gt;
+    &lt;div class="accordion-item"&gt;
+      &lt;h2 class="accordion-header"&gt;&lt;button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#faq1"&gt;Bootstrap nima?&lt;/button&gt;&lt;/h2&gt;
+      &lt;div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAcc"&gt;&lt;div class="accordion-body"&gt;CSS framework — tayyor klasslar bilan tez sayt yaratish.&lt;/div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="accordion-item"&gt;
+      &lt;h2 class="accordion-header"&gt;&lt;button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq2"&gt;jQuery kerakmi?&lt;/button&gt;&lt;/h2&gt;
+      &lt;div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAcc"&gt;&lt;div class="accordion-body"&gt;Yo'q! Bootstrap 5 sof JavaScript da ishlaydi.&lt;/div&gt;&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="bsRes17"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 <code>data-bs-parent</code> — accordion effekti: biri ochilsa, boshqasi yopiladi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#carousel" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Carousel (Slayder)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Bootstrap 5 | 17 / 31</span>
+      <a href="#dropdowns" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Dropdowns (Ochiladigan Menyu) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Komponent</span>
+      <span style="font-size:12px; color:var(--text2);">Bootstrap Mavzu #18</span>
+    </div>
+    <h2 id="dropdowns" style="color:#7952b3; margin-top:0; font-size:24px;">Dropdowns (Ochiladigan Menyu)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Dropdown</strong> — tugmani bosganda paydo bo'ladigan havolalar ro'yxati. Navigatsiya menyulari, filter tanlovlari uchun ishlatiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>data-bs-toggle="dropdown"</code> — tugmaga qo'shiladi.</li>
+      <li><code>.dropdown-menu</code> — ro'yxat konteyner.</li>
+      <li><code>.dropdown-item</code> — har bir element.</li>
+      <li><code>.dropdown-divider</code> — ajratuvchi chiziq.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML (Bootstrap 5)</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('bsCode18')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('bsCode18','bsRes18')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="bsCode18" contenteditable="true" spellcheck="false">&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+&lt;div class="container mt-3"&gt;
+  &lt;div class="dropdown"&gt;
+    &lt;button class="btn btn-success dropdown-toggle" data-bs-toggle="dropdown"&gt;Kurslar&lt;/button&gt;
+    &lt;ul class="dropdown-menu"&gt;
+      &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;HTML&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;CSS&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;JavaScript&lt;/a&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;hr class="dropdown-divider"&gt;&lt;/li&gt;
+      &lt;li&gt;&lt;a class="dropdown-item text-danger" href="#"&gt;Chiqish&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="bsRes18"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 <code>.dropup</code>, <code>.dropstart</code>, <code>.dropend</code> — turli yo'nalishda ochiladi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#collapse" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Collapse (Yig'ish/Ochish)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Bootstrap 5 | 18 / 31</span>
+      <a href="#forms" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Forms (Formalar) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Komponent</span>
+      <span style="font-size:12px; color:var(--text2);">Bootstrap Mavzu #19</span>
+    </div>
+    <h2 id="forms" style="color:#7952b3; margin-top:0; font-size:24px;">Forms (Formalar)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Bootstrap <strong>forma</strong> klasslari input, select, checkbox, radio va boshqa form elementlarini chiroyli ko'rsatadi. Validatsiya stillari ham tayyor.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>.form-control</code> — input va textarea uchun.</li>
+      <li><code>.form-select</code> — select elementiga.</li>
+      <li><code>.form-check</code> — checkbox va radio uchun.</li>
+      <li><code>.form-floating</code> — ichki label (placeholder ustida suzadi).</li>
+      <li><code>.was-validated</code> — forma validatsiyasi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML (Bootstrap 5)</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('bsCode19')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('bsCode19','bsRes19')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="bsCode19" contenteditable="true" spellcheck="false">&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;div class="container mt-3"&gt;
+  &lt;form style="max-width:400px"&gt;
+    &lt;div class="form-floating mb-3"&gt;
+      &lt;input type="text" class="form-control" id="nm" placeholder="Ism"&gt;
+      &lt;label for="nm"&gt;Ismingiz&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;div class="form-floating mb-3"&gt;
+      &lt;input type="email" class="form-control" id="em" placeholder="Email"&gt;
+      &lt;label for="em"&gt;Email&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;select class="form-select mb-3"&gt;
+      &lt;option selected&gt;Kurs tanlang&lt;/option&gt;
+      &lt;option&gt;HTML&lt;/option&gt;&lt;option&gt;CSS&lt;/option&gt;&lt;option&gt;JavaScript&lt;/option&gt;
+    &lt;/select&gt;
+    &lt;div class="form-check mb-3"&gt;
+      &lt;input class="form-check-input" type="checkbox" id="ch1" checked&gt;
+      &lt;label class="form-check-label" for="ch1"&gt;Shartlarga roziman&lt;/label&gt;
+    &lt;/div&gt;
+    &lt;button class="btn btn-primary w-100"&gt;Ro'yxatdan o'tish&lt;/button&gt;
+  &lt;/form&gt;
+&lt;/div&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="bsRes19"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 <code>.form-floating</code> — zamonaviy "suzuvchi label" effektini beradi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#dropdowns" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Dropdowns (Ochiladigan Menyu)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Bootstrap 5 | 19 / 31</span>
+      <a href="#modal" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Modal (Oyna) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Komponent</span>
+      <span style="font-size:12px; color:var(--text2);">Bootstrap Mavzu #20</span>
+    </div>
+    <h2 id="modal" style="color:#7952b3; margin-top:0; font-size:24px;">Modal (Oyna)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Modal</strong> — sahifa ustida paydo bo'ladigan dialog oynasi. Tasdiqlash, forma kiritish, xabar ko'rsatish uchun keng ishlatiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>data-bs-toggle="modal"</code> — tugmaga qo'shiladi.</li>
+      <li><code>.modal-dialog</code> — oyna konteyner.</li>
+      <li><code>.modal-header</code>, <code>.modal-body</code>, <code>.modal-footer</code> — tuzilma.</li>
+      <li><code>.modal-dialog-centered</code> — markazga joylash.</li>
+      <li><code>.modal-lg</code> / <code>.modal-sm</code> — o'lcham.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML (Bootstrap 5)</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('bsCode20')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('bsCode20','bsRes20')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="bsCode20" contenteditable="true" spellcheck="false">&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+&lt;div class="container mt-3"&gt;
+  &lt;button class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#myModal"&gt;Modalni Ochish&lt;/button&gt;
+  &lt;div class="modal fade" id="myModal"&gt;
+    &lt;div class="modal-dialog modal-dialog-centered"&gt;
+      &lt;div class="modal-content"&gt;
+        &lt;div class="modal-header"&gt;
+          &lt;h5 class="modal-title"&gt;Tasdiqlash&lt;/h5&gt;
+          &lt;button class="btn-close" data-bs-dismiss="modal"&gt;&lt;/button&gt;
+        &lt;/div&gt;
+        &lt;div class="modal-body"&gt;&lt;p&gt;Haqiqatan ham o'chirmoqchimisiz?&lt;/p&gt;&lt;/div&gt;
+        &lt;div class="modal-footer"&gt;
+          &lt;button class="btn btn-secondary" data-bs-dismiss="modal"&gt;Bekor qilish&lt;/button&gt;
+          &lt;button class="btn btn-danger" data-bs-dismiss="modal"&gt;O'chirish&lt;/button&gt;
+        &lt;/div&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="bsRes20"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 <code>.modal-fullscreen</code> — to'liq ekranli modal yaratadi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#forms" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Forms (Formalar)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Bootstrap 5 | 20 / 31</span>
+      <a href="#navbar" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Navbar (Navigatsiya Paneli) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Komponent</span>
+      <span style="font-size:12px; color:var(--text2);">Bootstrap Mavzu #21</span>
+    </div>
+    <h2 id="navbar" style="color:#7952b3; margin-top:0; font-size:24px;">Navbar (Navigatsiya Paneli)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Navbar</strong> — sayt yuqorisidagi navigatsiya paneli. Responsive menyu, logo, qidiruv va dropdown larni o'z ichiga oladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>.navbar-expand-lg</code> — lg dan kichik ekranlarda hamburger menyu paydo bo'ladi.</li>
+      <li><code>.navbar-dark bg-dark</code> — qoramtir fon, oq matn.</li>
+      <li><code>.navbar-toggler</code> — mobil menyu tugmasi.</li>
+      <li><code>.navbar-brand</code> — logo/sayt nomi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML (Bootstrap 5)</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('bsCode21')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('bsCode21','bsRes21')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="bsCode21" contenteditable="true" spellcheck="false">&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+&lt;nav class="navbar navbar-expand-lg navbar-dark bg-dark"&gt;
+  &lt;div class="container-fluid"&gt;
+    &lt;a class="navbar-brand" href="#"&gt;W3Learn&lt;/a&gt;
+    &lt;button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navMenu"&gt;&lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;&lt;/button&gt;
+    &lt;div class="collapse navbar-collapse" id="navMenu"&gt;
+      &lt;ul class="navbar-nav me-auto"&gt;
+        &lt;li class="nav-item"&gt;&lt;a class="nav-link active" href="#"&gt;Bosh sahifa&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#"&gt;Kurslar&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="nav-item dropdown"&gt;
+          &lt;a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown"&gt;Ko'proq&lt;/a&gt;
+          &lt;ul class="dropdown-menu"&gt;
+            &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Blog&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a class="dropdown-item" href="#"&gt;Aloqa&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+      &lt;form class="d-flex"&gt;&lt;input class="form-control me-2" placeholder="Qidirish"&gt;&lt;button class="btn btn-success"&gt;🔍&lt;/button&gt;&lt;/form&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="bsRes21"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 Brauzer oynasini kichraytiring — menyu avtomatik hamburger tugmaga aylanadi!</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#modal" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Modal (Oyna)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Bootstrap 5 | 21 / 31</span>
+      <a href="#pagination" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Pagination (Sahifalash) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Komponent</span>
+      <span style="font-size:12px; color:var(--text2);">Bootstrap Mavzu #22</span>
+    </div>
+    <h2 id="pagination" style="color:#7952b3; margin-top:0; font-size:24px;">Pagination (Sahifalash)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Pagination</strong> — uzun ro'yxatlarni sahifalarga bo'lib ko'rsatish uchun navigatsiya komponent. Jadvallar, blog postlari, qidiruv natijalari uchun ishlatiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>.page-item</code> — har bir sahifa elementini o'raydi.</li>
+      <li><code>.page-link</code> — bosiladigan havola.</li>
+      <li><code>.active</code> — joriy sahifa.</li>
+      <li><code>.disabled</code> — bosilmaydigan element.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML (Bootstrap 5)</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('bsCode22')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('bsCode22','bsRes22')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="bsCode22" contenteditable="true" spellcheck="false">&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;div class="container mt-3"&gt;
+  &lt;nav&gt;
+    &lt;ul class="pagination justify-content-center"&gt;
+      &lt;li class="page-item disabled"&gt;&lt;a class="page-link" href="#"&gt;&amp;laquo;&lt;/a&gt;&lt;/li&gt;
+      &lt;li class="page-item"&gt;&lt;a class="page-link" href="#"&gt;1&lt;/a&gt;&lt;/li&gt;
+      &lt;li class="page-item active"&gt;&lt;a class="page-link" href="#"&gt;2&lt;/a&gt;&lt;/li&gt;
+      &lt;li class="page-item"&gt;&lt;a class="page-link" href="#"&gt;3&lt;/a&gt;&lt;/li&gt;
+      &lt;li class="page-item"&gt;&lt;a class="page-link" href="#"&gt;4&lt;/a&gt;&lt;/li&gt;
+      &lt;li class="page-item"&gt;&lt;a class="page-link" href="#"&gt;&amp;raquo;&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/nav&gt;
+&lt;/div&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="bsRes22"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 <code>.pagination-lg</code> va <code>.pagination-sm</code> — katta va kichik o'lcham.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#navbar" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Navbar (Navigatsiya Paneli)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Bootstrap 5 | 22 / 31</span>
+      <a href="#progress" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Progress Bar (Jarayon Chizigi) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Komponent</span>
+      <span style="font-size:12px; color:var(--text2);">Bootstrap Mavzu #23</span>
+    </div>
+    <h2 id="progress" style="color:#7952b3; margin-top:0; font-size:24px;">Progress Bar (Jarayon Chizigi)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Progress bar</strong> — jarayonning qancha foizga yetkani ko'rsatuvchi vizual ko'rsatkich. Fayl yuklash, kurs o'tish jarayoni, statistika uchun ishlatiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>.progress</code> — tashqi konteyner.</li>
+      <li><code>.progress-bar</code> — ichki to'ldiruvchi.</li>
+      <li><code>style="width: 70%"</code> — foiz ko'rsatish.</li>
+      <li><code>.progress-bar-striped</code> — chiziqli.</li>
+      <li><code>.progress-bar-animated</code> — animatsiyali.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML (Bootstrap 5)</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('bsCode23')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('bsCode23','bsRes23')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="bsCode23" contenteditable="true" spellcheck="false">&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;div class="container mt-3"&gt;
+  &lt;label&gt;HTML: 90%&lt;/label&gt;
+  &lt;div class="progress mb-3"&gt;&lt;div class="progress-bar bg-success" style="width:90%"&gt;90%&lt;/div&gt;&lt;/div&gt;
+  &lt;label&gt;CSS: 70%&lt;/label&gt;
+  &lt;div class="progress mb-3"&gt;&lt;div class="progress-bar bg-info progress-bar-striped" style="width:70%"&gt;70%&lt;/div&gt;&lt;/div&gt;
+  &lt;label&gt;JavaScript: 45%&lt;/label&gt;
+  &lt;div class="progress mb-3"&gt;&lt;div class="progress-bar bg-warning progress-bar-striped progress-bar-animated" style="width:45%"&gt;45%&lt;/div&gt;&lt;/div&gt;
+&lt;/div&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="bsRes23"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 <code>.progress-bar-animated</code> — chiziqlar o'ngga harakatlanadi (yuklanish effekti).</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#pagination" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Pagination (Sahifalash)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Bootstrap 5 | 23 / 31</span>
+      <a href="#spinners" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Spinners (Yuklanish Ko'rsatkichi) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Komponent</span>
+      <span style="font-size:12px; color:var(--text2);">Bootstrap Mavzu #24</span>
+    </div>
+    <h2 id="spinners" style="color:#7952b3; margin-top:0; font-size:24px;">Spinners (Yuklanish Ko'rsatkichi)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Spinner</strong> — sahifa yoki ma'lumot yuklanayotganini ko'rsatuvchi animatsiyali element. Ikki turi bor: aylanuvchi (border) va o'suvchi (grow).</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>.spinner-border</code> — aylanuvchi doira.</li>
+      <li><code>.spinner-grow</code> — kattalashtiruvchi nuqta.</li>
+      <li><code>.spinner-border-sm</code> — kichik o'lcham.</li>
+      <li>Tugma ichida: yuklanayotganini ko'rsatish.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML (Bootstrap 5)</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('bsCode24')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('bsCode24','bsRes24')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="bsCode24" contenteditable="true" spellcheck="false">&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;div class="container mt-3"&gt;
+  &lt;div class="spinner-border text-primary me-2" role="status"&gt;&lt;/div&gt;
+  &lt;div class="spinner-border text-success me-2"&gt;&lt;/div&gt;
+  &lt;div class="spinner-grow text-danger me-2"&gt;&lt;/div&gt;
+  &lt;div class="spinner-grow text-warning me-2"&gt;&lt;/div&gt;
+  &lt;hr&gt;
+  &lt;button class="btn btn-primary" disabled&gt;
+    &lt;span class="spinner-border spinner-border-sm me-1"&gt;&lt;/span&gt;Yuklanmoqda...
+  &lt;/button&gt;
+&lt;/div&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="bsRes24"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Spinner ni tugma ichiga qo'yib, so'rov yuborilayotganini ko'rsatish keng tarqalgan.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#progress" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Progress Bar (Jarayon Chizigi)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Bootstrap 5 | 24 / 31</span>
+      <a href="#toast" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Toasts (Bildirishnomalar) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Komponent</span>
+      <span style="font-size:12px; color:var(--text2);">Bootstrap Mavzu #25</span>
+    </div>
+    <h2 id="toast" style="color:#7952b3; margin-top:0; font-size:24px;">Toasts (Bildirishnomalar)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Toast</strong> — ekran burchagida paydo bo'ladigan qisqa bildirishnoma. Muvaffaqiyat xabarlari, yangiliklar uchun ishlatiladi. Bir necha soniyada avtomatik yo'qoladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>.toast</code> — asosiy wrapper.</li>
+      <li><code>data-bs-autohide="true"</code> — avtomatik yashirish.</li>
+      <li><code>data-bs-delay="3000"</code> — 3 soniyada yo'qoladi.</li>
+      <li>JavaScript orqali ko'rsatish: <code>new bootstrap.Toast(el).show()</code></li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML (Bootstrap 5)</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('bsCode25')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('bsCode25','bsRes25')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="bsCode25" contenteditable="true" spellcheck="false">&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+&lt;div class="container mt-3"&gt;
+  &lt;button class="btn btn-success" onclick="new bootstrap.Toast(document.getElementById('myToast')).show()"&gt;Toast Ko'rsatish&lt;/button&gt;
+  &lt;div class="toast-container position-fixed top-0 end-0 p-3"&gt;
+    &lt;div class="toast" id="myToast" data-bs-delay="3000"&gt;
+      &lt;div class="toast-header"&gt;
+        &lt;strong class="me-auto text-success"&gt;✅ W3Learn&lt;/strong&gt;
+        &lt;small class="text-muted"&gt;hozir&lt;/small&gt;
+        &lt;button class="btn-close" data-bs-dismiss="toast"&gt;&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class="toast-body"&gt;Ma'lumot muvaffaqiyatli saqlandi!&lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="bsRes25"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 Toast lar modal dan farqli — foydalanuvchi ishini to'xtatmaydi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#spinners" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Spinners (Yuklanish Ko'rsatkichi)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Bootstrap 5 | 25 / 31</span>
+      <a href="#tooltip" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Tooltips (Maslahat Oynalari) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Komponent</span>
+      <span style="font-size:12px; color:var(--text2);">Bootstrap Mavzu #26</span>
+    </div>
+    <h2 id="tooltip" style="color:#7952b3; margin-top:0; font-size:24px;">Tooltips (Maslahat Oynalari)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Tooltip</strong> — element ustiga sichqoncha olib borganda paydo bo'ladigan kichik izoh. Tugmalar, ikonalar, havolalar uchun qo'shimcha tushuntirish beradi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>data-bs-toggle="tooltip"</code> — elementga qo'shiladi.</li>
+      <li><code>title="Matn"</code> — tooltip matni.</li>
+      <li><code>data-bs-placement="top/bottom/left/right"</code> — joylashuv.</li>
+      <li>JavaScript bilan faollashtirish kerak: <code>new bootstrap.Tooltip(el)</code></li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML (Bootstrap 5)</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('bsCode26')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('bsCode26','bsRes26')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="bsCode26" contenteditable="true" spellcheck="false">&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"&gt;&lt;/script&gt;
+&lt;div class="container mt-3 text-center"&gt;
+  &lt;button class="btn btn-primary me-2" data-bs-toggle="tooltip" title="Yuqorida" data-bs-placement="top"&gt;Yuqori&lt;/button&gt;
+  &lt;button class="btn btn-success me-2" data-bs-toggle="tooltip" title="Pastda" data-bs-placement="bottom"&gt;Past&lt;/button&gt;
+  &lt;button class="btn btn-info me-2" data-bs-toggle="tooltip" title="Chapda" data-bs-placement="left"&gt;Chap&lt;/button&gt;
+  &lt;button class="btn btn-warning" data-bs-toggle="tooltip" title="O'ngda" data-bs-placement="right"&gt;O'ng&lt;/button&gt;
+&lt;/div&gt;
+&lt;script&gt;document.querySelectorAll('[data-bs-toggle="tooltip"]').forEach(el =&gt; new bootstrap.Tooltip(el));&lt;/script&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="bsRes26"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Tooltip avtomatik faollashmaydi — JavaScript orqali boshlash shart.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#toast" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Toasts (Bildirishnomalar)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Bootstrap 5 | 26 / 31</span>
+      <a href="#spacing" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Spacing (Bo'shliq: m va p) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Utility</span>
+      <span style="font-size:12px; color:var(--text2);">Bootstrap Mavzu #27</span>
+    </div>
+    <h2 id="spacing" style="color:#7952b3; margin-top:0; font-size:24px;">Spacing (Bo'shliq: m va p)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Spacing</strong> utility klasslari <code>margin</code> va <code>padding</code> ni CSS yozmasdan boshqarish imkonini beradi. <code>m</code> — margin, <code>p</code> — padding.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>m-3</code> — barcha tomondan margin.</li>
+      <li><code>mt-2</code> — faqat tepadan margin. <code>mb-4</code> — faqat pastdan.</li>
+      <li><code>px-3</code> — chapdan va o'ngdan padding.</li>
+      <li><code>mx-auto</code> — gorizontal markazlashtirish.</li>
+      <li>Qiymatlar: 0, 1, 2, 3, 4, 5 (0=0, 5=3rem).</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML (Bootstrap 5)</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('bsCode27')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('bsCode27','bsRes27')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="bsCode27" contenteditable="true" spellcheck="false">&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;div class="container mt-3"&gt;
+  &lt;div class="bg-primary text-white p-1 mb-1"&gt;p-1 (kichik padding)&lt;/div&gt;
+  &lt;div class="bg-success text-white p-3 mb-1"&gt;p-3 (o'rta padding)&lt;/div&gt;
+  &lt;div class="bg-danger text-white p-5 mb-1"&gt;p-5 (katta padding)&lt;/div&gt;
+  &lt;div class="bg-info text-white p-3 mt-4 mx-auto" style="width:200px;text-align:center"&gt;mx-auto (markazda)&lt;/div&gt;
+&lt;/div&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="bsRes27"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 <code>t</code>=top, <code>b</code>=bottom, <code>s</code>=start(chap), <code>e</code>=end(o'ng), <code>x</code>=chap+o'ng, <code>y</code>=tepa+past.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#tooltip" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Tooltips (Maslahat Oynalari)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Bootstrap 5 | 27 / 31</span>
+      <a href="#colors" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Colors (Ranglar) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Utility</span>
+      <span style="font-size:12px; color:var(--text2);">Bootstrap Mavzu #28</span>
+    </div>
+    <h2 id="colors" style="color:#7952b3; margin-top:0; font-size:24px;">Colors (Ranglar)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Bootstrap <strong>rang</strong> klasslari matn, fon va boshqa elementlarni rang bilan bezash uchun ishlatiladi. Semantik ranglar: primary, success, danger, warning, info va boshqalar.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Matn: <code>.text-primary</code>, <code>.text-success</code>, <code>.text-danger</code>.</li>
+      <li>Fon: <code>.bg-primary</code>, <code>.bg-success</code>, <code>.bg-warning</code>.</li>
+      <li><code>.text-white</code>, <code>.text-muted</code> — oq va xira matn.</li>
+      <li><code>.bg-opacity-50</code> — yarim shaffof fon.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML (Bootstrap 5)</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('bsCode28')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('bsCode28','bsRes28')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="bsCode28" contenteditable="true" spellcheck="false">&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;div class="container mt-3"&gt;
+  &lt;p class="text-primary"&gt;Primary matn&lt;/p&gt;
+  &lt;p class="text-success"&gt;Success matn&lt;/p&gt;
+  &lt;p class="text-danger"&gt;Danger matn&lt;/p&gt;
+  &lt;p class="text-warning"&gt;Warning matn&lt;/p&gt;
+  &lt;div class="bg-primary text-white p-2 mb-1 rounded"&gt;bg-primary&lt;/div&gt;
+  &lt;div class="bg-success text-white p-2 mb-1 rounded"&gt;bg-success&lt;/div&gt;
+  &lt;div class="bg-danger text-white p-2 mb-1 rounded"&gt;bg-danger&lt;/div&gt;
+  &lt;div class="bg-warning text-dark p-2 mb-1 rounded"&gt;bg-warning&lt;/div&gt;
+  &lt;div class="bg-info bg-opacity-50 p-2 rounded"&gt;bg-info + bg-opacity-50&lt;/div&gt;
+&lt;/div&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="bsRes28"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 <code>.bg-opacity-25</code>, <code>.bg-opacity-50</code>, <code>.bg-opacity-75</code> — shaffoflik darajalari.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#spacing" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Spacing (Bo'shliq: m va p)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Bootstrap 5 | 28 / 31</span>
+      <a href="#display" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Display (Ko'rsatish Usullari) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Utility</span>
+      <span style="font-size:12px; color:var(--text2);">Bootstrap Mavzu #29</span>
+    </div>
+    <h2 id="display" style="color:#7952b3; margin-top:0; font-size:24px;">Display (Ko'rsatish Usullari)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Display</strong> utility klasslari elementni qanday ko'rsatishni yoki yashirishni boshqaradi. Responsive ko'rsatish/yashirish ham mumkin.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>.d-none</code> — butunlay yashirish.</li>
+      <li><code>.d-block</code> — blok sifatida ko'rsatish.</li>
+      <li><code>.d-flex</code> — flexbox rejimi.</li>
+      <li><code>.d-md-none</code> — faqat planshetda yashirish.</li>
+      <li><code>.d-print-none</code> — chop etishda yashirish.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML (Bootstrap 5)</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('bsCode29')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('bsCode29','bsRes29')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="bsCode29" contenteditable="true" spellcheck="false">&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;div class="container mt-3"&gt;
+  &lt;div class="d-flex gap-2 mb-3"&gt;
+    &lt;div class="bg-primary text-white p-3 rounded"&gt;Flex 1&lt;/div&gt;
+    &lt;div class="bg-success text-white p-3 rounded"&gt;Flex 2&lt;/div&gt;
+    &lt;div class="bg-danger text-white p-3 rounded"&gt;Flex 3&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="d-inline bg-warning p-2 rounded me-1"&gt;inline&lt;/div&gt;
+  &lt;div class="d-inline bg-info text-white p-2 rounded"&gt;inline&lt;/div&gt;
+&lt;/div&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="bsRes29"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 Responsive yashirish: <code>.d-none .d-md-block</code> — telefonda yashirin, planshetda ko'rinadi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#colors" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Colors (Ranglar)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Bootstrap 5 | 29 / 31</span>
+      <a href="#flex" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Flexbox Utilities →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Utility</span>
+      <span style="font-size:12px; color:var(--text2);">Bootstrap Mavzu #30</span>
+    </div>
+    <h2 id="flex" style="color:#7952b3; margin-top:0; font-size:24px;">Flexbox Utilities</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Bootstrap <strong>Flex utility</strong> klasslari CSS Flexbox ni klasslar orqali boshqarish imkonini beradi. Elementlarni tartibga solish, joylash va hizalash osonlashadi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>.d-flex</code> — flex konteyner yaratish.</li>
+      <li><code>.justify-content-center/between/around</code> — gorizontal joylash.</li>
+      <li><code>.align-items-center/start/end</code> — vertikal hizalash.</li>
+      <li><code>.flex-column</code> — vertikal tartib.</li>
+      <li><code>.flex-wrap</code> — elementlar kerakli joyda o'raladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML (Bootstrap 5)</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('bsCode30')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('bsCode30','bsRes30')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="bsCode30" contenteditable="true" spellcheck="false">&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;div class="container mt-3"&gt;
+  &lt;h6&gt;justify-content-between:&lt;/h6&gt;
+  &lt;div class="d-flex justify-content-between bg-light p-2 mb-3 rounded"&gt;
+    &lt;div class="bg-primary text-white p-2 rounded"&gt;Chap&lt;/div&gt;
+    &lt;div class="bg-success text-white p-2 rounded"&gt;O'rta&lt;/div&gt;
+    &lt;div class="bg-danger text-white p-2 rounded"&gt;O'ng&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;h6&gt;align-items-center (balandlik: 100px):&lt;/h6&gt;
+  &lt;div class="d-flex align-items-center bg-dark p-2 rounded" style="height:100px"&gt;
+    &lt;div class="bg-warning p-2 rounded me-2"&gt;A&lt;/div&gt;
+    &lt;div class="bg-info text-white p-2 rounded me-2"&gt;B&lt;/div&gt;
+    &lt;div class="bg-success text-white p-2 rounded"&gt;C&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="bsRes30"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 <code>.gap-3</code> — flex elementlar orasiga teng bo'shliq qo'yadi (gap utility).</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#display" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Display (Ko'rsatish Usullari)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Bootstrap 5 | 30 / 31</span>
+      <a href="#text" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Text Utilities (Matn Boshqaruvi) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Utility</span>
+      <span style="font-size:12px; color:var(--text2);">Bootstrap Mavzu #31</span>
+    </div>
+    <h2 id="text" style="color:#7952b3; margin-top:0; font-size:24px;">Text Utilities (Matn Boshqaruvi)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Text utility</strong> klasslari matn hizalash, hajm, qalinlik, bosh harf va boshqa ko'rinishlarni CSS yozmasdan boshqaradi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>.text-center</code>, <code>.text-start</code>, <code>.text-end</code> — hizalash.</li>
+      <li><code>.fw-bold</code>, <code>.fw-light</code> — qalinlik.</li>
+      <li><code>.fst-italic</code> — kursiv.</li>
+      <li><code>.text-uppercase</code>, <code>.text-lowercase</code>, <code>.text-capitalize</code>.</li>
+      <li><code>.text-truncate</code> — uzun matnni qisqartiradi (...).</li>
+      <li><code>.fs-1</code> — <code>.fs-6</code> — matn hajmi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML (Bootstrap 5)</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('bsCode31')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('bsCode31','bsRes31')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="bsCode31" contenteditable="true" spellcheck="false">&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;div class="container mt-3"&gt;
+  &lt;p class="text-center bg-light p-2 rounded"&gt;text-center — Markazda&lt;/p&gt;
+  &lt;p class="fw-bold"&gt;fw-bold — Qalin matn&lt;/p&gt;
+  &lt;p class="fst-italic text-muted"&gt;fst-italic — Kursiv va xira&lt;/p&gt;
+  &lt;p class="text-uppercase text-primary"&gt;text-uppercase — KATTA HARFLAR&lt;/p&gt;
+  &lt;p class="text-capitalize"&gt;text-capitalize — Har So'z Bosh Harfdan&lt;/p&gt;
+  &lt;p class="text-truncate" style="max-width:250px"&gt;text-truncate — Bu juda uzun matn bo'lib, qolgan qismi uch nuqta bilan kesiladi...&lt;/p&gt;
+  &lt;p class="fs-3 text-success"&gt;fs-3 — Katta shrift&lt;/p&gt;
+&lt;/div&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="bsRes31"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 <code>.text-break</code> — juda uzun so'zlarni (URL kabi) qatorga sig'dirish uchun.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#flex" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Flexbox Utilities</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Bootstrap 5 | 31 / 31</span>
+      <a href="jquery.html" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi kurs: jQuery Darslari →</a>
+    </div>
+  </section>
 
   <div class="quiz-box">
     <div class="quiz-q">🧪 Test: Bootstrap Grid tizimida jami nechta ustun bo'ladi?</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qr1')">10 ta</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, true, 'qr1')">12 ta</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qr1')">16 ta</div>
-    <div class="quiz-result" id="qr1"></div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'bsQr1')">10 ta</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, true, 'bsQr1')">12 ta</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'bsQr1')">16 ta</div>
+    <div class="quiz-result" id="bsQr1"></div>
   </div>
-  
 
-<div class="nav-btns">
-  <a href="vue.html" class="btn-prev">&#8592; Vue</a>
-  <a href="jquery.html" class="btn-next">jQuery &#8594;</a>
-</div>
+  <div class="nav-btns" style="margin-top: 30px;">
+    <a href="typescript.html" class="btn-prev">← TypeScript</a>
+    <a href="jquery.html" class="btn-next">jQuery Darsiga O'tish →</a>
+  </div>
+
+  <div class="note note-blue" style="margin-top: 25px;">
+    📌 <strong>Keyingi qadam:</strong> Bootstrap komponentlarini o'rgangach, <a href="jquery.html" style="color:var(--green)">jQuery darslariga</a> o'tib DOM boshqaruvini soddalashtiring!
+  </div>
 </main>
 <aside class="right-panel">
   <div class="rp-title">📈 Progress</div>

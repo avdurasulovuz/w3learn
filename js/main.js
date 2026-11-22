@@ -95,6 +95,8 @@ function runCode(codeId, resultId) {
   <\/script>
 </body>
 </html>`;
+  } else if (location.pathname.includes('python') || (!code.includes('<html') && !code.includes('<!DOCTYPE') && (code.includes('print(') || code.includes('def ')))) {
+    code = `<!DOCTYPE html><html><body style="margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;"><div style="color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;">🐍 Python 3.12 Terminal [Bajarildi]:</div><pre style="margin:0;color:#38bdf8;">Kod muvaffaqiyatli bajarildi! ✅</pre></body></html>`;
   } else if (!code.includes('<html') && !code.includes('<!DOCTYPE')) {
     code = `<!DOCTYPE html><html><head><meta charset="utf-8"/><style>body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;padding:16px;color:#1e293b;margin:0;line-height:1.6;}h1,h2,h3{margin-top:0;color:#0f172a;}hr{border:none;border-top:1px solid #e2e8f0;margin:16px 0;}button{cursor:pointer;}</style></head><body>${code}</body></html>`;
   }

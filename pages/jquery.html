@@ -73,97 +73,1551 @@
   </ul>
 </aside>
 <main class="main">
-  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">jQuery</a> › jQuery Nima?</div>
-  <h1 id="kirish">jQuery Nima?</h1>
-  <div class="meta-tags">
-    <span class="tag tag-green">⏱ 6 daqiqa</span>
-    <span class="tag tag-blue">🟢 Boshlang'ich</span>
-    <span class="tag tag-orange">👁 7,340 marta ko'rilgan</span>
-  </div>
-  <p><strong>jQuery</strong> — DOM boshqaruvi, hodisalar va AJAX ni osonlashtiruvchi JavaScript kutubxona. "Write less, do more" — shiorida ishlaydi.</p>
-  <div class="note">💡 <strong>Eslatma:</strong> Zamonaviy loyihalarda React/Vue afzalroq, ammo jQuery hali ko'plab saytlarda ishlatiladi.</div>
+  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">jQuery</a> › Barcha Mavzular</div>
 
-  <h2 id="sintaksis">Asosiy Sintaksis</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar"><span class="code-lang">HTML + jQuery</span>
-      <div class="code-actions">
-        <button class="btn-copy" onclick="copyCode('code1')">📋 Nusxa</button>
-        <button class="btn-run" onclick="runCode('code1','res1')">▶ Run</button>
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Asosiy</span>
+      <span style="font-size:12px; color:var(--text2);">jQuery Mavzu #1</span>
+    </div>
+    <h2 id="kirish" style="color:#0769ad; margin-top:0; font-size:24px;">jQuery Nima?</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>jQuery</strong> — dunyodagi eng mashhur va qulay JavaScript kutubxonasi. U 'Write less, do more' (Kamroq yoz, ko'proq ish qil) shiori ostida 2006-yilda John Resig tomonidan yaratilgan. U HTML DOM bilan ishlash, hodisalarni boshqarish, CSS animatsiyalar va AJAX so'rovlarini ancha soddalashtiradi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>DOM elementlarini CSS selektorlariga o'xshash qilib tanlash (<code>$('p')</code>, <code>$('#id')</code>).</li>
+      <li>Barcha brauzerlar (Chrome, Firefox, Safari, Edge) o'rtasidagi nomutanosibliklarni hal qiladi.</li>
+      <li>Animatsiyalar (fadeIn, slideDown, animate) bir qator kod bilan ishga tushadi.</li>
+      <li>Katta hajmdagi JavaScript kodlarini 2-3 barobar qisqartiradi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML + jQuery Jonli Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jqCode1')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jqCode1','jqRes1')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jqCode1" contenteditable="true" spellcheck="false">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script src="https://code.jquery.com/jquery-3.7.0.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body style="font-family:sans-serif; padding:15px; background:#0f172a; color:#f8fafc;"&gt;
+  &lt;h2&gt;jQuery Boshlang'ich Darsi&lt;/h2&gt;
+  &lt;p id="testMatn"&gt;Ushbu matn jQuery yordamida o'zgaradi.&lt;/p&gt;
+  &lt;button id="ozgartirBtn" style="background:#0769ad; color:white; border:none; padding:8px 16px; border-radius:6px; cursor:pointer;"&gt;
+    Matnni o'zgartirish
+  &lt;/button&gt;
+  &lt;script&gt;
+    $(document).ready(function(){
+      $("#ozgartirBtn").click(function(){
+        $("#testMatn").text("🎉 Tabriklaymiz! Siz jQuery ni muvaffaqiyatli ishlatdingiz.").css("color", "#00d4a0");
+      });
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
       </div>
     </div>
-    <div class="code-body"><pre id="code1">&lt;script src="https://code.jquery.com/jquery-3.7.0.min.js"&gt;&lt;/script&gt;
+    <div class="result-box" id="jqRes1"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
 
-&lt;p id="matn"&gt;Boshlang'ich matn&lt;/p&gt;
-&lt;button id="btn1"&gt;Matnni o'zgartir&lt;/button&gt;
-&lt;button id="btn2"&gt;Yashir/Ko'rsat&lt;/button&gt;
-&lt;button id="btn3"&gt;Rang o'zgartir&lt;/button&gt;
+    <div class="note" style="margin-top:16px;">💡 jQuery sintaksisining asosi: <code>$(selektor).harakat()</code> ko'rinishida yoziladi.</div>
 
-&lt;script&gt;
-$(document).ready(function() {
-
-  // Matnni o'zgartirish
-  $("#btn1").click(function() {
-    $("#matn").text("jQuery bilan o'zgardi! ✅");
-  });
-
-  // Yashirish / Ko'rsatish
-  $("#btn2").click(function() {
-    $("#matn").toggle(400);
-  });
-
-  // CSS o'zgartirish
-  $("#btn3").click(function() {
-    $("#matn").css({
-      "color": "#04AA6D",
-      "font-weight": "bold",
-      "font-size": "20px"
-    });
-  });
-
-});
-&lt;/script&gt;</pre></div>
-  </div>
-  <div class="result-box" id="res1"><div class="result-label">📺 Natija:</div><iframe class="result-iframe" style="min-height:100px;"></iframe></div>
-
-  <h2 id="ajax">AJAX bilan ma'lumot olish</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar"><span class="code-lang">jQuery AJAX</span>
-      <div class="code-actions"><button class="btn-copy" onclick="copyCode('code2')">📋 Nusxa</button></div>
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="bootstrap.html" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Bootstrap 5 Darslari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 jQuery | 1 / 28</span>
+      <a href="#install" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: jQuery ni O'rnatish va Ulash →</a>
     </div>
-    <div class="code-body"><pre id="code2">// $.get() — GET so'rov
-$.get("https://jsonplaceholder.typicode.com/posts/1", function(data) {
-  console.log("Sarlavha:", data.title);
-});
+  </section>
 
-// $.ajax() — to'liq nazorat
-$.ajax({
-  url: "https://api.example.com/foydalanuvchilar",
-  method: "POST",
-  contentType: "application/json",
-  data: JSON.stringify({ ism: "Ali", email: "ali@test.com" }),
-  success: function(javob) {
-    console.log("Muvaffaqiyat:", javob);
-    $("#natija").html("&lt;p&gt;Muvaffaqiyatli yuborildi!&lt;/p&gt;");
-  },
-  error: function(xhr) {
-    console.error("Xato:", xhr.status);
-  }
-});</pre></div>
-  </div>
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">O'rnatish</span>
+      <span style="font-size:12px; color:var(--text2);">jQuery Mavzu #2</span>
+    </div>
+    <h2 id="install" style="color:#0769ad; margin-top:0; font-size:24px;">jQuery ni O'rnatish va Ulash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">jQuery ni veb-sahifaga ulashning 2 ta asosiy usuli bor: <strong>CDN</strong> (Content Delivery Network — masalan, Google, Cloudflare yoki rasmiy jQuery CDN) orqali yoki faylini yuklab olib papkaga joylash.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Eng qulay usul — rasmiy CDN: <code>&lt;script src="https://code.jquery.com/jquery-3.7.0.min.js"&gt;&lt;/script&gt;</code></li>
+      <li>Google CDN orqali: <code>ajax.googleapis.com/ajax/libs/jquery/...</code></li>
+      <li>Faylni yuklab olib mahalliy ulash: <code>&lt;script src="js/jquery.min.js"&gt;&lt;/script&gt;</code></li>
+      <li>jQuery ni doimo o'z kodingiz yozilgan skriptlardan OLDIN ulash shart.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML + jQuery Jonli Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jqCode2')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jqCode2','jqRes2')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jqCode2" contenteditable="true" spellcheck="false">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;!-- Rasmiy jQuery CDN orqali ulash --&gt;
+  &lt;script src="https://code.jquery.com/jquery-3.7.0.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body style="font-family:sans-serif; padding:15px; background:#0f172a; color:#f8fafc;"&gt;
+  &lt;h3&gt;jQuery Versiyasini Tekshirish&lt;/h3&gt;
+  &lt;p id="verLabel"&gt;Yuklanmoqda...&lt;/p&gt;
+  &lt;script&gt;
+    $(function(){
+      $("#verLabel").html("✅ jQuery muvaffaqiyatli ulandi! Versiya: &lt;strong&gt;" + $.fn.jquery + "&lt;/strong&gt;");
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jqRes2"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">⚡ <code>$(function(){ ... })</code> yozuvi <code>$(document).ready(function(){ ... })</code> ning qisqa ko'rinishidir.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#kirish" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: jQuery Nima?</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 jQuery | 2 / 28</span>
+      <a href="#sintaksis" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Asosiy Sintaksis va $(document).ready() →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Asoslar</span>
+      <span style="font-size:12px; color:var(--text2);">jQuery Mavzu #3</span>
+    </div>
+    <h2 id="sintaksis" style="color:#0769ad; margin-top:0; font-size:24px;">Asosiy Sintaksis va $(document).ready()</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">jQuery sintaksisi maxsus HTML elementlarini tanlash va ular ustida qandaydir amal bajarish uchun ishlab chiqilgan. <code>$(document).ready()</code> hodisasi sahifaning barcha HTML teglari to'liq yuklangandan keyin kod ishga tushishini ta'minlaydi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Asosiy formula: <code>$(selector).action()</code></li>
+      <li><code>$</code> belgisi jQuery kutubxonasiga murojaat qilish belgisidir.</li>
+      <li><code>(selector)</code> — qidirilayotgan HTML element (teg, klass, id).</li>
+      <li><code>.action()</code> — tanlangan element ustida bajariladigan amal (click, hide, val va h.k.).</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML + jQuery Jonli Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jqCode3')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jqCode3','jqRes3')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jqCode3" contenteditable="true" spellcheck="false">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script src="https://code.jquery.com/jquery-3.7.0.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body style="font-family:sans-serif; padding:15px; background:#0f172a; color:#f8fafc;"&gt;
+  &lt;p class="demo-p"&gt;Birinchi paragraf&lt;/p&gt;
+  &lt;p class="demo-p"&gt;Ikkinchi paragraf&lt;/p&gt;
+  &lt;button id="runBtn" style="background:#04AA6D; color:white; border:none; padding:8px 16px; border-radius:6px; cursor:pointer;"&gt;
+    Hammasini yashirish
+  &lt;/button&gt;
+  &lt;script&gt;
+    $(document).ready(function(){
+      $("#runBtn").click(function(){
+        $("p.demo-p").hide(500);
+      });
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jqRes3"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 <code>ready()</code> hodisasidan foydalanmasangiz, element yuklanmasdan turib skript uni topa olmasligi mumkin.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#install" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: jQuery ni O'rnatish va Ulash</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 jQuery | 3 / 28</span>
+      <a href="#element-sel" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Element Selektor (Tag Selector) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Selektorlar</span>
+      <span style="font-size:12px; color:var(--text2);">jQuery Mavzu #4</span>
+    </div>
+    <h2 id="element-sel" style="color:#0769ad; margin-top:0; font-size:24px;">Element Selektor (Tag Selector)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">HTML teglari nomi bo'yicha elementlarni tanlash imkonini beradi. Masalan, barcha <code>&lt;p&gt;</code>, <code>&lt;button&gt;</code> yoki <code>&lt;h1&gt;</code> elementlariga bir vaqtning o'zida ta'sir ko'rsatish mumkin.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>$('p')</code> — sahifadagi barcha paragraflarni tanlaydi.</li>
+      <li><code>$('div')</code> — barcha div bloklarini tanlaydi.</li>
+      <li><code>$('h1, h2, h3')</code> — bir nechta elementlarni vergul bilan guruhlash mumkin.</li>
+      <li><code>$('table tr')</code> — jadval ichidagi barcha qatorlarni tanlaydi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML + jQuery Jonli Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jqCode4')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jqCode4','jqRes4')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jqCode4" contenteditable="true" spellcheck="false">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script src="https://code.jquery.com/jquery-3.7.0.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body style="font-family:sans-serif; padding:15px; background:#0f172a; color:#f8fafc;"&gt;
+  &lt;h2&gt;Sarlavha 1&lt;/h2&gt;
+  &lt;h2&gt;Sarlavha 2&lt;/h2&gt;
+  &lt;p&gt;Oddiy matn&lt;/p&gt;
+  &lt;button onclick="$('h2').css('color', '#38bdf8');" style="background:#0284c7; color:white; border:none; padding:8px 14px; border-radius:6px; cursor:pointer;"&gt;
+    Barcha H2 lar rangini o'zgartirish
+  &lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jqRes4"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 JavaScript dagi <code>document.querySelectorAll('h2')</code> ga teng, lekin ancha qisqa va qulay.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#sintaksis" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Asosiy Sintaksis va $(document).ready()</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 jQuery | 4 / 28</span>
+      <a href="#id-sel" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: ID Selektor (#id) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Selektorlar</span>
+      <span style="font-size:12px; color:var(--text2);">jQuery Mavzu #5</span>
+    </div>
+    <h2 id="id-sel" style="color:#0769ad; margin-top:0; font-size:24px;">ID Selektor (#id)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Sahifadagi yagona maxsus elementni uning <code>id</code> atributi bo'yicha topish uchun ishlatiladi. CSS dagi kabi <code>#</code> panjara belgisi bilan yoziladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>$('#meningId')</code> — ID si 'meningId' bo'lgan yagona elementni tanlaydi.</li>
+      <li>HTML qoidasiga ko'ra ID bir sahifada takrorlanmasligi kerak.</li>
+      <li>JavaScript dagi <code>document.getElementById('meningId')</code> ga teng.</li>
+      <li>Eng tez va aniq selektor hisoblanadi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML + jQuery Jonli Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jqCode5')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jqCode5','jqRes5')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jqCode5" contenteditable="true" spellcheck="false">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script src="https://code.jquery.com/jquery-3.7.0.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body style="font-family:sans-serif; padding:15px; background:#0f172a; color:#f8fafc;"&gt;
+  &lt;div id="maxsusQuti" style="padding:15px; background:#1e293b; border-radius:8px; margin-bottom:10px;"&gt;
+    Bu maxsus quti (#maxsusQuti)
+  &lt;/div&gt;
+  &lt;button onclick="$('#maxsusQuti').css({'background':'#04AA6D', 'color':'white'});" style="background:#04AA6D; color:white; border:none; padding:8px 16px; border-radius:6px; cursor:pointer;"&gt;
+    Faqat ushbu ID ni o'zgartir
+  &lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jqRes5"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 Agar sahifada bir nechta bir xil ID bo'lsa, jQuery faqat eng birinchisini tanlaydi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#element-sel" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Element Selektor (Tag Selector)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 jQuery | 5 / 28</span>
+      <a href="#class-sel" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Class Selektor (.class) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Selektorlar</span>
+      <span style="font-size:12px; color:var(--text2);">jQuery Mavzu #6</span>
+    </div>
+    <h2 id="class-sel" style="color:#0769ad; margin-top:0; font-size:24px;">Class Selektor (.class)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Bir xil <code>class</code> atributiga ega bo'lgan bir guruh elementlarni bir vaqtning o'zida tanlash uchun nuqta <code>.</code> belgisi ishlatiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>$('.card')</code> — 'card' klassiga ega bo'lgan barcha elementlarni tanlaydi.</li>
+      <li><code>$('p.intro')</code> — faqat 'intro' klassiga ega bo'lgan &lt;p&gt; teglari.</li>
+      <li>Bir nechta klasslar bilan: <code>$('.btn.active')</code>.</li>
+      <li>JavaScript dagi <code>document.getElementsByClassName()</code> ga teng.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML + jQuery Jonli Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jqCode6')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jqCode6','jqRes6')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jqCode6" contenteditable="true" spellcheck="false">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script src="https://code.jquery.com/jquery-3.7.0.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body style="font-family:sans-serif; padding:15px; background:#0f172a; color:#f8fafc;"&gt;
+  &lt;p class="diqqat" style="padding:8px; background:#334155;"&gt;1-muhim xabar&lt;/p&gt;
+  &lt;p&gt;Oddiy xabar&lt;/p&gt;
+  &lt;p class="diqqat" style="padding:8px; background:#334155;"&gt;2-muhim xabar&lt;/p&gt;
+  &lt;button onclick="$('.diqqat').css({'background':'#ef4444', 'color':'white', 'border-radius':'6px'});" style="background:#ef4444; color:white; border:none; padding:8px 16px; border-radius:6px; cursor:pointer;"&gt;
+    .diqqat klasslarini qizil qilish
+  &lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jqRes6"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Klasslar yordamida bir xil turdagi barcha kartochkalar, tugmalar va matnlarni bitta buyruq bilan boshqarish mumkin.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#id-sel" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: ID Selektor (#id)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 jQuery | 6 / 28</span>
+      <a href="#filter-sel" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Filter Selektorlari (:first, :last, :even, :odd) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Selektorlar</span>
+      <span style="font-size:12px; color:var(--text2);">jQuery Mavzu #7</span>
+    </div>
+    <h2 id="filter-sel" style="color:#0769ad; margin-top:0; font-size:24px;">Filter Selektorlari (:first, :last, :even, :odd)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">jQuery qo'shimcha maxsus filtr selektorlariga ega. Ular yordamida ro'yxatdagi birinchi, oxirgi, juft yoki toq elementlarni bemalol ajratib olish mumkin.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>:first</code> — ro'yxatning birinchi elementi.</li>
+      <li><code>:last</code> — ro'yxatning eng oxirgi elementi.</li>
+      <li><code>:even</code> — juft indeksli elementlar (0, 2, 4...).</li>
+      <li><code>:odd</code> — toq indeksli elementlar (1, 3, 5...).</li>
+      <li><code>:eq(indeks)</code> — aniq ko'rsatilgan indeksdagi element.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML + jQuery Jonli Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jqCode7')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jqCode7','jqRes7')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jqCode7" contenteditable="true" spellcheck="false">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script src="https://code.jquery.com/jquery-3.7.0.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body style="font-family:sans-serif; padding:15px; background:#0f172a; color:#f8fafc;"&gt;
+  &lt;ul id="darslar" style="line-height:2;"&gt;
+    &lt;li&gt;HTML Darsi&lt;/li&gt;
+    &lt;li&gt;CSS Darsi&lt;/li&gt;
+    &lt;li&gt;JavaScript Darsi&lt;/li&gt;
+    &lt;li&gt;React Darsi&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;button onclick="$('#darslar li:first').css('color', '#04AA6D'); $('#darslar li:last').css('color', '#ef4444');" style="background:#0769ad; color:white; border:none; padding:8px 14px; border-radius:6px; cursor:pointer;"&gt;
+    Birinchi va oxirgisini belgilash
+  &lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jqRes7"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 Indekslash 0 dan boshlanadi, shuning uchun <code>:first</code> aslida <code>:eq(0)</code> bilan bir xil.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#class-sel" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Class Selektor (.class)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 jQuery | 7 / 28</span>
+      <a href="#html-text" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: html() va text() Metodlari →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">DOM</span>
+      <span style="font-size:12px; color:var(--text2);">jQuery Mavzu #8</span>
+    </div>
+    <h2 id="html-text" style="color:#0769ad; margin-top:0; font-size:24px;">html() va text() Metodlari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Elementlarning ichki kontentini o'qish va yangilash uchun <code>html()</code> va <code>text()</code> metodlari xizmat qiladi. Ularning asosiy farqi HTML teglari bilan ishlashidadir.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>text()</code> — faqat matnni o'qiydi yoki yozadi (HTML teglari xavfsiz tarzda matnga aylanadi).</li>
+      <li><code>html()</code> — elementning HTML kodini to'liq qaytaradi yoki yangi HTML teglar qo'shadi.</li>
+      <li>Parametrsiz chaqirilsa — qiymatni o'qiydi (getter).</li>
+      <li>Parametr berilsa — qiymatni yangilaydi (setter).</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML + jQuery Jonli Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jqCode8')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jqCode8','jqRes8')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jqCode8" contenteditable="true" spellcheck="false">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script src="https://code.jquery.com/jquery-3.7.0.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body style="font-family:sans-serif; padding:15px; background:#0f172a; color:#f8fafc;"&gt;
+  &lt;div id="quti" style="padding:10px; background:#1e293b; border-radius:6px; margin-bottom:10px;"&gt;
+    Boshlang'ich matn
+  &lt;/div&gt;
+  &lt;button onclick="$('#quti').text('Faqat oddiy matn &lt;strong&gt;tegsiz&lt;/strong&gt;');" style="background:#0284c7; color:white; border:none; padding:6px 12px; border-radius:4px; cursor:pointer; margin-right:6px;"&gt;
+    text() bilan
+  &lt;/button&gt;
+  &lt;button onclick="$('#quti').html('Haqiqiy &lt;span style=\'color:#04AA6D;font-weight:bold;\'&gt;HTML teglari&lt;/span&gt;');" style="background:#04AA6D; color:white; border:none; padding:6px 12px; border-radius:4px; cursor:pointer;"&gt;
+    html() bilan
+  &lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jqRes8"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Xavfsizlik qoidasi: foydalanuvchi kiritgan ma'lumotlarni chiqarishda XSS hujumlarining oldini olish uchun <code>text()</code> dan foydalanish tavsiya etiladi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#filter-sel" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Filter Selektorlari (:first, :last, :even, :odd)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 jQuery | 8 / 28</span>
+      <a href="#val" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: val() Metodi (Forma Qiymatlari) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">DOM</span>
+      <span style="font-size:12px; color:var(--text2);">jQuery Mavzu #9</span>
+    </div>
+    <h2 id="val" style="color:#0769ad; margin-top:0; font-size:24px;">val() Metodi (Forma Qiymatlari)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Input, textarea, select kabi forma elementlarining qiymatini (value) olish va o'zgartirish uchun <code>val()</code> metodi ishlatiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>$('input').val()</code> — kiritilgan qiymatni o'qib beradi.</li>
+      <li><code>$('input').val('yangi qiymat')</code> — inputga yangi qiymat yozadi.</li>
+      <li>Select elementida tanlangan option qiymatini qaytaradi.</li>
+      <li>Checkbox va radio tugmalarida ham qiymatni boshqaradi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML + jQuery Jonli Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jqCode9')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jqCode9','jqRes9')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jqCode9" contenteditable="true" spellcheck="false">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script src="https://code.jquery.com/jquery-3.7.0.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body style="font-family:sans-serif; padding:15px; background:#0f172a; color:#f8fafc;"&gt;
+  &lt;input type="text" id="ismInput" placeholder="Ismingizni yozing..." style="padding:8px 12px; border-radius:6px; border:1px solid #334155; background:#1e293b; color:white;"&gt;
+  &lt;button id="korBtn" style="background:#04AA6D; color:white; border:none; padding:8px 16px; border-radius:6px; cursor:pointer;"&gt;
+    Salomlashish
+  &lt;/button&gt;
+  &lt;p id="salomLabel" style="margin-top:10px; font-weight:bold;"&gt;&lt;/p&gt;
+  &lt;script&gt;
+    $('#korBtn').click(function(){
+      var ism = $('#ismInput').val();
+      if(ism.trim() === '') {
+        $('#salomLabel').text('Iltimos, ismingizni kiriting!').css('color', '#ef4444');
+      } else {
+        $('#salomLabel').text('Assalomu alaykum, ' + ism + '!').css('color', '#38bdf8');
+      }
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jqRes9"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 Input maydonini tozalash uchun oddiygina <code>$('#input').val('')</code> buyrug'i beriladi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#html-text" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: html() va text() Metodlari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 jQuery | 9 / 28</span>
+      <a href="#attr" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: attr() va prop() Metodlari →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">DOM</span>
+      <span style="font-size:12px; color:var(--text2);">jQuery Mavzu #10</span>
+    </div>
+    <h2 id="attr" style="color:#0769ad; margin-top:0; font-size:24px;">attr() va prop() Metodlari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">HTML elementlarining atributlarini (href, src, title, alt, id, class) boshqarish uchun <code>attr()</code> va <code>prop()</code> metodlaridan foydalaniladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>$('a').attr('href')</code> — havola manzilini o'qiydi.</li>
+      <li><code>$('img').attr('src', 'yangi.jpg')</code> — rasm manzilini o'zgartiradi.</li>
+      <li><code>prop('checked', true)</code> — boolean xossalar (checked, disabled) uchun ishlatiladi.</li>
+      <li><code>removeAttr('disabled')</code> — atributni butunlay olib tashlaydi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML + jQuery Jonli Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jqCode10')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jqCode10','jqRes10')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jqCode10" contenteditable="true" spellcheck="false">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script src="https://code.jquery.com/jquery-3.7.0.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body style="font-family:sans-serif; padding:15px; background:#0f172a; color:#f8fafc;"&gt;
+  &lt;a id="manzilLink" href="https://google.com" target="_blank" style="color:#38bdf8; display:block; margin-bottom:10px;"&gt;Google ga o'tish&lt;/a&gt;
+  &lt;button onclick="$('#manzilLink').attr('href', 'https://github.com').text('GitHub ga o\'tish');" style="background:#0769ad; color:white; border:none; padding:8px 14px; border-radius:6px; cursor:pointer;"&gt;
+    Havolani GitHub ga almashtirish
+  &lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jqRes10"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 `checked` yoki `disabled` kabi holatlar uchun `attr()` o'rniga har doim `prop()` afzalroqdir.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#val" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: val() Metodi (Forma Qiymatlari)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 jQuery | 10 / 28</span>
+      <a href="#css" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: css() Metodi (Stillarni Boshqarish) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">DOM</span>
+      <span style="font-size:12px; color:var(--text2);">jQuery Mavzu #11</span>
+    </div>
+    <h2 id="css" style="color:#0769ad; margin-top:0; font-size:24px;">css() Metodi (Stillarni Boshqarish)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">JavaScript orqali elementlarning CSS stillarini bevosita o'zgartirish yoki joriy qiymatini bilib olish uchun <code>css()</code> metodi xizmat qiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Bitta stil berish: <code>$('p').css('color', 'red')</code>.</li>
+      <li>Bir nechta stillarni ob'ekt orqali berish: <code>$('p').css({'color':'red', 'font-size':'20px'})</code>.</li>
+      <li>Stil qiymatini o'qish: <code>var rang = $('p').css('color')</code>.</li>
+      <li>Pikselli qiymatlar avtomatik ravishda qo'shiladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML + jQuery Jonli Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jqCode11')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jqCode11','jqRes11')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jqCode11" contenteditable="true" spellcheck="false">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script src="https://code.jquery.com/jquery-3.7.0.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body style="font-family:sans-serif; padding:15px; background:#0f172a; color:#f8fafc;"&gt;
+  &lt;div id="stilQutisi" style="padding:15px; background:#1e293b; border-radius:8px; margin-bottom:10px;"&gt;
+    Bu qutining CSS stillari o'zgaradi.
+  &lt;/div&gt;
+  &lt;button onclick="$('#stilQutisi').css({'background':'linear-gradient(135deg, #04AA6D, #00d4a0)', 'color':'black', 'font-weight':'bold', 'box-shadow':'0 4px 12px rgba(4,170,109,0.4)'});" style="background:#04AA6D; color:white; border:none; padding:8px 16px; border-radius:6px; cursor:pointer;"&gt;
+    Chiroyli gradient va soya berish
+  &lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jqRes11"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 Bir nechta stil berayotganda CSS xossalarini <code>'background-color'</code> yoki camelCase da <code>backgroundColor</code> qilib yozish mumkin.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#attr" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: attr() va prop() Metodlari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 jQuery | 11 / 28</span>
+      <a href="#addClass" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: addClass, removeClass va toggleClass →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">DOM</span>
+      <span style="font-size:12px; color:var(--text2);">jQuery Mavzu #12</span>
+    </div>
+    <h2 id="addClass" style="color:#0769ad; margin-top:0; font-size:24px;">addClass, removeClass va toggleClass</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">CSS klasslarini elementga qo'shish, olib tashlash yoki almashtirish uchun maxsus qulay metodlar mavjud. Bu usul bevosita <code>style</code> atributini o'zgartirishdan ko'ra toza kod yozish imkonini beradi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>addClass('faol')</code> — yangi klass qo'shadi.</li>
+      <li><code>removeClass('faol')</code> — ko'rsatilgan klassni o'chiradi.</li>
+      <li><code>toggleClass('faol')</code> — agar klass bo'lsa o'chiradi, yo'q bo'lsa qo'shadi.</li>
+      <li><code>hasClass('faol')</code> — elementda ushbu klass bor-yo'qligini tekshiradi (true/false).</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML + jQuery Jonli Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jqCode12')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jqCode12','jqRes12')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jqCode12" contenteditable="true" spellcheck="false">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script src="https://code.jquery.com/jquery-3.7.0.min.js"&gt;&lt;/script&gt;
+  &lt;style&gt;
+    .karta { padding:15px; background:#1e293b; color:#fff; border-radius:8px; transition:0.3s; margin-bottom:10px; border:2px solid transparent; }
+    .karta.yorqin { background:#04AA6D; border-color:#00d4a0; transform:scale(1.02); }
+  &lt;/style&gt;
+&lt;/head&gt;
+&lt;body style="font-family:sans-serif; padding:15px; background:#0f172a; color:#f8fafc;"&gt;
+  &lt;div id="sinovKarta" class="karta"&gt;Oddiy kartochka&lt;/div&gt;
+  &lt;button onclick="$('#sinovKarta').toggleClass('yorqin');" style="background:#0769ad; color:white; border:none; padding:8px 16px; border-radius:6px; cursor:pointer;"&gt;
+    toggleClass('yorqin')
+  &lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jqRes12"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Bir qator kod bilan bir vaqtning o'zida bir nechta klass qo'shish mumkin: <code>addClass('klass1 klass2')</code>.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#css" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: css() Metodi (Stillarni Boshqarish)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 jQuery | 12 / 28</span>
+      <a href="#append" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: append, prepend, after va before →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">DOM</span>
+      <span style="font-size:12px; color:var(--text2);">jQuery Mavzu #13</span>
+    </div>
+    <h2 id="append" style="color:#0769ad; margin-top:0; font-size:24px;">append, prepend, after va before</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Sahifadagi mavjud elementlar ichiga yoki atrofiga yangi HTML elementlarni dinamik ravishda qo'shish uchun ishlatiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>append()</code> — elementning eng oxiriga yangi kontent qo'shadi.</li>
+      <li><code>prepend()</code> — elementning eng boshiga yangi kontent qo'shadi.</li>
+      <li><code>after()</code> — elementning tashqarisiga, undan keyin qo'shadi.</li>
+      <li><code>before()</code> — elementning tashqarisiga, undan oldin qo'shadi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML + jQuery Jonli Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jqCode13')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jqCode13','jqRes13')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jqCode13" contenteditable="true" spellcheck="false">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script src="https://code.jquery.com/jquery-3.7.0.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body style="font-family:sans-serif; padding:15px; background:#0f172a; color:#f8fafc;"&gt;
+  &lt;ul id="mevalar" style="background:#1e293b; padding:15px 30px; border-radius:8px; line-height:1.8;"&gt;
+    &lt;li&gt;Olma&lt;/li&gt;
+    &lt;li&gt;Banan&lt;/li&gt;
+  &lt;/ul&gt;
+  &lt;button onclick="$('#mevalar').append('&lt;li&gt;Uzum (append)&lt;/li&gt;');" style="background:#04AA6D; color:white; border:none; padding:6px 12px; border-radius:4px; cursor:pointer; margin-right:6px;"&gt;
+    Oxiriga qo'shish
+  &lt;/button&gt;
+  &lt;button onclick="$('#mevalar').prepend('&lt;li&gt;Anor (prepend)&lt;/li&gt;');" style="background:#0284c7; color:white; border:none; padding:6px 12px; border-radius:4px; cursor:pointer;"&gt;
+    Boshiga qo'shish
+  &lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jqRes13"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 Yangi elementlarni matn, HTML kodi yoki hatto boshqa jQuery elementlari ko'rinishida berish mumkin.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#addClass" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: addClass, removeClass va toggleClass</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 jQuery | 13 / 28</span>
+      <a href="#remove" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: remove() va empty() Metodlari →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">DOM</span>
+      <span style="font-size:12px; color:var(--text2);">jQuery Mavzu #14</span>
+    </div>
+    <h2 id="remove" style="color:#0769ad; margin-top:0; font-size:24px;">remove() va empty() Metodlari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Keraksiz elementlarni DOM daraxtidan o'chirib tashlash uchun <code>remove()</code> va <code>empty()</code> metodlari qo'llaniladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>remove()</code> — tanlangan elementni va uning barcha ichki elementlarini butunlay o'chiradi.</li>
+      <li><code>empty()</code> — elementning o'zini qoldirib, faqat ichidagi barcha bolalarini (ichki kontentini) tozalaydi.</li>
+      <li><code>$('p').remove('.eski')</code> — faqat maxsus klassga ega elementlarni filtrlash mumkin.</li>
+      <li>O'chirilgan elementlar xotiradan tozalanadi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML + jQuery Jonli Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jqCode14')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jqCode14','jqRes14')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jqCode14" contenteditable="true" spellcheck="false">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script src="https://code.jquery.com/jquery-3.7.0.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body style="font-family:sans-serif; padding:15px; background:#0f172a; color:#f8fafc;"&gt;
+  &lt;div id="konteyner" style="padding:15px; background:#1e293b; border-radius:8px; margin-bottom:10px;"&gt;
+    &lt;p&gt;1-qism matni&lt;/p&gt;
+    &lt;p id="ochiriladigan"&gt;2-qism (aniq o'chiriladigan qism)&lt;/p&gt;
+  &lt;/div&gt;
+  &lt;button onclick="$('#ochiriladigan').remove();" style="background:#ef4444; color:white; border:none; padding:6px 12px; border-radius:4px; cursor:pointer; margin-right:6px;"&gt;
+    remove() (#ochiriladigan)
+  &lt;/button&gt;
+  &lt;button onclick="$('#konteyner').empty();" style="background:#eab308; color:black; border:none; padding:6px 12px; border-radius:4px; cursor:pointer;"&gt;
+    empty() (Ichini tozalash)
+  &lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jqRes14"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Agar elementni qayta tiklash ehtimoli bo'lsa, o'chirish o'rniga <code>hide()</code> dan foydalangan ma'qul.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#append" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: append, prepend, after va before</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 jQuery | 14 / 28</span>
+      <a href="#click" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: click() va dblclick() Hodisalari →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Hodisalar</span>
+      <span style="font-size:12px; color:var(--text2);">jQuery Mavzu #15</span>
+    </div>
+    <h2 id="click" style="color:#0769ad; margin-top:0; font-size:24px;">click() va dblclick() Hodisalari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Foydalanuvchi sichqoncha bilan elementni bir marta (click) yoki ikki marta tez bosganda (dblclick) ishga tushadigan funksiyalarni bog'laydi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>$('#btn').click(function(){ ... })</code> — bosilganda ishlaydi.</li>
+      <li><code>dblclick()</code> — ketma-ket ikki marta tez bosilganda faollashadi.</li>
+      <li>Tugmalar, havolalar, kartalar uchun eng keng tarqalgan hodisa.</li>
+      <li>Funksiya ichida <code>$(this)</code> joriy bosilgan elementni anglatadi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML + jQuery Jonli Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jqCode15')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jqCode15','jqRes15')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jqCode15" contenteditable="true" spellcheck="false">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script src="https://code.jquery.com/jquery-3.7.0.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body style="font-family:sans-serif; padding:15px; background:#0f172a; color:#f8fafc;"&gt;
+  &lt;button id="bittaBos" style="background:#04AA6D; color:white; border:none; padding:10px 18px; border-radius:6px; cursor:pointer; margin-right:10px;"&gt;
+    1 marta bosing
+  &lt;/button&gt;
+  &lt;button id="ikkiBos" style="background:#0284c7; color:white; border:none; padding:10px 18px; border-radius:6px; cursor:pointer;"&gt;
+    2 marta tez bosing
+  &lt;/button&gt;
+  &lt;p id="natijaMatn" style="margin-top:15px; font-weight:bold;"&gt;&lt;/p&gt;
+  &lt;script&gt;
+    $('#bittaBos').click(function(){
+      $('#natijaMatn').text('Tugma 1 marta bosildi! ✅').css('color', '#04AA6D');
+    });
+    $('#ikkiBos').dblclick(function(){
+      $('#natijaMatn').text('Tugma 2 marta tez bosildi! ⚡').css('color', '#38bdf8');
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jqRes15"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 <code>$(this)</code> orqali faqat bosilgan tugmaning o'zini o'zgartirish juda qulay.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#remove" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: remove() va empty() Metodlari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 jQuery | 15 / 28</span>
+      <a href="#on" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: on() Metodi (Universal Hodisalar) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Hodisalar</span>
+      <span style="font-size:12px; color:var(--text2);">jQuery Mavzu #16</span>
+    </div>
+    <h2 id="on" style="color:#0769ad; margin-top:0; font-size:24px;">on() Metodi (Universal Hodisalar)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>on()</strong> — jQuery dagi eng zamonaviy va kuchli hodisalar menejeri. U bir vaqtning o'zida bir nechta hodisalarni bog'lash va hattoki keyinroq dinamik qo'shiladigan elementlar uchun ham hodisa o'rnatish (Event Delegation) imkonini beradi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Bir nechta hodisani birlashtirish: <code>$('p').on('mouseenter mouseleave', fn)</code>.</li>
+      <li>Dinamik elementlar uchun (Delegation): <code>$(document).on('click', '.yangiBtn', fn)</code>.</li>
+      <li>Hodisani bekor qilish uchun <code>off()</code> metodi mavjud.</li>
+      <li>Zamonaviy jQuery loyihalarida to'g'ridan-to'g'ri click() o'rniga on('click') tavsiya qilinadi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML + jQuery Jonli Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jqCode16')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jqCode16','jqRes16')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jqCode16" contenteditable="true" spellcheck="false">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script src="https://code.jquery.com/jquery-3.7.0.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body style="font-family:sans-serif; padding:15px; background:#0f172a; color:#f8fafc;"&gt;
+  &lt;div id="qutiOn" style="padding:20px; background:#1e293b; border-radius:8px; text-align:center; cursor:pointer;"&gt;
+    Ustiga sichqonchani olib keling va bosing!
+  &lt;/div&gt;
+  &lt;script&gt;
+    $('#qutiOn').on({
+      mouseenter: function(){ $(this).css('background', '#0769ad'); },
+      mouseleave: function(){ $(this).css('background', '#1e293b'); },
+      click: function(){ $(this).css('background', '#04AA6D').text('Muvaffaqiyatli bosildi! 🎉'); }
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jqRes16"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Ob'ekt sintaksisi orqali bir necha xil hodisalarni bitta joyda chiroyli guruhlash mumkin.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#click" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: click() va dblclick() Hodisalari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 jQuery | 16 / 28</span>
+      <a href="#hover" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: hover() Metodi →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Hodisalar</span>
+      <span style="font-size:12px; color:var(--text2);">jQuery Mavzu #17</span>
+    </div>
+    <h2 id="hover" style="color:#0769ad; margin-top:0; font-size:24px;">hover() Metodi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Sichqoncha kursorining element ustiga kelishi va undan chiqib ketishi holatini birgalikda boshqarish uchun qulay qisqartma metod.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Ikkita funksiya qabul qiladi: 1-si kursor kelganda (mouseenter), 2-si kursor ketganda (mouseleave).</li>
+      <li>Agar faqat bitta funksiya berilsa, u har ikki holatda ham ishlaydi.</li>
+      <li>Menyular, kartalar va tugmalarga hover effekti berish uchun juda qulay.</li>
+      <li>CSS dagi <code>:hover</code> ga o'xshaydi, lekin JS funksiyalarini bajarish imkonini beradi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML + jQuery Jonli Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jqCode17')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jqCode17','jqRes17')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jqCode17" contenteditable="true" spellcheck="false">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script src="https://code.jquery.com/jquery-3.7.0.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body style="font-family:sans-serif; padding:15px; background:#0f172a; color:#f8fafc;"&gt;
+  &lt;div id="hoverKarta" style="padding:20px; background:#1e293b; border-radius:8px; border:2px solid #334155; transition:0.2s;"&gt;
+    Kursorni shu yerga olib keling...
+  &lt;/div&gt;
+  &lt;script&gt;
+    $('#hoverKarta').hover(
+      function(){
+        $(this).css({'border-color':'#04AA6D', 'background':'#0f281e'}).text('Kursor karta ustida! 🎯');
+      },
+      function(){
+        $(this).css({'border-color':'#334155', 'background':'#1e293b'}).text('Kursor chiqib ketdi. 👋');
+      }
+    );
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jqRes17"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 Murakkab CSS o'zgarishlar o'rniga JavaScript animatsiyalarini ishga tushirishda hover() juda qo'l keladi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#on" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: on() Metodi (Universal Hodisalar)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 jQuery | 17 / 28</span>
+      <a href="#submit" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: submit() va event.preventDefault() →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Hodisalar</span>
+      <span style="font-size:12px; color:var(--text2);">jQuery Mavzu #18</span>
+    </div>
+    <h2 id="submit" style="color:#0769ad; margin-top:0; font-size:24px;">submit() va event.preventDefault()</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">HTML formasini yuborish paytida sahifa qayta yuklanishini to'xtatish va ma'lumotlarni AJAX orqali yuborish uchun <code>submit()</code> va <code>e.preventDefault()</code> ishlatiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>$('form').submit(function(e){ ... })</code> — forma yuborilganda chaqiriladi.</li>
+      <li><code>e.preventDefault()</code> — sahifaning qayta yuklanishini oldini oladi.</li>
+      <li>Formadagi barcha ma'lumotlarni tekshirish (validatsiya) uchun ayni muddao.</li>
+      <li>Ma'lumotlarni <code>serialize()</code> orqali qulay yig'ib olish mumkin.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML + jQuery Jonli Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jqCode18')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jqCode18','jqRes18')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jqCode18" contenteditable="true" spellcheck="false">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script src="https://code.jquery.com/jquery-3.7.0.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body style="font-family:sans-serif; padding:15px; background:#0f172a; color:#f8fafc;"&gt;
+  &lt;form id="loginForm" style="max-width:300px;"&gt;
+    &lt;input type="text" id="loginNom" placeholder="Login" style="width:100%; padding:8px; margin-bottom:8px; box-sizing:border-box; border-radius:4px; border:1px solid #334155; background:#1e293b; color:white;"&gt;
+    &lt;button type="submit" style="width:100%; padding:8px; background:#04AA6D; color:white; border:none; border-radius:4px; cursor:pointer;"&gt;
+      Yuborish
+    &lt;/button&gt;
+  &lt;/form&gt;
+  &lt;div id="xabar" style="margin-top:10px;"&gt;&lt;/div&gt;
+  &lt;script&gt;
+    $('#loginForm').submit(function(e){
+      e.preventDefault(); // Sahifa yangilanmaydi!
+      var l = $('#loginNom').val();
+      $('#xabar').html('✅ Qabul qilindi: &lt;strong&gt;' + l + '&lt;/strong&gt; (Sahifa yangilanmadi)');
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jqRes18"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Agar <code>e.preventDefault()</code> qo'yilmasa, brauzer sahifani boshqatdan yangilab yuboradi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#hover" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: hover() Metodi</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 jQuery | 18 / 28</span>
+      <a href="#keypress" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Klaviatura Hodisalari (keypress, keydown, keyup) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Hodisalar</span>
+      <span style="font-size:12px; color:var(--text2);">jQuery Mavzu #19</span>
+    </div>
+    <h2 id="keypress" style="color:#0769ad; margin-top:0; font-size:24px;">Klaviatura Hodisalari (keypress, keydown, keyup)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Foydalanuvchi klaviaturadagi tugmalarni bosganda reaktsiya bildirish uchun mo'ljallangan hodisalar guruhi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>keydown</code> — tugma bosilgan lahzada ishlaydi.</li>
+      <li><code>keyup</code> — tugma qo'yib yuborilganda ishlaydi.</li>
+      <li><code>e.key</code> yoki <code>e.which</code> — qaysi tugma bosilganini aniqlaydi (masalan, Enter = 13).</li>
+      <li>Jonli qidiruv (Live Search) va qisqa tugmalar (hotkeys) yaratishda asosiy vosita.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML + jQuery Jonli Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jqCode19')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jqCode19','jqRes19')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jqCode19" contenteditable="true" spellcheck="false">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script src="https://code.jquery.com/jquery-3.7.0.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body style="font-family:sans-serif; padding:15px; background:#0f172a; color:#f8fafc;"&gt;
+  &lt;input type="text" id="qidiruv" placeholder="Biror narsa yozing..." style="width:100%; max-width:350px; padding:8px; border-radius:6px; border:1px solid #334155; background:#1e293b; color:white;"&gt;
+  &lt;p id="jonliMatn" style="margin-top:10px; color:#38bdf8;"&gt;&lt;/p&gt;
+  &lt;script&gt;
+    $('#qidiruv').keyup(function(){
+      $('#jonliMatn').text('Siz yozyapsiz: ' + $(this).val());
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jqRes19"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 <code>if (e.key === 'Enter')</code> orqali foydalanuvchi Enter tugmasini bosganini aniqlash juda qulay.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#submit" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: submit() va event.preventDefault()</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 jQuery | 19 / 28</span>
+      <a href="#hide" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: hide() va show() Effektlari →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Effektlar</span>
+      <span style="font-size:12px; color:var(--text2);">jQuery Mavzu #20</span>
+    </div>
+    <h2 id="hide" style="color:#0769ad; margin-top:0; font-size:24px;">hide() va show() Effektlari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">HTML elementlarini ko'rsatish va yashirish uchun eng sodda va samarali metodlar. Vaqt ko'rsatkichi berilsa, silliq qisqarish animatsiyasi bilan ishlaydi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>hide()</code> — elementni yashiradi (CSS dagi <code>display: none</code>).</li>
+      <li><code>show()</code> — elementni yana ko'rinadigan qiladi.</li>
+      <li>Vaqt parametri (millisekundlarda): <code>hide(1000)</code> yoki <code>'slow'</code>, <code>'fast'</code>.</li>
+      <li>Callback funksiya: animatsiya tugagach bajariladigan kod.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML + jQuery Jonli Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jqCode20')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jqCode20','jqRes20')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jqCode20" contenteditable="true" spellcheck="false">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script src="https://code.jquery.com/jquery-3.7.0.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body style="font-family:sans-serif; padding:15px; background:#0f172a; color:#f8fafc;"&gt;
+  &lt;div id="sirliQuti" style="padding:20px; background:#0284c7; border-radius:8px; margin-bottom:12px; color:white;"&gt;
+    Men silliq yashirinaman va yana paydo bo'laman!
+  &lt;/div&gt;
+  &lt;button onclick="$('#sirliQuti').hide(500);" style="background:#ef4444; color:white; border:none; padding:8px 14px; border-radius:4px; cursor:pointer; margin-right:6px;"&gt;
+    Yashirish (hide)
+  &lt;/button&gt;
+  &lt;button onclick="$('#sirliQuti').show(500);" style="background:#04AA6D; color:white; border:none; padding:8px 14px; border-radius:4px; cursor:pointer;"&gt;
+    Ko'rsatish (show)
+  &lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jqRes20"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Agar element yashirilganda joyi bo'shab qolmasligi kerak bo'lsa, <code>visibility: hidden</code> ishlatiladi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#keypress" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Klaviatura Hodisalari (keypress, keydown, keyup)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 jQuery | 20 / 28</span>
+      <a href="#toggle" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: toggle() Metodi →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Effektlar</span>
+      <span style="font-size:12px; color:var(--text2);">jQuery Mavzu #21</span>
+    </div>
+    <h2 id="toggle" style="color:#0769ad; margin-top:0; font-size:24px;">toggle() Metodi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Agar element ko'rinib turgan bo'lsa uni yashiradi, agar yashirin bo'lsa ko'rsatadi. Bir tugma bilan ochish va yopishni boshqarish uchun eng qulay metod.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Bitta tugma orqali ochish/yopish (Accordion yoki FAQ uchun ajoyib).</li>
+      <li>Vaqt tezligi berilishi mumkin: <code>toggle(400)</code>.</li>
+      <li>Kodni ikki barobar qisqartiradi (alohida if/else yozish shart emas).</li>
+      <li>Silliq burchak va o'lcham animatsiyasiga ega.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML + jQuery Jonli Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jqCode21')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jqCode21','jqRes21')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jqCode21" contenteditable="true" spellcheck="false">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script src="https://code.jquery.com/jquery-3.7.0.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body style="font-family:sans-serif; padding:15px; background:#0f172a; color:#f8fafc;"&gt;
+  &lt;button id="toggleBtn" style="background:#0769ad; color:white; border:none; padding:8px 16px; border-radius:6px; cursor:pointer; margin-bottom:10px;"&gt;
+    Kontentni ko'rsat / yashir
+  &lt;/button&gt;
+  &lt;div id="togQuti" style="padding:15px; background:#1e293b; border-radius:8px; border:1px solid #334155;"&gt;
+    Bu yerda maxfiy ma'lumotlar bor. Bir marta bosilsa yo'qoladi, yana bosilsa paydo bo'ladi.
+  &lt;/div&gt;
+  &lt;script&gt;
+    $('#toggleBtn').click(function(){
+      $('#togQuti').toggle(400);
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jqRes21"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 <code>toggle()</code> ichiga shart berish ham mumkin: <code>toggle(shart)</code> — agar shart true bo'lsa ko'rsatadi, aks holda yashiradi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#hide" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: hide() va show() Effektlari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 jQuery | 21 / 28</span>
+      <a href="#fadein" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: fadeIn(), fadeOut(), fadeToggle() va fadeTo() →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Effektlar</span>
+      <span style="font-size:12px; color:var(--text2);">jQuery Mavzu #22</span>
+    </div>
+    <h2 id="fadein" style="color:#0769ad; margin-top:0; font-size:24px;">fadeIn(), fadeOut(), fadeToggle() va fadeTo()</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Elementlarning shaffofligini (opacity) o'zgartirish orqali paydo bo'lish va yo'qolish effektlarini beruvchi metodlar guruhi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>fadeIn()</code> — xiralikdan asta-sekin to'liq ko'rinadigan bo'ladi.</li>
+      <li><code>fadeOut()</code> — asta-sekin xiralashib butunlay yo'qoladi.</li>
+      <li><code>fadeToggle()</code> — ko'rinish va yo'qolishni almashtirib turadi.</li>
+      <li><code>fadeTo(speed, opacity)</code> — aniq ko'rsatilgan shaffoflik darajasigacha o'zgartiradi (masalan, 0.5).</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML + jQuery Jonli Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jqCode22')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jqCode22','jqRes22')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jqCode22" contenteditable="true" spellcheck="false">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script src="https://code.jquery.com/jquery-3.7.0.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body style="font-family:sans-serif; padding:15px; background:#0f172a; color:#f8fafc;"&gt;
+  &lt;div id="fadeQuti" style="padding:20px; background:#04AA6D; border-radius:8px; margin-bottom:12px; color:white; text-align:center;"&gt;
+    Yumshoq Shaffoflik Animatsiyasi (Fade)
+  &lt;/div&gt;
+  &lt;button onclick="$('#fadeQuti').fadeOut(400);" style="background:#ef4444; color:white; border:none; padding:6px 12px; border-radius:4px; cursor:pointer; margin-right:4px;"&gt;fadeOut&lt;/button&gt;
+  &lt;button onclick="$('#fadeQuti').fadeIn(400);" style="background:#04AA6D; color:white; border:none; padding:6px 12px; border-radius:4px; cursor:pointer; margin-right:4px;"&gt;fadeIn&lt;/button&gt;
+  &lt;button onclick="$('#fadeQuti').fadeToggle(400);" style="background:#0284c7; color:white; border:none; padding:6px 12px; border-radius:4px; cursor:pointer; margin-right:4px;"&gt;fadeToggle&lt;/button&gt;
+  &lt;button onclick="$('#fadeQuti').fadeTo(400, 0.3);" style="background:#eab308; color:black; border:none; padding:6px 12px; border-radius:4px; cursor:pointer;"&gt;fadeTo(0.3)&lt;/button&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jqRes22"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 `fadeTo` da 2-parametr 0 dan 1 gacha bo'lgan son bo'ladi (0 = butunlay shaffof, 1 = to'liq ko'rinadi).</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#toggle" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: toggle() Metodi</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 jQuery | 22 / 28</span>
+      <a href="#slidein" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: slideDown(), slideUp() va slideToggle() →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Effektlar</span>
+      <span style="font-size:12px; color:var(--text2);">jQuery Mavzu #23</span>
+    </div>
+    <h2 id="slidein" style="color:#0769ad; margin-top:0; font-size:24px;">slideDown(), slideUp() va slideToggle()</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Elementlarni yuqoridan pastga yoki pastdan yuqoriga qarab ochiluvchi pardaga o'xshash silliq animatsiya bilan boshqaradi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>slideDown()</code> — elementni pastga qarab yoyib ochadi.</li>
+      <li><code>slideUp()</code> — elementni yuqoriga yig'ib yashiradi.</li>
+      <li><code>slideToggle()</code> — holatni navbatma-navbat o'zgartiradi.</li>
+      <li>Akkordeon (FAQ) menyularida eng ko'p ishlatiladigan effekt.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML + jQuery Jonli Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jqCode23')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jqCode23','jqRes23')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jqCode23" contenteditable="true" spellcheck="false">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script src="https://code.jquery.com/jquery-3.7.0.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body style="font-family:sans-serif; padding:15px; background:#0f172a; color:#f8fafc;"&gt;
+  &lt;div id="slideSarlavha" style="padding:12px; background:#0769ad; color:white; border-radius:6px; cursor:pointer; font-weight:bold;"&gt;
+    FAQ: jQuery nima uchun kerak? (Bosing)
+  &lt;/div&gt;
+  &lt;div id="slideTanasi" style="display:none; padding:15px; background:#1e293b; border-radius:0 0 6px 6px; border:1px solid #334155;"&gt;
+    jQuery JavaScript kodini o'ta ixcham qilib yozish va barcha brauzerlarda bir xil ishlashini kafolatlash uchun kerak.
+  &lt;/div&gt;
+  &lt;script&gt;
+    $('#slideSarlavha').click(function(){
+      $('#slideTanasi').slideToggle(300);
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jqRes23"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 <code>slideToggle()</code> ishlatishdan oldin element boshlang'ich holatda <code>display: none</code> bo'lsa, birinchi bosishda ochiladi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#fadein" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: fadeIn(), fadeOut(), fadeToggle() va fadeTo()</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 jQuery | 23 / 28</span>
+      <a href="#animate" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: animate() Metodi (Shaxsiy Animatsiyalar) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Effektlar</span>
+      <span style="font-size:12px; color:var(--text2);">jQuery Mavzu #24</span>
+    </div>
+    <h2 id="animate" style="color:#0769ad; margin-top:0; font-size:24px;">animate() Metodi (Shaxsiy Animatsiyalar)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Elementlarning deyarli barcha sonli CSS xossalarini (width, height, left, top, opacity, fontSize) silliq o'zgartirish orqali shaxsiy animatsiyalar yaratadi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Sintaksis: <code>$('el').animate({params}, speed, callback)</code>.</li>
+      <li>Nisbiy qiymatlar: <code>{left: '+=50px'}</code> orqali mavjud o'lchamga qo'shish mumkin.</li>
+      <li>Navbat (queue): ketma-ket bir nechta animate yozilsa, ular birin-ketin navbat bilan ishlaydi.</li>
+      <li>Element harakatlanishi uchun CSS dagi <code>position: relative/absolute/fixed</code> bo'lishi kerak.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML + jQuery Jonli Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jqCode24')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jqCode24','jqRes24')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jqCode24" contenteditable="true" spellcheck="false">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script src="https://code.jquery.com/jquery-3.7.0.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body style="font-family:sans-serif; padding:15px; background:#0f172a; color:#f8fafc;"&gt;
+  &lt;button id="animBtn" style="background:#04AA6D; color:white; border:none; padding:8px 16px; border-radius:6px; cursor:pointer; margin-bottom:15px;"&gt;
+    Animatsiyani boshlash ▶
+  &lt;/button&gt;
+  &lt;div style="position:relative; height:120px; background:#1e293b; border-radius:8px; padding:10px;"&gt;
+    &lt;div id="kubik" style="position:absolute; left:10px; top:25px; width:60px; height:60px; background:#38bdf8; border-radius:8px;"&gt;&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;script&gt;
+    $('#animBtn').click(function(){
+      $('#kubik')
+        .animate({left: '250px', width: '90px'}, 500)
+        .animate({top: '40px', opacity: 0.6}, 300)
+        .animate({left: '10px', top: '25px', width: '60px', opacity: 1}, 500);
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jqRes24"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Ranglarni (color, background-color) animatsiya qilish uchun qo'shimcha jQuery Color plagin kerak bo'ladi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#slidein" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: slideDown(), slideUp() va slideToggle()</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 jQuery | 24 / 28</span>
+      <a href="#ajax" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: $.ajax() Metodi (Asosiy AJAX) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">AJAX</span>
+      <span style="font-size:12px; color:var(--text2);">jQuery Mavzu #25</span>
+    </div>
+    <h2 id="ajax" style="color:#0769ad; margin-top:0; font-size:24px;">$.ajax() Metodi (Asosiy AJAX)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>$.ajax()</strong> — server bilan sahifani yangilamasdan fon rejimida ma'lumot almashish uchun eng qudratli va to'liq sozlanadigan metoddir.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Barcha HTTP metodlarini qo'llab-quvvatlaydi: GET, POST, PUT, DELETE.</li>
+      <li><code>url</code> — so'rov yuboriladigan API manzili.</li>
+      <li><code>success</code> — javob muvaffaqiyatli kelganda chaqiriladigan funksiya.</li>
+      <li><code>error</code> — serverda xatolik yuz berganda ishlaydi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML + jQuery Jonli Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jqCode25')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jqCode25','jqRes25')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jqCode25" contenteditable="true" spellcheck="false">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script src="https://code.jquery.com/jquery-3.7.0.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body style="font-family:sans-serif; padding:15px; background:#0f172a; color:#f8fafc;"&gt;
+  &lt;button id="yuklaBtn" style="background:#0769ad; color:white; border:none; padding:8px 16px; border-radius:6px; cursor:pointer;"&gt;
+    Foydalanuvchini yuklash
+  &lt;/button&gt;
+  &lt;div id="ajaxNatija" style="margin-top:15px; padding:12px; background:#1e293b; border-radius:6px;"&gt;
+    Ma'lumot hali yo'q.
+  &lt;/div&gt;
+  &lt;script&gt;
+    $('#yuklaBtn').click(function(){
+      $('#ajaxNatija').text('Yuklanmoqda...');
+      $.ajax({
+        url: 'https://jsonplaceholder.typicode.com/users/1',
+        type: 'GET',
+        dataType: 'json',
+        success: function(data){
+          $('#ajaxNatija').html('👤 &lt;strong&gt;' + data.name + '&lt;/strong&gt;&lt;br&gt;📧 ' + data.email + '&lt;br&gt;🏢 ' + data.company.name);
+        },
+        error: function(err){
+          $('#ajaxNatija').text('Xatolik yuz berdi: ' + err.status);
+        }
+      });
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jqRes25"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 <code>beforeSend</code> orqali so'rov ketishidan oldin yuklanish spinnerini chiqarish mumkin.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#animate" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: animate() Metodi (Shaxsiy Animatsiyalar)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 jQuery | 25 / 28</span>
+      <a href="#get" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: $.get() Metodi (Tezkor GET So'rovi) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">AJAX</span>
+      <span style="font-size:12px; color:var(--text2);">jQuery Mavzu #26</span>
+    </div>
+    <h2 id="get" style="color:#0769ad; margin-top:0; font-size:24px;">$.get() Metodi (Tezkor GET So'rovi)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Serverdan ma'lumotlarni HTTP GET protokoli orqali tez va sodda qabul qilib olish uchun qisqartirilgan AJAX metodidir.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Sintaksis: <code>$.get(URL, callback)</code>.</li>
+      <li>Faqat ma'lumot olish uchun mo'ljallangan.</li>
+      <li>Kod hajmini sezilarli darajada tejaydi.</li>
+      <li>Javob avtomatik tarzda qayta ishlanadi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML + jQuery Jonli Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jqCode26')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jqCode26','jqRes26')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jqCode26" contenteditable="true" spellcheck="false">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script src="https://code.jquery.com/jquery-3.7.0.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body style="font-family:sans-serif; padding:15px; background:#0f172a; color:#f8fafc;"&gt;
+  &lt;button id="getBtn" style="background:#04AA6D; color:white; border:none; padding:8px 16px; border-radius:6px; cursor:pointer;"&gt;
+    Post sarlavhasini olish
+  &lt;/button&gt;
+  &lt;p id="getNatija" style="margin-top:10px; font-weight:bold; color:#38bdf8;"&gt;&lt;/p&gt;
+  &lt;script&gt;
+    $('#getBtn').click(function(){
+      $.get('https://jsonplaceholder.typicode.com/posts/1', function(data){
+        $('#getNatija').text('📌 Sarlavha: ' + data.title);
+      });
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jqRes26"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 Agar murakkab headers yoki xatoliklarni ushlash talab qilinmasa, <code>$.get()</code> eng qulay yo'ldir.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#ajax" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: $.ajax() Metodi (Asosiy AJAX)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 jQuery | 26 / 28</span>
+      <a href="#post" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: $.post() Metodi (Ma'lumot Yuborish) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">AJAX</span>
+      <span style="font-size:12px; color:var(--text2);">jQuery Mavzu #27</span>
+    </div>
+    <h2 id="post" style="color:#0769ad; margin-top:0; font-size:24px;">$.post() Metodi (Ma'lumot Yuborish)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Serverga yangi ma'lumotlarni (masalan, forma, sharh yoki buyurtma) xavfsiz HTTP POST protokoli orqali yuborish uchun xizmat qiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Sintaksis: <code>$.post(URL, data, callback)</code>.</li>
+      <li>URL parametrlarida ko'rinmaydigan xavfsiz yuborish.</li>
+      <li>Yuboriladigan ma'lumot JavaScript ob'ekti yoki matn bo'lishi mumkin.</li>
+      <li>Serverdan qaytgan tasdiq xabarini callback da qabul qiladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML + jQuery Jonli Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jqCode27')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jqCode27','jqRes27')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jqCode27" contenteditable="true" spellcheck="false">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script src="https://code.jquery.com/jquery-3.7.0.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body style="font-family:sans-serif; padding:15px; background:#0f172a; color:#f8fafc;"&gt;
+  &lt;button id="postBtn" style="background:#0284c7; color:white; border:none; padding:8px 16px; border-radius:6px; cursor:pointer;"&gt;
+    Yangi post yuborish (POST)
+  &lt;/button&gt;
+  &lt;div id="postRes" style="margin-top:12px; color:#4ade80;"&gt;&lt;/div&gt;
+  &lt;script&gt;
+    $('#postBtn').click(function(){
+      $.post('https://jsonplaceholder.typicode.com/posts', {
+        title: 'W3Learn jQuery Darsi',
+        body: 'AJAX POST so\'rovi muvaffaqiyatli amalga oshirildi!',
+        userId: 1
+      }, function(javob){
+        $('#postRes').html('✅ Server javobi: Yangi ID #' + javob.id + ' yaratildi.');
+      });
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jqRes27"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">📌 Formalarni butunligicha yuborish uchun <code>$('#forma').serialize()</code> bilan birga ishlatish o'ta qulay.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#get" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: $.get() Metodi (Tezkor GET So'rovi)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 jQuery | 27 / 28</span>
+      <a href="#getjson" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: $.getJSON() Metodi (JSON Ma'lumotlar) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">AJAX</span>
+      <span style="font-size:12px; color:var(--text2);">jQuery Mavzu #28</span>
+    </div>
+    <h2 id="getjson" style="color:#0769ad; margin-top:0; font-size:24px;">$.getJSON() Metodi (JSON Ma'lumotlar)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Serverdan to'g'ridan-to'g'ri JSON formatidagi ma'lumotlarni yuklab olish va ularni avtomatik tarzda JavaScript ob'ektiga aylantirish uchun ixtisoslashgan metod.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Javobni qo'lda <code>JSON.parse()</code> qilish shart emas — avtomatik ob'ekt bo'lib keladi.</li>
+      <li>Tashqi ochiq API lardan (ob-havo, valyuta, xabarlar) ma'lumot olishda juda tezkor.</li>
+      <li>Sintaksis: <code>$.getJSON(url, data, callback)</code>.</li>
+      <li>JSONP formatini ham qo'llab-quvvatlaydi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">HTML + jQuery Jonli Kod</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('jqCode28')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('jqCode28','jqRes28')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="jqCode28" contenteditable="true" spellcheck="false">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+  &lt;script src="https://code.jquery.com/jquery-3.7.0.min.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body style="font-family:sans-serif; padding:15px; background:#0f172a; color:#f8fafc;"&gt;
+  &lt;button id="todoBtn" style="background:#0769ad; color:white; border:none; padding:8px 16px; border-radius:6px; cursor:pointer;"&gt;
+    Vazifalar ro'yxatini yuklash (JSON)
+  &lt;/button&gt;
+  &lt;ul id="todoRoyxat" style="margin-top:12px; line-height:1.7;"&gt;&lt;/ul&gt;
+  &lt;script&gt;
+    $('#todoBtn').click(function(){
+      $('#todoRoyxat').empty();
+      $.getJSON('https://jsonplaceholder.typicode.com/todos?_limit=3', function(data){
+        $.each(data, function(i, item){
+          $('#todoRoyxat').append('&lt;li&gt;' + (item.completed ? '✅ ' : '⏳ ') + item.title + '&lt;/li&gt;');
+        });
+      });
+    });
+  &lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="jqRes28"><div class="result-label">📺 Jonli Natija:</div><iframe class="result-iframe"></iframe></div>
+
+    <div class="note" style="margin-top:16px;">💡 <code>$.each(massiv, function(index, value){ ... })</code> metodi JSON ro'yxatlarini aylanish uchun eng qulay vosita.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#post" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: $.post() Metodi (Ma'lumot Yuborish)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 jQuery | 28 / 28</span>
+      <a href="python.html" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi kurs: Python Darslari →</a>
+    </div>
+  </section>
 
   <div class="quiz-box">
-    <div class="quiz-q">🧪 Test: jQuery da elementni tanlash uchun qaysi belgi ishlatiladi?</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qr1')">@ belgisi</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, true, 'qr1')">$ belgisi</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qr1')"># belgisi</div>
-    <div class="quiz-result" id="qr1"></div>
+    <div class="quiz-q">🧪 Test: jQuery da elementlarni tanlash uchun qaysi belgi ishlatiladi?</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'jqQr1')">@ belgisi</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, true, 'jqQr1')">$ belgisi</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'jqQr1')"># belgisi</div>
+    <div class="quiz-result" id="jqQr1"></div>
   </div>
-  
 
-<div class="nav-btns">
-  <a href="bootstrap.html" class="btn-prev">&#8592; Bootstrap</a>
-  <a href="python.html" class="btn-next">Python &#8594;</a>
-</div>
+  <div class="nav-btns" style="margin-top: 30px;">
+    <a href="bootstrap.html" class="btn-prev">← Bootstrap 5</a>
+    <a href="python.html" class="btn-next">Python Darsiga O'tish →</a>
+  </div>
+
+  <div class="note note-blue" style="margin-top: 25px;">
+    📌 <strong>Keyingi qadam:</strong> Frontend asoslarini to'liq tugatdingiz! Endi kuchli <a href="python.html" style="color:var(--green)">Python Backend darslariga</a> o'ting!
+  </div>
 </main>
 <aside class="right-panel">
   <div class="rp-title">📈 Progress</div>

@@ -2635,3 +2635,24 @@ html, body {
     border-radius: 14px !important;
   }
 }
+
+
+/* Mobile Drawer faqat mobilda ishlaydi, desktopda yashiriladi */
+.mobile-drawer {
+  display: none !important;
+}
+
+@media (max-width: 768px) {
+  .mobile-drawer {
+    display: block !important;
+  }
+  .menu-toggle {
+    display: inline-flex !important;
+  }
+}
+
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none !important; /* Desktopda 3 ta chiziq kerak emas, sidebar tayyor ochiq */
+  }
+}

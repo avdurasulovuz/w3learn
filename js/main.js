@@ -381,20 +381,7 @@ function toggleBookmark(page) {
   });
 })();
 
-// ── MOBILE SIDEBAR ──
-const menuToggle = document.getElementById('menuToggle');
-const sidebar    = document.querySelector('.sidebar');
-const overlay    = document.getElementById('overlay');
-if (menuToggle && sidebar) {
-  menuToggle.addEventListener('click', () => {
-    sidebar.classList.toggle('open');
-    overlay?.classList.toggle('show');
-  });
-  overlay?.addEventListener('click', () => {
-    sidebar.classList.remove('open');
-    overlay.classList.remove('show');
-  });
-}
+// ── MOBILE SIDEBAR HANDLED BY toggleSidebar BELOW ──
 
 // ── SCROLL REVEAL ──
 const revealEls = document.querySelectorAll('.reveal');
@@ -874,13 +861,22 @@ function closeMobileSidebar() {
 }
 
 function toggleSidebar(e) {
-  if (e && e.stopPropagation) e.stopPropagation();
+  if (e) {
+    if (e.preventDefault) e.preventDefault();
+    if (e.stopPropagation) e.stopPropagation();
+  }
   const sb = document.querySelector('.sidebar');
-  if (!sb) return;
+  const ov = getOrCreateOverlay();
+  if (!sb) {
+    console.warn("Sidebar elementi topilmadi");
+    return;
+  }
   if (sb.classList.contains('open')) {
-    closeMobileSidebar();
+    sb.classList.remove('open');
+    if (ov) ov.classList.remove('show');
   } else {
-    openMobileSidebar();
+    sb.classList.add('open');
+    if (ov) ov.classList.add('show');
   }
 }
 

@@ -763,15 +763,98 @@ if (document.readyState !== 'loading') {
 }
 
 
-function toggleSidebar(){
-  const sb = document.querySelector('.sidebar');
-  if(sb) sb.classList.toggle('open');
-}
-// Sidebar tashqarisini bossanda yopish
-document.addEventListener('click', function(e){
-  const sb = document.querySelector('.sidebar');
-  const hb = document.getElementById('hamburgerBtn');
-  if(sb && sb.classList.contains('open') && !sb.contains(e.target) && e.target !== hb){
-    sb.classList.remove('open');
+// ── ROBUST MOBILE SIDEBAR & OVERLAY CONTROLLER ──
+function getOrCreateOverlay() {
+  let ov = document.getElementById('overlay');
+  if (!ov) {
+    ov = document.createElement('div');
+    ov.className = 'overlay';
+    ov.id = 'overlay';
+    document.body.appendChild(ov);
+    ov.addEventListener('click', closeMobileSidebar);
   }
+  return ov;
+}
+
+function openMobileSidebar() {
+  const sb = document.querySelector('.sidebar');
+  const ov = getOrCreateOverlay();
+  if (sb) sb.classList.add('open');
+  if (ov) ov.classList.add('show');
+}
+
+function closeMobileSidebar() {
+  const sb = document.querySelector('.sidebar');
+  const ov = document.getElementById('overlay');
+  if (sb) sb.classList.remove('open');
+  if (ov) ov.classList.remove('show');
+}
+
+function toggleSidebar(e) {
+  if (e && e.stopPropagation) e.stopPropagation();
+  const sb = document.querySelector('.sidebar');
+  if (!sb) return;
+  if (sb.classList.contains('open')) {
+    closeMobileSidebar();
+  } else {
+    openMobileSidebar();
+  }
+}
+
+// Global hook for menuToggle button and sidebar links
+document.addEventListener('DOMContentLoaded', () => {
+  const toggleBtn = document.getElementById('menuToggle') || document.getElementById('hamburgerBtn');
+  if (toggleBtn) {
+    toggleBtn.onclick = function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      toggleSidebar(e);
+    };
+  }
+
+  // Auto-close sidebar on mobile when a topic link is clicked
+  document.querySelectorAll('.sidebar a').forEach(a => {
+    a.addEventListener('click', () => {
+      if (window.innerWidth <= 768) {
+        closeMobileSidebar();
+      }
+    });
+  });
+
+  // Clicking outside sidebar closes it
+  document.addEventListener('click', (e) => {
+    const sb = document.querySelector('.sidebar');
+    const tb = document.getElementById('menuToggle') || document.getElementById('hamburgerBtn');
+    if (sb && sb.classList.contains('open')) {
+      if (!sb.contains(e.target) && (!tb || !tb.contains(e.target))) {
+        closeMobileSidebar();
+      }
+    }
+  });
+
+  // Escape key closes sidebar
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      closeMobileSidebar();
+    }
+  });
 });
+
+if (document.readyState !== 'loading') {
+  // If DOM already loaded
+  const toggleBtn = document.getElementById('menuToggle') || document.getElementById('hamburgerBtn');
+  if (toggleBtn) {
+    toggleBtn.onclick = function(e) {
+      e.preventDefault();
+      e.stopPropagation();
+      toggleSidebar(e);
+    };
+  }
+  document.querySelectorAll('.sidebar a').forEach(a => {
+    a.addEventListener('click', () => {
+      if (window.innerWidth <= 768) {
+        closeMobileSidebar();
+      }
+    });
+  });
+}

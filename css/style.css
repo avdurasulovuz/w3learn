@@ -1672,158 +1672,61 @@ footer {
 }
 
 
-/* ===== MOBIL MOSLASHUV ===== */
-@media (max-width: 768px) {
-  .nav-links { display: none; }
-  .topbar { flex-wrap: wrap; gap: 8px; padding: 8px 12px; }
-  .logo { font-size: 20px; }
-  .search-wrap input { width: 120px; }
-  
-  .page-layout { flex-direction: column; }
-  .sidebar { position: fixed; left: -260px; top: 0; bottom: 0; z-index: 100; transition: left 0.3s; width: 240px; }
-  .sidebar.open { left: 0; }
-  .right-panel { display: none; }
-  
-  main { padding: 12px; }
-  .code-block pre { font-size: 12px; overflow-x: auto; }
-  .result-box { min-height: 100px; }
-  
-  .nav-btns { flex-direction: column; gap: 8px; }
-  .btn-prev, .btn-next { text-align: center; }
-  
-  .quiz-box { padding: 16px; }
-  .quiz-opt { font-size: 14px; }
-  
-  /* Hamburger menu */
-  .hamburger { display: flex !important; flex-direction: column; gap: 5px; cursor: pointer; padding: 8px; }
-  .hamburger span { width: 24px; height: 2px; background: var(--text); border-radius: 2px; transition: 0.3s; }
-  
-  /* AI Chat mobil */
-  .ai-chat-window { width: calc(100vw - 24px) !important; right: 12px !important; bottom: 70px !important; max-height: 60vh; }
-  
-  /* Hero section */
-  .hero h1 { font-size: 28px; }
-  .hero p { font-size: 15px; }
-  .cards-grid { grid-template-columns: repeat(2, 1fr); gap: 12px; }
-}
+/* ════════════════════════════════════════════════════════════
+   MUKAMMAL MOBIL VA W3SCHOOLS MOSLASHUVCHANLIGI
+════════════════════════════════════════════════════════════ */
 
-@media (max-width: 480px) {
-  .cards-grid { grid-template-columns: 1fr; }
-  .hero { padding: 40px 16px; }
-  .hero h1 { font-size: 24px; }
-  .features-grid { grid-template-columns: 1fr; }
-  .code-block { margin: 8px 0; }
-}
-
-/* ===== YAXSHILANGAN DIZAYN ===== */
-
-/* Topbar gradient */
-.topbar {
-  background: linear-gradient(90deg, #0d1117 0%, #111827 100%) !important;
-  backdrop-filter: blur(20px);
-  border-bottom: 1px solid rgba(255,255,255,0.06) !important;
-}
-
-/* Yaxshilangan kurs kartlari */
-.course-card {
-  transition: transform 0.25s cubic-bezier(.4,0,.2,1), box-shadow 0.25s !important;
-  border: 1px solid rgba(255,255,255,0.05) !important;
-}
-.course-card:hover {
-  transform: translateY(-6px) scale(1.02) !important;
-  box-shadow: 0 20px 40px rgba(0,0,0,0.4), 0 0 0 1px rgba(4,170,109,0.2) !important;
-}
-
-/* Yaxshilangan sidebar */
-.sidebar {
-  scrollbar-width: thin;
-  scrollbar-color: rgba(4,170,109,0.3) transparent;
-}
-.sidebar a:hover {
-  background: rgba(4,170,109,0.12) !important;
-  color: #04AA6D !important;
-  border-left: 3px solid #04AA6D;
-  padding-left: 13px;
-  transition: all 0.2s;
-}
-
-/* Yaxshilangan quiz */
-.quiz-box {
-  border: 1px solid rgba(255,255,255,0.06);
-  background: linear-gradient(135deg, #1a2235 0%, #111827 100%);
-}
-.quiz-opt {
-  transition: all 0.2s cubic-bezier(.4,0,.2,1) !important;
-}
-.quiz-opt:hover {
-  border-color: #04AA6D !important;
-  transform: translateX(4px);
-}
-
-/* Yaxshilangan nav buttons */
-.btn-prev, .btn-next {
-  font-weight: 700 !important;
-  letter-spacing: 0.3px;
-  transition: all 0.2s !important;
-}
-.btn-next:hover {
-  background: #038a56 !important;
-  transform: translateX(3px);
-}
-.btn-prev:hover {
-  transform: translateX(-3px);
-}
-
-/* Code block yaxshilash */
-.code-block {
-  box-shadow: 0 4px 24px rgba(0,0,0,0.3);
-  border: 1px solid rgba(255,255,255,0.06);
-}
-
-/* Hero gradient animatsiya */
-.hero {
-  background: linear-gradient(135deg, #0d1117 0%, #0f1f14 50%, #0d1117 100%);
-  position: relative;
-  overflow: hidden;
-}
-.hero::before {
-  content: '';
-  position: absolute;
-  width: 600px; height: 600px;
-  background: radial-gradient(circle, rgba(4,170,109,0.08) 0%, transparent 70%);
-  top: -200px; right: -200px;
-  pointer-events: none;
-}
-
-/* Scrollbar yaxshilash */
-::-webkit-scrollbar { width: 6px; height: 6px; }
-::-webkit-scrollbar-track { background: #0d1117; }
-::-webkit-scrollbar-thumb { background: rgba(4,170,109,0.4); border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #04AA6D; }
-
-/* AI chat yaxshilash */
-.ai-chat-window {
-  border: 1px solid rgba(4,170,109,0.2) !important;
-  box-shadow: 0 20px 60px rgba(0,0,0,0.6) !important;
-}
-
-/* Exercise box */
-.exercise-box {
-  border: 1px solid rgba(99,102,241,0.2);
-  background: linear-gradient(135deg, #1a1a2e 0%, #111827 100%);
-}
-
-/* Progress bar animatsiya */
-.progress-bar-fill {
-  transition: width 0.6s cubic-bezier(.4,0,.2,1) !important;
-  background: linear-gradient(90deg, #04AA6D, #00d4a0) !important;
-}
-
-
-/* Silliq scroll (W3Schools kabi) */
+/* Silliq scroll va toza ko'rinish */
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
+  scroll-padding-top: 72px;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* W3Schools Uslubidagi Topbar */
+.topbar {
+  background: linear-gradient(90deg, #0d1117 0%, #161b22 100%) !important;
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
+  z-index: 1000;
+}
+
+.topbar .logo {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  text-decoration: none;
+}
+
+/* Menu Toggle tugmasi (mobil uchun) */
+.menu-toggle {
+  display: none;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: #fff;
+  width: 38px;
+  height: 38px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 18px;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+  user-select: none;
+  flex-shrink: 0;
+}
+.menu-toggle:hover, .menu-toggle:active {
+  background: #04AA6D;
+  border-color: #04AA6D;
+  color: #fff;
+  transform: scale(1.04);
 }
 
 /* W3Schools uslubidagi Topic Navigation */
@@ -1831,43 +1734,381 @@ html {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  margin-top: 32px;
-  padding-top: 22px;
+  margin-top: 36px;
+  padding-top: 24px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);
   flex-wrap: wrap;
   gap: 12px;
 }
 .topic-nav-btn {
-  transition: all 0.25s ease !important;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.22s ease !important;
   cursor: pointer;
   user-select: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.25);
+}
+.topic-nav-btn.prev {
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  color: #e6edf3;
 }
 .topic-nav-btn.prev:hover {
-  background: rgba(255, 255, 255, 0.12) !important;
-  transform: translateX(-3px);
+  background: rgba(255, 255, 255, 0.16) !important;
+  transform: translateX(-4px);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+.topic-nav-btn.next {
+  background: #04AA6D;
+  border: 1px solid #04AA6D;
+  color: #ffffff;
 }
 .topic-nav-btn.next:hover {
   background: #038f5b !important;
-  transform: translateX(3px);
-  box-shadow: 0 4px 14px rgba(4, 170, 109, 0.4) !important;
+  border-color: #038f5b;
+  transform: translateX(4px);
+  box-shadow: 0 4px 16px rgba(4, 170, 109, 0.45) !important;
 }
 
+/* W3Schools Note Box */
+.note-box {
+  background: rgba(4, 170, 109, 0.08) !important;
+  border-left: 4px solid #04AA6D !important;
+  border-radius: 0 8px 8px 0;
+  padding: 14px 18px !important;
+  margin: 18px 0 !important;
+  color: #d1fae5 !important;
+}
+.note-box strong {
+  color: #34d399 !important;
+}
+
+/* Code Block yaxshilash */
+.code-block {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  overflow: hidden;
+  margin: 20px 0;
+  background: #111827;
+}
+.code-header {
+  background: #1f2937;
+  padding: 8px 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+.code-block pre {
+  margin: 0;
+  padding: 16px;
+  font-size: 13.5px;
+  line-height: 1.55;
+  font-family: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  color: #f8fafc;
+}
+
+/* Run & Copy tugmalari */
+.btn-run-code {
+  background: #04AA6D !important;
+  color: #ffffff !important;
+  font-weight: 700 !important;
+  border-radius: 6px !important;
+  padding: 6px 14px !important;
+  border: none !important;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn-run-code:hover {
+  background: #038f5b !important;
+  transform: translateY(-1px);
+  box-shadow: 0 3px 10px rgba(4, 170, 109, 0.4);
+}
+.btn-copy-code {
+  background: rgba(255, 255, 255, 0.08) !important;
+  color: #cbd5e1 !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  border-radius: 6px !important;
+  padding: 6px 12px !important;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+.btn-copy-code:hover {
+  background: rgba(255, 255, 255, 0.16) !important;
+  color: #fff !important;
+}
+
+/* Yaxshilangan Quiz va Exercise */
+.quiz-box {
+  border: 1px solid rgba(4, 170, 109, 0.25) !important;
+  background: linear-gradient(135deg, #131c2d 0%, #0d1117 100%) !important;
+  border-radius: 12px !important;
+  padding: 24px !important;
+  margin-top: 36px !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important;
+}
+.quiz-opt {
+  display: block;
+  width: 100%;
+  text-align: left;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  padding: 12px 16px;
+  margin: 10px 0;
+  color: #e2e8f0;
+  cursor: pointer;
+  font-size: 14.5px;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+.quiz-opt:hover {
+  background: rgba(4, 170, 109, 0.12) !important;
+  border-color: #04AA6D !important;
+  color: #fff !important;
+  transform: translateX(4px);
+}
+
+/* Table mobil moslashuvi */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+}
+.table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  margin: 16px 0;
+}
+
+/* ══════════════════════════════════════
+   MEDIA QUERIES (TABLET & MOBIL)
+══════════════════════════════════════ */
+
+/* Katta planshet (1100px gacha) */
+@media (max-width: 1100px) {
+  .right-panel {
+    display: none !important;
+  }
+  .main {
+    margin-right: 0 !important;
+  }
+}
+
+/* Planshet va Mobil (768px gacha) */
 @media (max-width: 768px) {
+  :root {
+    --sidebar-w: 0px;
+  }
+
+  /* Topbar mobil */
+  .topbar {
+    height: 58px !important;
+    padding: 0 12px !important;
+    flex-wrap: nowrap !important;
+    justify-content: space-between !important;
+  }
+  .menu-toggle {
+    display: inline-flex !important;
+  }
+  .topbar .logo {
+    font-size: 18px !important;
+    margin-right: auto !important;
+  }
+  .top-nav, .nav-links {
+    display: none !important;
+  }
+  .search-wrap {
+    max-width: 130px !important;
+  }
+  .search-wrap input {
+    width: 100% !important;
+    font-size: 12.5px !important;
+    padding: 6px 8px !important;
+  }
+  .streak-pill {
+    display: none !important;
+  }
+  .xp-pill {
+    padding: 4px 8px !important;
+    font-size: 11px !important;
+  }
+
+  /* Mobil Drawer Sidebar */
+  .sidebar {
+    position: fixed !important;
+    top: 58px !important;
+    left: 0 !important;
+    bottom: 0 !important;
+    width: 280px !important;
+    max-width: 82vw !important;
+    background: #111827 !important;
+    border-right: 1px solid rgba(255, 255, 255, 0.12) !important;
+    box-shadow: 12px 0 36px rgba(0, 0, 0, 0.7) !important;
+    transform: translateX(-105%) !important;
+    transition: transform 0.28s cubic-bezier(0.4, 0, 0.2, 1) !important;
+    z-index: 1200 !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+    padding: 16px 0 60px !important;
+  }
+  .sidebar.open {
+    transform: translateX(0) !important;
+  }
+
+  /* Mobil Overlay (qorong'u fon) */
+  .overlay {
+    display: block !important;
+    position: fixed !important;
+    inset: 0 !important;
+    top: 58px !important;
+    background: rgba(0, 0, 0, 0.65) !important;
+    backdrop-filter: blur(4px) !important;
+    -webkit-backdrop-filter: blur(4px) !important;
+    z-index: 1150 !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    transition: opacity 0.28s ease !important;
+  }
+  .overlay.show {
+    opacity: 1 !important;
+    pointer-events: auto !important;
+  }
+
+  /* Asosiy kontent mobil */
+  .main {
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    width: 100% !important;
+    max-width: 100vw !important;
+    padding: 20px 14px 60px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Mavzular sarlavhasi */
+  .topic-section h2 {
+    font-size: 20px !important;
+    line-height: 1.35 !important;
+    word-break: break-word;
+  }
+  .topic-badge {
+    font-size: 11px !important;
+    padding: 3px 8px !important;
+  }
+
+  /* Code block mobil */
+  .code-block {
+    margin: 14px 0 !important;
+    border-radius: 8px !important;
+  }
+  .code-header {
+    padding: 6px 10px !important;
+  }
+  .code-header span {
+    font-size: 12px !important;
+  }
+  .btn-run-code, .btn-copy-code {
+    font-size: 11.5px !important;
+    padding: 5px 9px !important;
+  }
+  .code-block pre {
+    padding: 12px 10px !important;
+    font-size: 12.5px !important;
+    line-height: 1.45 !important;
+  }
+  .result-box {
+    min-height: 80px !important;
+    font-size: 12px !important;
+  }
+
+  /* Topic Nav mobil */
   .topic-nav {
-    flex-direction: column;
+    flex-direction: column !important;
     align-items: stretch !important;
-    gap: 10px;
+    gap: 10px !important;
+    margin-top: 24px !important;
+    padding-top: 18px !important;
   }
   .topic-nav-btn {
-    width: 100%;
+    width: 100% !important;
     justify-content: center !important;
-    text-align: center;
-    padding: 12px 16px !important;
-    font-size: 14px !important;
+    text-align: center !important;
+    padding: 13px 16px !important;
+    font-size: 14.5px !important;
+    box-sizing: border-box !important;
   }
   .topic-nav span {
     text-align: center;
     order: -1;
-    margin-bottom: 4px;
+    margin-bottom: 2px;
   }
+
+  /* Quiz mobil */
+  .quiz-box {
+    padding: 18px 14px !important;
+    margin-top: 28px !important;
+  }
+  .quiz-opt {
+    font-size: 13.5px !important;
+    padding: 11px 13px !important;
+  }
+
+  /* AI Chat mobil */
+  .ai-chat-window {
+    width: calc(100vw - 20px) !important;
+    right: 10px !important;
+    bottom: 68px !important;
+    max-height: 65vh !important;
+  }
+}
+
+/* Kichik smartfonlar (480px gacha) */
+@media (max-width: 480px) {
+  .topbar {
+    padding: 0 10px !important;
+  }
+  .search-wrap {
+    display: none !important; /* Kichik telefonlarda headerda qidiriq yashiriladi */
+  }
+  .main {
+    padding: 16px 10px 50px !important;
+  }
+  .cards-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .hero {
+    padding: 32px 12px !important;
+  }
+  .hero h1 {
+    font-size: 24px !important;
+    line-height: 1.25 !important;
+  }
+  .hero p {
+    font-size: 14px !important;
+  }
+}
+
+/* Scrollbar dizayni */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #0d1117;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(4, 170, 109, 0.4);
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #04AA6D;
 }

@@ -74,151 +74,1613 @@
   </ul>
 </aside>
 <main class="main">
-  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">C++</a> › C++ Nima?</div>
-  <h1 id="kirish">C++ Nima?</h1>
-  <div class="meta-tags">
-    <span class="tag tag-green">⏱ 12 daqiqa</span>
-    <span class="tag tag-blue">🔴 Ilg'or</span>
-    <span class="tag tag-orange">👁 4,230 marta ko'rilgan</span>
-  </div>
-  <p><strong>C++</strong> — Bjarne Stroustrup tomonidan yaratilgan, C tilining kengaytmasi. Tizim dasturlash, o'yinlar, brauzerlar va yuqori samarali dasturlar yaratishda eng ko'p ishlatiladigan tillardan biri.</p>
-  <div class="note">💡 <strong>Eslatma:</strong> C++ — past darajali (low-level) va yuqori darajali (high-level) xususiyatlarni birlashtiradi.</div>
-
-  <h2 id="hello">Asosiy Sintaksis</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar"><span class="code-lang">C++</span>
-      <div class="code-actions"><button class="btn-copy" onclick="copyCode('code1')">📋 Nusxa</button></div>
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Asosiy</span>
+      <span style="font-size:12px; color:var(--text2);">C++ Mavzu #1</span>
     </div>
-    <div class="code-body"><pre id="code1">#include &lt;iostream&gt;
-#include &lt;string&gt;
-#include &lt;vector&gt;
+    <h2 id="kirish" style="color:#00599c; background: linear-gradient(90deg, #659ad2, #00599c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">C++ Nima? Kirish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>C++</strong> — 1979-yilda Bjarne Stroustrup tomonidan Bell Labs da yaratilgan, dunyodagi eng tezkor, kuchli va universal dasturlash tillaridan biridir. U C tilining kengaytmasi bo'lib, ob'ektga yo'naltirilgan dasturlash (OOP), quyi darajadagi xotirani bevosita boshqarish va maksimal unumdorlikni ta'minlaydi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Operatsion tizimlar (Windows, Linux, macOS yadrolari), o'yin dvigatellari (Unreal Engine) va brauzerlar (Chrome V8) C++ da yozilgan.</li><li>Kompilyatsiya qilinadigan til — kod to'g'ridan-to'g'ri mashina kodiga (0 va 1 ga) aylanadi va maksimal tezlikda bajariladi.</li><li>Xotirani (RAM) dasturchi o'zi to'liq nazorat qila oladi.</li><li>Ko'p paradigmali til: protsedurali, ob'ektga yo'naltirilgan va umumiy (generic) dasturlashni qo'llab-quvvatlaydi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C++20 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_cpp_1')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_cpp_1','res_cpp_1')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_cpp_1" contenteditable="true" spellcheck="false">// C++ dasturining umumiy ko'rinishi
+#include &lt;iostream&gt;
+
+int main() {
+    std::cout &lt;&lt; "Salom, C++ Dunyosi! 🚀\n";
+    std::cout &lt;&lt; "Tezlik va qudrat birlashgan til!\n";
+    return 0;
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_cpp_1">
+      <div class="result-label">🖥️ C++ Kompilyator Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚙️ GCC 14.2 (C++20) Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Salom, C++ Dunyosi! 🚀
+Tezlik va qudrat birlashgan til!
+Process finished with exit code 0&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 C++ boshqa tillarga qaraganda kompyuter apparatiga (hardware) eng yaqin bo'lgan yuqori darajadagi tildir.</div>
+
+    <div class="topic-nav">
+      <a href="django.html" class="topic-nav-btn prev">← Django Darslari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C++ | 1 / 29</span>
+      <a href="#install" class="topic-nav-btn next">C++ Kompilyatori (GCC / MinGW / Clang / MSVC) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">O'rnatish</span>
+      <span style="font-size:12px; color:var(--text2);">C++ Mavzu #2</span>
+    </div>
+    <h2 id="install" style="color:#00599c; background: linear-gradient(90deg, #659ad2, #00599c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">C++ Kompilyatori (GCC / MinGW / Clang / MSVC)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">C++ kodlarini ishga tushirish uchun kompilyator kerak. Kompilyator inson o'qiydigan <code>.cpp</code> faylni kompyuter tushunadigan <code>.exe</code> ikkilik (binary) faylga aylantiradi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Windows uchun: <strong>MinGW-w64 (GCC)</strong> yoki <strong>Visual Studio (MSVC)</strong>.</li><li>Linux uchun: <code>sudo apt install g++ build-essential</code>.</li><li>macOS uchun: <code>xcode-select --install</code> (Clang).</li><li>Kompilyatsiya buyrug'i: <code>g++ -O3 main.cpp -o main.exe</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C++20 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_cpp_2')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_cpp_2','res_cpp_2')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_cpp_2" contenteditable="true" spellcheck="false"># Terminalda versiyani tekshirish:
+g++ --version
+
+# Dasturni kompilyatsiya qilish va ishga tushirish:
+g++ -std=c++20 main.cpp -o dastur
+./dastur</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_cpp_2">
+      <div class="result-label">🖥️ C++ Kompilyator Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚙️ GCC 14.2 (C++20) Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;g++ (Rev2, Built by MSYS2 project) 14.2.0
+Copyright (C) 2024 Free Software Foundation, Inc.
+[Kompilyatsiya 0.08 soniyada muvaffaqiyatli yakunlandi]&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ <code>-std=c++20</code> bayrog'i kompilyatorga C++20 zamonaviy standartlaridan foydalanishni buyuradi.</div>
+
+    <div class="topic-nav">
+      <a href="#kirish" class="topic-nav-btn prev">← C++ Nima? Kirish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C++ | 2 / 29</span>
+      <a href="#hello" class="topic-nav-btn next">Hello World va Dastur Tuzilishi →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Sintaksis</span>
+      <span style="font-size:12px; color:var(--text2);">C++ Mavzu #3</span>
+    </div>
+    <h2 id="hello" style="color:#00599c; background: linear-gradient(90deg, #659ad2, #00599c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Hello World va Dastur Tuzilishi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Har qanday C++ dasturi <code>main()</code> funksiyasidan boshlanadi. Har bir satr oxiriga nuqta-vergul <code>;</code> qo'yilishi shart.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><code>#include &lt;iostream&gt;</code> — kiritish va chiqarish (Input/Output Stream) kutubxonasini ulaydi.</li><li><code>std::cout</code> (character output) — konsolga ma'lumot chiqarish oqimi.</li><li><code>std::endl</code> yoki <code>'\n'</code> — yangi qatorga o'tish.</li><li><code>return 0;</code> — dastur hech qanday xatosiz muvaffaqiyatli yakunlanganini bildiradi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C++20 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_cpp_3')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_cpp_3','res_cpp_3')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_cpp_3" contenteditable="true" spellcheck="false">#include &lt;iostream&gt;
 using namespace std;
 
 int main() {
-    // Chiqarish
-    cout &lt;&lt; "Salom, Dunyo!" &lt;&lt; endl;
-
-    // O'zgaruvchilar
-    string ism = "Ali";
-    int yosh = 25;
-    double baland = 1.75;
-    bool faol = true;
-
-    cout &lt;&lt; "Ism: " &lt;&lt; ism &lt;&lt; ", Yosh: " &lt;&lt; yosh &lt;&lt; endl;
-
-    // Vector (dinamik massiv)
-    vector&lt;int&gt; sonlar = {1, 2, 3, 4, 5};
-    for (int son : sonlar) {
-        cout &lt;&lt; son &lt;&lt; " ";
-    }
-    cout &lt;&lt; endl;
-
-    // Funksiya chaqirish
+    // Bu bir satrli izoh
+    /* Bu esa
+       ko'p satrli izoh */
+    cout &lt;&lt; "Assalomu alaykum, W3Learn o'quvchisi!" &lt;&lt; endl;
+    cout &lt;&lt; "C++ tilini o'rganishni boshladingiz." &lt;&lt; endl;
+    
     return 0;
-}</pre></div>
-  </div>
-
-  <h2 id="pointer">Pointerlar</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar"><span class="code-lang">C++ (Pointerlar)</span>
-      <div class="code-actions"><button class="btn-copy" onclick="copyCode('code2')">📋 Nusxa</button></div>
+}</pre>
+      </div>
     </div>
-    <div class="code-body"><pre id="code2">#include &lt;iostream&gt;
-using namespace std;
+    <div class="result-box" id="res_cpp_3">
+      <div class="result-label">🖥️ C++ Kompilyator Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚙️ GCC 14.2 (C++20) Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Assalomu alaykum, W3Learn o'quvchisi!
+C++ tilini o'rganishni boshladingiz.&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 <code>using namespace std;</code> yozilsa, har safar <code>std::cout</code> deb yozish o'rniga shunchaki <code>cout</code> deb yozish mumkin.</div>
+
+    <div class="topic-nav">
+      <a href="#install" class="topic-nav-btn prev">← C++ Kompilyatori (GCC / MinGW / Clang / MSVC)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C++ | 3 / 29</span>
+      <a href="#ozgaruvchi" class="topic-nav-btn next">O'zgaruvchilar va Nomlash Qoidalari →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Asoslar</span>
+      <span style="font-size:12px; color:var(--text2);">C++ Mavzu #4</span>
+    </div>
+    <h2 id="ozgaruvchi" style="color:#00599c; background: linear-gradient(90deg, #659ad2, #00599c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">O'zgaruvchilar va Nomlash Qoidalari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">C++ qat'iy tipli (statically-typed) til hisoblanadi. O'zgaruvchi e'lon qilinayotganda uning qaysi turdagi ma'lumot saqlashi oldindan ko'rsatilishi shart.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Sintaksis: <code>tip o'zgaruvchi_nomi = qiymat;</code>.</li><li>Konstantalar: <code>const double PI = 3.14159;</code> — qiymatini o'zgartirib bo'lmaydi.</li><li>Zamonaviy C++ da <code>auto</code> kalit so'zi tipni berilgan qiymatdan o'zi aniqlab oladi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C++20 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_cpp_4')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_cpp_4','res_cpp_4')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_cpp_4" contenteditable="true" spellcheck="false">#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+int main() {
+    int yosh = 22;
+    double vazn = 74.5;
+    char baxo = 'A';
+    bool talabami = true;
+    std::string ism = "Jahongir";
+
+    const int YORUG_TEZLIGI = 300000; // km/s
+
+    std::cout &lt;&lt; "Ismi: " &lt;&lt; ism &lt;&lt; ", Yoshi: " &lt;&lt; yosh &lt;&lt; "\n";
+    std::cout &lt;&lt; "Vazni: " &lt;&lt; vazn &lt;&lt; " kg, Baxosi: " &lt;&lt; baxo &lt;&lt; "\n";
+    return 0;
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_cpp_4">
+      <div class="result-label">🖥️ C++ Kompilyator Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚙️ GCC 14.2 (C++20) Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Ismi: Jahongir, Yoshi: 22
+Vazni: 74.5 kg, Baxosi: A&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ <code>const</code> bilan e'lon qilingan o'zgaruvchini keyinroq o'zgartirishga urinsangiz, kompilyator xatolik beradi.</div>
+
+    <div class="topic-nav">
+      <a href="#hello" class="topic-nav-btn prev">← Hello World va Dastur Tuzilishi</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C++ | 4 / 29</span>
+      <a href="#typlar" class="topic-nav-btn next">Ma'lumot Turlari va Xotira Hajmi (sizeof) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Tiplar</span>
+      <span style="font-size:12px; color:var(--text2);">C++ Mavzu #5</span>
+    </div>
+    <h2 id="typlar" style="color:#00599c; background: linear-gradient(90deg, #659ad2, #00599c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Ma'lumot Turlari va Xotira Hajmi (sizeof)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">C++ da har bir ma'lumot turi xotirada (RAM) aniq bayt miqdorini egallaydi. Buni <code>sizeof()</code> operatori orqali tekshirish mumkin.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><code>int</code> — butun sonlar (odatda 4 bayt: -2 milliarddan +2 milliardgacha).</li><li><code>double</code> — 8 bayt, o'nli kasr sonlar (aniqligi yuqori).</li><li><code>char</code> — 1 bayt, bitta belgi ('A', 'z', '7').</li><li><code>bool</code> — 1 bayt, mantiqiy qiymat (true = 1, false = 0).</li><li><code>long long</code> — 8 bayt, juda katta butun sonlar uchun.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C++20 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_cpp_5')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_cpp_5','res_cpp_5')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_cpp_5" contenteditable="true" spellcheck="false">#include &lt;iostream&gt;
+
+int main() {
+    std::cout &lt;&lt; "int hajmi: " &lt;&lt; sizeof(int) &lt;&lt; " bayt\n";
+    std::cout &lt;&lt; "double hajmi: " &lt;&lt; sizeof(double) &lt;&lt; " bayt\n";
+    std::cout &lt;&lt; "char hajmi: " &lt;&lt; sizeof(char) &lt;&lt; " bayt\n";
+    std::cout &lt;&lt; "bool hajmi: " &lt;&lt; sizeof(bool) &lt;&lt; " bayt\n";
+    std::cout &lt;&lt; "long long hajmi: " &lt;&lt; sizeof(long long) &lt;&lt; " bayt\n";
+    return 0;
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_cpp_5">
+      <div class="result-label">🖥️ C++ Kompilyator Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚙️ GCC 14.2 (C++20) Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;int hajmi: 4 bayt
+double hajmi: 8 bayt
+char hajmi: 1 bayt
+bool hajmi: 1 bayt
+long long hajmi: 8 bayt&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Katta sonlar (masalan 10 milliard) bilan ishlaganda oddiy <code>int</code> sig'may qoladi va overflow yuz beradi, bunday holatda <code>long long</code> ishlatish shart.</div>
+
+    <div class="topic-nav">
+      <a href="#ozgaruvchi" class="topic-nav-btn prev">← O'zgaruvchilar va Nomlash Qoidalari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C++ | 5 / 29</span>
+      <a href="#operatorlar" class="topic-nav-btn next">Operatorlar — Arifmetik, Taqqoslash va Mantiqiy →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Operatorlar</span>
+      <span style="font-size:12px; color:var(--text2);">C++ Mavzu #6</span>
+    </div>
+    <h2 id="operatorlar" style="color:#00599c; background: linear-gradient(90deg, #659ad2, #00599c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Operatorlar — Arifmetik, Taqqoslash va Mantiqiy</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">C++ tili boy operatorlar to'plamiga ega bo'lib, ular sonlar va mantiqiy ifodalar ustida amallar bajarishga xizmat qiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Arifmetik: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code> (qoldiqli bo'lish).</li><li>Inkrament/Dekrament: <code>++a</code>, <code>a++</code>, <code>--a</code>.</li><li>Taqqoslash: <code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>.</li><li>Mantiqiy: <code>&amp;&amp;</code> (VA / AND), <code>||</code> (YOKI / OR), <code>!</code> (EMAS / NOT).</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C++20 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_cpp_6')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_cpp_6','res_cpp_6')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_cpp_6" contenteditable="true" spellcheck="false">#include &lt;iostream&gt;
+
+int main() {
+    int a = 17, b = 5;
+    
+    std::cout &lt;&lt; "Bo'lish (butun qism): " &lt;&lt; a / b &lt;&lt; "\n";
+    std::cout &lt;&lt; "Qoldiq (%): " &lt;&lt; a % b &lt;&lt; "\n";
+    
+    bool natija = (a &gt; 10) &amp;&amp; (b == 5);
+    std::cout &lt;&lt; "Mantiqiy ifoda natijasi: " &lt;&lt; std::boolalpha &lt;&lt; natija &lt;&lt; "\n";
+    return 0;
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_cpp_6">
+      <div class="result-label">🖥️ C++ Kompilyator Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚙️ GCC 14.2 (C++20) Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Bo'lish (butun qism): 3
+Qoldiq (%): 2
+Mantiqiy ifoda natijasi: true&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ Butun sonlarni bo'lganda (<code>17 / 5</code>) kasr qismi tashlab yuboriladi va natija <code>3</code> bo'ladi. Haqiqiy kasr natija olish uchun kamida bittasini <code>double</code> qilish kerak: <code>17.0 / 5</code>.</div>
+
+    <div class="topic-nav">
+      <a href="#typlar" class="topic-nav-btn prev">← Ma'lumot Turlari va Xotira Hajmi (sizeof)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C++ | 6 / 29</span>
+      <a href="#shartlar" class="topic-nav-btn next">Shart Operatorlari — if, else if, else va switch →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Mantiq</span>
+      <span style="font-size:12px; color:var(--text2);">C++ Mavzu #7</span>
+    </div>
+    <h2 id="shartlar" style="color:#00599c; background: linear-gradient(90deg, #659ad2, #00599c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Shart Operatorlari — if, else if, else va switch</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Dastur oqimini ma'lum shartlarga qarab tarmoqlantirish uchun <code>if-else</code> va <code>switch-case</code> operatorlari ishlatiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><code>if (shart) { ... } else if (shart2) { ... } else { ... }</code>.</li><li>Ternar operator: <code>int max = (a &gt; b) ? a : b;</code>.</li><li><code>switch (qiymat)</code> faqat butun sonlar (int, char, enum) bilan ishlaydi va har bir <code>case</code> oxiriga <code>break;</code> qo'yiladi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C++20 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_cpp_7')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_cpp_7','res_cpp_7')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_cpp_7" contenteditable="true" spellcheck="false">#include &lt;iostream&gt;
+
+int main() {
+    int ball = 85;
+
+    if (ball &gt;= 90) {
+        std::cout &lt;&lt; "A'lo (A)\n";
+    } else if (ball &gt;= 80) {
+        std::cout &lt;&lt; "Yaxshi (B)\n";
+    } else if (ball &gt;= 70) {
+        std::cout &lt;&lt; "Qoniqarli (C)\n";
+    } else {
+        std::cout &lt;&lt; "Qoniqarsiz (F)\n";
+    }
+
+    int kun = 3;
+    switch(kun) {
+        case 1: std::cout &lt;&lt; "Dushanba\n"; break;
+        case 2: std::cout &lt;&lt; "Seshanba\n"; break;
+        case 3: std::cout &lt;&lt; "Chorshanba\n"; break;
+        default: std::cout &lt;&lt; "Boshqa kun\n";
+    }
+    return 0;
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_cpp_7">
+      <div class="result-label">🖥️ C++ Kompilyator Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚙️ GCC 14.2 (C++20) Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Yaxshi (B)
+Chorshanba&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 <code>switch</code> da <code>break</code> yozishni unutsangiz, dastur keyingi holatlarni ham shartsiz bajarib yuboradi (fall-through effekti).</div>
+
+    <div class="topic-nav">
+      <a href="#operatorlar" class="topic-nav-btn prev">← Operatorlar — Arifmetik, Taqqoslash va Mantiqiy</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C++ | 7 / 29</span>
+      <a href="#sikllar" class="topic-nav-btn next">Sikllar — for, while, do-while va Range-based for →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Sikllar</span>
+      <span style="font-size:12px; color:var(--text2);">C++ Mavzu #8</span>
+    </div>
+    <h2 id="sikllar" style="color:#00599c; background: linear-gradient(90deg, #659ad2, #00599c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Sikllar — for, while, do-while va Range-based for</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Bir xil kod blokini bir necha marta takrorlash uchun sikllar ishlatiladi. Zamonaviy C++ da to'plamlar ustida aylanish uchun Range-based for eng qulay usuldir.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><strong>for</strong>: qadamlar soni oldindan ma'lum bo'lganda.</li><li><strong>while</strong>: shart bajarilib turguncha takrorlanadi.</li><li><strong>do-while</strong>: shartdan qat'i nazar kamida bir marta bajariladi.</li><li><strong>Range-based for</strong>: <code>for (auto item : collection)</code> — massiv yoki vektorlarni qulay aylanish.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C++20 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_cpp_8')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_cpp_8','res_cpp_8')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_cpp_8" contenteditable="true" spellcheck="false">#include &lt;iostream&gt;
+
+int main() {
+    // Standart for
+    std::cout &lt;&lt; "for sikli: ";
+    for (int i = 1; i &lt;= 5; ++i) {
+        std::cout &lt;&lt; i &lt;&lt; " ";
+    }
+    std::cout &lt;&lt; "\n";
+
+    // Range-based for (C++11)
+    int sonlar[] = {10, 20, 30, 40, 50};
+    std::cout &lt;&lt; "Massiv elementlari: ";
+    for (int x : sonlar) {
+        std::cout &lt;&lt; x &lt;&lt; " ";
+    }
+    std::cout &lt;&lt; "\n";
+    return 0;
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_cpp_8">
+      <div class="result-label">🖥️ C++ Kompilyator Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚙️ GCC 14.2 (C++20) Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;for sikli: 1 2 3 4 5 
+Massiv elementlari: 10 20 30 40 50&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ <code>break</code> siklni muddatidan oldin to'xtatadi, <code>continue</code> esa joriy qadamni o'tkazib yuborib keyingi iteratsiyaga o'tadi.</div>
+
+    <div class="topic-nav">
+      <a href="#shartlar" class="topic-nav-btn prev">← Shart Operatorlari — if, else if, else va switch</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C++ | 8 / 29</span>
+      <a href="#funksiya" class="topic-nav-btn next">Funksiyalar va Parametrlarni Uzatish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Funksiyalar</span>
+      <span style="font-size:12px; color:var(--text2);">C++ Mavzu #9</span>
+    </div>
+    <h2 id="funksiya" style="color:#00599c; background: linear-gradient(90deg, #659ad2, #00599c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Funksiyalar va Parametrlarni Uzatish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Funksiya — ma'lum vazifani bajaruvchi mustaqil kod blokidir. C++ da parametrlarni qiymat bo'yicha (by value) yoki havola bo'yicha (by reference) uzatish mumkin.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Hech narsa qaytarmaydigan funksiyalar <code>void</code> tipi bilan belgilanadi.</li><li>Qiymat bo'yicha uzatish parametrning nusxasini oladi, asl qiymat o'zgarmaydi.</li><li>Havola bo'yicha uzatish (<code>int &amp;x</code>) asl o'zgaruvchining o'zini o'zgartiradi va xotirani tejaydi.</li><li>Standart qiymatli parametrlar: <code>void greet(std::string name = "Mehmon")</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C++20 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_cpp_9')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_cpp_9','res_cpp_9')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_cpp_9" contenteditable="true" spellcheck="false">#include &lt;iostream&gt;
+
+// Qiymatlarni almashtirish (Swap by reference)
+void almashtir(int &amp;a, int &amp;b) {
+    int temp = a;
+    a = b;
+    b = temp;
+}
+
+int kvadrat(int son) {
+    return son * son;
+}
+
+int main() {
+    int x = 10, y = 50;
+    std::cout &lt;&lt; "Oldin: x=" &lt;&lt; x &lt;&lt; ", y=" &lt;&lt; y &lt;&lt; "\n";
+    almashtir(x, y);
+    std::cout &lt;&lt; "Keyin: x=" &lt;&lt; x &lt;&lt; ", y=" &lt;&lt; y &lt;&lt; "\n";
+    std::cout &lt;&lt; "7 ning kvadrati: " &lt;&lt; kvadrat(7) &lt;&lt; "\n";
+    return 0;
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_cpp_9">
+      <div class="result-label">🖥️ C++ Kompilyator Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚙️ GCC 14.2 (C++20) Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Oldin: x=10, y=50
+Keyin: x=50, y=10
+7 ning kvadrati: 49&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Katta ob'ektlar yoki matnlarni funksiyaga uzatganda nusxa ko'chirish vaqtini tejash uchun <code>const std::string &matn</code> ko'rinishida uzatish eng to'g'ri amaliyotdir.</div>
+
+    <div class="topic-nav">
+      <a href="#sikllar" class="topic-nav-btn prev">← Sikllar — for, while, do-while va Range-based for</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C++ | 9 / 29</span>
+      <a href="#massiv" class="topic-nav-btn next">Massivlar (Arrays) — 1D va Ko'p O'lchovli →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Massivlar</span>
+      <span style="font-size:12px; color:var(--text2);">C++ Mavzu #10</span>
+    </div>
+    <h2 id="massiv" style="color:#00599c; background: linear-gradient(90deg, #659ad2, #00599c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Massivlar (Arrays) — 1D va Ko'p O'lchovli</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Massiv — bir xil turdagi elementlarning xotirada ketma-ket joylashgan qat'iy o'lchamli to'plamidir. Indekslash 0 dan boshlanadi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>E'lon qilish: <code>int baholar[5] = {5, 4, 5, 3, 4};</code>.</li><li>Elementga murojaat: <code>baholar[0]</code> — birinchi element.</li><li>Ko'p o'lchamli massivlar: <code>int matritsa[3][3];</code> (matritsa, jadval).</li><li>Statik massiv o'lchamini dastur davomida o'zgartirib bo'lmaydi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C++20 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_cpp_10')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_cpp_10','res_cpp_10')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_cpp_10" contenteditable="true" spellcheck="false">#include &lt;iostream&gt;
+
+int main() {
+    int jadval[2][3] = {
+        {1, 2, 3},
+        {4, 5, 6}
+    };
+
+    std::cout &lt;&lt; "Matritsa elementlari:\n";
+    for (int i = 0; i &lt; 2; ++i) {
+        for (int j = 0; j &lt; 3; ++j) {
+            std::cout &lt;&lt; jadval[i][j] &lt;&lt; " ";
+        }
+        std::cout &lt;&lt; "\n";
+    }
+    return 0;
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_cpp_10">
+      <div class="result-label">🖥️ C++ Kompilyator Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚙️ GCC 14.2 (C++20) Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Matritsa elementlari:
+1 2 3 
+4 5 6&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ Massiv chegarasidan tashqariga chiqish (masalan 5 ta elementli massivning 10-elementiga murojaat qilish) xavfli xatolik (Segmentation Fault) keltirib chiqaradi.</div>
+
+    <div class="topic-nav">
+      <a href="#funksiya" class="topic-nav-btn prev">← Funksiyalar va Parametrlarni Uzatish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C++ | 10 / 29</span>
+      <a href="#matn" class="topic-nav-btn next">String — std::string Klassi va Metodlari →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">String</span>
+      <span style="font-size:12px; color:var(--text2);">C++ Mavzu #11</span>
+    </div>
+    <h2 id="matn" style="color:#00599c; background: linear-gradient(90deg, #659ad2, #00599c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">String — std::string Klassi va Metodlari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">C tilidagi noqulay <code>char[]</code> massivlari o'rniga zamonaviy C++ da kuchli va qulay <code>std::string</code> klassi ishlatiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Uzunlikni aniqlash: <code>s.length()</code> yoki <code>s.size()</code>.</li><li>Matnlarni birlashtirish: <code>+</code> operatori orqali (konkatenatsiya).</li><li>Qidirish: <code>s.find("so'z")</code>.</li><li>Qism matnni qirqib olish: <code>s.substr(boshlanish, uzunlik)</code>.</li><li>Bo'shliq bilan butun satrni o'qish: <code>std::getline(std::cin, s)</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C++20 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_cpp_11')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_cpp_11','res_cpp_11')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_cpp_11" contenteditable="true" spellcheck="false">#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+int main() {
+    std::string matn = "O'zbekiston kelajagi buyuk davlat!";
+    
+    std::cout &lt;&lt; "Uzunligi: " &lt;&lt; matn.length() &lt;&lt; "\n";
+    std::cout &lt;&lt; "Qism matn (substr): " &lt;&lt; matn.substr(0, 11) &lt;&lt; "\n";
+    
+    // Matn oxiriga qo'shish
+    matn += " 🇺🇿";
+    std::cout &lt;&lt; "Yangi matn: " &lt;&lt; matn &lt;&lt; "\n";
+    return 0;
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_cpp_11">
+      <div class="result-label">🖥️ C++ Kompilyator Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚙️ GCC 14.2 (C++20) Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Uzunligi: 34
+Qism matn (substr): O'zbekiston
+Yangi matn: O'zbekiston kelajagi buyuk davlat! 🇺🇿&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 <code>std::string</code> xotira hajmini dinamik ravishda o'zi boshqaradi, dasturchi xotira ajratish haqida bosh qotirishi shart emas.</div>
+
+    <div class="topic-nav">
+      <a href="#massiv" class="topic-nav-btn prev">← Massivlar (Arrays) — 1D va Ko'p O'lchovli</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C++ | 11 / 29</span>
+      <a href="#pointer" class="topic-nav-btn next">Pointer (Ko'rsatkich) Nima? Xotira Manzillari →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Pointer</span>
+      <span style="font-size:12px; color:var(--text2);">C++ Mavzu #12</span>
+    </div>
+    <h2 id="pointer" style="color:#00599c; background: linear-gradient(90deg, #659ad2, #00599c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Pointer (Ko'rsatkich) Nima? Xotira Manzillari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Pointer (Ko'rsatkich)</strong> — C va C++ ning eng qudratli vositasi bo'lib, o'zida qiymat emas, balki boshqa o'zgaruvchining kompyuter tezkor xotirasidagi (RAM) manzilini saqlaydigan maxsus o'zgaruvchidir.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Manzil olish operatori: <code>&amp;x</code> (x o'zgaruvchisining RAM dagi 16-lik manzili).</li><li>Pointer e'lon qilish: <code>int *ptr = &amp;x;</code>.</li><li>Dereferencing (qiymatni olish): <code>*ptr</code> — ko'rsatkich qaratilgan manzildagi haqiqiy qiymatni o'qiydi yoki o'zgartiradi.</li><li>Bo'sh ko'rsatkich: <code>nullptr</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C++20 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_cpp_12')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_cpp_12','res_cpp_12')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_cpp_12" contenteditable="true" spellcheck="false">#include &lt;iostream&gt;
 
 int main() {
     int son = 42;
+    int *ptr = &amp;son; // ptr son ning manzilini saqlaydi
 
-    // Pointer — xotira manziliga ko'rsatuvchi
-    int* ptr = &amp;son;  // &amp; — manzilini olish
+    std::cout &lt;&lt; "son ning qiymati: " &lt;&lt; son &lt;&lt; "\n";
+    std::cout &lt;&lt; "son ning RAM dagi manzili: " &lt;&lt; &amp;son &lt;&lt; "\n";
+    std::cout &lt;&lt; "ptr saqlayotgan manzil: " &lt;&lt; ptr &lt;&lt; "\n";
+    std::cout &lt;&lt; "*ptr orqali qiymatni o'qish: " &lt;&lt; *ptr &lt;&lt; "\n";
 
-    cout &lt;&lt; "Qiymat: " &lt;&lt; son &lt;&lt; endl;
-    cout &lt;&lt; "Manzil: " &lt;&lt; &amp;son &lt;&lt; endl;
-    cout &lt;&lt; "Pointer: " &lt;&lt; ptr &lt;&lt; endl;
-    cout &lt;&lt; "Dereference: " &lt;&lt; *ptr &lt;&lt; endl; // * — qiymatni olish
-
-    // Qiymatni pointer orqali o'zgartirish
+    // Pointer orqali qiymatni o'zgartirish:
     *ptr = 100;
-    cout &lt;&lt; "Yangi qiymat: " &lt;&lt; son &lt;&lt; endl; // 100
-
-    // Dinamik xotira
-    int* dinamik = new int(55);
-    cout &lt;&lt; "Dinamik: " &lt;&lt; *dinamik &lt;&lt; endl;
-    delete dinamik; // xotirani ozod qilish
-
+    std::cout &lt;&lt; "Yangi qiymat (son): " &lt;&lt; son &lt;&lt; "\n";
     return 0;
-}</pre></div>
-  </div>
-
-  <h2 id="class">OOP — Klasslar</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar"><span class="code-lang">C++ (OOP)</span>
-      <div class="code-actions"><button class="btn-copy" onclick="copyCode('code3')">📋 Nusxa</button></div>
+}</pre>
+      </div>
     </div>
-    <div class="code-body"><pre id="code3">#include &lt;iostream&gt;
-#include &lt;string&gt;
-using namespace std;
+    <div class="result-box" id="res_cpp_12">
+      <div class="result-label">🖥️ C++ Kompilyator Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚙️ GCC 14.2 (C++20) Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;son ning qiymati: 42
+son ning RAM dagi manzili: 0x7ffd59ba29ac
+ptr saqlayotgan manzil: 0x7ffd59ba29ac
+*ptr orqali qiymatni o'qish: 42
+Yangi qiymat (son): 100&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
 
-class Foydalanuvchi {
-private:
-    string ism;
-    string email;
-protected:
-    int yosh;
+    <div class="note-box" style="margin-top:16px;">⚡ Pointerlar orqali operativ xotiradagi ma'lumotlarni nusxa ko'chirmasdan eng yuqori tezlikda boshqarish mumkin.</div>
 
-public:
-    // Konstruktor
-    Foydalanuvchi(string ism, string email, int yosh)
-        : ism(ism), email(email), yosh(yosh) {}
+    <div class="topic-nav">
+      <a href="#matn" class="topic-nav-btn prev">← String — std::string Klassi va Metodlari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C++ | 12 / 29</span>
+      <a href="#reference" class="topic-nav-btn next">Reference (&) — Taxallus (Alias) →</a>
+    </div>
+  </section>
 
-    // Destruktor
-    ~Foydalanuvchi() {}
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Reference</span>
+      <span style="font-size:12px; color:var(--text2);">C++ Mavzu #13</span>
+    </div>
+    <h2 id="reference" style="color:#00599c; background: linear-gradient(90deg, #659ad2, #00599c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Reference (&) — Taxallus (Alias)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Reference (Havola)</strong> — mavjud o'zgaruvchining ikkinchi nomi (taxallusi) dir. Ko'rsatkichdan farqli ravishda u <code>nullptr</code> bo'la olmaydi va e'lon qilingan zahoti aniq bir o'zgaruvchiga bog'lanishi shart.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>E'lon qilish: <code>int &amp;ref = x;</code>.</li><li><code>ref</code> ustida bajarilgan har qanday amal to'g'ridan-to'g'ri <code>x</code> ning o'zida sodir bo'ladi.</li><li>Pointerga qaraganda xavfsizroq va sintaksisi oddiy o'zgaruvchidek qulay.</li></ul>
 
-    // Metodlar
-    string getIsm() const { return ism; }
-    string getMalumat() const {
-        return ism + " (" + email + "), yosh: " + to_string(yosh);
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C++20 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_cpp_13')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_cpp_13','res_cpp_13')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_cpp_13" contenteditable="true" spellcheck="false">#include &lt;iostream&gt;
+
+int main() {
+    int asl = 50;
+    int &amp;taxallus = asl; // asl ning ikkinchi nomi
+
+    taxallus += 25; // asl ham 75 ga aylanadi
+
+    std::cout &lt;&lt; "asl: " &lt;&lt; asl &lt;&lt; "\n";
+    std::cout &lt;&lt; "taxallus: " &lt;&lt; taxallus &lt;&lt; "\n";
+    std::cout &lt;&lt; "Ikkalasining manzili bir xil: " &lt;&lt; &amp;asl &lt;&lt; " == " &lt;&lt; &amp;taxallus &lt;&lt; "\n";
+    return 0;
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_cpp_13">
+      <div class="result-label">🖥️ C++ Kompilyator Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚙️ GCC 14.2 (C++20) Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;asl: 75
+taxallus: 75
+Ikkalasining manzili bir xil: 0x7ffeeb4d23a4 == 0x7ffeeb4d23a4&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 C++ da funksiyalarga obyektlarni uzatishda ko'rsatkichdan ko'ra <code>const ClassName &obj</code> reference ishlatish tavsiya etiladi.</div>
+
+    <div class="topic-nav">
+      <a href="#pointer" class="topic-nav-btn prev">← Pointer (Ko'rsatkich) Nima? Xotira Manzillari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C++ | 13 / 29</span>
+      <a href="#dinamik" class="topic-nav-btn next">Dinamik Xotira — Stack vs Heap →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Xotira</span>
+      <span style="font-size:12px; color:var(--text2);">C++ Mavzu #14</span>
+    </div>
+    <h2 id="dinamik" style="color:#00599c; background: linear-gradient(90deg, #659ad2, #00599c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Dinamik Xotira — Stack vs Heap</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Kompyuter xotirasi ikkita asosiy qismdan iborat: <strong>Stack</strong> va <strong>Heap</strong>. Stack tez ishlaydi va avtomatik tozalanadi, Heap esa dasturchi tomonidan boshqariladigan katta xotira maydonidir.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><strong>Stack</strong>: mahalliy o'zgaruvchilar va funksiya chaqiriqlari saqlanadi. Hajmi cheklangan (odatda 1-8 MB).</li><li><strong>Heap</strong>: dastur ishlashi davomida (runtime) kerakli miqdorda ajratiladi. Gigabaytlab hajmga ega bo'lishi mumkin.</li><li>Heap xotirasidan olingan joyni dasturchi o'zi qo'lda bo'shatishi shart, aks holda <strong>Memory Leak</strong> (xotira sizib chiqishi) yuz beradi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C++20 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_cpp_14')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_cpp_14','res_cpp_14')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_cpp_14" contenteditable="true" spellcheck="false">#include &lt;iostream&gt;
+
+int main() {
+    // Stack dagi o'zgaruvchi (avtomatik o'chadi)
+    int stackSon = 10;
+
+    // Heap dagi dinamik xotira (dasturchi boshqaradi)
+    int *heapSon = new int(200);
+
+    std::cout &lt;&lt; "Stack qiymat: " &lt;&lt; stackSon &lt;&lt; "\n";
+    std::cout &lt;&lt; "Heap qiymat: " &lt;&lt; *heapSon &lt;&lt; "\n";
+
+    // Heap dagi xotirani bo'shatish shart!
+    delete heapSon;
+    heapSon = nullptr;
+    
+    return 0;
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_cpp_14">
+      <div class="result-label">🖥️ C++ Kompilyator Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚙️ GCC 14.2 (C++20) Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Stack qiymat: 10
+Heap qiymat: 200
+Xotira muvaffaqiyatli ozod qilindi!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ Xotirani bo'shatgandan so'ng pointerni <code>nullptr</code> ga tenglab qo'yish xavfsizlik (Dangling pointer oldini olish) uchun juda muhim.</div>
+
+    <div class="topic-nav">
+      <a href="#reference" class="topic-nav-btn prev">← Reference (&) — Taxallus (Alias)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C++ | 14 / 29</span>
+      <a href="#new-delete" class="topic-nav-btn next">new va delete Operatorlari →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Xotira</span>
+      <span style="font-size:12px; color:var(--text2);">C++ Mavzu #15</span>
+    </div>
+    <h2 id="new-delete" style="color:#00599c; background: linear-gradient(90deg, #659ad2, #00599c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">new va delete Operatorlari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Heap dan dinamik xotira ajratish uchun <code>new</code>, uni qaytarib operatsion tizimga topshirish uchun <code>delete</code> operatori ishlatiladi. Dinamik massivlar uchun <code>new[]</code> va <code>delete[]</code> qo'llaniladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Bitta element ajratish: <code>int *p = new int(15);</code> -> <code>delete p;</code>.</li><li>Dinamik massiv: <code>int *arr = new int[n];</code> -> <code>delete[] arr;</code>.</li><li>Agar kvadrat qavsli <code>delete[]</code> ishlatilmasa, faqat birinchi element o'chadi va qolganlari xotirada qolib ketadi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C++20 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_cpp_15')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_cpp_15','res_cpp_15')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_cpp_15" contenteditable="true" spellcheck="false">#include &lt;iostream&gt;
+
+int main() {
+    int n = 5;
+    // O'lchami runtime da belgilanadigan massiv
+    int *massiv = new int[n];
+
+    for (int i = 0; i &lt; n; ++i) {
+        massiv[i] = (i + 1) * 10;
     }
 
-    bool voyagaYetganmi() const { return yosh >= 18; }
-};
+    std::cout &lt;&lt; "Dinamik massiv: ";
+    for (int i = 0; i &lt; n; ++i) {
+        std::cout &lt;&lt; massiv[i] &lt;&lt; " ";
+    }
+    std::cout &lt;&lt; "\n";
 
-// Meros
-class Admin : public Foydalanuvchi {
+    // Butun massiv xotirasini bo'shatish:
+    delete[] massiv;
+    massiv = nullptr;
+    return 0;
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_cpp_15">
+      <div class="result-label">🖥️ C++ Kompilyator Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚙️ GCC 14.2 (C++20) Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Dinamik massiv: 10 20 30 40 50 
+Xotira to'liq tozalandi.&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Har bir <code>new</code> ga bitta <code>delete</code>, har bir <code>new[]</code> ga bitta <code>delete[]</code> mos kelishi shart.</div>
+
+    <div class="topic-nav">
+      <a href="#dinamik" class="topic-nav-btn prev">← Dinamik Xotira — Stack vs Heap</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C++ | 15 / 29</span>
+      <a href="#class" class="topic-nav-btn next">Klasslar va Ob'ektlar (OOP Asoslari) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">OOP</span>
+      <span style="font-size:12px; color:var(--text2);">C++ Mavzu #16</span>
+    </div>
+    <h2 id="class" style="color:#00599c; background: linear-gradient(90deg, #659ad2, #00599c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Klasslar va Ob'ektlar (OOP Asoslari)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">C++ ob'ektga yo'naltirilgan dasturlash (OOP) tamoyillariga to'liq asoslangan. Klass — bu yangi ma'lumot turining qolipi (blueprint), ob'ekt esa shu klass asosida yaratilgan aniq nusxadir.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Kirish huquqlari (Access Specifiers): <code>public</code> (hammaga ochiq), <code>private</code> (faqat klass ichida), <code>protected</code> (merosxo'rlarga ochiq).</li><li>Inkapsulyatsiya (Encapsulation) — ma'lumotlarni private qilib, ularga getter/setter metodlari orqali kirishni ta'minlash.</li><li>Klass e'lonidan so'ng oxiriga nuqta-vergul <code>};</code> qo'yish shart.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C++20 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_cpp_16')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_cpp_16','res_cpp_16')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_cpp_16" contenteditable="true" spellcheck="false">#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+class Mashina {
 private:
-    string daraja;
+    std::string model;
+    int yil;
 
 public:
-    Admin(string ism, string email, int yosh, string daraja)
-        : Foydalanuvchi(ism, email, yosh), daraja(daraja) {}
+    // Metodlar (Getter va Setter)
+    void setModel(std::string m) { model = m; }
+    std::string getModel() { return model; }
 
-    string getDaraja() const { return daraja; }
+    void setYil(int y) { yil = y; }
+    int getYil() { return yil; }
+
+    void signalChal() {
+        std::cout &lt;&lt; model &lt;&lt; ": Bip-bip! 🚗\n";
+    }
 };
 
 int main() {
-    Foydalanuvchi user("Ali", "ali@test.com", 25);
-    cout &lt;&lt; user.getMalumat() &lt;&lt; endl;
+    Mashina gentra;
+    gentra.setModel("Chevrolet Gentra");
+    gentra.setYil(2024);
 
-    Admin admin("Sarvar", "sarvar@test.com", 30, "Super Admin");
-    cout &lt;&lt; admin.getMalumat() &lt;&lt; " — " &lt;&lt; admin.getDaraja() &lt;&lt; endl;
-
+    std::cout &lt;&lt; "Model: " &lt;&lt; gentra.getModel() &lt;&lt; ", Yil: " &lt;&lt; gentra.getYil() &lt;&lt; "\n";
+    gentra.signalChal();
     return 0;
-}</pre></div>
-  </div>
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_cpp_16">
+      <div class="result-label">🖥️ C++ Kompilyator Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚙️ GCC 14.2 (C++20) Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Model: Chevrolet Gentra, Yil: 2024
+Chevrolet Gentra: Bip-bip! 🚗&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ C++ da <code>class</code> ichidagi barcha a'zolar sukut bo'yicha <code>private</code> bo'ladi, <code>struct</code> da esa sukut bo'yicha <code>public</code> bo'ladi.</div>
+
+    <div class="topic-nav">
+      <a href="#new-delete" class="topic-nav-btn prev">← new va delete Operatorlari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C++ | 16 / 29</span>
+      <a href="#konstruktor" class="topic-nav-btn next">Konstruktor va Destruktor →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">OOP</span>
+      <span style="font-size:12px; color:var(--text2);">C++ Mavzu #17</span>
+    </div>
+    <h2 id="konstruktor" style="color:#00599c; background: linear-gradient(90deg, #659ad2, #00599c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Konstruktor va Destruktor</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Konstruktor</strong> — ob'ekt xotirada yaratilayotgan paytda avtomatik ishga tushadigan maxsus metod. <strong>Destruktor</strong> — ob'ekt o'chirilayotganda resurslarni tozalash uchun avtomatik chaqiriladigan metoddir.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Konstruktor nomi klass nomi bilan bir xil bo'ladi va hech qanday qaytarish turiga (hatto void ga ham) ega emas.</li><li>Destruktor nomi oldiga tilda <code>~</code> belgisi qo'yiladi (masalan, <code>~KlassNomi()</code>).</li><li>Destruktor hech qanday parametr qabul qilmaydi va xotirani bo'shatish uchun ayni muddao.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C++20 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_cpp_17')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_cpp_17','res_cpp_17')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_cpp_17" contenteditable="true" spellcheck="false">#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+class Kitob {
+public:
+    std::string nom;
+    double narx;
+
+    // Parametrli konstruktor
+    Kitob(std::string n, double p) : nom(n), narx(p) {
+        std::cout &lt;&lt; "Konstruktor: '" &lt;&lt; nom &lt;&lt; "' yaratildi.\n";
+    }
+
+    // Destruktor
+    ~Kitob() {
+        std::cout &lt;&lt; "Destruktor: '" &lt;&lt; nom &lt;&lt; "' xotiradan o'chirildi.\n";
+    }
+};
+
+int main() {
+    {
+        Kitob k1("C++ Dasturlash Asoslari", 85000);
+    } // k1 ning yashash sohasi tugadi, destruktor avtomatik ishlaydi
+    
+    std::cout &lt;&lt; "Dastur davom etmoqda...\n";
+    return 0;
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_cpp_17">
+      <div class="result-label">🖥️ C++ Kompilyator Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚙️ GCC 14.2 (C++20) Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Konstruktor: 'C++ Dasturlash Asoslari' yaratildi.
+Destruktor: 'C++ Dasturlash Asoslari' xotiradan o'chirildi.
+Dastur davom etmoqda...&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 RAII (Resource Acquisition Is Initialization) — C++ dagi eng muhim falsafa: resurslar konstruktorda olinadi va destruktorda kafolatli ozod qilinadi.</div>
+
+    <div class="topic-nav">
+      <a href="#class" class="topic-nav-btn prev">← Klasslar va Ob'ektlar (OOP Asoslari)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C++ | 17 / 29</span>
+      <a href="#meros" class="topic-nav-btn next">Meros Olish (Inheritance) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">OOP</span>
+      <span style="font-size:12px; color:var(--text2);">C++ Mavzu #18</span>
+    </div>
+    <h2 id="meros" style="color:#00599c; background: linear-gradient(90deg, #659ad2, #00599c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Meros Olish (Inheritance)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Meros — mavjud ota klass (Base class) xususiyatlari va metodlarini yangi bola klassga (Derived class) o'tkazish imkoniyatidir. Bu kodni qayta ishlatishni ta'minlaydi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Sintaksis: <code>class Bola : public Ota { ... };</code>.</li><li><code>public</code> meros olinganda ota klassning public va protected a'zolari bolaga ham o'tadi.</li><li>C++ ko'p martalik meros olishni (Multiple Inheritance — bitta klass bir vaqtning o'zida ikkita ota klassdan voris olishi) qo'llab-quvvatlaydi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C++20 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_cpp_18')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_cpp_18','res_cpp_18')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_cpp_18" contenteditable="true" spellcheck="false">#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+// Ota klass
+class Hayvon {
+public:
+    void ovqatlan() {
+        std::cout &lt;&lt; "Bu hayvon ovqatlanmoqda...\n";
+    }
+};
+
+// Bola klass
+class Kuchuk : public Hayvon {
+public:
+    void vovulla() {
+        std::cout &lt;&lt; "Vov-vov! 🐕\n";
+    }
+};
+
+int main() {
+    Kuchuk bobik;
+    bobik.ovqatlan(); // Ota klass metodi
+    bobik.vovulla();   // O'z metodi
+    return 0;
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_cpp_18">
+      <div class="result-label">🖥️ C++ Kompilyator Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚙️ GCC 14.2 (C++20) Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Bu hayvon ovqatlanmoqda...
+Vov-vov! 🐕&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ Agar ota klassning biror maydoni faqat bola klasslarga ko'rinishi, lekin tashqariga yopiq bo'lishi kerak bo'lsa, uni <code>protected</code> qilish lozim.</div>
+
+    <div class="topic-nav">
+      <a href="#konstruktor" class="topic-nav-btn prev">← Konstruktor va Destruktor</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C++ | 18 / 29</span>
+      <a href="#virtual" class="topic-nav-btn next">Virtual Funksiyalar va Polimorfizm →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Polimorfizm</span>
+      <span style="font-size:12px; color:var(--text2);">C++ Mavzu #19</span>
+    </div>
+    <h2 id="virtual" style="color:#00599c; background: linear-gradient(90deg, #659ad2, #00599c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Virtual Funksiyalar va Polimorfizm</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Polimorfizm</strong> — bitta interfeys orqali turli obyektlarning har xil o'ziga xos harakatini boshqarish imkoniyatidir. Bunga C++ da <code>virtual</code> funksiyalar va <code>override</code> orqali erishiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Ota klassdagi metod oldiga <code>virtual</code> yozilsa, chaqiruv paytida ko'rsatkich qaysi obyektga qaratilgan bo'lsa, aynan o'sha bolaning metodi bajariladi (Dynamic Dispatch).</li><li>Sof virtual funksiya (Pure virtual): <code>virtual void chiz() = 0;</code> — bu klassni Abstrakt klassga aylantiradi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C++20 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_cpp_19')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_cpp_19','res_cpp_19')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_cpp_19" contenteditable="true" spellcheck="false">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+
+class Shakl {
+public:
+    virtual void chiz() {
+        std::cout &lt;&lt; "Noma'lum shakl chizilmoqda\n";
+    }
+    virtual ~Shakl() {}
+};
+
+class Aylana : public Shakl {
+public:
+    void chiz() override {
+        std::cout &lt;&lt; "Aylana chizildi: ⭕\n";
+    }
+};
+
+class Tortburchak : public Shakl {
+public:
+    void chiz() override {
+        std::cout &lt;&lt; "To'rtburchak chizildi: ⬛\n";
+    }
+};
+
+int main() {
+    Shakl *s1 = new Aylana();
+    Shakl *s2 = new Tortburchak();
+
+    s1-&gt;chiz(); // Aylana metodi chaqiriladi
+    s2-&gt;chiz(); // Tortburchak metodi chaqiriladi
+
+    delete s1;
+    delete s2;
+    return 0;
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_cpp_19">
+      <div class="result-label">🖥️ C++ Kompilyator Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚙️ GCC 14.2 (C++20) Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Aylana chizildi: ⭕
+To'rtburchak chizildi: ⬛&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Agar klassingizda kamida bitta <code>virtual</code> funksiya bo'lsa, uning destruktorini ham albatta <code>virtual ~Klass()</code> qilish shart!</div>
+
+    <div class="topic-nav">
+      <a href="#meros" class="topic-nav-btn prev">← Meros Olish (Inheritance)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C++ | 19 / 29</span>
+      <a href="#overloading" class="topic-nav-btn next">Operator va Funksiya Overloading (Qayta Yuklash) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">OOP</span>
+      <span style="font-size:12px; color:var(--text2);">C++ Mavzu #20</span>
+    </div>
+    <h2 id="overloading" style="color:#00599c; background: linear-gradient(90deg, #659ad2, #00599c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Operator va Funksiya Overloading (Qayta Yuklash)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">C++ da bir xil nomli funksiyalarni turli parametrlar bilan bir necha marta e'lon qilish mumkin (Function Overloading). Shuningdek, <code>+</code>, <code>-</code>, <code>&lt;&lt;</code> kabi standart operatorlarning o'z klasslaringiz uchun qanday ishlashini ham belgilashingiz mumkin (Operator Overloading).</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Funksiya qayta yuklash: parametrlar soni yoki turlari bilan farqlanishi shart.</li><li>Operator qayta yuklash: <code>Natija operator+(const Klass &amp;other)</code>.</li><li>Foydalanuvchi klasslarini xuddi sonlar kabi qo'shish yoki <code>cout &lt;&lt; obj</code> orqali chiqarish imkonini beradi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C++20 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_cpp_20')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_cpp_20','res_cpp_20')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_cpp_20" contenteditable="true" spellcheck="false">#include &lt;iostream&gt;
+
+class Nuqta {
+public:
+    int x, y;
+    Nuqta(int x = 0, int y = 0) : x(x), y(y) {}
+
+    // + operatorini qayta yuklash
+    Nuqta operator+(const Nuqta &amp;boshqa) {
+        return Nuqta(this-&gt;x + boshqa.x, this-&gt;y + boshqa.y);
+    }
+};
+
+int main() {
+    Nuqta p1(5, 10);
+    Nuqta p2(15, 20);
+
+    Nuqta p3 = p1 + p2; // Operator overloading tufayli ishlaydi!
+
+    std::cout &lt;&lt; "Yangi nuqta: (" &lt;&lt; p3.x &lt;&lt; ", " &lt;&lt; p3.y &lt;&lt; ")\n";
+    return 0;
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_cpp_20">
+      <div class="result-label">🖥️ C++ Kompilyator Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚙️ GCC 14.2 (C++20) Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Yangi nuqta: (20, 30)&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ Operator overloading kodni juda tabiiy va o'qish uchun sodda qiladi, ammo uni me'yorida ishlatish tavsiya etiladi.</div>
+
+    <div class="topic-nav">
+      <a href="#virtual" class="topic-nav-btn prev">← Virtual Funksiyalar va Polimorfizm</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C++ | 20 / 29</span>
+      <a href="#template" class="topic-nav-btn next">Templates (Shablonlar) — Generic Dasturlash →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Templates</span>
+      <span style="font-size:12px; color:var(--text2);">C++ Mavzu #21</span>
+    </div>
+    <h2 id="template" style="color:#00599c; background: linear-gradient(90deg, #659ad2, #00599c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Templates (Shablonlar) — Generic Dasturlash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Shablonlar — ma'lumotlar turiga bog'liq bo'lmagan universal funksiya va klasslar yozish imkonini beradi. Bitta funksiya yozib, uni ham <code>int</code>, ham <code>double</code>, ham <code>string</code> uchun ishlatishingiz mumkin.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Sintaksis: <code>template &lt;typename T&gt;</code>.</li><li>Kompilyatsiya paytida (Compile-time) kerakli turlar uchun avtomatik alohida funksiyalar generatsiya qilinadi.</li><li>STL (Standard Template Library) to'liq shablonlar asosiga qurilgan.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C++20 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_cpp_21')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_cpp_21','res_cpp_21')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_cpp_21" contenteditable="true" spellcheck="false">#include &lt;iostream&gt;
+#include &lt;string&gt;
+
+// Universal kattasini topish funksiyasi
+template &lt;typename T&gt;
+T kattasi(T a, T b) {
+    return (a &gt; b) ? a : b;
+}
+
+int main() {
+    std::cout &lt;&lt; "Sonlar: " &lt;&lt; kattasi(15, 42) &lt;&lt; "\n";
+    std::cout &lt;&lt; "Kasrlar: " &lt;&lt; kattasi(3.14, 2.71) &lt;&lt; "\n";
+    std::cout &lt;&lt; "Matnlar: " &lt;&lt; kattasi(std::string("Olma"), std::string("Banan")) &lt;&lt; "\n";
+    return 0;
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_cpp_21">
+      <div class="result-label">🖥️ C++ Kompilyator Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚙️ GCC 14.2 (C++20) Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Sonlar: 42
+Kasrlar: 3.14
+Matnlar: Olma&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">🚀 Templates tufayli C++ dasturlari har bir ma'lumot turi uchun alohida nusxalanmasdan maksimal unumdorlikda bajariladi.</div>
+
+    <div class="topic-nav">
+      <a href="#overloading" class="topic-nav-btn prev">← Operator va Funksiya Overloading (Qayta Yuklash)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C++ | 21 / 29</span>
+      <a href="#vector" class="topic-nav-btn next">std::vector — Zamonaviy Dinamik Massiv →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">STL</span>
+      <span style="font-size:12px; color:var(--text2);">C++ Mavzu #22</span>
+    </div>
+    <h2 id="vector" style="color:#00599c; background: linear-gradient(90deg, #659ad2, #00599c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">std::vector — Zamonaviy Dinamik Massiv</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>std::vector</strong> — C++ STL (Standard Template Library) ning eng ko'p ishlatiladigan konteyneridir. U avtomatik ravishda o'lchamini kengaytiruvchi xavfsiz dinamik massivdir.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Oxiriga element qo'shish: <code>v.push_back(qiymat)</code>.</li><li>Oxirgi elementni o'chirish: <code>v.pop_back()</code>.</li><li>Hajmini bilish: <code>v.size()</code>, bo'shligini tekshirish: <code>v.empty()</code>.</li><li>Xotirani tozalash: <code>v.clear()</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C++20 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_cpp_22')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_cpp_22','res_cpp_22')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_cpp_22" contenteditable="true" spellcheck="false">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+
+int main() {
+    std::vector&lt;int&gt; sonlar;
+
+    sonlar.push_back(30);
+    sonlar.push_back(10);
+    sonlar.push_back(50);
+    sonlar.push_back(20);
+
+    // Saralash
+    std::sort(sonlar.begin(), sonlar.end());
+
+    std::cout &lt;&lt; "Vektor elementlari (" &lt;&lt; sonlar.size() &lt;&lt; " ta): ";
+    for (int x : sonlar) {
+        std::cout &lt;&lt; x &lt;&lt; " ";
+    }
+    std::cout &lt;&lt; "\n";
+    return 0;
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_cpp_22">
+      <div class="result-label">🖥️ C++ Kompilyator Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚙️ GCC 14.2 (C++20) Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Vektor elementlari (4 ta): 10 20 30 50&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Zamonaviy C++ da oddiy C massivlari (int arr[]) o'rniga deyarli har doim <code>std::vector</code> ishlatish qat'iy tavsiya etiladi.</div>
+
+    <div class="topic-nav">
+      <a href="#template" class="topic-nav-btn prev">← Templates (Shablonlar) — Generic Dasturlash</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C++ | 22 / 29</span>
+      <a href="#map" class="topic-nav-btn next">std::map va unordered_map — Kalit-Qiymat Juftligi →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">STL</span>
+      <span style="font-size:12px; color:var(--text2);">C++ Mavzu #23</span>
+    </div>
+    <h2 id="map" style="color:#00599c; background: linear-gradient(90deg, #659ad2, #00599c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">std::map va unordered_map — Kalit-Qiymat Juftligi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Lug'at (Dictionary yoki Hash Table) tuzilmasi. Har bir kalitga (key) unga mos keluvchi qiymat (value) biriktiriladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><strong>std::map</strong>: Qizil-qora daraxt (Red-Black tree) asosida ishlaydi, kalitlar doimo avtomatik o'sish tartibida saralangan bo'ladi. Qidirish vaqti: O(log N).</li><li><strong>std::unordered_map</strong>: Xesh-jadval (Hash Table) asosida ishlaydi, saralanmagan. Qidirish vaqti o'rtacha: O(1) — chaqmoqdek tez!</li><li>Elementga murojaat: <code>lugat["kalit"] = qiymat;</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C++20 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_cpp_23')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_cpp_23','res_cpp_23')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_cpp_23" contenteditable="true" spellcheck="false">#include &lt;iostream&gt;
+#include &lt;string&gt;
+#include &lt;unordered_map&gt;
+
+int main() {
+    std::unordered_map&lt;std::string, int&gt; narxlar;
+
+    narxlar["Olma"] = 12000;
+    narxlar["Non"] = 4000;
+    narxlar["Go'sht"] = 95000;
+
+    std::cout &lt;&lt; "Non narxi: " &lt;&lt; narxlar["Non"] &lt;&lt; " so'm\n";
+
+    // Barcha tovarlarni aylanib chiqish
+    std::cout &lt;&lt; "\nDo'kondagi mahsulotlar:\n";
+    for (const auto &amp;[nom, narx] : narxlar) {
+        std::cout &lt;&lt; "- " &lt;&lt; nom &lt;&lt; ": " &lt;&lt; narx &lt;&lt; " so'm\n";
+    }
+    return 0;
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_cpp_23">
+      <div class="result-label">🖥️ C++ Kompilyator Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚙️ GCC 14.2 (C++20) Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Non narxi: 4000 so'm
+
+Do'kondagi mahsulotlar:
+- Olma: 12000 so'm
+- Non: 4000 so'm
+- Go'sht: 95000 so'm&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ Agar kalitlar tartibi muhim bo'lmasa, maksimal tezlik uchun <code>unordered_map</code> ni tanlang.</div>
+
+    <div class="topic-nav">
+      <a href="#vector" class="topic-nav-btn prev">← std::vector — Zamonaviy Dinamik Massiv</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C++ | 23 / 29</span>
+      <a href="#set" class="topic-nav-btn next">std::set va unordered_set — Noyob Qiymatlar →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">STL</span>
+      <span style="font-size:12px; color:var(--text2);">C++ Mavzu #24</span>
+    </div>
+    <h2 id="set" style="color:#00599c; background: linear-gradient(90deg, #659ad2, #00599c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">std::set va unordered_set — Noyob Qiymatlar</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>std::set</strong> — faqat yagona, takrorlanmaydigan (unique) elementlarni saqlaydigan to'plam. Unga bitta qiymatni necha marta qo'shsangiz ham, faqat bitta nusxasi saqlanadi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Element qo'shish: <code>s.insert(qiymat)</code>.</li><li>Mavjudligini tekshirish: <code>s.count(qiymat)</code> (1 bo'lsa bor, 0 bo'lsa yo'q).</li><li>Elementni o'chirish: <code>s.erase(qiymat)</code>.</li><li>Dublikatlarni tozalash uchun eng qulay vosita.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C++20 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_cpp_24')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_cpp_24','res_cpp_24')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_cpp_24" contenteditable="true" spellcheck="false">#include &lt;iostream&gt;
+#include &lt;set&gt;
+
+int main() {
+    std::set&lt;int&gt; noyobSonlar;
+
+    // Takroriy sonlar qo'shamiz
+    noyobSonlar.insert(5);
+    noyobSonlar.insert(2);
+    noyobSonlar.insert(5);
+    noyobSonlar.insert(9);
+    noyobSonlar.insert(2);
+
+    std::cout &lt;&lt; "Noyob va saralangan to'plam: ";
+    for (int x : noyobSonlar) {
+        std::cout &lt;&lt; x &lt;&lt; " ";
+    }
+    std::cout &lt;&lt; "\n";
+    return 0;
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_cpp_24">
+      <div class="result-label">🖥️ C++ Kompilyator Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚙️ GCC 14.2 (C++20) Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Noyob va saralangan to'plam: 2 5 9&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 <code>std::set</code> elementlarni avtomatik tartiblab qo'yadi. Agar saralash shart bo'lmasa, <code>unordered_set</code> yanada tezroq ishlaydi.</div>
+
+    <div class="topic-nav">
+      <a href="#map" class="topic-nav-btn prev">← std::map va unordered_map — Kalit-Qiymat Juftligi</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C++ | 24 / 29</span>
+      <a href="#algorithm" class="topic-nav-btn next">algorithm Kutubxonasi — Saralash va Qidirish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">STL</span>
+      <span style="font-size:12px; color:var(--text2);">C++ Mavzu #25</span>
+    </div>
+    <h2 id="algorithm" style="color:#00599c; background: linear-gradient(90deg, #659ad2, #00599c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">algorithm Kutubxonasi — Saralash va Qidirish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">C++ ning <code>&lt;algorithm&gt;</code> sarlavha fayli konteynerlar ustida tezkor operatsiyalarni bajarish uchun 100 dan ortiq tayyor yuqori unumdorlikdagi funksiyalarni taqdim etadi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><code>std::sort(begin, end)</code> — eng tezkor Introsort algoritmi (O(N log N)).</li><li><code>std::reverse(begin, end)</code> — teskari o'girish.</li><li><code>std::find(begin, end, val)</code> — elementni izlash.</li><li><code>std::count(begin, end, val)</code> — element necha marta uchrashini sanash.</li><li><code>std::binary_search(begin, end, val)</code> — ikkilik qidiruv (saralangan massivda chaqmoqdek tez).</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C++20 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_cpp_25')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_cpp_25','res_cpp_25')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_cpp_25" contenteditable="true" spellcheck="false">#include &lt;iostream&gt;
+#include &lt;vector&gt;
+#include &lt;algorithm&gt;
+
+int main() {
+    std::vector&lt;int&gt; v = {9, 2, 7, 4, 5, 2, 8};
+
+    std::sort(v.begin(), v.end());
+    std::cout &lt;&lt; "Saralangan: ";
+    for (int x : v) std::cout &lt;&lt; x &lt;&lt; " ";
+    std::cout &lt;&lt; "\n";
+
+    int qidirilayotgan = 7;
+    if (std::binary_search(v.begin(), v.end(), qidirilayotgan)) {
+        std::cout &lt;&lt; qidirilayotgan &lt;&lt; " to'plamda mavjud! ✅\n";
+    }
+
+    std::cout &lt;&lt; "2 soni " &lt;&lt; std::count(v.begin(), v.end(), 2) &lt;&lt; " marta qatnashgan.\n";
+    return 0;
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_cpp_25">
+      <div class="result-label">🖥️ C++ Kompilyator Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚙️ GCC 14.2 (C++20) Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Saralangan: 2 2 4 5 7 8 9 
+7 to'plamda mavjud! ✅
+2 soni 2 marta qatnashgan.&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ O'zingiz qidiruv yoki saralash algoritmini noldan yozishga vaqt sarflamang, <code>std::algorithm</code> funksiyalari apparat darajasida optimallashtirilgan.</div>
+
+    <div class="topic-nav">
+      <a href="#set" class="topic-nav-btn prev">← std::set va unordered_set — Noyob Qiymatlar</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C++ | 25 / 29</span>
+      <a href="#fayl" class="topic-nav-btn next">Fayl Bilan Ishlash — fstream (I/O) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Fayl</span>
+      <span style="font-size:12px; color:var(--text2);">C++ Mavzu #26</span>
+    </div>
+    <h2 id="fayl" style="color:#00599c; background: linear-gradient(90deg, #659ad2, #00599c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Fayl Bilan Ishlash — fstream (I/O)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Ma'lumotlarni qattiq diskdagi fayllarga yozish va ulardan o'qish uchun <code>&lt;fstream&gt;</code> kutubxonasi ishlatiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><code>std::ofstream</code> (output file stream) — faylga yozish.</li><li><code>std::ifstream</code> (input file stream) — fayldan o'qish.</li><li><code>std::fstream</code> — bir vaqtning o'zida ham yozish, ham o'qish.</li><li>Fayl bilan ishlab bo'lgach, uni <code>fayl.close()</code> orqali yopish kerak.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C++20 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_cpp_26')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_cpp_26','res_cpp_26')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_cpp_26" contenteditable="true" spellcheck="false">#include &lt;iostream&gt;
+#include &lt;fstream&gt;
+#include &lt;string&gt;
+
+int main() {
+    // 1. Faylga yozish
+    std::ofstream yozuvchi("malumot.txt");
+    if (yozuvchi.is_open()) {
+        yozuvchi &lt;&lt; "C++ bilan faylga yozish juda oson!\n";
+        yozuvchi &lt;&lt; "W3Learn platformasi 2026\n";
+        yozuvchi.close();
+        std::cout &lt;&lt; "Faylga muvaffaqiyatli yozildi.\n";
+    }
+
+    // 2. Fayldan o'qish
+    std::ifstream oquvchi("malumot.txt");
+    std::string qator;
+    if (oquvchi.is_open()) {
+        std::cout &lt;&lt; "\nFayldan o'qilgan ma'lumotlar:\n";
+        while (std::getline(oquvchi, qator)) {
+            std::cout &lt;&lt; "&gt;&gt; " &lt;&lt; qator &lt;&lt; "\n";
+        }
+        oquvchi.close();
+    }
+    return 0;
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_cpp_26">
+      <div class="result-label">🖥️ C++ Kompilyator Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚙️ GCC 14.2 (C++20) Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Faylga muvaffaqiyatli yozildi.
+
+Fayldan o'qilgan ma'lumotlar:
+&gt;&gt; C++ bilan faylga yozish juda oson!
+&gt;&gt; W3Learn platformasi 2026&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Faylni ochishdan oldin uning muvaffaqiyatli ochilganligini tekshirish uchun <code>is_open()</code> metodini chaqirish tavsiya etiladi.</div>
+
+    <div class="topic-nav">
+      <a href="#algorithm" class="topic-nav-btn prev">← algorithm Kutubxonasi — Saralash va Qidirish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C++ | 26 / 29</span>
+      <a href="#exception" class="topic-nav-btn next">Istisnolar — try, catch va throw →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Xatolar</span>
+      <span style="font-size:12px; color:var(--text2);">C++ Mavzu #27</span>
+    </div>
+    <h2 id="exception" style="color:#00599c; background: linear-gradient(90deg, #659ad2, #00599c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Istisnolar — try, catch va throw</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Dastur ishlash jarayonida yuz berishi mumkin bo'lgan kutilmagan favqulodda xatoliklarni (masalan, nolga bo'lish, xotira yetishmasligi, fayl topilmasligi) ushlash va dastur qulab tushishining oldini olish uchun Istisnolar (Exceptions) ishlatiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><code>try</code> — xato yuz berishi mumkin bo'lgan kod bloki.</li><li><code>throw</code> — xatolik haqida xabar (istisno) otish.</li><li><code>catch (tur &amp;e)</code> — otilgan xatoni ushlab xavfsiz qayta ishlash.</li><li>Barcha standart xatolar <code>std::exception</code> klassidan kelib chiqadi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C++20 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_cpp_27')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_cpp_27','res_cpp_27')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_cpp_27" contenteditable="true" spellcheck="false">#include &lt;iostream&gt;
+#include &lt;stdexcept&gt;
+
+double bolish(double a, double b) {
+    if (b == 0.0) {
+        throw std::runtime_error("Xatolik: Nolga bo'lish mumkin emas!");
+    }
+    return a / b;
+}
+
+int main() {
+    try {
+        std::cout &lt;&lt; "10 / 2 = " &lt;&lt; bolish(10, 2) &lt;&lt; "\n";
+        std::cout &lt;&lt; "10 / 0 = " &lt;&lt; bolish(10, 0) &lt;&lt; "\n";
+    } catch (const std::exception &amp;e) {
+        std::cerr &lt;&lt; "Ushlangan xato: " &lt;&lt; e.what() &lt;&lt; "\n";
+    }
+    std::cout &lt;&lt; "Dastur xatosiz ishlashda davom etmoqda.\n";
+    return 0;
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_cpp_27">
+      <div class="result-label">🖥️ C++ Kompilyator Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚙️ GCC 14.2 (C++20) Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;10 / 2 = 5
+Ushlangan xato: Xatolik: Nolga bo'lish mumkin emas!
+Dastur xatosiz ishlashda davom etmoqda.&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ Agar xatolik <code>try-catch</code> bilan ushlanmasa, operatsion tizim dasturni majburiy to'xtatadi (crash).</div>
+
+    <div class="topic-nav">
+      <a href="#fayl" class="topic-nav-btn prev">← Fayl Bilan Ishlash — fstream (I/O)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C++ | 27 / 29</span>
+      <a href="#namespace" class="topic-nav-btn next">Namespace — Nomlar Fazosi →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Namespace</span>
+      <span style="font-size:12px; color:var(--text2);">C++ Mavzu #28</span>
+    </div>
+    <h2 id="namespace" style="color:#00599c; background: linear-gradient(90deg, #659ad2, #00599c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Namespace — Nomlar Fazosi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Katta loyihalarda turli kutubxonalar yoki dasturchilar bir xil nomli funksiya yoki klasslar yaratib qo'yganda to'qnashuv (name collision) yuz bermasligi uchun <strong>Namespace</strong> ishlatiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>E'lon qilish: <code>namespace MeningProyektim { ... }</code>.</li><li>Murojaat qilish: qamrov operatori <code>::</code> (Scope resolution operator) orqali: <code>MeningProyektim::funksiya()</code>.</li><li>C++ ning barcha standart vositalari <code>std</code> nomlar fazosi ichida joylashgan.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C++20 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_cpp_28')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_cpp_28','res_cpp_28')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_cpp_28" contenteditable="true" spellcheck="false">#include &lt;iostream&gt;
+
+namespace Geometriya {
+    const double PI = 3.14159;
+    double yuza(double r) {
+        return PI * r * r;
+    }
+}
+
+namespace Fizika {
+    const double PI = 3.14;
+    double tezlik(double masofa, double vaqt) {
+        return masofa / vaqt;
+    }
+}
+
+int main() {
+    std::cout &lt;&lt; "Doira yuzasi: " &lt;&lt; Geometriya::yuza(5.0) &lt;&lt; "\n";
+    std::cout &lt;&lt; "Avtomobil tezligi: " &lt;&lt; Fizika::tezlik(100.0, 2.0) &lt;&lt; " km/h\n";
+    return 0;
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_cpp_28">
+      <div class="result-label">🖥️ C++ Kompilyator Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚙️ GCC 14.2 (C++20) Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Doira yuzasi: 78.5397
+Avtomobil tezligi: 50 km/h&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Katta sarlavha (.h) fayllarida <code>using namespace std;</code> yozmaslik kerak, chunki u boshqa fayllardagi nomlar bilan to'qnashishi mumkin.</div>
+
+    <div class="topic-nav">
+      <a href="#exception" class="topic-nav-btn prev">← Istisnolar — try, catch va throw</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C++ | 28 / 29</span>
+      <a href="#smart" class="topic-nav-btn next">Smart Pointerlar — unique_ptr va shared_ptr →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">SmartPtr</span>
+      <span style="font-size:12px; color:var(--text2);">C++ Mavzu #29</span>
+    </div>
+    <h2 id="smart" style="color:#00599c; background: linear-gradient(90deg, #659ad2, #00599c); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Smart Pointerlar — unique_ptr va shared_ptr</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Zamonaviy C++ (C++11 va undan keyingi) dasturlashda qo'lda <code>delete</code> yozish eskirgan usul hisoblanadi. <strong>Smart Pointerlar</strong> ob'ekt o'z vazifasini bajarib bo'lgach (yashash sohasi tugaganda) xotirani avtomatik tozalaydi, bu esa Memory Leak xatolarini 100% yo'q qiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><strong>std::unique_ptr</strong>: Ob'ektga faqat bitta egasi (owner) bo'ladi. Nusxa olib bo'lmaydi, faqat ko'chirish (move) mumkin. Eng tezkor!</li><li><strong>std::shared_ptr</strong>: Ob'ektga bir nechta ko'rsatkich bir vaqtning o'zida egalik qilishi mumkin. Murojaatlar hisoblagichi (reference count) 0 bo'lganda ob'ekt avtomatik o'chadi.</li><li>Yaratish: <code>auto p = std::make_unique&lt;Klass&gt;();</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C++20 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_cpp_29')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_cpp_29','res_cpp_29')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_cpp_29" contenteditable="true" spellcheck="false">#include &lt;iostream&gt;
+#include &lt;memory&gt;
+
+class Foydalanuvchi {
+public:
+    Foydalanuvchi() { std::cout &lt;&lt; "Foydalanuvchi obyekti yaratildi.\n"; }
+    ~Foydalanuvchi() { std::cout &lt;&lt; "Foydalanuvchi xotiradan AVTOMATIK tozalandi! 🧹\n"; }
+    void salom() { std::cout &lt;&lt; "Smart pointer orqali metod chaqirildi!\n"; }
+};
+
+int main() {
+    {
+        // unique_ptr: delete yozish shart emas!
+        std::unique_ptr&lt;Foydalanuvchi&gt; u = std::make_unique&lt;Foydalanuvchi&gt;();
+        u-&gt;salom();
+    } // Blok tugashi bilan destruktor avtomatik ishlaydi va xotira ozod bo'ladi
+
+    std::cout &lt;&lt; "Blokdan chiqildi.\n";
+    return 0;
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_cpp_29">
+      <div class="result-label">🖥️ C++ Kompilyator Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚙️ GCC 14.2 (C++20) Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Foydalanuvchi obyekti yaratildi.
+Smart pointer orqali metod chaqirildi!
+Foydalanuvchi xotiradan AVTOMATIK tozalandi! 🧹
+Blokdan chiqildi.&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">🚀 Zamonaviy C++ dasturchilarining shiori: 'Oddiy xom ko'rsatkichlar (raw pointers) bilan xotira ajratmang, doimo <code>std::make_unique</code> yoki <code>std::make_shared</code> dan foydalaning!'</div>
+
+    <div class="topic-nav">
+      <a href="#namespace" class="topic-nav-btn prev">← Namespace — Nomlar Fazosi</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C++ | 29 / 29</span>
+      <a href="csharp.html" class="topic-nav-btn next">Keyingi kurs: C# Darslari →</a>
+    </div>
+  </section>
 
   <div class="quiz-box">
-    <div class="quiz-q">🧪 Test: C++ da xotira ozod qilish uchun qaysi kalit so'z ishlatiladi?</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qr1')">free()</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, true, 'qr1')">delete</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qr1')">remove()</div>
-    <div class="quiz-result" id="qr1"></div>
+    <div class="quiz-q">🧪 Test: C++ da Heap xotirasidan yangi massiv ajratish uchun qaysi operator ishlatiladi?</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'cppQr1')">malloc()</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, true, 'cppQr1')">new[]</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'cppQr1')">alloc[]</div>
+    <div class="quiz-result" id="cppQr1"></div>
   </div>
-  
 
-<div class="nav-btns">
-  <a href="django.html" class="btn-prev">&#8592; Django</a>
-  <a href="csharp.html" class="btn-next">C# &#8594;</a>
-</div>
+  <div class="nav-btns" style="margin-top: 30px;">
+    <a href="django.html" class="btn-prev">← Django Darslari</a>
+    <a href="csharp.html" class="btn-next">C# Darsiga O'tish →</a>
+  </div>
+
+  <div class="note note-blue" style="margin-top: 25px;">
+    📌 <strong>Keyingi qadam:</strong> C++ tili orqali xotira boshqaruvi va yuqori tezlikni o'rgandingiz. Microsoft ekotizimining eng mashhur zamonaviy tili bo'lgan <a href="csharp.html" style="color:var(--green)">C# darslariga</a> o'ting!
+  </div>
 </main>
 <aside class="right-panel">
   <div class="rp-title">📈 Progress</div>

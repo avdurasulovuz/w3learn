@@ -78,144 +78,1536 @@
   </ul>
 </aside>
 <main class="main">
-  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">Django</a> › Django Nima?</div>
-  <h1 id="kirish">Django Nima?</h1>
-  <div class="meta-tags">
-    <span class="tag tag-green">⏱ 10 daqiqa</span>
-    <span class="tag tag-blue">🟡 O'rta</span>
-    <span class="tag tag-orange">👁 5,620 marta ko'rilgan</span>
-  </div>
-  <p><strong>Django</strong> — Python asosida yaratilgan yuqori darajali web framework. "Batteries included" falsafasiga amal qiladi — autentifikatsiya, admin panel, ORM va boshqa ko'p narsa o'rnatilgan holda keladi.</p>
-  <div class="note">💡 <strong>Eslatma:</strong> Django MTV arxitekturasida ishlaydi: Model — Template — View.</div>
-
-  <h2 id="install">O'rnatish va Loyiha Yaratish</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar"><span class="code-lang">Terminal (Bash)</span>
-      <div class="code-actions"><button class="btn-copy" onclick="copyCode('code1')">📋 Nusxa</button></div>
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Asosiy</span>
+      <span style="font-size:12px; color:var(--text2);">Django Mavzu #1</span>
     </div>
-    <div class="code-body"><pre id="code1"># Virtual muhit yaratish
-python -m venv venv
-source venv/bin/activate    # Linux/Mac
-venv\Scripts\activate       # Windows
+    <h2 id="kirish" style="color:#092e20; background: linear-gradient(90deg, #44b78b, #04AA6D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Django Nima? Kirish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Django</strong> — Python tilida yozilgan, yuqori darajadagi va bepul ochiq kodli veb-freymvork bo'lib, 'tezkor rivojlanish va toza, pragmatik dizayn' shioriga asoslanadi. U 'batteries-included' falsafasiga ega — ya'ni ma'lumotlar bazasi boshqaruvi, autentifikatsiya, admin-panel va xavfsizlik vositalari ichiga tayyor kiritilgan.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>MVT (Model-View-Template) arxitekturasiga asoslangan.</li><li>Xavfsiz: SQL Injection, XSS, CSRF va Clickjacking kabi hujumlardan avtomatik himoyalaydi.</li><li>Instagram, Pinterest, Spotify, Disqus, Mozilla kabi gigant kompaniyalar Djangodan foydalanadi.</li><li>ORM (Object-Relational Mapping) orqali SQL yozmasdan ma'lumotlar bazasi bilan ishlash imkonini beradi.</li></ul>
 
-# Django o'rnatish
-pip install django djangorestframework
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Django / Python</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_django_1')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_django_1','res_django_1')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_django_1" contenteditable="true" spellcheck="false"># Django versiyasini tekshirish va birinchi so'rov
+import django
 
-# Yangi loyiha yaratish
-django-admin startproject w3learn .
+print("Django versiyasi:", django.get_version())
+print("Falsafa: Batteries Included &amp; Don't Repeat Yourself (DRY)")</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_django_1">
+      <div class="result-label">🖥️ Django Terminal / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Django 5.1 Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Django versiyasi: 5.1.2
+Falsafa: Batteries Included &amp; Don't Repeat Yourself (DRY)
+Server holati: Tayyor 🚀&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
 
-# Ilova yaratish
-python manage.py startapp kurslar
+    <div class="note-box" style="margin-top:16px;">💡 Django veb-dasturlashda xavfsizlik va tezkorlikni birinchi o'ringa qo'yadi. Admin paneli orqali bir necha daqiqada tayyor CRUD tizimga ega bo'lasiz.</div>
 
-# Server ishga tushirish
+    <div class="topic-nav">
+      <a href="python.html" class="topic-nav-btn prev">← Python Darslari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Django | 1 / 30</span>
+      <a href="#install" class="topic-nav-btn next">Django ni O'rnatish va Virtual Environment →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">O'rnatish</span>
+      <span style="font-size:12px; color:var(--text2);">Django Mavzu #2</span>
+    </div>
+    <h2 id="install" style="color:#092e20; background: linear-gradient(90deg, #44b78b, #04AA6D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Django ni O'rnatish va Virtual Environment</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Django bilan ishlashda har doim alohida virtual muhit (virtualenv) yaratish tavsiya etiladi. Bu turli loyihalarning kutubxonalari bir-biri bilan to'qnashmasligini ta'minlaydi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Virtual muhit yaratish: <code>python -m venv venv</code>.</li><li>Muhitni faollashtirish: Windows: <code>venv\Scripts\activate</code>, Linux/Mac: <code>source venv/bin/activate</code>.</li><li>Django o'rnatish: <code>pip install django</code>.</li><li>O'rnatilgan paketlarni saqlash: <code>pip freeze &gt; requirements.txt</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Django / Python</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_django_2')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_django_2','res_django_2')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_django_2" contenteditable="true" spellcheck="false"># Terminal buyruqlari
+# 1. Virtual muhit yaratish
+python -m venv myenv
+
+# 2. Muhitni faollashtirish (Windows)
+myenv\Scripts\activate
+
+# 3. Django o'rnatish
+pip install django
+
+# 4. Versiyani tekshirish
+python -m django --version</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_django_2">
+      <div class="result-label">🖥️ Django Terminal / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Django 5.1 Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Collecting django
+  Downloading Django-5.1.2-py3-none-any.whl (8.2 MB)
+Successfully installed asgiref-3.8.1 django-5.1.2 sqlparse-0.5.1
+5.1.2&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ Virtual muhit faollashganda terminal satri boshida <code>(venv)</code> yoki <code>(myenv)</code> yozuvi paydo bo'ladi.</div>
+
+    <div class="topic-nav">
+      <a href="#kirish" class="topic-nav-btn prev">← Django Nima? Kirish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Django | 2 / 30</span>
+      <a href="#loyiha" class="topic-nav-btn next">Loyiha Yaratish (startproject) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Loyiha</span>
+      <span style="font-size:12px; color:var(--text2);">Django Mavzu #3</span>
+    </div>
+    <h2 id="loyiha" style="color:#092e20; background: linear-gradient(90deg, #44b78b, #04AA6D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Loyiha Yaratish (startproject)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Django loyihasi <code>django-admin startproject</code> buyrug'i yordamida yaratiladi. Bu butun sayt uchun umumiy sozlamalar (settings), URL yo'naltirishlar (urls) va ishga tushirish skriptini (manage.py) hosil qiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Buyruq: <code>django-admin startproject myproject .</code> (nuqta joriy papkaga joylaydi).</li><li><strong>manage.py</strong>: Loyihani boshqarish uchun asosiy CLI yordamchi skript.</li><li><strong>settings.py</strong>: Ma'lumotlar bazasi, o'rnatilgan ilovalar va xavfsizlik kalitlari.</li><li>Mahalliy serverni yoqish: <code>python manage.py runserver</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Django / Python</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_django_3')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_django_3','res_django_3')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_django_3" contenteditable="true" spellcheck="false"># Loyihani ishga tushirish buyrug'i
+# Terminal:
 python manage.py runserver
 
-# Ma'lumotlar bazasini sozlash
-python manage.py makemigrations
-python manage.py migrate
-
-# Superuser yaratish
-python manage.py createsuperuser</pre></div>
-  </div>
-
-  <h2 id="models">Model va ORM</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar"><span class="code-lang">Python (models.py)</span>
-      <div class="code-actions"><button class="btn-copy" onclick="copyCode('code2')">📋 Nusxa</button></div>
+# Natijada quyidagi xabar chiqadi va http://127.0.0.1:8000/ ochiladi:</pre>
+      </div>
     </div>
-    <div class="code-body"><pre id="code2"># kurslar/models.py
+    <div class="result-box" id="res_django_3">
+      <div class="result-label">🖥️ Django Terminal / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Django 5.1 Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Watching for file changes with StatReloader
+Performing system checks...
+
+System check identified no issues (0 silenced).
+Django version 5.1.2, using settings 'myproject.settings'
+Starting development server at http://127.0.0.1:8000/
+Quit the server with CTRL-BREAK.&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">📌 Brauzeringizda <code>http://127.0.0.1:8000/</code> manzilini ochganingizda Django ning ramziy 'The install worked successfully!' sahifasi chiqadi.</div>
+
+    <div class="topic-nav">
+      <a href="#install" class="topic-nav-btn prev">← Django ni O'rnatish va Virtual Environment</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Django | 3 / 30</span>
+      <a href="#ilova" class="topic-nav-btn next">Ilova Yaratish (startapp) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Ilova</span>
+      <span style="font-size:12px; color:var(--text2);">Django Mavzu #4</span>
+    </div>
+    <h2 id="ilova" style="color:#092e20; background: linear-gradient(90deg, #44b78b, #04AA6D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Ilova Yaratish (startapp)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Django da bitta loyiha (Project) bir nechta mustaqil ilovalar (Apps) dan tashkil topadi. Masalan: <code>users</code>, <code>blog</code>, <code>store</code>. Har bir ilova o'zining model, ko'rinish va URL mantiqiga ega bo'ladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Ilova yaratish buyrug'i: <code>python manage.py startapp blog</code>.</li><li>Yangi yaratilgan ilovani albatta <code>settings.py</code> dagi <strong>INSTALLED_APPS</strong> ro'yxatiga qo'shish shart.</li><li>Ilova papkasi ichida: <code>models.py</code>, <code>views.py</code>, <code>admin.py</code>, <code>apps.py</code> hosil bo'ladi.</li><li>Modullilik tamoyili ilovalarni boshqa Django loyihalarida qayta ishlatish imkonini beradi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Django / Python</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_django_4')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_django_4','res_django_4')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_django_4" contenteditable="true" spellcheck="false"># settings.py fayliga ilovani qo'shish:
+INSTALLED_APPS = [
+    'django.contrib.admin',
+    'django.contrib.auth',
+    'django.contrib.contenttypes',
+    'django.contrib.sessions',
+    'django.contrib.messages',
+    'django.contrib.staticfiles',
+    
+    # Bizning ilovamiz:
+    'blog',
+]</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_django_4">
+      <div class="result-label">🖥️ Django Terminal / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Django 5.1 Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Ilova papka tuzilmasi:
+blog/
+    migrations/
+    __init__.py
+    admin.py
+    apps.py
+    models.py
+    tests.py
+    views.py&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Har bir mantiqiy bo'lim uchun alohida ilova (app) yaratish Django dasturchilarining oltin qoidasidir.</div>
+
+    <div class="topic-nav">
+      <a href="#loyiha" class="topic-nav-btn prev">← Loyiha Yaratish (startproject)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Django | 4 / 30</span>
+      <a href="#urls" class="topic-nav-btn next">urls.py — Routing va Yo'naltirishlar →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Routing</span>
+      <span style="font-size:12px; color:var(--text2);">Django Mavzu #5</span>
+    </div>
+    <h2 id="urls" style="color:#092e20; background: linear-gradient(90deg, #44b78b, #04AA6D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">urls.py — Routing va Yo'naltirishlar</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Foydalanuvchi brauzerga URL kiritganda, Django uni <code>urls.py</code> faylidagi namunalar bilan solishtiradi va mos keladigan <strong>View</strong> funksiyasiga uzatadi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><code>path('yo\'l/', view_funksiya, name='nom')</code> sintaksisi ishlatiladi.</li><li>Parametrlarni qabul qilish: <code>path('post/&lt;int:id&gt;/', views.detail)</code>.</li><li>Loyiha URLs fayliga ilovalarning URLs faylini <code>include()</code> yordamida ulash eng to'g'ri amaliyotdir.</li><li>Nomlangan URLlar (name='home') shablonlarda havolalarni dinamik generatsiya qilishga yordam beradi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Django / Python</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_django_5')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_django_5','res_django_5')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_django_5" contenteditable="true" spellcheck="false"># blog/urls.py
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('', views.home, name='blog-home'),
+    path('post/&lt;int:post_id&gt;/', views.post_detail, name='post-detail'),
+    path('about/', views.about, name='blog-about'),
+]</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_django_5">
+      <div class="result-label">🖥️ Django Terminal / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Django 5.1 Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Marshrutlash jadvali:
+/               --&gt; views.home (nom: blog-home)
+/post/42/       --&gt; views.post_detail (nom: post-detail, post_id=42)
+/about/         --&gt; views.about (nom: blog-about)&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ <code>include('blog.urls')</code> orqali har bir ilovaning URL manzillari o'z papkasida saqlanadi, bu loyihani toza saqlaydi.</div>
+
+    <div class="topic-nav">
+      <a href="#ilova" class="topic-nav-btn prev">← Ilova Yaratish (startapp)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Django | 5 / 30</span>
+      <a href="#views" class="topic-nav-btn next">views.py — Biznes Mantiq va So'rovlarni Qayta Ishlash →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Views</span>
+      <span style="font-size:12px; color:var(--text2);">Django Mavzu #6</span>
+    </div>
+    <h2 id="views" style="color:#092e20; background: linear-gradient(90deg, #44b78b, #04AA6D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">views.py — Biznes Mantiq va So'rovlarni Qayta Ishlash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>View</strong> — bu HTTP so'rovini (HttpRequest) qabul qilib, ma'lumotlarni qayta ishlaydigan va natijada HTTP javobini (HttpResponse yoki JSON) qaytaradigan Python funksiyasi yoki klassi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>FBV (Function-Based Views) — sodda funksiyalar, o'rganish oson.</li><li>CBV (Class-Based Views) — klasslar, kodni qayta ishlatish va vorislik uchun qulay.</li><li><code>render(request, 'shablon.html', context)</code> orqali HTML shablonga ma'lumot uzatiladi.</li><li>API yaratish uchun <code>JsonResponse({'status': 'ok'})</code> ishlatiladi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Django / Python</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_django_6')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_django_6','res_django_6')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_django_6" contenteditable="true" spellcheck="false"># blog/views.py
+from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponse
+
+def home(request):
+    maqolalar = [
+        {"title": "Django darslari", "author": "Ali"},
+        {"title": "Python asoslari", "author": "Vali"}
+    ]
+    context = {"posts": maqolalar, "page_title": "Bosh Sahifa"}
+    return render(request, 'blog/home.html', context)
+
+def post_detail(request, post_id):
+    return HttpResponse(f"Siz {post_id}-raqamli maqolani o'qyapsiz.")</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_django_6">
+      <div class="result-label">🖥️ Django Terminal / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Django 5.1 Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;GET / HTTP/1.1 200 OK
+Content-Type: text/html; charset=utf-8
+Context: {'posts': [...], 'page_title': 'Bosh Sahifa'}&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Har qanday View funksiyasining birinchi parametri doimo <code>request</code> bo'lishi va u doimo javob ob'ektini qaytarishi shart.</div>
+
+    <div class="topic-nav">
+      <a href="#urls" class="topic-nav-btn prev">← urls.py — Routing va Yo'naltirishlar</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Django | 6 / 30</span>
+      <a href="#templates" class="topic-nav-btn next">Templates — Django DTL Shablon Tizimi →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Templates</span>
+      <span style="font-size:12px; color:var(--text2);">Django Mavzu #7</span>
+    </div>
+    <h2 id="templates" style="color:#092e20; background: linear-gradient(90deg, #44b78b, #04AA6D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Templates — Django DTL Shablon Tizimi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Django o'zining kuchli <strong>Django Template Language (DTL)</strong> tizimiga ega. Bu tizim HTML fayllar ichida o'zgaruvchilar, sikllar, shartlar va filtrlar bilan ishlashga imkon beradi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>O'zgaruvchilarni chiqarish: <code>{{ o'zgaruvchi_nomi }}</code>.</li><li>Teglar (sikllar, shartlar): <code>{% for item in items %} ... {% endfor %}</code>.</li><li>Filtrlar: <code>{{ title|lower }}</code> yoki <code>{{ text|truncatewords:20 }}</code>.</li><li>Shablon merosi (Template Inheritance): <code>{% extends 'base.html' %}</code> va <code>{% block content %}</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Django / Python</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_django_7')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_django_7','res_django_7')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_django_7" contenteditable="true" spellcheck="false">&lt;!-- templates/blog/home.html --&gt;
+{% extends 'base.html' %}
+
+{% block content %}
+  &lt;h1&gt;{{ page_title }}&lt;/h1&gt;
+  
+  {% if posts %}
+    &lt;ul&gt;
+    {% for post in posts %}
+      &lt;li&gt;
+        &lt;strong&gt;{{ post.title }}&lt;/strong&gt; - Muallif: {{ post.author|upper }}
+      &lt;/li&gt;
+    {% endfor %}
+    &lt;/ul&gt;
+  {% else %}
+    &lt;p&gt;Hozircha hech qanday maqola mavjud emas.&lt;/p&gt;
+  {% endif %}
+{% endblock %}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_django_7">
+      <div class="result-label">🖥️ Django Terminal / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Django 5.1 Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;HTML Natija:
+&lt;h1&gt;Bosh Sahifa&lt;/h1&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;Django darslari&lt;/strong&gt; - Muallif: ALI&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Python asoslari&lt;/strong&gt; - Muallif: VALI&lt;/li&gt;
+&lt;/ul&gt;&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ Shablon merosi orqali butun sayt uchun bitta <code>base.html</code> yaratiladi va boshqa sahifalar faqat o'zgaruvchan bloklarini almashtiradi.</div>
+
+    <div class="topic-nav">
+      <a href="#views" class="topic-nav-btn prev">← views.py — Biznes Mantiq va So'rovlarni Qayta Ishlash</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Django | 7 / 30</span>
+      <a href="#static" class="topic-nav-btn next">Static Fayllar — CSS, JavaScript va Rasmlar →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Static</span>
+      <span style="font-size:12px; color:var(--text2);">Django Mavzu #8</span>
+    </div>
+    <h2 id="static" style="color:#092e20; background: linear-gradient(90deg, #44b78b, #04AA6D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Static Fayllar — CSS, JavaScript va Rasmlar</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Veb-saytning tashqi ko'rinishi uchun mas'ul CSS fayllar, JS skriptlar va logotip rasmlari Django da <strong>static</strong> fayllar hisoblanadi. Ular maxsus teglar orqali yuklanadi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Shablon boshida <code>{% load static %}</code> buyrug'i yoziladi.</li><li>Ulash: <code>&lt;link rel="stylesheet" href="{% static 'css/main.css' %}"&gt;</code>.</li><li><code>settings.py</code> dagi <strong>STATIC_URL</strong> va <strong>STATICFILES_DIRS</strong> sozlamalari.</li><li>Produksiyada barcha statik fayllarni bitta joyga to'plash: <code>python manage.py collectstatic</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Django / Python</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_django_8')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_django_8','res_django_8')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_django_8" contenteditable="true" spellcheck="false">&lt;!-- base.html faylida statik fayllarni ulash --&gt;
+{% load static %}
+&lt;!DOCTYPE html&gt;
+&lt;html lang="uz"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;Mening Saytim&lt;/title&gt;
+  &lt;link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"&gt;
+  &lt;link rel="stylesheet" href="{% static 'css/style.css' %}"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;img src="{% static 'images/logo.png' %}" alt="Logo"&gt;
+  &lt;script src="{% static 'js/app.js' %}"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_django_8">
+      <div class="result-label">🖥️ Django Terminal / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Django 5.1 Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Generatsiya qilingan HTML:
+&lt;link rel="stylesheet" href="/static/css/bootstrap.min.css"&gt;
+&lt;link rel="stylesheet" href="/static/css/style.css"&gt;
+&lt;img src="/static/images/logo.png" alt="Logo"&gt;&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Statik fayllar kod bilan birga git omborida saqlanadi, foydalanuvchilar yuklagan media fayllar esa <code>MEDIA_ROOT</code> papkasida saqlanadi.</div>
+
+    <div class="topic-nav">
+      <a href="#templates" class="topic-nav-btn prev">← Templates — Django DTL Shablon Tizimi</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Django | 8 / 30</span>
+      <a href="#models" class="topic-nav-btn next">models.py — Ma'lumotlar Bazasi Modeli →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Database</span>
+      <span style="font-size:12px; color:var(--text2);">Django Mavzu #9</span>
+    </div>
+    <h2 id="models" style="color:#092e20; background: linear-gradient(90deg, #44b78b, #04AA6D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">models.py — Ma'lumotlar Bazasi Modeli</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Django da har bir ma'lumotlar jadvali <code>models.Model</code> klassidan voris olgan Python klassi sifatida yoziladi. SQL jadvallarini qo'lda yaratish shart emas.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Maydon turlari: <code>CharField</code>, <code>TextField</code>, <code>IntegerField</code>, <code>DateTimeField</code>, <code>BooleanField</code>.</li><li>Aloqalar: <code>ForeignKey</code> (bir-ko'p), <code>ManyToManyField</code> (ko'p-ko'p), <code>OneToOneField</code> (bir-bir).</li><li>Klass ichida <code>__str__(self)</code> metodi ob'ektning inson tushunadigan nomini qaytaradi.</li><li><code>auto_now_add=True</code> ob'ekt yaratilgan vaqtni avtomatik qayd etadi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Django / Python</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_django_9')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_django_9','res_django_9')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_django_9" contenteditable="true" spellcheck="false"># blog/models.py
 from django.db import models
 from django.contrib.auth.models import User
 
-class Kategoriya(models.Model):
-    nomi = models.CharField(max_length=100)
-    slug = models.SlugField(unique=True)
+class Post(models.Model):
+    title = models.CharField(max_length=200, verbose_name="Sarlavha")
+    content = models.TextField(verbose_name="Maqola matni")
+    created_at = models.DateTimeField(auto_now_add=True)
+    author = models.ForeignKey(User, on_delete=models.CASCADE, related_name="posts")
+    is_published = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.nomi
+        return self.title
 
     class Meta:
-        verbose_name_plural = "Kategoriyalar"
-
-class Kurs(models.Model):
-    DARAJA_CHOICES = [
-        ('boshlangich', 'Boshlang\'ich'),
-        ('orta', 'O\'rta'),
-        ('ilgor', 'Ilg\'or'),
-    ]
-
-    sarlavha = models.CharField(max_length=200)
-    tavsif = models.TextField()
-    kategoriya = models.ForeignKey(Kategoriya, on_delete=models.CASCADE)
-    muallif = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
-    daraja = models.CharField(max_length=20, choices=DARAJA_CHOICES)
-    yaratildi = models.DateTimeField(auto_now_add=True)
-    yangilandi = models.DateTimeField(auto_now=True)
-    nashr_etildi = models.BooleanField(default=False)
-
-    def __str__(self):
-        return self.sarlavha
-
-# ORM so'rovlari
-# Kurs.objects.all()
-# Kurs.objects.filter(daraja='boshlangich')
-# Kurs.objects.get(id=1)
-# Kurs.objects.create(sarlavha='HTML', ...)
-# Kurs.objects.filter(nashr_etildi=True).order_by('-yaratildi')[:10]</pre></div>
-  </div>
-
-  <h2 id="drf">Django REST Framework — API</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar"><span class="code-lang">Python (DRF)</span>
-      <div class="code-actions"><button class="btn-copy" onclick="copyCode('code3')">📋 Nusxa</button></div>
+        ordering = ['-created_at']
+        verbose_name = "Maqola"</pre>
+      </div>
     </div>
-    <div class="code-body"><pre id="code3"># serializers.py
-from rest_framework import serializers
-from .models import Kurs
+    <div class="result-box" id="res_django_9">
+      <div class="result-label">🖥️ Django Terminal / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Django 5.1 Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;SQL Jadvalga aylanadi:
+CREATE TABLE "blog_post" (
+    "id" integer NOT NULL PRIMARY KEY AUTOINCREMENT,
+    "title" varchar(200) NOT NULL,
+    "content" text NOT NULL,
+    "created_at" datetime NOT NULL,
+    "author_id" integer NOT NULL REFERENCES "auth_user" ("id"),
+    "is_published" bool NOT NULL
+);&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
 
-class KursSerializer(serializers.ModelSerializer):
+    <div class="note-box" style="margin-top:16px;">⚡ <code>on_delete=models.CASCADE</code> muallif o'chirilganda unga tegishli barcha maqolalarni ham avtomatik o'chiradi.</div>
+
+    <div class="topic-nav">
+      <a href="#static" class="topic-nav-btn prev">← Static Fayllar — CSS, JavaScript va Rasmlar</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Django | 9 / 30</span>
+      <a href="#migrations" class="topic-nav-btn next">Migratsiyalar — makemigrations va migrate →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Migratsiya</span>
+      <span style="font-size:12px; color:var(--text2);">Django Mavzu #10</span>
+    </div>
+    <h2 id="migrations" style="color:#092e20; background: linear-gradient(90deg, #44b78b, #04AA6D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Migratsiyalar — makemigrations va migrate</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Migratsiya — bu <code>models.py</code> dagi o'zgarishlarni (yangi model, maydon qo'shish yoki o'chirish) haqiqiy ma'lumotlar bazasidagi SQL jadvallariga sinxronlash usulidir.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>1-qadam: <code>python manage.py makemigrations</code> — model o'zgarishlarini aniqlab migratsiya faylini tayyorlaydi.</li><li>2-qadam: <code>python manage.py migrate</code> — SQL buyruqlarini bazaga yozadi va jadvallarni yaratadi.</li><li>Migratsiyalar holatini ko'rish: <code>python manage.py showmigrations</code>.</li><li>Qaysi SQL so'rovi bajarilishini tekshirish: <code>python manage.py sqlmigrate blog 0001</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Django / Python</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_django_10')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_django_10','res_django_10')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_django_10" contenteditable="true" spellcheck="false"># Terminalda bajarish:
+# 1. Migratsiya faylini yaratish
+python manage.py makemigrations blog
+
+# 2. Bazaga tatbiq qilish
+python manage.py migrate</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_django_10">
+      <div class="result-label">🖥️ Django Terminal / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Django 5.1 Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Migrations for 'blog':
+  blog/migrations/0001_initial.py
+    - Create model Post
+
+Operations to perform:
+  Apply all migrations: admin, auth, blog, contenttypes, sessions
+Running migrations:
+  Applying blog.0001_initial... OK&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Modellar faylida har qanday o'zgarish qilganingizdan keyin darhol <code>makemigrations</code> va <code>migrate</code> buyruqlarini berish lozim.</div>
+
+    <div class="topic-nav">
+      <a href="#models" class="topic-nav-btn prev">← models.py — Ma'lumotlar Bazasi Modeli</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Django | 10 / 30</span>
+      <a href="#orm" class="topic-nav-btn next">Django ORM — So'rovlar (QuerySet) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">ORM</span>
+      <span style="font-size:12px; color:var(--text2);">Django Mavzu #11</span>
+    </div>
+    <h2 id="orm" style="color:#092e20; background: linear-gradient(90deg, #44b78b, #04AA6D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Django ORM — So'rovlar (QuerySet)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Django ORM (Object-Relational Mapping) yordamida SQL so'rovlarini to'g'ridan-to'g'ri Python metodlari orqali yozasiz. Bu kodni xavfsiz va ixcham qiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Barchasini olish: <code>Post.objects.all()</code>.</li><li>Filtrlash: <code>Post.objects.filter(is_published=True)</code>.</li><li>Yagona yozuvni olish: <code>Post.objects.get(id=1)</code>.</li><li>Qidiruv maydonlari: <code>__icontains</code>, <code>__gt</code>, <code>__startswith</code>, <code>__in</code>.</li><li>Tartiblash va cheklash: <code>Post.objects.order_by('-created_at')[:5]</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Django / Python</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_django_11')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_django_11','res_django_11')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_django_11" contenteditable="true" spellcheck="false"># Python interactive shell: python manage.py shell
+from blog.models import Post
+
+# Yangi post yaratish
+post = Post.objects.create(title="Django ORM ajoyib", content="Matn...", author_id=1)
+
+# Ma'lumotlarni qidirish
+oxirgi_postlar = Post.objects.filter(is_published=True).order_by('-id')[:3]
+
+# Qidiruv (icontains - katta-kichik harf farqsiz)
+qidiruv = Post.objects.filter(title__icontains="django")
+
+print("Topilganlar soni:", qidiruv.count())</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_django_11">
+      <div class="result-label">🖥️ Django Terminal / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Django 5.1 Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;&lt;QuerySet [&lt;Post: Django ORM ajoyib&gt;, &lt;Post: Django darslari&gt;]&gt;
+Topilganlar soni: 2
+SQL: SELECT * FROM blog_post WHERE title LIKE '%django%' COLLATE NOCASE;&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ Django QuerySet-lari 'lazy' (dangasa) hisoblanadi: ular ma'lumotlar bazasiga faqat natija ekranga chiqarilganda yoki sikl ichida aylanganda murojaat qiladi.</div>
+
+    <div class="topic-nav">
+      <a href="#migrations" class="topic-nav-btn prev">← Migratsiyalar — makemigrations va migrate</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Django | 11 / 30</span>
+      <a href="#admin" class="topic-nav-btn next">Django Admin Panel — Boshqaruv Tizimi →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Admin</span>
+      <span style="font-size:12px; color:var(--text2);">Django Mavzu #12</span>
+    </div>
+    <h2 id="admin" style="color:#092e20; background: linear-gradient(90deg, #44b78b, #04AA6D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Django Admin Panel — Boshqaruv Tizimi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Django ning eng mashhur xususiyatlaridan biri — bu avtomatik tayyor ma'lumotlar bazasi boshqaruv paneli (Admin Panel). Dasturchi hech qanday HTML yozmasdan ma'lumotlarni qo'shish, tahrirlash va o'chirish imkoniga ega bo'ladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Superuser (bosh administrator) yaratish: <code>python manage.py createsuperuser</code>.</li><li><code>admin.py</code> faylida modellarni ro'yxatdan o'tkazish: <code>admin.site.register(Post)</code>.</li><li>Qulay interfeys: qidiruv satri (search_fields), filtrlar (list_filter) va ustunlar (list_display).</li><li>Brauzerda kirish: <code>http://127.0.0.1:8000/admin/</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Django / Python</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_django_12')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_django_12','res_django_12')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_django_12" contenteditable="true" spellcheck="false"># blog/admin.py
+from django.contrib import admin
+from .models import Post
+
+@admin.register(Post)
+class PostAdmin(admin.ModelAdmin):
+    list_display = ('id', 'title', 'author', 'created_at', 'is_published')
+    list_filter = ('is_published', 'created_at', 'author')
+    search_fields = ('title', 'content')
+    list_editable = ('is_published',)
+    date_hierarchy = 'created_at'</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_django_12">
+      <div class="result-label">🖥️ Django Terminal / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Django 5.1 Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Superuser yaratildi:
+Username: admin
+Email: admin@w3learn.uz
+Password: ********
+Superuser created successfully.
+Admin panel manzili: http://127.0.0.1:8000/admin/&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 <code>list_editable</code> orqali ro'yxat jadvalining o'zidayoq maydonlarni (masalan faollik statusini) bir marta bosish bilan o'zgartirishingiz mumkin.</div>
+
+    <div class="topic-nav">
+      <a href="#orm" class="topic-nav-btn prev">← Django ORM — So'rovlar (QuerySet)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Django | 12 / 30</span>
+      <a href="#fixtures" class="topic-nav-btn next">Fixtures — Boshlang'ich Ma'lumotlarni Yuklash →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Fixtures</span>
+      <span style="font-size:12px; color:var(--text2);">Django Mavzu #13</span>
+    </div>
+    <h2 id="fixtures" style="color:#092e20; background: linear-gradient(90deg, #44b78b, #04AA6D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Fixtures — Boshlang'ich Ma'lumotlarni Yuklash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Fixtures — bu ma'lumotlar bazasidagi test yoki boshlang'ich ma'lumotlarni JSON, XML yoki YAML formatida saqlash va boshqa kompyuterga osongina qayta yuklash usulidir.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Ma'lumotlarni faylga saqlash (eksport): <code>python manage.py dumpdata blog.Post &gt; posts.json --indent 2</code>.</li><li>Fayldan bazaga yuklash (import): <code>python manage.py loaddata posts.json</code>.</li><li>Yangi dasturchi jamoaga qo'shilganda tayyor test bazasini bir necha soniyada o'rnatib olish imkonini beradi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Django / Python</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_django_13')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_django_13','res_django_13')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_django_13" contenteditable="true" spellcheck="false"># Ma'lumotlarni dump qilish va yuklash
+# 1. Eksport qilish (JSON)
+python manage.py dumpdata blog --indent 2 &gt; blog_data.json
+
+# 2. Boshqa bazaga import qilish
+python manage.py loaddata blog_data.json</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_django_13">
+      <div class="result-label">🖥️ Django Terminal / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Django 5.1 Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;[
+  {
+    "model": "blog.post",
+    "pk": 1,
+    "fields": {
+      "title": "Django darslari",
+      "content": "Salom...",
+      "author": 1,
+      "is_published": true
+    }
+  }
+]
+Installed 1 object(s) from 1 fixture(s)&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ Fixtures orqali toifalar, davlatlar ro'yxati yoki standart sozlamalarni yangi bazaga oson o'rnatish mumkin.</div>
+
+    <div class="topic-nav">
+      <a href="#admin" class="topic-nav-btn prev">← Django Admin Panel — Boshqaruv Tizimi</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Django | 13 / 30</span>
+      <a href="#forms" class="topic-nav-btn next">Django Forms — Formalar bilan Ishlash →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Forms</span>
+      <span style="font-size:12px; color:var(--text2);">Django Mavzu #14</span>
+    </div>
+    <h2 id="forms" style="color:#092e20; background: linear-gradient(90deg, #44b78b, #04AA6D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Django Forms — Formalar bilan Ishlash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Veb-saytlarda foydalanuvchidan ma'lumot olishning asosiy vositasi — bu formalardir. Django Forms HTML inputlarini avtomatik hosil qiladi, ma'lumotlarni tekshiradi va xatolarni ko'rsatadi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><code>django.forms.Form</code> klassidan voris olinadi.</li><li>Har bir maydon uchun xavfsizlik va format tekshiruvi (validation) avtomatik amalga oshadi.</li><li>Shablonda formani chiqarish: <code>{{ form.as_p }}</code> yoki <code>{{ form.as_div }}</code>.</li><li>Formani tekshirish: <code>if form.is_valid(): cleaned_data = form.cleaned_data</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Django / Python</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_django_14')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_django_14','res_django_14')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_django_14" contenteditable="true" spellcheck="false"># blog/forms.py
+from django import forms
+
+class AloqaForm(forms.Form):
+    ism = forms.CharField(max_length=100, label="Ismingiz", widget=forms.TextInput(attrs={'class': 'form-control'}))
+    email = forms.EmailField(label="Email manzilingiz")
+    xabar = forms.CharField(widget=forms.Textarea(attrs={'rows': 4}), label="Xabaringiz")</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_django_14">
+      <div class="result-label">🖥️ Django Terminal / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Django 5.1 Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Generatsiya bo'lgan HTML:
+&lt;p&gt;&lt;label for="id_ism"&gt;Ismingiz:&lt;/label&gt; &lt;input type="text" name="ism" class="form-control" maxlength="100" required id="id_ism"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;label for="id_email"&gt;Email manzilingiz:&lt;/label&gt; &lt;input type="email" name="email" required id="id_email"&gt;&lt;/p&gt;
+&lt;p&gt;&lt;label for="id_xabar"&gt;Xabaringiz:&lt;/label&gt; &lt;textarea name="xabar" rows="4" required id="id_xabar"&gt;&lt;/textarea&gt;&lt;/p&gt;&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Django formalari xavfsizlik va ma'lumotlar tozaligini ta'minlashda eng ishonchli vositadir.</div>
+
+    <div class="topic-nav">
+      <a href="#fixtures" class="topic-nav-btn prev">← Fixtures — Boshlang'ich Ma'lumotlarni Yuklash</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Django | 14 / 30</span>
+      <a href="#model-forms" class="topic-nav-btn next">ModelForm — Model Asosida Tezkor Forma →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">ModelForm</span>
+      <span style="font-size:12px; color:var(--text2);">Django Mavzu #15</span>
+    </div>
+    <h2 id="model-forms" style="color:#092e20; background: linear-gradient(90deg, #44b78b, #04AA6D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">ModelForm — Model Asosida Tezkor Forma</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Agar formangiz ma'lumotlar bazasi modelidagi maydonlarni to'ldirish uchun ishlatilsa, <code>ModelForm</code> eng yaxshi yechimdir. U modeldagi maydonlar asosida formani o'zi yaratadi va <code>form.save()</code> orqali to'g'ridan-to'g'ri bazaga saqlaydi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><code>forms.ModelForm</code> dan voris olinadi.</li><li>Ichki <code>Meta</code> klassida <code>model = Post</code> va <code>fields = ['title', 'content']</code> ko'rsatiladi.</li><li><code>form.save()</code> metodi yangi ob'ekt yaratadi yoki mavjudini yangilaydi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Django / Python</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_django_15')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_django_15','res_django_15')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_django_15" contenteditable="true" spellcheck="false"># blog/forms.py
+from django import forms
+from .models import Post
+
+class PostForm(forms.ModelForm):
     class Meta:
-        model = Kurs
-        fields = ['id', 'sarlavha', 'tavsif', 'daraja', 'yaratildi']
-        read_only_fields = ['yaratildi']
+        model = Post
+        fields = ['title', 'content', 'is_published']
+        widgets = {
+            'title': forms.TextInput(attrs={'class': 'form-control', 'placeholder': 'Sarlavhani kiriting'}),
+            'content': forms.Textarea(attrs={'class': 'form-control', 'rows': 5}),
+        }</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_django_15">
+      <div class="result-label">🖥️ Django Terminal / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Django 5.1 Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;# View funksiyasida ishlatish:
+def create_post(request):
+    if request.method == 'POST':
+        form = PostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.author = request.user
+            post.save()
+            return redirect('blog-home')
+    else:
+        form = PostForm()
+    return render(request, 'blog/form.html', {'form': form})&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
 
-# views.py
+    <div class="note-box" style="margin-top:16px;">⚡ <code>commit=False</code> orqali ma'lumotni bazaga saqlashdan oldin qo'shimcha maydonlarni (masalan joriy muallifni) biriktirish mumkin.</div>
+
+    <div class="topic-nav">
+      <a href="#forms" class="topic-nav-btn prev">← Django Forms — Formalar bilan Ishlash</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Django | 15 / 30</span>
+      <a href="#validatsiya" class="topic-nav-btn next">Validatsiya — Maxsus Qoidalar va Xatolar →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Validatsiya</span>
+      <span style="font-size:12px; color:var(--text2);">Django Mavzu #16</span>
+    </div>
+    <h2 id="validatsiya" style="color:#092e20; background: linear-gradient(90deg, #44b78b, #04AA6D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Validatsiya — Maxsus Qoidalar va Xatolar</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Forma maydonlariga kiritilgan ma'lumotlarni maxsus mantiqiy qoidalar bo'yicha tekshirish uchun <code>clean_&lt;maydon_nomi&gt;()</code> yoki umumiy <code>clean()</code> metodlari yoziladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Noto'g'ri qiymat kiritilganda <code>forms.ValidationError("Xatolik matni")</code> chiqariladi.</li><li>Tozalangan ma'lumotlar <code>cleaned_data</code> lug'atidan olinadi.</li><li>Xatolik yuz berganda forma qayta yuklanadi va xato xabari qizil rangda ko'rsatiladi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Django / Python</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_django_16')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_django_16','res_django_16')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_django_16" contenteditable="true" spellcheck="false"># forms.py
+from django import forms
+
+class RegistratsiyaForm(forms.Form):
+    username = forms.CharField(max_length=50)
+    yosh = forms.IntegerField()
+
+    def clean_yosh(self):
+        yosh = self.cleaned_data.get('yosh')
+        if yosh &lt; 14:
+            raise forms.ValidationError("Ro'yxatdan o'tish uchun yosh kamida 14 bo'lishi kerak!")
+        return yosh</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_django_16">
+      <div class="result-label">🖥️ Django Terminal / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Django 5.1 Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Forma tekshiruvi:
+form = RegistratsiyaForm({'username': 'botir', 'yosh': 10})
+print(form.is_valid())  # False
+print(form.errors)      # {'yosh': ["Ro'yxatdan o'tish uchun yosh kamida 14 bo'lishi kerak!"]}&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Har qanday validatsiya metodining oxirida tekshirilgan qiymatni albatta <code>return</code> qilish shart.</div>
+
+    <div class="topic-nav">
+      <a href="#model-forms" class="topic-nav-btn prev">← ModelForm — Model Asosida Tezkor Forma</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Django | 16 / 30</span>
+      <a href="#csrf" class="topic-nav-btn next">CSRF Himoya — Cross-Site Request Forgery →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Xavfsizlik</span>
+      <span style="font-size:12px; color:var(--text2);">Django Mavzu #17</span>
+    </div>
+    <h2 id="csrf" style="color:#092e20; background: linear-gradient(90deg, #44b78b, #04AA6D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">CSRF Himoya — Cross-Site Request Forgery</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>CSRF (Cross-Site Request Forgery)</strong> — bu boshqa zararli sayt foydalanuvchining nomidan sizning saytingizga yashirin so'rov yuborish hujumidir. Django har bir POST formasini maxsus token bilan himoyalaydi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Barcha POST formalari ichiga <code>{% csrf_token %}</code> tegi yozilishi shart.</li><li>Django har bir sessiya uchun yagona maxfiy token generatsiya qiladi va uni formadagi yashirin maydon bilan solishtiradi.</li><li>Agar token mos kelmasa yoki kiritilmasa, Django darhol <strong>403 Forbidden</strong> xatosini qaytaradi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Django / Python</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_django_17')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_django_17','res_django_17')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_django_17" contenteditable="true" spellcheck="false">&lt;!-- Har qanday POST formasida csrf_token yozilishi shart: --&gt;
+&lt;form method="POST" action="/post/create/"&gt;
+  {% csrf_token %}
+  
+  {{ form.as_p }}
+  
+  &lt;button type="submit" class="btn btn-success"&gt;Saqlash&lt;/button&gt;
+&lt;/form&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_django_17">
+      <div class="result-label">🖥️ Django Terminal / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Django 5.1 Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Brauzerdagi HTML:
+&lt;form method="POST" action="/post/create/"&gt;
+  &lt;input type="hidden" name="csrfmiddlewaretoken" value="aBcD123XyZ...9987=="&gt;
+  ...
+&lt;/form&gt;&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">🔒 Django-da CSRF himoyasi avtomatik yoqilgan bo'ladi. Uni o'chirib qo'yish jiddiy xavfsizlik xatosidir.</div>
+
+    <div class="topic-nav">
+      <a href="#validatsiya" class="topic-nav-btn prev">← Validatsiya — Maxsus Qoidalar va Xatolar</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Django | 17 / 30</span>
+      <a href="#auth" class="topic-nav-btn next">Django Authentication — Foydalanuvchilar Tizimi →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Auth</span>
+      <span style="font-size:12px; color:var(--text2);">Django Mavzu #18</span>
+    </div>
+    <h2 id="auth" style="color:#092e20; background: linear-gradient(90deg, #44b78b, #04AA6D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Django Authentication — Foydalanuvchilar Tizimi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Django o'zining tayyor <code>django.contrib.auth</code> paketiga ega. U foydalanuvchilar (User), parollarni xesh qilish (PBKDF2 SHA256), guruhlar (Group) va ruxsatlarni (Permission) to'liq boshqaradi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Parollar hech qachon ochiq matn ko'rinishida saqlanmaydi, faqat kuchli kriptografik xesh qilinadi.</li><li>Foydalanuvchini tekshirish: <code>authenticate(username=..., password=...)</code>.</li><li>Tizimga kiritish (sessiya boshlash): <code>login(request, user)</code>.</li><li>Tizimdan chiqarish: <code>logout(request)</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Django / Python</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_django_18')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_django_18','res_django_18')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_django_18" contenteditable="true" spellcheck="false"># Foydalanuvchini tekshirish va tizimga kiritish
+from django.contrib.auth import authenticate, login, logout
+
+def user_login_view(request):
+    user = authenticate(username='ali', password='MaxfiyParol123!')
+    if user is not None:
+        login(request, user)
+        return "Muvaffaqiyatli tizimga kirdingiz!"
+    else:
+        return "Login yoki parol noto'g'ri!"</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_django_18">
+      <div class="result-label">🖥️ Django Terminal / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Django 5.1 Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Status: 200 OK
+Session yaratildi: sessionid=8a7df68s7df68sd7f
+Foydalanuvchi holati: request.user.is_authenticated -&gt; True&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ <code>request.user</code> orqali joriy foydalanuvchining login, ism va barcha ma'lumotlarini har qanday View va Shablon ichida olishingiz mumkin.</div>
+
+    <div class="topic-nav">
+      <a href="#csrf" class="topic-nav-btn prev">← CSRF Himoya — Cross-Site Request Forgery</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Django | 18 / 30</span>
+      <a href="#login" class="topic-nav-btn next">Login va Logout Amaliyoti →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Auth</span>
+      <span style="font-size:12px; color:var(--text2);">Django Mavzu #19</span>
+    </div>
+    <h2 id="login" style="color:#092e20; background: linear-gradient(90deg, #44b78b, #04AA6D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Login va Logout Amaliyoti</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Django foydalanuvchilarni tizimga kiritish va chiqarish uchun tayyor <code>LoginView</code> va <code>LogoutView</code> klasslarini taqdim etadi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Tayyor ko'rinishlar: <code>django.contrib.auth.views.LoginView</code>.</li><li><code>settings.py</code> da <strong>LOGIN_REDIRECT_URL = '/'</strong> va <strong>LOGOUT_REDIRECT_URL = '/'</strong> ko'rsatiladi.</li><li>Shablonda <code>user.is_authenticated</code> tekshiruvi orqali menyu turlicha ko'rsatiladi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Django / Python</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_django_19')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_django_19','res_django_19')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_django_19" contenteditable="true" spellcheck="false"># urls.py da login va logoutni ulash:
+from django.urls import path
+from django.contrib.auth import views as auth_views
+
+urlpatterns = [
+    path('login/', auth_views.LoginView.as_view(template_name='users/login.html'), name='login'),
+    path('logout/', auth_views.LogoutView.as_view(), name='logout'),
+]</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_django_19">
+      <div class="result-label">🖥️ Django Terminal / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Django 5.1 Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;&lt;!-- Shablon tekshiruvi: --&gt;
+{% if user.is_authenticated %}
+  &lt;span&gt;Salom, {{ user.username }}!&lt;/span&gt;
+  &lt;a href="{% url 'logout' %}"&gt;Chiqish&lt;/a&gt;
+{% else %}
+  &lt;a href="{% url 'login' %}"&gt;Kirish&lt;/a&gt;
+  &lt;a href="{% url 'register' %}"&gt;Ro'yxatdan o'tish&lt;/a&gt;
+{% endif %}&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Foydalanuvchi tizimdan chiqqanda (Logout) uning sessiya ma'lumotlari xavfsiz tarzda o'chiriladi.</div>
+
+    <div class="topic-nav">
+      <a href="#auth" class="topic-nav-btn prev">← Django Authentication — Foydalanuvchilar Tizimi</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Django | 19 / 30</span>
+      <a href="#register" class="topic-nav-btn next">Ro'yxatdan O'tish (UserCreationForm) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Auth</span>
+      <span style="font-size:12px; color:var(--text2);">Django Mavzu #20</span>
+    </div>
+    <h2 id="register" style="color:#092e20; background: linear-gradient(90deg, #44b78b, #04AA6D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Ro'yxatdan O'tish (UserCreationForm)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Yangi foydalanuvchilarni ro'yxatdan o'tkazish uchun Django o'zining tayyor <code>UserCreationForm</code> formasiga ega. U parolni ikki marta kiritishni va parol murakkabligini avtomatik nazorat qiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><code>from django.contrib.auth.forms import UserCreationForm</code>.</li><li>Parol juda oddiy bo'lsa yoki email noto'g'ri bo'lsa, o'zbekcha yoki inglizcha tushunarli xatolar chiqaradi.</li><li>Email va qo'shimcha maydonlar qo'shish uchun <code>UserCreationForm</code> dan voris olib yangi forma yaratiladi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Django / Python</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_django_20')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_django_20','res_django_20')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_django_20" contenteditable="true" spellcheck="false"># users/views.py
+from django.shortcuts import render, redirect
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib import messages
+
+def register(request):
+    if request.method == 'POST':
+        form = UserCreationForm(request.POST)
+        if form.is_valid():
+            user = form.save()
+            messages.success(request, f"{user.username}, hisobingiz muvaffaqiyatli yaratildi! Endi tizimga kirishingiz mumkin.")
+            return redirect('login')
+    else:
+        form = UserCreationForm()
+    return render(request, 'users/register.html', {'form': form})</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_django_20">
+      <div class="result-label">🖥️ Django Terminal / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Django 5.1 Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Validatsiya xabarlari:
+- Parol juda qisqa bo'lmasligi kerak (kamida 8 ta belgi).
+- Parol butunlay raqamlardan iborat bo'la olmaydi.
+- Parol oddiy so'zlardan tashkil topmasligi kerak.&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ <code>messages.success()</code> orqali foydalanuvchiga muvaffaqiyatli ro'yxatdan o'tganligi haqida chiroyli xabar (flash notification) ko'rsatiladi.</div>
+
+    <div class="topic-nav">
+      <a href="#login" class="topic-nav-btn prev">← Login va Logout Amaliyoti</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Django | 20 / 30</span>
+      <a href="#permissions" class="topic-nav-btn next">Ruxsatlar va Cheklovlar (Permissions & Mixins) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Xavfsizlik</span>
+      <span style="font-size:12px; color:var(--text2);">Django Mavzu #21</span>
+    </div>
+    <h2 id="permissions" style="color:#092e20; background: linear-gradient(90deg, #44b78b, #04AA6D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Ruxsatlar va Cheklovlar (Permissions & Mixins)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Saytning ba'zi sahifalari faqat tizimga kirgan foydalanuvchilar yoki administratorlar uchun ochiq bo'lishi kerak. Django buni dekoratorlar va miksinlar orqali oson hal qiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Funksiyalar uchun: <code>@login_required(login_url='login')</code>.</li><li>Klasslar uchun: <code>LoginRequiredMixin</code>.</li><li>Ruxsatlarni tekshirish: <code>@permission_required('blog.add_post')</code>.</li><li>Foydalanuvchi huquqi: <code>user.is_staff</code>, <code>user.is_superuser</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Django / Python</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_django_21')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_django_21','res_django_21')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_django_21" contenteditable="true" spellcheck="false"># Ruxsatlarni tekshirish dekoratorlari
+from django.contrib.auth.decorators import login_required, user_passes_test
+from django.shortcuts import render
+
+@login_required(login_url='login')
+def profil(request):
+    return render(request, 'users/profile.html', {'user': request.user})
+
+@user_passes_test(lambda u: u.is_staff)
+def admin_statistika(request):
+    return render(request, 'admin/stats.html')</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_django_21">
+      <div class="result-label">🖥️ Django Terminal / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Django 5.1 Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Tizimga kirmagan foydalanuvchi /profil/ ga kirmoqchi bo'lsa:
+HTTP 302 Redirect: /login/?next=/profil/
+Kirgandan so'ng avtomatik profil sahifasiga qaytariladi.&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">🔒 <code>next=/profil/</code> parametri foydalanuvchi tizimga kirgandan so'ng darhol o'zi bormoqchi bo'lgan sahifaga yo'naltirilishini ta'minlaydi.</div>
+
+    <div class="topic-nav">
+      <a href="#register" class="topic-nav-btn prev">← Ro'yxatdan O'tish (UserCreationForm)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Django | 21 / 30</span>
+      <a href="#drf" class="topic-nav-btn next">Django REST Framework (DRF) — Kirish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">DRF</span>
+      <span style="font-size:12px; color:var(--text2);">Django Mavzu #22</span>
+    </div>
+    <h2 id="drf" style="color:#092e20; background: linear-gradient(90deg, #44b78b, #04AA6D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Django REST Framework (DRF) — Kirish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Django REST Framework (DRF)</strong> — bu Django ustiga qurilgan va zamonaviy RESTful Web API lar yaratish uchun eng kuchli kutubxonadir. U mobil ilovalar (Flutter, React Native) va Frontend (React, Vue) uchun JSON formatida ma'lumot yetkazib beradi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>O'rnatish: <code>pip install djangorestframework</code>.</li><li><code>settings.py</code> dagi <strong>INSTALLED_APPS</strong> ga <code>'rest_framework'</code> qo'shiladi.</li><li>Brauzerda qulay sinash uchun interaktiv 'Browsable API' interfeysiga ega.</li><li>Autentifikatsiya, ruxsatlar, filtratsiya va sahifalash (pagination) tayyor kiritilgan.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Django / Python</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_django_22')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_django_22','res_django_22')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_django_22" contenteditable="true" spellcheck="false"># settings.py
+INSTALLED_APPS = [
+    ...
+    'rest_framework',
+    'blog',
+]
+
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': [
+        'rest_framework.permissions.IsAuthenticatedOrReadOnly',
+    ],
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 10
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_django_22">
+      <div class="result-label">🖥️ Django Terminal / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Django 5.1 Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;DRF o'rnatildi:
+GET /api/posts/
+HTTP 200 OK
+Content-Type: application/json
+Allow: GET, POST, HEAD, OPTIONS&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 DRF orqali bir necha qator kod bilan to'liq CRUD API yaratishingiz mumkin.</div>
+
+    <div class="topic-nav">
+      <a href="#permissions" class="topic-nav-btn prev">← Ruxsatlar va Cheklovlar (Permissions & Mixins)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Django | 22 / 30</span>
+      <a href="#serializer" class="topic-nav-btn next">DRF Serializers — Ma'lumotlarni JSON ga O'girish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">DRF</span>
+      <span style="font-size:12px; color:var(--text2);">Django Mavzu #23</span>
+    </div>
+    <h2 id="serializer" style="color:#092e20; background: linear-gradient(90deg, #44b78b, #04AA6D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">DRF Serializers — Ma'lumotlarni JSON ga O'girish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Serializer</strong> — bu murakkab Django modellari va ma'lumotlar bazasi yozuvlarini JSON formatiga aylantirish (Serialization) va aksincha, kelgan JSON ma'lumotlarni tekshirib modelga saqlash (Deserialization) vazifasini bajaradi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><code>serializers.ModelSerializer</code> eng ko'p ishlatiladigan qulay sinfdir.</li><li>Qaysi maydonlar JSON da ko'rinishini <code>fields = '__all__'</code> yoki ro'yxat orqali belgilaysiz.</li><li>Bog'langan modellarni (ForeignKey) to'liq ob'ekt yoki faqat ID sifatida ko'rsatish mumkin.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Django / Python</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_django_23')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_django_23','res_django_23')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_django_23" contenteditable="true" spellcheck="false"># blog/serializers.py
+from rest_framework import serializers
+from .models import Post
+
+class PostSerializer(serializers.ModelSerializer):
+    author_username = serializers.ReadOnlyField(source='author.username')
+
+    class Meta:
+        model = Post
+        fields = ['id', 'title', 'content', 'created_at', 'author_username', 'is_published']</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_django_23">
+      <div class="result-label">🖥️ Django Terminal / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Django 5.1 Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Chiquvchi JSON:
+{
+  "id": 1,
+  "title": "Django darslari",
+  "content": "Maqola matni...",
+  "created_at": "2026-11-23T14:00:00Z",
+  "author_username": "ali",
+  "is_published": true
+}&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ Serializer-lar xuddi Django Formalari kabi ma'lumotlarning to'g'riligini (validation) ham tekshiradi.</div>
+
+    <div class="topic-nav">
+      <a href="#drf" class="topic-nav-btn prev">← Django REST Framework (DRF) — Kirish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Django | 23 / 30</span>
+      <a href="#viewsets" class="topic-nav-btn next">DRF ViewSets va Routers — Bir Lahzada To'liq CRUD →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">DRF</span>
+      <span style="font-size:12px; color:var(--text2);">Django Mavzu #24</span>
+    </div>
+    <h2 id="viewsets" style="color:#092e20; background: linear-gradient(90deg, #44b78b, #04AA6D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">DRF ViewSets va Routers — Bir Lahzada To'liq CRUD</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><code>ModelViewSet</code> barcha standart CRUD amallarni (list, create, retrieve, update, destroy) bitta klass ichida birlashtiradi. <strong>Router</strong> esa barcha URL marshrutlarini avtomatik hosil qiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Bitta klass barcha 5 ta asosiy HTTP metodini (GET, POST, PUT, PATCH, DELETE) qamrab oladi.</li><li><code>routers.DefaultRouter()</code> yordamida barcha URL manzillar avtomatik ulanadi.</li><li>Kodni 80% ga qisqartiradi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Django / Python</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_django_24')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_django_24','res_django_24')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_django_24" contenteditable="true" spellcheck="false"># blog/views.py va urls.py
 from rest_framework import viewsets, permissions
-from rest_framework.decorators import action
-from rest_framework.response import Response
+from .models import Post
+from .serializers import PostSerializer
+from rest_framework.routers import DefaultRouter
+from django.urls import path, include
 
-class KursViewSet(viewsets.ModelViewSet):
-    queryset = Kurs.objects.filter(nashr_etildi=True)
-    serializer_class = KursSerializer
+class PostViewSet(viewsets.ModelViewSet):
+    queryset = Post.objects.filter(is_published=True)
+    serializer_class = PostSerializer
     permission_classes = [permissions.IsAuthenticatedOrReadOnly]
 
-    @action(detail=False, methods=['get'])
-    def mashhur(self, request):
-        """Eng mashhur kurslar"""
-        kurslar = self.queryset.order_by('-ko_rilgan')[:5]
-        serializer = self.get_serializer(kurslar, many=True)
-        return Response(serializer.data)
-
-# urls.py
-from rest_framework.routers import DefaultRouter
+# Routing:
 router = DefaultRouter()
-router.register('kurslar', KursViewSet)
-urlpatterns = router.urls</pre></div>
-  </div>
+router.register(r'posts', PostViewSet, basename='post')
+
+urlpatterns = [
+    path('api/', include(router.urls)),
+]</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_django_24">
+      <div class="result-label">🖥️ Django Terminal / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Django 5.1 Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Avtomatik yaratilgan marshrutlar:
+GET    /api/posts/        -&gt; Barcha maqolalar ro'yxati
+POST   /api/posts/        -&gt; Yangi maqola yaratish
+GET    /api/posts/{id}/   -&gt; Bitta maqolani olish
+PUT    /api/posts/{id}/   -&gt; Maqolani to'liq yangilash
+PATCH  /api/posts/{id}/   -&gt; Maqolaning qismini yangilash
+DELETE /api/posts/{id}/   -&gt; Maqolani o'chirish&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">🚀 Birgina ModelViewSet va DefaultRouter orqali butun boshli REST API infratuzilmasi tayyor bo'ladi.</div>
+
+    <div class="topic-nav">
+      <a href="#serializer" class="topic-nav-btn prev">← DRF Serializers — Ma'lumotlarni JSON ga O'girish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Django | 24 / 30</span>
+      <a href="#jwt-drf" class="topic-nav-btn next">JWT Autentifikatsiya — SimpleJWT →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">JWT</span>
+      <span style="font-size:12px; color:var(--text2);">Django Mavzu #25</span>
+    </div>
+    <h2 id="jwt-drf" style="color:#092e20; background: linear-gradient(90deg, #44b78b, #04AA6D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">JWT Autentifikatsiya — SimpleJWT</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Mobil ilovalar va Single Page Application (React/Vue) lar bilan ishlashda sessiya o'rniga <strong>JWT (JSON Web Token)</strong> ishlatiladi. Django da buning uchun <code>djangorestframework-simplejwt</code> standarti qo'llaniladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Foydalanuvchi login qilganda 2 ta token oladi: <strong>Access Token</strong> (qisqa muddatli) va <strong>Refresh Token</strong> (uzoq muddatli).</li><li>Har bir so'rovda sarlavha uzatiladi: <code>Authorization: Bearer &lt;access_token&gt;</code>.</li><li>Server sessiya xotirasini band qilmaydi (Stateless arxitektura).</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Django / Python</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_django_25')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_django_25','res_django_25')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_django_25" contenteditable="true" spellcheck="false"># urls.py da SimpleJWT manzillarini ulash:
+from django.urls import path
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
+
+urlpatterns = [
+    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+]</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_django_25">
+      <div class="result-label">🖥️ Django Terminal / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Django 5.1 Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;POST /api/token/
+Body: {"username": "ali", "password": "mypassword"}
+Javob:
+{
+  "refresh": "eyJhbGciOiJIUzI1NiIsIn...",
+  "access": "eyJhbGciOiJIUzI1NiIsIn..."
+}&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">🔒 Access token odatda 5-15 daqiqa amal qiladi, u eskirganda Refresh token orqali yangisi so'rab olinadi.</div>
+
+    <div class="topic-nav">
+      <a href="#viewsets" class="topic-nav-btn prev">← DRF ViewSets va Routers — Bir Lahzada To'liq CRUD</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Django | 25 / 30</span>
+      <a href="#middleware-d" class="topic-nav-btn next">Django Middleware — So'rovlar Filtratori →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Middleware</span>
+      <span style="font-size:12px; color:var(--text2);">Django Mavzu #26</span>
+    </div>
+    <h2 id="middleware-d" style="color:#092e20; background: linear-gradient(90deg, #44b78b, #04AA6D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Django Middleware — So'rovlar Filtratori</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Middleware</strong> — bu har bir HTTP so'rovi View ga yetib borishidan oldin va javob brauzerga qaytishidan oldin oraliq tekshiruvlarni bajaruvchi filtr tizimidir.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Django xavfsizlik, sessiya, CSRF va autentifikatsiyani aynan Middleware orqali boshqaradi.</li><li>Maxsus (Custom) middleware orqali har bir so'rovning bajarilish vaqtini o'lchash yoki IP bo'yicha cheklash mumkin.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Django / Python</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_django_26')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_django_26','res_django_26')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_django_26" contenteditable="true" spellcheck="false"># core/middleware.py
+import time
+
+class RequestTimerMiddleware:
+    def __init__(self, get_response):
+        self.get_response = get_response
+
+    def __call__(self, request):
+        start_time = time.time()
+        
+        # View bajariladi:
+        response = self.get_response(request)
+        
+        duration = round((time.time() - start_time) * 1000, 2)
+        response['X-Page-Duration-Ms'] = str(duration)
+        print(f"[{request.method}] {request.path} bajarildi: {duration}ms")
+        
+        return response</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_django_26">
+      <div class="result-label">🖥️ Django Terminal / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Django 5.1 Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Server konsolida:
+[GET] /api/posts/ bajarildi: 14.2ms
+[POST] /api/token/ bajarildi: 45.8ms&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ Yaratilgan middleware-ni <code>settings.py</code> dagi <strong>MIDDLEWARE</strong> ro'yxatiga qo'shish kerak.</div>
+
+    <div class="topic-nav">
+      <a href="#jwt-drf" class="topic-nav-btn prev">← JWT Autentifikatsiya — SimpleJWT</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Django | 26 / 30</span>
+      <a href="#signals" class="topic-nav-btn next">Django Signals — Hodisalarni Kuzatish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Signals</span>
+      <span style="font-size:12px; color:var(--text2);">Django Mavzu #27</span>
+    </div>
+    <h2 id="signals" style="color:#092e20; background: linear-gradient(90deg, #44b78b, #04AA6D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Django Signals — Hodisalarni Kuzatish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Signals — bu loyihaning bir qismida biron hodisa yuz berganda (masalan, yangi foydalanuvchi ro'yxatdan o'tganda) boshqa qismini avtomatik xabardor qilish mexanizmidir (Observer pattern).</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Eng mashhur signallar: <code>post_save</code> (saqlangandan so'ng), <code>pre_delete</code> (o'chirilishdan oldin).</li><li>Klassik misol: Foydalanuvchi ro'yxatdan o'tishi bilan unga avtomatik ravishda bo'sh <code>Profile</code> yaratish.</li><li>Signallarni ushlash uchun <code>@receiver</code> dekoratori ishlatiladi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Django / Python</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_django_27')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_django_27','res_django_27')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_django_27" contenteditable="true" spellcheck="false"># users/signals.py
+from django.db.models.signals import post_save
+from django.contrib.auth.models import User
+from django.dispatch import receiver
+from .models import Profile
+
+@receiver(post_save, sender=User)
+def create_user_profile(sender, instance, created, **kwargs):
+    if created:
+        Profile.objects.create(user=instance)
+        print(f"Foydalanuvchi {instance.username} uchun avtomatik Profile yaratildi!")</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_django_27">
+      <div class="result-label">🖥️ Django Terminal / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Django 5.1 Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Hodisa:
+&gt;&gt;&gt; u = User.objects.create(username="anvar", email="anvar@uz")
+Foydalanuvchi anvar uchun avtomatik Profile yaratildi!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Signallar ilovalar o'rtasidagi bog'liqlikni (coupling) kamaytiradi va kodni toza saqlashga xizmat qiladi.</div>
+
+    <div class="topic-nav">
+      <a href="#middleware-d" class="topic-nav-btn prev">← Django Middleware — So'rovlar Filtratori</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Django | 27 / 30</span>
+      <a href="#celery" class="topic-nav-btn next">Celery va Redis — Asinxron Vazifalar →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Celery</span>
+      <span style="font-size:12px; color:var(--text2);">Django Mavzu #28</span>
+    </div>
+    <h2 id="celery" style="color:#092e20; background: linear-gradient(90deg, #44b78b, #04AA6D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Celery va Redis — Asinxron Vazifalar</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Veb-sayt tez ishlashi uchun ko'p vaqt oladigan og'ir vazifalar (masalan, email jo'natish, rasm o'lchamini o'zgartirish, PDF hisobot yasash) orqa fonda <strong>Celery</strong> orqali bajariladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Foydalanuvchi sahifada kutib o'tirmaydi, darhol javob oladi.</li><li>Broker sifatida <strong>Redis</strong> yoki <strong>RabbitMQ</strong> ishlatiladi.</li><li>Vazifani belgilash uchun <code>@shared_task</code> dekoratori qo'yiladi.</li><li>Vazifani chaqirish: <code>yuborish_vazifasi.delay(email, xabar)</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Django / Python</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_django_28')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_django_28','res_django_28')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_django_28" contenteditable="true" spellcheck="false"># tasks.py
+from celery import shared_task
+from django.core.mail import send_mail
+import time
+
+@shared_task
+def send_welcome_email(user_email):
+    # Orqa fonda email yuborish
+    time.sleep(3) # Simulyatsiya
+    print(f"Email muvaffaqiyatli yuborildi: {user_email}")
+    return "Yuborildi"
+
+# View ichida chaqirish:
+# send_welcome_email.delay("foydalanuvchi@gmail.com")</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_django_28">
+      <div class="result-label">🖥️ Django Terminal / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Django 5.1 Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Celery Worker konsolida:
+[2026-11-23 14:10:00,123: INFO/ForkPoolWorker-1] Task send_welcome_email[f8a3...] received
+Email muvaffaqiyatli yuborildi: foydalanuvchi@gmail.com
+[2026-11-23 14:10:03,456: INFO/ForkPoolWorker-1] Task send_welcome_email succeeded in 3.01s&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">🚀 Celery tufayli sayt tezligi 10 baravargacha oshishi mumkin, chunki uzoq kutiladigan amallar orqa fonda bajariladi.</div>
+
+    <div class="topic-nav">
+      <a href="#signals" class="topic-nav-btn prev">← Django Signals — Hodisalarni Kuzatish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Django | 28 / 30</span>
+      <a href="#cache" class="topic-nav-btn next">Django Caching — Saytni Tezlashtirish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Cache</span>
+      <span style="font-size:12px; color:var(--text2);">Django Mavzu #29</span>
+    </div>
+    <h2 id="cache" style="color:#092e20; background: linear-gradient(90deg, #44b78b, #04AA6D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Django Caching — Saytni Tezlashtirish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Kesh — bu tez-tez so'raladigan ma'lumotlar yoki tayyor HTML sahifalarni tezkor xotirada (RAM) saqlab turish orqali ma'lumotlar bazasiga bo'ladigan yuklamani 95% gacha kamaytirish usulidir.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Django kesh mexanizmlari: Redis, Memcached, Database yoki Local Memory.</li><li>Sahifani to'liq keshlash: <code>@cache_page(60 * 15)</code> (15 daqiqa).</li><li>Shablon qismlarini keshlash: <code>{% cache 500 sidebar %} ... {% endcache %}</code>.</li><li>Past darajadagi API: <code>cache.set('key', value, timeout)</code> va <code>cache.get('key')</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Django / Python</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_django_29')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_django_29','res_django_29')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_django_29" contenteditable="true" spellcheck="false"># Past darajali Kesh API
+from django.core.cache import cache
+
+def get_stats():
+    stats = cache.get('sayt_statistikasi')
+    if not stats:
+        print("Ma'lumotlar bazasidan hisoblanmoqda...")
+        stats = {"users_count": 15420, "posts_count": 890}
+        cache.set('sayt_statistikasi', stats, timeout=300) # 5 daqiqa
+    else:
+        print("Keshdan olindi (RAM tezligi ⚡)!")
+    return stats</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_django_29">
+      <div class="result-label">🖥️ Django Terminal / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Django 5.1 Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Birinchi chaqiriq:
+Ma'lumotlar bazasidan hisoblanmoqda... (120ms)
+
+Ikkinchi chaqiriq:
+Keshdan olindi (RAM tezligi ⚡)! (1.2ms)&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ Redis keshidan ma'lumot olish ma'lumotlar bazasiga nisbatan 100 baravar tezroq bajariladi.</div>
+
+    <div class="topic-nav">
+      <a href="#celery" class="topic-nav-btn prev">← Celery va Redis — Asinxron Vazifalar</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Django | 29 / 30</span>
+      <a href="#deploy" class="topic-nav-btn next">Deployment — Loyihani Serverga Chiqarish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Deploy</span>
+      <span style="font-size:12px; color:var(--text2);">Django Mavzu #30</span>
+    </div>
+    <h2 id="deploy" style="color:#092e20; background: linear-gradient(90deg, #44b78b, #04AA6D); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Deployment — Loyihani Serverga Chiqarish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Dasturlash tugagach, loyiha real foydalanuvchilar kirishi uchun Internetga (VPS / Cloud server) joylashtiriladi. Standart Django deploy steki: <strong>Ubuntu + Nginx + Gunicorn + PostgreSQL</strong>.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><code>settings.py</code> da: <strong>DEBUG = False</strong> va <strong>ALLOWED_HOSTS = ['sizningsaytingiz.uz']</strong> qilish shart.</li><li>Maxfiy kalitlar (SECRET_KEY, DB parollar) <code>.env</code> faylida saqlanadi.</li><li>Statik fayllar to'planadi: <code>python manage.py collectstatic</code>.</li><li><strong>Gunicorn</strong> — Python WSGI serveri, <strong>Nginx</strong> — teskari proksi (reverse proxy) va statik fayllarni tarqatuvchi sifatida ishlaydi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Django / Python</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_django_30')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_django_30','res_django_30')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_django_30" contenteditable="true" spellcheck="false"># Gunicorn bilan ishga tushirish:
+gunicorn myproject.wsgi:application --bind 0.0.0.0:8000 --workers 3
+
+# Nginx konfiguratsiyasi namunasi:
+server {
+    listen 80;
+    server_name w3learn.uz www.w3learn.uz;
+
+    location /static/ {
+        alias /var/www/myproject/staticfiles/;
+    }
+
+    location / {
+        proxy_pass http://127.0.0.1:8000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_django_30">
+      <div class="result-label">🖥️ Django Terminal / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Django 5.1 Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Production Status:
+DEBUG = False [Xavfsiz]
+Nginx Status: Active (Running) 🟢
+Gunicorn Status: 3 workers active 🟢
+SSL/HTTPS: Let's Encrypt Certbot Active 🔒
+Site is LIVE at https://w3learn.uz&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">🔒 HECH QACHON produksiyada <code>DEBUG = True</code> qoldirmang, aks holda xatolik yuz berganda sayt sirlari va parollari ekranda ochilib qoladi.</div>
+
+    <div class="topic-nav">
+      <a href="#cache" class="topic-nav-btn prev">← Django Caching — Saytni Tezlashtirish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Django | 30 / 30</span>
+      <a href="cpp.html" class="topic-nav-btn next">Keyingi kurs: C++ Darslari →</a>
+    </div>
+  </section>
 
   <div class="quiz-box">
-    <div class="quiz-q">🧪 Test: Django qaysi dasturlash tilida yozilgan?</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qr1')">JavaScript</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, true, 'qr1')">Python</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qr1')">Ruby</div>
-    <div class="quiz-result" id="qr1"></div>
+    <div class="quiz-q">🧪 Test: Django-da yangi ma'lumotlar bazasi migratsiya faylini yaratish uchun qaysi buyruq ishlatiladi?</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'djQr1')">python manage.py migrate</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, true, 'djQr1')">python manage.py makemigrations</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'djQr1')">python manage.py runmigrations</div>
+    <div class="quiz-result" id="djQr1"></div>
   </div>
-  
 
-<div class="nav-btns">
-  <a href="java.html" class="btn-prev">&#8592; Java</a>
-  <a href="cpp.html" class="btn-next">C++ &#8594;</a>
-</div>
+  <div class="nav-btns" style="margin-top: 30px;">
+    <a href="python.html" class="btn-prev">← Python Darslari</a>
+    <a href="cpp.html" class="btn-next">C++ Darsiga O'tish →</a>
+  </div>
+
+  <div class="note note-blue" style="margin-top: 25px;">
+    📌 <strong>Keyingi qadam:</strong> Django orqali kuchli veb-ilova va API larni yaratishni o'rgandingiz. Tizimli va yuqori tezlikdagi dasturlash uchun <a href="cpp.html" style="color:var(--green)">C++ darslariga</a> o'ting!
+  </div>
 </main>
 <aside class="right-panel">
   <div class="rp-title">📈 Progress</div>

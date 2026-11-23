@@ -67,137 +67,1373 @@
   </ul>
 </aside>
 <main class="main">
-  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">C#</a> › C# Nima?</div>
-  <h1 id="kirish">C# (C Sharp) Nima?</h1>
-  <div class="meta-tags">
-    <span class="tag tag-green">⏱ 10 daqiqa</span>
-    <span class="tag tag-blue">🟡 O'rta</span>
-    <span class="tag tag-orange">👁 3,980 marta ko'rilgan</span>
-  </div>
-  <p><strong>C#</strong> — Microsoft tomonidan yaratilgan, .NET platformasida ishlovchi zamonaviy OOP tili. Web (ASP.NET), desktop (WPF), o'yinlar (Unity) va enterprise ilovalar yaratishda ishlatiladi.</p>
-  <div class="note">💡 <strong>Eslatma:</strong> C# va Java sintaksisi juda o'xshash, ikkalasi ham JVM/CLR platformasida ishlaydi.</div>
-
-  <h2 id="hello">Asosiy Sintaksis</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar"><span class="code-lang">C#</span>
-      <div class="code-actions"><button class="btn-copy" onclick="copyCode('code1')">📋 Nusxa</button></div>
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-purple">Asosiy</span>
+      <span style="font-size:12px; color:var(--text2);">C# Mavzu #1</span>
     </div>
-    <div class="code-body"><pre id="code1">using System;
+    <h2 id="kirish" style="color:#68217a; background: linear-gradient(90deg, #9b4f96, #512bd4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">C# Nima? Kirish va .NET Ekotizimi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>C# (C-Sharp)</strong> — Microsoft kompaniyasi tomonidan Anders Hejlsberg boshchiligida yaratilgan, zamonaviy, xavfsiz va ob'ektga yo'naltirilgan dasturlash tilidir. U kuchli <strong>.NET</strong> platformasi ustida ishlaydi va korporativ backend, veb-ilovalar (ASP.NET), mobil ilovalar (.NET MAUI), o'yinlar (Unity dvigateli) va bulut xizmatlarida (Azure) yetakchi hisoblanadi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Kuchli tiplashtirilgan (Type-safe) va xavfsiz til — xotira o'chirilishini Garbage Collector (GC) avtomatik boshqaradi.</li><li>Kross-platforma: Windows, Linux va macOS da bir xil yuqori tezlikda ishlaydi.</li><li>Unity o'yin dvigatelining rasmiy asosiy tili.</li><li>Dunyoning eng yirik banklari, elektron tijorat va tibbiyot tizimlari C# va ASP.NET Core asosida ishlaydi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C# / .NET 8</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_csharp_1')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_csharp_1','res_csharp_1')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_csharp_1" contenteditable="true" spellcheck="false">// C# dasturining eng sodda ko'rinishi (.NET 8/9 Top-level statements)
+using System;
+
+Console.WriteLine("Assalomu alaykum, C# Dunyosi! 💜");
+Console.WriteLine(".NET 8 zamonaviy, chaqqon va xavfsiz ekotizim.");</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_csharp_1">
+      <div class="result-label">🖥️ .NET Runtime / Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟣 .NET 8 CLR Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Assalomu alaykum, C# Dunyosi! 💜
+.NET 8 zamonaviy, chaqqon va xavfsiz ekotizim.
+[Process finished with exit code 0]&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 C# tili C++ ning tezligini va Java ning qulayligini o'zida birlashtirgan, ayni paytda eng zamonaviy sintaksis imkoniyatlariga ega tildir.</div>
+
+    <div class="topic-nav">
+      <a href="cpp.html" class="topic-nav-btn prev">← C++ Darslari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C# | 1 / 25</span>
+      <a href="#install" class="topic-nav-btn next">.NET SDK O'rnatish va CLI Buyruqlari →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-purple">O'rnatish</span>
+      <span style="font-size:12px; color:var(--text2);">C# Mavzu #2</span>
+    </div>
+    <h2 id="install" style="color:#68217a; background: linear-gradient(90deg, #9b4f96, #512bd4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">.NET SDK O'rnatish va CLI Buyruqlari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">C# bilan ishlash uchun kompyuterga <strong>.NET SDK</strong> (Software Development Kit) o'rnatiladi. U kompilyator (Roslyn), standart kutubxonalar va <code>dotnet</code> CLI boshqaruv vositasini o'z ichiga oladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Rasmiy sayt: <code>dotnet.microsoft.com</code> dan yuklab olinadi.</li><li>Yangi konsol loyiha ochish: <code>dotnet new console -o MeningDasturim</code>.</li><li>Loyihani ishga tushirish: <code>dotnet run</code>.</li><li>Ishlab chiqish muhiti (IDE): Visual Studio, VS Code (C# Dev Kit) yoki JetBrains Rider.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C# / .NET 8</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_csharp_2')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_csharp_2','res_csharp_2')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_csharp_2" contenteditable="true" spellcheck="false"># Terminal buyruqlari
+# 1. .NET SDK versiyasini tekshirish
+dotnet --version
+
+# 2. Yangi konsol ilovasi yaratish
+dotnet new console -o SalomW3Learn
+cd SalomW3Learn
+
+# 3. Dasturni ishga tushirish
+dotnet run</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_csharp_2">
+      <div class="result-label">🖥️ .NET Runtime / Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟣 .NET 8 CLR Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;8.0.404
+The template "Console App" was created successfully.
+Processing post-creation actions...
+Restoring C:\Projects\SalomW3Learn\SalomW3Learn.csproj...
+  Determining projects to restore...
+  Restored C:\Projects\SalomW3Learn\SalomW3Learn.csproj (in 120 ms).
+Restore succeeded.
+
+Hello, World!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ <code>dotnet run</code> buyrug'i kodni avtomatik kompilyatsiya qiladi va bir zumda ishga tushiradi.</div>
+
+    <div class="topic-nav">
+      <a href="#kirish" class="topic-nav-btn prev">← C# Nima? Kirish va .NET Ekotizimi</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C# | 2 / 25</span>
+      <a href="#hello" class="topic-nav-btn next">Hello World — Program.cs va Top-level Statements →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-purple">Sintaksis</span>
+      <span style="font-size:12px; color:var(--text2);">C# Mavzu #3</span>
+    </div>
+    <h2 id="hello" style="color:#68217a; background: linear-gradient(90deg, #9b4f96, #512bd4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Hello World — Program.cs va Top-level Statements</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Zamonaviy C# versiyalarida (C# 9 dan boshlab) ortiqcha 'boilerplate' kodlardan (namespace, class Program, static void Main) voz kechilib, <strong>Top-level statements</strong> joriy qilingan. Bu dasturni o'rganishni bir necha qator kod bilan boshlash imkonini beradi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Klassik usul: <code>namespace</code> -&gt; <code>class Program</code> -&gt; <code>static void Main(string[] args)</code>.</li><li>Zamonaviy usul: to'g'ridan-to'g'ri kod yozish (faylning o'zi Main vazifasini bajaradi).</li><li>Konsolga chiqarish: <code>Console.WriteLine("...")</code> (yangi satr bilan) yoki <code>Console.Write("...")</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C# / .NET 8</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_csharp_3')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_csharp_3','res_csharp_3')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_csharp_3" contenteditable="true" spellcheck="false">// Program.cs
+using System;
+
+string dasturchi = "Rustam";
+int tajriba = 3;
+
+Console.WriteLine($"Dasturchi: {dasturchi}");
+Console.WriteLine($"Tajriba: {tajriba} yil");
+Console.WriteLine("W3Learn platformasida C# kursini o'rganmoqda.");</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_csharp_3">
+      <div class="result-label">🖥️ .NET Runtime / Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟣 .NET 8 CLR Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Dasturchi: Rustam
+Tajriba: 3 yil
+W3Learn platformasida C# kursini o'rganmoqda.&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Satr boshidagi <code>$</code> belgisi (string interpolation) o'zgaruvchilarni matn ichiga <code>{o'zgaruvchi}</code> ko'rinishida qulay joylashtirish imkonini beradi.</div>
+
+    <div class="topic-nav">
+      <a href="#install" class="topic-nav-btn prev">← .NET SDK O'rnatish va CLI Buyruqlari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C# | 3 / 25</span>
+      <a href="#ozgaruvchi" class="topic-nav-btn next">O'zgaruvchilar va var Kalit So'zi →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-purple">Asoslar</span>
+      <span style="font-size:12px; color:var(--text2);">C# Mavzu #4</span>
+    </div>
+    <h2 id="ozgaruvchi" style="color:#68217a; background: linear-gradient(90deg, #9b4f96, #512bd4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">O'zgaruvchilar va var Kalit So'zi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">C# da o'zgaruvchilarni aniq tip ko'rsatib (explicit) yoki <code>var</code> kalit so'zi yordamida (implicit) e'lon qilish mumkin. <code>var</code> ishlatilganda ham o'zgaruvchi qat'iy tipli bo'lib qoladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Aniq e'lon qilish: <code>int yosh = 25;</code>, <code>string shahar = "Toshkent";</code>.</li><li>Tipni avtomatik aniqlash: <code>var narx = 99.99;</code> (kompilyator buni double deb biladi).</li><li>O'zgarmaslar: <code>const double Soliq = 0.12;</code>.</li><li>C# katta va kichik harflarni farqlaydi (Case-sensitive).</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C# / .NET 8</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_csharp_4')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_csharp_4','res_csharp_4')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_csharp_4" contenteditable="true" spellcheck="false">using System;
+
+int talabalarSoni = 45;
+var kursNomi = "C# Backend";
+const string Valyuta = "UZS";
+
+// var ga boshqa turdagi ma'lumot yuklab bo'lmaydi (xatolik beradi)
+// kursNomi = 100; // XATO!
+
+Console.WriteLine($"Kurs: {kursNomi}");
+Console.WriteLine($"Guruhdagi talabalar: {talabalarSoni} nafar");
+Console.WriteLine($"Hisob valyutasi: {Valyuta}");</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_csharp_4">
+      <div class="result-label">🖥️ .NET Runtime / Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟣 .NET 8 CLR Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Kurs: C# Backend
+Guruhdagi talabalar: 45 nafar
+Hisob valyutasi: UZS&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ <code>var</code> JavaScript dagi kabi dinamik tip emas. Kompilyatsiya vaqtida uning tipi aniqlanadi va uni keyinchalik o'zgartirib bo'lmaydi.</div>
+
+    <div class="topic-nav">
+      <a href="#hello" class="topic-nav-btn prev">← Hello World — Program.cs va Top-level Statements</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C# | 4 / 25</span>
+      <a href="#typlar" class="topic-nav-btn next">Ma'lumot Turlari — Value vs Reference Types →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-purple">Tiplar</span>
+      <span style="font-size:12px; color:var(--text2);">C# Mavzu #5</span>
+    </div>
+    <h2 id="typlar" style="color:#68217a; background: linear-gradient(90deg, #9b4f96, #512bd4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Ma'lumot Turlari — Value vs Reference Types</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">C# dagi barcha ma'lumot turlari ikkita katta toifaga bo'linadi: <strong>Value Types</strong> (Stack xotirada qiymatning o'zi saqlanadi) va <strong>Reference Types</strong> (Heap xotirada ob'ekt, Stack da unga ko'rsatkich saqlanadi).</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Value types: <code>int</code>, <code>double</code>, <code>float</code>, <code>decimal</code> (moliyaviy hisob-kitoblar uchun aniq), <code>bool</code>, <code>char</code>, <code>struct</code>.</li><li>Reference types: <code>string</code>, <code>class</code>, <code>interface</code>, <code>array</code>, <code>delegate</code>.</li><li>Nullable Types: <code>int? raqam = null;</code> — qiymat bo'lmasligi mumkin bo'lgan maydonlar uchun.</li><li>C# dagi barcha turlarning eng oliy ajdodi — <code>System.Object</code> hisoblanadi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C# / .NET 8</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_csharp_5')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_csharp_5','res_csharp_5')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_csharp_5" contenteditable="true" spellcheck="false">using System;
+
+// Decimal - moliyaviy hisoblar uchun eng aniq tur
+decimal oylikMaosh = 14500000.50m; // oxiriga 'm' qo'yiladi
+
+// Nullable turi (qiymat yo'q bo'lishi mumkin)
+int? passportRaqami = null;
+
+if (passportRaqami.HasValue) {
+    Console.WriteLine($"Passport: {passportRaqami.Value}");
+} else {
+    Console.WriteLine("Passport ma'lumotlari kiritilmagan.");
+}
+
+Console.WriteLine($"Oylik: {oylikMaosh:N2} so'm");</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_csharp_5">
+      <div class="result-label">🖥️ .NET Runtime / Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟣 .NET 8 CLR Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Passport ma'lumotlari kiritilmagan.
+Oylik: 14,500,000.50 so'm&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Bank va to'lov tizimlarida sonlarni yaxlitlashdagi yo'qotishlarning oldini olish uchun doimo <code>double</code> emas, <code>decimal</code> ishlatiladi.</div>
+
+    <div class="topic-nav">
+      <a href="#ozgaruvchi" class="topic-nav-btn prev">← O'zgaruvchilar va var Kalit So'zi</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C# | 5 / 25</span>
+      <a href="#shartlar" class="topic-nav-btn next">Shartlar — if, else va Switch Expressions →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-purple">Mantiq</span>
+      <span style="font-size:12px; color:var(--text2);">C# Mavzu #6</span>
+    </div>
+    <h2 id="shartlar" style="color:#68217a; background: linear-gradient(90deg, #9b4f96, #512bd4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Shartlar — if, else va Switch Expressions</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">C# dastur oqimini boshqarish uchun an'anaviy <code>if-else</code> bilan birga C# 8 da kiritilgan ajoyib va ixcham <strong>Switch Expressions</strong> sintaksisini taqdim etadi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Klassik if-else bloklari.</li><li>Pattern Matching: o'zgaruvchi turiga va qiymatiga qarab shart tekshirish.</li><li>Switch Expression: <code>qiymat switch { holat1 =&gt; natija1, _ =&gt; sukut }</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C# / .NET 8</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_csharp_6')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_csharp_6','res_csharp_6')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_csharp_6" contenteditable="true" spellcheck="false">using System;
+
+int kun = 6;
+
+// Zamonaviy Switch Expression
+string kunNomi = kun switch
+{
+    1 =&gt; "Dushanba",
+    2 =&gt; "Seshanba",
+    3 =&gt; "Chorshanba",
+    4 =&gt; "Payshanba",
+    5 =&gt; "Juma (Muborak)",
+    6 or 7 =&gt; "Dam olish kuni 🎉",
+    _ =&gt; "Noto'g'ri kun raqami"
+};
+
+Console.WriteLine($"Hafta kuni: {kunNomi}");</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_csharp_6">
+      <div class="result-label">🖥️ .NET Runtime / Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟣 .NET 8 CLR Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Hafta kuni: Dam olish kuni 🎉&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ Switch expression da pastki chiziq <code>_</code> belgisi klassik switch dagi <code>default</code> vazifasini bajaradi.</div>
+
+    <div class="topic-nav">
+      <a href="#typlar" class="topic-nav-btn prev">← Ma'lumot Turlari — Value vs Reference Types</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C# | 6 / 25</span>
+      <a href="#sikllar" class="topic-nav-btn next">Sikllar — for, while va foreach →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-purple">Sikllar</span>
+      <span style="font-size:12px; color:var(--text2);">C# Mavzu #7</span>
+    </div>
+    <h2 id="sikllar" style="color:#68217a; background: linear-gradient(90deg, #9b4f96, #512bd4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Sikllar — for, while va foreach</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Takroriy amallarni bajarish uchun C# da to'rtta sikl turi mavjud. Ro'yxat va massivlar bilan ishlashda eng mashhuri <code>foreach</code> siklidir.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><code>for (int i = 0; i &lt; n; i++)</code> — ma'lum sondagi takrorlanishlar.</li><li><code>foreach (var element in toplom)</code> — to'plamdagi har bir elementni navbati bilan o'qish.</li><li><code>while (shart)</code> va <code>do { ... } while (shart);</code>.</li><li>Siklni boshqarish: <code>break</code> va <code>continue</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C# / .NET 8</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_csharp_7')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_csharp_7','res_csharp_7')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_csharp_7" contenteditable="true" spellcheck="false">using System;
+
+string[] tillar = { "C#", "Python", "JavaScript", "Go", "Java" };
+
+Console.WriteLine("Dasturlash tillari ro'yxati:");
+foreach (var til in tillar)
+{
+    if (til == "JavaScript") continue; // O'tkazib yuborish
+    Console.WriteLine($"- {til}");
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_csharp_7">
+      <div class="result-label">🖥️ .NET Runtime / Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟣 .NET 8 CLR Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Dasturlash tillari ro'yxati:
+- C#
+- Python
+- Go
+- Java&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 <code>foreach</code> siklida to'plam elementlari faqat o'qish uchun (read-only) bo'ladi, sikl ichida ularni o'zgartirib bo'lmaydi.</div>
+
+    <div class="topic-nav">
+      <a href="#shartlar" class="topic-nav-btn prev">← Shartlar — if, else va Switch Expressions</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C# | 7 / 25</span>
+      <a href="#massiv" class="topic-nav-btn next">Massivlar va List<T> To'plami →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-purple">To'plamlar</span>
+      <span style="font-size:12px; color:var(--text2);">C# Mavzu #8</span>
+    </div>
+    <h2 id="massiv" style="color:#68217a; background: linear-gradient(90deg, #9b4f96, #512bd4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Massivlar va List<T> To'plami</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">C# da o'lchami o'zgarmas massivlar (<code>T[]</code>) va o'lchami dinamik o'suvchi generik ro'yxatlar (<code>List&lt;T&gt;</code>) ishlatiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Statik massiv: <code>int[] raqamlar = new int[5];</code>.</li><li>Dinamik ro'yxat: <code>List&lt;string&gt; shaharlar = new();</code>.</li><li>Element qo'shish: <code>list.Add("Samarqand");</code>.</li><li>Element o'chirish: <code>list.Remove("Buxoro");</code>.</li><li>Elementlar soni: <code>list.Count</code> (massivda esa <code>arr.Length</code>).</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C# / .NET 8</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_csharp_8')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_csharp_8','res_csharp_8')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_csharp_8" contenteditable="true" spellcheck="false">using System;
 using System.Collections.Generic;
 
-class HelloWorld {
-    static void Main(string[] args) {
-        Console.WriteLine("Salom, Dunyo!");
+List&lt;string&gt; viloyatlar = new List&lt;string&gt; { "Toshkent", "Samarqand", "Farg'ona" };
 
-        // O'zgaruvchilar
-        string ism = "Ali";
-        int yosh = 25;
-        double baland = 1.75;
-        bool faol = true;
+viloyatlar.Add("Buxoro");
+viloyatlar.Add("Xorazm");
 
-        Console.WriteLine($"Ism: {ism}, Yosh: {yosh}"); // String interpolation
+Console.WriteLine($"Jami viloyatlar soni: {viloyatlar.Count}");
+Console.WriteLine($"Birinchi viloyat: {viloyatlar[0]}");
 
-        // List
-        List&lt;string&gt; ismlar = new List&lt;string&gt; { "Ali", "Zulfiya", "Kamol" };
-        foreach (string i in ismlar) {
-            Console.WriteLine($"- {i}");
-        }
-
-        // Null-safety
-        string? maybeNull = null;
-        Console.WriteLine(maybeNull?.ToUpper() ?? "Null qiymat");
-    }
-}</pre></div>
-  </div>
-
-  <h2 id="linq">LINQ — Til Integrasiyalashgan So'rovlar</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar"><span class="code-lang">C# (LINQ)</span>
-      <div class="code-actions"><button class="btn-copy" onclick="copyCode('code2')">📋 Nusxa</button></div>
+viloyatlar.Remove("Farg'ona");
+Console.WriteLine($"O'chirilgandan so'ng soni: {viloyatlar.Count}");</pre>
+      </div>
     </div>
-    <div class="code-body"><pre id="code2">using System;
+    <div class="result-box" id="res_csharp_8">
+      <div class="result-label">🖥️ .NET Runtime / Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟣 .NET 8 CLR Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Jami viloyatlar soni: 5
+Birinchi viloyat: Toshkent
+O'chirilgandan so'ng soni: 4&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ 99% amaliy loyihalarda statik massiv o'rniga qulayligi va xavfsizligi tufayli <code>List&lt;T&gt;</code> ishlatiladi.</div>
+
+    <div class="topic-nav">
+      <a href="#sikllar" class="topic-nav-btn prev">← Sikllar — for, while va foreach</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C# | 8 / 25</span>
+      <a href="#matn" class="topic-nav-btn next">String va StringBuilder bilan Ishlash →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-purple">String</span>
+      <span style="font-size:12px; color:var(--text2);">C# Mavzu #9</span>
+    </div>
+    <h2 id="matn" style="color:#68217a; background: linear-gradient(90deg, #9b4f96, #512bd4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">String va StringBuilder bilan Ishlash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">C# da <code>string</code> o'zgarmas (immutable) tur hisoblanadi. Agar matn ustida ko'p sonli o'zgartirishlar bajarilsa, xotirani tejash uchun <code>StringBuilder</code> ishlatiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>String Interpolation: <code>$"Salom, {ism}!"</code>.</li><li>Matn metodlari: <code>ToUpper()</code>, <code>ToLower()</code>, <code>Contains()</code>, <code>Replace()</code>, <code>Split()</code>.</li><li>Ko'p qatorli matnlar: <code>@"C:\Papkalar\Fayl.txt"</code> (Verbatim string) yoki uchta qo'shtirnoq <code>""" ... """</code> (Raw string literals).</li><li>Katta matnlarni birlashtirishda <code>StringBuilder.Append()</code> eng yuqori unumdorlik beradi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C# / .NET 8</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_csharp_9')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_csharp_9','res_csharp_9')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_csharp_9" contenteditable="true" spellcheck="false">using System;
+using System.Text;
+
+// String metodlari
+string kitob = "  C# Asoslari va Algoritmlar  ";
+string tozaKitob = kitob.Trim();
+
+Console.WriteLine($"Tozalangan: '{tozaKitob}'");
+Console.WriteLine($"Katta harflarda: {tozaKitob.ToUpper()}");
+Console.WriteLine($"'Asos' so'zi bormi: {tozaKitob.Contains("Asos")}");
+
+// StringBuilder yordamida tezkor matn yig'ish
+StringBuilder sb = new StringBuilder();
+for (int i = 1; i &lt;= 3; i++) {
+    sb.Append($"Qator #{i}; ");
+}
+Console.WriteLine($"StringBuilder natijasi: {sb.ToString()}");</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_csharp_9">
+      <div class="result-label">🖥️ .NET Runtime / Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟣 .NET 8 CLR Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Tozalangan: 'C# Asoslari va Algoritmlar'
+Katta harflarda: C# ASOSLARI VA ALGORITMLAR
+'Asos' so'zi bormi: True
+StringBuilder natijasi: Qator #1; Qator #2; Qator #3; &lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Tsikl ichida matnlarni <code>+</code> bilan qo'shish har safar yangi xotira ajratadi, bunday holatda doimo <code>StringBuilder</code> dan foydalaning.</div>
+
+    <div class="topic-nav">
+      <a href="#massiv" class="topic-nav-btn prev">← Massivlar va List<T> To'plami</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C# | 9 / 25</span>
+      <a href="#class" class="topic-nav-btn next">Klasslar va Xususiyatlar (Properties) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-purple">OOP</span>
+      <span style="font-size:12px; color:var(--text2);">C# Mavzu #10</span>
+    </div>
+    <h2 id="class" style="color:#68217a; background: linear-gradient(90deg, #9b4f96, #512bd4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Klasslar va Xususiyatlar (Properties)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Klass — bu ob'ektning modeli. C# tili xususiyatlar (Properties) uchun <code>get; set;</code> avtomatik sintaksisini taqdim etadi. Bu Java dagi kabi uzun getter/setter metodlarini yozish zaruriyatini yo'q qiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Auto-properties: <code>public string Ism { get; set; }</code>.</li><li>Faqat o'qish uchun (Init-only / Read-only): <code>public int Id { get; init; }</code>.</li><li>Konstruktor: ob'ekt yaratilganda xususiyatlarni boshlang'ich qiymat bilan to'ldiradi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C# / .NET 8</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_csharp_10')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_csharp_10','res_csharp_10')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_csharp_10" contenteditable="true" spellcheck="false">using System;
+
+public class Foydalanuvchi
+{
+    // Auto-implemented Properties
+    public int Id { get; set; }
+    public string Ism { get; set; }
+    public string Email { get; set; }
+
+    // Konstruktor
+    public Foydalanuvchi(int id, string ism, string email)
+    {
+        Id = id;
+        Ism = ism;
+        Email = email;
+    }
+
+    public void MalumotBer()
+    {
+        Console.WriteLine($"[User #{Id}] Ism: {Ism}, Email: {Email}");
+    }
+}
+
+// Ishlatilishi:
+var user = new Foydalanuvchi(1, "Davron", "davron@w3learn.uz");
+user.MalumotBer();</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_csharp_10">
+      <div class="result-label">🖥️ .NET Runtime / Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟣 .NET 8 CLR Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;[User #1] Ism: Davron, Email: davron@w3learn.uz&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ <code>get; init;</code> yozilsa, xususiyatga faqat ob'ekt yaratilayotgan paytda qiymat berish mumkin bo'ladi, keyinchalik uni o'zgartirib bo'lmaydi (Immutability).</div>
+
+    <div class="topic-nav">
+      <a href="#matn" class="topic-nav-btn prev">← String va StringBuilder bilan Ishlash</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C# | 10 / 25</span>
+      <a href="#meros" class="topic-nav-btn next">Meros (Inheritance) va base Kalit So'zi →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-purple">OOP</span>
+      <span style="font-size:12px; color:var(--text2);">C# Mavzu #11</span>
+    </div>
+    <h2 id="meros" style="color:#68217a; background: linear-gradient(90deg, #9b4f96, #512bd4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Meros (Inheritance) va base Kalit So'zi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Meros olish orqali bola klass ota klassning barcha ochiq (public, protected) a'zolarini o'zlashtiradi. C# da klass faqat bitta ota klassdan meros olishi mumkin (Single Inheritance).</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Sintaksis: <code>public class Xodim : Shaxs { ... }</code>.</li><li>Ota klass konstruktoriga murojaat: <code>: base(parametrlar)</code>.</li><li><code>base.Metod()</code> orqali ota klass metodlarini chaqirish mumkin.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C# / .NET 8</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_csharp_11')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_csharp_11','res_csharp_11')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_csharp_11" contenteditable="true" spellcheck="false">using System;
+
+public class Shaxs
+{
+    public string Ism { get; set; }
+    public Shaxs(string ism) { Ism = ism; }
+
+    public void Salomlash()
+    {
+        Console.WriteLine($"Salom, mening ismim {Ism}.");
+    }
+}
+
+public class Dasturchi : Shaxs
+{
+    public string Til { get; set; }
+
+    // Ota klass konstruktorini chaqirish
+    public Dasturchi(string ism, string til) : base(ism)
+    {
+        Til = til;
+    }
+
+    public void KodYoz()
+    {
+        Console.WriteLine($"{Ism} hozirda {Til} tilida kod yozmoqda 💻");
+    }
+}
+
+var dev = new Dasturchi("Nodir", "C#");
+dev.Salomlash();
+dev.KodYoz();</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_csharp_11">
+      <div class="result-label">🖥️ .NET Runtime / Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟣 .NET 8 CLR Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Salom, mening ismim Nodir.
+Nodir hozirda C# tilida kod yozmoqda 💻&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Ota klassning umumiy mantiqini bola klassda qayta yozmasdan to'g'ridan-to'g'ri ishlatish dasturlashni tezlashtiradi.</div>
+
+    <div class="topic-nav">
+      <a href="#class" class="topic-nav-btn prev">← Klasslar va Xususiyatlar (Properties)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C# | 11 / 25</span>
+      <a href="#interface-c" class="topic-nav-btn next">Interface (Interfeyslar) va Shartnomalar →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-purple">OOP</span>
+      <span style="font-size:12px; color:var(--text2);">C# Mavzu #12</span>
+    </div>
+    <h2 id="interface-c" style="color:#68217a; background: linear-gradient(90deg, #9b4f96, #512bd4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Interface (Interfeyslar) va Shartnomalar</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Interface</strong> — bu klass qanday metodlarga ega bo'lishi kerakligini belgilab beruvchi shartnomadir (Contract). Klass bir nechta interfeysni birdaniga amalga oshirishi (implement) mumkin.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Interfeys nomlari C# an'anasiga ko'ra doimo katta <code>I</code> harfi bilan boshlanadi: <code>IRepository</code>, <code>IPayment</code>.</li><li>Klass interfeysdagi barcha metodlarni o'z ichida to'liq yozishi shart.</li><li>Dependency Injection (DI) va testlashning asosi hisoblanadi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C# / .NET 8</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_csharp_12')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_csharp_12','res_csharp_12')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_csharp_12" contenteditable="true" spellcheck="false">using System;
+
+public interface ITo'lovXizmati
+{
+    void TolovQil(decimal summa);
+    bool HolatniTekshir();
+}
+
+public class ClickTolov : ITo'lovXizmati
+{
+    public void TolovQil(decimal summa)
+    {
+        Console.WriteLine($"Click orqali {summa:N0} so'm to'lov muvaffaqiyatli amalga oshirildi ✅");
+    }
+
+    public bool HolatniTekshir() =&gt; true;
+}
+
+public class PaymeTolov : ITo'lovXizmati
+{
+    public void TolovQil(decimal summa)
+    {
+        Console.WriteLine($"Payme tizimida {summa:N0} so'm yechildi ✅");
+    }
+
+    public bool HolatniTekshir() =&gt; true;
+}
+
+ITo'lovXizmati tolov = new ClickTolov();
+tolov.TolovQil(250000);</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_csharp_12">
+      <div class="result-label">🖥️ .NET Runtime / Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟣 .NET 8 CLR Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Click orqali 250,000 so'm to'lov muvaffaqiyatli amalga oshirildi ✅&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ Interfeyslar tufayli kodni o'zgartirmasdan bitta to'lov tizimini boshqasiga bir zumda almashtirish mumkin (Polimorfizm).</div>
+
+    <div class="topic-nav">
+      <a href="#meros" class="topic-nav-btn prev">← Meros (Inheritance) va base Kalit So'zi</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C# | 12 / 25</span>
+      <a href="#abstract" class="topic-nav-btn next">Abstract Klasslar va Metodlar →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-purple">OOP</span>
+      <span style="font-size:12px; color:var(--text2);">C# Mavzu #13</span>
+    </div>
+    <h2 id="abstract" style="color:#68217a; background: linear-gradient(90deg, #9b4f96, #512bd4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Abstract Klasslar va Metodlar</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Abstract klass</strong> — bu to'liq yakunlanmagan klass bo'lib, undan to'g'ridan-to'g'ri ob'ekt olib bo'lmaydi (<code>new AbstractClass()</code> xato beradi). U faqat boshqa klasslar uchun qolip bo'lib xizmat qiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><code>abstract</code> kalit so'zi bilan belgilanadi.</li><li>Abstract metodlar tanaga ega bo'lmaydi, ularni bola klass <code>override</code> bilan to'ldirishi shart.</li><li>Oddiy metodlar va maydonlarga ham ega bo'lishi mumkin (Interfeysdan farqi shunda).</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C# / .NET 8</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_csharp_13')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_csharp_13','res_csharp_13')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_csharp_13" contenteditable="true" spellcheck="false">using System;
+
+public abstract class GeometrikShakl
+{
+    public string Nomi { get; set; }
+    public GeometrikShakl(string nomi) { Nomi = nomi; }
+
+    // Bola klass albatta yozishi shart bo'lgan abstrakt metod
+    public abstract double YuzaHisobla();
+
+    public void Malumot()
+    {
+        Console.WriteLine($"{Nomi} ning yuzasi: {YuzaHisobla()} kv birlik");
+    }
+}
+
+public class Kvadrat : GeometrikShakl
+{
+    public double Tomon { get; set; }
+    public Kvadrat(double tomon) : base("Kvadrat") { Tomon = tomon; }
+
+    public override double YuzaHisobla() =&gt; Tomon * Tomon;
+}
+
+var kv = new Kvadrat(5.0);
+kv.Malumot();</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_csharp_13">
+      <div class="result-label">🖥️ .NET Runtime / Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟣 .NET 8 CLR Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Kvadrat ning yuzasi: 25 kv birlik&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Abstract klass umumiy holat (state) va tayyor metodlarni merosxo'rlarga ulashish kerak bo'lganda eng maqbul tanlovdir.</div>
+
+    <div class="topic-nav">
+      <a href="#interface-c" class="topic-nav-btn prev">← Interface (Interfeyslar) va Shartnomalar</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C# | 13 / 25</span>
+      <a href="#overriding" class="topic-nav-btn next">Polimorfizm — virtual, override va sealed →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-purple">Polimorfizm</span>
+      <span style="font-size:12px; color:var(--text2);">C# Mavzu #14</span>
+    </div>
+    <h2 id="overriding" style="color:#68217a; background: linear-gradient(90deg, #9b4f96, #512bd4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Polimorfizm — virtual, override va sealed</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Ota klassdagi metod xatti-harakatini bola klassda qayta yozish uchun ota metodga <code>virtual</code>, bola metodga esa <code>override</code> kalit so'zi qo'yiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><code>virtual</code> — ota klass: 'Bu metodni bolalar qayta yozishi mumkin'.</li><li><code>override</code> — bola klass: 'Men ota klassning metodini o'zimga moslab o'zgartirdim'.</li><li><code>sealed</code> — boshqa hech kim bu metodni yoki klassni qayta yoza olmasligi uchun taqiqlaydi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C# / .NET 8</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_csharp_14')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_csharp_14','res_csharp_14')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_csharp_14" contenteditable="true" spellcheck="false">using System;
+
+public class Xabarnoma
+{
+    public virtual void Yubor(string xabar)
+    {
+        Console.WriteLine($"Standart xabarnoma: {xabar}");
+    }
+}
+
+public class SmsXabarnoma : Xabarnoma
+{
+    public override void Yubor(string xabar)
+    {
+        Console.WriteLine($"📱 SMS orqali yuborildi: {xabar}");
+    }
+}
+
+public class TelegramXabarnoma : Xabarnoma
+{
+    public override void Yubor(string xabar)
+    {
+        Console.WriteLine($"✈️ Telegram Bot orqali yuborildi: {xabar}");
+    }
+}
+
+Xabarnoma bot = new TelegramXabarnoma();
+bot.Yubor("W3Learn da yangi dars joylandi!");</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_csharp_14">
+      <div class="result-label">🖥️ .NET Runtime / Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟣 .NET 8 CLR Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;✈️ Telegram Bot orqali yuborildi: W3Learn da yangi dars joylandi!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ Agar metodga <code>virtual</code> yozilmasa, bola klassda <code>override</code> qilib bo'lmaydi.</div>
+
+    <div class="topic-nav">
+      <a href="#abstract" class="topic-nav-btn prev">← Abstract Klasslar va Metodlar</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C# | 14 / 25</span>
+      <a href="#linq" class="topic-nav-btn next">LINQ — Language Integrated Query →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-purple">LINQ</span>
+      <span style="font-size:12px; color:var(--text2);">C# Mavzu #15</span>
+    </div>
+    <h2 id="linq" style="color:#68217a; background: linear-gradient(90deg, #9b4f96, #512bd4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">LINQ — Language Integrated Query</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>LINQ</strong> — C# ning eng sevimli va qudratli imkoniyati bo'lib, massivlar, ro'yxatlar, XML va ma'lumotlar bazalaridan SQL ga o'xshash qulay sintaksis bilan ma'lumotlarni qidirish, filtrlash va tartiblash imkonini beradi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Filtrlash: <code>Where(x =&gt; shart)</code>.</li><li>Tanlash va o'zgartirish: <code>Select(x =&gt; x.Maydon)</code>.</li><li>Saralash: <code>OrderBy(x =&gt; x)</code> yoki <code>OrderByDescending()</code>.</li><li>Boshqa foydali metodlar: <code>First()</code>, <code>FirstOrDefault()</code>, <code>Any()</code>, <code>Count()</code>, <code>Sum()</code>, <code>Take()</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C# / .NET 8</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_csharp_15')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_csharp_15','res_csharp_15')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_csharp_15" contenteditable="true" spellcheck="false">using System;
+using System.Collections.Generic;
 using System.Linq;
-using System.Collections.Generic;
 
-class LINQMisol {
-    static void Main() {
-        var sonlar = new List&lt;int&gt; { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10 };
+var sonlar = new List&lt;int&gt; { 12, 5, 8, 20, 15, 3, 30, 7 };
 
-        // LINQ so'rovlar
-        var juftlar = sonlar.Where(n => n % 2 == 0).ToList();
-        Console.WriteLine($"Juft sonlar: {string.Join(", ", juftlar)}");
+// 10 dan katta juft sonlarni topish va saralash
+var saralangan = sonlar
+    .Where(s =&gt; s &gt; 10 &amp;&amp; s % 2 == 0)
+    .OrderBy(s =&gt; s)
+    .ToList();
 
-        var kvadratlar = sonlar.Select(n => n * n).ToList();
-        Console.WriteLine($"Kvadratlar: {string.Join(", ", kvadratlar)}");
+Console.WriteLine("Natija:");
+foreach (var s in saralangan)
+{
+    Console.WriteLine($"- {s}");
+}
 
-        int yigindi = sonlar.Sum();
-        double ortacha = sonlar.Average();
-        Console.WriteLine($"Yig'indi: {yigindi}, O'rtacha: {ortacha}");
-
-        // Obyektlar bilan
-        var foydalanuvchilar = new[] {
-            new { Ism = "Ali", Yosh = 25 },
-            new { Ism = "Zulfiya", Yosh = 22 },
-            new { Ism = "Kamol", Yosh = 30 }
-        };
-
-        var yoshlar = foydalanuvchilar
-            .Where(f => f.Yosh > 23)
-            .OrderBy(f => f.Yosh)
-            .Select(f => f.Ism);
-
-        foreach (var ism in yoshlar)
-            Console.WriteLine(ism);
-    }
-}</pre></div>
-  </div>
-
-  <h2 id="async">async / await</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar"><span class="code-lang">C# (Async)</span>
-      <div class="code-actions"><button class="btn-copy" onclick="copyCode('code3')">📋 Nusxa</button></div>
+Console.WriteLine($"Elementlar yig'indisi: {sonlar.Sum()}");
+Console.WriteLine($"Eng kattasi: {sonlar.Max()}");</pre>
+      </div>
     </div>
-    <div class="code-body"><pre id="code3">using System;
-using System.Net.Http;
+    <div class="result-box" id="res_csharp_15">
+      <div class="result-label">🖥️ .NET Runtime / Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟣 .NET 8 CLR Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Natija:
+- 12
+- 20
+- 30
+Elementlar yig'indisi: 100
+Eng kattasi: 30&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">🚀 LINQ yozilgan so'rovlar 'Deferred execution' (kechiktirilgan bajarilish) prinsipiga ega — ular <code>ToList()</code> chaqirilgandagina haqiqatda bajariladi.</div>
+
+    <div class="topic-nav">
+      <a href="#overriding" class="topic-nav-btn prev">← Polimorfizm — virtual, override va sealed</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C# | 15 / 25</span>
+      <a href="#generics-c" class="topic-nav-btn next">Generics (Umumlashgan Turlar) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-purple">Generics</span>
+      <span style="font-size:12px; color:var(--text2);">C# Mavzu #16</span>
+    </div>
+    <h2 id="generics-c" style="color:#68217a; background: linear-gradient(90deg, #9b4f96, #512bd4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Generics (Umumlashgan Turlar)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Generics — kodni ma'lum bir ma'lumot turiga bog'lab qo'ymasdan, istalgan tur uchun xavfsiz va unumdor ishlaydigan universal klass va metodlar yaratish usulidir.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Sintaksis: <code>&lt;T&gt;</code> (Type placeholder).</li><li>Boxing va Unboxing ortiqcha yuklamasini yo'qotadi va dastur tezligini oshiradi.</li><li>Cheklovlar (Constraints): <code>where T : class</code> yoki <code>where T : struct</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C# / .NET 8</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_csharp_16')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_csharp_16','res_csharp_16')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_csharp_16" contenteditable="true" spellcheck="false">using System;
+
+// Universal qiymatlarni almashtiruvchi generik metod
+public class Yordamchi
+{
+    public static void Almashtir&lt;T&gt;(ref T a, ref T b)
+    {
+        T temp = a;
+        a = b;
+        b = temp;
+    }
+}
+
+int x = 10, y = 99;
+Yordamchi.Almashtir(ref x, ref y);
+Console.WriteLine($"Sonlar: x={x}, y={y}");
+
+string matn1 = "Oq", matn2 = "Qora";
+Yordamchi.Almashtir(ref matn1, ref matn2);
+Console.WriteLine($"Matnlar: {matn1}, {matn2}");</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_csharp_16">
+      <div class="result-label">🖥️ .NET Runtime / Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟣 .NET 8 CLR Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Sonlar: x=99, y=10
+Matnlar: Qora, Oq&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 <code>List&lt;T&gt;</code>, <code>Dictionary&lt;TKey, TValue&gt;</code> kabi to'plamlar aynan Generics asosiga qurilgan.</div>
+
+    <div class="topic-nav">
+      <a href="#linq" class="topic-nav-btn prev">← LINQ — Language Integrated Query</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C# | 16 / 25</span>
+      <a href="#delegates" class="topic-nav-btn next">Delegates — Action, Func va Predicate →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-purple">Delegates</span>
+      <span style="font-size:12px; color:var(--text2);">C# Mavzu #17</span>
+    </div>
+    <h2 id="delegates" style="color:#68217a; background: linear-gradient(90deg, #9b4f96, #512bd4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Delegates — Action, Func va Predicate</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Delegate</strong> — bu funksiyaga havola (ko'rsatkich) saqlaydigan xavfsiz turdir. U funksiyalarni boshqa funksiyalarga parametr sifatida uzatish imkonini beradi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><code>Action&lt;T&gt;</code>: Hech narsa qaytarmaydigan (void) funksiyalar uchun.</li><li><code>Func&lt;T, TResult&gt;</code>: Qiymat qaytaradigan funksiyalar uchun (oxirgi parametr qaytariladigan tur).</li><li><code>Predicate&lt;T&gt;</code>: Faqat bool (true/false) qaytaradigan tekshiruvchi funksiyalar uchun.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C# / .NET 8</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_csharp_17')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_csharp_17','res_csharp_17')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_csharp_17" contenteditable="true" spellcheck="false">using System;
+
+// Func: ikkita int qabul qilib int qaytaradi
+Func&lt;int, int, int&gt; qoshish = (a, b) =&gt; a + b;
+Console.WriteLine($"5 + 7 = {qoshish(5, 7)}");
+
+// Action: parametr oladi, hech narsa qaytarmaydi
+Action&lt;string&gt; chopEt = xabar =&gt; Console.WriteLine($"[LOG]: {xabar}");
+chopEt("Tizim muvaffaqiyatli ishga tushdi");
+
+// Predicate: tekshirish
+Predicate&lt;int&gt; juftmi = son =&gt; son % 2 == 0;
+Console.WriteLine($"8 juftmi? {juftmi(8)}");</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_csharp_17">
+      <div class="result-label">🖥️ .NET Runtime / Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟣 .NET 8 CLR Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;5 + 7 = 12
+[LOG]: Tizim muvaffaqiyatli ishga tushdi
+8 juftmi? True&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ Zamonaviy C# da maxsus <code>delegate</code> deb yozib o'tirmasdan, deyarli har doim tayyor <code>Func</code> va <code>Action</code> ishlatiladi.</div>
+
+    <div class="topic-nav">
+      <a href="#generics-c" class="topic-nav-btn prev">← Generics (Umumlashgan Turlar)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C# | 17 / 25</span>
+      <a href="#events-c" class="topic-nav-btn next">Events (Hodisalar) — Publisher-Subscriber →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-purple">Events</span>
+      <span style="font-size:12px; color:var(--text2);">C# Mavzu #18</span>
+    </div>
+    <h2 id="events-c" style="color:#68217a; background: linear-gradient(90deg, #9b4f96, #512bd4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Events (Hodisalar) — Publisher-Subscriber</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Event (Hodisa)</strong> — bu biror amal sodir bo'lganda (masalan, tugma bosildi, to'lov muvaffaqiyatli bo'ldi) boshqa qismlarni xabardor qilish mexanizmidir.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><code>event EventHandler&lt;T&gt;</code> e'lon qilinadi.</li><li>Obuna bo'lish: <code>hodisa += MeniFunksiyam;</code>.</li><li>Obunani bekor qilish: <code>hodisa -= MeniFunksiyam;</code>.</li><li>Hodisani chaqirish: <code>HodisaNomi?.Invoke(this, EventArgs);</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C# / .NET 8</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_csharp_18')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_csharp_18','res_csharp_18')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_csharp_18" contenteditable="true" spellcheck="false">using System;
+
+public class BankHisob
+{
+    public decimal Balans { get; private set; }
+    // Hodisa e'loni
+    public event Action&lt;decimal&gt; PulYechildi;
+
+    public void YechibOlish(decimal summa)
+    {
+        if (Balans &gt;= summa)
+        {
+            Balans -= summa;
+            PulYechildi?.Invoke(summa); // Barcha obunachilarni xabardor qilish
+        }
+    }
+
+    public BankHisob(decimal boshlangich) { Balans = boshlangich; }
+}
+
+var hisob = new BankHisob(1000000);
+
+// SMS xabarnoma obunachisi
+hisob.PulYechildi += s =&gt; Console.WriteLine($"SMS: Hisobingizdan {s:N0} so'm yechildi!");
+
+hisob.YechibOlish(150000);</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_csharp_18">
+      <div class="result-label">🖥️ .NET Runtime / Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟣 .NET 8 CLR Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;SMS: Hisobingizdan 150,000 so'm yechildi!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Hodisalar interfeys dasturlashda va asinxron arxitekturada kodlarning bir-biriga qattiq bog'lanib qolmasligini ta'minlaydi.</div>
+
+    <div class="topic-nav">
+      <a href="#delegates" class="topic-nav-btn prev">← Delegates — Action, Func va Predicate</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C# | 18 / 25</span>
+      <a href="#async" class="topic-nav-btn next">async va await — Asinxron Dasturlash →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-purple">Asinxron</span>
+      <span style="font-size:12px; color:var(--text2);">C# Mavzu #19</span>
+    </div>
+    <h2 id="async" style="color:#68217a; background: linear-gradient(90deg, #9b4f96, #512bd4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">async va await — Asinxron Dasturlash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Fayldan o'qish, tarmoq so'rovlari yoki ma'lumotlar bazasi amallari bajarilayotganda butun dasturni to'xtatib qo'ymaslik (UI qotib qolmasligi) uchun <strong>async / await</strong> ishlatiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Metod sarlavhasiga <code>async Task</code> yoki <code>async Task&lt;T&gt;</code> yoziladi.</li><li>Uzoq kutiladigan amallar oldiga <code>await</code> qo'yiladi.</li><li>Thread (oqim) bloklanmaydi, boshqa vazifalarni bajarishda davom etadi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C# / .NET 8</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_csharp_19')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_csharp_19','res_csharp_19')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_csharp_19" contenteditable="true" spellcheck="false">using System;
 using System.Threading.Tasks;
 
-class AsyncMisol {
-    static async Task Main() {
-        Console.WriteLine("Boshlandi...");
-
-        // Asinxron HTTP so'rov
-        string matn = await MalumatOlAsync("https://jsonplaceholder.typicode.com/posts/1");
-        Console.WriteLine($"Olingan: {matn.Substring(0, 50)}...");
-
-        // Parallel vazifalar
-        var vazifa1 = Task.Delay(1000).ContinueWith(_ => "Vazifa 1 tayyor");
-        var vazifa2 = Task.Delay(500).ContinueWith(_ => "Vazifa 2 tayyor");
-
-        var natijalar = await Task.WhenAll(vazifa1, vazifa2);
-        foreach (var natija in natijalar)
-            Console.WriteLine(natija);
+public class Dastur
+{
+    public static async Task Main()
+    {
+        Console.WriteLine("Ma'lumotlar bazasidan yuklanmoqda...");
+        
+        string natija = await MalumotYuklaAsync();
+        Console.WriteLine($"Qabul qilindi: {natija}");
     }
 
-    static async Task&lt;string&gt; MalumatOlAsync(string url) {
-        using var client = new HttpClient();
-        return await client.GetStringAsync(url);
+    public static async Task&lt;string&gt; MalumotYuklaAsync()
+    {
+        // 1 soniya asinxron kutish (tarmoq simulyatsiyasi)
+        await Task.Delay(1000);
+        return "1,500 ta foydalanuvchi ma'lumotlari tayyor!";
     }
-}</pre></div>
-  </div>
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_csharp_19">
+      <div class="result-label">🖥️ .NET Runtime / Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟣 .NET 8 CLR Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Ma'lumotlar bazasidan yuklanmoqda...
+[1 soniya kutish - oqim bloklanmadi]
+Qabul qilindi: 1,500 ta foydalanuvchi ma'lumotlari tayyor!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">🚀 ASP.NET Core da har bir ma'lumotlar bazasi so'rovi va API chaqiruvlari doimo <code>async / await</code> bilan yoziladi, bu serverga minglab foydalanuvchilarga barobar xizmat ko'rsatish imkonini beradi.</div>
+
+    <div class="topic-nav">
+      <a href="#events-c" class="topic-nav-btn prev">← Events (Hodisalar) — Publisher-Subscriber</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C# | 19 / 25</span>
+      <a href="#lambda-c" class="topic-nav-btn next">Lambda Expressions (Anonim Funksiyalar) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-purple">Lambda</span>
+      <span style="font-size:12px; color:var(--text2);">C# Mavzu #20</span>
+    </div>
+    <h2 id="lambda-c" style="color:#68217a; background: linear-gradient(90deg, #9b4f96, #512bd4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Lambda Expressions (Anonim Funksiyalar)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Lambda ifodasi — bu <code>=&gt;</code> (bunday ketadi / goes to) operatori yordamida yoziladigan ixcham nomsiz funksiyadir. U LINQ va delegatlar bilan ishlashda doimiy qo'llaniladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Sintaksis: <code>(parametrlar) =&gt; ifoda;</code>.</li><li>Bitta parametr bo'lsa qavslar ixtiyoriy: <code>x =&gt; x * 2</code>.</li><li>Blokli lambda: <code>(x, y) =&gt; { int s = x + y; return s; }</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C# / .NET 8</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_csharp_20')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_csharp_20','res_csharp_20')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_csharp_20" contenteditable="true" spellcheck="false">using System;
+using System.Collections.Generic;
+
+List&lt;int&gt; sonlar = new() { 1, 2, 3, 4, 5, 6, 7, 8 };
+
+// Lambda yordamida toq sonlarni topish
+var toqlar = sonlar.FindAll(n =&gt; n % 2 != 0);
+
+Console.WriteLine("Toq sonlar: " + string.Join(", ", toqlar));
+
+// Lambda orqali har biriga amal qo'llash
+sonlar.ForEach(n =&gt; Console.Write($"{n * 10} "));
+Console.WriteLine();</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_csharp_20">
+      <div class="result-label">🖥️ .NET Runtime / Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟣 .NET 8 CLR Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Toq sonlar: 1, 3, 5, 7
+10 20 30 40 50 60 70 80 &lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Lambda ifodalari C# kodini ancha qisqa, tushunarli va funksional uslubda yozishga yordam beradi.</div>
+
+    <div class="topic-nav">
+      <a href="#async" class="topic-nav-btn prev">← async va await — Asinxron Dasturlash</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C# | 20 / 25</span>
+      <a href="#aspnet" class="topic-nav-btn next">ASP.NET Core Kirish va Minimal APIs →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-purple">ASP.NET</span>
+      <span style="font-size:12px; color:var(--text2);">C# Mavzu #21</span>
+    </div>
+    <h2 id="aspnet" style="color:#68217a; background: linear-gradient(90deg, #9b4f96, #512bd4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">ASP.NET Core Kirish va Minimal APIs</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>ASP.NET Core</strong> — Microsoft kompaniyasining yuqori unumdorlikdagi, zamonaviy veb-freymvorkidir. .NET 6 dan boshlab kiritilgan <strong>Minimal APIs</strong> atigi bir necha qator kod bilan chaqmoqdek tez ishlovchi REST API yaratish imkonini beradi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>TechEmpower benchmarklarida dunyodagi eng tezkor veb-freymvorklar qatorida birinchi o'rinlarda turadi.</li><li>Ichiga o'rnatilgan Dependency Injection (DI) va Kestrel veb-serveri.</li><li>Yangi API yaratish: <code>dotnet new web -o MeningApi</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C# / .NET 8</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_csharp_21')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_csharp_21','res_csharp_21')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_csharp_21" contenteditable="true" spellcheck="false">// Program.cs (ASP.NET Core Minimal API)
+var builder = WebApplication.CreateBuilder(args);
+var app = builder.Build();
+
+app.MapGet("/", () =&gt; "Assalomu alaykum! ASP.NET Core Web API ishlamoqda 🚀");
+
+app.MapGet("/api/kurslar", () =&gt; new[] {
+    new { Id = 1, Nom = "C# Asoslari", Narx = 0 },
+    new { Id = 2, Nom = "ASP.NET Core Backend", Narx = 500000 }
+});
+
+app.Run();</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_csharp_21">
+      <div class="result-label">🖥️ .NET Runtime / Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟣 .NET 8 CLR Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;info: Microsoft.Hosting.Lifetime[14]
+      Now listening on: http://localhost:5000
+info: Microsoft.Hosting.Lifetime[0]
+      Application started. Press Ctrl+C to shut down.
+GET /api/kurslar -&gt; HTTP 200 OK (0.8ms)&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ Minimal APIs mikroxizmatlar (microservices) va kichik REST API lar yaratish uchun eng ideal vositadir.</div>
+
+    <div class="topic-nav">
+      <a href="#lambda-c" class="topic-nav-btn prev">← Lambda Expressions (Anonim Funksiyalar)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C# | 21 / 25</span>
+      <a href="#webapi" class="topic-nav-btn next">Web API — Controllers va Routing →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-purple">Web API</span>
+      <span style="font-size:12px; color:var(--text2);">C# Mavzu #22</span>
+    </div>
+    <h2 id="webapi" style="color:#68217a; background: linear-gradient(90deg, #9b4f96, #512bd4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Web API — Controllers va Routing</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Katta korporativ loyihalarda API larni tuzilmali va tartibli tashkil qilish uchun Controller asosidagi yondashuv ishlatiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><code>[ApiController]</code> va <code>[Route("api/[controller]")]</code> atributlari.</li><li>HTTP metodlari: <code>[HttpGet]</code>, <code>[HttpPost]</code>, <code>[HttpPut]</code>, <code>[HttpDelete]</code>.</li><li>Swagger / OpenAPI hujjati avtomatik generatsiya bo'ladi (<code>/swagger</code>).</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C# / .NET 8</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_csharp_22')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_csharp_22','res_csharp_22')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_csharp_22" contenteditable="true" spellcheck="false">using Microsoft.AspNetCore.Mvc;
+using System.Collections.Generic;
+
+[ApiController]
+[Route("api/[controller]")]
+public class MahsulotlarController : ControllerBase
+{
+    private static List&lt;string&gt; tovarlar = new() { "Laptop", "Smartfon", "Planshet" };
+
+    [HttpGet]
+    public IActionResult GetAll()
+    {
+        return Ok(tovarlar);
+    }
+
+    [HttpPost]
+    public IActionResult Create([FromBody] string yangiTovar)
+    {
+        tovarlar.Add(yangiTovar);
+        return Created("", new { Xabar = "Tovar qo'shildi", Tovar = yangiTovar });
+    }
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_csharp_22">
+      <div class="result-label">🖥️ .NET Runtime / Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟣 .NET 8 CLR Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Swagger UI ochildi: http://localhost:5000/swagger
+GET  /api/Mahsulotlar -&gt; 200 OK ["Laptop", "Smartfon", "Planshet"]
+POST /api/Mahsulotlar -&gt; 201 Created {"Xabar": "Tovar qo'shildi"}&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 <code>Ok()</code>, <code>NotFound()</code>, <code>BadRequest()</code> yordamchi metodlari to'g'ri HTTP status kodlarini avtomatik qaytaradi.</div>
+
+    <div class="topic-nav">
+      <a href="#aspnet" class="topic-nav-btn prev">← ASP.NET Core Kirish va Minimal APIs</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C# | 22 / 25</span>
+      <a href="#entity" class="topic-nav-btn next">Entity Framework Core (EF Core) — ORM →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-purple">EF Core</span>
+      <span style="font-size:12px; color:var(--text2);">C# Mavzu #23</span>
+    </div>
+    <h2 id="entity" style="color:#68217a; background: linear-gradient(90deg, #9b4f96, #512bd4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Entity Framework Core (EF Core) — ORM</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>EF Core</strong> — bu C# va .NET uchun rasmiy ORM (Object-Relational Mapper) kutubxonasidir. U ma'lumotlar bazasi jadvallarini C# klasslariga bog'laydi va SQL yozmasdan LINQ orqali bazani boshqarishga imkon beradi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><strong>DbContext</strong>: Ma'lumotlar bazasi bilan ulanish sessiyasi.</li><li><strong>DbSet&lt;T&gt;</strong>: Baza jadvalining C# dagi ko'rinishi.</li><li>Migratsiyalar: <code>dotnet ef migrations add InitialCreate</code> va <code>dotnet ef database update</code>.</li><li>PostgreSQL, SQL Server, MySQL, SQLite ni to'liq qo'llab-quvvatlaydi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C# / .NET 8</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_csharp_23')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_csharp_23','res_csharp_23')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_csharp_23" contenteditable="true" spellcheck="false">using Microsoft.EntityFrameworkCore;
+using System.Collections.Generic;
+
+public class Mahsulot
+{
+    public int Id { get; set; }
+    public string Nomi { get; set; }
+    public decimal Narxi { get; set; }
+}
+
+public class IlovaDbContext : DbContext
+{
+    public DbSet&lt;Mahsulot&gt; Mahsulotlar { get; set; }
+
+    protected override void OnConfiguring(DbContextOptionsBuilder options)
+    {
+        options.UseSqlite("Data Source=dokon.db");
+    }
+}
+
+// Ishlatilishi:
+using var db = new IlovaDbContext();
+db.Database.EnsureCreated();
+
+db.Mahsulotlar.Add(new Mahsulot { Nomi = "Klaviatura", Narxi = 250000 });
+db.SaveChanges(); // SQL INSERT bajariladi</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_csharp_23">
+      <div class="result-label">🖥️ .NET Runtime / Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟣 .NET 8 CLR Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Executing DbCommand:
+INSERT INTO "Mahsulotlar" ("Narxi", "Nomi")
+VALUES (250000.0, 'Klaviatura');
+O'zgarishlar muvaffaqiyatli saqlandi!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ <code>db.SaveChanges()</code> chaqirilmaguncha o'zgarishlar bazaga yozilmaydi.</div>
+
+    <div class="topic-nav">
+      <a href="#webapi" class="topic-nav-btn prev">← Web API — Controllers va Routing</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C# | 23 / 25</span>
+      <a href="#blazor" class="topic-nav-btn next">Blazor — C# bilan Zamonaviy Frontend →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-purple">Blazor</span>
+      <span style="font-size:12px; color:var(--text2);">C# Mavzu #24</span>
+    </div>
+    <h2 id="blazor" style="color:#68217a; background: linear-gradient(90deg, #9b4f96, #512bd4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Blazor — C# bilan Zamonaviy Frontend</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Blazor</strong> — JavaScript o'rniga bevosita C# tilida to'liq interaktiv Single Page Application (SPA) veb-interfeyslar yaratish imkonini beruvchi Microsoft texnologiyasidir. U WebAssembly (Wasm) orqali to'g'ridan-to'g'ri brauzer ichida ishlaydi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>JavaScript o'rniga C# va Razor (HTML + C#) sintaksisi.</li><li>Frontend va Backend da bir xil DTO klasslarini va validatsiya qoidalarini bo'lishish imkoniyati.</li><li>Blazor Server (SignalR orqali real-time) va Blazor WebAssembly (mijoz brauzerida to'liq oflayn).</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C# / .NET 8</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_csharp_24')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_csharp_24','res_csharp_24')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_csharp_24" contenteditable="true" spellcheck="false">@* Counter.razor *@
+@page "/counter"
+
+&lt;h3&gt;Hisoblagich (Blazor WebAssembly)&lt;/h3&gt;
+
+&lt;p&gt;Joriy son: &lt;strong&gt;@hisob&lt;/strong&gt;&lt;/p&gt;
+
+&lt;button class="btn btn-primary" @onclick="Oshir"&gt;
+    Bosing: +1
+&lt;/button&gt;
+
+@code {
+    private int hisob = 0;
+
+    private void Oshir()
+    {
+        hisob++; // Brauzerda hech qanday JS yozmasdan C# ishlaydi!
+    }
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_csharp_24">
+      <div class="result-label">🖥️ .NET Runtime / Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟣 .NET 8 CLR Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Brauzerda bajarildi:
+[WebAssembly] C# kodi brauzer dvigatelida to'g'ridan-to'g'ri ishga tushdi!
+Tugma bosildi -&gt; hisob = 1&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">🚀 Blazor tufayli C# dasturchisi frontend uchun alohida JavaScript yoki React o'rganmasdan to'liq Full-Stack tizimlar tuza oladi.</div>
+
+    <div class="topic-nav">
+      <a href="#entity" class="topic-nav-btn prev">← Entity Framework Core (EF Core) — ORM</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C# | 24 / 25</span>
+      <a href="#nuget" class="topic-nav-btn next">NuGet — Paket Menejeri va Kutubxonalar →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-purple">NuGet</span>
+      <span style="font-size:12px; color:var(--text2);">C# Mavzu #25</span>
+    </div>
+    <h2 id="nuget" style="color:#68217a; background: linear-gradient(90deg, #9b4f96, #512bd4); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">NuGet — Paket Menejeri va Kutubxonalar</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>NuGet</strong> — .NET ekotizimining rasmiy paketlar ombori bo'lib, uning yordamida loyihangizga minglab tayyor ochiq kodli kutubxonalarni (masalan, Newtonsoft.Json, Serilog, AutoMapper, Dapper) bir necha soniyada o'rnatishingiz mumkin.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Rasmiy ombor: <code>nuget.org</code>.</li><li>Paket o'rnatish: <code>dotnet add package PaketNomi</code>.</li><li>Paketni o'chirish: <code>dotnet remove package PaketNomi</code>.</li><li>Loyiha bog'liqliklari <code>.csproj</code> faylida saqlanadi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">C# / .NET 8</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_csharp_25')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_csharp_25','res_csharp_25')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_csharp_25" contenteditable="true" spellcheck="false"># Terminalda kutubxona o'rnatish:
+# Masalan, JSON bilan ishlash yoki Log yozish uchun:
+dotnet add package Newtonsoft.Json
+dotnet add package Serilog.AspNetCore
+
+# .csproj faylida paydo bo'ladi:
+# &lt;ItemGroup&gt;
+#   &lt;PackageReference Include="Newtonsoft.Json" Version="13.0.3" /&gt;
+# &lt;/ItemGroup&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_csharp_25">
+      <div class="result-label">🖥️ .NET Runtime / Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟣 .NET 8 CLR Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Writing C:\Users\AppData\Local\Temp\tmp8102.tmp
+info : Adding PackageReference for package 'Newtonsoft.Json' into project...
+info : Restoring packages for C:\Projects\MeningApp.csproj...
+info : Package 'Newtonsoft.Json' is compatible with all the specified frameworks.
+info : PackageReference for package 'Newtonsoft.Json' version '13.0.3' added.&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Boshqa kompyuterda loyihani ochganingizda <code>dotnet restore</code> barcha NuGet paketlarni avtomatik yuklab oladi.</div>
+
+    <div class="topic-nav">
+      <a href="#blazor" class="topic-nav-btn prev">← Blazor — C# bilan Zamonaviy Frontend</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 C# | 25 / 25</span>
+      <a href="sql.html" class="topic-nav-btn next">Keyingi kurs: SQL Darslari →</a>
+    </div>
+  </section>
 
   <div class="quiz-box">
-    <div class="quiz-q">🧪 Test: C# da LINQ nima uchun ishlatiladi?</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qr1')">Fayllarni o'chirish uchun</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, true, 'qr1')">Kolleksiyalardan ma'lumot so'rash uchun</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qr1')">Tarmoq ulanishi uchun</div>
-    <div class="quiz-result" id="qr1"></div>
+    <div class="quiz-q">🧪 Test: C# da ma'lumotlar to'plamlaridan SQL ga o'xshash qidiruv va filtrlash imkonini beruvchi texnologiya nima?</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, true, 'csQr1')">LINQ (Language Integrated Query)</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'csQr1')">Entity Framework</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'csQr1')">Blazor</div>
+    <div class="quiz-result" id="csQr1"></div>
   </div>
-  
 
-<div class="nav-btns">
-  <a href="cpp.html" class="btn-prev">&#8592; C++</a>
-  <a href="sql.html" class="btn-next">SQL &#8594;</a>
-</div>
+  <div class="nav-btns" style="margin-top: 30px;">
+    <a href="cpp.html" class="btn-prev">← C++ Darslari</a>
+    <a href="sql.html" class="btn-next">SQL Darsiga O'tish →</a>
+  </div>
+
+  <div class="note note-blue" style="margin-top: 25px;">
+    📌 <strong>Keyingi qadam:</strong> C# va .NET ekotizimini o'rgangach, har qanday ma'lumotlar omborining tili bo'lgan <a href="sql.html" style="color:var(--green)">SQL darslariga</a> o'ting!
+  </div>
 </main>
 <aside class="right-panel">
   <div class="rp-title">📈 Progress</div>

@@ -89,405 +89,1193 @@
 </aside>
 <div class="overlay" id="overlay" onclick="closeMobileSidebar()"></div>
 <main class="main">
-  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">Redis</a> › Redis Nima?</div>
-  <h1 id="kirish">Redis Nima?</h1>
-  <div class="meta-tags">
-    <span class="tag tag-green">⏱ 8 daqiqa</span>
-    <span class="tag tag-blue">🟢 Boshlang'ich</span>
-    <span class="tag tag-orange">👁 9,400 marta ko'rilgan</span>
-  </div>
-  <p><strong>Redis</strong> (Remote Dictionary Server) — in-memory ma'lumotlar tuzilmasi do'koni. U ma'lumotlarni disk o'rniga <strong>operativ xotirada (RAM)</strong> saqlaydi, shu sababli juda tez ishlaydi.</p>
-  <p>Redis kesh (cache), sessiya boshqaruvi, real-vaqtli analitika, navbatlar (queues) va boshqa ko'p hollarda ishlatiladi.</p>
-  <div class="note">💡 <strong>Qachon ishlatish kerak?</strong> Tez-tez o'qiladigan, kamdan-kam o'zgaradigan ma'lumotlar uchun ideal — masalan, foydalanuvchi sessiyalari, mahsulot ro'yxatlari, API javoblari.</div>
-
-  <h2 id="install">Redis O'rnatish</h2>
-  <p>Redis Linux, macOS va Windows (WSL) da ishlaydi:</p>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">bash</span>
-      <button class="copy-btn" onclick="copyCode('code1')">📋 Nusxa</button>
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-red" style="background:#dc2626; color:#fff;">Asosiy</span>
+      <span style="font-size:12px; color:var(--text2);">Redis Mavzu #1</span>
     </div>
-    <div class="code-body">
-      <pre id="code1"># Ubuntu/Debian
-sudo apt update
-sudo apt install redis-server
+    <h2 id="kirish" style="color:#ef4444; background: linear-gradient(90deg, #f87171, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Redis Nima? In-Memory Ma'lumotlar Tuzilmasi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Redis</strong> (Remote Dictionary Server) — operativ xotirada (RAM) ishlovchi, favqulodda yuqori tezlikka ega ochiq kodli ma'lumotlar ombori. U ma'lumotlar bazasi, kesh (cache) va xabarlar brokering (message broker) sifatida dunyoning deyarli barcha yirik loyihalarida qo'llaniladi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li>Operativ xotirada ishlaganligi sababli so'rovlarni mikrosekundlarda bajaradi (100,000+ RPS).</li><li>Oddiy kalit-qiymat (Key-Value) dan tashqari boy ma'lumotlar tuzilmalarini (Lists, Hashes, Sets, Sorted Sets) qo'llab-quvvatlaydi.</li><li>Twitter, GitHub, Uber, Netflix kabi gigantlar kesh, sessiya va real-vaqt hisoblagichlari uchun Redis dan foydalanadi.</li><li>Doimiylik: Xotirada ishlasa-da, ma'lumotlarni diskka (RDB va AOF) nusxalab xavfsiz saqlay oladi.</li></ul>
 
-# Redis ni ishga tushirish
-sudo systemctl start redis
-sudo systemctl enable redis
-
-# Tekshirish
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Redis CLI / Commands</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('rc_kirish')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('rc_kirish','rr_kirish')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="rc_kirish" contenteditable="true" spellcheck="false"># redis-server holatini tekshirish
 redis-cli ping
-# Javob: PONG
 
-# macOS (Homebrew)
-brew install redis
-brew services start redis</pre>
+# Ma'lumot yozish va o'qish
+SET salom "Salom, O'zbekiston!"
+GET salom</pre>
+      </div>
     </div>
-  </div>
+    <div class="result-box" id="rr_kirish">
+      <div class="result-label">⚡ Redis In-Memory CLI Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#f87171;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚡ Redis 7 Server Terminal:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;PONG
+OK
+"Salom, O'zbekiston!"&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
 
-  <h2 id="cli">Redis CLI</h2>
-  <p>Redis CLI orqali Redis serveriga ulaning va buyruqlarni to'g'ridan-to'g'ri kiriting:</p>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">bash</span>
-      <button class="copy-btn" onclick="copyCode('code2')">📋 Nusxa</button>
+    <div class="note-box" style="margin-top:16px;">💡 Redis operativ xotirada ishlagani sababli diskka nisbatan yuzlab marta tezroq ishlaydi.</div>
+
+    <div class="topic-nav">
+      <a href="postgresql.html" class="topic-nav-btn prev">← PostgreSQL Darslari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Redis | 1 / 26</span>
+      <a href="#install" class="topic-nav-btn next">Redis O'rnatish va Ishga Tushirish →</a>
     </div>
-    <div class="code-body">
-      <pre id="code2"># Redis CLI ni ochish
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-red" style="background:#dc2626; color:#fff;">O'rnatish</span>
+      <span style="font-size:12px; color:var(--text2);">Redis Mavzu #2</span>
+    </div>
+    <h2 id="install" style="color:#ef4444; background: linear-gradient(90deg, #f87171, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Redis O'rnatish va Ishga Tushirish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Redis Linux muhitida eng qulay ishlaydi. Windows tizimida esa WSL 2 (Windows Subsystem for Linux) yoki Docker orqali o'rnatish tavsiya etiladi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li>Linux/Ubuntu: <code>sudo apt install redis-server</code>.</li><li>Standart port: <code>6379</code>.</li><li>Xizmatni tekshirish: <code>sudo systemctl status redis</code>.</li><li>Docker orqali tezda ishga tushirish: <code>docker run -d -p 6379:6379 --name my-redis redis</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Redis CLI / Commands</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('rc_install')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('rc_install','rr_install')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="rc_install" contenteditable="true" spellcheck="false"># Ubuntu/Debian tizimida o'rnatish
+sudo apt update
+sudo apt install redis-server -y
+
+# Xizmatni yoqish
+sudo systemctl enable redis-server
+sudo systemctl start redis-server</pre>
+      </div>
+    </div>
+    <div class="result-box" id="rr_install">
+      <div class="result-label">⚡ Redis In-Memory CLI Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#f87171;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚡ Redis 7 Server Terminal:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Synchronizing state of redis-server.service with SysV service script...
+redis-server.service is active (running) on port 6379 🟢&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Windows foydalanuvchilari uchun WSL (Ubuntu) yoki Docker Desktop orqali o'rnatish rasmiy tavsiya hisoblanadi.</div>
+
+    <div class="topic-nav">
+      <a href="#kirish" class="topic-nav-btn prev">← Redis Nima? In-Memory Ma'lumotlar Tuzilmasi</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Redis | 2 / 26</span>
+      <a href="#cli" class="topic-nav-btn next">Redis-CLI Asosiy Buyruqlari →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-red" style="background:#dc2626; color:#fff;">CLI</span>
+      <span style="font-size:12px; color:var(--text2);">Redis Mavzu #3</span>
+    </div>
+    <h2 id="cli" style="color:#ef4444; background: linear-gradient(90deg, #f87171, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Redis-CLI Asosiy Buyruqlari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>redis-cli</strong> — Redis serveriga buyruqlar yuborish va natijalarni ko'rish uchun mo'ljallangan qulay konsol interfeysi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>redis-cli</code> — mahalliy serverga (127.0.0.1:6379) ulanish.</li><li><code>PING</code> — server tirikligini tekshirish (javob: PONG).</li><li><code>KEYS *</code> — bazadagi barcha kalitlarni ko'rish (ehtiyot bo'ling, productionda KEYS o'rniga SCAN tavsiya etiladi).</li><li><code>DBSIZE</code> — joriy bazadagi kalitlar sonini hisoblash.</li><li><code>FLUSHALL</code> — barcha bazalardagi barcha kalitlarni tozalash.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Redis CLI / Commands</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('rc_cli')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('rc_cli','rr_cli')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="rc_cli" contenteditable="true" spellcheck="false"># redis-cli ga ulanish va buyruqlar
 redis-cli
-
-# Yoki port ko'rsatib
-redis-cli -h 127.0.0.1 -p 6379
-
-# Autentifikatsiya (parol bo'lsa)
-redis-cli -a yourpassword
-
-# Barcha kalitlarni ko'rish
-KEYS *
-
-# Ma'lumot turini bilish
-TYPE mykey
-
-# Kalitni o'chirish
-DEL mykey
-
-# Serverga ping
-PING</pre>
+127.0.0.1:6379&gt; PING
+127.0.0.1:6379&gt; DBSIZE
+127.0.0.1:6379&gt; KEYS *
+127.0.0.1:6379&gt; INFO memory</pre>
+      </div>
     </div>
-  </div>
-
-  <h2 id="datatypes">Ma'lumot Turlari</h2>
-  <p>Redis quyidagi ma'lumot turlarini qo'llab-quvvatlaydi:</p>
-  <ul>
-    <li>🔤 <strong>Strings</strong> — oddiy qiymatlar (matn, raqam)</li>
-    <li>📋 <strong>Lists</strong> — tartibli elementlar ro'yxati</li>
-    <li>#️⃣ <strong>Hashes</strong> — kalit-qiymat juftliklari (obyekt kabi)</li>
-    <li>🔵 <strong>Sets</strong> — takrorlanmaydigan elementlar to'plami</li>
-    <li>🏆 <strong>Sorted Sets</strong> — ball (score) bilan tartiblangan to'plam</li>
-    <li>📡 <strong>Pub/Sub</strong> — xabar almashish kanallari</li>
-  </ul>
-
-  <h2 id="set-get">Strings: SET / GET</h2>
-  <p>Strings — Redis da eng oddiy va keng tarqalgan ma'lumot turi:</p>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">redis</span>
-      <button class="copy-btn" onclick="copyCode('code3')">📋 Nusxa</button>
+    <div class="result-box" id="rr_cli">
+      <div class="result-label">⚡ Redis In-Memory CLI Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#f87171;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚡ Redis 7 Server Terminal:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;PONG
+(integer) 4
+1) "user:101"
+2) "session:token"
+3) "counter:views"
+4) "cart:items"
+# Memory
+used_memory_human:1.24M&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
     </div>
-    <div class="code-body">
-      <pre id="code3"># Qiymat saqlash
-SET username "Ali"
-# OK
 
-# Qiymatni olish
-GET username
-# "Ali"
+    <div class="note-box" style="margin-top:16px;">⚠️ Katta hajmli production bazalarda hech qachon <code>KEYS *</code> buyrug'ini ishlatmang, chunki u serverni bloklab qo'yishi mumkin. Buning o'rniga <code>SCAN</code> buyrug'idan foydalaning.</div>
 
-# Vaqtinchalik saqlash (10 soniya)
-SET token "abc123" EX 10
-
-# Faqat mavjud bo'lmasa o'rnatish
-SET counter 1 NX
-
-# Hozirgi qiymatni olish va yangi qiymat o'rnatish
-GETSET username "Vali"
-# "Ali" (eski qiymat)
-
-# Qiymat uzunligi
-STRLEN username
-# 4</pre>
+    <div class="topic-nav">
+      <a href="#install" class="topic-nav-btn prev">← Redis O'rnatish va Ishga Tushirish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Redis | 3 / 26</span>
+      <a href="#datatypes" class="topic-nav-btn next">Redis Ma'lumot Turlari (Data Types) →</a>
     </div>
-  </div>
+  </section>
 
-  <h2 id="expire">EXPIRE / TTL</h2>
-  <p>Kalitlarga amal qilish muddati (TTL — Time To Live) belgilash:</p>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">redis</span>
-      <button class="copy-btn" onclick="copyCode('code4')">📋 Nusxa</button>
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-red" style="background:#dc2626; color:#fff;">Arxitektura</span>
+      <span style="font-size:12px; color:var(--text2);">Redis Mavzu #4</span>
     </div>
-    <div class="code-body">
-      <pre id="code4">SET session_token "xyz789"
+    <h2 id="datatypes" style="color:#ef4444; background: linear-gradient(90deg, #f87171, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Redis Ma'lumot Turlari (Data Types)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Redis oddiy kalit-qiymat bazasi emas — u ma'lumotlar tuzilmasi serveridir. Unda quyidagi 5 ta asosiy ma'lumot turi mavjud.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><strong>String:</strong> Oddiy matn, raqam yoki ikkilik ma'lumot (maksimal 512 MB).</li><li><strong>List:</strong> Qo'shaloq bog'langan ro'yxat (navbat va stek uchun).</li><li><strong>Hash:</strong> Ob'ekt maydonlari va qiymatlari (masalan, foydalanuvchi profili).</li><li><strong>Set:</strong> Takrorlanmas elementlarning tartiblanmagan to'plami.</li><li><strong>Sorted Set (ZSet):</strong> Har bir elementga ball (score) biriktirilgan va tartiblangan to'plam.</li></ul>
 
-# 3600 soniya (1 soat) muddati belgilash
-EXPIRE session_token 3600
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Redis CLI / Commands</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('rc_datatypes')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('rc_datatypes','rr_datatypes')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="rc_datatypes" contenteditable="true" spellcheck="false"># Kalitning turini tekshirish: TYPE buyrug'i
+SET username "islombek"
+TYPE username
 
-# Qolgan vaqtni ko'rish (soniyada)
-TTL session_token
-# 3598
+LPUSH vazifalar "kod yozish"
+TYPE vazifalar
 
-# Muddatni olib tashlash (abadiy qilish)
-PERSIST session_token
-
-# Millisekundda muddati belgilash
-PEXPIRE session_token 10000
-
-# Millisekunda qolgan vaqt
-PTTL session_token</pre>
+HSET user:1 ism "Ali" yosh 25
+TYPE user:1</pre>
+      </div>
     </div>
-  </div>
-
-  <h2 id="lpush">Lists: LPUSH / RPUSH</h2>
-  <p>Listlar — tartibli elementlar ro'yxati (Deque tuzilmasi):</p>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">redis</span>
-      <button class="copy-btn" onclick="copyCode('code5')">📋 Nusxa</button>
+    <div class="result-box" id="rr_datatypes">
+      <div class="result-label">⚡ Redis In-Memory CLI Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#f87171;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚡ Redis 7 Server Terminal:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;string
+list
+hash&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
     </div>
-    <div class="code-body">
-      <pre id="code5"># Chapdan qo'shish
-LPUSH tasks "vazifa1" "vazifa2" "vazifa3"
 
-# O'ngdan qo'shish
-RPUSH tasks "vazifa4"
+    <div class="note-box" style="margin-top:16px;">💡 Har bir ma'lumot turi o'zining mos foydalanish holatiga ega: kesh uchun String, navbatlar uchun List, profillar uchun Hash, reytinglar uchun Sorted Set.</div>
 
-# Ro'yxatni ko'rish (0 dan oxirigacha)
-LRANGE tasks 0 -1
-# 1) "vazifa3"
-# 2) "vazifa2"
-# 3) "vazifa1"
-# 4) "vazifa4"
+    <div class="topic-nav">
+      <a href="#cli" class="topic-nav-btn prev">← Redis-CLI Asosiy Buyruqlari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Redis | 4 / 26</span>
+      <a href="#set-get" class="topic-nav-btn next">SET va GET Buyruqlari (Strings) →</a>
+    </div>
+  </section>
 
-# Uzunlik
-LLEN tasks
-# 4
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-red" style="background:#dc2626; color:#fff;">Strings</span>
+      <span style="font-size:12px; color:var(--text2);">Redis Mavzu #5</span>
+    </div>
+    <h2 id="set-get" style="color:#ef4444; background: linear-gradient(90deg, #f87171, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">SET va GET Buyruqlari (Strings)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">String — Redis dagi eng ko'p ishlatiladigan ma'lumot turidir. <code>SET</code> qiymatni saqlaydi, <code>GET</code> esa uni o'qib beradi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>SET key value</code> — kalitga matn yoki raqam yozish.</li><li><code>GET key</code> — kalit qiymatini olish.</li><li><code>SETNX key value</code> — faqat kalit avval mavjud bo'lmaganda yozish (distribyutiv qulflash uchun).</li><li><code>APPEND key value</code> — mavjud matn oxiriga qo'shimcha ulash.</li></ul>
 
-# Chapdan o'chirish
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Redis CLI / Commands</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('rc_set-get')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('rc_set-get','rr_set-get')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="rc_set-get" contenteditable="true" spellcheck="false"># Stringlar bilan amallar
+SET website "w3learn.uz"
+GET website
+
+# Mavjud bo'lmasa yozish (SETNX)
+SETNX website "boshqa.uz"
+
+# Oxiriga matn qo'shish
+APPEND website "/courses"
+GET website</pre>
+      </div>
+    </div>
+    <div class="result-box" id="rr_set-get">
+      <div class="result-label">⚡ Redis In-Memory CLI Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#f87171;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚡ Redis 7 Server Terminal:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;OK
+"w3learn.uz"
+(integer) 0
+(integer) 18
+"w3learn.uz/courses"&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 SETNX 0 qaytarsa, demak kalit allaqachon mavjud bo'lgan va yangilanmagan.</div>
+
+    <div class="topic-nav">
+      <a href="#datatypes" class="topic-nav-btn prev">← Redis Ma'lumot Turlari (Data Types)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Redis | 5 / 26</span>
+      <a href="#expire" class="topic-nav-btn next">EXPIRE va TTL: Amal Qilish Muddati →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-red" style="background:#dc2626; color:#fff;">Kesh</span>
+      <span style="font-size:12px; color:var(--text2);">Redis Mavzu #6</span>
+    </div>
+    <h2 id="expire" style="color:#ef4444; background: linear-gradient(90deg, #f87171, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">EXPIRE va TTL: Amal Qilish Muddati</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Redis kesh boshqaruvining yuragi <strong>TTL (Time To Live)</strong> hisoblanadi. Siz istalgan kalitga soniyalarda yashash muddatini belgilashingiz mumkin, muddat tugagach Redis uni avtomatik o'chiradi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>EXPIRE key seconds</code> — kalitga yashash muddatini berish.</li><li><code>TTL key</code> — kalitning qolgan soniyalarini tekshirish.</li><li><code>SETEX key seconds value</code> — SET va EXPIRE ni bir qatorda bajarish.</li><li>TTL natijalari: ijobiy son (qolgan soniya), -1 (muddatsiz, abadiy), -2 (kalit topilmadi/o'chgan).</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Redis CLI / Commands</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('rc_expire')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('rc_expire','rr_expire')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="rc_expire" contenteditable="true" spellcheck="false"># Keshga 60 soniyalik SMS kodini saqlash
+SETEX otp:998901234567 60 "849204"
+
+# Qolgan muddatni ko'rish
+TTL otp:998901234567
+
+# Doimiy kalitga muddat berish
+SET session:user101 "active"
+EXPIRE session:user101 3600
+TTL session:user101</pre>
+      </div>
+    </div>
+    <div class="result-box" id="rr_expire">
+      <div class="result-label">⚡ Redis In-Memory CLI Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#f87171;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚡ Redis 7 Server Terminal:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;OK
+(integer) 58
+OK
+(integer) 1
+(integer) 3600&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Kesh tizimlarida xotira to'lib qolmasligi uchun barcha kesh kalitlariga aniq TTL belgilash shart.</div>
+
+    <div class="topic-nav">
+      <a href="#set-get" class="topic-nav-btn prev">← SET va GET Buyruqlari (Strings)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Redis | 6 / 26</span>
+      <a href="#incr" class="topic-nav-btn next">INCR va DECR: Atomik Sanagichlar →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-red" style="background:#dc2626; color:#fff;">Hisoblagich</span>
+      <span style="font-size:12px; color:var(--text2);">Redis Mavzu #7</span>
+    </div>
+    <h2 id="incr" style="color:#ef4444; background: linear-gradient(90deg, #f87171, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">INCR va DECR: Atomik Sanagichlar</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Redis raqamli qiymatlarni <strong>atomik</strong> tarzda (poyga holatlari - race condition siz) oshirish yoki kamaytirish imkonini beradi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>INCR key</code> — qiymatni 1 ga oshiradi (agar kalit bo'lmasa, 0 dan 1 ga o'tadi).</li><li><code>DECR key</code> — qiymatni 1 ga kamaytiradi.</li><li><code>INCRBY key increment</code> — qiymatni ko'rsatilgan miqdorga oshiradi.</li><li>Sayt tashrifchilari, kliklar, like-lar va API rate limiter lar uchun ideal.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Redis CLI / Commands</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('rc_incr')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('rc_incr','rr_incr')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="rc_incr" contenteditable="true" spellcheck="false"># Post ko'rishlar sonini sanash
+INCR post:99:views
+INCR post:99:views
+INCRBY post:99:views 10
+
+# Mahsulot qoldig'ini kamaytirish
+SET ombor:tovar_15 50
+DECR ombor:tovar_15
+GET ombor:tovar_15</pre>
+      </div>
+    </div>
+    <div class="result-box" id="rr_incr">
+      <div class="result-label">⚡ Redis In-Memory CLI Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#f87171;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚡ Redis 7 Server Terminal:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;(integer) 1
+(integer) 2
+(integer) 12
+OK
+(integer) 49
+"49"&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 INCR operatsiyasi bir vaqtning o'zida minglab so'rovlar kelsa ham adashmasdan to'g'ri hisoblaydi.</div>
+
+    <div class="topic-nav">
+      <a href="#expire" class="topic-nav-btn prev">← EXPIRE va TTL: Amal Qilish Muddati</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Redis | 7 / 26</span>
+      <a href="#mset" class="topic-nav-btn next">MSET va MGET: Guruhli Amallar →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-red" style="background:#dc2626; color:#fff;">Strings</span>
+      <span style="font-size:12px; color:var(--text2);">Redis Mavzu #8</span>
+    </div>
+    <h2 id="mset" style="color:#ef4444; background: linear-gradient(90deg, #f87171, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">MSET va MGET: Guruhli Amallar</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Bitta buyruq orqali bir nechta kalitlarni birdaniga yozish va o'qish tarmoq uzatish vaqtini (round-trip time) sezilarli darajada tejaydi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>MSET k1 v1 k2 v2 ...</code> — bir nechta kalit-qiymatlarni saqlash.</li><li><code>MGET k1 k2 k3 ...</code> — bir nechta kalitlarning qiymatlarini bitta massivda olish.</li><li>Agar kalitlardan biri topilmasa, uning o'rniga <code>nil</code> qaytadi.</li><li>Tarmoqdagi kechikishlarni kamaytirishning eng yaxshi usuli.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Redis CLI / Commands</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('rc_mset')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('rc_mset','rr_mset')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="rc_mset" contenteditable="true" spellcheck="false"># Bir vaqtda bir nechta sozlamalarni saqlash
+MSET app:name "W3Learn" app:version "2.5" app:env "production"
+
+# Hammasini bir so'rovda olish
+MGET app:name app:version app:env app:unknown</pre>
+      </div>
+    </div>
+    <div class="result-box" id="rr_mset">
+      <div class="result-label">⚡ Redis In-Memory CLI Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#f87171;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚡ Redis 7 Server Terminal:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;OK
+1) "W3Learn"
+2) "2.5"
+3) "production"
+4) (nil)&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Tarmoq orqali 10 ta alohida GET yuborgandan ko'ra bitta MGET yuborish 5-10 barobar tezroq ishlaydi.</div>
+
+    <div class="topic-nav">
+      <a href="#incr" class="topic-nav-btn prev">← INCR va DECR: Atomik Sanagichlar</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Redis | 8 / 26</span>
+      <a href="#lpush" class="topic-nav-btn next">LPUSH va RPUSH: Ro'yxatlar (Lists) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-red" style="background:#dc2626; color:#fff;">Lists</span>
+      <span style="font-size:12px; color:var(--text2);">Redis Mavzu #9</span>
+    </div>
+    <h2 id="lpush" style="color:#ef4444; background: linear-gradient(90deg, #f87171, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">LPUSH va RPUSH: Ro'yxatlar (Lists)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Redis List — bu simmetrik bog'langan ro'yxat bo'lib, uning boshiga yoki oxiriga element qo'shish O(1) doimiy vaqt oladi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>LPUSH key value...</code> — ro'yxat boshiga (chap tomonga) elementlar qo'shish.</li><li><code>RPUSH key value...</code> — ro'yxat oxiriga (o'ng tomonga) elementlar qo'shish.</li><li>Xabarlar navbati (Message Queue) va oxirgi harakatlar lentasi (Activity Feed) uchun xizmat qiladi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Redis CLI / Commands</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('rc_lpush')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('rc_lpush','rr_lpush')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="rc_lpush" contenteditable="true" spellcheck="false"># Vazifalar navbatiga yangi ishlar qo'shish
+RPUSH queue:emails "user1@mail.uz" "user2@mail.uz"
+LPUSH queue:emails "urgent_admin@mail.uz"
+
+# Elementlar ro'yxatini ko'rish
+LRANGE queue:emails 0 -1</pre>
+      </div>
+    </div>
+    <div class="result-box" id="rr_lpush">
+      <div class="result-label">⚡ Redis In-Memory CLI Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#f87171;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚡ Redis 7 Server Terminal:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;(integer) 2
+(integer) 3
+1) "urgent_admin@mail.uz"
+2) "user1@mail.uz"
+3) "user2@mail.uz"&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 LPUSH ro'yxatning boshiga tiqadi, RPUSH esa oxiriga ulaydi.</div>
+
+    <div class="topic-nav">
+      <a href="#mset" class="topic-nav-btn prev">← MSET va MGET: Guruhli Amallar</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Redis | 9 / 26</span>
+      <a href="#lrange" class="topic-nav-btn next">LRANGE: Ro'yxat Elementlarini O'qish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-red" style="background:#dc2626; color:#fff;">Lists</span>
+      <span style="font-size:12px; color:var(--text2);">Redis Mavzu #10</span>
+    </div>
+    <h2 id="lrange" style="color:#ef4444; background: linear-gradient(90deg, #f87171, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">LRANGE: Ro'yxat Elementlarini O'qish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><code>LRANGE</code> berilgan indeks oralig'idagi elementlarni ajratib oladi. Salbiy indekslar oxiridan sanaladi (-1 eng oxirgi element).</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>LRANGE key start stop</code> — indekslar bo'yicha qirqib olish.</li><li><code>0 -1</code> — ro'yxatdagi barcha elementlarni olish.</li><li><code>0 9</code> — eng birinchi 10 ta elementni olish (paginatsiya uchun).</li><li><code>LTRIM key start stop</code> — ro'yxatni qirqib, faqat belgilangan oraliqni qoldirish.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Redis CLI / Commands</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('rc_lrange')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('rc_lrange','rr_lrange')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="rc_lrange" contenteditable="true" spellcheck="false"># Oxirgi 3 ta log yozuvini ko'rish
+RPUSH logs "09:00 Auth" "09:05 Pay" "09:10 Error" "09:15 OK"
+LRANGE logs 0 2
+LRANGE logs -2 -1</pre>
+      </div>
+    </div>
+    <div class="result-box" id="rr_lrange">
+      <div class="result-label">⚡ Redis In-Memory CLI Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#f87171;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚡ Redis 7 Server Terminal:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;(integer) 4
+1) "09:00 Auth"
+2) "09:05 Pay"
+3) "09:10 Error"
+1) "09:10 Error"
+2) "09:15 OK"&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 LTRIM logs 0 99 buyrug'i orqali ro'yxatni doimiy ravishda so'nggi 100 ta yozuv bilan cheklab turish mumkin.</div>
+
+    <div class="topic-nav">
+      <a href="#lpush" class="topic-nav-btn prev">← LPUSH va RPUSH: Ro'yxatlar (Lists)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Redis | 10 / 26</span>
+      <a href="#lpop" class="topic-nav-btn next">LPOP va RPOP: Navbat va Stek Amallari →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-red" style="background:#dc2626; color:#fff;">Lists</span>
+      <span style="font-size:12px; color:var(--text2);">Redis Mavzu #11</span>
+    </div>
+    <h2 id="lpop" style="color:#ef4444; background: linear-gradient(90deg, #f87171, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">LPOP va RPOP: Navbat va Stek Amallari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Ro'yxatdan elementlarni sug'urib olish orqali navbat (FIFO) va stek (LIFO) ma'lumotlar tuzilmalarini osongina yaratish mumkin.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>LPOP key</code> — chapdagi eng birinchi elementni olib tashlaydi va qaytaradi.</li><li><code>RPOP key</code> — o'ngdagi eng oxirgi elementni olib tashlaydi va qaytaradi.</li><li><code>BLPOP key timeout</code> — bloklovchi o'qish (navbatda element paydo bo'lguncha kutib turadi).</li><li>FIFO (Navbat): RPUSH orqali yozib, LPOP orqali qayta ishlash.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Redis CLI / Commands</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('rc_lpop')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('rc_lpop','rr_lpop')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="rc_lpop" contenteditable="true" spellcheck="false"># Navbatdan vazifani qayta ishlash uchun olish
+RPUSH tasks "sms_yuborish" "rasm_qisqartirish"
 LPOP tasks
-# "vazifa3"
-
-# O'ngdan o'chirish
-RPOP tasks
-# "vazifa4"</pre>
+LPOP tasks
+LPOP tasks</pre>
+      </div>
     </div>
-  </div>
-
-  <h2 id="hset">Hashes: HSET / HGET</h2>
-  <p>Hash — obyektga o'xshash kalit-qiymat juftliklari:</p>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">redis</span>
-      <button class="copy-btn" onclick="copyCode('code6')">📋 Nusxa</button>
+    <div class="result-box" id="rr_lpop">
+      <div class="result-label">⚡ Redis In-Memory CLI Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#f87171;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚡ Redis 7 Server Terminal:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;(integer) 2
+"sms_yuborish"
+"rasm_qisqartirish"
+(nil)&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
     </div>
-    <div class="code-body">
-      <pre id="code6"># Hash yaratish
-HSET user:1 name "Ali" age 25 city "Toshkent"
 
-# Bitta maydonni olish
-HGET user:1 name
-# "Ali"
+    <div class="note-box" style="margin-top:16px;">💡 Ro'yxat bo'shab qolsa LPOP (nil) qaytaradi. BLPOP esa yangi element kelishini belgilangan sekundgacha kutadi.</div>
 
-# Barcha maydonlarni olish
-HGETALL user:1
-# 1) "name"
-# 2) "Ali"
-# 3) "age"
-# 4) "25"
-# 5) "city"
-# 6) "Toshkent"
-
-# Maydon mavjudligini tekshirish
-HEXISTS user:1 email
-# 0 (mavjud emas)
-
-# Maydonni o'chirish
-HDEL user:1 city
-
-# Barcha maydon nomlari
-HKEYS user:1</pre>
+    <div class="topic-nav">
+      <a href="#lrange" class="topic-nav-btn prev">← LRANGE: Ro'yxat Elementlarini O'qish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Redis | 11 / 26</span>
+      <a href="#llen" class="topic-nav-btn next">LLEN: Ro'yxat Uzunligini O'lchash →</a>
     </div>
-  </div>
+  </section>
 
-  <h2 id="sadd">Sets: SADD / SMEMBERS</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">redis</span>
-      <button class="copy-btn" onclick="copyCode('code7')">📋 Nusxa</button>
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-red" style="background:#dc2626; color:#fff;">Lists</span>
+      <span style="font-size:12px; color:var(--text2);">Redis Mavzu #12</span>
     </div>
-    <div class="code-body">
-      <pre id="code7"># Set yaratish (takrorlanmaydi)
-SADD hobbies "kitob o'qish" "dasturlash" "sport"
+    <h2 id="llen" style="color:#ef4444; background: linear-gradient(90deg, #f87171, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">LLEN: Ro'yxat Uzunligini O'lchash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><code>LLEN</code> ro'yxatdagi jami elementlar sonini O(1) doimiy vaqt ichida hisoblab beradi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>LLEN key</code> — ro'yxat uzunligini qaytaradi.</li><li>Agar kalit mavjud bo'lmasa 0 qaytadi.</li><li>Navbatda qancha ish qolganligini monitoring qilish uchun ishlatiladi.</li></ul>
 
-# Barcha elementlar
-SMEMBERS hobbies
-# 1) "sport"
-# 2) "dasturlash"
-# 3) "kitob o'qish"
-
-# Element mavjudligini tekshirish
-SISMEMBER hobbies "sport"
-# 1 (bor)
-
-# Set A va Set B kesishmasi
-SADD set1 "a" "b" "c"
-SADD set2 "b" "c" "d"
-SINTER set1 set2
-# "b", "c"
-
-# Birlashma
-SUNION set1 set2
-# "a", "b", "c", "d"</pre>
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Redis CLI / Commands</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('rc_llen')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('rc_llen','rr_llen')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="rc_llen" contenteditable="true" spellcheck="false"># Kutilayotgan xabarlar sonini bilish
+RPUSH queue:sms "kod1" "kod2" "kod3"
+LLEN queue:sms</pre>
+      </div>
     </div>
-  </div>
-
-  <h2 id="zadd">Sorted Sets: ZADD / ZRANGE</h2>
-  <p>Sorted Sets — har bir elementga ball (score) beriladi va tartiblanadi:</p>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">redis</span>
-      <button class="copy-btn" onclick="copyCode('code8')">📋 Nusxa</button>
+    <div class="result-box" id="rr_llen">
+      <div class="result-label">⚡ Redis In-Memory CLI Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#f87171;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚡ Redis 7 Server Terminal:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;(integer) 3
+(integer) 3&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
     </div>
-    <div class="code-body">
-      <pre id="code8"># Leaderboard yaratish (score: ball)
-ZADD leaderboard 1500 "Ali"
-ZADD leaderboard 2300 "Vali"
-ZADD leaderboard 1800 "Soli"
 
-# Balldan kamiga tartibda
-ZRANGE leaderboard 0 -1 WITHSCORES
-# 1) "Ali"      2) "1500"
-# 3) "Soli"     4) "1800"
-# 5) "Vali"     6) "2300"
+    <div class="note-box" style="margin-top:16px;">💡 LLEN ro'yxatda 1 million element bo'lsa ham bir zumda javob beradi.</div>
 
-# Ko'pdan kamiga
-ZREVRANGE leaderboard 0 -1 WITHSCORES
-
-# Foydalanuvchi reytingini bilish
-ZRANK leaderboard "Ali"
-# 0 (birinchi o'rin)
-
-# Ball qo'shish
-ZINCRBY leaderboard 500 "Ali"</pre>
+    <div class="topic-nav">
+      <a href="#lpop" class="topic-nav-btn prev">← LPOP va RPOP: Navbat va Stek Amallari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Redis | 12 / 26</span>
+      <a href="#hset" class="topic-nav-btn next">HSET va HGET: Hash Xaritalari →</a>
     </div>
-  </div>
+  </section>
 
-  <h2 id="pubsub">Pub/Sub</h2>
-  <p>Redis Pub/Sub — real-vaqtli xabar almashish tizimi:</p>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">redis</span>
-      <button class="copy-btn" onclick="copyCode('code9')">📋 Nusxa</button>
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-red" style="background:#dc2626; color:#fff;">Hashes</span>
+      <span style="font-size:12px; color:var(--text2);">Redis Mavzu #13</span>
     </div>
-    <div class="code-body">
-      <pre id="code9"># Terminal 1 — Obunachi (subscriber)
-SUBSCRIBE notifications
+    <h2 id="hset" style="color:#ef4444; background: linear-gradient(90deg, #f87171, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">HSET va HGET: Hash Xaritalari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Redis Hash — bu kalit-qiymat juftliklaridan iborat ob'ektdir. U foydalanuvchi profillari, mahsulot tafsilotlari kabi tuzilmali ma'lumotlarni saqlash uchun mo'ljallangan.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>HSET key field value [field value...]</code> — ob'ekt maydonlarini saqlash.</li><li><code>HGET key field</code> — aniq bir maydon qiymatini olish.</li><li><code>HMGET key field1 field2...</code> — bir nechta maydonlarni olish.</li><li>Har bir maydon uchun alohida String kalit yaratgandan ko'ra Hash 5 barobar kam xotira sarflaydi.</li></ul>
 
-# Terminal 2 — Nashriyotchi (publisher)
-PUBLISH notifications "Yangi xabar bor!"
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Redis CLI / Commands</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('rc_hset')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('rc_hset','rr_hset')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="rc_hset" contenteditable="true" spellcheck="false"># Foydalanuvchi profilini saqlash
+HSET user:101 ism "Azizbek" yosh 22 kasb "Frontend" shahar "Toshkent"
 
-# Terminal 1 da natija:
-# 1) "message"
-# 2) "notifications"
-# 3) "Yangi xabar bor!"
-
-# Pattern bilan obuna bo'lish
-PSUBSCRIBE user:*
-
-# Barcha kanallarni ko'rish
-PUBSUB CHANNELS
-
-# Obunani bekor qilish
-UNSUBSCRIBE notifications</pre>
+# Alohida maydonlarni olish
+HGET user:101 ism
+HMGET user:101 yosh kasb</pre>
+      </div>
     </div>
-  </div>
-
-  <h2 id="caching">Caching Pattern</h2>
-  <p>Redis kesh sifatida ishlatish — eng keng tarqalgan foydalanish holati:</p>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">javascript</span>
-      <button class="copy-btn" onclick="copyCode('code10')">📋 Nusxa</button>
+    <div class="result-box" id="rr_hset">
+      <div class="result-label">⚡ Redis In-Memory CLI Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#f87171;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚡ Redis 7 Server Terminal:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;(integer) 4
+"Azizbek"
+1) "22"
+2) "Frontend"&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
     </div>
-    <div class="code-body">
-      <pre id="code10">// Node.js + ioredis bilan kesh pattern
-const Redis = require('ioredis');
-const redis = new Redis();
 
-async function getUserData(userId) {
-  const cacheKey = `user:${userId}`;
+    <div class="note-box" style="margin-top:16px;">💡 JSON matnini butunligicha saqlagandan ko'ra Hash qulay, chunki faqat bitta maydonni butun ob'ektni qayta yozmasdan yangilash mumkin.</div>
+
+    <div class="topic-nav">
+      <a href="#llen" class="topic-nav-btn prev">← LLEN: Ro'yxat Uzunligini O'lchash</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Redis | 13 / 26</span>
+      <a href="#hgetall" class="topic-nav-btn next">HGETALL, HKEYS va HVALS →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-red" style="background:#dc2626; color:#fff;">Hashes</span>
+      <span style="font-size:12px; color:var(--text2);">Redis Mavzu #14</span>
+    </div>
+    <h2 id="hgetall" style="color:#ef4444; background: linear-gradient(90deg, #f87171, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">HGETALL, HKEYS va HVALS</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Hash ichidagi barcha maydon va qiymatlarni birvarakayiga olish uchun <code>HGETALL</code> ishlatiladi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>HGETALL key</code> — barcha maydon va qiymat juftliklarini chiqaradi.</li><li><code>HKEYS key</code> — faqat maydonlar nomlarini (keys) oladi.</li><li><code>HVALS key</code> — faqat qiymatlarni (values) oladi.</li><li><code>HLEN key</code> — ob'ektdagi maydonlar sonini ko'rsatadi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Redis CLI / Commands</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('rc_hgetall')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('rc_hgetall','rr_hgetall')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="rc_hgetall" contenteditable="true" spellcheck="false"># Ob'ektning butun tarkibini chiqarish
+HGETALL user:101
+HKEYS user:101
+HLEN user:101</pre>
+      </div>
+    </div>
+    <div class="result-box" id="rr_hgetall">
+      <div class="result-label">⚡ Redis In-Memory CLI Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#f87171;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚡ Redis 7 Server Terminal:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;1) "ism"
+2) "Azizbek"
+3) "yosh"
+4) "22"
+5) "kasb"
+6) "Frontend"
+7) "shahar"
+8) "Toshkent"
+1) "ism"
+2) "yosh"
+3) "kasb"
+4) "shahar"
+(integer) 4&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Katta ob'ektlarda HGETALL o'rniga HSCAN ishlatish tavsiya qilinadi.</div>
+
+    <div class="topic-nav">
+      <a href="#hset" class="topic-nav-btn prev">← HSET va HGET: Hash Xaritalari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Redis | 14 / 26</span>
+      <a href="#hdel" class="topic-nav-btn next">HDEL va HEXISTS: Hash Boshqaruvi →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-red" style="background:#dc2626; color:#fff;">Hashes</span>
+      <span style="font-size:12px; color:var(--text2);">Redis Mavzu #15</span>
+    </div>
+    <h2 id="hdel" style="color:#ef4444; background: linear-gradient(90deg, #f87171, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">HDEL va HEXISTS: Hash Boshqaruvi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Hash ob'ektidan keraksiz maydonlarni o'chirish yoki maydon mavjudligini tekshirish usullari.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>HDEL key field...</code> — ko'rsatilgan maydonni o'chirish.</li><li><code>HEXISTS key field</code> — maydon borligini tekshirish (1 yoki 0).</li><li><code>HINCRBY key field increment</code> — hash ichidagi son maydonini oshirish.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Redis CLI / Commands</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('rc_hdel')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('rc_hdel','rr_hdel')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="rc_hdel" contenteditable="true" spellcheck="false"># Kasb maydonini tekshirish va o'chirish
+HEXISTS user:101 kasb
+HDEL user:101 kasb
+HEXISTS user:101 kasb
+
+# Yoshni 1 ga oshirish
+HINCRBY user:101 yosh 1
+HGET user:101 yosh</pre>
+      </div>
+    </div>
+    <div class="result-box" id="rr_hdel">
+      <div class="result-label">⚡ Redis In-Memory CLI Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#f87171;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚡ Redis 7 Server Terminal:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;(integer) 1
+(integer) 1
+(integer) 0
+(integer) 23
+"23"&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 HINCRBY yordamida har bir foydalanuvchining shaxsiy hisoblagichlarini alohida kalitsiz boshqarish mumkin.</div>
+
+    <div class="topic-nav">
+      <a href="#hgetall" class="topic-nav-btn prev">← HGETALL, HKEYS va HVALS</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Redis | 15 / 26</span>
+      <a href="#sadd" class="topic-nav-btn next">SADD va SMEMBERS: To'plamlar (Sets) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-red" style="background:#dc2626; color:#fff;">Sets</span>
+      <span style="font-size:12px; color:var(--text2);">Redis Mavzu #16</span>
+    </div>
+    <h2 id="sadd" style="color:#ef4444; background: linear-gradient(90deg, #f87171, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">SADD va SMEMBERS: To'plamlar (Sets)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Redis Set — bu takrorlanmas (unique) elementlarning tartiblanmagan to'plamidir. Bir xil qiymat bir necha bor qo'shilsa ham faqat 1 marta saqlanadi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>SADD key member...</code> — to'plamga elementlar kiritish.</li><li><code>SMEMBERS key</code> — to'plamdagi barcha elementlarni olish.</li><li><code>SCARD key</code> — to'plamdagi elementlar sonini hisoblash.</li><li>Teglar (Tags), onlayn foydalanuvchilar ID lari, do'stlar ro'yxati uchun ideal.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Redis CLI / Commands</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('rc_sadd')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('rc_sadd','rr_sadd')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="rc_sadd" contenteditable="true" spellcheck="false"># Kitob teglarini saqlash (takrorlar e'tiborga olinmaydi)
+SADD book:1:tags "dasturlash" "javascript" "web" "dasturlash"
+
+# Elementlar va ularning soni
+SMEMBERS book:1:tags
+SCARD book:1:tags</pre>
+      </div>
+    </div>
+    <div class="result-box" id="rr_sadd">
+      <div class="result-label">⚡ Redis In-Memory CLI Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#f87171;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚡ Redis 7 Server Terminal:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;(integer) 3
+1) "dasturlash"
+2) "javascript"
+3) "web"
+(integer) 3&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 E'tibor bering: 'dasturlash' ikki marta yozilgan bo'lsa-da, faqat bir marta qo'shildi va soni 3 ta bo'ldi.</div>
+
+    <div class="topic-nav">
+      <a href="#hdel" class="topic-nav-btn prev">← HDEL va HEXISTS: Hash Boshqaruvi</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Redis | 16 / 26</span>
+      <a href="#sinter" class="topic-nav-btn next">SINTER, SUNION va SDIFF: To'plam Amallari →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-red" style="background:#dc2626; color:#fff;">Sets</span>
+      <span style="font-size:12px; color:var(--text2);">Redis Mavzu #17</span>
+    </div>
+    <h2 id="sinter" style="color:#ef4444; background: linear-gradient(90deg, #f87171, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">SINTER, SUNION va SDIFF: To'plam Amallari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Matematik to'plam amallari (kesishma, birlashma, ayirma) Redis da O(N) tezlikda to'g'ridan-to'g'ri serverda bajariladi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>SINTER key1 key2</code> — kesishma (umumiy umumiy do'stlar, o'xshash qiziqishlar).</li><li><code>SUNION key1 key2</code> — birlashma (barcha qatnashgan elementlar).</li><li><code>SDIFF key1 key2</code> — ayirma (birinchisida bor, ikkinchisida yo'q).</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Redis CLI / Commands</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('rc_sinter')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('rc_sinter','rr_sinter')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="rc_sinter" contenteditable="true" spellcheck="false"># Ikki foydalanuvchining ko'nikmalari
+SADD skills:ali "Python" "Docker" "Redis" "Linux"
+SADD skills:vali "JavaScript" "React" "Docker" "Redis"
+
+# Umumiy ko'nikmalarni topish (Kesishma)
+SINTER skills:ali skills:vali
+
+# Faqat Alida bor ko'nikmalar (Ayirma)
+SDIFF skills:ali skills:vali</pre>
+      </div>
+    </div>
+    <div class="result-box" id="rr_sinter">
+      <div class="result-label">⚡ Redis In-Memory CLI Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#f87171;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚡ Redis 7 Server Terminal:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;(integer) 4
+(integer) 4
+1) "Docker"
+2) "Redis"
+1) "Python"
+2) "Linux"&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Ijtimoiy tarmoqlardagi 'Umumiy do'stlar' (Mutual Friends) funksiyasi aynan SINTER yordamida mikrosekundlarda topiladi.</div>
+
+    <div class="topic-nav">
+      <a href="#sadd" class="topic-nav-btn prev">← SADD va SMEMBERS: To'plamlar (Sets)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Redis | 17 / 26</span>
+      <a href="#srem" class="topic-nav-btn next">SREM va SISMEMBER →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-red" style="background:#dc2626; color:#fff;">Sets</span>
+      <span style="font-size:12px; color:var(--text2);">Redis Mavzu #18</span>
+    </div>
+    <h2 id="srem" style="color:#ef4444; background: linear-gradient(90deg, #f87171, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">SREM va SISMEMBER</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">To'plamdan elementni o'chirish va uning a'zoligini bir zumda tekshirish usullari.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>SISMEMBER key member</code> — element to'plamda bormi? (1 = ha, 0 = yo'q). Tezlik: O(1).</li><li><code>SREM key member</code> — elementni to'plamdan o'chirish.</li><li><code>SPOP key</code> — to'plamdan tasodifiy elementni sug'urib olish (lotoreya, yutuqli o'yinlar uchun).</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Redis CLI / Commands</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('rc_srem')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('rc_srem','rr_srem')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="rc_srem" contenteditable="true" spellcheck="false"># Ruxsat berilgan IP manzillarni tekshirish
+SADD whitelist:ips "192.168.1.1" "10.0.0.5"
+SISMEMBER whitelist:ips "192.168.1.1"
+SISMEMBER whitelist:ips "172.16.0.1"
+
+# O'chirish
+SREM whitelist:ips "10.0.0.5"</pre>
+      </div>
+    </div>
+    <div class="result-box" id="rr_srem">
+      <div class="result-label">⚡ Redis In-Memory CLI Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#f87171;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚡ Redis 7 Server Terminal:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;(integer) 2
+(integer) 1
+(integer) 0
+(integer) 1&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 SISMEMBER yordamida qora ro'yxat (Blacklist) yoki oq ro'yxatni (Whitelist) O(1) doimiy vaqtda tekshirish mumkin.</div>
+
+    <div class="topic-nav">
+      <a href="#sinter" class="topic-nav-btn prev">← SINTER, SUNION va SDIFF: To'plam Amallari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Redis | 18 / 26</span>
+      <a href="#zadd" class="topic-nav-btn next">ZADD: Tartiblangan To'plamlar (Sorted Sets) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-red" style="background:#dc2626; color:#fff;">Sorted Sets</span>
+      <span style="font-size:12px; color:var(--text2);">Redis Mavzu #19</span>
+    </div>
+    <h2 id="zadd" style="color:#ef4444; background: linear-gradient(90deg, #f87171, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">ZADD: Tartiblangan To'plamlar (Sorted Sets)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Sorted Set (ZSet)</strong> — har bir a'zosi ballga (score) ega bo'lgan to'plam. Barcha a'zolar avtomatik ravishda ballari bo'yicha saralangan holda saqlanadi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>ZADD key score member...</code> — ball va elementni qo'shish.</li><li>O'yinlardagi peshqadamlar jadvali (Leaderboard), mahsulotlar reytingi va qidiruv natijalarini saralash uchun eng kuchli mexanizm.</li><li>Skip List va Hash Table asosida ishlaydi, qidirish va kiritish tezligi O(log(N)).</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Redis CLI / Commands</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('rc_zadd')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('rc_zadd','rr_zadd')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="rc_zadd" contenteditable="true" spellcheck="false"># O'yin liderlar jadvaliga o'yinchilar qo'shish
+ZADD leaderboard 1500 "Rustam" 2200 "Malika" 1850 "Jasur" 3100 "Botir"
+
+# Jami o'yinchilar soni
+ZCARD leaderboard</pre>
+      </div>
+    </div>
+    <div class="result-box" id="rr_zadd">
+      <div class="result-label">⚡ Redis In-Memory CLI Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#f87171;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚡ Redis 7 Server Terminal:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;(integer) 4
+(integer) 4&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Agar bir xil o'yinchi boshqa ball bilan qayta ZADD qilinsa, uning bali avtomatik yangilanadi va o'rni qayta hisoblanadi.</div>
+
+    <div class="topic-nav">
+      <a href="#srem" class="topic-nav-btn prev">← SREM va SISMEMBER</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Redis | 19 / 26</span>
+      <a href="#zscore" class="topic-nav-btn next">ZSCORE va ZRANGE: Ballar Bo'yicha Saralash →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-red" style="background:#dc2626; color:#fff;">Sorted Sets</span>
+      <span style="font-size:12px; color:var(--text2);">Redis Mavzu #20</span>
+    </div>
+    <h2 id="zscore" style="color:#ef4444; background: linear-gradient(90deg, #f87171, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">ZSCORE va ZRANGE: Ballar Bo'yicha Saralash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Elementning ballini olish va liderlar ro'yxatini pastdan yuqoriga yoki yuqoridan pastga qarab chiqarish amallari.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>ZSCORE key member</code> — o'yinchining joriy balini ko'rsatish.</li><li><code>ZRANGE key start stop [WITHSCORES]</code> — kichik balldan kattasiga saralash.</li><li><code>ZREVRANGE key start stop [WITHSCORES]</code> — eng yuqori balldan pastiga saralash (Top 10 uchun).</li><li><code>ZINCRBY key increment member</code> — o'yinchiga qo'shimcha ball qo'shish.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Redis CLI / Commands</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('rc_zscore')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('rc_zscore','rr_zscore')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="rc_zscore" contenteditable="true" spellcheck="false"># Malikaning balini ko'rish
+ZSCORE leaderboard "Malika"
+
+# Eng kuchli 3 ta o'yinchini ballari bilan chiqarish
+ZREVRANGE leaderboard 0 2 WITHSCORES</pre>
+      </div>
+    </div>
+    <div class="result-box" id="rr_zscore">
+      <div class="result-label">⚡ Redis In-Memory CLI Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#f87171;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚡ Redis 7 Server Terminal:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;"2200"
+1) "Botir"
+2) "3100"
+3) "Malika"
+4) "2200"
+5) "Jasur"
+6) "1850"&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 ZREVRANGE 0 9 WITHSCORES buyrug'i millionlab o'yinchilar orasidan bir lahzada Top-10 reytingni qaytaradi.</div>
+
+    <div class="topic-nav">
+      <a href="#zadd" class="topic-nav-btn prev">← ZADD: Tartiblangan To'plamlar (Sorted Sets)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Redis | 20 / 26</span>
+      <a href="#zrank" class="topic-nav-btn next">ZRANK va ZREVRANK: O'rinni Belgilash →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-red" style="background:#dc2626; color:#fff;">Sorted Sets</span>
+      <span style="font-size:12px; color:var(--text2);">Redis Mavzu #21</span>
+    </div>
+    <h2 id="zrank" style="color:#ef4444; background: linear-gradient(90deg, #f87171, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">ZRANK va ZREVRANK: O'rinni Belgilash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Foydalanuvchining butun platforma bo'yicha nechanchi o'rinda turganligini aniqlash.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>ZREVRANK key member</code> — yuqoridan pastga (eng kattasi 0-o'rin) bo'yicha o'rin.</li><li><code>ZRANK key member</code> — pastdan yuqoriga bo'yicha o'rin.</li><li><code>ZREMRANGEBYRANK key start stop</code> — ma'lum o'rindagi yozuvlarni tozalash.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Redis CLI / Commands</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('rc_zrank')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('rc_zrank','rr_zrank')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="rc_zrank" contenteditable="true" spellcheck="false"># Botir nechanchi o'rinda turibdi?
+ZREVRANK leaderboard "Botir"
+
+# Jasur nechanchi o'rinda?
+ZREVRANK leaderboard "Jasur"</pre>
+      </div>
+    </div>
+    <div class="result-box" id="rr_zrank">
+      <div class="result-label">⚡ Redis In-Memory CLI Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#f87171;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚡ Redis 7 Server Terminal:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;(integer) 0
+(integer) 2&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Indekslar 0 dan boshlanadi. 0 — 1-o'rinni, 2 — 3-o'rinni bildiradi.</div>
+
+    <div class="topic-nav">
+      <a href="#zscore" class="topic-nav-btn prev">← ZSCORE va ZRANGE: Ballar Bo'yicha Saralash</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Redis | 21 / 26</span>
+      <a href="#pubsub" class="topic-nav-btn next">Pub/Sub: Xabarlar Almashish Tizimi →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-red" style="background:#dc2626; color:#fff;">Xabarlar</span>
+      <span style="font-size:12px; color:var(--text2);">Redis Mavzu #22</span>
+    </div>
+    <h2 id="pubsub" style="color:#ef4444; background: linear-gradient(90deg, #f87171, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Pub/Sub: Xabarlar Almashish Tizimi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Publish / Subscribe</strong> — xabar yuboruvchi (publisher) va tinglovchilar (subscribers) o'rtasida real-vaqtda xabar uzatish mexanizmi. Chat ilovalari va mikroservislar aloqasi uchun ishlatiladi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>SUBSCRIBE channel...</code> — kanalga a'zo bo'lish va yangi xabarlarni kutish.</li><li><code>PUBLISH channel message</code> — kanalga xabar yuborish.</li><li>Xabarlar xotirada saqlanmaydi (fire-and-forget); faqat o'sha paytda ulanib turgan tinglovchilarga yetkaziladi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Redis CLI / Commands</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('rc_pubsub')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('rc_pubsub','rr_pubsub')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="rc_pubsub" contenteditable="true" spellcheck="false"># 1-terminalda (tinglovchi):
+SUBSCRIBE news_channel
+
+# 2-terminalda (yuboruvchi):
+PUBLISH news_channel "Yangi kurs yuklandi: Redis darslari!"</pre>
+      </div>
+    </div>
+    <div class="result-box" id="rr_pubsub">
+      <div class="result-label">⚡ Redis In-Memory CLI Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#f87171;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚡ Redis 7 Server Terminal:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Reading messages... (press Ctrl-C to quit)
+1) "subscribe"
+2) "news_channel"
+3) (integer) 1
+1) "message"
+2) "news_channel"
+3) "Yangi kurs yuklandi: Redis darslari!"&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 WebSocket serverlari (masalan Socket.io) bir nechta klaster serverlar o'rtasida xabarlarni tarqatish uchun aynan Redis Pub/Sub dan foydalanadi.</div>
+
+    <div class="topic-nav">
+      <a href="#zrank" class="topic-nav-btn prev">← ZRANK va ZREVRANK: O'rinni Belgilash</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Redis | 22 / 26</span>
+      <a href="#transactions" class="topic-nav-btn next">Redis Tranzaksiyalari: MULTI va EXEC →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-red" style="background:#dc2626; color:#fff;">Xavfsizlik</span>
+      <span style="font-size:12px; color:var(--text2);">Redis Mavzu #23</span>
+    </div>
+    <h2 id="transactions" style="color:#ef4444; background: linear-gradient(90deg, #f87171, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Redis Tranzaksiyalari: MULTI va EXEC</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Redis bir nechta buyruqlarni bitta blok sifatida, boshqa mijozlar aralashuvisiz navbatma-navbat bajarish imkoniyatiga ega.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>MULTI</code> — tranzaksiyani boshlash (keyingi barcha buyruqlar QUEUED qilinadi).</li><li><code>EXEC</code> — barcha to'plangan buyruqlarni atomik tarzda bajarish.</li><li><code>DISCARD</code> — tranzaksiyani bekor qilish.</li><li><code>WATCH key</code> — optimistik qulflash (agar kalit tashqaridan o'zgarsa, EXEC bajarilmay bekor bo'ladi).</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Redis CLI / Commands</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('rc_transactions')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('rc_transactions','rr_transactions')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="rc_transactions" contenteditable="true" spellcheck="false"># Tranzaksiya orqali pul o'tkazish
+MULTI
+DECRBY hisob:ali 50000
+INCRBY hisob:vali 50000
+EXEC</pre>
+      </div>
+    </div>
+    <div class="result-box" id="rr_transactions">
+      <div class="result-label">⚡ Redis In-Memory CLI Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#f87171;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚡ Redis 7 Server Terminal:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;OK
+QUEUED
+QUEUED
+1) (integer) 150000
+2) (integer) 850000&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 MULTI va EXEC blokida barcha buyruqlar tartib bilan bajariladi va oraga hech qanday boshqa so'rov tiqila olmaydi.</div>
+
+    <div class="topic-nav">
+      <a href="#pubsub" class="topic-nav-btn prev">← Pub/Sub: Xabarlar Almashish Tizimi</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Redis | 23 / 26</span>
+      <a href="#persistence" class="topic-nav-btn next">Redis Doimiyligi: RDB va AOF →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-red" style="background:#dc2626; color:#fff;">Arxitektura</span>
+      <span style="font-size:12px; color:var(--text2);">Redis Mavzu #24</span>
+    </div>
+    <h2 id="persistence" style="color:#ef4444; background: linear-gradient(90deg, #f87171, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Redis Doimiyligi: RDB va AOF</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Redis xotira to'xtaganda ma'lumotlar yo'qolib ketmasligi uchun ma'lumotlarni qattiq diskka yozib borishning 2 ta kuchli mexanizmini taqdim etadi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><strong>RDB (Redis Database Snapshot):</strong> Belgilangan vaqt oralig'ida (masalan, har 5 daqiqada) xotiraning to'liq rasmini diskka <code>dump.rdb</code> fayli qilib saqlaydi. Juda ixcham.</li><li><strong>AOF (Append Only File):</strong> Barcha yozish buyruqlarini (SET, HSET va h.k.) jurnal fayliga qo'shib boradi (<code>appendonly.aof</code>). Minimal ma'lumot yo'qotish.</li><li>Eng yaxshi amaliyot: Ikkala usulni birgalikda yoqib qo'yish (Hybrid Persistence).</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Redis CLI / Commands</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('rc_persistence')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('rc_persistence','rr_persistence')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="rc_persistence" contenteditable="true" spellcheck="false"># Qo'lda zaxira nusxa yaratish
+BGSAVE
+
+# So'nggi saqlash vaqtini ko'rish
+LASTSAVE
+
+# AOF holatini tekshirish
+CONFIG GET appendonly</pre>
+      </div>
+    </div>
+    <div class="result-box" id="rr_persistence">
+      <div class="result-label">⚡ Redis In-Memory CLI Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#f87171;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚡ Redis 7 Server Terminal:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Background saving started
+(integer) 1763901234
+1) "appendonly"
+2) "yes"&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 BGSAVE orqa fonda alohida fork jarayon ochib saqlaydi, shuning uchun asosiy server mijozlarga xizmat ko'rsatishda davom etadi.</div>
+
+    <div class="topic-nav">
+      <a href="#transactions" class="topic-nav-btn prev">← Redis Tranzaksiyalari: MULTI va EXEC</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Redis | 24 / 26</span>
+      <a href="#caching" class="topic-nav-btn next">Redis Kesh Strategiyalari (Cache-Aside) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-red" style="background:#dc2626; color:#fff;">Kesh</span>
+      <span style="font-size:12px; color:var(--text2);">Redis Mavzu #25</span>
+    </div>
+    <h2 id="caching" style="color:#ef4444; background: linear-gradient(90deg, #f87171, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Redis Kesh Strategiyalari (Cache-Aside)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Web ilovalarda Redis dan to'g'ri foydalanishning eng mashhur arxitektura namunasi <strong>Cache-Aside (Lazy Loading)</strong> hisoblanadi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li>1. Dastur so'rov olganda avval keshni (Redis) tekshiradi.</li><li>2. Agar ma'lumot keshda bo'lsa (<strong>Cache Hit</strong>), uni darhol mijozga qaytaradi.</li><li>3. Agar keshda bo'lmasa (<strong>Cache Miss</strong>), asosiy bazadan (PostgreSQL) o'qiydi, keshga (Redis) TTL bilan yozadi va mijozga qaytaradi.</li><li>Natijada asosiy bazaga tushadigan yuklama 90% ga kamayadi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Redis CLI / Commands</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('rc_caching')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('rc_caching','rr_caching')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="rc_caching" contenteditable="true" spellcheck="false">// Cache-Aside namunasi (Pseudo-kod)
+async function getProduct(id) {
+  const cacheKey = `product:${id}`;
   
-  // 1. Avval keshdan tekshir
+  // 1. Keshdan qidiramiz
   const cached = await redis.get(cacheKey);
   if (cached) {
-    console.log('Keshdan olindi ✅');
-    return JSON.parse(cached);
+    return JSON.parse(cached); // Cache Hit ⚡
   }
   
-  // 2. Ma'lumotlar bazasidan ol
-  const user = await db.query('SELECT * FROM users WHERE id = ?', [userId]);
+  // 2. Asosiy bazadan olamiz (Cache Miss)
+  const product = await db.query("SELECT * FROM products WHERE id = $1", [id]);
   
-  // 3. Keshga saqlash (1 soat)
-  await redis.set(cacheKey, JSON.stringify(user), 'EX', 3600);
+  // 3. Redis ga 1 soatga (3600s) keshlab qo'yamiz
+  await redis.setex(cacheKey, 3600, JSON.stringify(product));
   
-  console.log('DB dan olindi 📦');
-  return user;
-}
-
-// Cache invalidation (yangilanishda o'chirish)
-async function updateUser(userId, data) {
-  await db.update('users', data, userId);
-  await redis.del(`user:${userId}`); // Keshni o'chirish
+  return product;
 }</pre>
+      </div>
     </div>
-  </div>
+    <div class="result-box" id="rr_caching">
+      <div class="result-label">⚡ Redis In-Memory CLI Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#f87171;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚡ Redis 7 Server Terminal:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;[Request 1]: Cache Miss -&gt; DB query (45ms) -&gt; Saved to Redis
+[Request 2]: Cache Hit  -&gt; Returned from Redis (0.8ms) 🚀
+[Request 3]: Cache Hit  -&gt; Returned from Redis (0.6ms) 🚀&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
 
-  <h2 id="nodejs">Node.js bilan Redis</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">javascript</span>
-      <button class="copy-btn" onclick="copyCode('code11')">📋 Nusxa</button>
+    <div class="note-box" style="margin-top:16px;">💡 Kesh yangilanishi uchun mahsulot tahrirlanganda keshdagi kalitni o'chirib (DEL product:id) tashlash lozim (Cache Invalidation).</div>
+
+    <div class="topic-nav">
+      <a href="#persistence" class="topic-nav-btn prev">← Redis Doimiyligi: RDB va AOF</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Redis | 25 / 26</span>
+      <a href="#nodejs" class="topic-nav-btn next">Node.js va Python da Redis bilan Ishlash →</a>
     </div>
-    <div class="code-body">
-      <pre id="code11">// npm install ioredis
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-red" style="background:#dc2626; color:#fff;">Amaliyot</span>
+      <span style="font-size:12px; color:var(--text2);">Redis Mavzu #26</span>
+    </div>
+    <h2 id="nodejs" style="color:#ef4444; background: linear-gradient(90deg, #f87171, #ef4444); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Node.js va Python da Redis bilan Ishlash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Node.js da <code>ioredis</code>, Python da esa <code>redis-py</code> kutubxonalari orqali Redis ga ulanish juda qulay va tez.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li>Node.js o'rnatish: <code>npm install ioredis</code>.</li><li>Python o'rnatish: <code>pip install redis</code>.</li><li>Avtomatik qayta ulanish, klasterlar va Sentinel tizimlarini qo'llab-quvvatlaydi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Redis CLI / Commands</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('rc_nodejs')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('rc_nodejs','rr_nodejs')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="rc_nodejs" contenteditable="true" spellcheck="false">// Node.js (ioredis) namunasi:
 const Redis = require('ioredis');
-
 const redis = new Redis({
   host: '127.0.0.1',
-  port: 6379,
-  // password: 'your_password',
+  port: 6379
 });
 
-// Asosiy amallar
 async function main() {
-  // String
-  await redis.set('name', 'Ali', 'EX', 60);
-  const name = await redis.get('name');
-  console.log(name); // Ali
+  await redis.set('platform', 'W3Learn.uz', 'EX', 3600);
+  const value = await redis.get('platform');
+  console.log('Keshdan olingan qiymat:', value);
 
-  // Hash
-  await redis.hset('user:1', 'name', 'Ali', 'age', '25');
-  const user = await redis.hgetall('user:1');
-  console.log(user); // { name: 'Ali', age: '25' }
-
-  // List
-  await redis.rpush('queue', 'task1', 'task2');
-  const task = await redis.lpop('queue');
-  console.log(task); // task1
-
-  // Ulanishni yopish
-  redis.disconnect();
+  // Hash bilan ishlash
+  await redis.hset('user:42', 'name', 'Sherzod', 'role', 'Admin');
+  const user = await redis.hgetall('user:42');
+  console.log('Foydalanuvchi obyekti:', user);
 }
 
-main().catch(console.error);</pre>
+main();</pre>
+      </div>
     </div>
-  </div>
+    <div class="result-box" id="rr_nodejs">
+      <div class="result-label">⚡ Redis In-Memory CLI Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#f87171;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;⚡ Redis 7 Server Terminal:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Keshdan olingan qiymat: W3Learn.uz
+Foydalanuvchi obyekti: { name: 'Sherzod', role: 'Admin' }&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
 
-  <!-- Quiz -->
+    <div class="note-box" style="margin-top:16px;">💡 ioredis kutubxonasi Node.js ekotizimida eng barqaror va keng imkoniyatli Redis mijozi sanaladi.</div>
+
+    <div class="topic-nav">
+      <a href="#caching" class="topic-nav-btn prev">← Redis Kesh Strategiyalari (Cache-Aside)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Redis | 26 / 26</span>
+      <a href="git.html" class="topic-nav-btn next">Keyingi kurs: Git Darslari →</a>
+    </div>
+  </section>
+
   <div class="quiz-box">
-    <div class="quiz-q">🧠 Redis da ma'lumotlar qayerda saqlanadi?</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'q1')">💾 Diskda (SSD)</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, true, 'q1')">🧠 Operativ xotirada (RAM)</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'q1')">☁️ Bulutda</div>
-    <div class="quiz-result" id="q1"></div>
+    <div class="quiz-q">🧪 Test: Redis da kalitga ma'lum vaqtdan so'ng (soniyalarda) avtomatik o'chib ketish muddatini belgilash uchun qaysi buyruq ishlatiladi?</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, true, 'redisQr1')">EXPIRE</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'redisQr1')">TIMEOUT</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'redisQr1')">DELETE_AFTER</div>
+    <div class="quiz-result" id="redisQr1"></div>
   </div>
 
-  
+  <div class="nav-btns" style="margin-top: 30px;">
+    <a href="postgresql.html" class="btn-prev">← PostgreSQL Darslari</a>
+    <a href="git.html" class="btn-next">Git Darsiga O'tish →</a>
+  </div>
 
-<div class="nav-btns">
-  <a href="postgresql.html" class="btn-prev">&#8592; PostgreSQL</a>
-  <a href="git.html" class="btn-next">Git &#8594;</a>
-</div>
+  <div class="note note-blue" style="margin-top: 25px;">
+    📌 <strong>Keyingi qadam:</strong> Yuqori tezlikdagi ma'lumotlar omborini o'rgangach, dastur kodlarini versiyalash va jamoaviy ishlash uchun zarur bo'lgan <a href="git.html" style="color:var(--green)">Git darslariga</a> o'ting!
+  </div>
 </main>
 <aside class="right-panel">
   <div class="rp-title">📊 Kurs bo'limlari</div>

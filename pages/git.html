@@ -78,123 +78,1123 @@
 </aside>
 <div class="overlay" id="overlay" onclick="closeMobileSidebar()"></div>
 <main class="main">
-  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">Git & GitHub</a> › Git Nima?</div>
-  <h1 id="kirish">Git Nima?</h1>
-  <div class="meta-tags">
-    <span class="tag tag-green">⏱ 7 daqiqa</span>
-    <span class="tag tag-blue">🟢 Boshlang'ich</span>
-    <span class="tag tag-orange">👁 11,200 marta ko'rilgan</span>
-  </div>
-  <p><strong>Git</strong> — tarqatilgan versiya boshqaruv tizimi (VCS). Dasturchilar jamoasi birgalikda ishlashga, kodni tarixini saqlashga va o'zgarishlarni kuzatishga imkon beradi.</p>
-  <p><strong>GitHub</strong> — Git repozitoriyalarini internet orqali saqlash va ulashish platformasi. Butun dunyo dasturchilari GitHub dan foydalanadi.</p>
-  <div class="note">💡 <strong>Eslatma:</strong> Git — vosita (tool), GitHub — platforma (service). Ikkalasi bir narsa emas.</div>
-
-  <h2 id="init">Birinchi Repozitoriy</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar"><span class="code-lang">Terminal (Bash)</span>
-      <div class="code-actions"><button class="btn-copy" onclick="copyCode('code1')">📋 Nusxa</button></div>
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-orange" style="background:#f97316; color:#fff;">Asosiy</span>
+      <span style="font-size:12px; color:var(--text2);">Git Mavzu #1</span>
     </div>
-    <div class="code-body"><pre id="code1"># Git versiyasini tekshirish
-git --version
+    <h2 id="kirish" style="color:#f97316; background: linear-gradient(90deg, #fb923c, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Git Nima? Versiyalarni Boshqarish Tizimi (VCS)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Git</strong> — Linux yadrosi asoschisi Linus Torvalds tomonidan 2005-yilda yaratilgan, dunyodagi eng mashhur taqsimlangan versiyalarni boshqarish tizimidir (Distributed Version Control System). U loyiha kodi ustida kiritilgan har bir o'zgarish tarixini saqlaydi va bir vaqtning o'zida yuzlab dasturchilarning birgalikda ishlashiga imkon beradi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li>Taqsimlangan (Distributed): Har bir dasturchining kompyuterida loyihaning to'liq tarixi mavjud bo'ladi.</li><li>Xavfsizlik: Barcha fayllar va kommitlar SHA-1 / SHA-256 xesh kriptografiyasi orqali himoyalangan.</li><li>Tezlik: Deyarli barcha amallar (tarixni ko'rish, diff solishtirish, tarmoqlash) internetga ulanmasdan mahalliy diskda bajariladi.</li><li>GitHub, GitLab, Bitbucket kabi global servislar Git poydevorida ishlaydi.</li></ul>
 
-# Foydalanuvchini sozlash (bir martabalik)
-git config --global user.name "Ismingiz"
-git config --global user.email "email@example.com"
-
-# Yangi repozitoriy yaratish
-mkdir mening-loyiham
-cd mening-loyiham
-git init
-
-# Fayl yaratish va qo'shish
-echo "# Mening Loyiham" > README.md
-git add README.md
-git add .              # barcha fayllarni qo'shish
-
-# Birinchi commit
-git commit -m "Birinchi commit — README qo'shildi"
-
-# Holat ko'rish
-git status
-git log --oneline</pre></div>
-  </div>
-
-  <h2 id="branch">Branch bilan ishlash</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar"><span class="code-lang">Terminal (Bash)</span>
-      <div class="code-actions"><button class="btn-copy" onclick="copyCode('code2')">📋 Nusxa</button></div>
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Git Bash / Terminal</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('gc_kirish')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('gc_kirish','gr_kirish')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="gc_kirish" contenteditable="true" spellcheck="false"># Git o'rnatilganligini va versiyasini tekshirish
+git --version</pre>
+      </div>
     </div>
-    <div class="code-body"><pre id="code2"># Barcha branchlarni ko'rish
-git branch
+    <div class="result-box" id="gr_kirish">
+      <div class="result-label">💻 Git Console Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#fb923c;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;💻 Git Bash Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;git version 2.44.0.windows.1&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
 
-# Yangi branch yaratish
-git branch yangi-funksiya
+    <div class="note-box" style="margin-top:16px;">💡 Git va GitHub boshqa-boshqa narsalar: Git bu dastur (VCS), GitHub esa Git repozitoriylarini bulutda saqlovchi va hamkorlikni ta'minlovchi veb-platformadir.</div>
 
-# Branch ga o'tish
-git checkout yangi-funksiya
-# Yoki yangi usul:
-git switch yangi-funksiya
+    <div class="topic-nav">
+      <a href="redis.html" class="topic-nav-btn prev">← Redis Darslari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Git | 1 / 26</span>
+      <a href="#install" class="topic-nav-btn next">Git O'rnatish va Muhitni Tayyorlash →</a>
+    </div>
+  </section>
 
-# Yaratish + o'tish (bir buyruqda)
-git checkout -b boshqa-branch
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-orange" style="background:#f97316; color:#fff;">O'rnatish</span>
+      <span style="font-size:12px; color:var(--text2);">Git Mavzu #2</span>
+    </div>
+    <h2 id="install" style="color:#f97316; background: linear-gradient(90deg, #fb923c, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Git O'rnatish va Muhitni Tayyorlash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Git deyarli barcha operatsion tizimlarda ishlaydi. O'rnatishdan so'ng terminal orqali boshqarish eng qulay usuldir.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li>Windows: <code>git-scm.com</code> saytidan 'Git for Windows' yuklab olinadi (u bilan birga qulay <strong>Git Bash</strong> terminali keladi).</li><li>macOS: Terminalda <code>git --version</code> yozilsa, avtomatik ravishda Xcode Command Line Tools o'rnatiladi yoki <code>brew install git</code>.</li><li>Linux (Ubuntu/Debian): <code>sudo apt update && sudo apt install git -y</code>.</li></ul>
 
-# O'zgarishlar kiritib commit qilish
-# ... fayllarni tahrirlash ...
-git add .
-git commit -m "Yangi funksiya qo'shildi"
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Git Bash / Terminal</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('gc_install')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('gc_install','gr_install')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="gc_install" contenteditable="true" spellcheck="false"># Linux tizimlarida o'rnatish
+sudo apt update
+sudo apt install git -y
 
-# main ga qaytib merge qilish
+# O'rnatishni tekshirish
+git --version</pre>
+      </div>
+    </div>
+    <div class="result-box" id="gr_install">
+      <div class="result-label">💻 Git Console Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#fb923c;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;💻 Git Bash Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;git version 2.43.0&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Windows foydalanuvchilariga doimo 'Git Bash' terminali orqali ishlash tavsiya etiladi, chunki u Linux buyruqlarini ham to'liq quvvatlaydi.</div>
+
+    <div class="topic-nav">
+      <a href="#kirish" class="topic-nav-btn prev">← Git Nima? Versiyalarni Boshqarish Tizimi (VCS)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Git | 2 / 26</span>
+      <a href="#config" class="topic-nav-btn next">Git Config: Dasturchi Ismi va Emaili →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-orange" style="background:#f97316; color:#fff;">Sozlash</span>
+      <span style="font-size:12px; color:var(--text2);">Git Mavzu #3</span>
+    </div>
+    <h2 id="config" style="color:#f97316; background: linear-gradient(90deg, #fb923c, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Git Config: Dasturchi Ismi va Emaili</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Git da birinchi marta ishlashdan oldin kim kod yozayotganini aniqlash uchun ism va elektron pochtani global tarzda kiritish shart. Ushbu ma'lumotlar har bir kommitga muhrlanadi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>git config --global user.name "Ismingiz"</code> — muallif ismini belgilash.</li><li><code>git config --global user.email "emailingiz@example.com"</code> — muallif emailini kiritish (GitHub dagi email bilan bir xil bo'lishi maqsadga muvofiq).</li><li><code>git config --list</code> — joriy barcha sozlamalarni ko'rish.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Git Bash / Terminal</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('gc_config')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('gc_config','gr_config')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="gc_config" contenteditable="true" spellcheck="false"># Global foydalanuvchi ma'lumotlarini kiritish
+git config --global user.name "Alisher Navoiy"
+git config --global user.email "alisher@example.uz"
+
+# Asosiy tarmoq nomini "main" deb belgilash
+git config --global init.defaultBranch main
+
+# Sozlamalarni tekshirish
+git config user.name
+git config user.email</pre>
+      </div>
+    </div>
+    <div class="result-box" id="gr_config">
+      <div class="result-label">💻 Git Console Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#fb923c;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;💻 Git Bash Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Alisher Navoiy
+alisher@example.uz&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 --global bayrog'i sozlamani butun kompyuterdagi barcha repozitoriylar uchun amal qiladigan qilib sozlaydi.</div>
+
+    <div class="topic-nav">
+      <a href="#install" class="topic-nav-btn prev">← Git O'rnatish va Muhitni Tayyorlash</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Git | 3 / 26</span>
+      <a href="#init" class="topic-nav-btn next">git init: Yangi Repozitoriy Yaratish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-orange" style="background:#f97316; color:#fff;">Asosiy</span>
+      <span style="font-size:12px; color:var(--text2);">Git Mavzu #4</span>
+    </div>
+    <h2 id="init" style="color:#f97316; background: linear-gradient(90deg, #fb923c, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">git init: Yangi Repozitoriy Yaratish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Mavjud bo'lgan istalgan papkani Git repozitoriyasiga aylantirish uchun <code>git init</code> buyrug'i ishlatiladi. Bu joriy papkada yashirin <code>.git</code> katalogini yaratadi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>.git</code> papkasi loyihaning barcha tarixi, tarmoqlari va kommitlarini o'zida saqlaydi.</li><li>Agar <code>.git</code> papkasi o'chirib tashlansa, loyiha oddiy papkaga aylanadi va versiyalar tarixi yo'qoladi.</li><li>Faqat loyiha ildiz (root) papkasida bir marta ishga tushiriladi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Git Bash / Terminal</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('gc_init')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('gc_init','gr_init')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="gc_init" contenteditable="true" spellcheck="false"># Yangi papka ochib, uni Git loyihasiga aylantirish
+mkdir mening-saytim
+cd mening-saytim
+git init</pre>
+      </div>
+    </div>
+    <div class="result-box" id="gr_init">
+      <div class="result-label">💻 Git Console Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#fb923c;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;💻 Git Bash Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Initialized empty Git repository in /home/user/mening-saytim/.git/&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Endi ushbu papkadagi har qanday o'zgarishlar Git nazorati ostiga olinadi.</div>
+
+    <div class="topic-nav">
+      <a href="#config" class="topic-nav-btn prev">← Git Config: Dasturchi Ismi va Emaili</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Git | 4 / 26</span>
+      <a href="#status" class="topic-nav-btn next">git status: Fayllar Holatini Tekshirish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-orange" style="background:#f97316; color:#fff;">Holat</span>
+      <span style="font-size:12px; color:var(--text2);">Git Mavzu #5</span>
+    </div>
+    <h2 id="status" style="color:#f97316; background: linear-gradient(90deg, #fb923c, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">git status: Fayllar Holatini Tekshirish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>git status</strong> — Git dagi eng muhim va eng ko'p ishlatiladigan buyruq. U qaysi fayllar o'zgargani, qaysilari kutish maydoniga (staging area) qo'shilgani yoki nazorat qilinmayotganini (untracked) ko'rsatadi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><strong>Untracked files (Qizil):</strong> Yangi yaratilgan, hali Git ga qo'shilmagan fayllar.</li><li><strong>Changes not staged (Qizil):</strong> Tahrirlangan, lekin hali <code>git add</code> qilinmagan fayllar.</li><li><strong>Changes to be committed (Yashil):</strong> <code>git add</code> qilingan, kommitga tayyor kutish maydonidagi fayllar.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Git Bash / Terminal</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('gc_status')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('gc_status','gr_status')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="gc_status" contenteditable="true" spellcheck="false"># Yangi fayl yaratib, statusni ko'rish
+echo "&lt;h1&gt;Salom Dunyo&lt;/h1&gt;" &gt; index.html
+git status</pre>
+      </div>
+    </div>
+    <div class="result-box" id="gr_status">
+      <div class="result-label">💻 Git Console Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#fb923c;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;💻 Git Bash Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;On branch main
+
+No commits yet
+
+Untracked files:
+  (use "git add &lt;file&gt;..." to include in what will be committed)
+	index.html
+
+nothing added to commit but untracked files present (use "git add" to track)&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Har qanday harakatdan oldin va keyin `git status` yozib turish xatolarning oldini oladi.</div>
+
+    <div class="topic-nav">
+      <a href="#init" class="topic-nav-btn prev">← git init: Yangi Repozitoriy Yaratish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Git | 5 / 26</span>
+      <a href="#add" class="topic-nav-btn next">git add: Staging Area (Kutish Maydoni) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-orange" style="background:#f97316; color:#fff;">Asosiy</span>
+      <span style="font-size:12px; color:var(--text2);">Git Mavzu #6</span>
+    </div>
+    <h2 id="add" style="color:#f97316; background: linear-gradient(90deg, #fb923c, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">git add: Staging Area (Kutish Maydoni)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Git da o'zgarishlarni to'g'ridan-to'g'ri kommit qilib bo'lmaydi. Avval qaysi fayllarni kommitga kiritmoqchi ekanligingizni <strong>Staging Area</strong> (indeks) ga qo'shishingiz kerak.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>git add fayl_nomi.js</code> — faqat ko'rsatilgan aniq faylni qo'shish.</li><li><code>git add .</code> yoki <code>git add -A</code> — joriy papkadagi barcha yangi va o'zgartirilgan fayllarni qo'shish.</li><li><code>git restore --staged fayl_nomi</code> — xato qo'shilgan faylni staging areadan qaytarib chiqarish.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Git Bash / Terminal</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('gc_add')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('gc_add','gr_add')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="gc_add" contenteditable="true" spellcheck="false"># index.html faylini staging areaga qo'shamiz
+git add index.html
+git status</pre>
+      </div>
+    </div>
+    <div class="result-box" id="gr_add">
+      <div class="result-label">💻 Git Console Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#fb923c;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;💻 Git Bash Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;On branch main
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached &lt;file&gt;..." to unstage)
+	new file:   index.html&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Staging Area yordamida siz bir nechta fayllardan faqat keraklilarini tanlab-tanlab alohida mantiqiy kommitlarga ajratishingiz mumkin.</div>
+
+    <div class="topic-nav">
+      <a href="#status" class="topic-nav-btn prev">← git status: Fayllar Holatini Tekshirish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Git | 6 / 26</span>
+      <a href="#commit" class="topic-nav-btn next">git commit: O'zgarishlarni Tarixga Muhrlash →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-orange" style="background:#f97316; color:#fff;">Kommit</span>
+      <span style="font-size:12px; color:var(--text2);">Git Mavzu #7</span>
+    </div>
+    <h2 id="commit" style="color:#f97316; background: linear-gradient(90deg, #fb923c, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">git commit: O'zgarishlarni Tarixga Muhrlash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>git commit</strong> — staging areadagi barcha o'zgarishlarni loyihaning o'chmas tarixiga (snapshot) saqlaydi. Har bir kommit aniq xabar (commit message) bilan yozilishi shart.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>git commit -m "Xabar matni"</code> — qisqa tushunarli izoh bilan kommit qilish.</li><li>Kommit xabari qoidasi: nima qilinganini aniq va lo'nda yozish (masalan: 'feat: add login modal', 'fix: responsive navbar').</li><li>Har bir kommit o'zining noyob SHA-1 xesh identifikatoriga ega bo'ladi (masalan: <code>a1b2c3d</code>).</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Git Bash / Terminal</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('gc_commit')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('gc_commit','gr_commit')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="gc_commit" contenteditable="true" spellcheck="false"># Kommit qilish
+git commit -m "feat: birinchi index.html sahifasi yaratildi"
+git status</pre>
+      </div>
+    </div>
+    <div class="result-box" id="gr_commit">
+      <div class="result-label">💻 Git Console Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#fb923c;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;💻 Git Bash Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;[main (root-commit) 4f7b2a1] feat: birinchi index.html sahifasi yaratildi
+ 1 file changed, 1 insertion(+)
+ create mode 100644 index.html
+
+On branch main
+nothing to commit, working tree clean&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 `working tree clean` degani barcha o'zgarishlar muvaffaqiyatli saqlanganini bildiradi.</div>
+
+    <div class="topic-nav">
+      <a href="#add" class="topic-nav-btn prev">← git add: Staging Area (Kutish Maydoni)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Git | 7 / 26</span>
+      <a href="#log" class="topic-nav-btn next">git log: Kommitlar Tarixi →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-orange" style="background:#f97316; color:#fff;">Tarix</span>
+      <span style="font-size:12px; color:var(--text2);">Git Mavzu #8</span>
+    </div>
+    <h2 id="log" style="color:#f97316; background: linear-gradient(90deg, #fb923c, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">git log: Kommitlar Tarixi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Loyihada kim, qachon va qanday o'zgarishlar kiritganini ko'rish uchun <code>git log</code> buyrug'idan foydalaniladi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>git log</code> — to'liq ma'lumot (muallif, sana, to'liq xesh, xabar).</li><li><code>git log --oneline</code> — har bir kommitni bitta ixcham qatorda ko'rsatish.</li><li><code>git log -n 5</code> — faqat oxirgi 5 ta kommitni chiqarish.</li><li><code>git log --graph --oneline --all</code> — tarmoqlar va birlashishlarni chiroyli grafik daraxt ko'rinishida ko'rsatish.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Git Bash / Terminal</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('gc_log')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('gc_log','gr_log')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="gc_log" contenteditable="true" spellcheck="false"># Kommitlar tarixini ixcham ko'rish
+git log --oneline</pre>
+      </div>
+    </div>
+    <div class="result-box" id="gr_log">
+      <div class="result-label">💻 Git Console Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#fb923c;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;💻 Git Bash Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;4f7b2a1 (HEAD -&gt; main) feat: birinchi index.html sahifasi yaratildi
+8c92a15 docs: README.md qo'shildi
+3d4e5f6 style: ranglar palitrasi yangilandi&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Q orqali git log sahifasidan chiqib terminalga qaytishingiz mumkin.</div>
+
+    <div class="topic-nav">
+      <a href="#commit" class="topic-nav-btn prev">← git commit: O'zgarishlarni Tarixga Muhrlash</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Git | 8 / 26</span>
+      <a href="#diff" class="topic-nav-btn next">git diff: O'zgarishlarni Satrma-Satr Solishtirish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-orange" style="background:#f97316; color:#fff;">Tahlil</span>
+      <span style="font-size:12px; color:var(--text2);">Git Mavzu #9</span>
+    </div>
+    <h2 id="diff" style="color:#f97316; background: linear-gradient(90deg, #fb923c, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">git diff: O'zgarishlarni Satrma-Satr Solishtirish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Fayllarga kiritilgan har bir belgi va satr farqini ko'rish uchun <code>git diff</code> ishlatiladi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>git diff</code> — ishchi maydon va staging area o'rtasidagi farqni ko'rsatadi.</li><li><code>git diff --staged</code> — staging area va oxirgi kommit o'rtasidagi farqni solishtiradi.</li><li><code>+ (yashil)</code> — yangi qo'shilgan satrlar.</li><li><code>- (qizil)</code> — o'chirilgan yoki almashtirilgan eski satrlar.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Git Bash / Terminal</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('gc_diff')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('gc_diff','gr_diff')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="gc_diff" contenteditable="true" spellcheck="false"># Faylga o'zgartirish kiritib, diff ko'rish
+echo "&lt;p&gt;Yangi matn&lt;/p&gt;" &gt;&gt; index.html
+git diff</pre>
+      </div>
+    </div>
+    <div class="result-box" id="gr_diff">
+      <div class="result-label">💻 Git Console Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#fb923c;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;💻 Git Bash Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;diff --git a/index.html b/index.html
+index 7a3b4c1..9f8e2d3 100644
+--- a/index.html
++++ b/index.html
+@@ -1 +1,2 @@
+ &lt;h1&gt;Salom Dunyo&lt;/h1&gt;
++&lt;p&gt;Yangi matn&lt;/p&gt;&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Kommit qilishdan oldin doim git diff qilib, adashib ortiqcha console.log yoki parollarni qo'shib yubormaganligingizga ishonch hosil qiling.</div>
+
+    <div class="topic-nav">
+      <a href="#log" class="topic-nav-btn prev">← git log: Kommitlar Tarixi</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Git | 9 / 26</span>
+      <a href="#branch" class="topic-nav-btn next">git branch: Tarmoqlanish (Branches) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-orange" style="background:#f97316; color:#fff;">Tarmoqlar</span>
+      <span style="font-size:12px; color:var(--text2);">Git Mavzu #10</span>
+    </div>
+    <h2 id="branch" style="color:#f97316; background: linear-gradient(90deg, #fb923c, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">git branch: Tarmoqlanish (Branches)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Tarmoq (branch) — asosiy kodga (main) teginmasdan, alohida mustaqil parallel muhitda yangi funksiyalar (features) yaratish yoki xatolarni to'g'rilash (bugfix) imkoniyatidir.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>git branch</code> — mavjud barcha mahalliy tarmoqlarni ko'rsatadi (* belgisi joriy tarmoqni bildiradi).</li><li><code>git branch yangi-funksiya</code> — yangi tarmoq ochish.</li><li><code>git branch -d tarmoq-nomi</code> — keraksiz tarmoqni xavfsiz o'chirish.</li><li>Tarmoqlash Git da bir zumda (O(1)) ro'y beradi, chunki tarmoq shunchaki oxirgi kommitga ishora qiluvchi yengil ko'rsatkichdir.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Git Bash / Terminal</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('gc_branch')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('gc_branch','gr_branch')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="gc_branch" contenteditable="true" spellcheck="false"># Yangi tarmoq ochish va ro'yxatni ko'rish
+git branch feature-login
+git branch</pre>
+      </div>
+    </div>
+    <div class="result-box" id="gr_branch">
+      <div class="result-label">💻 Git Console Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#fb923c;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;💻 Git Bash Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;  feature-login
+* main&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Asosiy barqaror kod doimo main (yoki master) tarmog'ida saqlanadi, har bir yangi vazifa uchun yangi branch ochiladi.</div>
+
+    <div class="topic-nav">
+      <a href="#diff" class="topic-nav-btn prev">← git diff: O'zgarishlarni Satrma-Satr Solishtirish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Git | 10 / 26</span>
+      <a href="#checkout" class="topic-nav-btn next">git checkout va switch: Tarmoqlararo O'tish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-orange" style="background:#f97316; color:#fff;">Tarmoqlar</span>
+      <span style="font-size:12px; color:var(--text2);">Git Mavzu #11</span>
+    </div>
+    <h2 id="checkout" style="color:#f97316; background: linear-gradient(90deg, #fb923c, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">git checkout va switch: Tarmoqlararo O'tish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Boshqa tarmoqqa o'tish yoki yangi tarmoq ochib unga darhol sakrash buyruqlari.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>git checkout tarmoq-nomi</code> — an'anaviy o'tish buyrug'i.</li><li><code>git switch tarmoq-nomi</code> — yangi zamonaviy va xavfsiz o'tish buyrug'i (Git 2.23+).</li><li><code>git checkout -b yangi-tarmoq</code> — bitta qadamda ham yangi tarmoq ochish, ham unga o'tish.</li><li><code>git switch -c yangi-tarmoq</code> — zamonaviy ko'rinishi (-c = create).</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Git Bash / Terminal</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('gc_checkout')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('gc_checkout','gr_checkout')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="gc_checkout" contenteditable="true" spellcheck="false"># Yangi tarmoq ochib, unga birdaniga o'tamiz
+git switch -c feature-navbar
+git branch</pre>
+      </div>
+    </div>
+    <div class="result-box" id="gr_checkout">
+      <div class="result-label">💻 Git Console Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#fb923c;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;💻 Git Bash Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Switched to a new branch 'feature-navbar'
+* feature-navbar
+  main&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Yangi tarmoqqa o'tganingizdan so'ng qilingan barcha kommitlar faqat ushbu tarmoqqa tegishli bo'ladi.</div>
+
+    <div class="topic-nav">
+      <a href="#branch" class="topic-nav-btn prev">← git branch: Tarmoqlanish (Branches)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Git | 11 / 26</span>
+      <a href="#merge" class="topic-nav-btn next">git merge: Tarmoqlarni Birlashtirish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-orange" style="background:#f97316; color:#fff;">Birlashtirish</span>
+      <span style="font-size:12px; color:var(--text2);">Git Mavzu #12</span>
+    </div>
+    <h2 id="merge" style="color:#f97316; background: linear-gradient(90deg, #fb923c, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">git merge: Tarmoqlarni Birlashtirish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Yangi funksiya (feature) tayyor bo'lgach, uni asosiy tarmoqqa (main) qo'shish uchun <strong>git merge</strong> buyrug'i ishlatiladi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li>1. Avval qabul qiluvchi tarmoqqa o'tiladi: <code>git switch main</code>.</li><li>2. Birlashtirish buyrug'i beriladi: <code>git merge feature-navbar</code>.</li><li><strong>Fast-forward merge:</strong> Agar asosiy tarmoqda boshqa kommitlar bo'lmagan bo'lsa, ko'rsatkich to'g'ridan-to'g'ri oldinga siljiydi.</li><li><strong>3-way merge:</strong> Agar ikkala tarmoqda ham o'zgarishlar bo'lsa, yangi umumiy birlashtiruvchi kommit (merge commit) yasaladi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Git Bash / Terminal</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('gc_merge')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('gc_merge','gr_merge')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="gc_merge" contenteditable="true" spellcheck="false"># main tarmog'iga o'tib, feature ni birlashtirish
 git switch main
-git merge yangi-funksiya
-
-# Branch ni o'chirish
-git branch -d yangi-funksiya</pre></div>
-  </div>
-
-  <h2 id="push">GitHub ga yuklash</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar"><span class="code-lang">Terminal (Bash)</span>
-      <div class="code-actions"><button class="btn-copy" onclick="copyCode('code3')">📋 Nusxa</button></div>
+git merge feature-navbar</pre>
+      </div>
     </div>
-    <div class="code-body"><pre id="code3"># GitHub repozitoriyasini ulash
-git remote add origin https://github.com/username/repo-nomi.git
+    <div class="result-box" id="gr_merge">
+      <div class="result-label">💻 Git Console Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#fb923c;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;💻 Git Bash Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Switched to branch 'main'
+Updating 4f7b2a1..9c8e1a2
+Fast-forward
+ navbar.html | 15 +++++++++++++++
+ 1 file changed, 15 insertions(+)
+ create mode 100644 navbar.html&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
 
-# Remote ni tekshirish
-git remote -v
+    <div class="note-box" style="margin-top:16px;">💡 Agar bir xil faylning bir xil satri ikkala tarmoqda turlicha o'zgartirilgan bo'lsa, 'Merge Conflict' yuzaga keladi va uni qo'lda hal qilish lozim bo'ladi.</div>
 
-# Birinchi push
-git push -u origin main
+    <div class="topic-nav">
+      <a href="#checkout" class="topic-nav-btn prev">← git checkout va switch: Tarmoqlararo O'tish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Git | 12 / 26</span>
+      <a href="#rebase" class="topic-nav-btn next">git rebase: Tarixni Toza va Tekis Saqlash →</a>
+    </div>
+  </section>
 
-# Keyingi pushlar (qisqacha)
-git push
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-orange" style="background:#f97316; color:#fff;">Ilg'or</span>
+      <span style="font-size:12px; color:var(--text2);">Git Mavzu #13</span>
+    </div>
+    <h2 id="rebase" style="color:#f97316; background: linear-gradient(90deg, #fb923c, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">git rebase: Tarixni Toza va Tekis Saqlash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Rebase</strong> — joriy tarmoqning boshlang'ich nuqtasini boshqa tarmoqning eng so'nggi kommitiga ko'chirish amali. Natijada kommitlar tarixi chigal tarmoqlarsiz, bitta to'g'ri chiziqdek tekis ko'rinadi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li>Merge dan farqi: Merge qo'shimcha 'Merge branch ...' kommiti yasaydi, Rebase esa kommitlarni birin-ketin qayta yozadi.</li><li><code>git rebase main</code> — main dagi eng yangi o'zgarishlarni o'z tarmog'ingiz ostiga poydevor qilib olish.</li><li>Qoida: Public (ommaviy ulashilgan) tarmoqlarda hech qachon rebase qilmang!</li></ul>
 
-# Remote dan olish (pull = fetch + merge)
-git pull origin main
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Git Bash / Terminal</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('gc_rebase')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('gc_rebase','gr_rebase')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="gc_rebase" contenteditable="true" spellcheck="false"># Feature tarmog'ida turib main ustiga rebase qilish
+git switch feature-payment
+git rebase main</pre>
+      </div>
+    </div>
+    <div class="result-box" id="gr_rebase">
+      <div class="result-label">💻 Git Console Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#fb923c;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;💻 Git Bash Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Successfully rebased and updated refs/heads/feature-payment.&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
 
-# Repozitoriyani nusxalash (clone)
-git clone https://github.com/username/repo-nomi.git
+    <div class="note-box" style="margin-top:16px;">💡 Rebase loyiha tarixini chiroyli va o'qishga oson qiladi, lekin ommaviy kommitlarning xeshlarini o'zgartirishi sababli ehtiyotkorlikni talab qiladi.</div>
 
-# Oxirgi commit ni bekor qilish (fayllar saqlanadi)
+    <div class="topic-nav">
+      <a href="#merge" class="topic-nav-btn prev">← git merge: Tarmoqlarni Birlashtirish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Git | 13 / 26</span>
+      <a href="#stash" class="topic-nav-btn next">git stash: Chala Ishlarni Vaqtincha Saqlash →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-orange" style="background:#f97316; color:#fff;">Foydali</span>
+      <span style="font-size:12px; color:var(--text2);">Git Mavzu #14</span>
+    </div>
+    <h2 id="stash" style="color:#f97316; background: linear-gradient(90deg, #fb923c, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">git stash: Chala Ishlarni Vaqtincha Saqlash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Agar siz kod yozayotgan bo'lsangiz-u, ish hali tugamagan bo'lsa (kommit qilishga erta), lekin shoshilinch boshqa tarmoqqa o'tish kerak bo'lib qolsa, <code>git stash</code> yordamga keladi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>git stash</code> — chala o'zgarishlarni maxsus vaqtinchalik javonga olib qo'yadi va ishchi katalogingizni tozalaydi.</li><li><code>git stash pop</code> — saqlangan oxirgi o'zgarishlarni qaytarib olib keladi va javondan o'chiradi.</li><li><code>git stash list</code> — javonda saqlanayotgan barcha chala ishlarni ko'rsatadi.</li><li><code>git stash drop</code> — keraksiz stashni o'chirish.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Git Bash / Terminal</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('gc_stash')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('gc_stash','gr_stash')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="gc_stash" contenteditable="true" spellcheck="false"># Ishlarni vaqtincha olib qo'yish
+git stash save "header tahrirlari chala qoldi"
+
+# Shoshilinch xatoni tuzatib kelgach, qaytarib olish:
+git stash pop</pre>
+      </div>
+    </div>
+    <div class="result-box" id="gr_stash">
+      <div class="result-label">💻 Git Console Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#fb923c;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;💻 Git Bash Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Saved working directory and index state On feature: header tahrirlari chala qoldi
+Auto-merging header.html
+On branch feature
+Changes not staged for commit:
+	modified:   header.html&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 git stash hech qanday kommit yaratmasdan tarmoqlararo erkin harakatlanish imkonini beradi.</div>
+
+    <div class="topic-nav">
+      <a href="#rebase" class="topic-nav-btn prev">← git rebase: Tarixni Toza va Tekis Saqlash</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Git | 14 / 26</span>
+      <a href="#remote" class="topic-nav-btn next">git remote: Masofaviy Serverlar bilan Bog'lanish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-orange" style="background:#f97316; color:#fff;">Masofaviy</span>
+      <span style="font-size:12px; color:var(--text2);">Git Mavzu #15</span>
+    </div>
+    <h2 id="remote" style="color:#f97316; background: linear-gradient(90deg, #fb923c, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">git remote: Masofaviy Serverlar bilan Bog'lanish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Mahalliy (kompyuteringizdagi) Git loyihasini GitHub, GitLab yoki Bitbucket kabi bulutli serverlar bilan bog'lash uchun <code>git remote</code> ishlatiladi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>git remote -v</code> — ulangan masofaviy manzillarni ko'rish.</li><li><code>git remote add origin https://github.com/user/repo.git</code> — loyihani yangi masofaviy serverga bog'lash (standart nomi 'origin').</li><li><code>git remote remove origin</code> — bog'lanishni uzish.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Git Bash / Terminal</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('gc_remote')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('gc_remote','gr_remote')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="gc_remote" contenteditable="true" spellcheck="false"># GitHub repozitoriyasini bog'lash va tekshirish
+git remote add origin https://github.com/avdurasulovuz/w3learn.git
+git remote -v</pre>
+      </div>
+    </div>
+    <div class="result-box" id="gr_remote">
+      <div class="result-label">💻 Git Console Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#fb923c;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;💻 Git Bash Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;origin  https://github.com/avdurasulovuz/w3learn.git (fetch)
+origin  https://github.com/avdurasulovuz/w3learn.git (push)&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 'origin' — bu shunchaki masofaviy server URL manziliga berilgan qulay taxallus (alias) dir.</div>
+
+    <div class="topic-nav">
+      <a href="#stash" class="topic-nav-btn prev">← git stash: Chala Ishlarni Vaqtincha Saqlash</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Git | 15 / 26</span>
+      <a href="#clone" class="topic-nav-btn next">git clone: Repozitoriyni Ko'chirib Olish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-orange" style="background:#f97316; color:#fff;">Masofaviy</span>
+      <span style="font-size:12px; color:var(--text2);">Git Mavzu #16</span>
+    </div>
+    <h2 id="clone" style="color:#f97316; background: linear-gradient(90deg, #fb923c, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">git clone: Repozitoriyni Ko'chirib Olish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Internetdagi (GitHub, GitLab) mavjud ochiq yoki yopiq loyihaning butun fayllari va to'liq kommitlar tarixini kompyuteringizga bir zumda yuklab olish buyrug'i.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>git clone <URL></code> — yangi papka ochib, butun loyihani yuklaydi.</li><li>Clone qilingan loyihada <code>git init</code> qilish shart emas, chunki u allaqachon tayyor Git repozitoriyasi hisoblanadi va 'origin' avtomatik ulangan bo'ladi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Git Bash / Terminal</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('gc_clone')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('gc_clone','gr_clone')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="gc_clone" contenteditable="true" spellcheck="false"># Ochiq kodli loyihani kompyuterga yuklab olish
+git clone https://github.com/avdurasulovuz/w3learn.git
+cd w3learn
+git status</pre>
+      </div>
+    </div>
+    <div class="result-box" id="gr_clone">
+      <div class="result-label">💻 Git Console Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#fb923c;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;💻 Git Bash Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Cloning into 'w3learn'...
+remote: Enumerating objects: 124, done.
+remote: Counting objects: 100% (124/124), done.
+remote: Compressing objects: 100% (98/98), done.
+Receiving objects: 100% (124/124), 1.25 MiB | 4.12 MiB/s, done.
+On branch main
+Your branch is up to date with 'origin/main'.&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Har qanday jamoaviy loyihaga birinchi kuni qo'shilgan dasturchi o'z ishini doimo `git clone` bilan boshlaydi.</div>
+
+    <div class="topic-nav">
+      <a href="#remote" class="topic-nav-btn prev">← git remote: Masofaviy Serverlar bilan Bog'lanish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Git | 16 / 26</span>
+      <a href="#push" class="topic-nav-btn next">git push: Kodlarni Serverga Yuklash →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-orange" style="background:#f97316; color:#fff;">Masofaviy</span>
+      <span style="font-size:12px; color:var(--text2);">Git Mavzu #17</span>
+    </div>
+    <h2 id="push" style="color:#f97316; background: linear-gradient(90deg, #fb923c, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">git push: Kodlarni Serverga Yuklash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Kompyuteringizda qilingan yangi mahalliy kommitlarni masofaviy GitHub/GitLab serveriga yuborish.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>git push -u origin main</code> — birinchi marta asosiy tarmoqqa yuklash (-u kelgusida faqat 'git push' yozish imkonini beradi).</li><li><code>git push origin feature-name</code> — yangi tarmoqni GitHub ga yuklash.</li><li>Agar serverda sizda yo'q boshqa yangi kommitlar bo'lsa, Git push ni rad etadi va avval pull qilishni so'raydi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Git Bash / Terminal</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('gc_push')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('gc_push','gr_push')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="gc_push" contenteditable="true" spellcheck="false"># Kommitlarni GitHub ga yuklash
+git push origin main</pre>
+      </div>
+    </div>
+    <div class="result-box" id="gr_push">
+      <div class="result-label">💻 Git Console Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#fb923c;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;💻 Git Bash Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 420 bytes | 420.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+To https://github.com/avdurasulovuz/w3learn.git
+   8a24b69..9b35c71  main -&gt; main&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Push qilgandan so'ng sizning yangi kodlaringiz GitHub veb-saytida darhol paydo bo'ladi.</div>
+
+    <div class="topic-nav">
+      <a href="#clone" class="topic-nav-btn prev">← git clone: Repozitoriyni Ko'chirib Olish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Git | 17 / 26</span>
+      <a href="#pull" class="topic-nav-btn next">git pull: Yangilanishlarni Yuklab Olish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-orange" style="background:#f97316; color:#fff;">Masofaviy</span>
+      <span style="font-size:12px; color:var(--text2);">Git Mavzu #18</span>
+    </div>
+    <h2 id="pull" style="color:#f97316; background: linear-gradient(90deg, #fb923c, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">git pull: Yangilanishlarni Yuklab Olish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Jamoangizdagi boshqa dasturchilar GitHub ga yuklagan yangi kommitlarni o'z kompyuteringizga olib kelib, joriy kodingiz bilan birlashtirish.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>git pull origin main</code> — masofaviy o'zgarishlarni yuklab, joriy tarmoqqa merge qiladi.</li><li>Aslida <code>git pull</code> = <code>git fetch</code> + <code>git merge</code> ning bitta buyruqdagi ifodasidir.</li><li>Jamoada ishlayotganda har kuni ertalab kod yozishdan oldin <code>git pull</code> qilish oltin qoidadir.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Git Bash / Terminal</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('gc_pull')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('gc_pull','gr_pull')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="gc_pull" contenteditable="true" spellcheck="false"># GitHub dan yangi kodlarni tortib olish
+git pull origin main</pre>
+      </div>
+    </div>
+    <div class="result-box" id="gr_pull">
+      <div class="result-label">💻 Git Console Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#fb923c;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;💻 Git Bash Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;remote: Enumerating objects: 7, done.
+remote: Counting objects: 100% (7/7), done.
+remote: Compressing objects: 100% (4/4), done.
+Unpacking objects: 100% (4/4), done.
+From https://github.com/avdurasulovuz/w3learn
+ * branch            main       -&gt; FETCH_HEAD
+Updating 4f7b2a1..9c8e1a2
+Fast-forward
+ services/auth.js | 28 ++++++++++++++++++++++++++++
+ 1 file changed, 28 insertions(+)&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Har doim yangi o'zgarish kiritishdan avval pull qilib tursangiz, konfliktlar ehtimoli kamayadi.</div>
+
+    <div class="topic-nav">
+      <a href="#push" class="topic-nav-btn prev">← git push: Kodlarni Serverga Yuklash</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Git | 18 / 26</span>
+      <a href="#fetch" class="topic-nav-btn next">git fetch: Xavfsiz Tekshirish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-orange" style="background:#f97316; color:#fff;">Masofaviy</span>
+      <span style="font-size:12px; color:var(--text2);">Git Mavzu #19</span>
+    </div>
+    <h2 id="fetch" style="color:#f97316; background: linear-gradient(90deg, #fb923c, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">git fetch: Xavfsiz Tekshirish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><code>git fetch</code> masofaviy serverdagi barcha yangi kommitlar va tarmoqlar ma'lumotlarini yuklab oladi, lekin ularni sizning mahalliy kodingiz bilan avtomatik birlashtirmaydi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li>Pull dan farqli ravishda, fetch hech qachon sizning kodingizni buzmaydi yoki merge qilmaydi.</li><li>Serverda nima yangiliklar borligini xavfsiz ko'rish uchun <code>git fetch</code> qilib, keyin <code>git log origin/main</code> bilan tekshirish mumkin.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Git Bash / Terminal</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('gc_fetch')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('gc_fetch','gr_fetch')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="gc_fetch" contenteditable="true" spellcheck="false"># Masofaviy o'zgarishlarni xavfsiz tekshirish
+git fetch origin
+git status</pre>
+      </div>
+    </div>
+    <div class="result-box" id="gr_fetch">
+      <div class="result-label">💻 Git Console Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#fb923c;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;💻 Git Bash Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;From https://github.com/avdurasulovuz/w3learn
+ * [new branch]      dev        -&gt; origin/dev
+Your branch is behind 'origin/main' by 2 commits, and can be fast-forwarded.
+  (use "git pull" to update your local branch)&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Fetch orqali siz kodingiz serverdan necha kommit orqada yoki oldinda ekanligini bilib olasiz.</div>
+
+    <div class="topic-nav">
+      <a href="#pull" class="topic-nav-btn prev">← git pull: Yangilanishlarni Yuklab Olish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Git | 19 / 26</span>
+      <a href="#fork" class="topic-nav-btn next">Fork va Pull Request (PR): Ochiq Kodli Loyihalar →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-orange" style="background:#f97316; color:#fff;">Hamkorlik</span>
+      <span style="font-size:12px; color:var(--text2);">Git Mavzu #20</span>
+    </div>
+    <h2 id="fork" style="color:#f97316; background: linear-gradient(90deg, #fb923c, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Fork va Pull Request (PR): Ochiq Kodli Loyihalar</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">O'zgalarning ochiq kodli (Open Source) loyihalariga hissa qo'shish (contribute qilish) mexanizmi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><strong>Fork:</strong> Birovning GitHub dagi repozitoriyasidan o'zingizning shaxsiy akkauntingizga to'liq nusxa ko'chirib olish (GitHub dagi maxsus tugma).</li><li>O'z forkingizda yangi tarmoq ochib, xatoni tuzatasiz yoki yangi imkoniyat qo'shasiz.</li><li><strong>Pull Request (PR):</strong> Asl loyiha egalariga 'Mening mana bu tuzatishlarimni asosiy loyihangizga qo'shib olishingizni so'rayman' deb taklif yuborish.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Git Bash / Terminal</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('gc_fork')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('gc_fork','gr_fork')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="gc_fork" contenteditable="true" spellcheck="false"># Fork qilingan loyihani klonlab, hissa qo'shish
+git clone https://github.com/mening-akkauntim/mashhur-loyiha.git
+cd mashhur-loyiha
+git switch -c fix-uzbek-typo
+# ... o'zgarishlar kiritiladi ...
+git commit -am "fix: o'zbekcha tarjimadagi xato tuzatildi"
+git push origin fix-uzbek-typo</pre>
+      </div>
+    </div>
+    <div class="result-box" id="gr_fork">
+      <div class="result-label">💻 Git Console Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#fb923c;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;💻 Git Bash Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;To https://github.com/mening-akkauntim/mashhur-loyiha.git
+ * [new branch]      fix-uzbek-typo -&gt; fix-uzbek-typo
+Create a pull request for 'fix-uzbek-typo' on GitHub:
+  https://github.com/mening-akkauntim/mashhur-loyiha/pull/new/fix-uzbek-typo&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Pull Request orqali kod tekshiriladi (Code Review) va ma'qullansa, bitta tugma bilan asosiy loyihaga birlashtiriladi.</div>
+
+    <div class="topic-nav">
+      <a href="#fetch" class="topic-nav-btn prev">← git fetch: Xavfsiz Tekshirish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Git | 20 / 26</span>
+      <a href="#gitignore" class="topic-nav-btn next">.gitignore: Keraksiz Fayllarni Istisno Qilish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-orange" style="background:#f97316; color:#fff;">Xavfsizlik</span>
+      <span style="font-size:12px; color:var(--text2);">Git Mavzu #21</span>
+    </div>
+    <h2 id="gitignore" style="color:#f97316; background: linear-gradient(90deg, #fb923c, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">.gitignore: Keraksiz Fayllarni Istisno Qilish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Loyiha papkasidagi ba'zi fayllarni (parollar, maxfiy kalitlar, node_modules, build fayllar) hech qachon Git tarixiga yoki GitHub ga yuklamaslik kerak. Buning uchun loyiha ildizida <strong>.gitignore</strong> fayli yaratiladi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li>Har bir satrda bitta qoida yoziladi.</li><li><code>node_modules/</code> — butun papkani e'tiborsiz qoldirish.</li><li><code>.env</code> — maxfiy kalitlar va tokenlar faylini yashirish.</li><li><code>*.log</code> — barcha log fayllarni istisno qilish.</li><li><code>dist/</code> yoki <code>build/</code> — kompilyatsiya qilingan fayllarni chetlab o'tish.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Git Bash / Terminal</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('gc_gitignore')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('gc_gitignore','gr_gitignore')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="gc_gitignore" contenteditable="true" spellcheck="false"># Standart .gitignore fayli namunasi:
+# Bog'liqliklar
+node_modules/
+vendor/
+
+# Maxfiy ma'lumotlar
+.env
+.env.local
+id_rsa
+
+# Tizim fayllari
+.DS_Store
+Thumbs.db
+
+# Loglar
+*.log
+npm-debug.log*</pre>
+      </div>
+    </div>
+    <div class="result-box" id="gr_gitignore">
+      <div class="result-label">💻 Git Console Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#fb923c;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;💻 Git Bash Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;# .gitignore saqlangandan so'ng:
+git status
+# node_modules va .env fayllari ro'yxatda mutlaqo ko'rinmaydi! 🛡️&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚠️ Hech qachon `.env` faylini Git ga kommit qilmang! Parollaringiz ochiq internetga chiqib ketishi mumkin.</div>
+
+    <div class="topic-nav">
+      <a href="#fork" class="topic-nav-btn prev">← Fork va Pull Request (PR): Ochiq Kodli Loyihalar</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Git | 21 / 26</span>
+      <a href="#tag" class="topic-nav-btn next">git tag: Relizlar va Versiyalarni Belgilash →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-orange" style="background:#f97316; color:#fff;">Versiyalash</span>
+      <span style="font-size:12px; color:var(--text2);">Git Mavzu #22</span>
+    </div>
+    <h2 id="tag" style="color:#f97316; background: linear-gradient(90deg, #fb923c, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">git tag: Relizlar va Versiyalarni Belgilash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Dasturning rasmiy barqaror versiyalarini (masalan: <code>v1.0.0</code>, <code>v2.1.0</code>) tarixda muhrlab qo'yish uchun teglar ishlatiladi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>git tag -a v1.0.0 -m "Reliz 1.0.0 barqaror versiya"</code> — izohli teg yaratish.</li><li><code>git tag</code> — barcha teglarni ro'yxat qilish.</li><li><code>git push origin --tags</code> — barcha teglarni GitHub ga yuklash (GitHub da avtomatik ravishda 'Releases' bo'limi paydo bo'ladi).</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Git Bash / Terminal</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('gc_tag')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('gc_tag','gr_tag')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="gc_tag" contenteditable="true" spellcheck="false"># 1.0.0 versiya tegi yaratish
+git tag -a v1.0.0 -m "Birinchi rasmiy reliz"
+git tag
+git push origin v1.0.0</pre>
+      </div>
+    </div>
+    <div class="result-box" id="gr_tag">
+      <div class="result-label">💻 Git Console Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#fb923c;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;💻 Git Bash Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;v1.0.0
+Total 0 (delta 0), reused 0 (delta 0)
+To https://github.com/avdurasulovuz/w3learn.git
+ * [new tag]         v1.0.0 -&gt; v1.0.0&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Dastur foydalanuvchilari aynan tag lar orqali qaysi versiyani yuklab olayotganini bilib olishadi (SemVer standartlari bo'yicha).</div>
+
+    <div class="topic-nav">
+      <a href="#gitignore" class="topic-nav-btn prev">← .gitignore: Keraksiz Fayllarni Istisno Qilish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Git | 22 / 26</span>
+      <a href="#reset" class="topic-nav-btn next">git reset: O'zgarishlarni Bekor Qilish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-orange" style="background:#f97316; color:#fff;">Bekor qilish</span>
+      <span style="font-size:12px; color:var(--text2);">Git Mavzu #23</span>
+    </div>
+    <h2 id="reset" style="color:#f97316; background: linear-gradient(90deg, #fb923c, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">git reset: O'zgarishlarni Bekor Qilish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Noto'g'ri qilingan kommitlarni yoki staging areadagi fayllarni orqaga qaytarish uchun <code>git reset</code> ishlatiladi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>git reset --soft HEAD~1</code> — oxirgi kommitni bekor qiladi, lekin fayllardagi o'zgarishlar staging areada (yashil) saqlanib qoladi.</li><li><code>git reset --mixed HEAD~1</code> (standart) — kommitni bekor qiladi, fayllarni ishchi maydonga qaytaradi (qizil).</li><li><code>git reset --hard HEAD~1</code> — ⚠️ XAVFLI: oxirgi kommitni ham, fayllardagi barcha o'zgarishlarni ham butunlay yo'q qiladi!</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Git Bash / Terminal</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('gc_reset')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('gc_reset','gr_reset')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="gc_reset" contenteditable="true" spellcheck="false"># Oxirgi kommitni yumshoq qaytarish (soft reset)
 git reset --soft HEAD~1
+git status</pre>
+      </div>
+    </div>
+    <div class="result-box" id="gr_reset">
+      <div class="result-label">💻 Git Console Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#fb923c;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;💻 Git Bash Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;On branch main
+Changes to be committed:
+  (use "git restore --staged &lt;file&gt;..." to unstage)
+	modified:   app.js&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
 
-# Stash — vaqtincha saqlash
-git stash
-git stash pop</pre></div>
-  </div>
+    <div class="note-box" style="margin-top:16px;">💡 Hard reset qilishdan oldin o'zgarishlaringiz butunlay o'chib ketishidan ogoh bo'ling!</div>
+
+    <div class="topic-nav">
+      <a href="#tag" class="topic-nav-btn prev">← git tag: Relizlar va Versiyalarni Belgilash</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Git | 23 / 26</span>
+      <a href="#revert" class="topic-nav-btn next">git revert: Xavfsiz Bekor Qilish Kommiti →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-orange" style="background:#f97316; color:#fff;">Bekor qilish</span>
+      <span style="font-size:12px; color:var(--text2);">Git Mavzu #24</span>
+    </div>
+    <h2 id="revert" style="color:#f97316; background: linear-gradient(90deg, #fb923c, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">git revert: Xavfsiz Bekor Qilish Kommiti</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Agar xato kommit allaqachon GitHub ga yuklab bo'lingan bo'lsa, <code>reset</code> o'rniga <strong>git revert</strong> ishlatiladi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>git revert <commit-xesh></code> — o'sha kommitda nima qilingan bo'lsa, uning teskarisini qiluvchi yangi kommit yasaydi.</li><li>Tarix o'chirilmaydi va buzilmaydi, faqat teskari o'zgarish bilan yangi kommit qo'shiladi.</li><li>Jamoaviy va ommaviy repozitoriylarda kommitlarni bekor qilishning yagona eng xavfsiz yo'li.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Git Bash / Terminal</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('gc_revert')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('gc_revert','gr_revert')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="gc_revert" contenteditable="true" spellcheck="false"># Xato kommitni teskarisiga aylantirish
+git revert 8c92a15</pre>
+      </div>
+    </div>
+    <div class="result-box" id="gr_revert">
+      <div class="result-label">💻 Git Console Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#fb923c;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;💻 Git Bash Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;[main 1e2d3c4] Revert "docs: README.md qo'shildi"
+ 1 file changed, 1 deletion(-)
+ delete mode 100644 README.md&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Revert orqali loyihaning tarixini buzmasdan xatolarni to'g'irlash mumkin.</div>
+
+    <div class="topic-nav">
+      <a href="#reset" class="topic-nav-btn prev">← git reset: O'zgarishlarni Bekor Qilish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Git | 24 / 26</span>
+      <a href="#gitflow" class="topic-nav-btn next">GitFlow va Trunk-Based Ishlash Modellari →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-orange" style="background:#f97316; color:#fff;">Arxitektura</span>
+      <span style="font-size:12px; color:var(--text2);">Git Mavzu #25</span>
+    </div>
+    <h2 id="gitflow" style="color:#f97316; background: linear-gradient(90deg, #fb923c, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">GitFlow va Trunk-Based Ishlash Modellari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Katta dasturchilar jamoalarida tarmoqlardan qanday foydalanish bo'yicha standart kelishuvlar mavjud.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><strong>GitFlow:</strong> <code>main</code> (production relizlar), <code>develop</code> (ishlanayotgan umumiy kod), <code>feature/*</code> (yangi funksiyalar), <code>release/*</code> (relizga tayyorgarlik), <code>hotfix/*</code> (tezkor xatolarni tuzatish).</li><li><strong>Trunk-Based Development:</strong> Kichik jamoalar uchun zamonaviy model. Hamma qisqa yashovchi kichik tarmoqlar orqali to'g'ridan-to'g'ri <code>main</code> ga tez-tez (har kuni) merge qiladi.</li><li>Zamonaviy DevOps va CI/CD muhitlarida Trunk-Based usuli ko'proq afzal ko'rilmoqda.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Git Bash / Terminal</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('gc_gitflow')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('gc_gitflow','gr_gitflow')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="gc_gitflow" contenteditable="true" spellcheck="false"># GitFlow uslubida yangi funksiya ochish:
+git switch develop
+git switch -c feature/sms-integration
+
+# Tugatgach:
+git switch develop
+git merge --no-ff feature/sms-integration
+git branch -d feature/sms-integration</pre>
+      </div>
+    </div>
+    <div class="result-box" id="gr_gitflow">
+      <div class="result-label">💻 Git Console Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#fb923c;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;💻 Git Bash Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Switched to branch 'develop'
+Merge made by the 'ort' strategy.
+ sms.js | 45 +++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 45 insertions(+)&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Qaysi modelni tanlashingizdan qat'i nazar, jamoaning barcha a'zolari bir xil qoidalarga rioya qilishi lozim.</div>
+
+    <div class="topic-nav">
+      <a href="#revert" class="topic-nav-btn prev">← git revert: Xavfsiz Bekor Qilish Kommiti</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Git | 25 / 26</span>
+      <a href="#actions" class="topic-nav-btn next">GitHub Actions va CI/CD Avtomatlashtirish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-orange" style="background:#f97316; color:#fff;">DevOps</span>
+      <span style="font-size:12px; color:var(--text2);">Git Mavzu #26</span>
+    </div>
+    <h2 id="actions" style="color:#f97316; background: linear-gradient(90deg, #fb923c, #f97316); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">GitHub Actions va CI/CD Avtomatlashtirish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>CI/CD</strong> (Uzluksiz integratsiya va yetkazib berish) — har safar yangi kod push qilinganda testlarni avtomatik ishga tushirish va dasturni serverga joylash jarayoni.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li>GitHub Actions konfiguratsiyasi <code>.github/workflows/*.yml</code> fayllarida saqlanadi.</li><li>Har bir kommitda avtomatik <code>npm test</code> yoki kod sifatini (linter) tekshirish.</li><li>Xatolar bo'lsa darhol bildirishnoma berish va xavfli kodning serverga chiqib ketishini to'xtatish.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Git Bash / Terminal</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('gc_actions')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('gc_actions','gr_actions')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="gc_actions" contenteditable="true" spellcheck="false"># .github/workflows/test.yml fayli
+name: Node.js CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Node.js o'rnatish
+      uses: actions/setup-node@v4
+      with:
+        node-version: '20'
+    - run: npm ci
+    - run: npm test</pre>
+      </div>
+    </div>
+    <div class="result-box" id="gr_actions">
+      <div class="result-label">💻 Git Console Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#fb923c;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;💻 Git Bash Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Run actions/setup-node@v4
+Run npm ci
+Run npm test
+PASS tests/auth.test.js
+PASS tests/courses.test.js
+Test Suites: 2 passed, 2 total
+Tests:       14 passed, 14 total
+✅ All CI checks have passed!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 GitHub Actions dasturchilarga qo'lda test va deploy qilish vaqtini tejab, jarayonni to'liq avtomatlashtiradi.</div>
+
+    <div class="topic-nav">
+      <a href="#gitflow" class="topic-nav-btn prev">← GitFlow va Trunk-Based Ishlash Modellari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Git | 26 / 26</span>
+      <a href="docker.html" class="topic-nav-btn next">Keyingi kurs: Docker Darslari →</a>
+    </div>
+  </section>
 
   <div class="quiz-box">
-    <div class="quiz-q">🧪 Test: O'zgarishlarni saqlash uchun qaysi buyruq ishlatiladi?</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qr1')">git push</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qr1')">git add</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, true, 'qr1')">git commit</div>
-    <div class="quiz-result" id="qr1"></div>
+    <div class="quiz-q">🧪 Test: Git da qilingan o'zgarishlarni staging areaga (kutish maydoniga) kiritish uchun qaysi buyruq ishlatiladi?</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, true, 'gitQr1')">git add .</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'gitQr1')">git push</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'gitQr1')">git save</div>
+    <div class="quiz-result" id="gitQr1"></div>
   </div>
-  
 
-<div class="nav-btns">
-  <a href="redis.html" class="btn-prev">&#8592; Redis</a>
-  <a href="docker.html" class="btn-next">Docker &#8594;</a>
-</div>
+  <div class="nav-btns" style="margin-top: 30px;">
+    <a href="redis.html" class="btn-prev">← Redis Darslari</a>
+    <a href="docker.html" class="btn-next">Docker Darsiga O'tish →</a>
+  </div>
+
+  <div class="note note-blue" style="margin-top: 25px;">
+    📌 <strong>Keyingi qadam:</strong> Versiyalarni boshqarish tizimini puxta egallagach, dasturlarni konteynerlash va serverlarga bir xil muhitda joylash imkonini beruvchi <a href="docker.html" style="color:var(--green)">Docker darslariga</a> o'ting!
+  </div>
 </main>
 <aside class="right-panel">
   <div class="rp-title">📈 Progress</div>

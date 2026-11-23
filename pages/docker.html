@@ -89,316 +89,1105 @@
 </aside>
 <div class="overlay" id="overlay" onclick="closeMobileSidebar()"></div>
 <main class="main">
-  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">Docker</a> › Docker Nima?</div>
-  <h1 id="kirish">Docker Nima?</h1>
-  <div class="meta-tags">
-    <span class="tag tag-green">⏱ 10 daqiqa</span>
-    <span class="tag tag-blue">🟡 O'rta</span>
-    <span class="tag tag-orange">👁 14,800 marta ko'rilgan</span>
-  </div>
-  <p><strong>Docker</strong> — ilovalarni konteynerlar ichida ishga tushirish imkonini beruvchi platforma. Konteyner — ilovangiz va uning barcha bog'liqliklari (libraries, configs) birgalikda joylashgan izolyatsiyalangan muhit.</p>
-  <p>Docker bilan "menda ishladi, serverda ishlamadi" muammosi yo'qoladi — chunki muhit hamma joyda bir xil bo'ladi.</p>
-  <div class="note">💡 <strong>VM vs Docker:</strong> Virtual Mashina butun OS ni o'z ichiga oladi (GB). Docker esa faqat ilovani va uning bog'liqliklarini saqlaydi (MB). Docker ancha yengil va tez.</div>
-
-  <h2 id="install">Docker O'rnatish</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">bash</span>
-      <button class="copy-btn" onclick="copyCode('code1')">📋 Nusxa</button>
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue" style="background:#0284c7; color:#fff;">Asosiy</span>
+      <span style="font-size:12px; color:var(--text2);">Docker Mavzu #1</span>
     </div>
-    <div class="code-body">
-      <pre id="code1"># Ubuntu ga o'rnatish
-sudo apt update
-sudo apt install docker.io -y
+    <h2 id="kirish" style="color:#0284c7; background: linear-gradient(90deg, #38bdf8, #0284c7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Docker Nima? Konteynerlashtirish Inqilobi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Docker</strong> — dasturlarni ularning barcha kutubxonalari, muhiti va bog'liqliklari bilan birga yengil, mustaqil <strong>konteyner</strong> ichiga joylash imkonini beruvchi platformadir. U dasturchilarning afsonaviy 'Mening kompyuterimda ishlayotgan edi-ku!' degan muammosiga abadiy chek qo'ydi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li>Virtual Mashinalardan (VM) farqi: Docker alohida OS yadrosini virtualizatsiya qilmaydi, balki bitta umumiy Linux yadrosi ustida izolyatsiyalangan jarayonlar sifatida ishlaydi.</li><li>Yengil va tez: Konteynerlar bir necha soniyada ishga tushadi va bir necha megabayt xotira sarflaydi.</li><li>Standartlashtirish: Dastur ishlab chiquvchining noutbukida qanday ishlasa, test va production serverda ham xuddi shunday ishlaydi.</li><li>Mikroservislar arxitekturasi va zamonaviy DevOps ning asosi hisoblanadi.</li></ul>
 
-# Xizmatni ishga tushirish
-sudo systemctl start docker
-sudo systemctl enable docker
-
-# Foydalanuvchiga ruxsat berish (sudo siz)
-sudo usermod -aG docker $USER
-newgrp docker
-
-# Tekshirish
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Docker CLI / Dockerfile</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('dc_kirish')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('dc_kirish','dr_kirish')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="dc_kirish" contenteditable="true" spellcheck="false"># Docker versiyasini tekshirish
 docker --version
-# Docker version 24.x.x
 
-docker run hello-world
-# Hello from Docker! — muvaffaqiyatli!</pre>
+# Birinchi sinov konteynerini ishga tushirish
+docker run hello-world</pre>
+      </div>
     </div>
-  </div>
+    <div class="result-box" id="dr_kirish">
+      <div class="result-label">🐳 Docker Engine Chiqarishi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#38bdf8;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐳 Docker CLI Daemon Response:&lt;/div&gt;&lt;pre style='margin:0;color:#a5f3fc;'&gt;Docker version 25.0.3, build 4debf41
 
-  <h2 id="terminology">Asosiy Atamalar</h2>
-  <ul>
-    <li>🖼️ <strong>Image</strong> — ilovaning "qolipi" (blueprint). O'zgarmas.</li>
-    <li>📦 <strong>Container</strong> — Image dan yaratilgan ishlaydigan nusxa.</li>
-    <li>📄 <strong>Dockerfile</strong> — Image yaratish uchun ko'rsatmalar fayli.</li>
-    <li>🌐 <strong>Registry</strong> — Image lar saqlanadigan omborxona (Docker Hub).</li>
-    <li>🔗 <strong>Volume</strong> — konteyner o'chirilsa ham qoladigan doimiy xotira.</li>
-    <li>🕸️ <strong>Network</strong> — konteynerlar o'rtasidagi aloqa tarmog'i.</li>
-  </ul>
-
-  <h2 id="run">docker run — Konteyner Ishga Tushirish</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">bash</span>
-      <button class="copy-btn" onclick="copyCode('code2')">📋 Nusxa</button>
+Hello from Docker!
+This message shows that your installation appears to be working correctly.&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
     </div>
-    <div class="code-body">
-      <pre id="code2"># Oddiy ishga tushirish
-docker run nginx
 
-# Fon rejimida (-d = detached)
-docker run -d nginx
+    <div class="note-box" style="margin-top:16px;">💡 Docker konteyneri o'z ichida operatsion tizim kutubxonalari va dastur kodini to'liq saqlagani uchun boshqa serverga ko'chirish juda oson.</div>
 
-# Port ulash (host:konteyner)
-docker run -d -p 8080:80 nginx
-# Brauzerda: http://localhost:8080
+    <div class="topic-nav">
+      <a href="git.html" class="topic-nav-btn prev">← Git Darslari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Docker | 1 / 26</span>
+      <a href="#install" class="topic-nav-btn next">Docker O'rnatish: Desktop va Engine →</a>
+    </div>
+  </section>
 
-# Nom berish
-docker run -d --name myweb -p 8080:80 nginx
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue" style="background:#0284c7; color:#fff;">O'rnatish</span>
+      <span style="font-size:12px; color:var(--text2);">Docker Mavzu #2</span>
+    </div>
+    <h2 id="install" style="color:#0284c7; background: linear-gradient(90deg, #38bdf8, #0284c7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Docker O'rnatish: Desktop va Engine</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Docker ni turli operatsion tizimlarga o'rnatish usullari.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li>Windows va macOS: <strong>Docker Desktop</strong> (GUI interfeys va WSL 2 integratsiyasi bilan).</li><li>Linux (Ubuntu/Debian): <code>Docker Engine</code> rasmiy omboridan apt orqali o'rnatiladi.</li><li>Foydalanuvchini <code>docker</code> guruhiga qo'shish (Linuxda sudo siz ishlash uchun): <code>sudo usermod -aG docker $USER</code>.</li></ul>
 
-# Muhit o'zgaruvchilari (-e)
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Docker CLI / Dockerfile</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('dc_install')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('dc_install','dr_install')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="dc_install" contenteditable="true" spellcheck="false"># Ubuntu tizimida Docker Engine o'rnatish
+sudo apt update
+sudo apt install -y ca-certificates curl gnupg
+# Docker xizmatini yoqish
+sudo systemctl enable docker
+sudo systemctl start docker</pre>
+      </div>
+    </div>
+    <div class="result-box" id="dr_install">
+      <div class="result-label">🐳 Docker Engine Chiqarishi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#38bdf8;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐳 Docker CLI Daemon Response:&lt;/div&gt;&lt;pre style='margin:0;color:#a5f3fc;'&gt;Synchronizing state of docker.service with SysV service script...
+docker.service is active (running) 🟢&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Windows tizimida Docker Desktop to'g'ri ishlashi uchun 'WSL 2' funksiyasi yoqilgan bo'lishi kerak.</div>
+
+    <div class="topic-nav">
+      <a href="#kirish" class="topic-nav-btn prev">← Docker Nima? Konteynerlashtirish Inqilobi</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Docker | 2 / 26</span>
+      <a href="#arxitektura" class="topic-nav-btn next">Docker Arxitekturasi (Client-Server) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue" style="background:#0284c7; color:#fff;">Arxitektura</span>
+      <span style="font-size:12px; color:var(--text2);">Docker Mavzu #3</span>
+    </div>
+    <h2 id="arxitektura" style="color:#0284c7; background: linear-gradient(90deg, #38bdf8, #0284c7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Docker Arxitekturasi (Client-Server)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Docker klassik Client-Server arxitekturasida ishlaydi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><strong>Docker Client (CLI):</strong> Dasturchi terminalda yozadigan buyruqlar (<code>docker run</code>, <code>docker build</code>).</li><li><strong>Docker Daemon (dockerd):</strong> Orqa fonda yuruvchi asosiy server jarayoni. U imidjlar, konteynerlar, tarmoqlar va disklarni yaratadi va boshqaradi.</li><li><strong>Docker Host:</strong> Daemon ishlayotgan jismoniy yoki virtual mashina.</li><li><strong>Docker Registry:</strong> Imidjlar saqlanadigan bulutli ombor (Docker Hub).</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Docker CLI / Dockerfile</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('dc_arxitektura')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('dc_arxitektura','dr_arxitektura')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="dc_arxitektura" contenteditable="true" spellcheck="false"># Docker tizim ma'lumotlarini ko'rish
+docker info</pre>
+      </div>
+    </div>
+    <div class="result-box" id="dr_arxitektura">
+      <div class="result-label">🐳 Docker Engine Chiqarishi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#38bdf8;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐳 Docker CLI Daemon Response:&lt;/div&gt;&lt;pre style='margin:0;color:#a5f3fc;'&gt;Client: Docker Engine - Community
+ Version:    25.0.3
+Server:
+ Containers: 3
+  Running: 2
+  Paused: 0
+  Stopped: 1
+ Images: 12
+ Server Version: 25.0.3
+ Storage Driver: overlay2&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Docker CLI REST API orqali Docker Daemon bilan bog'lanadi; bu degani bitta kompyuterdan turib boshqa serverdagi dockerd ni ham boshqarish mumkin.</div>
+
+    <div class="topic-nav">
+      <a href="#install" class="topic-nav-btn prev">← Docker O'rnatish: Desktop va Engine</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Docker | 3 / 26</span>
+      <a href="#terminology" class="topic-nav-btn next">Asosiy Tushunchalar: Image vs Container →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue" style="background:#0284c7; color:#fff;">Tushunchalar</span>
+      <span style="font-size:12px; color:var(--text2);">Docker Mavzu #4</span>
+    </div>
+    <h2 id="terminology" style="color:#0284c7; background: linear-gradient(90deg, #38bdf8, #0284c7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Asosiy Tushunchalar: Image vs Container</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Docker bilan ishlashda eng muhim 4 ta atama bor:</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><strong>Image (Imidj):</strong> Dasturning statik nusxasi, 'retsepti' yoki shabloni (faqat o'qish uchun - Read-Only). Dasturlashdagi 'Klass'ga o'xshaydi.</li><li><strong>Container (Konteyner):</strong> Imidjdan yaratilgan va ishga tushirilgan jonli jarayon (Read-Write qatlamiga ega). Dasturlashdagi 'Ob'ekt'ga o'xshaydi.</li><li><strong>Volume (Disk):</strong> Konteyner o'chganda ham ma'lumotlar saqlanib qoladigan xotira maydoni.</li><li><strong>Network (Tarmoq):</strong> Konteynerlarning o'zaro bir-biri bilan xavfsiz gaplashishi uchun virtual ko'prik.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Docker CLI / Dockerfile</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('dc_terminology')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('dc_terminology','dr_terminology')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="dc_terminology" contenteditable="true" spellcheck="false"># Bitta Nginx imidjidan bir nechta konteyner ochish
+docker run -d --name veb1 -p 8081:80 nginx
+docker run -d --name veb2 -p 8082:80 nginx</pre>
+      </div>
+    </div>
+    <div class="result-box" id="dr_terminology">
+      <div class="result-label">🐳 Docker Engine Chiqarishi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#38bdf8;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐳 Docker CLI Daemon Response:&lt;/div&gt;&lt;pre style='margin:0;color:#a5f3fc;'&gt;7d8f9a2b1c4e (veb1 ishga tushdi)
+a1b2c3d4e5f6 (veb2 ishga tushdi)&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Bitta imidjdan xohlagancha bir xil yoki har xil sozlamali konteynerlarni yaratish mumkin.</div>
+
+    <div class="topic-nav">
+      <a href="#arxitektura" class="topic-nav-btn prev">← Docker Arxitekturasi (Client-Server)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Docker | 4 / 26</span>
+      <a href="#image-nima" class="topic-nav-btn next">Docker Image Tuzilishi va Qatlamlar (Layers) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue" style="background:#0284c7; color:#fff;">Imidjlar</span>
+      <span style="font-size:12px; color:var(--text2);">Docker Mavzu #5</span>
+    </div>
+    <h2 id="image-nima" style="color:#0284c7; background: linear-gradient(90deg, #38bdf8, #0284c7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Docker Image Tuzilishi va Qatlamlar (Layers)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Docker imidji bir-birining ustiga terilgan qatlamlardan (Layers) tashkil topadi. Har bir qatlam faqat o'qish uchun mo'ljallangan va keshlanadi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li>Union File System (UnionFS) mexanizmi qatlamlarni birlashtirib, bitta yaxlit fayllar tizimiday ko'rsatadi.</li><li>Agar siz Dockerfile da faqat oxirgi satrni o'zgartirsangiz, Docker avvalgi barcha qatlamlarni keshdan (Cache) bir zumda oladi.</li><li>Bu esa imidjlarni yig'ish va yuklash vaqtini 10 barobarga qisqartiradi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Docker CLI / Dockerfile</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('dc_image-nima')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('dc_image-nima','dr_image-nima')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="dc_image-nima" contenteditable="true" spellcheck="false"># Imidj qatlamlari tarixini ko'rish
+docker history nginx:alpine</pre>
+      </div>
+    </div>
+    <div class="result-box" id="dr_image-nima">
+      <div class="result-label">🐳 Docker Engine Chiqarishi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#38bdf8;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐳 Docker CLI Daemon Response:&lt;/div&gt;&lt;pre style='margin:0;color:#a5f3fc;'&gt;IMAGE          CREATED        CREATED BY                                      SIZE
+a1b2c3d4e5f6   2 days ago     CMD ["nginx" "-g" "daemon off;"]                0B
+&lt;missing&gt;      2 days ago     EXPOSE 80                                       0B
+&lt;missing&gt;      2 days ago     COPY 80-listen.sh /docker-entrypoint.d          2.1kB
+&lt;missing&gt;      2 days ago     RUN apk add --no-cache curl                     15.2MB
+&lt;missing&gt;      5 days ago     ADD alpine-minirootfs-3.19.tar.gz /             7.38MB&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Qatlamlar umumiy bo'lgani sababli, 10 ta turli dastur bitta Ubuntu bazasidan foydalansa, xotirada Ubuntu qatlami faqat 1 marta saqlanadi.</div>
+
+    <div class="topic-nav">
+      <a href="#terminology" class="topic-nav-btn prev">← Asosiy Tushunchalar: Image vs Container</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Docker | 5 / 26</span>
+      <a href="#pull" class="topic-nav-btn next">docker pull: Imidjlarni Yuklab Olish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue" style="background:#0284c7; color:#fff;">Imidjlar</span>
+      <span style="font-size:12px; color:var(--text2);">Docker Mavzu #6</span>
+    </div>
+    <h2 id="pull" style="color:#0284c7; background: linear-gradient(90deg, #38bdf8, #0284c7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">docker pull: Imidjlarni Yuklab Olish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Docker Hub (rasmiy ombor) dan kerakli dasturlarning imidjlarini mahalliy kompyuterga yuklab olish.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>docker pull <imidj_nomi></code> — eng oxirgi (latest) versiyani yuklaydi.</li><li><code>docker pull <imidj_nomi>:<teg></code> — aniq ko'rsatilgan versiyani yuklaydi (masalan: <code>node:20-alpine</code>).</li><li>Production da hech qachon 'latest' ishlatmang, doim aniq versiya tegini belgilang.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Docker CLI / Dockerfile</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('dc_pull')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('dc_pull','dr_pull')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="dc_pull" contenteditable="true" spellcheck="false"># Node.js va Redis imidjlarini yuklab olish
+docker pull node:20-alpine
+docker pull redis:7-alpine</pre>
+      </div>
+    </div>
+    <div class="result-box" id="dr_pull">
+      <div class="result-label">🐳 Docker Engine Chiqarishi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#38bdf8;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐳 Docker CLI Daemon Response:&lt;/div&gt;&lt;pre style='margin:0;color:#a5f3fc;'&gt;20-alpine: Pulling from library/node
+4abcf2066143: Pull complete
+Digest: sha256:7f3b8a1c9e2d...
+Status: Downloaded newer image for node:20-alpine&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 `alpine` qo'shimchali imidjlar Alpine Linux ga asoslangan bo'lib, hajmi o'ta ixcham bo'ladi (odatda 5-50 MB).</div>
+
+    <div class="topic-nav">
+      <a href="#image-nima" class="topic-nav-btn prev">← Docker Image Tuzilishi va Qatlamlar (Layers)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Docker | 6 / 26</span>
+      <a href="#images" class="topic-nav-btn next">docker images: Mahalliy Imidjlar Ro'yxati →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue" style="background:#0284c7; color:#fff;">Imidjlar</span>
+      <span style="font-size:12px; color:var(--text2);">Docker Mavzu #7</span>
+    </div>
+    <h2 id="images" style="color:#0284c7; background: linear-gradient(90deg, #38bdf8, #0284c7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">docker images: Mahalliy Imidjlar Ro'yxati</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Kompyuteringizda mavjud bo'lgan barcha Docker imidjlarini ko'rish va ularning hajmini tekshirish.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>docker images</code> yoki <code>docker image ls</code> — barcha imidjlarni chiqaradi.</li><li>Ustunlar: REPOSITORY (nomi), TAG (versiyasi), IMAGE ID (identifikatori), CREATED (yaratilgan vaqti), SIZE (hajmi).</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Docker CLI / Dockerfile</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('dc_images')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('dc_images','dr_images')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="dc_images" contenteditable="true" spellcheck="false"># Mahalliy imidjlarni ko'rish
+docker images</pre>
+      </div>
+    </div>
+    <div class="result-box" id="dr_images">
+      <div class="result-label">🐳 Docker Engine Chiqarishi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#38bdf8;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐳 Docker CLI Daemon Response:&lt;/div&gt;&lt;pre style='margin:0;color:#a5f3fc;'&gt;REPOSITORY   TAG         IMAGE ID       CREATED        SIZE
+node         20-alpine   9a1b2c3d4e5f   3 days ago     130MB
+redis        7-alpine    8f7e6d5c4b3a   1 week ago     32.4MB
+nginx        alpine      7c6b5a4d3e2f   2 weeks ago    23.5MB&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 `docker image prune` buyrug'i orqali nomlanmagan (dangling) eski imidjlarni tozalab diskda joy ochish mumkin.</div>
+
+    <div class="topic-nav">
+      <a href="#pull" class="topic-nav-btn prev">← docker pull: Imidjlarni Yuklab Olish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Docker | 7 / 26</span>
+      <a href="#rmi" class="topic-nav-btn next">docker rmi: Imidjlarni O'chirish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue" style="background:#0284c7; color:#fff;">Imidjlar</span>
+      <span style="font-size:12px; color:var(--text2);">Docker Mavzu #8</span>
+    </div>
+    <h2 id="rmi" style="color:#0284c7; background: linear-gradient(90deg, #38bdf8, #0284c7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">docker rmi: Imidjlarni O'chirish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Keraksiz yoki eski imidjlarni diskdan o'chirish buyruqlari.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>docker rmi <image_id_yoki_nomi></code> — imidjni o'chiradi.</li><li>Agar ushbu imidj asosida yaratilgan konteyner mavjud bo'lsa (hatto u to'xtab turgan bo'lsa ham), Docker imidjni o'chirishga ruxsat bermaydi.</li><li><code>docker rmi -f <image_id></code> — majburiy (force) o'chirish.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Docker CLI / Dockerfile</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('dc_rmi')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('dc_rmi','dr_rmi')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="dc_rmi" contenteditable="true" spellcheck="false"># Redis imidjini o'chirish
+docker rmi redis:7-alpine</pre>
+      </div>
+    </div>
+    <div class="result-box" id="dr_rmi">
+      <div class="result-label">🐳 Docker Engine Chiqarishi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#38bdf8;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐳 Docker CLI Daemon Response:&lt;/div&gt;&lt;pre style='margin:0;color:#a5f3fc;'&gt;Untagged: redis:7-alpine
+Deleted: sha256:8f7e6d5c4b3a...&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Avval o'sha imidjdan foydalanayotgan konteynerni o'chirib, keyin imidjni o'chirish xavfsiz usuldir.</div>
+
+    <div class="topic-nav">
+      <a href="#images" class="topic-nav-btn prev">← docker images: Mahalliy Imidjlar Ro'yxati</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Docker | 8 / 26</span>
+      <a href="#run" class="topic-nav-btn next">docker run: Konteynerni Ishga Tushirish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue" style="background:#0284c7; color:#fff;">Konteynerlar</span>
+      <span style="font-size:12px; color:var(--text2);">Docker Mavzu #9</span>
+    </div>
+    <h2 id="run" style="color:#0284c7; background: linear-gradient(90deg, #38bdf8, #0284c7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">docker run: Konteynerni Ishga Tushirish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>docker run</strong> — Docker dagi eng asosiy buyruq. U ko'rsatilgan imidjni oladi va yangi konteyner yaratib ishga tushiradi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>-d</code> (detached): Orqa fonda (fon rejimida) ishga tushirish.</li><li><code>-p tashqi_port:ichki_port</code>: Portlarni bog'lash (port forwarding).</li><li><code>--name konteyner_nomi</code>: Konteynerga tushunarli nom berish.</li><li><code>-e KALIT=QIYMAT</code>: Muhit o'zgaruvchilari (Environment Variables) kiritish.</li><li><code>--rm</code>: Konteyner to'xtaganda uni avtomatik o'chirib yuborish.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Docker CLI / Dockerfile</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('dc_run')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('dc_run','dr_run')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="dc_run" contenteditable="true" spellcheck="false"># PostgreSQL konteynerini fon rejimida ishga tushirish
 docker run -d \
-  --name mydb \
-  -e POSTGRES_PASSWORD=secret \
-  -e POSTGRES_DB=myapp \
+  --name my-postgres \
   -p 5432:5432 \
-  postgres
-
-# Interaktiv rejim (-it)
-docker run -it ubuntu bash</pre>
+  -e POSTGRES_PASSWORD=maxfiyparol \
+  -e POSTGRES_DB=w3db \
+  postgres:16-alpine</pre>
+      </div>
     </div>
-  </div>
-
-  <h2 id="ps">Konteynerlarni Boshqarish</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">bash</span>
-      <button class="copy-btn" onclick="copyCode('code3')">📋 Nusxa</button>
+    <div class="result-box" id="dr_run">
+      <div class="result-label">🐳 Docker Engine Chiqarishi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#38bdf8;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐳 Docker CLI Daemon Response:&lt;/div&gt;&lt;pre style='margin:0;color:#a5f3fc;'&gt;b4c8a2f1e9d3c5b7a0f8e6d4c2b1a9f7e5d3c1b9a7f5e3d1c9b7a5f3e1d9c7b5&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
     </div>
-    <div class="code-body">
-      <pre id="code3"># Ishlaydigan konteynerlar
-docker ps
 
-# Barcha konteynerlar (to'xtatilganlar ham)
-docker ps -a
+    <div class="note-box" style="margin-top:16px;">💡 Natijada qaytgan uzun matn — bu yangi yaratilgan konteynerning 64 belgili noyob Container ID si hisoblanadi.</div>
 
-# Konteynerni to'xtatish
-docker stop myweb
-
-# Konteynerni o'chirish
-docker rm myweb
-
-# Bir vaqtda to'xtatish va o'chirish
-docker rm -f myweb
-
-# Konteyner ichiga kirish
-docker exec -it myweb bash
-
-# Loglarni ko'rish
-docker logs myweb
-docker logs -f myweb   # real-vaqtli
-
-# Konteyner haqida ma'lumot
-docker inspect myweb</pre>
+    <div class="topic-nav">
+      <a href="#rmi" class="topic-nav-btn prev">← docker rmi: Imidjlarni O'chirish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Docker | 9 / 26</span>
+      <a href="#ps" class="topic-nav-btn next">docker ps: Konteynerlar Monitoringi →</a>
     </div>
-  </div>
+  </section>
 
-  <h2 id="dockerfile">Dockerfile Yozish</h2>
-  <p>Dockerfile — o'z Image ingizni yaratish uchun ko'rsatmalar to'plami:</p>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">dockerfile</span>
-      <button class="copy-btn" onclick="copyCode('code4')">📋 Nusxa</button>
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue" style="background:#0284c7; color:#fff;">Konteynerlar</span>
+      <span style="font-size:12px; color:var(--text2);">Docker Mavzu #10</span>
     </div>
-    <div class="code-body">
-      <pre id="code4"># Node.js ilovasi uchun Dockerfile
+    <h2 id="ps" style="color:#0284c7; background: linear-gradient(90deg, #38bdf8, #0284c7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">docker ps: Konteynerlar Monitoringi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Hozirda ishlayotgan yoki to'xtatilgan konteynerlar ro'yxatini ko'rish.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>docker ps</code> — faqat joriy ishlayotgan konteynerlarni ko'rsatadi.</li><li><code>docker ps -a</code> — barcha konteynerlarni (shu jumladan to'xtab turganlarini ham) ko'rsatadi.</li><li>Ustunlar: CONTAINER ID, IMAGE, COMMAND, CREATED, STATUS, PORTS, NAMES.</li></ul>
 
-# Asosiy image (FROM)
-FROM node:18-alpine
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Docker CLI / Dockerfile</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('dc_ps')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('dc_ps','dr_ps')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="dc_ps" contenteditable="true" spellcheck="false"># Ishlayotgan konteynerlarni tekshirish
+docker ps</pre>
+      </div>
+    </div>
+    <div class="result-box" id="dr_ps">
+      <div class="result-label">🐳 Docker Engine Chiqarishi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#38bdf8;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐳 Docker CLI Daemon Response:&lt;/div&gt;&lt;pre style='margin:0;color:#a5f3fc;'&gt;CONTAINER ID   IMAGE                COMMAND                  STATUS          PORTS                    NAMES
+b4c8a2f1e9d3   postgres:16-alpine   "docker-entrypoint.s…"   Up 2 minutes    0.0.0.0:5432-&gt;5432/tcp   my-postgres
+7d8f9a2b1c4e   nginx:alpine         "/docker-entrypoint.…"   Up 15 minutes   0.0.0.0:80-&gt;80/tcp       my-web&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
 
-# Ish papkasi (WORKDIR)
+    <div class="note-box" style="margin-top:16px;">💡 `STATUS: Up ...` konteyner soppa-sog' ishlayotganini bildiradi. `Exited (0)` esa vazifasini bajarib to'xtaganini anglatadi.</div>
+
+    <div class="topic-nav">
+      <a href="#run" class="topic-nav-btn prev">← docker run: Konteynerni Ishga Tushirish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Docker | 10 / 26</span>
+      <a href="#stop" class="topic-nav-btn next">docker stop va rm: Konteynerni Boshqarish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue" style="background:#0284c7; color:#fff;">Konteynerlar</span>
+      <span style="font-size:12px; color:var(--text2);">Docker Mavzu #11</span>
+    </div>
+    <h2 id="stop" style="color:#0284c7; background: linear-gradient(90deg, #38bdf8, #0284c7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">docker stop va rm: Konteynerni Boshqarish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Konteynerlarni xavfsiz to'xtatish va diskdan butunlay olib tashlash.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>docker stop <nomi_yoki_id></code> — konteynerga SIGTERM signali yuborib, xavfsiz to'xtatadi.</li><li><code>docker start <nomi_yoki_id></code> — to'xtab turgan konteynerni qayta uyg'otadi.</li><li><code>docker restart <nomi_yoki_id></code> — qayta ishga tushirish.</li><li><code>docker rm <nomi_yoki_id></code> — to'xtatilgan konteynerni o'chirib tashlaydi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Docker CLI / Dockerfile</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('dc_stop')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('dc_stop','dr_stop')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="dc_stop" contenteditable="true" spellcheck="false"># Konteynerni to'xtatish va o'chirish
+docker stop my-web
+docker rm my-web</pre>
+      </div>
+    </div>
+    <div class="result-box" id="dr_stop">
+      <div class="result-label">🐳 Docker Engine Chiqarishi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#38bdf8;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐳 Docker CLI Daemon Response:&lt;/div&gt;&lt;pre style='margin:0;color:#a5f3fc;'&gt;my-web
+my-web&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Barcha to'xtab turgan konteynerlarni birvarakayiga tozalash uchun `docker container prune` buyrug'i ishlatiladi.</div>
+
+    <div class="topic-nav">
+      <a href="#ps" class="topic-nav-btn prev">← docker ps: Konteynerlar Monitoringi</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Docker | 11 / 26</span>
+      <a href="#exec" class="topic-nav-btn next">docker exec: Konteyner Ichiga Kirish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue" style="background:#0284c7; color:#fff;">Konteynerlar</span>
+      <span style="font-size:12px; color:var(--text2);">Docker Mavzu #12</span>
+    </div>
+    <h2 id="exec" style="color:#0284c7; background: linear-gradient(90deg, #38bdf8, #0284c7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">docker exec: Konteyner Ichiga Kirish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Ishlayotgan konteyner ichida yangi buyruq bajarish yoki interaktiv terminal (bash/sh) ochib, ichki fayllarni ko'rish.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>-i</code> (interactive): Standart kiritishni (STDIN) ochiq ushlab turadi.</li><li><code>-t</code> (tty): Psevdor-terminal ajratadi.</li><li><code>docker exec -it <nomi> sh</code> (yoki <code>bash</code>) — konteyner ichidagi terminalga to'liq kirish.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Docker CLI / Dockerfile</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('dc_exec')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('dc_exec','dr_exec')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="dc_exec" contenteditable="true" spellcheck="false"># PostgreSQL konteyneri ichiga kirib psql ni ishga tushirish
+docker exec -it my-postgres psql -U postgres -d w3db</pre>
+      </div>
+    </div>
+    <div class="result-box" id="dr_exec">
+      <div class="result-label">🐳 Docker Engine Chiqarishi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#38bdf8;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐳 Docker CLI Daemon Response:&lt;/div&gt;&lt;pre style='margin:0;color:#a5f3fc;'&gt;psql (16.2)
+Type "help" for help.
+
+w3db=# SELECT current_user, current_database();
+ current_user | current_database 
+--------------+------------------
+ postgres     | w3db
+(1 row)&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Konteyner ichidan chiqish uchun oddiygina `exit` deb yoziladi.</div>
+
+    <div class="topic-nav">
+      <a href="#stop" class="topic-nav-btn prev">← docker stop va rm: Konteynerni Boshqarish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Docker | 12 / 26</span>
+      <a href="#logs" class="topic-nav-btn next">docker logs: Loglarni Kuzatish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue" style="background:#0284c7; color:#fff;">Konteynerlar</span>
+      <span style="font-size:12px; color:var(--text2);">Docker Mavzu #13</span>
+    </div>
+    <h2 id="logs" style="color:#0284c7; background: linear-gradient(90deg, #38bdf8, #0284c7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">docker logs: Loglarni Kuzatish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Konteyner ichidagi ilovaning console.log yoki xatolik xabarlarini ko'rish.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>docker logs <nomi></code> — butun chiqarish tarixini ko'rsatadi.</li><li><code>docker logs -f <nomi></code> — jonli rejimda kuzatish (follow, yangi xabarlar real-vaqtda oqib keladi).</li><li><code>docker logs --tail 50 <nomi></code> — faqat oxirgi 50 ta satrni ko'rish.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Docker CLI / Dockerfile</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('dc_logs')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('dc_logs','dr_logs')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="dc_logs" contenteditable="true" spellcheck="false"># Veb-server loglarini ko'rish
+docker logs --tail 10 my-postgres</pre>
+      </div>
+    </div>
+    <div class="result-box" id="dr_logs">
+      <div class="result-label">🐳 Docker Engine Chiqarishi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#38bdf8;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐳 Docker CLI Daemon Response:&lt;/div&gt;&lt;pre style='margin:0;color:#a5f3fc;'&gt;2026-11-23 15:30:00.123 UTC [1] LOG:  starting PostgreSQL 16.2 on x86_64-pc-linux-musl
+2026-11-23 15:30:00.245 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+2026-11-23 15:30:00.350 UTC [1] LOG:  database system is ready to accept connections&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Agar konteyner kutilmaganda to'xtab qolsa (crashed), nima sababdan yiqilganini doimo `docker logs` orqali aniqlash mumkin.</div>
+
+    <div class="topic-nav">
+      <a href="#exec" class="topic-nav-btn prev">← docker exec: Konteyner Ichiga Kirish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Docker | 13 / 26</span>
+      <a href="#dockerfile" class="topic-nav-btn next">Dockerfile Nima? Imidj Retsepti →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue" style="background:#0284c7; color:#fff;">Dockerfile</span>
+      <span style="font-size:12px; color:var(--text2);">Docker Mavzu #14</span>
+    </div>
+    <h2 id="dockerfile" style="color:#0284c7; background: linear-gradient(90deg, #38bdf8, #0284c7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Dockerfile Nima? Imidj Retsepti</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Dockerfile</strong> — bu o'zingizning dasturingiz uchun maxsus Docker imidjini bosqichma-bosqich qanday qurish kerakligini bildiruvchi oddiy matnli fayldir.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li>Fayl kengaytmasiz, aniq <code>Dockerfile</code> deb nomlanishi kerak.</li><li>Har bir satr bitta ko'rsatma (INSTRUCTION) va uning argumentidan iborat bo'ladi.</li><li>Ko'rsatmalar katta harflar bilan yozilishi an'ana (FROM, WORKDIR, COPY va h.k.).</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Docker CLI / Dockerfile</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('dc_dockerfile')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('dc_dockerfile','dr_dockerfile')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="dc_dockerfile" contenteditable="true" spellcheck="false"># Oddiy Node.js ilovasi uchun Dockerfile
+FROM node:20-alpine
 WORKDIR /app
-
-# Fayllarni nusxalash (COPY)
 COPY package*.json ./
-
-# Buyruq bajarish (RUN)
-RUN npm install --production
-
-# Qolgan fayllarni nusxalash
+RUN npm install
 COPY . .
-
-# Port ochish (EXPOSE)
 EXPOSE 3000
-
-# Muhit o'zgaruvchisi
-ENV NODE_ENV=production
-
-# Ishga tushirish buyrug'i (CMD)
-CMD ["node", "server.js"]</pre>
+CMD ["npm", "start"]</pre>
+      </div>
     </div>
-  </div>
-
-  <h2 id="build">docker build</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">bash</span>
-      <button class="copy-btn" onclick="copyCode('code5')">📋 Nusxa</button>
+    <div class="result-box" id="dr_dockerfile">
+      <div class="result-label">🐳 Docker Engine Chiqarishi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#38bdf8;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐳 Docker CLI Daemon Response:&lt;/div&gt;&lt;pre style='margin:0;color:#a5f3fc;'&gt;# Dockerfile qoidalari tartib bilan o'qiladi va yangi imidj yaratiladi&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
     </div>
-    <div class="code-body">
-      <pre id="code5"># Image yaratish (-t = tag/nom)
-docker build -t myapp:1.0 .
 
-# Dockerfile boshqa joyda bo'lsa
-docker build -t myapp -f ./docker/Dockerfile .
+    <div class="note-box" style="margin-top:16px;">💡 Dockerfile tufayli loyihangizni boshqa dasturchi yuklab olsa, hech qanday kutubxona o'rnatmasdan bitta buyruq bilan dasturni ishga tushira oladi.</div>
 
-# Yaratilgan imagelarni ko'rish
-docker images
-
-# Image ni ishga tushirish
-docker run -d -p 3000:3000 myapp:1.0
-
-# Image ni o'chirish
-docker rmi myapp:1.0</pre>
+    <div class="topic-nav">
+      <a href="#logs" class="topic-nav-btn prev">← docker logs: Loglarni Kuzatish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Docker | 14 / 26</span>
+      <a href="#instructions" class="topic-nav-btn next">Dockerfile Asosiy Ko'rsatmalari →</a>
     </div>
-  </div>
+  </section>
 
-  <h2 id="volumes">Volumes</h2>
-  <p>Volume — konteyner o'chirilganda ham ma'lumotlar saqlanib qoladi:</p>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">bash</span>
-      <button class="copy-btn" onclick="copyCode('code6')">📋 Nusxa</button>
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue" style="background:#0284c7; color:#fff;">Dockerfile</span>
+      <span style="font-size:12px; color:var(--text2);">Docker Mavzu #15</span>
     </div>
-    <div class="code-body">
-      <pre id="code6"># Volume yaratish
-docker volume create mydata
+    <h2 id="instructions" style="color:#0284c7; background: linear-gradient(90deg, #38bdf8, #0284c7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Dockerfile Asosiy Ko'rsatmalari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Dockerfile da ishlatiladigan eng asosiy kalit so'zlar vazifasi:</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>FROM <image></code> — poydevor imidjni tanlash (barcha Dockerfile lar shu bilan boshlanadi).</li><li><code>WORKDIR <path></code> — konteyner ichidagi asosiy ishchi jildni belgilash.</li><li><code>COPY <manba> <manzil></code> — kompyuterdan konteynerga fayllarni ko'chirish.</li><li><code>RUN <buyruq></code> — imidjni qurish (build) vaqtida bajariladigan buyruqlar (paketlar o'rnatish).</li><li><code>ENV <key>=<value></code> — doimiy muhit o'zgaruvchilari.</li><li><code>EXPOSE <port></code> — konteyner qaysi tarmoq portida tinglayotganini hujjatlashtirish.</li><li><code>CMD ["dastur", "arg"]</code> — konteyner ishga tushganda bajariladigan asosiy start buyrug'i.</li></ul>
 
-# Volume bilan konteyner ishga tushirish
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Docker CLI / Dockerfile</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('dc_instructions')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('dc_instructions','dr_instructions')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="dc_instructions" contenteditable="true" spellcheck="false"># Python Flask ilovasi uchun Dockerfile
+FROM python:3.11-slim
+WORKDIR /usr/src/app
+COPY requirements.txt ./
+RUN pip install --no-cache-dir -r requirements.txt
+COPY . .
+ENV PORT=5000
+EXPOSE 5000
+CMD ["python", "app.py"]</pre>
+      </div>
+    </div>
+    <div class="result-box" id="dr_instructions">
+      <div class="result-label">🐳 Docker Engine Chiqarishi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#38bdf8;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐳 Docker CLI Daemon Response:&lt;/div&gt;&lt;pre style='margin:0;color:#a5f3fc;'&gt;# Tayyor Python imidj arxitekturasi&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 `RUN` imidjni yig'ish (build) paytida bajariladi, `CMD` esa tayyor imidjdan konteyner ishga tushirilganida ishlaydi.</div>
+
+    <div class="topic-nav">
+      <a href="#dockerfile" class="topic-nav-btn prev">← Dockerfile Nima? Imidj Retsepti</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Docker | 15 / 26</span>
+      <a href="#build" class="topic-nav-btn next">docker build: Imidjni Yig'ish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue" style="background:#0284c7; color:#fff;">Dockerfile</span>
+      <span style="font-size:12px; color:var(--text2);">Docker Mavzu #16</span>
+    </div>
+    <h2 id="build" style="color:#0284c7; background: linear-gradient(90deg, #38bdf8, #0284c7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">docker build: Imidjni Yig'ish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Dockerfile asosida o'z shaxsiy imidjingizni kompilyatsiya qilish.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>docker build -t <teg_nomi> <manzil></code> — imidj qurish.</li><li><code>-t mening-saytim:v1</code> — imidjga nom va versiya tegi berish.</li><li>Oxiridagi <code>.</code> (nuqta) — joriy katalogdagi Dockerfile va fayllardan foydalanishni bildiradi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Docker CLI / Dockerfile</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('dc_build')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('dc_build','dr_build')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="dc_build" contenteditable="true" spellcheck="false"># O'z loyihamizni imidj qilib yig'amiz
+docker build -t w3learn-backend:1.0 .</pre>
+      </div>
+    </div>
+    <div class="result-box" id="dr_build">
+      <div class="result-label">🐳 Docker Engine Chiqarishi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#38bdf8;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐳 Docker CLI Daemon Response:&lt;/div&gt;&lt;pre style='margin:0;color:#a5f3fc;'&gt;[+] Building 4.8s (10/10) FINISHED
+ =&gt; [internal] load build definition from Dockerfile
+ =&gt; [1/5] FROM docker.io/library/node:20-alpine
+ =&gt; [2/5] WORKDIR /app
+ =&gt; [3/5] COPY package*.json ./
+ =&gt; [4/5] RUN npm install
+ =&gt; [5/5] COPY . .
+ =&gt; exporting to image
+ =&gt; =&gt; naming to docker.io/library/w3learn-backend:1.0
+Successfully tagged w3learn-backend:1.0&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Endi siz `docker run -p 3000:3000 w3learn-backend:1.0` orqali o'z dasturingizni konteynerda ishlatishingiz mumkin!</div>
+
+    <div class="topic-nav">
+      <a href="#instructions" class="topic-nav-btn prev">← Dockerfile Asosiy Ko'rsatmalari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Docker | 16 / 26</span>
+      <a href="#multistage" class="topic-nav-btn next">Multi-Stage Builds: Imidjni Ixchamlashtirish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue" style="background:#0284c7; color:#fff;">Ilg'or</span>
+      <span style="font-size:12px; color:var(--text2);">Docker Mavzu #17</span>
+    </div>
+    <h2 id="multistage" style="color:#0284c7; background: linear-gradient(90deg, #38bdf8, #0284c7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Multi-Stage Builds: Imidjni Ixchamlashtirish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Dasturni qurish (build) uchun og'ir SDK va kompilyatorlar kerak, lekin ishlatish (runtime) uchun ular mutlaqo ortiqcha yukdir. <strong>Multi-Stage</strong> bir nechta bosqich orqali imidj hajmini 1 GB dan 20 MB gacha qisqartiradi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li>1-bosqich (Builder): Barcha kodlarni kompilyatsiya qiladi va to'liq SDK dan foydalanadi.</li><li>2-bosqich (Production): Juda kichik toza OS (masalan Alpine yoki Nginx) olib, faqat 1-bosqichdagi tayyor natija fayllarni (dist) ko'chirib oladi.</li><li>Imidj xavfsizroq bo'ladi (ichida manba kodlar va ortiqcha vositalar qolmaydi).</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Docker CLI / Dockerfile</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('dc_multistage')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('dc_multistage','dr_multistage')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="dc_multistage" contenteditable="true" spellcheck="false"># React ilovasi uchun Multi-Stage Dockerfile:
+# 1-bosqich: Yig'ish
+FROM node:20-alpine AS builder
+WORKDIR /app
+COPY package*.json ./
+RUN npm ci
+COPY . .
+RUN npm run build
+
+# 2-bosqich: Faqat natijani tarqatish
+FROM nginx:alpine
+COPY --from=builder /app/dist /usr/share/nginx/html
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]</pre>
+      </div>
+    </div>
+    <div class="result-box" id="dr_multistage">
+      <div class="result-label">🐳 Docker Engine Chiqarishi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#38bdf8;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐳 Docker CLI Daemon Response:&lt;/div&gt;&lt;pre style='margin:0;color:#a5f3fc;'&gt;# Natija:
+# Builder imidj hajmi: 950 MB
+# Yakuniy Nginx imidj hajmi: atigi 28 MB! 🚀&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Bu usul aynan React, Vue, Go, Rust va Java ilovalarida eng ajoyib samara beradi.</div>
+
+    <div class="topic-nav">
+      <a href="#build" class="topic-nav-btn prev">← docker build: Imidjni Yig'ish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Docker | 17 / 26</span>
+      <a href="#volumes" class="topic-nav-btn next">Docker Volumes: Doimiy Ma'lumotlar →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue" style="background:#0284c7; color:#fff;">Saqlash</span>
+      <span style="font-size:12px; color:var(--text2);">Docker Mavzu #18</span>
+    </div>
+    <h2 id="volumes" style="color:#0284c7; background: linear-gradient(90deg, #38bdf8, #0284c7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Docker Volumes: Doimiy Ma'lumotlar</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Konteynerlar o'chirilganda ularning ichidagi barcha fayllar ham yo'qolib ketadi (stateless). Ma'lumotlar bazasi (Postgres, MongoDB) kabi doimiy saqlanishi shart bo'lgan fayllar uchun <strong>Volume</strong> ishlatiladi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>docker volume create <nomi></code> — yangi disk hajmi yaratish.</li><li><code>docker volume ls</code> — barcha volume larni ko'rish.</li><li><code>-v volume_nomi:/ichki/manzil</code> — konteynerga bog'lash.</li><li>Konteyner butunlay o'chirib tashlansa ham, Volume dagi barcha ma'lumotlar zararsiz saqlanib qoladi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Docker CLI / Dockerfile</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('dc_volumes')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('dc_volumes','dr_volumes')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="dc_volumes" contenteditable="true" spellcheck="false"># PostgreSQL bazasini Volume bilan ishga tushirish
+docker volume create pgdata
 docker run -d \
-  --name mydb \
-  -v mydata:/var/lib/postgresql/data \
-  postgres
-
-# Bind mount (lokal papkani ulash)
-docker run -d \
-  -v $(pwd)/html:/usr/share/nginx/html \
-  -p 8080:80 \
-  nginx
-
-# Barcha volumelarni ko'rish
-docker volume ls
-
-# Volume ni o'chirish
-docker volume rm mydata</pre>
+  --name db \
+  -v pgdata:/var/lib/postgresql/data \
+  -e POSTGRES_PASSWORD=root \
+  postgres:16-alpine</pre>
+      </div>
     </div>
-  </div>
-
-  <h2 id="compose">Docker Compose</h2>
-  <p>Docker Compose — bir nechta konteynerlarni birgalikda boshqarish vositasi:</p>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">yaml</span>
-      <button class="copy-btn" onclick="copyCode('code7')">📋 Nusxa</button>
+    <div class="result-box" id="dr_volumes">
+      <div class="result-label">🐳 Docker Engine Chiqarishi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#38bdf8;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐳 Docker CLI Daemon Response:&lt;/div&gt;&lt;pre style='margin:0;color:#a5f3fc;'&gt;pgdata
+9f8e7d6c5b4a3...&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
     </div>
-    <div class="code-body">
-      <pre id="code7"># docker-compose.yml
+
+    <div class="note-box" style="margin-top:16px;">💡 Konteynerni o'chirib, yangi versiyasini ishga tushirsangiz ham barcha ma'lumotlar o'z joyida turadi.</div>
+
+    <div class="topic-nav">
+      <a href="#multistage" class="topic-nav-btn prev">← Multi-Stage Builds: Imidjni Ixchamlashtirish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Docker | 18 / 26</span>
+      <a href="#bind-mount" class="topic-nav-btn next">Bind Mounts: Kodni Jonli Ulash →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue" style="background:#0284c7; color:#fff;">Dasturlash</span>
+      <span style="font-size:12px; color:var(--text2);">Docker Mavzu #19</span>
+    </div>
+    <h2 id="bind-mount" style="color:#0284c7; background: linear-gradient(90deg, #38bdf8, #0284c7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Bind Mounts: Kodni Jonli Ulash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Dasturchi o'z kompyuteridagi faylni o'zgartirgan zahoti konteyner ichida ham darhol o'zgarishi (Hot Reload) uchun <strong>Bind Mount</strong> ishlatiladi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>-v /kompyuterdagi/yo'l:/konteynerdagi/yo'l</code> — to'g'ridan-to'g'ri papkani ulash.</li><li>Har safar kodni o'zgartirganda yangitdan <code>docker build</code> qilish zaruratini yo'qotadi.</li><li>Mahalliy dasturlash muhiti (Development) uchun ideal.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Docker CLI / Dockerfile</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('dc_bind-mount')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('dc_bind-mount','dr_bind-mount')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="dc_bind-mount" contenteditable="true" spellcheck="false"># Joriy papkani konteyner ichiga ulash (-v $(pwd):/app)
+docker run -d -p 3000:3000 -v $(pwd):/app -w /app node:20-alpine npm run dev</pre>
+      </div>
+    </div>
+    <div class="result-box" id="dr_bind-mount">
+      <div class="result-label">🐳 Docker Engine Chiqarishi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#38bdf8;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐳 Docker CLI Daemon Response:&lt;/div&gt;&lt;pre style='margin:0;color:#a5f3fc;'&gt;Konteyner ishga tushdi va lokal papkaga ulandi 🔗&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Kodni VS Code da saqlashingiz bilan konteyner ichidagi nodemon yoki vite uni bir zumda qayta yuklaydi.</div>
+
+    <div class="topic-nav">
+      <a href="#volumes" class="topic-nav-btn prev">← Docker Volumes: Doimiy Ma'lumotlar</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Docker | 19 / 26</span>
+      <a href="#networks" class="topic-nav-btn next">Docker Networks: Konteynerlar Tarmoqlari →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue" style="background:#0284c7; color:#fff;">Tarmoqlar</span>
+      <span style="font-size:12px; color:var(--text2);">Docker Mavzu #20</span>
+    </div>
+    <h2 id="networks" style="color:#0284c7; background: linear-gradient(90deg, #38bdf8, #0284c7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Docker Networks: Konteynerlar Tarmoqlari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Konteynerlarning o'zaro bir-biri bilan xavfsiz gaplashishi uchun virtual tarmoqlar.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>docker network create <tarmoq_nomi></code> — yangi virtual bridge tarmoq yaratish.</li><li>Bitta tarmoqdagi konteynerlar bir-birining IP manzilini bilishi shart emas — ular konteyner <strong>nomi</strong> orqali to'g'ridan-to'g'ri bog'lana oladi (avtomatik DNS).</li><li>Masalan, Node.js konteyneri bazaga <code>postgres://db:5432</code> orqali bemalol ulana oladi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Docker CLI / Dockerfile</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('dc_networks')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('dc_networks','dr_networks')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="dc_networks" contenteditable="true" spellcheck="false"># Umumiy tarmoq yaratib, ikkita konteynerni ulash
+docker network create my-net
+docker run -d --name my-db --network my-net postgres:16-alpine
+docker run -d --name my-app --network my-net my-node-app</pre>
+      </div>
+    </div>
+    <div class="result-box" id="dr_networks">
+      <div class="result-label">🐳 Docker Engine Chiqarishi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#38bdf8;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐳 Docker CLI Daemon Response:&lt;/div&gt;&lt;pre style='margin:0;color:#a5f3fc;'&gt;8a7b6c5d4e3f... (my-net yaratildi)
+Ikkala konteyner 'my-net' tarmog'ida bir-birini nomi bilan ko'radi! 🌐&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Tashqi dunyoga port ochmasdan turib ham (masalan, bazani tashqariga yopib) konteynerlarni o'zaro bog'lash mumkin.</div>
+
+    <div class="topic-nav">
+      <a href="#bind-mount" class="topic-nav-btn prev">← Bind Mounts: Kodni Jonli Ulash</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Docker | 20 / 26</span>
+      <a href="#compose" class="topic-nav-btn next">Docker Compose Nima? Ko'p Konteynerli Tizimlar →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue" style="background:#0284c7; color:#fff;">Compose</span>
+      <span style="font-size:12px; color:var(--text2);">Docker Mavzu #21</span>
+    </div>
+    <h2 id="compose" style="color:#0284c7; background: linear-gradient(90deg, #38bdf8, #0284c7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Docker Compose Nima? Ko'p Konteynerli Tizimlar</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Haqiqiy loyihalarda bitta emas, bir nechta konteynerlar (Frontend, Backend API, PostgreSQL, Redis) birgalikda ishlashi kerak bo'ladi. Ularning barchasini bitta fayl bilan boshqarish vositasi <strong>Docker Compose</strong> deb ataladi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li>O'nlab uzun <code>docker run</code> buyruqlari o'rniga bitta deklarativ YAML fayli ishlatiladi.</li><li>Barcha servislar, tarmoqlar va hajmlar (volumes) bitta joyda aniq ta'riflanadi.</li><li>Bitta buyruq orqali butun loyihaning barcha qismlari birvarakayiga ishga tushadi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Docker CLI / Dockerfile</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('dc_compose')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('dc_compose','dr_compose')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="dc_compose" contenteditable="true" spellcheck="false"># Docker Compose versiyasini tekshirish
+docker compose version</pre>
+      </div>
+    </div>
+    <div class="result-box" id="dr_compose">
+      <div class="result-label">🐳 Docker Engine Chiqarishi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#38bdf8;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐳 Docker CLI Daemon Response:&lt;/div&gt;&lt;pre style='margin:0;color:#a5f3fc;'&gt;Docker Compose version v2.24.5&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Zamonaviy Docker da `docker-compose` defis bilan emas, `docker compose` bo'sh joy bilan yoziladi.</div>
+
+    <div class="topic-nav">
+      <a href="#networks" class="topic-nav-btn prev">← Docker Networks: Konteynerlar Tarmoqlari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Docker | 21 / 26</span>
+      <a href="#compose-file" class="topic-nav-btn next">docker-compose.yml Fayli Strukturasi →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue" style="background:#0284c7; color:#fff;">Compose</span>
+      <span style="font-size:12px; color:var(--text2);">Docker Mavzu #22</span>
+    </div>
+    <h2 id="compose-file" style="color:#0284c7; background: linear-gradient(90deg, #38bdf8, #0284c7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">docker-compose.yml Fayli Strukturasi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Loyiha ildizida joylashuvchi <code>docker-compose.yml</code> faylining namunaviy tuzilishi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>services:</code> — loyihadagi barcha mikroservislar ro'yxati.</li><li><code>image:</code> yoki <code>build:</code> — qaysi imidjdan foydalanish yoki qayerdan build qilish.</li><li><code>ports:</code> — tashqi va ichki portlar bog'lanishi.</li><li><code>environment:</code> — muhit o'zgaruvchilari.</li><li><code>depends_on:</code> — qaysi servis birinchi bo'lib ishga tushishi kerakligi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Docker CLI / Dockerfile</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('dc_compose-file')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('dc_compose-file','dr_compose-file')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="dc_compose-file" contenteditable="true" spellcheck="false"># docker-compose.yml namunasi:
 version: '3.8'
 
 services:
-  # Web ilovasi
   web:
     build: .
     ports:
       - "3000:3000"
     environment:
-      - NODE_ENV=production
-      - DATABASE_URL=postgres://user:pass@db:5432/myapp
+      - DATABASE_URL=postgres://user:pass@db:5432/appdb
     depends_on:
       - db
       - redis
-    volumes:
-      - .:/app
 
-  # PostgreSQL
   db:
-    image: postgres:15
+    image: postgres:16-alpine
     environment:
       POSTGRES_USER: user
       POSTGRES_PASSWORD: pass
-      POSTGRES_DB: myapp
+      POSTGRES_DB: appdb
     volumes:
       - pgdata:/var/lib/postgresql/data
 
-  # Redis
   redis:
     image: redis:7-alpine
-    ports:
-      - "6379:6379"
 
 volumes:
   pgdata:</pre>
+      </div>
     </div>
-  </div>
+    <div class="result-box" id="dr_compose-file">
+      <div class="result-label">🐳 Docker Engine Chiqarishi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#38bdf8;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐳 Docker CLI Daemon Response:&lt;/div&gt;&lt;pre style='margin:0;color:#a5f3fc;'&gt;# To'liq loyiha (Web + PostgreSQL + Redis) bir faylda ifodalandi&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
 
-  <h2 id="compose-cmds">Compose Buyruqlari</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">bash</span>
-      <button class="copy-btn" onclick="copyCode('code8')">📋 Nusxa</button>
+    <div class="note-box" style="margin-top:16px;">💡 YAML formatida probellar (bo'shliqlar) qat'iy hisoblanadi; tabulyatsiya (Tab) ishlatish mumkin emas.</div>
+
+    <div class="topic-nav">
+      <a href="#compose" class="topic-nav-btn prev">← Docker Compose Nima? Ko'p Konteynerli Tizimlar</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Docker | 22 / 26</span>
+      <a href="#compose-cmds" class="topic-nav-btn next">Docker Compose Asosiy Buyruqlari →</a>
     </div>
-    <div class="code-body">
-      <pre id="code8"># Barcha xizmatlarni ishga tushirish
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue" style="background:#0284c7; color:#fff;">Compose</span>
+      <span style="font-size:12px; color:var(--text2);">Docker Mavzu #23</span>
+    </div>
+    <h2 id="compose-cmds" style="color:#0284c7; background: linear-gradient(90deg, #38bdf8, #0284c7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Docker Compose Asosiy Buyruqlari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Ko'p konteynerli ilovalarni bitta tugma bilan boshqarish.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>docker compose up -d</code> — barcha servislarni yig'ib, orqa fonda ishga tushiradi.</li><li><code>docker compose down</code> — barcha konteyner va tarmoqlarni to'xtatadi va o'chiradi (xotira/volume larni saqlab qoladi).</li><li><code>docker compose down -v</code> — volume lar bilan birga barcha ma'lumotlarni tozalab o'chiradi.</li><li><code>docker compose logs -f</code> — barcha servislarning loglarini bitta oynada ko'rsatadi.</li><li><code>docker compose restart</code> — barcha servislarni qayta ishga tushirish.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Docker CLI / Dockerfile</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('dc_compose-cmds')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('dc_compose-cmds','dr_compose-cmds')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="dc_compose-cmds" contenteditable="true" spellcheck="false"># Loyihani ishga tushirish va to'xtatish
 docker compose up -d
-
-# Loglarni ko'rish
-docker compose logs -f
-
-# Xizmat holatini ko'rish
-docker compose ps
-
-# Xizmatni qayta ishga tushirish
-docker compose restart web
-
-# Barcha xizmatlarni to'xtatish
-docker compose down
-
-# To'xtatish + volume lar o'chirish
-docker compose down -v
-
-# Faqat bitta xizmat
-docker compose up -d db</pre>
+docker compose ps</pre>
+      </div>
     </div>
-  </div>
+    <div class="result-box" id="dr_compose-cmds">
+      <div class="result-label">🐳 Docker Engine Chiqarishi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#38bdf8;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐳 Docker CLI Daemon Response:&lt;/div&gt;&lt;pre style='margin:0;color:#a5f3fc;'&gt;[+] Running 4/4
+ ✔ Network app_default   Created                               0.1s
+ ✔ Container app-redis-1  Started                               0.4s
+ ✔ Container app-db-1     Started                               0.4s
+ ✔ Container app-web-1    Started                               0.7s
+NAME          IMAGE         COMMAND                  STATUS   PORTS
+app-web-1     app-web       "npm start"              running  0.0.0.0:3000-&gt;3000/tcp
+app-db-1      postgres:16   "docker-entrypoint.s…"   running  5432/tcp
+app-redis-1   redis:7       "docker-entrypoint.s…"   running  6379/tcp&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
 
-  <h2 id="best-practices">Best Practices</h2>
-  <ul>
-    <li>✅ <strong>Alpine</strong> asosli imagelardan foydalaning — kichikroq hajm</li>
-    <li>✅ <strong>.dockerignore</strong> fayl yarating — node_modules, .git ni chiqarib tashlang</li>
-    <li>✅ <strong>Multi-stage build</strong> — build va runtime imageni ajrating</li>
-    <li>✅ <strong>Bir konteyner — bir xizmat</strong> printsipiga rioya qiling</li>
-    <li>✅ Sirlarni (parollarni) <strong>muhit o'zgaruvchilari</strong> orqali uzating</li>
-    <li>✅ <strong>Doimiy ma'lumotlar</strong> uchun Volume ishlatng, konteyner ichiga emas</li>
-    <li>✅ Layer cachingdan foydalanish uchun <code>COPY package.json</code> ni avval qiling</li>
-  </ul>
+    <div class="note-box" style="margin-top:16px;">💡 Dasturchi kompyuteriga yangi kelgan xodim faqat `docker compose up -d` yozish orqali butun murakkab tizimni bir lahzada ishlatib keta oladi.</div>
 
-  <!-- Quiz -->
+    <div class="topic-nav">
+      <a href="#compose-file" class="topic-nav-btn prev">← docker-compose.yml Fayli Strukturasi</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Docker | 23 / 26</span>
+      <a href="#registry" class="topic-nav-btn next">Docker Hub va Xususiy Registrilar →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue" style="background:#0284c7; color:#fff;">Registri</span>
+      <span style="font-size:12px; color:var(--text2);">Docker Mavzu #24</span>
+    </div>
+    <h2 id="registry" style="color:#0284c7; background: linear-gradient(90deg, #38bdf8, #0284c7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Docker Hub va Xususiy Registrilar</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Dasturchilar va kompaniyalar o'z imidjlarini bulutda saqlaydigan va boshqalar bilan ulashadigan omborlar.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><strong>Docker Hub:</strong> Eng katta ochiq ombor (hub.docker.com).</li><li><strong>GitHub Packages (GHCR):</strong> GitHub bilan chuqur integratsiyalangan imidjlar registrisi.</li><li><strong>AWS ECR / Google Artifact Registry:</strong> Korporativ bulutli xususiy omborlar.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Docker CLI / Dockerfile</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('dc_registry')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('dc_registry','dr_registry')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="dc_registry" contenteditable="true" spellcheck="false"># Docker Hub ga kirish
+docker login -u mening_loginim</pre>
+      </div>
+    </div>
+    <div class="result-box" id="dr_registry">
+      <div class="result-label">🐳 Docker Engine Chiqarishi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#38bdf8;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐳 Docker CLI Daemon Response:&lt;/div&gt;&lt;pre style='margin:0;color:#a5f3fc;'&gt;Password: 
+Login Succeeded&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Xususiy (Private) loyihalarda kompaniya kodlari tashqariga chiqmasligi uchun doimo yopiq registrilardan foydalaniladi.</div>
+
+    <div class="topic-nav">
+      <a href="#compose-cmds" class="topic-nav-btn prev">← Docker Compose Asosiy Buyruqlari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Docker | 24 / 26</span>
+      <a href="#push" class="topic-nav-btn next">docker tag va push: Imidjlarni Joylash →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue" style="background:#0284c7; color:#fff;">Registri</span>
+      <span style="font-size:12px; color:var(--text2);">Docker Mavzu #25</span>
+    </div>
+    <h2 id="push" style="color:#0284c7; background: linear-gradient(90deg, #38bdf8, #0284c7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">docker tag va push: Imidjlarni Joylash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Mahalliy yig'ilgan imidjga o'z ombor nomingizni biriktirish va uni Docker Hub ga yuklash.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>docker tag <mahalliy_imidj> <login>/<repo>:<versiya></code> — to'g'ri manzil bilan nomlash.</li><li><code>docker push <login>/<repo>:<versiya></code> — serverga yuklash.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Docker CLI / Dockerfile</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('dc_push')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('dc_push','dr_push')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="dc_push" contenteditable="true" spellcheck="false"># Imidjni belgilash va yuklash
+docker tag w3learn-backend:1.0 avdurasulovuz/w3learn-backend:1.0
+docker push avdurasulovuz/w3learn-backend:1.0</pre>
+      </div>
+    </div>
+    <div class="result-box" id="dr_push">
+      <div class="result-label">🐳 Docker Engine Chiqarishi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#38bdf8;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐳 Docker CLI Daemon Response:&lt;/div&gt;&lt;pre style='margin:0;color:#a5f3fc;'&gt;The push refers to repository [docker.io/avdurasulovuz/w3learn-backend]
+3f4e2d1c0b9a: Pushed
+7a8b9c0d1e2f: Layer already exists
+1.0: digest: sha256:4f8e... size: 1782&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Endi istalgan serverda turib `docker run avdurasulovuz/w3learn-backend:1.0` deb yozsangiz, ilovangiz bir soniyada yuklanib ishga tushadi!</div>
+
+    <div class="topic-nav">
+      <a href="#registry" class="topic-nav-btn prev">← Docker Hub va Xususiy Registrilar</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Docker | 25 / 26</span>
+      <a href="#best-practices" class="topic-nav-btn next">Docker Eng Yaxshi Amaliyotlari va Xavfsizlik →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue" style="background:#0284c7; color:#fff;">Xavfsizlik</span>
+      <span style="font-size:12px; color:var(--text2);">Docker Mavzu #26</span>
+    </div>
+    <h2 id="best-practices" style="color:#0284c7; background: linear-gradient(90deg, #38bdf8, #0284c7); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Docker Eng Yaxshi Amaliyotlari va Xavfsizlik</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Production darajasidagi ishonchli va xavfsiz Docker imidjlarini yaratish qoidalari.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li>1. <strong>Doim .dockerignore faylidan foydalaning:</strong> <code>node_modules</code>, <code>.git</code> va maxfiy <code>.env</code> fayllarini imidjga kiritmang.</li><li>2. <strong>Root foydalanuvchidan voz keching:</strong> Xavfsizlik uchun Dockerfile oxirida alohida past huquqli foydalanuvchi yarating (<code>USER node</code>).</li><li>3. <strong>Ixcham imidjlar tanlang:</strong> Debian (1 GB) o'rniga Alpine (5 MB) yoki Slim versiyalardan foydalaning.</li><li>4. <strong>Keshni to'g'ri tartiblang:</strong> Tez-tez o'zgaruvchi kodlarni Dockerfile ning oxiriga, kam o'zgaruvchi kutubxona o'rnatishlarini (package.json) yuqoriga qo'ying.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Docker CLI / Dockerfile</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('dc_best-practices')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('dc_best-practices','dr_best-practices')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="dc_best-practices" contenteditable="true" spellcheck="false"># Xavfsiz production Dockerfile namunasi:
+FROM node:20-alpine
+WORKDIR /app
+# Bog'liqliklarni keshdan foydalanish uchun alohida ko'chiramiz
+COPY package*.json ./
+RUN npm ci --only=production
+COPY . .
+# Root huquqlarini bekor qilamiz
+USER node
+EXPOSE 3000
+CMD ["node", "server.js"]</pre>
+      </div>
+    </div>
+    <div class="result-box" id="dr_best-practices">
+      <div class="result-label">🐳 Docker Engine Chiqarishi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#38bdf8;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐳 Docker CLI Daemon Response:&lt;/div&gt;&lt;pre style='margin:0;color:#a5f3fc;'&gt;# Xavfsiz, ixcham va keshdan samarali foydalanuvchi imidj 🛡️&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Ushbu qoidalarga rioya qilish serverlaringizni xakerlik hujumlaridan himoya qiladi va deploy tezligini oshiradi.</div>
+
+    <div class="topic-nav">
+      <a href="#push" class="topic-nav-btn prev">← docker tag va push: Imidjlarni Joylash</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Docker | 26 / 26</span>
+      <a href="linux.html" class="topic-nav-btn next">Keyingi kurs: Linux Darslari →</a>
+    </div>
+  </section>
+
   <div class="quiz-box">
-    <div class="quiz-q">🧠 Docker Image va Container farqi nima?</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'q1')">Ikkalasi bir xil narsa</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, true, 'q1')">Image — qolip (blueprint), Container — ishlaydigan nusxa</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'q1')">Container — qolip, Image — ishlaydigan nusxa</div>
-    <div class="quiz-result" id="q1"></div>
+    <div class="quiz-q">🧪 Test: Docker konteynerini orqa fonda (background rejimida) ishga tushirish uchun qaysi bayroq (flag) ishlatiladi?</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, true, 'dockerQr1')">-d (detached)</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'dockerQr1')">-b (background)</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'dockerQr1')">-s (silent)</div>
+    <div class="quiz-result" id="dockerQr1"></div>
   </div>
 
-  
+  <div class="nav-btns" style="margin-top: 30px;">
+    <a href="git.html" class="btn-prev">← Git Darslari</a>
+    <a href="linux.html" class="btn-next">Linux Darsiga O'tish →</a>
+  </div>
 
-<div class="nav-btns">
-  <a href="git.html" class="btn-prev">&#8592; Git</a>
-  <a href="linux.html" class="btn-next">Linux &#8594;</a>
-</div>
+  <div class="note note-blue" style="margin-top: 25px;">
+    📌 <strong>Keyingi qadam:</strong> Konteynerlar va server infratuzilmasi uchun poydevor hisoblangan operatsion tizim — <a href="linux.html" style="color:var(--green)">Linux darslariga</a> o'ting!
+  </div>
 </main>
 <aside class="right-panel">
   <div class="rp-title">📊 Kurs bo'limlari</div>

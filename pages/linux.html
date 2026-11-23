@@ -96,380 +96,1316 @@
 </aside>
 <div class="overlay" id="overlay" onclick="closeMobileSidebar()"></div>
 <main class="main">
-  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">Linux</a> › Linux Nima?</div>
-  <h1 id="kirish">Linux Nima?</h1>
-  <div class="meta-tags">
-    <span class="tag tag-green">⏱ 10 daqiqa</span>
-    <span class="tag tag-blue">🟢 Boshlang'ich</span>
-    <span class="tag tag-orange">👁 18,600 marta ko'rilgan</span>
-  </div>
-  <p><strong>Linux</strong> — ochiq manbali (open-source) operatsion tizim yadrosi (kernel). Linus Torvalds tomonidan 1991-yilda yaratilgan.</p>
-  <p>Dunyo serverlarining 90% dan ortig'i Linux da ishlaydi. Android ham Linux yadrosi asosida qurilgan. Dasturchi sifatida Linux ni bilish zarur.</p>
-  <div class="note">💡 <strong>Nima uchun Linux?</strong> Bepul, xavfsiz, tez, moslashuvchan va deyarli barcha serverlar Linux da ishlaydi.</div>
-
-  <h2 id="fayl-tizim">Linux Fayl Tizimi</h2>
-  <p>Linux da hamma narsa fayl. Asosiy papkalar:</p>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">bash</span>
-      <button class="copy-btn" onclick="copyCode('code0')">📋 Nusxa</button>
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-yellow" style="background:#eab308; color:#000; font-weight:700;">Asosiy</span>
+      <span style="font-size:12px; color:var(--text2);">Linux Mavzu #1</span>
     </div>
-    <div class="code-body">
-      <pre id="code0">/           # Ildiz (root) papkasi
-/home/      # Foydalanuvchi papkalari (/home/ali)
-/root/      # Root foydalanuvchi uy papkasi
-/etc/       # Konfiguratsiya fayllar
-/var/       # O'zgaruvchan ma'lumotlar (loglar, DB)
-/tmp/       # Vaqtinchalik fayllar
-/usr/       # Dasturlar va kutubxonalar
-/bin/       # Asosiy buyruqlar (ls, cp, mv)
-/sbin/      # Tizim buyruqlari (sudo, fdisk)
-/opt/       # Uchinchi tomon dasturlar
-/proc/      # Jarayonlar haqida virtual fayllar
-/dev/       # Qurilma fayllari</pre>
+    <h2 id="kirish" style="color:#eab308; background: linear-gradient(90deg, #facc15, #eab308); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Linux Nima? Dunyo Infratuzilmasining Yuragi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Linux</strong> — 1991-yilda Linus Torvalds tomonidan yaratilgan erkin va ochiq kodli Unix-simon operatsion tizim yadrosidir (Kernel). Bugungi kunda global internet serverlarining 90% dan ortig'i, dunyodagi eng kuchli 500 ta superkompyuterning 100% i, barcha Android smartfonlar va bulutli platformalar (AWS, Google Cloud, Azure) aynan Linux boshqaruvida ishlaydi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li>Ochiq kodli (Open Source): Har kim kodni ko'rishi, o'zgartirishi va o'z ehtiyojiga moslashi mumkin.</li><li>O'ta barqaror va xavfsiz: Oylarcha yoki yillarcha qayta yuklanmasdan (no reboot) to'xtovsiz ishlay oladi.</li><li>Virus va zararli dasturlarga yuqori chidamlilik va qat'iy foydalanuvchi huquqlari tizimi.</li><li>Har qanday backend dasturchi, DevOps va kiberxavfsizlik mutaxassisi uchun Linux ni bilish majburiy hisoblanadi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Bash / Linux Shell</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('lc_kirish')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('lc_kirish','lr_kirish')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="lc_kirish" contenteditable="true" spellcheck="false"># Linux yadrosi va tizim ma'lumotlarini ko'rish
+uname -a</pre>
+      </div>
     </div>
-  </div>
-
-  <h2 id="ls">ls — Papka Tarkibini Ko'rish</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">bash</span>
-      <button class="copy-btn" onclick="copyCode('code1')">📋 Nusxa</button>
+    <div class="result-box" id="lr_kirish">
+      <div class="result-label">🐧 Linux Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#facc15;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐧 Linux Bash Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Linux ubuntu-server 6.5.0-28-generic #29-Ubuntu SMP PREEMPT_DYNAMIC x86_64 GNU/Linux&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
     </div>
-    <div class="code-body">
-      <pre id="code1"># Hozirgi papka tarkibi
-ls
 
-# Batafsil ko'rsatish (-l)
-ls -l
+    <div class="note-box" style="margin-top:16px;">💡 'Linux' aslida faqat yadro (kernel) hisoblanadi; uning atrofidagi utilitalar GNU loyihasi vositalari bo'lgani uchun to'liq nomi GNU/Linux dir.</div>
 
-# Yashirin fayllar ham (-a)
-ls -la
-
-# Hajmni o'qilishi qulay formatda (-h)
-ls -lh
-
-# Ma'lum papkani ko'rish
-ls /var/log
-
-# Tartiblash — hajmi bo'yicha
-ls -lhS
-
-# Vaqti bo'yicha (yangi birinchi)
-ls -lt</pre>
+    <div class="topic-nav">
+      <a href="docker.html" class="topic-nav-btn prev">← Docker Darslari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Linux | 1 / 33</span>
+      <a href="#distros" class="topic-nav-btn next">Linux Distributivlari (Ubuntu, Debian, CentOS, Alpine) →</a>
     </div>
-  </div>
+  </section>
 
-  <h2 id="cd">cd / pwd / mkdir</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">bash</span>
-      <button class="copy-btn" onclick="copyCode('code2')">📋 Nusxa</button>
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-yellow" style="background:#eab308; color:#000; font-weight:700;">Distributivlar</span>
+      <span style="font-size:12px; color:var(--text2);">Linux Mavzu #2</span>
     </div>
-    <div class="code-body">
-      <pre id="code2"># Papkaga kirish
-cd /var/log
-cd projects/myapp
+    <h2 id="distros" style="color:#eab308; background: linear-gradient(90deg, #facc15, #eab308); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Linux Distributivlari (Ubuntu, Debian, CentOS, Alpine)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Linux yadrosi turli dasturlar va paket menejerlari bilan birlashtirilib, <strong>Distributivlar (Distros)</strong> ko'rinishida chiqariladi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><strong>Ubuntu:</strong> Yangi o'rganuvchilar va serverlar uchun eng mashhur va qulay tizim (Debian asosida).</li><li><strong>Debian:</strong> Favqulodda toshdek qattiq barqarorlik (Rock-solid stability).</li><li><strong>RHEL / Rocky / AlmaLinux / CentOS:</strong> Katta korxonalar va moliya institutlari korporativ standarti.</li><li><strong>Alpine Linux:</strong> O'ta kichik (atigi 5 MB), Docker konteynerlari uchun 1-raqamli tanlov.</li><li><strong>Arch Linux:</strong> Doim eng so'nggi dasturiy ta'minot (Rolling release), ilg'or foydalanuvchilar uchun.</li></ul>
 
-# Oldingi papkaga qaytish
-cd ..
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Bash / Linux Shell</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('lc_distros')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('lc_distros','lr_distros')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="lc_distros" contenteditable="true" spellcheck="false"># O'rnatilgan distributiv nomini ko'rish
+cat /etc/os-release</pre>
+      </div>
+    </div>
+    <div class="result-box" id="lr_distros">
+      <div class="result-label">🐧 Linux Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#facc15;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐧 Linux Bash Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;NAME="Ubuntu"
+VERSION="24.04 LTS (Noble Numbat)"
+ID=ubuntu
+ID_LIKE=debian
+PRETTY_NAME="Ubuntu 24.04 LTS"&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
 
-# Uy papkasiga qaytish
-cd ~
-cd
+    <div class="note-box" style="margin-top:16px;">💡 Serverlar uchun doimo LTS (Long Term Support - 5 yillik rasmiy qo'llab-quvvatlanuvchi) versiyalarni tanlash zarur.</div>
 
-# Oldingi joyga qaytish
-cd -
+    <div class="topic-nav">
+      <a href="#kirish" class="topic-nav-btn prev">← Linux Nima? Dunyo Infratuzilmasining Yuragi</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Linux | 2 / 33</span>
+      <a href="#terminal" class="topic-nav-btn next">Terminal va CLI (Buyruqlar Qatori) Asoslari →</a>
+    </div>
+  </section>
 
-# Hozirgi joylashuvni ko'rish
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-yellow" style="background:#eab308; color:#000; font-weight:700;">Terminal</span>
+      <span style="font-size:12px; color:var(--text2);">Linux Mavzu #3</span>
+    </div>
+    <h2 id="terminal" style="color:#eab308; background: linear-gradient(90deg, #facc15, #eab308); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Terminal va CLI (Buyruqlar Qatori) Asoslari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Linux boshqaruvining asosiy kuchi grafik oynalarda emas, balki <strong>Terminal</strong> (Command Line Interface - CLI) orqali buyruqlar berishdadir.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li>Buyruq strukturasi: <code>buyruq [bayroqlar/options] [argumentlar]</code>.</li><li>Masalan: <code>ls -l /var/log</code> (buyruq: ls, bayroq: -l, argument: /var/log).</li><li>Katta-kichik harflar qat'iy farqlanadi: <code>Fayl.txt</code> va <code>fayl.txt</code> ikki xil fayldir.</li><li>Tab tugmasi buyruq va fayl nomlarini avtomatik to'ldiradi (Auto-complete).</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Bash / Linux Shell</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('lc_terminal')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('lc_terminal','lr_terminal')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="lc_terminal" contenteditable="true" spellcheck="false"># Terminalda oddiy salomlashish
+echo "Assalomu alaykum, Linux dunyosi!"
+whoami
+date</pre>
+      </div>
+    </div>
+    <div class="result-box" id="lr_terminal">
+      <div class="result-label">🐧 Linux Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#facc15;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐧 Linux Bash Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Assalomu alaykum, Linux dunyosi!
+ubuntu
+Mon Nov 23 15:40:00 UTC 2026&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Terminalda Tab tugmasini ikki marta bosish mos keluvchi barcha variantlarni ko'rsatadi.</div>
+
+    <div class="topic-nav">
+      <a href="#distros" class="topic-nav-btn prev">← Linux Distributivlari (Ubuntu, Debian, CentOS, Alpine)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Linux | 3 / 33</span>
+      <a href="#fayl-tizim" class="topic-nav-btn next">Linux Fayllar Tizimi Strukturasi (FHS) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-yellow" style="background:#eab308; color:#000; font-weight:700;">Fayl tizimi</span>
+      <span style="font-size:12px; color:var(--text2);">Linux Mavzu #4</span>
+    </div>
+    <h2 id="fayl-tizim" style="color:#eab308; background: linear-gradient(90deg, #facc15, #eab308); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Linux Fayllar Tizimi Strukturasi (FHS)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Windows dagi 'C:', 'D:' disklari o'rniga, Linux da hamma narsa bitta umumiy ildiz — <code>/</code> (Root) katalogidan boshlanadigan daraxt ko'rinishida tuzilgan.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>/</code> — Butun tizimning boshlang'ich ildizi (Root directory).</li><li><code>/bin</code> va <code>/usr/bin</code> — Barcha asosiy ijro etiluvchi dasturlar (ls, cp, python).</li><li><code>/etc</code> — Tizim va dasturlarning konfiguratsiya (sozlama) fayllari (nginx.conf, passwd).</li><li><code>/home</code> — Oddiy foydalanuvchilarning shaxsiy ishchi papkalari (/home/user).</li><li><code>/var</code> — Doimiy o'zgaruvchi ma'lumotlar: loglar (/var/log), keshlar, ma'lumotlar bazalari.</li><li><code>/tmp</code> — Vaqtinchalik fayllar (tizim qayta yonganda avtomatik tozalanadi).</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Bash / Linux Shell</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('lc_fayl-tizim')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('lc_fayl-tizim','lr_fayl-tizim')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="lc_fayl-tizim" contenteditable="true" spellcheck="false"># Ildiz katalog tarkibini ko'rish
+ls -d /*</pre>
+      </div>
+    </div>
+    <div class="result-box" id="lr_fayl-tizim">
+      <div class="result-label">🐧 Linux Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#facc15;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐧 Linux Bash Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;/bin   /dev  /home  /lib64  /mnt  /proc  /run   /srv  /tmp  /var
+/boot  /etc  /lib   /media  /opt  /root  /sbin  /sys  /usr&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Linux da mashhur falsafa bor: 'Everything is a file' (Hamma narsa fayldir) — hatto qattiq disklar va tarmoq ulanishlari ham fayl sifatida ifodalanadi.</div>
+
+    <div class="topic-nav">
+      <a href="#terminal" class="topic-nav-btn prev">← Terminal va CLI (Buyruqlar Qatori) Asoslari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Linux | 4 / 33</span>
+      <a href="#ls" class="topic-nav-btn next">ls: Fayllar va Jildlar Ro'yxati →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-yellow" style="background:#eab308; color:#000; font-weight:700;">Fayllar</span>
+      <span style="font-size:12px; color:var(--text2);">Linux Mavzu #5</span>
+    </div>
+    <h2 id="ls" style="color:#eab308; background: linear-gradient(90deg, #facc15, #eab308); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">ls: Fayllar va Jildlar Ro'yxati</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Joriy yoki ko'rsatilgan papka ichidagi barcha fayllar va jildlarni ko'rish buyrug'i.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>ls</code> — oddiy ro'yxat.</li><li><code>ls -l</code> — batafsil ma'lumot (ruxsatlar, egasi, hajmi, o'zgartirilgan vaqti).</li><li><code>ls -a</code> — yashirin fayllarni ham ko'rsatish (nuqta <code>.</code> bilan boshlanuvchilar).</li><li><code>ls -lh</code> — hajmlarni inson o'qiy oladigan formatda (KB, MB, GB) ko'rsatish.</li><li><code>ls -lt</code> — eng so'nggi o'zgartirilgan vaqti bo'yicha saralash.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Bash / Linux Shell</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('lc_ls')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('lc_ls','lr_ls')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="lc_ls" contenteditable="true" spellcheck="false"># Batafsil va yashirin fayllar ro'yxatini ko'rish
+ls -lah</pre>
+      </div>
+    </div>
+    <div class="result-box" id="lr_ls">
+      <div class="result-label">🐧 Linux Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#facc15;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐧 Linux Bash Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;total 48K
+drwxr-xr-x 4 ubuntu ubuntu 4.0K Nov 23 15:30 .
+drwxr-xr-x 3 root   root   4.0K Nov 20 10:00 ..
+-rw------- 1 ubuntu ubuntu 3.2K Nov 23 15:28 .bash_history
+-rw-r--r-- 1 ubuntu ubuntu  220 Nov 20 10:00 .bash_logout
+-rw-r--r-- 1 ubuntu ubuntu 3.7K Nov 20 10:00 .bashrc
+drwx------ 2 ubuntu ubuntu 4.0K Nov 20 10:05 .ssh
+drwxr-xr-x 2 ubuntu ubuntu 4.0K Nov 23 15:10 w3learn_app&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 `.` joriy papkani, `..` esa bitta yuqoridagi ota-papkani bildiradi.</div>
+
+    <div class="topic-nav">
+      <a href="#fayl-tizim" class="topic-nav-btn prev">← Linux Fayllar Tizimi Strukturasi (FHS)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Linux | 5 / 33</span>
+      <a href="#cd" class="topic-nav-btn next">cd: Papkalar Bo'ylab Harakatlanish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-yellow" style="background:#eab308; color:#000; font-weight:700;">Navigatsiya</span>
+      <span style="font-size:12px; color:var(--text2);">Linux Mavzu #6</span>
+    </div>
+    <h2 id="cd" style="color:#eab308; background: linear-gradient(90deg, #facc15, #eab308); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">cd: Papkalar Bo'ylab Harakatlanish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Bitta papkadan boshqa papkaga o'tish buyrug'i (Change Directory).</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>cd /var/log</code> — mutlaq yo'l (absolute path) bo'yicha o'tish.</li><li><code>cd w3learn_app</code> — nisbiy yo'l (relative path) bo'yicha o'tish.</li><li><code>cd ..</code> — bitta qavat yuqoriga chiqish.</li><li><code>cd ~</code> yoki oddiygina <code>cd</code> — shaxsiy foydalanuvchi jildiga (/home/user) qaytish.</li><li><code>cd -</code> — oldingi turgan papkaga qaytish.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Bash / Linux Shell</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('lc_cd')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('lc_cd','lr_cd')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="lc_cd" contenteditable="true" spellcheck="false"># Papkalar bo'ylab sayohat
+cd /var/log/nginx
 pwd
-# /home/ali/projects
-
-# Papka yaratish
-mkdir myproject
-
-# Ichma-ich papkalar yaratish (-p)
-mkdir -p projects/web/assets/css
-
-# Papkani o'chirish (bo'sh)
-rmdir mydir</pre>
+cd -
+pwd</pre>
+      </div>
     </div>
-  </div>
-
-  <h2 id="touch">Fayl Yaratish va Nusxalash</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">bash</span>
-      <button class="copy-btn" onclick="copyCode('code3')">📋 Nusxa</button>
+    <div class="result-box" id="lr_cd">
+      <div class="result-label">🐧 Linux Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#facc15;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐧 Linux Bash Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;/var/log/nginx
+/home/ubuntu
+/home/ubuntu&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
     </div>
-    <div class="code-body">
-      <pre id="code3"># Bo'sh fayl yaratish
-touch index.html
-touch file1.txt file2.txt
 
-# Faylni nusxalash
-cp index.html backup.html
+    <div class="note-box" style="margin-top:16px;">💡 `cd -` buyrug'i ikki papka o'rtasida tez-tez almashib turishda juda qo'l keladi.</div>
 
-# Papkani nusxalash (-r = recursive)
-cp -r myproject myproject_backup
-
-# Faylni ko'chirish / qayta nomlash
-mv oldname.txt newname.txt
-mv file.txt /var/www/html/
-
-# Faylni o'chirish
-rm file.txt
-
-# Papkani o'chirish (-r)
-rm -r myproject
-
-# Majburan o'chirish (-f = force)
-rm -rf old_project
-
-# Faylni ko'rish
-cat file.txt
-
-# Sahifa-sahifa ko'rish
-less bigfile.log
-# q — chiqish, Space — keyingi sahifa</pre>
+    <div class="topic-nav">
+      <a href="#ls" class="topic-nav-btn prev">← ls: Fayllar va Jildlar Ro'yxati</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Linux | 6 / 33</span>
+      <a href="#pwd" class="topic-nav-btn next">pwd: Qayerdaligingizni Aniqlash →</a>
     </div>
-  </div>
+  </section>
 
-  <h2 id="grep">grep — Matn Qidirish</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">bash</span>
-      <button class="copy-btn" onclick="copyCode('code4')">📋 Nusxa</button>
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-yellow" style="background:#eab308; color:#000; font-weight:700;">Navigatsiya</span>
+      <span style="font-size:12px; color:var(--text2);">Linux Mavzu #7</span>
     </div>
-    <div class="code-body">
-      <pre id="code4"># Fayldan matn qidirish
-grep "error" app.log
+    <h2 id="pwd" style="color:#eab308; background: linear-gradient(90deg, #facc15, #eab308); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">pwd: Qayerdaligingizni Aniqlash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Print Working Directory</strong> — ayni damda qaysi katalog ichida turganingizning to'liq mutlaq yo'lini (path) ekranga chiqaradi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li>Fayllar yo'lini to'g'ri ko'rsatish va adashib ketmaslik uchun ishlatiladi.</li></ul>
 
-# Katta-kichik harfga e'tiborsiz (-i)
-grep -i "error" app.log
-
-# Qator raqamlari bilan (-n)
-grep -n "ERROR" app.log
-
-# Papka ichida rekursiv (-r)
-grep -r "TODO" ./src/
-
-# Faqat fayl nomini ko'rsatish (-l)
-grep -rl "password" ./config/
-
-# Naqsh bilan (regex)
-grep -E "^[0-9]{4}" data.txt
-
-# Inversiya — mos kelmaydigan qatorlar (-v)
-grep -v "DEBUG" app.log
-
-# Pipe bilan birga
-ps aux | grep nginx
-cat access.log | grep "404"</pre>
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Bash / Linux Shell</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('lc_pwd')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('lc_pwd','lr_pwd')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="lc_pwd" contenteditable="true" spellcheck="false">pwd</pre>
+      </div>
     </div>
-  </div>
-
-  <h2 id="chmod">Ruxsatlar: chmod</h2>
-  <p>Linux da har bir faylning ruxsatlari (permissions) bor:</p>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">bash</span>
-      <button class="copy-btn" onclick="copyCode('code5')">📋 Nusxa</button>
+    <div class="result-box" id="lr_pwd">
+      <div class="result-label">🐧 Linux Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#facc15;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐧 Linux Bash Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;/home/ubuntu/projects/w3learn&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
     </div>
-    <div class="code-body">
-      <pre id="code5"># Ruxsatlarni ko'rish
-ls -l
-# -rwxr-xr-- 1 ali users 1234 Nov 1 file.sh
-#  rwx = owner: o'qish+yozish+bajarish
-#  r-x = group: o'qish+bajarish
-#  r-- = others: faqat o'qish
 
-# Ruxsat berish (chmod)
-chmod 755 script.sh
-# 7 = rwx (owner), 5 = r-x (group), 5 = r-x (others)
+    <div class="note-box" style="margin-top:16px;">💡 Agar qayerdaligingizga ishonchingiz komil bo'lmasa, darhol `pwd` yozing.</div>
 
-# Hamma bajarishi uchun
-chmod +x script.sh
-
-# Faqat owner yozishi uchun
-chmod 644 config.txt
-
-# Rekursiv (papka va tarkibi)
-chmod -R 755 /var/www/html
-
-# Ruxsatlar jadvali:
-# 4 = r (read)
-# 2 = w (write)
-# 1 = x (execute)
-# 7 = rwx, 6 = rw-, 5 = r-x, 4 = r--</pre>
+    <div class="topic-nav">
+      <a href="#cd" class="topic-nav-btn prev">← cd: Papkalar Bo'ylab Harakatlanish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Linux | 7 / 33</span>
+      <a href="#mkdir" class="topic-nav-btn next">mkdir: Yangi Jild Yaratish →</a>
     </div>
-  </div>
+  </section>
 
-  <h2 id="ssh">SSH — Masofaviy Ulanish</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">bash</span>
-      <button class="copy-btn" onclick="copyCode('code6')">📋 Nusxa</button>
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-yellow" style="background:#eab308; color:#000; font-weight:700;">Fayllar</span>
+      <span style="font-size:12px; color:var(--text2);">Linux Mavzu #8</span>
     </div>
-    <div class="code-body">
-      <pre id="code6"># SSH kalit juftligi yaratish
-ssh-keygen -t rsa -b 4096 -C "email@example.com"
+    <h2 id="mkdir" style="color:#eab308; background: linear-gradient(90deg, #facc15, #eab308); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">mkdir: Yangi Jild Yaratish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Yangi papkalar yaratish buyrug'i (Make Directory).</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>mkdir papka_nomi</code> — yangi bitta papka ochadi.</li><li><code>mkdir -p bir/ikki/uch</code> — ichma-ich zanjirli papkalarni bitta buyruq bilan birdaniga yaratadi (-p = parents).</li><li>Bo'sh joyli nomlar yaratganda tirnoq ichiga olinadi yoki probeldan oldin <code>\</code> qo'yiladi.</li></ul>
 
-# Kalitni serverga yuklash
-ssh-copy-id user@server_ip
-
-# Serverga ulanish
-ssh ali@192.168.1.100
-
-# Port ko'rsatib ulanish
-ssh -p 2222 ali@example.com
-
-# Fayl yuklash (scp)
-scp local_file.txt ali@server:/home/ali/
-
-# Papka yuklash (-r)
-scp -r ./myproject ali@server:/var/www/
-
-# Serverdan fayl olish
-scp ali@server:/etc/nginx/nginx.conf ./
-
-# SSH config fayl (~/.ssh/config)
-# Host myserver
-#   HostName 192.168.1.100
-#   User ali
-#   Port 22
-#   IdentityFile ~/.ssh/id_rsa</pre>
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Bash / Linux Shell</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('lc_mkdir')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('lc_mkdir','lr_mkdir')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="lc_mkdir" contenteditable="true" spellcheck="false"># Ichma-ich papkalar yaratish
+mkdir -p backend/src/controllers
+ls -R backend</pre>
+      </div>
     </div>
-  </div>
+    <div class="result-box" id="lr_mkdir">
+      <div class="result-label">🐧 Linux Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#facc15;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐧 Linux Bash Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;backend:
+src
 
-  <h2 id="bash">Bash Skript Yozish</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">bash</span>
-      <button class="copy-btn" onclick="copyCode('code7')">📋 Nusxa</button>
+backend/src:
+controllers
+
+backend/src/controllers:&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
     </div>
-    <div class="code-body">
-      <pre id="code7">#!/bin/bash
-# Birinchi satr — shebang (qaysi interpreter)
 
-# O'zgaruvchi
-NAME="Ali"
-echo "Salom, $NAME!"
+    <div class="note-box" style="margin-top:16px;">💡 `-p` bayrog'i papka avvaldan mavjud bo'lsa xatolik bermaydi, bo'lmasa yangisini yasaydi.</div>
 
-# Foydalanuvchi kiritishi
-read -p "Ismingizni kiriting: " USER_NAME
-echo "Xush kelibsiz, $USER_NAME!"
+    <div class="topic-nav">
+      <a href="#pwd" class="topic-nav-btn prev">← pwd: Qayerdaligingizni Aniqlash</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Linux | 8 / 33</span>
+      <a href="#touch" class="topic-nav-btn next">touch: Bo'sh Fayl Yaratish →</a>
+    </div>
+  </section>
 
-# Shart (if-else)
-AGE=20
-if [ $AGE -ge 18 ]; then
-  echo "Voyaga yetgan"
-else
-  echo "Voyaga yetmagan"
-fi
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-yellow" style="background:#eab308; color:#000; font-weight:700;">Fayllar</span>
+      <span style="font-size:12px; color:var(--text2);">Linux Mavzu #9</span>
+    </div>
+    <h2 id="touch" style="color:#eab308; background: linear-gradient(90deg, #facc15, #eab308); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">touch: Bo'sh Fayl Yaratish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Yangi bo'sh fayl hosil qilish yoki mavjud faylning so'nggi o'zgartirilgan vaqt tamg'asini (timestamp) yangilash.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>touch fayl.txt</code> — bo'sh yangi fayl ochadi.</li><li><code>touch app.js style.css?v=20261123_5 index.html</code> — birdaniga bir nechta fayllar ochish.</li></ul>
 
-# Tsikl (for)
-for i in 1 2 3 4 5; do
-  echo "Raqam: $i"
-done
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Bash / Linux Shell</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('lc_touch')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('lc_touch','lr_touch')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="lc_touch" contenteditable="true" spellcheck="false"># Bir nechta yangi fayllarni ochish
+touch server.js config.json README.md
+ls -l</pre>
+      </div>
+    </div>
+    <div class="result-box" id="lr_touch">
+      <div class="result-label">🐧 Linux Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#facc15;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐧 Linux Bash Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;-rw-r--r-- 1 ubuntu ubuntu 0 Nov 23 15:42 README.md
+-rw-r--r-- 1 ubuntu ubuntu 0 Nov 23 15:42 config.json
+-rw-r--r-- 1 ubuntu ubuntu 0 Nov 23 15:42 server.js&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
 
-# Fayl mavjudligini tekshirish
-FILE="/etc/nginx/nginx.conf"
-if [ -f "$FILE" ]; then
-  echo "Fayl mavjud"
-else
-  echo "Fayl topilmadi"
-fi
+    <div class="note-box" style="margin-top:16px;">💡 Fayl hajmi dastlab 0 bayt bo'ladi, unga matn yozilgach kengayadi.</div>
 
-# Funksiya
-greet() {
-  echo "Salom, $1!"
+    <div class="topic-nav">
+      <a href="#mkdir" class="topic-nav-btn prev">← mkdir: Yangi Jild Yaratish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Linux | 9 / 33</span>
+      <a href="#cp-mv" class="topic-nav-btn next">cp va mv: Nusxalash va Ko'chirish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-yellow" style="background:#eab308; color:#000; font-weight:700;">Fayllar</span>
+      <span style="font-size:12px; color:var(--text2);">Linux Mavzu #10</span>
+    </div>
+    <h2 id="cp-mv" style="color:#eab308; background: linear-gradient(90deg, #facc15, #eab308); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">cp va mv: Nusxalash va Ko'chirish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Fayl va papkalarni nusxalash (cp) hamda joyini ko'chirish yoki nomini o'zgartirish (mv) amallari.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>cp manba maqsad</code> — faylni nusxalash.</li><li><code>cp -r papka1 papka2</code> — papkani barcha ichki fayllari bilan rekurziv nusxalash.</li><li><code>mv eski_nom yangi_nom</code> — fayl yoki papka nomini o'zgartirish.</li><li><code>mv fayl /boshqa/papka/</code> — faylning joyini ko'chirish.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Bash / Linux Shell</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('lc_cp-mv')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('lc_cp-mv','lr_cp-mv')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="lc_cp-mv" contenteditable="true" spellcheck="false"># Fayldan zaxira nusxa olib, nomini o'zgartirish
+cp config.json config.backup.json
+mv README.md INFO.md
+ls -l</pre>
+      </div>
+    </div>
+    <div class="result-box" id="lr_cp-mv">
+      <div class="result-label">🐧 Linux Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#facc15;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐧 Linux Bash Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;-rw-r--r-- 1 ubuntu ubuntu 0 Nov 23 15:43 INFO.md
+-rw-r--r-- 1 ubuntu ubuntu 0 Nov 23 15:43 config.backup.json
+-rw-r--r-- 1 ubuntu ubuntu 0 Nov 23 15:42 config.json&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Linux da fayl nomini o'zgartirish uchun alohida buyruq yo'q — uning o'rniga oddiygina `mv` ishlatiladi.</div>
+
+    <div class="topic-nav">
+      <a href="#touch" class="topic-nav-btn prev">← touch: Bo'sh Fayl Yaratish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Linux | 10 / 33</span>
+      <a href="#rm" class="topic-nav-btn next">rm va rmdir: Fayllarni O'chirish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-yellow" style="background:#eab308; color:#000; font-weight:700;">Xavfli</span>
+      <span style="font-size:12px; color:var(--text2);">Linux Mavzu #11</span>
+    </div>
+    <h2 id="rm" style="color:#eab308; background: linear-gradient(90deg, #facc15, #eab308); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">rm va rmdir: Fayllarni O'chirish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Fayl va jildlarni butunlay diskdan yo'q qilish. ⚠️ Linux terminalida 'Savatcha' (Recycle Bin) yo'q — o'chirilgan faylni qaytarib bo'lmaydi!</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>rm fayl.txt</code> — bitta faylni o'chirish.</li><li><code>rm -r papka/</code> — papkani barcha ichki elementlari bilan birga rekurziv o'chirish.</li><li><code>rm -rf papka/</code> — hech qanday so'rovsiz, majburiy o'chirish (-f = force).</li><li><code>rmdir bush_papka</code> — faqat bo'sh papkani o'chiradi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Bash / Linux Shell</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('lc_rm')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('lc_rm','lr_rm')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="lc_rm" contenteditable="true" spellcheck="false"># Keraksiz faylni o'chirish
+rm config.backup.json
+ls config.backup.json</pre>
+      </div>
+    </div>
+    <div class="result-box" id="lr_rm">
+      <div class="result-label">🐧 Linux Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#facc15;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐧 Linux Bash Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;ls: cannot access 'config.backup.json': No such file or directory&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚠️ HECH QACHON `sudo rm -rf /` buyrug'ini yozmang! Bu butun operatsion tizimni va unga ulangan barcha disklarni butunlay yo'q qilib tashlaydi.</div>
+
+    <div class="topic-nav">
+      <a href="#cp-mv" class="topic-nav-btn prev">← cp va mv: Nusxalash va Ko'chirish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Linux | 11 / 33</span>
+      <a href="#cat" class="topic-nav-btn next">cat, less va more: Fayllarni O'qish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-yellow" style="background:#eab308; color:#000; font-weight:700;">Matn</span>
+      <span style="font-size:12px; color:var(--text2);">Linux Mavzu #12</span>
+    </div>
+    <h2 id="cat" style="color:#eab308; background: linear-gradient(90deg, #facc15, #eab308); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">cat, less va more: Fayllarni O'qish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Fayl ichidagi matnni tahrirlovchini ochmasdan to'g'ridan-to'g'ri terminalda ko'rish.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>cat fayl.txt</code> — kichik fayllar mazmunini to'liq chop etish.</li><li><code>cat -n fayl.txt</code> — satr raqamlari bilan chiqarish.</li><li><code>head -n 10 fayl.log</code> — faylning eng yuqorigi 10 ta satrini ko'rish.</li><li><code>tail -n 10 fayl.log</code> — faylning eng pastki 10 ta satrini ko'rish.</li><li><code>tail -f /var/log/syslog</code> — faylga qo'shilayotgan yangi satrlarni jonli rejimda kuzatish.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Bash / Linux Shell</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('lc_cat')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('lc_cat','lr_cat')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="lc_cat" contenteditable="true" spellcheck="false"># Tizim loglarining oxirgi satrlarini o'qish
+tail -n 3 /var/log/dpkg.log</pre>
+      </div>
+    </div>
+    <div class="result-box" id="lr_cat">
+      <div class="result-label">🐧 Linux Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#facc15;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐧 Linux Bash Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;2026-11-23 15:10:00 status installed redis-server:amd64 7.0.15
+2026-11-23 15:10:01 status installed docker-ce:amd64 25.0.3
+2026-11-23 15:10:02 status installed git:amd64 2.43.0&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 `tail -f` dasturchilarning sevimli buyrug'i bo'lib, server xatolarini real-vaqtda ushlash imkonini beradi.</div>
+
+    <div class="topic-nav">
+      <a href="#rm" class="topic-nav-btn prev">← rm va rmdir: Fayllarni O'chirish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Linux | 12 / 33</span>
+      <a href="#nano" class="topic-nav-btn next">nano va vim: Terminal Matn Muharrirlari →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-yellow" style="background:#eab308; color:#000; font-weight:700;">Muharrir</span>
+      <span style="font-size:12px; color:var(--text2);">Linux Mavzu #13</span>
+    </div>
+    <h2 id="nano" style="color:#eab308; background: linear-gradient(90deg, #facc15, #eab308); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">nano va vim: Terminal Matn Muharrirlari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Fayllarni serverning o'zida terminal orqali ochib tahrirlash.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><strong>nano:</strong> O'rganishga o'ta oson, ekranning pastida barcha klavishlar ko'rsatib turiladi (Saqlash: Ctrl+O, Chiqish: Ctrl+X).</li><li><strong>vim (vi):</strong> Professional, favqulodda tez va kuchli muharrir (Rejimlar: i - yozish, Esc - buyruq, :wq - saqlab chiqish, :q! - saqlamasdan chiqish).</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Bash / Linux Shell</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('lc_nano')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('lc_nano','lr_nano')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="lc_nano" contenteditable="true" spellcheck="false"># nano orqali yangi sozlama faylini ochish
+nano /etc/nginx/sites-available/default</pre>
+      </div>
+    </div>
+    <div class="result-box" id="lr_nano">
+      <div class="result-label">🐧 Linux Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#facc15;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐧 Linux Bash Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;  GNU nano 7.2              /etc/nginx/sites-available/default
+server {
+    listen 80;
+    server_name w3learn.uz;
+    root /var/www/w3learn;
 }
-greet "Vali"</pre>
+^G Help     ^O WriteOut ^W Where Is ^K Cut Text ^C Cur Pos
+^X Exit     ^R Read File^ Replace  ^U Paste    ^T To Spell&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
     </div>
-  </div>
 
-  <h2 id="cron">Cron — Avtomatik Vazifalar</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">bash</span>
-      <button class="copy-btn" onclick="copyCode('code8')">📋 Nusxa</button>
+    <div class="note-box" style="margin-top:16px;">💡 Yangi o'rganayotgan bo'lsangiz `nano` dan boshlang. Vim ga tasodifan kirib qolsangiz va chiqa olmasangiz: `Esc` ni bosing, `:q!` yozib `Enter` ni bosing.</div>
+
+    <div class="topic-nav">
+      <a href="#cat" class="topic-nav-btn prev">← cat, less va more: Fayllarni O'qish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Linux | 13 / 33</span>
+      <a href="#find" class="topic-nav-btn next">find: Fayllarni Qidirish →</a>
     </div>
-    <div class="code-body">
-      <pre id="code8"># Cron jadvalini ko'rish/tahrirlash
-crontab -e
+  </section>
 
-# Format: daqiqa soat kun oy hafta_kuni buyruq
-# *  *  *  *  *  /path/to/command
-# │  │  │  │  └─ hafta kuni (0=yakshanba, 6=shanba)
-# │  │  │  └──── oy (1-12)
-# │  │  └─────── kun (1-31)
-# │  └────────── soat (0-23)
-# └───────────── daqiqa (0-59)
-
-# Misollar:
-# Har daqiqada
-* * * * * /home/ali/script.sh
-
-# Har soatda (soat boshi)
-0 * * * * /home/ali/cleanup.sh
-
-# Har kuni ertalab 6:00 da
-0 6 * * * /home/ali/backup.sh
-
-# Har dushanba kuni 9:00 da
-0 9 * * 1 /home/ali/weekly.sh
-
-# Cron loglarini ko'rish
-grep CRON /var/log/syslog</pre>
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-yellow" style="background:#eab308; color:#000; font-weight:700;">Qidiruv</span>
+      <span style="font-size:12px; color:var(--text2);">Linux Mavzu #14</span>
     </div>
-  </div>
+    <h2 id="find" style="color:#eab308; background: linear-gradient(90deg, #facc15, #eab308); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">find: Fayllarni Qidirish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Butun tizim yoki belgilangan katalog ichidan fayl nomi, hajmi, turi yoki sanasi bo'yicha kuchli qidiruv tizimi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>find . -name "*.js"</code> — joriy papkadan barcha JS fayllarni topish.</li><li><code>find /var/log -type f -name "*.log"</code> — faqat log fayllarni qidirish.</li><li><code>find . -size +100M</code> — hajmi 100 MB dan katta fayllarni aniqlash.</li><li><code>find . -mtime -7</code> — oxirgi 7 kun ichida o'zgartirilgan fayllarni topish.</li></ul>
 
-  <h2 id="package">Paket Menejeri</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">bash</span>
-      <button class="copy-btn" onclick="copyCode('code9')">📋 Nusxa</button>
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Bash / Linux Shell</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('lc_find')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('lc_find','lr_find')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="lc_find" contenteditable="true" spellcheck="false"># Barcha HTML fayllarni topish
+find . -name "*.html" -type f</pre>
+      </div>
     </div>
-    <div class="code-body">
-      <pre id="code9"># Ubuntu / Debian — apt
-sudo apt update              # Ro'yxatni yangilash
-sudo apt upgrade             # Dasturlarni yangilash
-sudo apt install nginx       # O'rnatish
-sudo apt remove nginx        # O'chirish
-sudo apt autoremove          # Keraksizlarni tozalash
-apt search nodejs            # Qidirish
-
-# CentOS / RHEL — yum / dnf
-sudo dnf install nginx
-sudo dnf remove nginx
-sudo dnf update
-
-# Snap paketlar (barcha distributivlar)
-sudo snap install code       # VS Code
-
-# Dastur versiyasini bilish
-nginx -v
-node --version
-python3 --version</pre>
+    <div class="result-box" id="lr_find">
+      <div class="result-label">🐧 Linux Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#facc15;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐧 Linux Bash Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;./index.html
+./editor.html
+./pages/html.html
+./pages/linux.html&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
     </div>
-  </div>
 
-  <!-- Quiz -->
+    <div class="note-box" style="margin-top:16px;">💡 `-iname` bayrog'i katta-kichik harflarni farqlamasdan (case-insensitive) qidiradi.</div>
+
+    <div class="topic-nav">
+      <a href="#nano" class="topic-nav-btn prev">← nano va vim: Terminal Matn Muharrirlari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Linux | 14 / 33</span>
+      <a href="#grep" class="topic-nav-btn next">grep: Matn Ichidan Qidirish va Filtrlash →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-yellow" style="background:#eab308; color:#000; font-weight:700;">Qidiruv</span>
+      <span style="font-size:12px; color:var(--text2);">Linux Mavzu #15</span>
+    </div>
+    <h2 id="grep" style="color:#eab308; background: linear-gradient(90deg, #facc15, #eab308); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">grep: Matn Ichidan Qidirish va Filtrlash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Global Regular Expression Print</strong> — fayllar ichidan yoki boshqa buyruq chiqarishidan aniq so'z yoki shablonni chaqmoqdek tezlikda qidirib topadi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>grep "qidirilayotgan_so'z" fayl.txt</code> — mos keluvchi satrlarni ko'rsatish.</li><li><code>grep -i "error" server.log</code> — katta-kichik harflarni inkor qilish.</li><li><code>grep -r "function auth" ./src</code> — papka ichidagi barcha fayllar bo'ylab qidirish (rekurziv).</li><li><code>grep -n "PORT" .env</code> — qaysi satrda joylashganini raqami bilan ko'rsatish.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Bash / Linux Shell</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('lc_grep')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('lc_grep','lr_grep')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="lc_grep" contenteditable="true" spellcheck="false"># Log faylidan xatoliklarni ajratib olish
+grep -i "error" /var/log/nginx/error.log</pre>
+      </div>
+    </div>
+    <div class="result-box" id="lr_grep">
+      <div class="result-label">🐧 Linux Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#facc15;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐧 Linux Bash Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;2026/11/23 12:00:01 [error] 1234#0: *1 open() "/var/www/favicon.ico" failed
+2026/11/23 14:15:22 [error] 1234#0: *5 connect() failed (111: Connection refused)&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 grep Linux da eng ko'p ishlatiladigan vosita bo'lib, quvurlar (|) bilan birgalikda mo''jizalar yaratadi.</div>
+
+    <div class="topic-nav">
+      <a href="#find" class="topic-nav-btn prev">← find: Fayllarni Qidirish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Linux | 15 / 33</span>
+      <a href="#tar" class="topic-nav-btn next">tar va gzip: Arxivlash va Qisqartirish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-yellow" style="background:#eab308; color:#000; font-weight:700;">Arxiv</span>
+      <span style="font-size:12px; color:var(--text2);">Linux Mavzu #16</span>
+    </div>
+    <h2 id="tar" style="color:#eab308; background: linear-gradient(90deg, #facc15, #eab308); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">tar va gzip: Arxivlash va Qisqartirish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Bir nechta fayl va papkalarni bitta ixcham arxivga yig'ish (tar) va hajmini siqish (gzip, .tar.gz).</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><strong>Yaratish:</strong> <code>tar -czvf arxiv.tar.gz /papkaga_yo'l</code> (c = create, z = gzip, v = verbose, f = file).</li><li><strong>Ochish (Extract):</strong> <code>tar -xzvf arxiv.tar.gz</code> (x = extract).</li><li><strong>Ko'rish:</strong> <code>tar -tf arxiv.tar.gz</code> — arxivni ochmasdan ichidagi fayllarni ro'yxat qilish.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Bash / Linux Shell</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('lc_tar')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('lc_tar','lr_tar')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="lc_tar" contenteditable="true" spellcheck="false"># Loyihani arxivlab siqish va ochish
+tar -czvf w3learn-backup.tar.gz ./pages
+tar -tf w3learn-backup.tar.gz | head -n 3</pre>
+      </div>
+    </div>
+    <div class="result-box" id="lr_tar">
+      <div class="result-label">🐧 Linux Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#facc15;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐧 Linux Bash Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;./pages/
+./pages/html.html
+./pages/linux.html&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Linux olamida zip o'rniga asosan `.tar.gz` (tarball) standarti qo'llaniladi.</div>
+
+    <div class="topic-nav">
+      <a href="#grep" class="topic-nav-btn prev">← grep: Matn Ichidan Qidirish va Filtrlash</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Linux | 16 / 33</span>
+      <a href="#chmod" class="topic-nav-btn next">chmod: Fayl Ruxsatlari (Permissions) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-yellow" style="background:#eab308; color:#000; font-weight:700;">Xavfsizlik</span>
+      <span style="font-size:12px; color:var(--text2);">Linux Mavzu #17</span>
+    </div>
+    <h2 id="chmod" style="color:#eab308; background: linear-gradient(90deg, #facc15, #eab308); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">chmod: Fayl Ruxsatlari (Permissions)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Linux da har bir fayl va papka uchun 3 toifa foydalanuvchiga 3 xil ruxsat belgilanadi: <strong>Read (r=4)</strong>, <strong>Write (w=2)</strong>, <strong>Execute (x=1)</strong>.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li>Foydalanuvchilar toifasi: <strong>u</strong> (egasi), <strong>g</strong> (guruhi), <strong>o</strong> (boshqalar).</li><li><code>chmod 755 script.sh</code> — Egasi: rwx (4+2+1=7), Guruh va boshqalar: r-x (4+0+1=5). Skriptlar uchun standart.</li><li><code>chmod 644 index.html</code> — Egasi: rw- (6), Boshqalar: r-- (4). Oddiy fayllar uchun standart.</li><li><code>chmod 600 id_rsa</code> — Faqat egasiga o'qish va yozish. Maxfiy SSH kalitlar uchun.</li><li><code>chmod +x script.sh</code> — faylga ishga tushirish huquqini qo'shish.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Bash / Linux Shell</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('lc_chmod')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('lc_chmod','lr_chmod')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="lc_chmod" contenteditable="true" spellcheck="false"># Skriptga ijro ruxsatini berish
+chmod +x deploy.sh
+ls -l deploy.sh</pre>
+      </div>
+    </div>
+    <div class="result-box" id="lr_chmod">
+      <div class="result-label">🐧 Linux Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#facc15;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐧 Linux Bash Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;-rwxr-xr-x 1 ubuntu ubuntu 450 Nov 23 15:45 deploy.sh&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Skriptni `./deploy.sh` deb yurgizishdan oldin unga albatta `chmod +x` berilishi shart.</div>
+
+    <div class="topic-nav">
+      <a href="#tar" class="topic-nav-btn prev">← tar va gzip: Arxivlash va Qisqartirish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Linux | 17 / 33</span>
+      <a href="#chown" class="topic-nav-btn next">chown: Egasini O'zgartirish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-yellow" style="background:#eab308; color:#000; font-weight:700;">Xavfsizlik</span>
+      <span style="font-size:12px; color:var(--text2);">Linux Mavzu #18</span>
+    </div>
+    <h2 id="chown" style="color:#eab308; background: linear-gradient(90deg, #facc15, #eab308); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">chown: Egasini O'zgartirish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Fayl yoki jildning egasini (owner) va guruhini (group) boshqa foydalanuvchiga o'tkazish.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>chown yangi_ega fayl.txt</code> — fayl egasini o'zgartirish.</li><li><code>chown ega:guruh fayl.txt</code> — ham egasini, ham guruhini bir yo'la belgilash.</li><li><code>chown -R www-data:www-data /var/www/html</code> — butun sayt papkasi va uning ichidagilarini veb-server foydalanuvchisiga o'tkazish (-R = rekurziv).</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Bash / Linux Shell</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('lc_chown')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('lc_chown','lr_chown')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="lc_chown" contenteditable="true" spellcheck="false"># Veb fayllar egaligini Nginx foydalanuvchisiga berish
+sudo chown -R www-data:www-data /var/www/w3learn
+ls -ld /var/www/w3learn</pre>
+      </div>
+    </div>
+    <div class="result-box" id="lr_chown">
+      <div class="result-label">🐧 Linux Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#facc15;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐧 Linux Bash Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;drwxr-xr-x 5 www-data www-data 4096 Nov 23 15:45 /var/www/w3learn&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Nginx yoki Apache sayt fayllarini o'qishi yoki rasm yuklashi uchun papka egaligi `www-data` ga beriladi.</div>
+
+    <div class="topic-nav">
+      <a href="#chmod" class="topic-nav-btn prev">← chmod: Fayl Ruxsatlari (Permissions)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Linux | 18 / 33</span>
+      <a href="#sudo" class="topic-nav-btn next">sudo va root: Bosh Administrator Huquqlari →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-yellow" style="background:#eab308; color:#000; font-weight:700;">Administrator</span>
+      <span style="font-size:12px; color:var(--text2);">Linux Mavzu #19</span>
+    </div>
+    <h2 id="sudo" style="color:#eab308; background: linear-gradient(90deg, #facc15, #eab308); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">sudo va root: Bosh Administrator Huquqlari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>root</strong> — Linux tizimida mutlaq cheklanmagan huquqlarga ega bosh super-foydalanuvchidir. <strong>sudo</strong> (SuperUser DO) esa oddiy foydalanuvchiga vaqtincha administratorlik huquqlari bilan buyruq bajarish imkonini beradi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li>Xavfsizlik qoidasi: Kundalik ishlarda hech qachon to'g'ridan-to'g'ri root sifatida o'tirmang; faqat kerak bo'lganda <code>sudo</code> ishlating.</li><li><code>sudo buyruq</code> — buyruqni administrator nomidan bajarish (o'z parolingizni kiritish so'raladi).</li><li><code>sudo -i</code> yoki <code>sudo su</code> — root qobig'iga o'tish.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Bash / Linux Shell</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('lc_sudo')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('lc_sudo','lr_sudo')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="lc_sudo" contenteditable="true" spellcheck="false"># Administrator huquqlari bilan yangilash
+sudo apt update</pre>
+      </div>
+    </div>
+    <div class="result-box" id="lr_sudo">
+      <div class="result-label">🐧 Linux Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#facc15;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐧 Linux Bash Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;[sudo] password for ubuntu: 
+Hit:1 http://archive.ubuntu.com/ubuntu noble InRelease
+All packages are up to date.&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 sudo orqali qilingan har bir harakat `/var/log/auth.log` faylida qayd etib boriladi.</div>
+
+    <div class="topic-nav">
+      <a href="#chown" class="topic-nav-btn prev">← chown: Egasini O'zgartirish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Linux | 19 / 33</span>
+      <a href="#users" class="topic-nav-btn next">Foydalanuvchilar va Guruhlar Boshqaruvi →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-yellow" style="background:#eab308; color:#000; font-weight:700;">Tizim</span>
+      <span style="font-size:12px; color:var(--text2);">Linux Mavzu #20</span>
+    </div>
+    <h2 id="users" style="color:#eab308; background: linear-gradient(90deg, #facc15, #eab308); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Foydalanuvchilar va Guruhlar Boshqaruvi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Serverda yangi foydalanuvchilar ochish, ularga parol berish va guruhlarga kiritish.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>useradd -m dasturchi</code> — yangi foydalanuvchi yaratish (-m = uy papkasini ochish).</li><li><code>passwd dasturchi</code> — foydalanuvchiga parol belgilash.</li><li><code>usermod -aG sudo dasturchi</code> — foydalanuvchini sudoers guruhiga qo'shish.</li><li><code>userdel -r dasturchi</code> — foydalanuvchi va uning uy papkasini butunlay o'chirish.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Bash / Linux Shell</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('lc_users')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('lc_users','lr_users')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="lc_users" contenteditable="true" spellcheck="false"># Yangi dasturchi akkaunti yaratish
+sudo useradd -m -s /bin/bash sherzod
+sudo usermod -aG docker sherzod
+id sherzod</pre>
+      </div>
+    </div>
+    <div class="result-box" id="lr_users">
+      <div class="result-label">🐧 Linux Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#facc15;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐧 Linux Bash Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;uid=1001(sherzod) gid=1001(sherzod) groups=1001(sherzod),999(docker)&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 `-s /bin/bash` yangi foydalanuvchiga standart qulay qobiqni biriktiradi.</div>
+
+    <div class="topic-nav">
+      <a href="#sudo" class="topic-nav-btn prev">← sudo va root: Bosh Administrator Huquqlari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Linux | 20 / 33</span>
+      <a href="#ps" class="topic-nav-btn next">ps va top: Jarayonlarni Kuzatish (Processes) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-yellow" style="background:#eab308; color:#000; font-weight:700;">Monitoring</span>
+      <span style="font-size:12px; color:var(--text2);">Linux Mavzu #21</span>
+    </div>
+    <h2 id="ps" style="color:#eab308; background: linear-gradient(90deg, #facc15, #eab308); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">ps va top: Jarayonlarni Kuzatish (Processes)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Tizimda ishlayotgan barcha jarayonlar (Programs/Processes), ularning CPU va operativ xotirani sarflashini tahlil qilish.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>ps aux</code> — barcha foydalanuvchilarning barcha ishlayotgan jarayonlarini chiqarish.</li><li><code>ps aux | grep node</code> — Node.js dasturi qaysi PID (Process ID) bilan ishlayotganini topish.</li><li><code>top</code> — tizim holatini real-vaqtda ko'rsatuvchi interaktiv panel (q bilan chiqiladi).</li><li><code>htop</code> — qulay, rangli va sichqonchani qo'llab-quvvatlovchi yaxshilangan monitoring utilitasi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Bash / Linux Shell</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('lc_ps')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('lc_ps','lr_ps')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="lc_ps" contenteditable="true" spellcheck="false"># Node jarayonini qidirish
+ps aux | grep -i "node"</pre>
+      </div>
+    </div>
+    <div class="result-box" id="lr_ps">
+      <div class="result-label">🐧 Linux Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#facc15;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐧 Linux Bash Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;ubuntu   12450  1.2  4.5 984520 185400 ?  Sl   14:00   0:15 node server.js
+ubuntu   13890  0.0  0.0  14560   2100 pts/0 S+ 15:47   0:00 grep --color=auto node&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 PID (Process ID) — har bir jarayonning tizimdagi noyob raqamidir; masalan yuqorida node ning PID si `12450`.</div>
+
+    <div class="topic-nav">
+      <a href="#users" class="topic-nav-btn prev">← Foydalanuvchilar va Guruhlar Boshqaruvi</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Linux | 21 / 33</span>
+      <a href="#kill" class="topic-nav-btn next">kill va pkill: Jarayonlarni To'xtatish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-yellow" style="background:#eab308; color:#000; font-weight:700;">Jarayonlar</span>
+      <span style="font-size:12px; color:var(--text2);">Linux Mavzu #22</span>
+    </div>
+    <h2 id="kill" style="color:#eab308; background: linear-gradient(90deg, #facc15, #eab308); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">kill va pkill: Jarayonlarni To'xtatish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Qotib qolgan yoki resurslarni yeb yotgan dasturlarni to'xtatish buyruqlari.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>kill <PID></code> — SIGTERM (15) yumshoq to'xtatish signalini yuboradi (dastur o'z ma'lumotlarini saqlab yopiladi).</li><li><code>kill -9 <PID></code> — SIGKILL (9) majburiy bir lahzada o'ldirish signali (keskin to'xtatadi).</li><li><code>pkill -f dastur_nomi</code> — PID raqamini qidirmasdan, dastur nomi bo'yicha to'xtatish.</li><li><code>killall nginx</code> — berilgan nomdagi barcha jarayonlarni o'ldiradi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Bash / Linux Shell</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('lc_kill')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('lc_kill','lr_kill')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="lc_kill" contenteditable="true" spellcheck="false"># PID bo'yicha jarayonni to'xtatish
+kill 12450
+# Yoki nom bo'yicha majburiy to'xtatish
+pkill -9 -f "node server.js"</pre>
+      </div>
+    </div>
+    <div class="result-box" id="lr_kill">
+      <div class="result-label">🐧 Linux Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#facc15;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐧 Linux Bash Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;[1]+  Terminated              node server.js&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Dastlab har doim oddiy `kill` (SIGTERM) ishlatiladi, faqat dastur bo'ysunmay qotib qolsagina `kill -9` qo'llanadi.</div>
+
+    <div class="topic-nav">
+      <a href="#ps" class="topic-nav-btn prev">← ps va top: Jarayonlarni Kuzatish (Processes)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Linux | 22 / 33</span>
+      <a href="#jobs" class="topic-nav-btn next">jobs, bg va fg: Fon Rejimida Ishlash →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-yellow" style="background:#eab308; color:#000; font-weight:700;">Jarayonlar</span>
+      <span style="font-size:12px; color:var(--text2);">Linux Mavzu #23</span>
+    </div>
+    <h2 id="jobs" style="color:#eab308; background: linear-gradient(90deg, #facc15, #eab308); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">jobs, bg va fg: Fon Rejimida Ishlash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Uzoq vaqt oluvchi vazifalarni terminalni band qilmasdan fonda yurgizish.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li>Buyruq oxiriga <code>&</code> qo'yish — buyruq darhol fonda (background) boshlanadi (masalan: <code>python script.py &</code>).</li><li><code>Ctrl + Z</code> — ishlab turgan dasturni vaqtincha to'xtatib (pause) orqa fonga o'tkazish.</li><li><code>bg</code> — to'xtatilgan vazifani orqa fonda davom ettirish.</li><li><code>fg</code> — orqa fondagi vazifani oldinga (foreground) qaytarib olish.</li><li><code>nohup buyruq &</code> — terminal yopilib ketsa ham dastur fonda o'lmasdan ishlashda davom etadi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Bash / Linux Shell</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('lc_jobs')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('lc_jobs','lr_jobs')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="lc_jobs" contenteditable="true" spellcheck="false"># Skriptni fonda ishga tushirish va tekshirish
+nohup python3 worker.py &gt; worker.log 2&gt;&amp;1 &amp;
+jobs -l</pre>
+      </div>
+    </div>
+    <div class="result-box" id="lr_jobs">
+      <div class="result-label">🐧 Linux Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#facc15;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐧 Linux Bash Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;[1]+ 15420 Running                 nohup python3 worker.py &gt; worker.log 2&gt;&amp;1 &amp;&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Masofaviy SSH orqali uzoq muddatli dasturlarni ishlatganda `nohup` yoki `tmux` / `screen` vositalaridan foydalanish shart.</div>
+
+    <div class="topic-nav">
+      <a href="#kill" class="topic-nav-btn prev">← kill va pkill: Jarayonlarni To'xtatish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Linux | 23 / 33</span>
+      <a href="#systemctl" class="topic-nav-btn next">systemctl: Tizim Servislarini Boshqarish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-yellow" style="background:#eab308; color:#000; font-weight:700;">Servislar</span>
+      <span style="font-size:12px; color:var(--text2);">Linux Mavzu #24</span>
+    </div>
+    <h2 id="systemctl" style="color:#eab308; background: linear-gradient(90deg, #facc15, #eab308); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">systemctl: Tizim Servislarini Boshqarish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Linux da doimiy ishlovchi xizmatlar (Nginx, PostgreSQL, Docker, Redis) <strong>systemd</strong> orqali boshqariladi.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>sudo systemctl start <xizmat></code> — xizmatni yoqish.</li><li><code>sudo systemctl stop <xizmat></code> — xizmatni o'chirish.</li><li><code>sudo systemctl restart <xizmat></code> — qayta ishga tushirish.</li><li><code>sudo systemctl status <xizmat></code> — holatini (ishlayaptimi yoki yiqildimi) tekshirish.</li><li><code>sudo systemctl enable <xizmat></code> — server o'chib yonganda avtomatik ishga tushadigan (autostart) qilish.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Bash / Linux Shell</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('lc_systemctl')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('lc_systemctl','lr_systemctl')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="lc_systemctl" contenteditable="true" spellcheck="false"># Nginx serverini qayta ishga tushirib holatini ko'rish
+sudo systemctl restart nginx
+sudo systemctl status nginx --no-pager</pre>
+      </div>
+    </div>
+    <div class="result-box" id="lr_systemctl">
+      <div class="result-label">🐧 Linux Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#facc15;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐧 Linux Bash Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;● nginx.service - A high performance web server and a reverse proxy server
+     Loaded: loaded (/lib/systemd/system/nginx.service; enabled)
+     Active: active (running) since Mon 2026-11-23 15:48:10 UTC; 5s ago
+   Main PID: 16120 (nginx)
+      Tasks: 2 (limit: 4613)
+     Memory: 5.2M
+     CGroup: /system.slice/nginx.service
+             ├─16120 "nginx: master process /usr/sbin/nginx"
+             └─16121 "nginx: worker process"&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 `active (running) 🟢` ko'rsatkichi servis bekamu-ko'st ishlayotganini tasdiqlaydi.</div>
+
+    <div class="topic-nav">
+      <a href="#jobs" class="topic-nav-btn prev">← jobs, bg va fg: Fon Rejimida Ishlash</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Linux | 24 / 33</span>
+      <a href="#ssh" class="topic-nav-btn next">ssh: Masofaviy Serverga Xavfsiz Ulanish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-yellow" style="background:#eab308; color:#000; font-weight:700;">Tarmoq</span>
+      <span style="font-size:12px; color:var(--text2);">Linux Mavzu #25</span>
+    </div>
+    <h2 id="ssh" style="color:#eab308; background: linear-gradient(90deg, #facc15, #eab308); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">ssh: Masofaviy Serverga Xavfsiz Ulanish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Secure Shell (SSH)</strong> — dunyoning istalgan burchagida joylashgan Linux serverining konsoliga shifrlangan xavfsiz kanal orqali ulanish protokoli.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>ssh foydalanuvchi@server_ip</code> — serverga parol orqali ulanish (masalan: <code>ssh ubuntu@192.168.1.100</code>).</li><li>Standart port: <code>22</code> (agar boshqa port bo'lsa: <code>-p 2222</code>).</li><li>SSH kalitlari (Asymmetric Keys): Parolsiz, favqulodda xavfsiz ulanish usuli.</li><li>Kalit juftligini yaratish: <code>ssh-keygen -t ed25519 -C "email@mail.uz"</code>.</li><li>Ochiq kalitni serverga o'tkazish: <code>ssh-copy-id ubuntu@server_ip</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Bash / Linux Shell</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('lc_ssh')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('lc_ssh','lr_ssh')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="lc_ssh" contenteditable="true" spellcheck="false"># SSH kalit orqali serverga ulanish
+ssh -i ~/.ssh/id_ed25519 ubuntu@192.168.1.50</pre>
+      </div>
+    </div>
+    <div class="result-box" id="lr_ssh">
+      <div class="result-label">🐧 Linux Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#facc15;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐧 Linux Bash Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Welcome to Ubuntu 24.04 LTS (GNU/Linux 6.5.0-28-generic x86_64)
+Last login: Mon Nov 23 14:30:15 2026 from 213.230.100.12
+ubuntu@vps-prod:~$ &lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Production serverlarda parol bilan kirishni o'chirib qo'yish (PasswordAuthentication no) va faqat SSH kalitlar orqali kirish xavfsizlikning oltin qoidasidir.</div>
+
+    <div class="topic-nav">
+      <a href="#systemctl" class="topic-nav-btn prev">← systemctl: Tizim Servislarini Boshqarish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Linux | 25 / 33</span>
+      <a href="#scp" class="topic-nav-btn next">scp va rsync: Masofaviy Fayllarni Tashish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-yellow" style="background:#eab308; color:#000; font-weight:700;">Fayllar</span>
+      <span style="font-size:12px; color:var(--text2);">Linux Mavzu #26</span>
+    </div>
+    <h2 id="scp" style="color:#eab308; background: linear-gradient(90deg, #facc15, #eab308); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">scp va rsync: Masofaviy Fayllarni Tashish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Kompyuteringiz va masofaviy server o'rtasida fayllarni SSH shifrlash orqali xavfsiz ko'chirish.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>scp fayl.zip user@server:/var/www/</code> — kompyuterdan serverga yuklash.</li><li><code>scp user@server:/var/log/syslog ./</code> — serverdan kompyuterga ko'chirib olish.</li><li><code>scp -r ./dist user@server:/var/www/html/</code> — butun papkani ko'chirish.</li><li><strong>rsync:</strong> Faqat o'zgargan qismlarni uzatuvchi, uzilib qolsa davom etuvchi yanada aqlli vosita: <code>rsync -avz ./build/ user@server:/var/www/</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Bash / Linux Shell</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('lc_scp')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('lc_scp','lr_scp')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="lc_scp" contenteditable="true" spellcheck="false"># Sayt dist papkasini serverga yuklash
+rsync -avz --delete ./dist/ ubuntu@192.168.1.50:/var/www/w3learn/</pre>
+      </div>
+    </div>
+    <div class="result-box" id="lr_scp">
+      <div class="result-label">🐧 Linux Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#facc15;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐧 Linux Bash Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;sending incremental file list
+index.html
+style.css?v=20261123_5
+main.js?v=20261123_5
+assets/logo.png
+
+sent 152,430 bytes  received 114 bytes  305,088.00 bytes/sec
+total size is 490,120  speedup is 3.21&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 rsync faqat o'zgargan baytlarni siqib (gzip) yuborgani sababli scp ga qaraganda 10 barobar kamroq internet sarflaydi.</div>
+
+    <div class="topic-nav">
+      <a href="#ssh" class="topic-nav-btn prev">← ssh: Masofaviy Serverga Xavfsiz Ulanish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Linux | 26 / 33</span>
+      <a href="#curl-wget" class="topic-nav-btn next">curl va wget: Internetdan Fayl va API Olish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-yellow" style="background:#eab308; color:#000; font-weight:700;">Tarmoq</span>
+      <span style="font-size:12px; color:var(--text2);">Linux Mavzu #27</span>
+    </div>
+    <h2 id="curl-wget" style="color:#eab308; background: linear-gradient(90deg, #facc15, #eab308); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">curl va wget: Internetdan Fayl va API Olish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Terminal orqali veb-sahifalarga so'rov yuborish, fayllarni yuklab olish va REST API larni sinash.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>curl https://api.github.com</code> — sahifa yoki JSON javobini terminalda chiqarish.</li><li><code>curl -I https://w3learn.uz</code> — faqat HTTP sarlavhalarini (Headers) tekshirish.</li><li><code>curl -X POST -H "Content-Type: application/json" -d '{"ism":"Ali"}' https://api.site.uz/users</code> — POST so'rovi yuborish.</li><li><code>wget https://example.com/fayl.zip</code> — faylni to'g'ridan-to'g'ri diskka yuklab olish.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Bash / Linux Shell</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('lc_curl-wget')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('lc_curl-wget','lr_curl-wget')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="lc_curl-wget" contenteditable="true" spellcheck="false"># Saytning HTTP javob kodini va sarlavhalarini tekshirish
+curl -I https://w3learn.uz</pre>
+      </div>
+    </div>
+    <div class="result-box" id="lr_curl-wget">
+      <div class="result-label">🐧 Linux Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#facc15;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐧 Linux Bash Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;HTTP/2 200 
+server: nginx
+date: Mon, 23 Nov 2026 15:50:00 GMT
+content-type: text/html; charset=UTF-8
+strict-transport-security: max-age=31536000; includeSubDomains&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 `curl -O <url>` faylni o'zining asl nomi bilan saqlaydi, `wget -c <url>` esa uzilib qolgan yuklashni davom ettiradi.</div>
+
+    <div class="topic-nav">
+      <a href="#scp" class="topic-nav-btn prev">← scp va rsync: Masofaviy Fayllarni Tashish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Linux | 27 / 33</span>
+      <a href="#netstat" class="topic-nav-btn next">netstat, ss va lsof: Tarmoq Portlarini Tekshirish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-yellow" style="background:#eab308; color:#000; font-weight:700;">Tarmoq</span>
+      <span style="font-size:12px; color:var(--text2);">Linux Mavzu #28</span>
+    </div>
+    <h2 id="netstat" style="color:#eab308; background: linear-gradient(90deg, #facc15, #eab308); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">netstat, ss va lsof: Tarmoq Portlarini Tekshirish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Serverda qaysi portlar ochiqligi (80, 443, 3000, 5432) va qaysi dastur ularni egallab turganini aniqlash.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>ss -tulpn</code> — zamonaviy va tezkor portlar tahlili (t = TCP, u = UDP, l = listening, p = jarayon nomi, n = raqamli port).</li><li><code>sudo lsof -i :3000</code> — aynan 3000-portni kim band qilib turganini topish.</li><li>Agar dasturni yoqqaningizda 'Address already in use' xatosi chiqsa, aynan shu buyruqlar yordam beradi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Bash / Linux Shell</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('lc_netstat')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('lc_netstat','lr_netstat')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="lc_netstat" contenteditable="true" spellcheck="false"># 3000-portni qaysi dastur ushlab turganini ko'rish
+sudo lsof -i :3000</pre>
+      </div>
+    </div>
+    <div class="result-box" id="lr_netstat">
+      <div class="result-label">🐧 Linux Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#facc15;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐧 Linux Bash Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;COMMAND   PID   USER   FD   TYPE DEVICE SIZE/OFF NODE NAME
+node    16200 ubuntu   23u  IPv4 189204      0t0  TCP *:3000 (LISTEN)&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Keraksiz jarayon topilgach, `sudo kill -9 16200` orqali portni bo'shatish mumkin.</div>
+
+    <div class="topic-nav">
+      <a href="#curl-wget" class="topic-nav-btn prev">← curl va wget: Internetdan Fayl va API Olish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Linux | 28 / 33</span>
+      <a href="#pipes" class="topic-nav-btn next">Quvurlar (| - Pipe): Buyruqlarni Birlashtirish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-yellow" style="background:#eab308; color:#000; font-weight:700;">Quvurlar</span>
+      <span style="font-size:12px; color:var(--text2);">Linux Mavzu #29</span>
+    </div>
+    <h2 id="pipes" style="color:#eab308; background: linear-gradient(90deg, #facc15, #eab308); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Quvurlar (| - Pipe): Buyruqlarni Birlashtirish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Unix falsafasining eng buyuk kashfiyoti: bitta buyruqning chiqish natijasini (Output) to'g'ridan-to'g'ri keyingi buyruqning kirishiga (Input) quvur <code>|</code> orqali ulash.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>ls -la | grep ".txt"</code> — barcha fayllar ro'yxatini olib, faqat .txt larni ajratish.</li><li><code>cat /etc/passwd | wc -l</code> — tizimdagi jami foydalanuvchilar qatorlarini sanash.</li><li><code>ps aux | sort -nk +4 | tail -5</code> — xotirani eng ko'p yeyotgan Top-5 jarayonlarni ko'rsatish.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Bash / Linux Shell</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('lc_pipes')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('lc_pipes','lr_pipes')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="lc_pipes" contenteditable="true" spellcheck="false"># Quvurlar yordamida loglardagi noyob IP larni sanash
+cat access.log | awk '{print $1}' | sort | uniq -c | sort -nr | head -3</pre>
+      </div>
+    </div>
+    <div class="result-box" id="lr_pipes">
+      <div class="result-label">🐧 Linux Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#facc15;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐧 Linux Bash Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;    142 192.168.1.10
+     98 10.0.0.5
+     45 172.16.0.22&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Quvurlar yordamida o'nlab dasturlarni bir-biriga ulab murakkab ma'lumotlar tahlilini kod yozmasdan amalga oshirish mumkin.</div>
+
+    <div class="topic-nav">
+      <a href="#netstat" class="topic-nav-btn prev">← netstat, ss va lsof: Tarmoq Portlarini Tekshirish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Linux | 29 / 33</span>
+      <a href="#redirect" class="topic-nav-btn next">Kiritish/Chiqarishni Yo'naltirish (Redirection) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-yellow" style="background:#eab308; color:#000; font-weight:700;">Oqimlar</span>
+      <span style="font-size:12px; color:var(--text2);">Linux Mavzu #30</span>
+    </div>
+    <h2 id="redirect" style="color:#eab308; background: linear-gradient(90deg, #facc15, #eab308); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Kiritish/Chiqarishni Yo'naltirish (Redirection)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Natijani ekranga chiqarmasdan faylga yozish yoki fayldan o'qish yo'naltirish belgilari.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>> fayl.txt</code> — yangitdan yozish (mavjud fayl ustiga bostirib yozadi - overwrite).</li><li><code>>> fayl.txt</code> — fayl oxiriga qo'shish (append).</li><li><code>< fayl.sql</code> — fayldan ma'lumotni kiritish sifatida o'qish (masalan: <code>mysql < dump.sql</code>).</li><li><code>2>&1</code> — standart xatoliklar (stderr) va oddiy chiqarishlarni (stdout) bitta joyga birlashtirish.</li><li><code>/dev/null</code> — 'qora tuynuk'; natijani butunlay yutib yuborish (<code>> /dev/null 2>&1</code>).</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Bash / Linux Shell</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('lc_redirect')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('lc_redirect','lr_redirect')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="lc_redirect" contenteditable="true" spellcheck="false"># Tizim ma'lumotlarini faylga saqlab borish
+echo "Loyiha boshlandi: $(date)" &gt; report.log
+echo "Server holati: OK" &gt;&gt; report.log
+cat report.log</pre>
+      </div>
+    </div>
+    <div class="result-box" id="lr_redirect">
+      <div class="result-label">🐧 Linux Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#facc15;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐧 Linux Bash Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Loyiha boshlandi: Mon Nov 23 15:52:00 UTC 2026
+Server holati: OK&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 `>>` dan foydalanish juda muhim, chunki `>` adashib eski yozuvlarni o'chirib yuborishi mumkin.</div>
+
+    <div class="topic-nav">
+      <a href="#pipes" class="topic-nav-btn prev">← Quvurlar (| - Pipe): Buyruqlarni Birlashtirish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Linux | 30 / 33</span>
+      <a href="#bash" class="topic-nav-btn next">Bash Scripting Asoslari (.sh Skriptlar) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-yellow" style="background:#eab308; color:#000; font-weight:700;">Skriptlar</span>
+      <span style="font-size:12px; color:var(--text2);">Linux Mavzu #31</span>
+    </div>
+    <h2 id="bash" style="color:#eab308; background: linear-gradient(90deg, #facc15, #eab308); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Bash Scripting Asoslari (.sh Skriptlar)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Qaytariluvchi buyruqlarni avtomatlashtirish uchun <strong>Bash skriptlar</strong> yozish.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li>Faylning birinchi satrida <strong>Shebang</strong> ko'rsatiladi: <code>#!/bin/bash</code>.</li><li>O'zgaruvchilar: <code>ISM="Ali"</code> (tenglik atrofida bo'sh joy qoldirilmaydi!), chaqirish: <code>$ISM</code>.</li><li>Shartlar: <code>if [ $YOSH -gt 18 ]; then ... fi</code>.</li><li>Sikllar: <code>for fayl in *.txt; do ... done</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Bash / Linux Shell</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('lc_bash')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('lc_bash','lr_bash')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="lc_bash" contenteditable="true" spellcheck="false"># backup.sh skript namunasi:
+#!/bin/bash
+VAQT=$(date +%Y%m%d_%H%M%S)
+BACKUP_DIR="/backup"
+echo "Zaxiralash boshlandi: $VAQT"
+mkdir -p $BACKUP_DIR
+tar -czf "$BACKUP_DIR/w3_backup_$VAQT.tar.gz" /var/www/w3learn
+echo "Muvaffaqiyatli yakunlandi! 🟢"</pre>
+      </div>
+    </div>
+    <div class="result-box" id="lr_bash">
+      <div class="result-label">🐧 Linux Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#facc15;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐧 Linux Bash Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Zaxiralash boshlandi: 20261123_155300
+Muvaffaqiyatli yakunlandi! 🟢&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Bash skriptlar Linux tizim administratorining eng kuchli avtomatlashtirish qurolidir.</div>
+
+    <div class="topic-nav">
+      <a href="#redirect" class="topic-nav-btn prev">← Kiritish/Chiqarishni Yo'naltirish (Redirection)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Linux | 31 / 33</span>
+      <a href="#cron" class="topic-nav-btn next">crontab: Rejali Vazifalarni Avtomatlashtirish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-yellow" style="background:#eab308; color:#000; font-weight:700;">Avtomatlashtirish</span>
+      <span style="font-size:12px; color:var(--text2);">Linux Mavzu #32</span>
+    </div>
+    <h2 id="cron" style="color:#eab308; background: linear-gradient(90deg, #facc15, #eab308); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">crontab: Rejali Vazifalarni Avtomatlashtirish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Vazifalarni har kuni, har soatda yoki belgilangan vaqtda avtomatik ishga tushirish (Cron Jobs).</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li><code>crontab -e</code> — rejali vazifalar jadvalini tahrirlash.</li><li><code>crontab -l</code> — joriy vazifalar ro'yxatini ko'rish.</li><li>5 ta yulduzcha formati: <code>daqiqa soat kun oy hafta_kuni buyruq</code>.</li><li><code>0 3 * * * /scripts/backup.sh</code> — har kecha soat 03:00 da zaxiralash.</li><li><code>*/15 * * * * python3 /app/check.py</code> — har 15 daqiqada tekshirish.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Bash / Linux Shell</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('lc_cron')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('lc_cron','lr_cron')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="lc_cron" contenteditable="true" spellcheck="false"># Crontab jadvali namunasi:
+crontab -l</pre>
+      </div>
+    </div>
+    <div class="result-box" id="lr_cron">
+      <div class="result-label">🐧 Linux Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#facc15;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐧 Linux Bash Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;# Har kuni soat 02:00 da ma'lumotlar bazasini zaxiralash
+0 2 * * * /home/ubuntu/scripts/db_backup.sh &gt; /var/log/cron_backup.log 2&gt;&amp;1
+# Har dushanba 08:00 da hisobot jo'natish
+0 8 * * 1 /usr/bin/node /home/ubuntu/app/send_weekly_report.js&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Cron buyruqlarida har doim to'liq mutlaq yo'llarni (masalan `/usr/bin/node` yoki `/home/ubuntu/...`) yozish shart, chunki Cron da terminaldagi PATH o'zgaruvchilari cheklangan bo'ladi.</div>
+
+    <div class="topic-nav">
+      <a href="#bash" class="topic-nav-btn prev">← Bash Scripting Asoslari (.sh Skriptlar)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Linux | 32 / 33</span>
+      <a href="#package" class="topic-nav-btn next">Paketlar Boshqaruvi: apt, dnf va pacman →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-yellow" style="background:#eab308; color:#000; font-weight:700;">Paketlar</span>
+      <span style="font-size:12px; color:var(--text2);">Linux Mavzu #33</span>
+    </div>
+    <h2 id="package" style="color:#eab308; background: linear-gradient(90deg, #facc15, #eab308); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Paketlar Boshqaruvi: apt, dnf va pacman</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Linux da dasturlarni xavfsiz rasmiy omborlardan (Repositories) yuklab olish va yangilab turish.</p>
+    <ul style="margin: 12px 0; padding-left: 20px; line-height: 1.8; color: var(--text);"><li>Ubuntu/Debian (APT): <code>sudo apt update && sudo apt install <paket> -y</code>.</li><li>Paketni o'chirish: <code>sudo apt remove <paket></code> yoki barcha sozlamalari bilan tozalash: <code>sudo apt purge <paket></code>.</li><li>RedHat/CentOS: <code>sudo dnf install <paket></code>.</li><li>Arch Linux: <code>sudo pacman -S <paket></code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Bash / Linux Shell</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('lc_package')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('lc_package','lr_package')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="lc_package" contenteditable="true" spellcheck="false"># Tizimni eng so'nggi xavfsizlik yangilanishlariga ko'tarish
+sudo apt update
+sudo apt upgrade -y</pre>
+      </div>
+    </div>
+    <div class="result-box" id="lr_package">
+      <div class="result-label">🐧 Linux Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#facc15;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐧 Linux Bash Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Reading package lists... Done
+Building dependency tree... Done
+Calculating upgrade... Done
+The following packages will be upgraded:
+  openssl curl libssl3
+3 upgraded, 0 newly installed, 0 to remove.
+Processing triggers... Done! 🛡️&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Har qanday dasturni o'rnatishdan oldin har doim `sudo apt update` qilib paketlar indeksini yangilab olish tavsiya etiladi.</div>
+
+    <div class="topic-nav">
+      <a href="#cron" class="topic-nav-btn prev">← crontab: Rejali Vazifalarni Avtomatlashtirish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Linux | 33 / 33</span>
+      <a href="restapi.html" class="topic-nav-btn next">Keyingi kurs: REST API Darslari →</a>
+    </div>
+  </section>
+
   <div class="quiz-box">
-    <div class="quiz-q">🧠 Linux da faylga bajarilish ruxsati berish uchun qaysi buyruqdan foydalanamiz?</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'q1')">chown +x file.sh</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, true, 'q1')">chmod +x file.sh</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'q1')">sudo run file.sh</div>
-    <div class="quiz-result" id="q1"></div>
+    <div class="quiz-q">🧪 Test: Linux tizimida joriy ishchi katalogingizning to'liq mutlaq yo'lini (path) ko'rsatuvchi buyruq qaysi?</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, true, 'linuxQr1')">pwd (Print Working Directory)</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'linuxQr1')">whereami</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'linuxQr1')">cd -l</div>
+    <div class="quiz-result" id="linuxQr1"></div>
   </div>
 
-  
+  <div class="nav-btns" style="margin-top: 30px;">
+    <a href="docker.html" class="btn-prev">← Docker Darslari</a>
+    <a href="restapi.html" class="btn-next">REST API Darsiga O'tish →</a>
+  </div>
 
-<div class="nav-btns">
-  <a href="docker.html" class="btn-prev">&#8592; Docker</a>
-  <a href="restapi.html" class="btn-next">REST API &#8594;</a>
-</div>
+  <div class="note note-blue" style="margin-top: 25px;">
+    📌 <strong>Keyingi qadam:</strong> Server boshqaruvini o'zlashtirgach, veb va mobil ilovalar aloqasining asosi bo'lgan <a href="restapi.html" style="color:var(--green)">REST API darslariga</a> o'ting!
+  </div>
 </main>
 <aside class="right-panel">
   <div class="rp-title">📊 Kurs bo'limlari</div>

@@ -70,163 +70,1353 @@
   </ul>
 </aside>
 <main class="main">
-  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">PHP</a> › PHP Nima?</div>
-  <h1 id="kirish">PHP Nima?</h1>
-  <div class="meta-tags">
-    <span class="tag tag-green">⏱ 8 daqiqa</span>
-    <span class="tag tag-blue">🟡 O'rta</span>
-    <span class="tag tag-orange">👁 6,180 marta ko'rilgan</span>
-  </div>
-  <p><strong>PHP</strong> (PHP: Hypertext Preprocessor) — server tomonida ishlovchi skript tili. WordPress, Laravel va boshqa ko'plab mashhur platformalar PHP da yozilgan. Internetdagi saytlarning 77% dan ortiq qismi PHP dan foydalanadi.</p>
-  <div class="note">💡 <strong>Eslatma:</strong> PHP kodi &lt;?php ... ?&gt; teglar ichida yoziladi va server tomonida bajariladi.</div>
+  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">PHP</a> › Barcha Mavzular</div>
 
-  <h2 id="sintaksis">Asosiy Sintaksis</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar"><span class="code-lang">PHP</span>
-      <div class="code-actions"><button class="btn-copy" onclick="copyCode('code1')">📋 Nusxa</button></div>
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Asosiy</span>
+      <span style="font-size:12px; color:var(--text2);">PHP Mavzu #1</span>
     </div>
-    <div class="code-body"><pre id="code1">&lt;?php
-// O'zgaruvchilar $ bilan boshlanadi
-$ism = "Ali";
-$yosh = 25;
-$baland = 1.75;
-$faol = true;
+    <h2 id="kirish" style="color:#777bb4; margin-top:0; font-size:24px;">PHP Nima?</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>PHP (PHP: Hypertext Preprocessor)</strong> — server tomonida ishlaydigan dunyodagi eng mashhur dasturlash tili. U 1994-yilda Rasmus Lerdorf tomonidan yaratilgan. Internetdagi barcha veb-saytlarning qariyb 77% dan ortig'i (jumladan WordPress, Wikipedia, Facebook ning dastlabki qismi) aynan PHP asosida ishlaydi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Server tomonida (Server-side) bajariladi va brauzerga sof HTML javob qaytaradi.</li>
+      <li>HTML ichiga bevosita <code>&lt;?php ... ?&gt;</code> teglari bilan qulay joylashtiriladi.</li>
+      <li>MySQL, PostgreSQL, Oracle va boshqa ma'lumotlar bazalari bilan a'lo darajada integratsiyalashgan.</li>
+      <li>Laravel, Symfony kabi eng kuchli va xavfsiz zamonaviy veb freymvorklarga ega.</li>
+    </ul>
 
-// Chiqarish
-echo "Salom, $ism!\n";
-echo "Yosh: " . $yosh . "\n";
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PHP 8 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('phpCode1')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('phpCode1','phpRes1')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="phpCode1" contenteditable="true" spellcheck="false">&lt;?php
+// PHP dagi eng birinchi dastur
+echo "Assalomu alaykum, PHP Dunyosi! 🐘\n";
 
-// Massiv
-$mevalar = ["olma", "banan", "uzum"];
-echo $mevalar[0]; // olma
+$sayt = "W3Learn";
+$yil = 2026;
 
+echo "Siz $sayt platformasida $yil-yilda ta'lim olyapsiz.";
+?&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="phpRes1">
+      <div class="result-label">🖥️ Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PHP 8.3 Server Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Assalomu alaykum, PHP Dunyosi! 🐘
+Siz W3Learn platformasida 2026-yilda ta'lim olyapsiz.&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 PHP kodi faqat serverda bajariladi — foydalanuvchi brauzerda sahifa kodini ko'rganda PHP kodlarini hech qachon ko'ra olmaydi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="nodejs.html" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Node.js Darslari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PHP | 1 / 25</span>
+      <a href="#install" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: PHP ni O'rnatish (XAMPP / WAMP) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">O'rnatish</span>
+      <span style="font-size:12px; color:var(--text2);">PHP Mavzu #2</span>
+    </div>
+    <h2 id="install" style="color:#777bb4; margin-top:0; font-size:24px;">PHP ni O'rnatish (XAMPP / WAMP)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">PHP kodlarini kompyuteringizda sinab ko'rish uchun mahalliy veb-server kerak bo'ladi. Buning uchun eng qulay yo'l — bir vaqtning o'zida Apache, MySQL va PHP ni o'rnatib beruvchi <strong>XAMPP</strong> dasturidir.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>XAMPP rasmiy sayti: <code>apachefriends.org</code> dan yuklab olinadi.</li>
+      <li>XAMPP Control Panel orqali <strong>Apache</strong> va <strong>MySQL</strong> xizmatlari 'Start' qilinadi.</li>
+      <li>Loyihalar papkasi: <code>C:\xampp\htdocs\mening-saytim</code>.</li>
+      <li>Brauzerda ochish: <code>http://localhost/mening-saytim/index.php</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PHP 8 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('phpCode2')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('phpCode2','phpRes2')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="phpCode2" contenteditable="true" spellcheck="false">&lt;?php
+// PHP versiyasini va server sozlamalarini ko'rish
+echo "PHP Versiyasi: " . phpversion() . "\n";
+echo "Server dasturi: " . $_SERVER['SERVER_SOFTWARE'];
+?&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="phpRes2">
+      <div class="result-label">🖥️ Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PHP 8.3 Server Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;PHP Versiyasi: 8.3.2
+Server dasturi: Apache/2.4.58 (Win64) OpenSSL/3.1.3 PHP/8.3.2&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">⚡ XAMPP ning <code>htdocs</code> papkasi sizning mahalliy serveringizning asosiy ildiz papkasi (root directory) hisoblanadi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#kirish" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: PHP Nima?</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PHP | 2 / 25</span>
+      <a href="#sintaksis" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Asosiy Sintaksis va Izohlar →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Asoslar</span>
+      <span style="font-size:12px; color:var(--text2);">PHP Mavzu #3</span>
+    </div>
+    <h2 id="sintaksis" style="color:#777bb4; margin-top:0; font-size:24px;">Asosiy Sintaksis va Izohlar</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">PHP skripti doimo <code>&lt;?php</code> bilan boshlanadi va <code>?&gt;</code> bilan tugaydi. Har bir buyruq oxirida albatta nuqta-vergul <code>;</code> qo'yilishi shart.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Chiqarish operatorlari: <code>echo</code> (tezroq va bir nechta parametr oladi) va <code>print</code>.</li>
+      <li>Bir qatorli izoh: <code>//</code> yoki <code>#</code>.</li>
+      <li>Ko'p qatorli izoh: <code>/* ... */</code>.</li>
+      <li>Katta-kichik harflar: kalit so'zlar (if, echo, class) sezgir emas, ammo o'zgaruvchilar sezgir!</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PHP 8 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('phpCode3')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('phpCode3','phpRes3')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="phpCode3" contenteditable="true" spellcheck="false">&lt;?php
+// Bu bir qatorli izoh
+# Bu ham bir qatorli izoh
+
+/*
+ Bu esa ko'p qatorli
+ batafsil izohdir
+*/
+
+ECHO "Kalit so'zlar katta-kichik harfga sezgir emas!\n";
+echo "Lekin o'zgaruvchi nomlari sezgir.";
+?&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="phpRes3">
+      <div class="result-label">🖥️ Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PHP 8.3 Server Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Kalit so'zlar katta-kichik harfga sezgir emas!
+Lekin o'zgaruvchi nomlari sezgir.&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 Faqat PHP kodidan iborat bo'lgan fayllarda oxirgi <code>?&gt;</code> yopilish tegini qo'ymaslik xavfsizlik va bo'shliqlar xatosini oldini oladi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#install" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: PHP ni O'rnatish (XAMPP / WAMP)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PHP | 3 / 25</span>
+      <a href="#ozgaruvchi" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: O'zgaruvchilar va Ma'lumot Turlari →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Asoslar</span>
+      <span style="font-size:12px; color:var(--text2);">PHP Mavzu #4</span>
+    </div>
+    <h2 id="ozgaruvchi" style="color:#777bb4; margin-top:0; font-size:24px;">O'zgaruvchilar va Ma'lumot Turlari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">PHP da barcha o'zgaruvchilar dollar belgisi <code>$</code> bilan boshlanadi. PHP dinamik tiplashtirilgan til bo'lib, o'zgaruvchi turini avtomatik aniqlaydi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Nomlash: harf yoki pastki chiziq bilan boshlanadi: <code>$ism</code>, <code>$_yosh</code>.</li>
+      <li>Asosiy turlar: String, Integer, Float, Boolean, Array, Object, NULL.</li>
+      <li>Ma'lumot turini va qiymatini to'liq ko'rish uchun <code>var_dump()</code> ishlatiladi.</li>
+      <li>O'zgarmaslar (Konstantalar): <code>define('SAYT_NOMI', 'W3Learn');</code> yoki <code>const PI = 3.14;</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PHP 8 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('phpCode4')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('phpCode4','phpRes4')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="phpCode4" contenteditable="true" spellcheck="false">&lt;?php
+$matn = "Dasturlash";       // String
+$son = 42;                  // Integer
+$narx = 19.99;              // Float
+$mavjud = true;             // Boolean
+$bosh = null;               // NULL
+
+define("MAKTAB", "W3Learn Akademiyasi");
+
+echo MAKTAB . "\n";
+var_dump($narx);
+var_dump($mavjud);
+?&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="phpRes4">
+      <div class="result-label">🖥️ Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PHP 8.3 Server Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;W3Learn Akademiyasi
+float(19.99)
+bool(true)&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 Satrlarni bir-biriga ulash (konkatenatsiya) uchun plyus <code>+</code> emas, balki nuqta <code>.</code> belgisi ishlatiladi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#sintaksis" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Asosiy Sintaksis va Izohlar</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PHP | 4 / 25</span>
+      <a href="#matn" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Matn (String) va Satr Funksiyalari →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Asoslar</span>
+      <span style="font-size:12px; color:var(--text2);">PHP Mavzu #5</span>
+    </div>
+    <h2 id="matn" style="color:#777bb4; margin-top:0; font-size:24px;">Matn (String) va Satr Funksiyalari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">PHP da satrlar bir tirnoq <code>'</code> yoki qo'shtirnoq <code>"</code> ichida yoziladi. Qo'shtirnoq ichidagi o'zgaruvchilar avtomatik tarzda qiymatiga aylanadi (interpolatsiya).</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>strlen($matn)</code> — satr uzunligini (baytlarda) hisoblaydi.</li>
+      <li><code>mb_strlen($matn)</code> — o'zbekcha va kirill harflari uzunligini to'g'ri o'lchaydi.</li>
+      <li><code>str_replace('eski', 'yangi', $matn)</code> — so'zni almashtirish.</li>
+      <li><code>strtoupper()</code> va <code>strtolower()</code> — katta/kichik harfga o'tkazish.</li>
+      <li><code>explode(',', $satr)</code> — matnni massivga bo'lish.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PHP 8 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('phpCode5')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('phpCode5','phpRes5')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="phpCode5" contenteditable="true" spellcheck="false">&lt;?php
+$ism = "Sardor";
+echo "Salom, $ism! (Qo'shtirnoqda ishlaydi)\n";
+echo 'Salom, $ism! (Bir tirnoqda matn deb o\'ylaydi)\n';
+
+$xabar = "PHP o'rganish juda qiziq";
+echo "Uzunligi: " . strlen($xabar) . " belgi\n";
+echo "Almashtirish: " . str_replace("qiziq", "oson", $xabar);
+?&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="phpRes5">
+      <div class="result-label">🖥️ Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PHP 8.3 Server Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Salom, Sardor! (Qo'shtirnoqda ishlaydi)
+Salom, $ism! (Bir tirnoqda matn deb o'ylaydi)
+Uzunligi: 24 belgi
+Almashtirish: PHP o'rganish juda oson&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 Kirill yoki o'zbek harflari (o', g') bilan ishlaganda doimo <code>mb_</code> prefiksli funksiyalardan (mb_substr, mb_strtoupper) foydalaning.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#ozgaruvchi" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: O'zgaruvchilar va Ma'lumot Turlari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PHP | 5 / 25</span>
+      <a href="#massiv" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Massivlar (Indeksli va Assotsiativ) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Asoslar</span>
+      <span style="font-size:12px; color:var(--text2);">PHP Mavzu #6</span>
+    </div>
+    <h2 id="massiv" style="color:#777bb4; margin-top:0; font-size:24px;">Massivlar (Indeksli va Assotsiativ)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">PHP da massivlar (Arrays) juda moslashuvchan. Ular ham oddiy raqamli indeksli, ham kalit-qiymatli (assotsiativ) bo'lishi mumkin.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Indeksli massiv: <code>$mevalar = ['Olma', 'Banan', 'Uzum'];</code></li>
+      <li>Assotsiativ massiv: <code>$user = ['ism' =&gt; 'Ali', 'yosh' =&gt; 25];</code></li>
+      <li>Element qo'shish: <code>$mevalar[] = 'Anor';</code> yoki <code>array_push()</code>.</li>
+      <li>Elementlar soni: <code>count($mevalar)</code>.</li>
+      <li>Chiqarib ko'rish: <code>print_r($user)</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PHP 8 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('phpCode6')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('phpCode6','phpRes6')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="phpCode6" contenteditable="true" spellcheck="false">&lt;?php
 // Assotsiativ massiv
-$foydalanuvchi = [
-    "ism"   => "Ali",
-    "email" => "ali@test.com",
-    "yosh"  => 25
+$talaba = [
+    "ism" =&gt; "Zarina",
+    "kurs" =&gt; "Backend",
+    "ball" =&gt; 94
 ];
-echo $foydalanuvchi["ism"];
 
-// Shart
-if ($yosh >= 18) {
-    echo "Voyaga yetgan";
-} else {
-    echo "Voyaga yetmagan";
-}
+$talaba["stipendiya"] = true; // Yangi element qo'shish
 
-// Sikl
-for ($i = 1; $i &lt;= 5; $i++) {
-    echo "Raqam: $i\n";
-}
-
-foreach ($mevalar as $meva) {
-    echo "- $meva\n";
-}
-?&gt;</pre></div>
-  </div>
-
-  <h2 id="pdo">PDO bilan MySQL</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar"><span class="code-lang">PHP (PDO)</span>
-      <div class="code-actions"><button class="btn-copy" onclick="copyCode('code2')">📋 Nusxa</button></div>
+echo "Talaba: " . $talaba["ism"] . "\n";
+echo "Kurs: " . $talaba["kurs"] . "\n";
+echo "Jami maydonlar: " . count($talaba);
+?&gt;</pre>
+      </div>
     </div>
-    <div class="code-body"><pre id="code2">&lt;?php
-// Ma'lumotlar bazasiga ulanish
-$dsn = "mysql:host=localhost;dbname=w3learn;charset=utf8";
-$foydalanuvchi = "root";
-$parol = "";
-
-try {
-    $pdo = new PDO($dsn, $foydalanuvchi, $parol, [
-        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-    ]);
-    echo "Ulanish muvaffaqiyatli!\n";
-} catch (PDOException $e) {
-    die("Xato: " . $e->getMessage());
-}
-
-// SELECT so'rovi (SQL injection dan himoya)
-$stmt = $pdo->prepare("SELECT * FROM foydalanuvchilar WHERE yosh > :yosh");
-$stmt->execute([':yosh' => 20]);
-$natijalar = $stmt->fetchAll();
-
-foreach ($natijalar as $foydalanuvchi) {
-    echo $foydalanuvchi['ism'] . " — " . $foydalanuvchi['email'] . "\n";
-}
-
-// INSERT
-$stmt = $pdo->prepare("INSERT INTO foydalanuvchilar (ism, email) VALUES (:ism, :email)");
-$stmt->execute([':ism' => 'Sarvar', ':email' => 'sarvar@test.com']);
-echo "Qo'shildi. ID: " . $pdo->lastInsertId();
-?&gt;</pre></div>
-  </div>
-
-  <h2 id="class">OOP — Klasslar</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar"><span class="code-lang">PHP (OOP)</span>
-      <div class="code-actions"><button class="btn-copy" onclick="copyCode('code3')">📋 Nusxa</button></div>
+    <div class="result-box" id="phpRes6">
+      <div class="result-label">🖥️ Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PHP 8.3 Server Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Talaba: Zarina
+Kurs: Backend
+Jami maydonlar: 4&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
     </div>
-    <div class="code-body"><pre id="code3">&lt;?php
+
+    <div class="note" style="margin-top:16px;">💡 PHP dagi massivlar aslida tartiblangan xesh-jadval (Hash Map) hisoblanadi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#matn" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Matn (String) va Satr Funksiyalari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PHP | 6 / 25</span>
+      <a href="#shartlar" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Shart Operatorlari (if, else, switch, match) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Asoslar</span>
+      <span style="font-size:12px; color:var(--text2);">PHP Mavzu #7</span>
+    </div>
+    <h2 id="shartlar" style="color:#777bb4; margin-top:0; font-size:24px;">Shart Operatorlari (if, else, switch, match)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Dastur mantig'ini boshqarish uchun shart operatorlari xizmat qiladi. PHP 8.0 dan boshlab zamonaviy va xavfsiz <code>match</code> ifodasi qo'shilgan.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Standart: <code>if ($shart) { ... } elseif ($shart2) { ... } else { ... }</code></li>
+      <li>Ternar operator: <code>$natija = ($yosh &gt;= 18) ? 'Katta' : 'Kichik';</code></li>
+      <li>Null Coalescing: <code>$ism = $_GET['ism'] ?? 'Mehmon';</code></li>
+      <li><code>match</code> ifodasi — qat'iy tekshiruvchi (strict ===) va qiymat qaytaruvchi zamonaviy switch.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PHP 8 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('phpCode7')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('phpCode7','phpRes7')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="phpCode7" contenteditable="true" spellcheck="false">&lt;?php
+$statusKodi = 200;
+
+// PHP 8 zamonaviy match ifodasi
+$xabar = match($statusKodi) {
+    200, 201 =&gt; "✅ Muvaffaqiyatli so'rov",
+    400 =&gt; "❌ Noto'g'ri so'rov",
+    404 =&gt; "🔍 Sahifa topilmadi",
+    500 =&gt; "⚠️ Server xatosi",
+    default =&gt; "Noma'lum status"
+};
+
+echo "Natija: " . $xabar;
+?&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="phpRes7">
+      <div class="result-label">🖥️ Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PHP 8.3 Server Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Natija: ✅ Muvaffaqiyatli so'rov&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 <code>match</code> ifodasida <code>break</code> yozish shart emas va u avtomatik qiymat qaytaradi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#massiv" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Massivlar (Indeksli va Assotsiativ)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PHP | 7 / 25</span>
+      <a href="#sikllar" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Sikllar (for, while, foreach) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Asoslar</span>
+      <span style="font-size:12px; color:var(--text2);">PHP Mavzu #8</span>
+    </div>
+    <h2 id="sikllar" style="color:#777bb4; margin-top:0; font-size:24px;">Sikllar (for, while, foreach)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Amallarni takrorlash uchun sikllar ishlatiladi. Massivlar va obyektlar bo'ylab aylanishda eng ko'p ishlatiladigani — bu <code>foreach</code> siklidir.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>for ($i = 0; $i &lt; 5; $i++)</code> — aniq qadamli takrorlash.</li>
+      <li><code>while ($shart)</code> — shart to'g'ri turguncha takrorlash.</li>
+      <li><code>foreach ($massiv as $qiymat)</code> — massiv elementlari bo'ylab aylanish.</li>
+      <li><code>foreach ($massiv as $kalit =&gt; $qiymat)</code> — kalit va qiymatni birga olish.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PHP 8 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('phpCode8')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('phpCode8','phpRes8')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="phpCode8" contenteditable="true" spellcheck="false">&lt;?php
+$narxlar = [
+    "Non" =&gt; 3000,
+    "Sut" =&gt; 9000,
+    "Go'sht" =&gt; 85000
+];
+
+echo "Bozorlik ro'yxati:\n";
+foreach ($narxlar as $mahsulot =&gt; $narx) {
+    echo " • $mahsulot: $narx so'm\n";
+}
+?&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="phpRes8">
+      <div class="result-label">🖥️ Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PHP 8.3 Server Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Bozorlik ro'yxati:
+ • Non: 3000 so'm
+ • Sut: 9000 so'm
+ • Go'sht: 85000 so'm&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 <code>foreach</code> siklida massiv qiymatini to'g'ridan-to'g'ri o'zgartirish uchun havola belgisi qo'yiladi: <code>foreach ($arr as &$val)</code>.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#shartlar" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Shart Operatorlari (if, else, switch, match)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PHP | 8 / 25</span>
+      <a href="#funksiyalar" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Funksiyalar va Qat'iy Tiplashtirish (Type Hinting) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Asoslar</span>
+      <span style="font-size:12px; color:var(--text2);">PHP Mavzu #9</span>
+    </div>
+    <h2 id="funksiyalar" style="color:#777bb4; margin-top:0; font-size:24px;">Funksiyalar va Qat'iy Tiplashtirish (Type Hinting)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">PHP da funksiyalar <code>function</code> kalit so'zi bilan yaratiladi. Zamonaviy PHP 8 da argumentlar va qaytish qiymatiga aniq turlar ko'rsatish (Type Hinting) tavsiya etiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>E'lon qilish: <code>function qoshish(int $a, int $b): int { return $a + $b; }</code></li>
+      <li>Standart qiymatlar: <code>function salom($ism = 'Mehmon')</code>.</li>
+      <li>Ixtiyoriy argumentlar: <code>?string</code> (yoki string, yoki null bo'lishi mumkin).</li>
+      <li>Nomsiz funksiyalar va Arrow functions: <code>fn($x) =&gt; $x * 2;</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PHP 8 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('phpCode9')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('phpCode9','phpRes9')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="phpCode9" contenteditable="true" spellcheck="false">&lt;?php
+// Qat'iy tiplashtirilgan funksiya
+function chegirmaHisobla(float $narx, float $foiz = 10.0): float {
+    $chegirma = $narx * ($foiz / 100);
+    return $narx - $chegirma;
+}
+
+$aslNarx = 100000.0;
+$yakuniy = chegirmaHisobla($aslNarx, 15.0);
+
+echo "Asl narx: $aslNarx so'm\n";
+echo "15% chegirma bilan: $yakuniy so'm";
+?&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="phpRes9">
+      <div class="result-label">🖥️ Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PHP 8.3 Server Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Asl narx: 100000 so'm
+15% chegirma bilan: 85000 so'm&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 Fayl boshiga <code>declare(strict_types=1);</code> qo'yilsa, noto'g'ri tur kiritilganda darhol xatolik chiqaradi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#sikllar" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Sikllar (for, while, foreach)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PHP | 9 / 25</span>
+      <a href="#class" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: OOP — Klasslar va Obyektlar →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">OOP</span>
+      <span style="font-size:12px; color:var(--text2);">PHP Mavzu #10</span>
+    </div>
+    <h2 id="class" style="color:#777bb4; margin-top:0; font-size:24px;">OOP — Klasslar va Obyektlar</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Obyektga Yo'naltirilgan Dasturlash (OOP) yirik loyihalarni tartibli qilish uchun eng muhim uslubdir. <strong>Klass</strong> shablon bo'lib, undan <code>new</code> operatori orqali obyektlar olinadi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Ko'rinish darajalari (Access Modifiers): <code>public</code> (hamma joyda ochiq), <code>protected</code> (faqat vorislarda), <code>private</code> (faqat o'zida).</li>
+      <li>Konstruktor: <code>public function __construct()</code>.</li>
+      <li>Joriy obyektga murojaat: <code>$this-&gt;xossa</code>.</li>
+      <li>PHP 8 Constructor Property Promotion: konstruktor parametrining o'zidayoq xossani e'lon qilish mumkin.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PHP 8 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('phpCode10')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('phpCode10','phpRes10')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="phpCode10" contenteditable="true" spellcheck="false">&lt;?php
 class Foydalanuvchi {
-    // Xususiyatlar
-    private string $ism;
-    private string $email;
-    protected int $yosh;
+    // PHP 8 qisqa konstruktor
+    public function __construct(
+        public string $ism,
+        public string $email,
+        private string $parol
+    ) {}
 
-    // Konstruktor
-    public function __construct(string $ism, string $email, int $yosh) {
-        $this->ism = $ism;
-        $this->email = $email;
-        $this->yosh = $yosh;
-    }
-
-    // Metodlar
-    public function getMalumat(): string {
-        return "{$this->ism} ({$this->email}), yosh: {$this->yosh}";
-    }
-
-    public function voyagaYetganmi(): bool {
-        return $this->yosh >= 18;
+    public function getInfo(): string {
+        return "👤 {$this-&gt;ism} ({$this-&gt;email})";
     }
 }
 
-// Meros
-class Admin extends Foydalanuvchi {
-    private array $ruxsatlar;
+$user1 = new Foydalanuvchi("Alijon", "ali@mail.uz", "parol123");
+echo $user1-&gt;getInfo();
+?&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="phpRes10">
+      <div class="result-label">🖥️ Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PHP 8.3 Server Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;👤 Alijon (ali@mail.uz)&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
 
-    public function __construct(string $ism, string $email, int $yosh, array $ruxsatlar) {
-        parent::__construct($ism, $email, $yosh);
-        $this->ruxsatlar = $ruxsatlar;
-    }
+    <div class="note" style="margin-top:16px;">💡 PHP 8 dagi <code>public function __construct(public string $ism)</code> usuli kod hajmini ikki barobar qisqartiradi.</div>
 
-    public function ruxsatBormi(string $ruxsat): bool {
-        return in_array($ruxsat, $this->ruxsatlar);
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#funksiyalar" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Funksiyalar va Qat'iy Tiplashtirish (Type Hinting)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PHP | 10 / 25</span>
+      <a href="#meros" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: OOP — Merosxo'rlik (Inheritance) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">OOP</span>
+      <span style="font-size:12px; color:var(--text2);">PHP Mavzu #11</span>
+    </div>
+    <h2 id="meros" style="color:#777bb4; margin-top:0; font-size:24px;">OOP — Merosxo'rlik (Inheritance)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Merosxo'rlik</strong> — bir klass boshqa klassning imkoniyatlarini <code>extends</code> kalit so'zi orqali o'zlashtirib olishidir.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Sintaksis: <code>class Admin extends Foydalanuvchi</code>.</li>
+      <li>Ota klass konstruktorini chaqirish: <code>parent::__construct()</code>.</li>
+      <li>Metodni qayta yozish (Override): ota klass metodini bola klassda o'zgartirish.</li>
+      <li><code>final</code> kalit so'zi — klass yoki metoddan meros olishni taqiqlaydi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PHP 8 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('phpCode11')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('phpCode11','phpRes11')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="phpCode11" contenteditable="true" spellcheck="false">&lt;?php
+class Xodim {
+    public function __construct(public string $ism, public int $maosh) {}
+
+    public function ishla(): string {
+        return "{$this-&gt;ism} ishlamoqda...";
     }
 }
 
-$user = new Foydalanuvchi("Ali", "ali@test.com", 25);
-echo $user->getMalumat();
+class Dasturchi extends Xodim {
+    public function __construct(string $ism, int $maosh, public string $til) {
+        parent::__construct($ism, $maosh);
+    }
 
-$admin = new Admin("Sarvar", "sarvar@test.com", 30, ["o'chirish", "tahrirlash"]);
-echo $admin->ruxsatBormi("o'chirish") ? "Ruxsat bor" : "Ruxsat yo'q";
-?&gt;</pre></div>
-  </div>
+    public function ishla(): string {
+        return "💻 {$this-&gt;ism} {$this-&gt;til} tilida kod yozmoqda!";
+    }
+}
+
+$dev = new Dasturchi("Jasur", 2000, "PHP/Laravel");
+echo $dev-&gt;ishla();
+?&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="phpRes11">
+      <div class="result-label">🖥️ Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PHP 8.3 Server Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;💻 Jasur PHP/Laravel tilida kod yozmoqda!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 PHP faqat bitta klassdan to'g'ridan-to'g'ri meros olishga ruxsat beradi (Single Inheritance).</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#class" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: OOP — Klasslar va Obyektlar</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PHP | 11 / 25</span>
+      <a href="#interface-p" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: OOP — Interface va Abstraktsiya →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">OOP</span>
+      <span style="font-size:12px; color:var(--text2);">PHP Mavzu #12</span>
+    </div>
+    <h2 id="interface-p" style="color:#777bb4; margin-top:0; font-size:24px;">OOP — Interface va Abstraktsiya</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Interface</strong> — klasslar qanday metodlarni amalga oshirishi shartligini belgilovchi qat'iy shartnomadir. <code>implements</code> kalit so'zi bilan ulanadi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Interface ichidagi barcha metodlar faqat e'lon qilinadi, tanasi (body) bo'lmaydi.</li>
+      <li>Bir klass bir vaqtning o'zida bir nechta interfeyslarni qabul qilishi mumkin.</li>
+      <li>To'lov tizimlari (Payme, Click, Uzum) uchun yagona interfeys yaratishda keng qo'llaniladi.</li>
+      <li>Abstrakt klass (<code>abstract class</code>) ham qisman yozilgan, ham yozilmagan metodlarni saqlaydi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PHP 8 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('phpCode12')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('phpCode12','phpRes12')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="phpCode12" contenteditable="true" spellcheck="false">&lt;?php
+interface TolovTizimi {
+    public function tolovQil(int $summa): string;
+}
+
+class ClickTolov implements TolovTizimi {
+    public function tolovQil(int $summa): string {
+        return "💳 Click orqali $summa so'm to'landi.";
+    }
+}
+
+class PaymeTolov implements TolovTizimi {
+    public function tolovQil(int $summa): string {
+        return "💳 Payme orqali $summa so'm to'landi.";
+    }
+}
+
+$tolov = new ClickTolov();
+echo $tolov-&gt;tolovQil(50000);
+?&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="phpRes12">
+      <div class="result-label">🖥️ Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PHP 8.3 Server Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;💳 Click orqali 50000 so'm to'landi.&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 Interfeyslar Dependency Injection va toza arxitektura (SOLID tamoyillari) ning asosi hisoblanadi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#meros" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: OOP — Merosxo'rlik (Inheritance)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PHP | 12 / 25</span>
+      <a href="#trait" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Trait — Kodlarni Qayta Ishlatish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">OOP</span>
+      <span style="font-size:12px; color:var(--text2);">PHP Mavzu #13</span>
+    </div>
+    <h2 id="trait" style="color:#777bb4; margin-top:0; font-size:24px;">Trait — Kodlarni Qayta Ishlatish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">PHP da bir vaqtda faqat bitta ota klassdan meros olish mumkin. <strong>Trait</strong> esa bir xil metodlarni turli mustaqil klasslar ichiga osongina qo'shish (mix-in) imkonini beradi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>E'lon qilish: <code>trait LogYozuvchi { ... }</code></li>
+      <li>Klass ichida ishlatish: <code>use LogYozuvchi;</code></li>
+      <li>Bir nechta traitlarni vergul bilan ulash mumkin.</li>
+      <li>Laravel freymvorkida (masalan, <code>HasFactory</code>, <code>Notifiable</code>) keng qo'llaniladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PHP 8 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('phpCode13')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('phpCode13','phpRes13')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="phpCode13" contenteditable="true" spellcheck="false">&lt;?php
+trait Logger {
+    public function log(string $xabar): void {
+        echo "📝 [LOG " . date('H:i') . "]: $xabar\n";
+    }
+}
+
+class Buyurtma {
+    use Logger; // Trait ulandi
+
+    public function yarat(): void {
+        $this-&gt;log("Buyurtma yaratildi");
+    }
+}
+
+$b = new Buyurtma();
+$b-&gt;yarat();
+?&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="phpRes13">
+      <div class="result-label">🖥️ Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PHP 8.3 Server Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;📝 [LOG 14:00]: Buyurtma yaratildi&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 Trait dan to'g'ridan-to'g'ri <code>new Trait()</code> deb obyekt yaratib bo'lmaydi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#interface-p" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: OOP — Interface va Abstraktsiya</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PHP | 13 / 25</span>
+      <a href="#namespace" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Namespace (Nomlar Fazosi) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">OOP</span>
+      <span style="font-size:12px; color:var(--text2);">PHP Mavzu #14</span>
+    </div>
+    <h2 id="namespace" style="color:#777bb4; margin-top:0; font-size:24px;">Namespace (Nomlar Fazosi)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Namespace</strong> — bir xil nomli klasslar, funksiyalar va konstantalar bir-biri bilan to'qnashib qolmasligi uchun loyihani mantiqiy papkalarga ajratish usulidir.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Faylning eng birinchi qatorida e'lon qilinadi: <code>namespace App\Services;</code></li>
+      <li>Boshqa nomlar fazosidagi klassni chaqirish: <code>use App\Models\User;</code></li>
+      <li>Katta kutubxonalar va Composer paketlarida nomlar chalkashmasligini ta'minlaydi.</li>
+      <li>Teskari slash <code>\</code> bilan qismlarga bo'linadi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PHP 8 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('phpCode14')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('phpCode14','phpRes14')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="phpCode14" contenteditable="true" spellcheck="false">&lt;?php
+namespace App\Hisob;
+
+class Hisoblagich {
+    public static function kvadrat(int $x): int {
+        return $x * $x;
+    }
+}
+
+// Boshqa joyda ishlatish:
+// use App\Hisob\Hisoblagich;
+echo "5 ning kvadrati: " . \App\Hisob\Hisoblagich::kvadrat(5);
+?&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="phpRes14">
+      <div class="result-label">🖥️ Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PHP 8.3 Server Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;5 ning kvadrati: 25&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 Standart PHP klasslariga (masalan, Exception, DateTime) murojaat qilishda boshiga teskari slash qo'yiladi: <code>new \DateTime()</code>.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#trait" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Trait — Kodlarni Qayta Ishlatish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PHP | 14 / 25</span>
+      <a href="#form" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Formalar bilan Ishlash ($_GET va $_POST) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Web</span>
+      <span style="font-size:12px; color:var(--text2);">PHP Mavzu #15</span>
+    </div>
+    <h2 id="form" style="color:#777bb4; margin-top:0; font-size:24px;">Formalar bilan Ishlash ($_GET va $_POST)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">HTML formalaridan yuborilgan ma'lumotlarni qabul qilish uchun PHP ning superglobal massivlari — <code>$_GET</code> va <code>$_POST</code> ishlatiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>$_GET</code> — ma'lumotlar URL manzil orqali uzatiladi (qidiruv, filtrlar uchun).</li>
+      <li><code>$_POST</code> — ma'lumotlar HTTP so'rov tanasida maxfiy uzatiladi (parol, to'lov uchun).</li>
+      <li>Xavfsizlik: XSS xujumining oldini olish uchun <code>htmlspecialchars()</code> ishlatilishi shart!</li>
+      <li>Tekshirish: <code>isset($_POST['tugma'])</code> orqali forma yuborilganini bilish mumkin.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PHP 8 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('phpCode15')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('phpCode15','phpRes15')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="phpCode15" contenteditable="true" spellcheck="false">&lt;?php
+// Xayoliy forma qabul qilish namunasi
+$_POST['ism'] = "Olimjon";
+$_POST['email'] = "olim@uz.uz";
+
+if ($_SERVER["REQUEST_METHOD"] === "POST") {
+    // Xavfsiz tozalash
+    $ism = htmlspecialchars($_POST['ism']);
+    $email = filter_var($_POST['email'], FILTER_VALIDATE_EMAIL);
+    
+    echo "✅ Qabul qilindi: $ism ($email)";
+}
+?&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="phpRes15">
+      <div class="result-label">🖥️ Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PHP 8.3 Server Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;✅ Qabul qilindi: Olimjon (olim@uz.uz)&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">⚠️ Hech qachon <code>$_POST['ism']</code> ni to'g'ridan-to'g'ri ekranga chiqarmang yoki bazaga yozmang — doim filtrlang!</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#namespace" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Namespace (Nomlar Fazosi)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PHP | 15 / 25</span>
+      <a href="#session" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Session va Cookie (Sessiyalar) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Web</span>
+      <span style="font-size:12px; color:var(--text2);">PHP Mavzu #16</span>
+    </div>
+    <h2 id="session" style="color:#777bb4; margin-top:0; font-size:24px;">Session va Cookie (Sessiyalar)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Foydalanuvchi sahifadan sahifaga o'tganda uning login holatini va savatchasidagi tovarlarni saqlab turish uchun <strong>Session</strong> va <strong>Cookie</strong> ishlatiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Sessiyani boshlash: fayl boshida albatta <code>session_start();</code> yoziladi.</li>
+      <li>Sessiyaga yozish: <code>$_SESSION['user_id'] = 42;</code></li>
+      <li>Cookie o'rnatish: <code>setcookie('til', 'uz', time() + 3600 * 24);</code></li>
+      <li>Sessiyani to'liq o'chirish (Logout): <code>session_destroy();</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PHP 8 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('phpCode16')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('phpCode16','phpRes16')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="phpCode16" contenteditable="true" spellcheck="false">&lt;?php
+session_start();
+
+// Foydalanuvchi ma'lumotini eslab qolish
+$_SESSION['user'] = "Botir";
+$_SESSION['rol'] = "admin";
+
+echo "Sessiya ochildi! Foydalanuvchi: " . $_SESSION['user'] . "\n";
+echo "Sessiya ID: " . session_id();
+?&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="phpRes16">
+      <div class="result-label">🖥️ Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PHP 8.3 Server Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Sessiya ochildi! Foydalanuvchi: Botir
+Sessiya ID: 7a8b9c0d1e2f3g4h5i6j&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 <code>session_start()</code> har qanday HTML yoki <code>echo</code> chiqishidan OLDIN chaqirilishi shart, aks holda xatolik beradi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#form" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Formalar bilan Ishlash ($_GET va $_POST)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PHP | 16 / 25</span>
+      <a href="#fayl" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Fayllarni Serverga Yuklash ($_FILES) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Web</span>
+      <span style="font-size:12px; color:var(--text2);">PHP Mavzu #17</span>
+    </div>
+    <h2 id="fayl" style="color:#777bb4; margin-top:0; font-size:24px;">Fayllarni Serverga Yuklash ($_FILES)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Foydalanuvchilar tomonidan rasm, hujjat yoki videolarni serverga yuklash uchun HTML formasi <code>enctype="multipart/form-data"</code> ga ega bo'lishi va PHP da <code>$_FILES</code> massivi ishlatilishi kerak.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>$_FILES['rasm']['name']</code> — faylning asl nomi.</li>
+      <li><code>$_FILES['rasm']['tmp_name']</code> — serverdagi vaqtinchalik saqlangan joyi.</li>
+      <li><code>$_FILES['rasm']['size']</code> — baytlardagi hajmi.</li>
+      <li>Ko'chirish: <code>move_uploaded_file($tmp, $maqsad)</code>.</li>
+      <li>Xavfsizlik: faqat ruxsat etilgan kengaytmalarni (jpg, png, pdf) qabul qilish kerak.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PHP 8 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('phpCode17')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('phpCode17','phpRes17')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="phpCode17" contenteditable="true" spellcheck="false">&lt;?php
+// Yuklash mantiqi namunasi
+$ruxsat = ['image/jpeg', 'image/png'];
+$faylTuri = 'image/jpeg';
+$faylHajmi = 1024 * 500; // 500 KB
+
+if (in_array($faylTuri, $ruxsat) &amp;&amp; $faylHajmi &lt; 2000000) {
+    echo "✅ Fayl talablarga to'liq javob beradi va yuklandi!";
+} else {
+    echo "❌ Noto'g'ri format yoki katta hajm!";
+}
+?&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="phpRes17">
+      <div class="result-label">🖥️ Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PHP 8.3 Server Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;✅ Fayl talablarga to'liq javob beradi va yuklandi!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">⚠️ Fayllar nomini saqlashda ularni <code>uniqid()</code> bilan yangilash boshqa fayllar ustidan yozilib ketishini oldini oladi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#session" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Session va Cookie (Sessiyalar)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PHP | 17 / 25</span>
+      <a href="#email" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Email Yuborish (mail va PHPMailer) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Web</span>
+      <span style="font-size:12px; color:var(--text2);">PHP Mavzu #18</span>
+    </div>
+    <h2 id="email" style="color:#777bb4; margin-top:0; font-size:24px;">Email Yuborish (mail va PHPMailer)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">PHP da xatlarni yuborish uchun oddiy <code>mail()</code> funksiyasi bor, ammo zamonaviy loyihalarda SMTP orqali xavfsiz va kafolatli yuboruvchi <strong>PHPMailer</strong> kutubxonasi ishlatiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Standart: <code>mail($qayerga, $mavzu, $xat, $headers)</code>.</li>
+      <li>PHPMailer — Gmail, Yandex yoki shaxsiy pochta serverlari (SMTP) orqali yuboradi.</li>
+      <li>HTML xatlar va fayllarni ilova (attachment) qilib yuborish imkoniyati.</li>
+      <li>Spam papkasiga tushib qolmaslik uchun to'g'ri SMTP sozlamalari zarur.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PHP 8 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('phpCode18')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('phpCode18','phpRes18')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="phpCode18" contenteditable="true" spellcheck="false">&lt;?php
+// PHPMailer ishlatish namunasi:
+// use PHPMailer\PHPMailer\PHPMailer;
+// $mail = new PHPMailer(true);
+// $mail-&gt;isSMTP();
+// $mail-&gt;Host = 'smtp.gmail.com';
+// $mail-&gt;SMTPAuth = true;
+// $mail-&gt;Username = 'info@sayt.uz';
+// $mail-&gt;Password = 'maxfiy-parol';
+// $mail-&gt;send();
+
+echo "Elektron pochta xabarnomalari tizimi sozlandi! ✉️";
+?&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="phpRes18">
+      <div class="result-label">🖥️ Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PHP 8.3 Server Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Elektron pochta xabarnomalari tizimi sozlandi! ✉️&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 Serverdagi oddiy <code>mail()</code> xatlari ko'pincha spam papkasiga tushadi, shuning uchun doim SMTP ishlating.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#fayl" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Fayllarni Serverga Yuklash ($_FILES)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PHP | 18 / 25</span>
+      <a href="#pdo" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: PDO (PHP Data Objects) — Xavfsiz Baza Ulanishi →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Ma'lumotlar Bazasi</span>
+      <span style="font-size:12px; color:var(--text2);">PHP Mavzu #19</span>
+    </div>
+    <h2 id="pdo" style="color:#777bb4; margin-top:0; font-size:24px;">PDO (PHP Data Objects) — Xavfsiz Baza Ulanishi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>PDO</strong> — PHP da ma'lumotlar bazalari (MySQL, PostgreSQL, SQLite) bilan ishlashning eng zamonaviy, universal va xavfsiz usulidir. U SQL Injection hujumlaridan to'liq himoyalaydi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Prepared Statements: so'rov va parametrlar alohida uzatiladi.</li>
+      <li>Turli bazalar uchun bir xil kod: MySQL dan PostgreSQL ga o'tish juda oson.</li>
+      <li>Ulanish: <code>new PDO("mysql:host=localhost;dbname=test", "root", "");</code></li>
+      <li>Xatoliklarni Exception sifatida ushlash imkoniyati.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PHP 8 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('phpCode19')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('phpCode19','phpRes19')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="phpCode19" contenteditable="true" spellcheck="false">&lt;?php
+try {
+    // Xotiradagi SQLite bazasiga ulanish
+    $pdo = new PDO("sqlite::memory:");
+    $pdo-&gt;setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    
+    // Prepared Statement orqali xavfsiz so'rov
+    // $stmt = $pdo-&gt;prepare("SELECT * FROM users WHERE email = :email");
+    // $stmt-&gt;execute(['email' =&gt; 'ali@mail.uz']);
+    
+    echo "✅ PDO orqali bazaga xavfsiz ulanish muvaffaqiyatli!";
+} catch (PDOException $e) {
+    echo "Xatolik: " . $e-&gt;getMessage();
+}
+?&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="phpRes19">
+      <div class="result-label">🖥️ Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PHP 8.3 Server Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;✅ PDO orqali bazaga xavfsiz ulanish muvaffaqiyatli!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 Hech qachon foydalanuvchi ma'lumotini SQL satriga qo'shib yozmang (<code>SELECT ... WHERE id = $id</code>) — doim PDO prepare ishlating!</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#email" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Email Yuborish (mail va PHPMailer)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PHP | 19 / 25</span>
+      <a href="#mysqli" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: MySQLi Kengaytmasi →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Ma'lumotlar Bazasi</span>
+      <span style="font-size:12px; color:var(--text2);">PHP Mavzu #20</span>
+    </div>
+    <h2 id="mysqli" style="color:#777bb4; margin-top:0; font-size:24px;">MySQLi Kengaytmasi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>MySQLi (MySQL Improved)</strong> — faqat MySQL ma'lumotlar bazasi bilan ishlash uchun mo'ljallangan maxsus kengaytma bo'lib, ham protsedurali, ham obyektga yo'naltirilgan uslubda ishlaydi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Ulanish: <code>$conn = new mysqli('localhost', 'root', '', 'baza_nomi');</code></li>
+      <li>So'rov bajarish: <code>$result = $conn-&gt;query("SELECT ...");</code></li>
+      <li>Natijalarni olish: <code>$row = $result-&gt;fetch_assoc();</code></li>
+      <li>Faqat MySQL bilan ishlayotgan loyihalarda juda tezkor.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PHP 8 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('phpCode20')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('phpCode20','phpRes20')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="phpCode20" contenteditable="true" spellcheck="false">&lt;?php
+// Obyektga yo'naltirilgan MySQLi ulanish namunasi
+// $db = new mysqli("localhost", "root", "", "test_db");
+// if ($db-&gt;connect_error) {
+//     die("Ulanishda xatolik: " . $db-&gt;connect_error);
+// }
+
+echo "MySQLi kengaytmasi tayyor va tezkor!";
+?&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="phpRes20">
+      <div class="result-label">🖥️ Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PHP 8.3 Server Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;MySQLi kengaytmasi tayyor va tezkor!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 Agar kelajakda boshqa bazaga (masalan, PostgreSQL) o'tish ehtimoli bo'lsa, MySQLi o'rniga PDO tanlagan ma'qul.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#pdo" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: PDO (PHP Data Objects) — Xavfsiz Baza Ulanishi</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PHP | 20 / 25</span>
+      <a href="#crud-php" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: CRUD Amallar (Create, Read, Update, Delete) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Ma'lumotlar Bazasi</span>
+      <span style="font-size:12px; color:var(--text2);">PHP Mavzu #21</span>
+    </div>
+    <h2 id="crud-php" style="color:#777bb4; margin-top:0; font-size:24px;">CRUD Amallar (Create, Read, Update, Delete)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Har qanday axborot tizimining asosi <strong>CRUD</strong> amallaridir: Ma'lumot yaratish (Insert), o'qish (Select), yangilash (Update) va o'chirish (Delete).</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Create: <code>INSERT INTO kurslar (nom) VALUES (:nom)</code></li>
+      <li>Read: <code>SELECT * FROM kurslar ORDER BY id DESC</code></li>
+      <li>Update: <code>UPDATE kurslar SET narx = :narx WHERE id = :id</code></li>
+      <li>Delete: <code>DELETE FROM kurslar WHERE id = :id</code></li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PHP 8 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('phpCode21')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('phpCode21','phpRes21')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="phpCode21" contenteditable="true" spellcheck="false">&lt;?php
+// CRUD namunaviy mantiqi
+$amallar = [
+    "Create" =&gt; "INSERT INTO talabalar (ism) VALUES ('Malika')",
+    "Read"   =&gt; "SELECT * FROM talabalar WHERE ball &gt; 80",
+    "Update" =&gt; "UPDATE talabalar SET ball = 90 WHERE id = 1",
+    "Delete" =&gt; "DELETE FROM talabalar WHERE id = 5"
+];
+
+echo "PHP da 4 ta asosiy CRUD amallari:\n";
+foreach ($amallar as $nom =&gt; $sql) {
+    echo " [$nom] -&gt; $sql\n";
+}
+?&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="phpRes21">
+      <div class="result-label">🖥️ Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PHP 8.3 Server Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;PHP da 4 ta asosiy CRUD amallari:
+ [Create] -&gt; INSERT INTO talabalar (ism) VALUES ('Malika')
+ [Read] -&gt; SELECT * FROM talabalar WHERE ball &gt; 80
+ [Update] -&gt; UPDATE talabalar SET ball = 90 WHERE id = 1
+ [Delete] -&gt; DELETE FROM talabalar WHERE id = 5&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 Barcha CRUD amallarida ma'lumotlar xavfsizligini ta'minlash uchun Prepared Statements qo'llanilishi shart.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#mysqli" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: MySQLi Kengaytmasi</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PHP | 21 / 25</span>
+      <a href="#composer" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Composer — PHP Paketlar Menejeri →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Ilg'or</span>
+      <span style="font-size:12px; color:var(--text2);">PHP Mavzu #22</span>
+    </div>
+    <h2 id="composer" style="color:#777bb4; margin-top:0; font-size:24px;">Composer — PHP Paketlar Menejeri</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Composer</strong> — zamonaviy PHP dasturlashning asosi bo'lib, Node.js dagi NPM kabi tashqi kutubxonalarni (PHPMailer, Carbon, Guzzle) o'rnatish va avtomatik yuklashni (Autoloading) boshqaradi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Loyiha boshlash: <code>composer init</code>.</li>
+      <li>Paket o'rnatish: <code>composer require nesbot/carbon</code>.</li>
+      <li>Avtomatik ulash: butun loyiha uchun faqat bitta <code>require 'vendor/autoload.php';</code> kifoya!</li>
+      <li><code>composer.json</code> — barcha talab qilinuvchi paketlarni saqlaydi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PHP 8 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('phpCode22')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('phpCode22','phpRes22')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="phpCode22" contenteditable="true" spellcheck="false">{
+  "name": "w3learn/php-app",
+  "description": "W3Learn PHP backend loyihasi",
+  "require": {
+    "php": "^8.2",
+    "vlucas/phpdotenv": "^5.5",
+    "guzzlehttp/guzzle": "^7.8"
+  },
+  "autoload": {
+    "psr-4": {
+      "App\\": "src/"
+    }
+  }
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="phpRes22">
+      <div class="result-label">🖥️ Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PHP 8.3 Server Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;composer install buyrug'i barcha vendor paketlarni yuklab beradi.&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 PSR-4 avto-yuklash orqali har bir yangi klass faylini <code>require</code> qilib o'tirish shart emas — Composer o'zi topadi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#crud-php" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: CRUD Amallar (Create, Read, Update, Delete)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PHP | 22 / 25</span>
+      <a href="#laravel" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Laravel Freymvorkiga Kirish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Ilg'or</span>
+      <span style="font-size:12px; color:var(--text2);">PHP Mavzu #23</span>
+    </div>
+    <h2 id="laravel" style="color:#777bb4; margin-top:0; font-size:24px;">Laravel Freymvorkiga Kirish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Laravel</strong> — dunyodagi eng nafis va mashhur PHP freymvorki. U MVC (Model-View-Controller) arxitekturasida ishlaydi va autentifikatsiya, routing, ORM (Eloquent), navbatlar (queues) kabi barcha qurollarni tayyor taqdim etadi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Yangi loyiha yaratish: <code>composer create-project laravel/laravel mening-sayt</code>.</li>
+      <li>Artisan CLI: <code>php artisan serve</code> — serverni ishga tushiradi.</li>
+      <li>Eloquent ORM: ma'lumotlar bazasi bilan eng qulay ishlash usuli.</li>
+      <li>Blade shablonlashtiruvchisi: chiroyli va qulay HTML interfeyslar.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PHP 8 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('phpCode23')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('phpCode23','phpRes23')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="phpCode23" contenteditable="true" spellcheck="false">// Laravel Marshrut namunasi (routes/web.php)
+// Route::get('/talabalar', function () {
+//     return Talaba::all();
+// });
+
+echo "Laravel — veb-hunarmandlar uchun mo'ljallangan freymvork! 🚀";</pre>
+      </div>
+    </div>
+    <div class="result-box" id="phpRes23">
+      <div class="result-label">🖥️ Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PHP 8.3 Server Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Laravel — veb-hunarmandlar uchun mo'ljallangan freymvork! 🚀&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 Dunyodagi eng ko'p ish o'rinlariga ega bo'lgan PHP texnologiyasi aynan Laravel hisoblanadi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#composer" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Composer — PHP Paketlar Menejeri</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PHP | 23 / 25</span>
+      <a href="#api-php" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: PHP da REST API Yaratish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Ilg'or</span>
+      <span style="font-size:12px; color:var(--text2);">PHP Mavzu #24</span>
+    </div>
+    <h2 id="api-php" style="color:#777bb4; margin-top:0; font-size:24px;">PHP da REST API Yaratish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">PHP yordamida mobil ilovalar va Frontend (React, Vue) uchun JSON formatida javob qaytaruvchi tezkor REST API lar qurish mumkin.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Sarlavhani sozlash: <code>header('Content-Type: application/json; charset=utf-8');</code></li>
+      <li>JSON qaytarish: <code>echo json_encode($malumot);</code></li>
+      <li>Kelgan JSON ni o'qish: <code>$data = json_decode(file_get_contents('php://input'), true);</code></li>
+      <li>Status kodlarni belgilash: <code>http_response_code(200);</code></li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PHP 8 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('phpCode24')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('phpCode24','phpRes24')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="phpCode24" contenteditable="true" spellcheck="false">&lt;?php
+header('Content-Type: application/json');
+
+$javob = [
+    "status" =&gt; 200,
+    "xabar" =&gt; "PHP REST API muvaffaqiyatli ishladi",
+    "vaqt" =&gt; date('Y-m-d H:i:s'),
+    "kurslar" =&gt; ["HTML", "CSS", "PHP", "Laravel"]
+];
+
+echo json_encode($javob, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE);
+?&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="phpRes24">
+      <div class="result-label">🖥️ Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PHP 8.3 Server Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;{
+    "status": 200,
+    "xabar": "PHP REST API muvaffaqiyatli ishladi",
+    "vaqt": "2026-11-23 14:00:00",
+    "kurslar": [
+        "HTML",
+        "CSS",
+        "PHP",
+        "Laravel"
+    ]
+}&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 <code>JSON_UNESCAPED_UNICODE</code> parametri o'zbekcha so'zlarni <code>\u0430...</code> kabi kodlarga aylanmasdan toza chiqishini ta'minlaydi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#laravel" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Laravel Freymvorkiga Kirish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PHP | 24 / 25</span>
+      <a href="#security" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Veb Xavfsizlik (SQL Injection, XSS, CSRF) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Ilg'or</span>
+      <span style="font-size:12px; color:var(--text2);">PHP Mavzu #25</span>
+    </div>
+    <h2 id="security" style="color:#777bb4; margin-top:0; font-size:24px;">Veb Xavfsizlik (SQL Injection, XSS, CSRF)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Saytni buzg'unchilar (hackerlar) hujumidan himoya qilish har bir backend dasturchining birinchi galdagi vazifasidir.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>SQL Injection dan himoya: PDO Prepared Statements ishlatish.</li>
+      <li>XSS (Cross-Site Scripting) dan himoya: matnlarni <code>htmlspecialchars()</code> bilan tozalash.</li>
+      <li>CSRF (Cross-Site Request Forgery) dan himoya: har bir formaga maxfiy token qo'yish.</li>
+      <li>Parollarni himoyalash: <code>password_hash()</code> va <code>password_verify()</code> dan foydalanish.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PHP 8 Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('phpCode25')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('phpCode25','phpRes25')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="phpCode25" contenteditable="true" spellcheck="false">&lt;?php
+// Parolni xavfsiz shifrlash
+$parol = "maxfiy123";
+$xesh = password_hash($parol, PASSWORD_BCRYPT);
+
+echo "Xavfsiz xesh: " . substr($xesh, 0, 30) . "...\n";
+
+// Tekshirish
+if (password_verify("maxfiy123", $xesh)) {
+    echo "✅ Parol to'g'ri, xavfsiz kirish tasdiqlandi!";
+}
+?&gt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="phpRes25">
+      <div class="result-label">🖥️ Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PHP 8.3 Server Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Xavfsiz xesh: $2y$10$wK1G8eXF7QYwX...
+✅ Parol to'g'ri, xavfsiz kirish tasdiqlandi!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">⚠️ Hech qachon parollarni <code>md5()</code> yoki <code>sha1()</code> bilan shifrlamang — bu usullar eskirgan va osonlikcha buziladi!</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#api-php" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: PHP da REST API Yaratish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PHP | 25 / 25</span>
+      <a href="java.html" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi kurs: Java Darslari →</a>
+    </div>
+  </section>
 
   <div class="quiz-box">
-    <div class="quiz-q">🧪 Test: PHP da o'zgaruvchilar qaysi belgi bilan boshlanadi?</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qr1')">@ belgisi</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, true, 'qr1')">$ belgisi</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qr1')"># belgisi</div>
-    <div class="quiz-result" id="qr1"></div>
+    <div class="quiz-q">🧪 Test: PHP tilida o'zgaruvchilar qaysi belgi bilan boshlanadi?</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'phpQr1')"># belgisi</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, true, 'phpQr1')">$ (dollar) belgisi</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'phpQr1')">@ belgisi</div>
+    <div class="quiz-result" id="phpQr1"></div>
   </div>
-  
 
-<div class="nav-btns">
-  <a href="nodejs.html" class="btn-prev">&#8592; Node.js</a>
-  <a href="java.html" class="btn-next">Java &#8594;</a>
-</div>
+  <div class="nav-btns" style="margin-top: 30px;">
+    <a href="nodejs.html" class="btn-prev">← Node.js</a>
+    <a href="java.html" class="btn-next">Java Darsiga O'tish →</a>
+  </div>
+
+  <div class="note note-blue" style="margin-top: 25px;">
+    📌 <strong>Keyingi qadam:</strong> PHP va veb backendni o'rgangach, korporativ va bank tizimlarining asosi bo'lgan <a href="java.html" style="color:var(--green)">Java darslariga</a> o'ting!
+  </div>
 </main>
 <aside class="right-panel">
   <div class="rp-title">📈 Progress</div>

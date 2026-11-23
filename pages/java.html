@@ -69,148 +69,1563 @@
   </ul>
 </aside>
 <main class="main">
-  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">Java</a> › Java Nima?</div>
-  <h1 id="kirish">Java Nima?</h1>
-  <div class="meta-tags">
-    <span class="tag tag-green">⏱ 10 daqiqa</span>
-    <span class="tag tag-blue">🔴 Ilg'or</span>
-    <span class="tag tag-orange">👁 5,440 marta ko'rilgan</span>
-  </div>
-  <p><strong>Java</strong> — platforma mustaqil, OOP asosidagi dasturlash tili. "Write once, run anywhere" (Bir marta yoz, hamma joyda ishla) — Java ning asosiy tamoyili. Android, enterprise ilovalar, bank tizimlari va ko'plab yirik platformalarda qo'llaniladi.</p>
-  <div class="note">💡 <strong>Eslatma:</strong> Java kodi .java faylga yoziladi, JVM (Java Virtual Machine) tomonidan bajariladi.</div>
+  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">Java</a> › Barcha Mavzular</div>
 
-  <h2 id="hello">Hello World va Asoslar</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar"><span class="code-lang">Java</span>
-      <div class="code-actions"><button class="btn-copy" onclick="copyCode('code1')">📋 Nusxa</button></div>
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Asosiy</span>
+      <span style="font-size:12px; color:var(--text2);">Java Mavzu #1</span>
     </div>
-    <div class="code-body"><pre id="code1">// HelloWorld.java
-public class HelloWorld {
+    <h2 id="kirish" style="color:#e76f51; margin-top:0; font-size:24px;">Java Nima?</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Java</strong> — 1995-yilda Sun Microsystems (hozirda Oracle) tomonidan James Gosling boshchiligida yaratilgan dunyodagi eng kuchli, xavfsiz va platformadan mustaqil obyektga yo'naltirilgan dasturlash tilidir. U 'WORA' (Write Once, Run Anywhere — Bir marta yoz, istalgan joyda ishlat) shiori bilan mashhur.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Platforma mustaqilligi: kod baytkodga (Bytecode) aylanadi va istalgan JVM (Java Virtual Machine) da bir xil ishlaydi.</li>
+      <li>Qat'iy tiplashtirilgan (Statically typed) va to'liq OOP tamoyillariga asoslangan.</li>
+      <li>Dunyo bo'ylab 3 milliarddan ortiq qurilmalarda ishlaydi (Android, bank tizimlari, kosmik va korporativ ilovalar).</li>
+      <li>Katta kompaniyalar (Google, Amazon, Netflix, Uber) backend va bulut arxitekturasida yetakchi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Java Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('javaCode1')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('javaCode1','javaRes1')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="javaCode1" contenteditable="true" spellcheck="false">public class Main {
     public static void main(String[] args) {
-        // Chiqarish
-        System.out.println("Salom, Dunyo!");
-
-        // O'zgaruvchilar
-        String ism = "Ali";
-        int yosh = 25;
-        double baland = 1.75;
-        boolean faol = true;
-
-        System.out.printf("Ism: %s, Yosh: %d%n", ism, yosh);
-
-        // Massiv
-        int[] sonlar = {1, 2, 3, 4, 5};
-        for (int son : sonlar) {
-            System.out.print(son + " ");
-        }
-
-        // ArrayList
-        java.util.ArrayList&lt;String&gt; ismlar = new java.util.ArrayList&lt;&gt;();
-        ismlar.add("Ali");
-        ismlar.add("Zulfiya");
-        ismlar.add("Kamol");
-        System.out.println("\nSon: " + ismlar.size());
+        System.out.println("Salom, Java Dunyosi! ☕");
+        System.out.println("Java bilan kuchli va xavfsiz dasturlar yarating.");
+        
+        int x = 25;
+        int y = 75;
+        System.out.println("Natija: " + (x + y));
     }
-}</pre></div>
-  </div>
-
-  <h2 id="class">OOP — Klasslar</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar"><span class="code-lang">Java (OOP)</span>
-      <div class="code-actions"><button class="btn-copy" onclick="copyCode('code2')">📋 Nusxa</button></div>
+}</pre>
+      </div>
     </div>
-    <div class="code-body"><pre id="code2">// Foydalanuvchi.java
-public class Foydalanuvchi {
-    // Maydonlar (private — inkapsulyatsiya)
-    private String ism;
-    private String email;
-    protected int yosh;
+    <div class="result-box" id="javaRes1">
+      <div class="result-label">🖥️ JVM Chiqish Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;☕ Java JVM Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Salom, Java Dunyosi! ☕
+Java bilan kuchli va xavfsiz dasturlar yarating.
+Natija: 100&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
 
-    // Konstruktor
-    public Foydalanuvchi(String ism, String email, int yosh) {
-        this.ism = ism;
-        this.email = email;
-        this.yosh = yosh;
+    <div class="note" style="margin-top:16px;">💡 Java faylining nomi undagi <code>public class</code> nomi bilan bir xil bo'lishi shart (masalan, <code>Main.java</code>).</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="php.html" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← PHP Darslari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Java | 1 / 27</span>
+      <a href="#install" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: JDK ni O'rnatish va Sozlash →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">O'rnatish</span>
+      <span style="font-size:12px; color:var(--text2);">Java Mavzu #2</span>
+    </div>
+    <h2 id="install" style="color:#e76f51; margin-top:0; font-size:24px;">JDK ni O'rnatish va Sozlash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Java da dasturlash uchun <strong>JDK (Java Development Kit)</strong> kerak bo'ladi. U o'z ichiga kompilyator (javac), standart kutubxonalar va JVM ni oladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Oracle JDK yoki ochiq manbali <strong>OpenJDK</strong> (masalan, Temurin/Adoptium) tavsiya etiladi.</li>
+      <li>Terminalda tekshirish: <code>java -version</code> va <code>javac -version</code>.</li>
+      <li>Muhit o'zgaruvchisi (Environment Variable): <code>JAVA_HOME</code> to'g'ri o'rnatilishi lozim.</li>
+      <li>Eng qulay IDE vositalari: <strong>IntelliJ IDEA</strong> (tavsiya etiladi), Eclipse yoki VS Code.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Java Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('javaCode2')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('javaCode2','javaRes2')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="javaCode2" contenteditable="true" spellcheck="false"># Terminalda tekshirish:
+# $ java -version
+# openjdk version "21.0.2" 2024-01-16 LTS
+
+# Kompilyatsiya qilish:
+# $ javac Main.java  -&gt; Main.class (baytkod) yaratadi
+
+# Ishga tushirish:
+# $ java Main</pre>
+      </div>
+    </div>
+    <div class="result-box" id="javaRes2">
+      <div class="result-label">🖥️ JVM Chiqish Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;☕ Java JVM Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;JDK muvaffaqiyatli o'rnatildi va tayyor!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">⚡ Java 21 LTS hozirgi kunda eng barqaror va zamonaviy qo'llab-quvvatlanuvchi versiya hisoblanadi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#kirish" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Java Nima?</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Java | 2 / 27</span>
+      <a href="#hello" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Birinchi Dastur (Hello World Strukturasi) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Asoslar</span>
+      <span style="font-size:12px; color:var(--text2);">Java Mavzu #3</span>
+    </div>
+    <h2 id="hello" style="color:#e76f51; margin-top:0; font-size:24px;">Birinchi Dastur (Hello World Strukturasi)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Har bir Java dasturi kamida bitta klassdan va uning ichidagi <code>main()</code> kirish nuqtasidan (entry point) boshlanadi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>public static void main(String[] args)</code> — dasturning eng birinchi ishga tushuvchi yuragi.</li>
+      <li><code>public</code> — hamma joydan chaqirsa bo'ladi.</li>
+      <li><code>static</code> — obyekt yaratmasdan to'g'ridan-to'g'ri chaqirish imkonini beradi.</li>
+      <li><code>void</code> — hech qanday natija qaytarmaydi.</li>
+      <li><code>System.out.println()</code> — ma'lumotni yangi qatorda ekranga chiqaradi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Java Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('javaCode3')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('javaCode3','javaRes3')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="javaCode3" contenteditable="true" spellcheck="false">public class Salomlashish {
+    public static void main(String[] args) {
+        // Konsolga chiqarish
+        System.out.print("Birinchi qator... ");
+        System.out.println("Davomi birga.");
+        System.out.println("W3Learn Java kursi boshlandi!");
     }
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="javaRes3">
+      <div class="result-label">🖥️ JVM Chiqish Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;☕ Java JVM Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Birinchi qator... Davomi birga.
+W3Learn Java kursi boshlandi!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
 
-    // Getter va Setter metodlar
-    public String getIsm() { return ism; }
-    public void setIsm(String ism) { this.ism = ism; }
+    <div class="note" style="margin-top:16px;">📌 <code>print()</code> yangi qatorga o'tmaydi, <code>println()</code> esa chop etgach yangi qatorga tushadi.</div>
 
-    // toString override
-    @Override
-    public String toString() {
-        return String.format("Foydalanuvchi{ism='%s', email='%s', yosh=%d}", ism, email, yosh);
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#install" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: JDK ni O'rnatish va Sozlash</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Java | 3 / 27</span>
+      <a href="#ozgaruvchi" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: O'zgaruvchilar va Primitiv Turlar →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Asoslar</span>
+      <span style="font-size:12px; color:var(--text2);">Java Mavzu #4</span>
+    </div>
+    <h2 id="ozgaruvchi" style="color:#e76f51; margin-top:0; font-size:24px;">O'zgaruvchilar va Primitiv Turlar</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Java qat'iy tiplashtirilgan til bo'lgani sababli, har bir o'zgaruvchining turi oldindan aniq belgilanishi shart. Java da 8 ta primitiv tur mavjud.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Butun sonlar: <code>byte</code> (1 bayt), <code>short</code> (2 bayt), <code>int</code> (4 bayt — eng ko'p ishlatiladigani), <code>long</code> (8 bayt, 'L' bilan).</li>
+      <li>Haqiqiy sonlar: <code>float</code> (4 bayt, 'f' bilan), <code>double</code> (8 bayt).</li>
+      <li>Belgi va mantiq: <code>char</code> ('A' — bitta belgi), <code>boolean</code> (true/false).</li>
+      <li>Java 10 dan boshlab mahalliy o'zgaruvchilarda <code>var</code> kalit so'zi bilan avto-aniqlash mumkin.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Java Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('javaCode4')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('javaCode4','javaRes4')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="javaCode4" contenteditable="true" spellcheck="false">public class Turlar {
+    public static void main(String[] args) {
+        int yosh = 24;
+        double narx = 99.95;
+        char belgi = 'J';
+        boolean talabami = true;
+        long aholi = 8000000000L;
+
+        // var bilan (Java 10+)
+        var ism = "Quvondiq";
+
+        System.out.println("Ism: " + ism);
+        System.out.println("Yosh: " + yosh + ", Narx: " + narx);
+        System.out.println("Belgi: " + belgi + ", Holat: " + talabami);
     }
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="javaRes4">
+      <div class="result-label">🖥️ JVM Chiqish Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;☕ Java JVM Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Ism: Quvondiq
+Yosh: 24, Narx: 99.95
+Belgi: J, Holat: true&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
 
-    public boolean voyagaYetganmi() {
-        return yosh >= 18;
+    <div class="note" style="margin-top:16px;">💡 O'zgarmas qiymat (konstanta) yaratish uchun <code>final</code> so'zi qo'yiladi: <code>final double PI = 3.14159;</code>.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#hello" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Birinchi Dastur (Hello World Strukturasi)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Java | 4 / 27</span>
+      <a href="#operatorlar" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Operatorlar (Arifmetik, Mantiqiy, Bitwise) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Asoslar</span>
+      <span style="font-size:12px; color:var(--text2);">Java Mavzu #5</span>
+    </div>
+    <h2 id="operatorlar" style="color:#e76f51; margin-top:0; font-size:24px;">Operatorlar (Arifmetik, Mantiqiy, Bitwise)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Matematik hisoblar va mantiqiy xulosalar chiqarish uchun qo'llaniladigan operatorlar to'plami.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Arifmetik: <code>+</code>, <code>-</code>, <code>*</code>, <code>/</code>, <code>%</code> (qoldiq).</li>
+      <li>Inkrement/Dekrement: <code>x++</code>, <code>++x</code>, <code>x--</code>.</li>
+      <li>Taqqoslovchi: <code>==</code>, <code>!=</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>.</li>
+      <li>Mantiqiy: <code>&amp;&amp;</code> (VA), <code>||</code> (YOKI), <code>!</code> (INKOR).</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Java Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('javaCode5')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('javaCode5','javaRes5')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="javaCode5" contenteditable="true" spellcheck="false">public class OperatorTest {
+    public static void main(String[] args) {
+        int a = 19;
+        int b = 4;
+
+        System.out.println("Bo'lish (butun): " + (a / b));
+        System.out.println("Qoldiq: " + (a % b));
+
+        boolean shart = (a &gt; 10) &amp;&amp; (b &lt; 5);
+        System.out.println("Mantiqiy shart to'g'rimi? " + shart);
+    }
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="javaRes5">
+      <div class="result-label">🖥️ JVM Chiqish Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;☕ Java JVM Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Bo'lish (butun): 4
+Qoldiq: 3
+Mantiqiy shart to'g'rimi? true&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 Butun sonni butun songa bo'lganda (19 / 4), kasr qismi tashlab yuborilib 4 chiqadi. Kasr olish uchun <code>(double) a / b</code> deb yoziladi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#ozgaruvchi" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: O'zgaruvchilar va Primitiv Turlar</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Java | 5 / 27</span>
+      <a href="#shartlar" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Shartlar (if, else, switch-case) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Asoslar</span>
+      <span style="font-size:12px; color:var(--text2);">Java Mavzu #6</span>
+    </div>
+    <h2 id="shartlar" style="color:#e76f51; margin-top:0; font-size:24px;">Shartlar (if, else, switch-case)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Dasturning turli shartlar asosida turli yo'nalishda davom etishini ta'minlovchi konstruksiyalar. Java 14+ da yangi qulay Switch Expression kiritilgan.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>if (shart) { ... } else if (boshqaShart) { ... } else { ... }</code></li>
+      <li>Klassik switch-case: <code>switch(qiymat) { case 1: ... break; }</code></li>
+      <li>Zamonaviy Switch Expression: <code>case 1 -&gt; "Natija";</code> (break shart emas!).</li>
+      <li>Ternar operator: <code>String status = (ball &gt;= 60) ? "O'tdi" : "Yiqildi";</code></li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Java Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('javaCode6')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('javaCode6','javaRes6')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="javaCode6" contenteditable="true" spellcheck="false">public class ShartTest {
+    public static void main(String[] args) {
+        int faslRaqami = 2;
+
+        // Zamonaviy Switch Expression (Java 14+)
+        String faslNomi = switch (faslRaqami) {
+            case 1 -&gt; "Bahor";
+            case 2 -&gt; "Yoz";
+            case 3 -&gt; "Kuz";
+            case 4 -&gt; "Qish";
+            default -&gt; "Noma'lum fasl";
+        };
+
+        System.out.println("Tanlangan fasl: " + faslNomi);
+    }
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="javaRes6">
+      <div class="result-label">🖥️ JVM Chiqish Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;☕ Java JVM Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Tanlangan fasl: Yoz&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 Yangi <code>case -&gt;</code> sintaksisida o'z-o'zidan break bo'ladi va pastga tushib ketish (fall-through) xatolari yuz bermaydi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#operatorlar" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Operatorlar (Arifmetik, Mantiqiy, Bitwise)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Java | 6 / 27</span>
+      <a href="#sikllar" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Sikllar (for, while, do-while, for-each) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Asoslar</span>
+      <span style="font-size:12px; color:var(--text2);">Java Mavzu #7</span>
+    </div>
+    <h2 id="sikllar" style="color:#e76f51; margin-top:0; font-size:24px;">Sikllar (for, while, do-while, for-each)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Amallarni bir necha bor takrorlash uchun sikllardan foydalaniladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Standart: <code>for (int i = 0; i &lt; n; i++)</code></li>
+      <li>Kengaytirilgan (For-Each): <code>for (String element : to'plam)</code></li>
+      <li><code>while (shart)</code> — oldindan tekshiruvchi sikl.</li>
+      <li><code>do { ... } while (shart);</code> — kamida 1 marta bajarilishi kafolatlangan sikl.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Java Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('javaCode7')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('javaCode7','javaRes7')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="javaCode7" contenteditable="true" spellcheck="false">public class SiklTest {
+    public static void main(String[] args) {
+        String[] tillar = {"Java", "Python", "Kotlin", "Go"};
+
+        System.out.println("For-each orqali aylanish:");
+        for (String til : tillar) {
+            System.out.println(" • " + til);
+        }
+    }
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="javaRes7">
+      <div class="result-label">🖥️ JVM Chiqish Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;☕ Java JVM Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;For-each orqali aylanish:
+ • Java
+ • Python
+ • Kotlin
+ • Go&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 To'plam elementlarini o'zgartirish shart bo'lmasa, doimo indeksli for o'rniga for-each afzal hisoblanadi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#shartlar" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Shartlar (if, else, switch-case)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Java | 7 / 27</span>
+      <a href="#massiv" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Massivlar (Arrays) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Asoslar</span>
+      <span style="font-size:12px; color:var(--text2);">Java Mavzu #8</span>
+    </div>
+    <h2 id="massiv" style="color:#e76f51; margin-top:0; font-size:24px;">Massivlar (Arrays)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Massiv — bir xil turdagi ma'lumotlarni qat'iy belgilangan o'lchamda saqlovchi obyekt. Java da massiv o'lchami yaratilgach o'zgarmaydi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>E'lon qilish: <code>int[] sonlar = new int[5];</code> yoki <code>int[] sonlar = {10, 20, 30};</code></li>
+      <li>Uzunlik: <code>sonlar.length</code> (qavssiz maydon).</li>
+      <li>Ko'p o'lchovli massivlar: <code>int[][] matritsa = new int[3][3];</code></li>
+      <li><code>java.util.Arrays</code> yordamchi klassi: <code>Arrays.sort()</code>, <code>Arrays.toString()</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Java Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('javaCode8')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('javaCode8','javaRes8')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="javaCode8" contenteditable="true" spellcheck="false">import java.util.Arrays;
+
+public class MassivTest {
+    public static void main(String[] args) {
+        int[] ballar = {88, 95, 72, 100, 64};
+
+        // Saralash
+        Arrays.sort(ballar);
+
+        System.out.println("Saralangan massiv: " + Arrays.toString(ballar));
+        System.out.println("Eng past ball: " + ballar[0]);
+        System.out.println("Eng yuqori ball: " + ballar[ballar.length - 1]);
+    }
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="javaRes8">
+      <div class="result-label">🖥️ JVM Chiqish Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;☕ Java JVM Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Saralangan massiv: [64, 72, 88, 95, 100]
+Eng past ball: 64
+Eng yuqori ball: 100&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 Agar dinamik o'zgaruvchan o'lchamli ro'yxat kerak bo'lsa, massiv o'rniga <code>ArrayList</code> ishlatiladi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#sikllar" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Sikllar (for, while, do-while, for-each)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Java | 8 / 27</span>
+      <a href="#matn" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: String va StringBuilder →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Asoslar</span>
+      <span style="font-size:12px; color:var(--text2);">Java Mavzu #9</span>
+    </div>
+    <h2 id="matn" style="color:#e76f51; margin-top:0; font-size:24px;">String va StringBuilder</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Java da <code>String</code> o'zgarmas (immutable) hisoblanadi. Agar satrni tsikl ichida ko'p marta o'zgartirish kerak bo'lsa, xotirani tejash uchun <code>StringBuilder</code> dan foydalanish shart.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Taqqoslash: satrlarni hech qachon <code>==</code> bilan taqqoslamang! Doim <code>str1.equals(str2)</code> ishlating.</li>
+      <li>Asosiy metodlar: <code>length()</code>, <code>charAt()</code>, <code>substring()</code>, <code>contains()</code>, <code>toUpperCase()</code>.</li>
+      <li><code>StringBuilder</code> — tezkor va o'zgaruvchan satr konstruktori (<code>append()</code>).</li>
+      <li>String Pool — bir xil matnlar uchun xotirada bitta joy ajratiladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Java Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('javaCode9')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('javaCode9','javaRes9')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="javaCode9" contenteditable="true" spellcheck="false">public class StringTest {
+    public static void main(String[] args) {
+        String s1 = "Java";
+        String s2 = new String("Java");
+
+        System.out.println("equals bilan: " + s1.equals(s2)); // true
+        System.out.println("== bilan: " + (s1 == s2));         // false!
+
+        // StringBuilder namunasi
+        StringBuilder sb = new StringBuilder();
+        sb.append("W3Learn ").append("Java ").append(2026);
+        System.out.println("Qurilgan satr: " + sb.toString());
+    }
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="javaRes9">
+      <div class="result-label">🖥️ JVM Chiqish Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;☕ Java JVM Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;equals bilan: true
+== bilan: false!
+Qurilgan satr: W3Learn Java 2026&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">⚠️ <code>==</code> ikkita satrning xotiradagi manzilini tekshiradi, <code>equals()</code> esa matnning o'zini solishtiradi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#massiv" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Massivlar (Arrays)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Java | 9 / 27</span>
+      <a href="#class" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: OOP — Klasslar va Obyektlar →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">OOP</span>
+      <span style="font-size:12px; color:var(--text2);">Java Mavzu #10</span>
+    </div>
+    <h2 id="class" style="color:#e76f51; margin-top:0; font-size:24px;">OOP — Klasslar va Obyektlar</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Java toza obyektga yo'naltirilgan dasturlash tilidir. Har qanday funksionallik klasslar (shablon) va obyektlar (nusxalar) orqali amalga oshiriladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Klass e'lon qilish: <code>public class Talaba { ... }</code></li>
+      <li>Maydonlar (Fields) — obyektning holati (ism, yosh).</li>
+      <li>Metodlar (Methods) — obyektning harakatlari (oqish, imtihonTopshirish).</li>
+      <li>Nusxa olish: <code>Talaba t = new Talaba();</code></li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Java Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('javaCode10')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('javaCode10','javaRes10')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="javaCode10" contenteditable="true" spellcheck="false">class Mashina {
+    String model;
+    int tezlik;
+
+    void gazniBos(int miqdor) {
+        tezlik += miqdor;
+        System.out.println(model + " tezligi: " + tezlik + " km/s");
     }
 }
 
-// Admin.java — Meros
-public class Admin extends Foydalanuvchi {
-    private String[] ruxsatlar;
+public class Main {
+    public static void main(String[] args) {
+        Mashina m = new Mashina();
+        m.model = "Malibu 2";
+        m.tezlik = 0;
 
-    public Admin(String ism, String email, int yosh, String[] ruxsatlar) {
-        super(ism, email, yosh); // Ota klassni chaqirish
-        this.ruxsatlar = ruxsatlar;
+        m.gazniBos(80);
+    }
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="javaRes10">
+      <div class="result-label">🖥️ JVM Chiqish Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;☕ Java JVM Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Malibu 2 tezligi: 80 km/s&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 Obyektlar Heap xotirada, ularning ko'rsatkichlari (references) esa Stack xotirada saqlanadi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#matn" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: String va StringBuilder</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Java | 10 / 27</span>
+      <a href="#konstruktor" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Konstruktorlar va this Kalit So'zi →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">OOP</span>
+      <span style="font-size:12px; color:var(--text2);">Java Mavzu #11</span>
+    </div>
+    <h2 id="konstruktor" style="color:#e76f51; margin-top:0; font-size:24px;">Konstruktorlar va this Kalit So'zi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Konstruktor</strong> — obyekt yaratilayotgan (<code>new</code>) paytda avtomatik ishga tushadigan va maydonlarga boshlang'ich qiymat beruvchi maxsus blokdir. Uning nomi klass nomi bilan aynan bir xil bo'ladi va qaytish turi yozilmaydi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Standart konstruktor (Default Constructor) — agar o'zingiz yozmasangiz, Java avtomatik bo'sh konstruktor beradi.</li>
+      <li>Parametrli konstruktor — qiymatlarni darhol yuklash imkonini beradi.</li>
+      <li>Konstruktor Overloading — bir nechta turli parametrli konstruktorlar yozish.</li>
+      <li><code>this</code> — joriy obyekt maydonini funksiya parametrlaridan ajratish uchun ishlatiladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Java Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('javaCode11')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('javaCode11','javaRes11')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="javaCode11" contenteditable="true" spellcheck="false">class Kitob {
+    String nom;
+    String muallif;
+    int narx;
+
+    // Konstruktor
+    public Kitob(String nom, String muallif, int narx) {
+        this.nom = nom;
+        this.muallif = muallif;
+        this.narx = narx;
+    }
+
+    void info() {
+        System.out.println("'" + nom + "' (" + muallif + ") - " + narx + " so'm");
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Kitob k = new Kitob("Dunyoning Ishlari", "O'tkir Hoshimov", 35000);
+        k.info();
+    }
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="javaRes11">
+      <div class="result-label">🖥️ JVM Chiqish Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;☕ Java JVM Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;'Dunyoning Ishlari' (O'tkir Hoshimov) - 35000 so'm&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 <code>this(...)</code> orqali bitta konstruktor ichidan boshqa konstruktorni chaqirish mumkin.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#class" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: OOP — Klasslar va Obyektlar</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Java | 11 / 27</span>
+      <a href="#meros" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Merosxo'rlik (Inheritance) va super →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">OOP</span>
+      <span style="font-size:12px; color:var(--text2);">Java Mavzu #12</span>
+    </div>
+    <h2 id="meros" style="color:#e76f51; margin-top:0; font-size:24px;">Merosxo'rlik (Inheritance) va super</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Merosxo'rlik</strong> — bir klass (bola klass) boshqa klassdagi (ota klass) barcha ochiq maydon va metodlarni <code>extends</code> so'zi orqali o'zlashtirib olishidir.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Sintaksis: <code>class Menecer extends Xodim { ... }</code></li>
+      <li><code>super</code> — ota klass konstruktori yoki metodini chaqirish.</li>
+      <li>Java da ko'p ota klassdan meros olish (Multiple Inheritance) taqiqlangan, faqat bitta klassdan meros olinadi.</li>
+      <li>Barcha Java klasslarining eng oliy ota klassi — <code>java.lang.Object</code> dir.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Java Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('javaCode12')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('javaCode12','javaRes12')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="javaCode12" contenteditable="true" spellcheck="false">class Xodim {
+    String ism;
+    double maosh;
+
+    public Xodim(String ism, double maosh) {
+        this.ism = ism;
+        this.maosh = maosh;
+    }
+
+    void ishla() {
+        System.out.println(ism + " vazifasini bajarmoqda.");
+    }
+}
+
+class Dasturchi extends Xodim {
+    String til;
+
+    public Dasturchi(String ism, double maosh, String til) {
+        super(ism, maosh); // Ota konstruktorini chaqirish
+        this.til = til;
     }
 
     @Override
-    public String toString() {
-        return "Admin: " + super.toString();
+    void ishla() {
+        System.out.println(ism + " " + til + " tilida yangi loyiha kodlamoqda!");
     }
-}</pre></div>
-  </div>
+}
 
-  <h2 id="streams">Streams API</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar"><span class="code-lang">Java (Streams)</span>
-      <div class="code-actions"><button class="btn-copy" onclick="copyCode('code3')">📋 Nusxa</button></div>
+public class Main {
+    public static void main(String[] args) {
+        Dasturchi dev = new Dasturchi("Bobur", 2500, "Java/Spring");
+        dev.ishla();
+    }
+}</pre>
+      </div>
     </div>
-    <div class="code-body"><pre id="code3">import java.util.Arrays;
-import java.util.List;
+    <div class="result-box" id="javaRes12">
+      <div class="result-label">🖥️ JVM Chiqish Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;☕ Java JVM Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Bobur Java/Spring tilida yangi loyiha kodlamoqda!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 <code>@Override</code> annotatsiyasi ota klass metodini to'g'ri qayta yozayotganingizni tekshirib turadi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#konstruktor" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Konstruktorlar va this Kalit So'zi</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Java | 12 / 27</span>
+      <a href="#polymorphism" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Polimorfizm (Polymorphism) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">OOP</span>
+      <span style="font-size:12px; color:var(--text2);">Java Mavzu #13</span>
+    </div>
+    <h2 id="polymorphism" style="color:#e76f51; margin-top:0; font-size:24px;">Polimorfizm (Polymorphism)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Polimorfizm</strong> ('ko'p shakllilik') — bitta umumiy interfeys yoki ota klass orqali turli xil obyektlarni boshqarish imkoniyatidir. Ikki xil bo'ladi: Compile-time (Overloading) va Runtime (Overriding).</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Method Overloading — bir xil nomli, lekin har xil parametrli metodlar.</li>
+      <li>Method Overriding — ota klass metodining bola klassda yangi xatti-harakatga ega bo'lishi.</li>
+      <li>Dinamik bog'lanish: <code>Hayvon h = new Kuchuk(); h.ovozBer();</code></li>
+      <li>Kodni o'ta moslashuvchan va kengaytirish oson qiladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Java Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('javaCode13')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('javaCode13','javaRes13')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="javaCode13" contenteditable="true" spellcheck="false">class Shakl {
+    void chiz() { System.out.println("Noma'lum shakl chizilmoqda."); }
+}
+
+class Doira extends Shakl {
+    @Override
+    void chiz() { System.out.println("⭕ Doira chizildi."); }
+}
+
+class Tortburchak extends Shakl {
+    @Override
+    void chiz() { System.out.println("⬛ To'rtburchak chizildi."); }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Shakl s1 = new Doira();
+        Shakl s2 = new Tortburchak();
+
+        s1.chiz();
+        s2.chiz();
+    }
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="javaRes13">
+      <div class="result-label">🖥️ JVM Chiqish Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;☕ Java JVM Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;⭕ Doira chizildi.
+⬛ To'rtburchak chizildi.&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 Ota klass ko'rsatkichi (reference) orqali bola klass obyektini boshqarish polimorfizmning eng yorqin namunasidir.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#meros" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Merosxo'rlik (Inheritance) va super</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Java | 13 / 27</span>
+      <a href="#encapsulation" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Inkapsulyatsiya (Getters & Setters) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">OOP</span>
+      <span style="font-size:12px; color:var(--text2);">Java Mavzu #14</span>
+    </div>
+    <h2 id="encapsulation" style="color:#e76f51; margin-top:0; font-size:24px;">Inkapsulyatsiya (Getters & Setters)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Inkapsulyatsiya</strong> — obyekt ma'lumotlarini (maydonlarini) to'g'ridan-to'g'ri tashqaridan o'zgartirishdan himoyalash va ularga faqat maxsus <code>getter</code> va <code>setter</code> metodlari orqali ruxsat berish tamoyilidir.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Maydonlar doimo <code>private</code> qilib yopiladi.</li>
+      <li>O'qish uchun: <code>public getIsm()</code>.</li>
+      <li>O'zgartirish uchun: <code>public setIsm(String ism)</code> — ichida tekshiruv (validatsiya) qo'yish mumkin.</li>
+      <li>Obyekt holatining buzilishi va noto'g'ri qiymatlar kiritilishini (masalan, manfiy yosh) oldini oladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Java Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('javaCode14')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('javaCode14','javaRes14')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="javaCode14" contenteditable="true" spellcheck="false">class BankHisobi {
+    private double balans;
+
+    public BankHisobi(double boshlangich) {
+        this.balans = boshlangich;
+    }
+
+    public double getBalans() {
+        return balans;
+    }
+
+    public void pulQosh(double summa) {
+        if (summa &gt; 0) {
+            balans += summa;
+            System.out.println("✅ " + summa + " so'm qo'shildi.");
+        } else {
+            System.out.println("❌ Noto'g'ri summa!");
+        }
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        BankHisobi hisob = new BankHisobi(100000);
+        hisob.pulQosh(50000);
+        System.out.println("Joriy balans: " + hisob.getBalans() + " so'm");
+    }
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="javaRes14">
+      <div class="result-label">🖥️ JVM Chiqish Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;☕ Java JVM Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;✅ 50000.0 so'm qo'shildi.
+Joriy balans: 150000.0 so'm&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 Zamonaviy Java da oddiy ma'lumot saqlovchi klasslar uchun <code>record</code> turi kiritilgan (u avtomatik getterlarni beradi).</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#polymorphism" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Polimorfizm (Polymorphism)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Java | 14 / 27</span>
+      <a href="#abstraktsiya" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Abstraktsiya va Abstrakt Klasslar →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">OOP</span>
+      <span style="font-size:12px; color:var(--text2);">Java Mavzu #15</span>
+    </div>
+    <h2 id="abstraktsiya" style="color:#e76f51; margin-top:0; font-size:24px;">Abstraktsiya va Abstrakt Klasslar</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Abstraktsiya</strong> — ichki murakkab detallarni yashirib, foydalanuvchiga faqat muhim va zarur funksionallikni ko'rsatishdir. <code>abstract</code> kalit so'zi bilan yaratiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>abstract class</code> — o'zidan to'g'ridan-to'g'ri <code>new</code> qilib obyekt olib bo'lmaydi.</li>
+      <li>Abstrakt metodlar tanasiz (kod blokisiz) bo'ladi va bolalari ularni yozishi shart.</li>
+      <li>Shu bilan birga oddiy (to'liq yozilgan) metodlarni ham saqlay oladi.</li>
+      <li>Umumiy shablon yaratishda juda qo'l keladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Java Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('javaCode15')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('javaCode15','javaRes15')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="javaCode15" contenteditable="true" spellcheck="false">abstract class Xabarchi {
+    abstract void yubor(String kimga, String matn); // Tanasi yo'q
+
+    void logYoz(String matn) { // Oddiy metod
+        System.out.println("Log: " + matn);
+    }
+}
+
+class TelegramBot extends Xabarchi {
+    @Override
+    void yubor(String kimga, String matn) {
+        System.out.println("📱 Telegram orqali @" + kimga + " ga: " + matn);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Xabarchi bot = new TelegramBot();
+        bot.yubor("avdurasulov", "Java darsi tayyor!");
+    }
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="javaRes15">
+      <div class="result-label">🖥️ JVM Chiqish Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;☕ Java JVM Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;📱 Telegram orqali @avdurasulov ga: Java darsi tayyor!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 Agar barcha metodlar tanasiz bo'lishi kerak bo'lsa, abstrakt klass o'rniga <code>Interface</code> afzalroqdir.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#encapsulation" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Inkapsulyatsiya (Getters & Setters)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Java | 15 / 27</span>
+      <a href="#interface-j" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Interface (Interfeyslar) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">OOP</span>
+      <span style="font-size:12px; color:var(--text2);">Java Mavzu #16</span>
+    </div>
+    <h2 id="interface-j" style="color:#e76f51; margin-top:0; font-size:24px;">Interface (Interfeyslar)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Interface</strong> — to'liq abstrakt shartnoma. Klasslar uni <code>implements</code> kalit so'zi orqali amalga oshiradi. Java da klass bir vaqtning o'zida bir nechta interfeyslarni qabul qilishi mumkin.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Ko'p merosxo'rlik muammosini hal qiladi (Multiple Inheritance).</li>
+      <li>Interfeysdagi barcha o'zgaruvchilar avtomatik <code>public static final</code> (konstanta) bo'ladi.</li>
+      <li>Barcha metodlar avtomatik <code>public abstract</code> hisoblanadi.</li>
+      <li>Java 8 dan boshlab <code>default</code> va <code>static</code> metodlar kiritilgan.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Java Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('javaCode16')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('javaCode16','javaRes16')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="javaCode16" contenteditable="true" spellcheck="false">interface Haydovchi {
+    void hayda();
+}
+
+interface Suzuvchi {
+    void suz();
+}
+
+// Ikkala interfeysni ham qabul qiladi
+class AmfibiyaMashina implements Haydovchi, Suzuvchi {
+    public void hayda() { System.out.println("🚗 Quruqlikda yurmoqda."); }
+    public void suz() { System.out.println("🚤 Suvda suzmoqda."); }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        AmfibiyaMashina amf = new AmfibiyaMashina();
+        amf.hayda();
+        amf.suz();
+    }
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="javaRes16">
+      <div class="result-label">🖥️ JVM Chiqish Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;☕ Java JVM Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;🚗 Quruqlikda yurmoqda.
+🚤 Suvda suzmoqda.&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 Java da eng mashhur interfeyslar: <code>Comparable</code>, <code>Runnable</code>, <code>Serializable</code>.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#abstraktsiya" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Abstraktsiya va Abstrakt Klasslar</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Java | 16 / 27</span>
+      <a href="#arraylist" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: ArrayList (Dinamik Massiv) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Collections</span>
+      <span style="font-size:12px; color:var(--text2);">Java Mavzu #17</span>
+    </div>
+    <h2 id="arraylist" style="color:#e76f51; margin-top:0; font-size:24px;">ArrayList (Dinamik Massiv)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>ArrayList</strong> — oddiy massivdan farqli ravishda, element qo'shilgan sari o'z hajmini avtomatik kattalashtirib boruvchi dinamik ro'yxatdir.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Import: <code>import java.util.ArrayList;</code></li>
+      <li>Qo'shish: <code>list.add('Element')</code>, <code>list.add(indeks, 'Element')</code>.</li>
+      <li>Olish va o'zgartirish: <code>list.get(0)</code>, <code>list.set(0, 'Yangi')</code>.</li>
+      <li>O'chirish: <code>list.remove(0)</code> yoki <code>list.clear()</code>.</li>
+      <li>Elementlar soni: <code>list.size()</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Java Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('javaCode17')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('javaCode17','javaRes17')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="javaCode17" contenteditable="true" spellcheck="false">import java.util.ArrayList;
+
+public class ListTest {
+    public static void main(String[] args) {
+        ArrayList&lt;String&gt; shaxarlar = new ArrayList&lt;&gt;();
+
+        shaxarlar.add("Toshkent");
+        shaxarlar.add("Samarqand");
+        shaxarlar.add("Buxoro");
+
+        shaxarlar.remove("Buxoro");
+
+        System.out.println("Jami shaharlar: " + shaxarlar.size());
+        for (String sh : shaxarlar) {
+            System.out.println(" 📍 " + sh);
+        }
+    }
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="javaRes17">
+      <div class="result-label">🖥️ JVM Chiqish Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;☕ Java JVM Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Jami shaharlar: 2
+ 📍 Toshkent
+ 📍 Samarqand&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 ArrayList faqat obyektlarni saqlaydi, shuning uchun int o'rniga Wrapper klassi bo'lgan <code>Integer</code> yoziladi: <code>ArrayList&lt;Integer&gt;</code>.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#interface-j" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Interface (Interfeyslar)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Java | 17 / 27</span>
+      <a href="#hashmap" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: HashMap (Kalit-Qiymat To'plami) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Collections</span>
+      <span style="font-size:12px; color:var(--text2);">Java Mavzu #18</span>
+    </div>
+    <h2 id="hashmap" style="color:#e76f51; margin-top:0; font-size:24px;">HashMap (Kalit-Qiymat To'plami)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>HashMap</strong> — ma'lumotlarni kalit va qiymat (Key-Value) juftligi ko'rinishida saqlovchi juda tezkor to'plam. Kalitlar unikal bo'lishi shart.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Qo'shish: <code>map.put('UZ', 'O\'zbekiston')</code>.</li>
+      <li>Olish: <code>map.get('UZ')</code>.</li>
+      <li>Borligini tekshirish: <code>map.containsKey('UZ')</code>.</li>
+      <li>Qidirish tezligi O(1) — xotiradagi xesh-jadval tufayli o'ta tez ishlaydi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Java Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('javaCode18')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('javaCode18','javaRes18')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="javaCode18" contenteditable="true" spellcheck="false">import java.util.HashMap;
+
+public class MapTest {
+    public static void main(String[] args) {
+        HashMap&lt;String, Integer&gt; narxlar = new HashMap&lt;&gt;();
+
+        narxlar.put("Olma", 12000);
+        narxlar.put("Banan", 24000);
+        narxlar.put("Nok", 18000);
+
+        System.out.println("Banan narxi: " + narxlar.get("Banan") + " so'm");
+
+        // Barchasini aylanish
+        for (var juftlik : narxlar.entrySet()) {
+            System.out.println(juftlik.getKey() + " -&gt; " + juftlik.getValue());
+        }
+    }
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="javaRes18">
+      <div class="result-label">🖥️ JVM Chiqish Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;☕ Java JVM Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Banan narxi: 24000 so'm
+Olma -&gt; 12000
+Banan -&gt; 24000
+Nok -&gt; 18000&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 Agar mavjud kalit bilan yana <code>put()</code> qilinsa, eski qiymat yangisiga almashadi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#arraylist" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: ArrayList (Dinamik Massiv)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Java | 18 / 27</span>
+      <a href="#linkedlist" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: LinkedList (Bog'langan Ro'yxat) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Collections</span>
+      <span style="font-size:12px; color:var(--text2);">Java Mavzu #19</span>
+    </div>
+    <h2 id="linkedlist" style="color:#e76f51; margin-top:0; font-size:24px;">LinkedList (Bog'langan Ro'yxat)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>LinkedList</strong> — har bir elementi o'zidan oldingi va keyingi elementga havola (tugun/node) orqali bog'langan ro'yxatdir. Boshiga va o'rtasiga element tez qo'shish kerak bo'lganda ArrayList dan samaraliroqdir.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Navbat (Queue) va Stek (Stack) sifatida ishlatilishi mumkin.</li>
+      <li><code>addFirst()</code>, <code>addLast()</code>, <code>removeFirst()</code>, <code>removeLast()</code> metodlari bor.</li>
+      <li>Indeks bo'yicha qidirish ArrayList ga qaraganda sekinroq ishlaydi O(n).</li>
+      <li>Xotirani qismlarga bo'lib erkin egallaydi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Java Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('javaCode19')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('javaCode19','javaRes19')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="javaCode19" contenteditable="true" spellcheck="false">import java.util.LinkedList;
+
+public class LinkTest {
+    public static void main(String[] args) {
+        LinkedList&lt;String&gt; navbat = new LinkedList&lt;&gt;();
+
+        navbat.add("1-mijoz");
+        navbat.add("2-mijoz");
+        navbat.addFirst("⚡ Shoshilinch mijoz"); // Eng boshiga
+
+        System.out.println("Navbat: " + navbat);
+        System.out.println("Xizmat ko'rsatildi: " + navbat.removeFirst());
+        System.out.println("Qolganlar: " + navbat);
+    }
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="javaRes19">
+      <div class="result-label">🖥️ JVM Chiqish Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;☕ Java JVM Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Navbat: [⚡ Shoshilinch mijoz, 1-mijoz, 2-mijoz]
+Xizmat ko'rsatildi: ⚡ Shoshilinch mijoz
+Qolganlar: [1-mijoz, 2-mijoz]&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 Ko'p qidirish kerak bo'lsa — ArrayList, ko'p qo'shish/o'chirish kerak bo'lsa — LinkedList tanlanadi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#hashmap" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: HashMap (Kalit-Qiymat To'plami)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Java | 19 / 27</span>
+      <a href="#set" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: HashSet (Takrorlanmas To'plam) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Collections</span>
+      <span style="font-size:12px; color:var(--text2);">Java Mavzu #20</span>
+    </div>
+    <h2 id="set" style="color:#e76f51; margin-top:0; font-size:24px;">HashSet (Takrorlanmas To'plam)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>HashSet</strong> — faqat takrorlanmaydigan (unikal) elementlarni saqlaydi va elementlarning tartibini kafolatlamaydi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Dublikat element qo'shilsa, uni shunchaki inkor qiladi va qo'shmaydi.</li>
+      <li>Bitta <code>null</code> qiymatini qabul qila oladi.</li>
+      <li>Element borligini tekshirish: <code>set.contains('qiymat')</code> — o'ta tez ishlaydi.</li>
+      <li>Tartibli unikal to'plam kerak bo'lsa: <code>LinkedHashSet</code> yoki <code>TreeSet</code> ishlatiladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Java Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('javaCode20')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('javaCode20','javaRes20')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="javaCode20" contenteditable="true" spellcheck="false">import java.util.HashSet;
+
+public class SetTest {
+    public static void main(String[] args) {
+        HashSet&lt;Integer&gt; idlar = new HashSet&lt;&gt;();
+
+        idlar.add(101);
+        idlar.add(102);
+        idlar.add(101); // Qayta qo'shilmaydi!
+
+        System.out.println("To'plam o'lchami: " + idlar.size());
+        System.out.println("Elementlar: " + idlar);
+    }
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="javaRes20">
+      <div class="result-label">🖥️ JVM Chiqish Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;☕ Java JVM Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;To'plam o'lchami: 2
+Elementlar: [101, 102]&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 Ro'yxatdan takroriy elementlarni tozalashning eng oson yo'li: <code>new HashSet&lt;&gt;(list)</code>.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#linkedlist" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: LinkedList (Bog'langan Ro'yxat)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Java | 20 / 27</span>
+      <a href="#generics-j" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Generics (Umumiy Turlar &lt;T&gt;) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Collections</span>
+      <span style="font-size:12px; color:var(--text2);">Java Mavzu #21</span>
+    </div>
+    <h2 id="generics-j" style="color:#e76f51; margin-top:0; font-size:24px;">Generics (Umumiy Turlar &lt;T&gt;)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Generics</strong> — klasslar, interfeyslar va metodlarni ma'lum bir turga bog'lamasdan, universal qilib yozish imkonini beradi. Kompilyatsiya vaqtida xatolarni aniqlab, Type Safety ni ta'minlaydi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Tur parametri: <code>&lt;T&gt;</code> (Type), <code>&lt;E&gt;</code> (Element), <code>&lt;K, V&gt;</code> (Key, Value).</li>
+      <li>Kastingdan (Type Casting) qutqaradi: <code>(String) list.get(0)</code> yozish shart bo'lmaydi.</li>
+      <li>Cheklangan turlar: <code>&lt;T extends Number&gt;</code> — faqat raqamli turlarga ruxsat berish.</li>
+      <li>Kompilyatsiyadan so'ng Type Erasure mexanizmi orqali barcha umumiy turlar tozalanadi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Java Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('javaCode21')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('javaCode21','javaRes21')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="javaCode21" contenteditable="true" spellcheck="false">// Universal quti klassi
+class Quti&lt;T&gt; {
+    private T buyum;
+
+    public void sol(T buyum) { this.buyum = buyum; }
+    public T ol() { return buyum; }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Quti&lt;String&gt; matnQutisi = new Quti&lt;&gt;();
+        matnQutisi.sol("Qimmatbaho kitob");
+        System.out.println("Qutida: " + matnQutisi.ol());
+
+        Quti&lt;Integer&gt; sonQutisi = new Quti&lt;&gt;();
+        sonQutisi.sol(777);
+        System.out.println("Raqam: " + sonQutisi.ol());
+    }
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="javaRes21">
+      <div class="result-label">🖥️ JVM Chiqish Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;☕ Java JVM Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Qutida: Qimmatbaho kitob
+Raqam: 777&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 Generics Java 5 da kiritilgan bo'lib, Java to'plamlar tizimining asosi hisoblanadi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#set" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: HashSet (Takrorlanmas To'plam)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Java | 21 / 27</span>
+      <a href="#streams" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Streams API (Ma'lumotlar Oqimi) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Ilg'or</span>
+      <span style="font-size:12px; color:var(--text2);">Java Mavzu #22</span>
+    </div>
+    <h2 id="streams" style="color:#e76f51; margin-top:0; font-size:24px;">Streams API (Ma'lumotlar Oqimi)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Java 8 da kiritilgan <strong>Streams API</strong> to'plamlar ustida deklarativ (SQL kabi) amallar bajarish: filtrlash, o'zgartirish, saralash va guruhlashni juda qisqa kod bilan amalga oshiradi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>filter()</code> — shart bo'yicha saralaydi.</li>
+      <li><code>map()</code> — har bir elementni o'zgartiradi.</li>
+      <li><code>sorted()</code> — tartiblaydi.</li>
+      <li><code>collect(Collectors.toList())</code> — natijani qayta ro'yxatga jamlaydi.</li>
+      <li>Parallel Stream: <code>parallelStream()</code> ko'p yadroli protsessordan to'liq foydalanadi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Java Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('javaCode22')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('javaCode22','javaRes22')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="javaCode22" contenteditable="true" spellcheck="false">import java.util.List;
 import java.util.stream.Collectors;
 
-public class StreamMisol {
+public class StreamTest {
     public static void main(String[] args) {
-        List&lt;Integer&gt; sonlar = Arrays.asList(1, 2, 3, 4, 5, 6, 7, 8, 9, 10);
+        List&lt;String&gt; ismlar = List.of("Ali", "Zarina", "Anvar", "Bobur", "Asal");
 
-        // Juft sonlarni filtrlash va ikkilash
-        List&lt;Integer&gt; natija = sonlar.stream()
-            .filter(n -> n % 2 == 0)    // Faqat juftlar
-            .map(n -> n * 2)             // Ikkilash
-            .collect(Collectors.toList()); // List ga aylantirish
-        System.out.println(natija); // [4, 8, 12, 16, 20]
+        // 'A' harfi bilan boshlanuvchilarni katta harfda olish
+        List&lt;String&gt; aIsmlar = ismlar.stream()
+                .filter(ism -&gt; ism.startsWith("A"))
+                .map(String::toUpperCase)
+                .sorted()
+                .collect(Collectors.toList());
 
-        // Yig'indini hisoblash
-        int yigindi = sonlar.stream()
-            .reduce(0, Integer::sum);
-        System.out.println("Yig'indi: " + yigindi); // 55
-
-        // Lambda bilan tartiblash
-        List&lt;String&gt; ismlar = Arrays.asList("Zulfiya", "Ali", "Kamol");
-        ismlar.stream()
-            .sorted()
-            .forEach(System.out::println);
+        System.out.println("Natija: " + aIsmlar);
     }
-}</pre></div>
-  </div>
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="javaRes22">
+      <div class="result-label">🖥️ JVM Chiqish Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;☕ Java JVM Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Natija: [ALI, ANVAR, ASAL]&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 Stream asl ma'lumotlar to'plamini o'zgartirmaydi — u yangi natija hosil qiladi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#generics-j" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Generics (Umumiy Turlar &lt;T&gt;)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Java | 22 / 27</span>
+      <a href="#lambda" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Lambda Ifodalar va Funksional Interfeyslar →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Ilg'or</span>
+      <span style="font-size:12px; color:var(--text2);">Java Mavzu #23</span>
+    </div>
+    <h2 id="lambda" style="color:#e76f51; margin-top:0; font-size:24px;">Lambda Ifodalar va Funksional Interfeyslar</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Lambda ifodasi</strong> — bu nomsiz, ixcham funksiya bo'lib, uni boshqa metodlarga argument sifatida uzatish mumkin. Sintaksis: <code>(parametrlar) -&gt; { ifoda }</code>.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Kodni ancha qisqartiradi (Anonymous Class o'rniga kelgan).</li>
+      <li>Faqat bitta abstrakt metodga ega bo'lgan <code>FunctionalInterface</code> bilan ishlaydi.</li>
+      <li>Mashhur standart interfeyslar: <code>Predicate</code> (tekshiruvchi), <code>Function</code> (o'zgartiruvchi), <code>Consumer</code> (bajaruvchi).</li>
+      <li>Metod havolasi (Method Reference): <code>System.out::println</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Java Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('javaCode23')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('javaCode23','javaRes23')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="javaCode23" contenteditable="true" spellcheck="false">import java.util.List;
+
+public class LambdaTest {
+    public static void main(String[] args) {
+        List&lt;Integer&gt; sonlar = List.of(1, 2, 3, 4, 5);
+
+        // Lambda orqali har birini chop etish
+        sonlar.forEach(n -&gt; System.out.print((n * 10) + " "));
+        System.out.println();
+    }
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="javaRes23">
+      <div class="result-label">🖥️ JVM Chiqish Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;☕ Java JVM Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;10 20 30 40 50 &lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 <code>@FunctionalInterface</code> annotatsiyasi interfeysda faqat bitta metod bo'lishini ta'minlaydi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#streams" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Streams API (Ma'lumotlar Oqimi)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Java | 23 / 27</span>
+      <a href="#exception" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Istisnolar bilan Ishlash (Exceptions: try-catch-finally) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Ilg'or</span>
+      <span style="font-size:12px; color:var(--text2);">Java Mavzu #24</span>
+    </div>
+    <h2 id="exception" style="color:#e76f51; margin-top:0; font-size:24px;">Istisnolar bilan Ishlash (Exceptions: try-catch-finally)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Dastur ishlash vaqtida kutilmagan xatoliklar (masalan, 0 ga bo'lish, fayl topilmaslik) yuz berganda dastur to'xtab qolmasligi uchun istisnolar (Exceptions) ushlanadi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>try</code> — xato berishi mumkin bo'lgan xavfli kod bloki.</li>
+      <li><code>catch (Exception e)</code> — xatolik yuz berganda uni qayta ishlash.</li>
+      <li><code>finally</code> — xato bo'lsa ham, bo'lmasa ham har doim bajariladigan blok (resurslarni yopish uchun).</li>
+      <li>Checked (kompilyator talab qiladigan) va Unchecked (Runtime) istisnolar mavjud.</li>
+      <li>Shaxsiy xato klasslarini yaratish: <code>class MeningXato extends Exception</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Java Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('javaCode24')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('javaCode24','javaRes24')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="javaCode24" contenteditable="true" spellcheck="false">public class XatoTest {
+    public static void main(String[] args) {
+        try {
+            int a = 10;
+            int b = 0;
+            int natija = a / b; // 0 ga bo'lish xatosi
+            System.out.println("Natija: " + natija);
+        } catch (ArithmeticException e) {
+            System.out.println("⚠️ Xatolik ushlandi: Sonni nolga bo'lib bo'lmaydi!");
+        } finally {
+            System.out.println("🔒 'finally' bloki har doim bajariladi.");
+        }
+    }
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="javaRes24">
+      <div class="result-label">🖥️ JVM Chiqish Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;☕ Java JVM Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;⚠️ Xatolik ushlandi: Sonni nolga bo'lib bo'lmaydi!
+🔒 'finally' bloki har doim bajariladi.&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 Fayllar va ulanishlarni avtomatik yopish uchun zamonaviy <code>try-with-resources</code> sintaksisi ishlatiladi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#lambda" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Lambda Ifodalar va Funksional Interfeyslar</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Java | 24 / 27</span>
+      <a href="#thread" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Ko'p Oqimlilik (Multithreading) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Ilg'or</span>
+      <span style="font-size:12px; color:var(--text2);">Java Mavzu #25</span>
+    </div>
+    <h2 id="thread" style="color:#e76f51; margin-top:0; font-size:24px;">Ko'p Oqimlilik (Multithreading)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Multithreading</strong> — bitta dastur ichida bir nechta vazifalarni parallel va bir vaqtning o'zida bajarish imkoniyatidir. Zamonaviy ko'p yadroli protsessorlar quvvatidan 100% foydalanish uchun zarur.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Oqim yaratish: <code>Thread</code> klassidan meros olish yoki <code>Runnable</code> interfeysini amalga oshirish.</li>
+      <li>Boshlash: <code>thread.start()</code> — bu yangi oqim ochadi (to'g'ridan-to'g'ri run() chaqirilmaydi!).</li>
+      <li>Sinxronizatsiya: <code>synchronized</code> kalit so'zi poyga holatini (Race Condition) oldini oladi.</li>
+      <li>Java 21 Virtual Threads (Project Loom) — millionlab yengil oqimlarni bir vaqtda ishlatish imkonini beradi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Java Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('javaCode25')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('javaCode25','javaRes25')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="javaCode25" contenteditable="true" spellcheck="false">class Oqim extends Thread {
+    private String nom;
+    public Oqim(String nom) { this.nom = nom; }
+
+    public void run() {
+        System.out.println("🚀 Oqim boshlandi: " + nom);
+    }
+}
+
+public class Main {
+    public static void main(String[] args) {
+        Oqim t1 = new Oqim("Yuklash-1");
+        Oqim t2 = new Oqim("Yuklash-2");
+
+        t1.start();
+        t2.start();
+    }
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="javaRes25">
+      <div class="result-label">🖥️ JVM Chiqish Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;☕ Java JVM Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;🚀 Oqim boshlandi: Yuklash-1
+🚀 Oqim boshlandi: Yuklash-2&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 <code>Thread.sleep(1000)</code> oqimni ko'rsatilgan millisekundga vaqtincha to'xtatib turadi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#exception" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Istisnolar bilan Ishlash (Exceptions: try-catch-finally)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Java | 25 / 27</span>
+      <a href="#springboot" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Spring Boot Freymvorkiga Kirish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Ilg'or</span>
+      <span style="font-size:12px; color:var(--text2);">Java Mavzu #26</span>
+    </div>
+    <h2 id="springboot" style="color:#e76f51; margin-top:0; font-size:24px;">Spring Boot Freymvorkiga Kirish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Spring Boot</strong> — korporativ va professional Java loyihalarini yaratish uchun dunyodagi 1-raqamli freymvork. U konfiguratsiyalarni avtomatlashtirib, bir necha daqiqada tayyor REST API va mikroxizmatlar (Microservices) qurish imkonini beradi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Boshlash: <code>start.spring.io</code> (Spring Initializr) orqali tayyor shablon yuklab olinadi.</li>
+      <li>Ichki o'rnatilgan server: Tomcat serveri avtomatik birga keladi (qo'shimcha o'rnatish shart emas).</li>
+      <li>Asosiy annotatsiyalar: <code>@RestController</code>, <code>@GetMapping</code>, <code>@PostMapping</code>, <code>@Autowired</code>.</li>
+      <li>Spring Data JPA — ma'lumotlar bazasi bilan so'rov yozmasdan ishlash imkonini beradi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Java Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('javaCode26')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('javaCode26','javaRes26')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="javaCode26" contenteditable="true" spellcheck="false">// Oddiy Spring Boot REST Controller namunasi
+// @RestController
+// @RequestMapping("/api")
+// public class SalomController {
+//     @GetMapping("/salom")
+//     public Map&lt;String, String&gt; getSalom() {
+//         return Map.of("xabar", "Salom, Spring Boot Backend!");
+//     }
+// }
+
+public class SpringInfo {
+    public static void main(String[] args) {
+        System.out.println("Spring Boot — Java dunyosining eng qudratli freymvorki! 🍃");
+    }
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="javaRes26">
+      <div class="result-label">🖥️ JVM Chiqish Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;☕ Java JVM Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Spring Boot — Java dunyosining eng qudratli freymvorki! 🍃&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 Dunyodagi aksariyat yirik banklar, sug'urta va to'lov tizimlarining serverlari Spring Boot asosiga qurilgan.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#thread" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Ko'p Oqimlilik (Multithreading)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Java | 26 / 27</span>
+      <a href="#maven" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Maven va Gradle (Loyihani Yig'ish Vositalari) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Ilg'or</span>
+      <span style="font-size:12px; color:var(--text2);">Java Mavzu #27</span>
+    </div>
+    <h2 id="maven" style="color:#e76f51; margin-top:0; font-size:24px;">Maven va Gradle (Loyihani Yig'ish Vositalari)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Maven</strong> va <strong>Gradle</strong> — Java loyihalarida tashqi kutubxonalarni (dependencies) avtomatik yuklab beruvchi va loyihani <code>.jar</code> yoki <code>.war</code> faylga yig'uvchi (build tool) vositalardir.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>pom.xml</code> (Maven) — barcha kutubxonalar va plaginlar ro'yxati saqlanadigan XML fayl.</li>
+      <li>Kutubxona qo'shish: Maven Central Repository dan nusxalab <code>pom.xml</code> ga qo'yiladi.</li>
+      <li>Asosiy buyruqlar: <code>mvn clean install</code>, <code>mvn package</code>.</li>
+      <li>Gradle esa xuddi shu vazifani Kotlin yoki Groovy tili asosida ancha tezroq bajaradi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Java Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('javaCode27')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('javaCode27','javaRes27')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="javaCode27" contenteditable="true" spellcheck="false">&lt;!-- pom.xml namunasi --&gt;
+&lt;!--
+&lt;dependencies&gt;
+    &lt;dependency&gt;
+        &lt;groupId&gt;org.springframework.boot&lt;/groupId&gt;
+        &lt;artifactId&gt;spring-boot-starter-web&lt;/artifactId&gt;
+        &lt;version&gt;3.2.0&lt;/version&gt;
+    &lt;/dependency&gt;
+&lt;/dependencies&gt;
+--&gt;
+
+public class MavenInfo {
+    public static void main(String[] args) {
+        System.out.println("Maven va Gradle — barcha bog'liqliklarni o'zi avtomatik yuklaydi! 📦");
+    }
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="javaRes27">
+      <div class="result-label">🖥️ JVM Chiqish Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;☕ Java JVM Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Maven va Gradle — barcha bog'liqliklarni o'zi avtomatik yuklaydi! 📦&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 JAR (Java Archive) faylini <code>java -jar dastur.jar</code> buyrug'i orqali istalgan serverda oson ishga tushirish mumkin.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#springboot" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Spring Boot Freymvorkiga Kirish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Java | 27 / 27</span>
+      <a href="django.html" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi kurs: Django Darslari →</a>
+    </div>
+  </section>
 
   <div class="quiz-box">
-    <div class="quiz-q">🧪 Test: Java dasturida bajarish qayerdan boshlanadi?</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qr1')">start() metodidan</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, true, 'qr1')">main() metodidan</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qr1')">run() metodidan</div>
-    <div class="quiz-result" id="qr1"></div>
+    <div class="quiz-q">🧪 Test: Java dasturlarining eng birinchi ishga tushuvchi asosiy metodi qaysi?</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, true, 'javaQr1')">public static void main(String[] args)</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'javaQr1')">public void start()</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'javaQr1')">void init()</div>
+    <div class="quiz-result" id="javaQr1"></div>
   </div>
-  
 
-<div class="nav-btns">
-  <a href="php.html" class="btn-prev">&#8592; PHP</a>
-  <a href="django.html" class="btn-next">Django &#8594;</a>
-</div>
+  <div class="nav-btns" style="margin-top: 30px;">
+    <a href="php.html" class="btn-prev">← PHP</a>
+    <a href="django.html" class="btn-next">Django Darsiga O'tish →</a>
+  </div>
+
+  <div class="note note-blue" style="margin-top: 25px;">
+    📌 <strong>Keyingi qadam:</strong> Java dasturlash asoslarini egallagach, Pythonning eng kuchli freymvorki bo'lgan <a href="django.html" style="color:var(--green)">Django darslariga</a> o'ting!
+  </div>
 </main>
 <aside class="right-panel">
   <div class="rp-title">📈 Progress</div>

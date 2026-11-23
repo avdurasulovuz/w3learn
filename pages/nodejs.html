@@ -82,138 +82,1717 @@
   </ul>
 </aside>
 <main class="main">
-  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">Node.js</a> › Node.js Nima?</div>
-  <h1 id="kirish">Node.js Nima?</h1>
-  <div class="meta-tags">
-    <span class="tag tag-green">⏱ 10 daqiqa</span>
-    <span class="tag tag-blue">🟡 O'rta</span>
-    <span class="tag tag-orange">👁 7,560 marta ko'rilgan</span>
-  </div>
-  <p><strong>Node.js</strong> — JavaScript ni server tomonida ishlatish imkonini beruvchi muhit (runtime). Google Chrome ning V8 dvigatelida ishlaydi. Node.js yordamida backend API, real-time ilovalar va mikroservislar yaratish mumkin.</p>
-  <p>Node.js <strong>asinxron</strong> va <strong>event-driven</strong> arxitekturada ishlaydi, bu esa uni yuqori yuklamalarni samarali boshqarishi imkonini beradi.</p>
-  <div class="note">💡 <strong>Eslatma:</strong> Node.js o'rnatilgandan so'ng <code style="background:#eee;padding:2px 6px;border-radius:3px;">node --version</code> buyrug'i bilan versiyani tekshiring.</div>
+  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">Node.js</a> › Barcha Mavzular</div>
 
-  <h2 id="http">Oddiy HTTP Server</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar"><span class="code-lang">JavaScript (Node.js)</span>
-      <div class="code-actions"><button class="btn-copy" onclick="copyCode('code1')">📋 Nusxa</button></div>
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Asosiy</span>
+      <span style="font-size:12px; color:var(--text2);">Node.js Mavzu #1</span>
     </div>
-    <div class="code-body"><pre id="code1">// server.js
-const http = require('http');
+    <h2 id="kirish" style="color:#22c55e; margin-top:0; font-size:24px;">Node.js Nima?</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Node.js</strong> — bu Google Chrome V8 dvigateli ustiga qurilgan, ochiq manbali, server tomonida JavaScript kodlarini ishga tushiruvchi dasturlash muhitidir (Runtime Environment). U Ryan Dahl tomonidan 2009-yilda yaratilgan.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>JavaScriptni faqat brauzerda emas, balki kuchli backend serverlarda ishlatish imkonini berdi.</li>
+      <li>Asinxron va Event-Driven arxitektura: bitta oqimda (Single-threaded) millionlab so'rovlarni o'ta tez qayta ishlaydi.</li>
+      <li>Bloklanmaydigan I/O (Non-blocking I/O) modeli tufayli yuklama yuqori bo'lgan tarmoq ilovalari uchun ideal.</li>
+      <li>Netflix, Uber, PayPal, LinkedIn kabi gigantlar backend qismini aynan Node.js ga o'tkazgan.</li>
+    </ul>
 
-const server = http.createServer((req, res) => {
-  // HTTP javob sarlavhalari
-  res.writeHead(200, { 'Content-Type': 'text/plain; charset=utf-8' });
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Node.js Server Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('nodeCode1')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('nodeCode1','nodeRes1')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="nodeCode1" contenteditable="true" spellcheck="false">// Oddiy Node.js dasturi
+const os = require('os');
 
-  // Marshrutlash
-  if (req.url === '/') {
-    res.end('Bosh sahifa — Salom, Node.js!');
-  } else if (req.url === '/haqida') {
-    res.end('Biz haqimizda sahifasi');
-  } else {
-    res.writeHead(404);
-    res.end('404 — Sahifa topilmadi');
+console.log("Salom, Node.js Backend Dunyosi! 🟢");
+console.log("Operatsion tizim:", os.platform());
+console.log("CPU yadrolari soni:", os.cpus().length);
+console.log("Xotira (RAM):", Math.round(os.totalmem() / (1024 ** 3)) + " GB");</pre>
+      </div>
+    </div>
+    <div class="result-box" id="nodeRes1">
+      <div class="result-label">🖥️ Server Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟢 Node.js Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Salom, Node.js Backend Dunyosi! 🟢
+Operatsion tizim: win32
+CPU yadrolari soni: 8
+Xotira (RAM): 16 GB&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 Node.js dasturlash tili emas, balki JavaScript kodini serverda bajaruvchi muhit (runtime) dir.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="python.html" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Python Darslari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Node.js | 1 / 32</span>
+      <a href="#install" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Node.js ni O'rnatish va Sozlash →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">O'rnatish</span>
+      <span style="font-size:12px; color:var(--text2);">Node.js Mavzu #2</span>
+    </div>
+    <h2 id="install" style="color:#22c55e; margin-top:0; font-size:24px;">Node.js ni O'rnatish va Sozlash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Node.js ni o'rnatish rasmiy <code>nodejs.org</code> saytidan amalga oshiriladi. Saytda ikkita versiya taklif etiladi: <strong>LTS</strong> (Long Term Support — uzoq muddatli barqaror qo'llab-quvvatlanuvchi) va <strong>Current</strong> (eng yangi tajribaviy imkoniyatlar).</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Ishlab chiqarish (Production) va o'rganish uchun doimo <strong>LTS versiya</strong> tavsiya etiladi.</li>
+      <li>O'rnatilganini tekshirish uchun terminalda: <code>node -v</code></li>
+      <li>Paketlar menejeri <code>npm</code> avtomatik tarzda Node.js bilan birga o'rnatiladi.</li>
+      <li>Kodni qayta ishga tushirmasdan yangilab turish uchun <code>node --watch app.js</code> yoki <code>nodemon</code> ishlatiladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Node.js Server Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('nodeCode2')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('nodeCode2','nodeRes2')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="nodeCode2" contenteditable="true" spellcheck="false"># Terminalda tekshirish:
+# $ node -v
+# v20.11.0
+
+# $ npm -v
+# 10.2.4
+
+# Faylni ishga tushirish:
+# $ node server.js</pre>
+      </div>
+    </div>
+    <div class="result-box" id="nodeRes2">
+      <div class="result-label">🖥️ Server Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟢 Node.js Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Node.js va NPM muvaffaqiyatli ishga tushdi!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 Node.js 18-versiyasidan boshlab <code>node --watch app.js</code> buyrug'i orqali kod o'zgarganda server avtomatik qayta yonadi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#kirish" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Node.js Nima?</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Node.js | 2 / 32</span>
+      <a href="#npm" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: NPM — Paketlar Menejeri →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Asoslar</span>
+      <span style="font-size:12px; color:var(--text2);">Node.js Mavzu #3</span>
+    </div>
+    <h2 id="npm" style="color:#22c55e; margin-top:0; font-size:24px;">NPM — Paketlar Menejeri</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>NPM (Node Package Manager)</strong> — dunyodagi eng katta dasturiy ta'minot registri bo'lib, Node.js uchun 2 milliondan ortiq bepul kutubxonalarni o'z ichiga oladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Yangi loyiha boshlash: <code>npm init -y</code> (package.json faylini yaratadi).</li>
+      <li>Paket o'rnatish: <code>npm install express</code> yoki qisqacha <code>npm i express</code>.</li>
+      <li>Faqat ishlab chiqish muhiti uchun (DevDependency): <code>npm i -D nodemon</code>.</li>
+      <li><code>package.json</code> — barcha bog'liqliklar va skriptlar ro'yxatini saqlaydi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Node.js Server Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('nodeCode3')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('nodeCode3','nodeRes3')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="nodeCode3" contenteditable="true" spellcheck="false">{
+  "name": "w3learn-backend",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "dotenv": "^16.4.5"
   }
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="nodeRes3">
+      <div class="result-label">🖥️ Server Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟢 Node.js Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;npm run dev buyrug'i serverni kuzatuv rejimida ishga tushiradi.&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 <code>node_modules</code> papkasini hech qachon GitHub ga yuklamang, uni doimo <code>.gitignore</code> ga qo'shing.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#install" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Node.js ni O'rnatish va Sozlash</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Node.js | 3 / 32</span>
+      <a href="#modullar" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Modullar Tizimi (CommonJS va ES Modules) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Asoslar</span>
+      <span style="font-size:12px; color:var(--text2);">Node.js Mavzu #4</span>
+    </div>
+    <h2 id="modullar" style="color:#22c55e; margin-top:0; font-size:24px;">Modullar Tizimi (CommonJS va ES Modules)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Node.js da kodlar alohida fayllarga (modullarga) bo'linadi. Node.js da ikkita asosiy modul tizimi mavjud: klassik <strong>CommonJS</strong> (<code>require / module.exports</code>) va zamonaviy <strong>ES Modules</strong> (<code>import / export</code>).</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>CommonJS: <code>const express = require('express');</code> va <code>module.exports = { ... };</code></li>
+      <li>ES Modules ishlatish uchun <code>package.json</code> ga <code>"type": "module"</code> qo'shiladi.</li>
+      <li>Shaxsiy modul yaratish orqali loyihani qismlarga ajratish mumkin.</li>
+      <li>O'rnatilgan modullar (fs, path, http) qo'shimcha o'rnatishni talab qilmaydi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Node.js Server Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('nodeCode4')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('nodeCode4','nodeRes4')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="nodeCode4" contenteditable="true" spellcheck="false">// hisoblagich.js (Shaxsiy modul)
+function qosh(a, b) { return a + b; }
+function kopaytir(a, b) { return a * b; }
+
+module.exports = { qosh, kopaytir };
+
+// app.js (Modulni ulash)
+const { qosh, kopaytir } = require('./hisoblagich');
+
+console.log("Qo'shish:", qosh(15, 25));
+console.log("Ko'paytirish:", kopaytir(4, 5));</pre>
+      </div>
+    </div>
+    <div class="result-box" id="nodeRes4">
+      <div class="result-label">🖥️ Server Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟢 Node.js Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Qo'shish: 40
+Ko'paytirish: 20&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 <code>./</code> bilan boshlangan yo'llar shaxsiy fayllarni, belgisiz yo'llar esa <code>node_modules</code> ni anglatadi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#npm" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: NPM — Paketlar Menejeri</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Node.js | 4 / 32</span>
+      <a href="#fs" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: fs — Fayl Tizimi Moduli →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Modullar</span>
+      <span style="font-size:12px; color:var(--text2);">Node.js Mavzu #5</span>
+    </div>
+    <h2 id="fs" style="color:#22c55e; margin-top:0; font-size:24px;">fs — Fayl Tizimi Moduli</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>fs (File System)</strong> moduli serverdagi fayllarni o'qish, yozish, tahrirlash va o'chirish imkonini beradi. U ham sinxron (bloklovchi), ham asinxron (bloklamaydigan) metodlarga ega.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Asinxron o'qish: <code>fs.readFile('fayl.txt', 'utf8', (err, data) =&gt; { ... })</code></li>
+      <li>Faylga yozish: <code>fs.writeFile()</code> (ustidan yozadi), <code>fs.appendFile()</code> (oxiriga qo'shadi).</li>
+      <li>Zamonaviy Promise usuli: <code>const fs = require('fs/promises');</code></li>
+      <li>Katta fayllar bilan ishlashda doimo asinxron yoki Streams usulidan foydalanish lozim.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Node.js Server Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('nodeCode5')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('nodeCode5','nodeRes5')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="nodeCode5" contenteditable="true" spellcheck="false">const fs = require('fs/promises');
+
+async function faylBilanIshlash() {
+  // 1. Faylga yozish
+  await fs.writeFile('salom.txt', 'W3Learn Node.js darsiga xush kelibsiz!');
+  
+  // 2. Fayldan o'qish
+  const malumot = await fs.readFile('salom.txt', 'utf8');
+  console.log("Fayl ichidagi matn:", malumot);
+  
+  // 3. Oxiriga qo'shish
+  await fs.appendFile('salom.txt', '\nServer vaqti: ' + new Date().toLocaleTimeString());
+}
+
+faylBilanIshlash();</pre>
+      </div>
+    </div>
+    <div class="result-box" id="nodeRes5">
+      <div class="result-label">🖥️ Server Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟢 Node.js Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Fayl ichidagi matn: W3Learn Node.js darsiga xush kelibsiz!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">⚡ <code>fs.readFileSync()</code> kabi sinxron metodlar serverni boshqa so'rovlar uchun to'xtatib qo'yishi mumkin, ehtiyot bo'ling!</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#modullar" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Modullar Tizimi (CommonJS va ES Modules)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Node.js | 5 / 32</span>
+      <a href="#path" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: path Moduli →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Modullar</span>
+      <span style="font-size:12px; color:var(--text2);">Node.js Mavzu #6</span>
+    </div>
+    <h2 id="path" style="color:#22c55e; margin-top:0; font-size:24px;">path Moduli</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>path</strong> moduli turli xil operatsion tizimlarda (Windows'da <code>\</code> va Linux/Mac'da <code>/</code>) fayl va kataloglar manzillarini xatosiz va xavfsiz birlashtirish uchun xizmat qiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>path.join(__dirname, 'papka', 'fayl.html')</code> — platformaga mos to'g'ri manzil yasaydi.</li>
+      <li><code>path.resolve()</code> — mutlaq (absolute) manzilni qaytaradi.</li>
+      <li><code>path.extname('rasm.png')</code> — fayl kengaytmasini oladi (<code>.png</code>).</li>
+      <li><code>__dirname</code> — joriy papkaning to'liq manzili.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Node.js Server Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('nodeCode6')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('nodeCode6','nodeRes6')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="nodeCode6" contenteditable="true" spellcheck="false">const path = require('path');
+
+const faylManzili = '/foydalanuvchilar/admin/hujjatlar/hisobot.pdf';
+
+console.log("Fayl nomi:", path.basename(faylManzili));
+console.log("Papkasi:", path.dirname(faylManzili));
+console.log("Kengaytmasi:", path.extname(faylManzili));
+
+// Xavfsiz birlashtirish
+const toliqManzil = path.join(__dirname, 'public', 'images', 'logo.png');
+console.log("Xavfsiz manzil:", toliqManzil);</pre>
+      </div>
+    </div>
+    <div class="result-box" id="nodeRes6">
+      <div class="result-label">🖥️ Server Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟢 Node.js Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Fayl nomi: hisobot.pdf
+Papkasi: /foydalanuvchilar/admin/hujjatlar
+Kengaytmasi: .pdf
+Xavfsiz manzil: C:\project\public\images\logo.png&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 Hech qachon manzillarni <code>'papka/' + fayl</code> deb qo'lda yozmang — doim <code>path.join()</code> ishlating.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#fs" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: fs — Fayl Tizimi Moduli</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Node.js | 6 / 32</span>
+      <a href="#http" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: http Moduli (Sof Veb Server) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Modullar</span>
+      <span style="font-size:12px; color:var(--text2);">Node.js Mavzu #7</span>
+    </div>
+    <h2 id="http" style="color:#22c55e; margin-top:0; font-size:24px;">http Moduli (Sof Veb Server)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Node.js tarkibidagi <code>http</code> moduli tashqi kutubxonalarsiz ham mustaqil HTTP veb server yaratish imkonini beradi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>http.createServer((req, res) =&gt; { ... })</code> — server ob'ektini yaratadi.</li>
+      <li><code>req (Request)</code> — mijozdan kelgan so'rov (URL, metod, headers).</li>
+      <li><code>res (Response)</code> — mijozga qaytariladigan javob (status kod, HTML/JSON).</li>
+      <li><code>server.listen(port)</code> — ko'rsatilgan portni tinglashni boshlaydi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Node.js Server Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('nodeCode7')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('nodeCode7','nodeRes7')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="nodeCode7" contenteditable="true" spellcheck="false">const http = require('http');
+
+const server = http.createServer((req, res) =&gt; {
+  res.writeHead(200, { 'Content-Type': 'application/json' });
+  res.end(JSON.stringify({
+    status: 'success',
+    xabar: 'Salom, HTTP server ishlamoqda!',
+    vaqt: new Date().toISOString()
+  }));
 });
 
-// 3000-portda tinglash
-server.listen(3000, () => {
-  console.log('Server ishga tushdi: http://localhost:3000');
-});</pre></div>
-  </div>
-
-  <h2 id="express">Express.js bilan REST API</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar"><span class="code-lang">JavaScript (Express)</span>
-      <div class="code-actions"><button class="btn-copy" onclick="copyCode('code2')">📋 Nusxa</button></div>
+const PORT = 3000;
+console.log(`Server http://localhost:${PORT} da ishga tushdi 🚀`);</pre>
+      </div>
     </div>
-    <div class="code-body"><pre id="code2">// npm install express
+    <div class="result-box" id="nodeRes7">
+      <div class="result-label">🖥️ Server Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟢 Node.js Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Server http://localhost:3000 da ishga tushdi 🚀&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 Haqiqiy yirik loyihalarda sof http moduli o'rniga Express.js yoki Nest.js ishlatiladi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#path" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: path Moduli</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Node.js | 7 / 32</span>
+      <a href="#os" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: os Moduli (Tizim Ma'lumotlari) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Modullar</span>
+      <span style="font-size:12px; color:var(--text2);">Node.js Mavzu #8</span>
+    </div>
+    <h2 id="os" style="color:#22c55e; margin-top:0; font-size:24px;">os Moduli (Tizim Ma'lumotlari)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>os (Operating System)</strong> moduli server ishlayotgan kompyuter apparat ta'minoti va operatsion tizim haqidagi barcha texnik ma'lumotlarni taqdim etadi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>os.cpus()</code> — protsessor yadrolari va chastotasi.</li>
+      <li><code>os.freemem()</code> va <code>os.totalmem()</code> — bo'sh va jami xotira.</li>
+      <li><code>os.uptime()</code> — kompyuter necha soniyadan beri o'chmasdan ishlayotgani.</li>
+      <li>Server monitoring tizimlari va yuklamani taqsimlashda qo'llaniladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Node.js Server Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('nodeCode8')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('nodeCode8','nodeRes8')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="nodeCode8" contenteditable="true" spellcheck="false">const os = require('os');
+
+console.log("Arxitektura:", os.arch());
+console.log("Foydalanuvchi:", os.userInfo().username);
+console.log("Bo'sh xotira:", (os.freemem() / (1024 * 1024)).toFixed(0) + " MB");
+console.log("Tizim ishlash vaqti:", (os.uptime() / 3600).toFixed(1) + " soat");</pre>
+      </div>
+    </div>
+    <div class="result-box" id="nodeRes8">
+      <div class="result-label">🖥️ Server Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟢 Node.js Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Arxitektura: x64
+Foydalanuvchi: Admin
+Bo'sh xotira: 8420 MB
+Tizim ishlash vaqti: 48.5 soat&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 Cluster moduli orqali har bir CPU yadrosiga alohida Node.js jarayoni ochishda <code>os.cpus().length</code> ishlatiladi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#http" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: http Moduli (Sof Veb Server)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Node.js | 8 / 32</span>
+      <a href="#events" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: EventEmitter (Hodisalar bilan Ishlash) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Modullar</span>
+      <span style="font-size:12px; color:var(--text2);">Node.js Mavzu #9</span>
+    </div>
+    <h2 id="events" style="color:#22c55e; margin-top:0; font-size:24px;">EventEmitter (Hodisalar bilan Ishlash)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Node.js arxitekturasi asosan hodisalarga asoslangan. <strong>EventEmitter</strong> klassi orqali o'z shaxsiy hodisalaringizni yaratish (emit) va ularni tinglash (listen) mumkin.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>emitter.on('hodisa', callback)</code> — hodisani tinglaydi.</li>
+      <li><code>emitter.emit('hodisa', ma'lumot)</code> — hodisani ishga tushiradi.</li>
+      <li>Bir marta ishlaydigan hodisa: <code>emitter.once()</code>.</li>
+      <li>Chat tizimlari, to'lov xabarnomalari va loggerlar aynan shu tamoyilda quriladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Node.js Server Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('nodeCode9')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('nodeCode9','nodeRes9')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="nodeCode9" contenteditable="true" spellcheck="false">const EventEmitter = require('events');
+const buyurtmaHodisa = new EventEmitter();
+
+// 1. Hodisani tinglash
+buyurtmaHodisa.on('yangi_buyurtma', (id, summa) =&gt; {
+  console.log(`📦 Yangi buyurtma #${id} qabul qilindi. Summa: ${summa} so'm.`);
+});
+
+buyurtmaHodisa.on('yangi_buyurtma', (id) =&gt; {
+  console.log(`✉️ Mijozga #${id} raqamli SMS yuborildi.`);
+});
+
+// 2. Hodisani chaqirish
+buyurtmaHodisa.emit('yangi_buyurtma', 1042, 350000);</pre>
+      </div>
+    </div>
+    <div class="result-box" id="nodeRes9">
+      <div class="result-label">🖥️ Server Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟢 Node.js Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;📦 Yangi buyurtma #1042 qabul qilindi. Summa: 350000 so'm.
+✉️ Mijozga #1042 raqamli SMS yuborildi.&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 Node.js dagi barcha oqimlar (Streams) va HTTP so'rovlari aslida EventEmitter vorislari hisoblanadi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#os" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: os Moduli (Tizim Ma'lumotlari)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Node.js | 9 / 32</span>
+      <a href="#stream" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Stream (Oqimlar bilan Katta Fayllarni Qayta Ishlash) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Modullar</span>
+      <span style="font-size:12px; color:var(--text2);">Node.js Mavzu #10</span>
+    </div>
+    <h2 id="stream" style="color:#22c55e; margin-top:0; font-size:24px;">Stream (Oqimlar bilan Katta Fayllarni Qayta Ishlash)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Stream</strong> — ulkan ma'lumotlar oqimini (masalan, 10 GB li video yoki log fayl) xotirani to'ldirmasdan, bo'laklab (chunks) o'qish va uzatish mexanizmidir.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>4 xil oqim bor: Writable (yozuvchi), Readable (o'quvchi), Duplex (ikki tomonlama), Transform.</li>
+      <li><code>createReadStream</code> va <code>createWriteStream</code> fayllar bilan ishlashda qo'llaniladi.</li>
+      <li><code>pipe()</code> — o'quvchi oqimni to'g'ridan-to'g'ri yozuvchi oqimga ulaydi.</li>
+      <li>Video streaming (YouTube, Netflix kabi) xuddi shu prinsipda ishlaydi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Node.js Server Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('nodeCode10')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('nodeCode10','nodeRes10')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="nodeCode10" contenteditable="true" spellcheck="false">const fs = require('fs');
+
+// O'qish va yozish oqimlarini yaratish
+// const readStream = fs.createReadStream('katta_video.mp4');
+// const writeStream = fs.createWriteStream('nusxa_video.mp4');
+
+// pipe orqali bitta qatorda nusxalash
+// readStream.pipe(writeStream);
+
+console.log("Oqimlar xotirani tejaydi va server tezligini oshiradi! 🌊");</pre>
+      </div>
+    </div>
+    <div class="result-box" id="nodeRes10">
+      <div class="result-label">🖥️ Server Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟢 Node.js Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Oqimlar xotirani tejaydi va server tezligini oshiradi! 🌊&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 Oddiy <code>fs.readFile</code> butun faylni bir vaqtda RAM ga yuklaydi, <code>Stream</code> esa atigi 64 KB li bo'laklarda o'tkazadi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#events" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: EventEmitter (Hodisalar bilan Ishlash)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Node.js | 10 / 32</span>
+      <a href="#express" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Express.js — Backend Freymvork →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Express</span>
+      <span style="font-size:12px; color:var(--text2);">Node.js Mavzu #11</span>
+    </div>
+    <h2 id="express" style="color:#22c55e; margin-top:0; font-size:24px;">Express.js — Backend Freymvork</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Express.js</strong> — Node.js uchun eng mashhur, tezkor va sodda veb freymvork. U marshrutlash (routing), middleware va API lar yaratishni bir necha qator kod bilan hal qiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>O'rnatish: <code>npm install express</code></li>
+      <li>Kichik va moslashuvchan (Minimalist framework).</li>
+      <li>RESTful API va to'liq veb saytlar yaratish uchun jahon standarti.</li>
+      <li>Minglab tayyor middleware paketlar (cors, morgan, helmet).</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Node.js Server Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('nodeCode11')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('nodeCode11','nodeRes11')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="nodeCode11" contenteditable="true" spellcheck="false">const express = require('express');
+const app = express();
+
+app.get('/', (req, res) =&gt; {
+  res.send('&lt;h1&gt;Salom, Express.js Server! 🚀&lt;/h1&gt;');
+});
+
+app.get('/api/salom', (req, res) =&gt; {
+  res.json({ status: 200, xabar: "Express API ishlamoqda" });
+});
+
+console.log("Express server 5000-portda tayyor!");</pre>
+      </div>
+    </div>
+    <div class="result-box" id="nodeRes11">
+      <div class="result-label">🖥️ Server Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟢 Node.js Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Express server 5000-portda tayyor!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 Node.js o'zining sof http moduliga nisbatan Express 10 barobar kamroq kod yozishni talab qiladi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#stream" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Stream (Oqimlar bilan Katta Fayllarni Qayta Ishlash)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Node.js | 11 / 32</span>
+      <a href="#routing" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Routing (Marshrutlash) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Express</span>
+      <span style="font-size:12px; color:var(--text2);">Node.js Mavzu #12</span>
+    </div>
+    <h2 id="routing" style="color:#22c55e; margin-top:0; font-size:24px;">Routing (Marshrutlash)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Mijoz turli xil URL manzillarga (masalan, <code>/foydalanuvchilar</code> yoki <code>/mahsulotlar</code>) murojaat qilganda ularga mos kodni ishga tushirish <strong>Routing</strong> deyiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Asosiy metodlar: <code>app.get()</code>, <code>app.post()</code>, <code>app.put()</code>, <code>app.delete()</code>.</li>
+      <li>Dinamik parametrlar: <code>/foydalanuvchi/:id</code> -&gt; <code>req.params.id</code> orqali olinadi.</li>
+      <li>Query parametrlar: <code>/qidiruv?q=telefon</code> -&gt; <code>req.query.q</code> orqali olinadi.</li>
+      <li><code>express.Router()</code> yordamida yo'llarni alohida fayllarga ajratish mumkin.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Node.js Server Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('nodeCode12')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('nodeCode12','nodeRes12')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="nodeCode12" contenteditable="true" spellcheck="false">const express = require('express');
+const app = express();
+
+// Dinamik parametr (:id)
+app.get('/foydalanuvchi/:id', (req, res) =&gt; {
+  const userId = req.params.id;
+  res.json({ id: userId, ism: "Foydalanuvchi #" + userId });
+});
+
+// Query parametr (?tartib=yangi)
+app.get('/mahsulotlar', (req, res) =&gt; {
+  const tartib = req.query.tartib || 'barchasi';
+  res.json({ filter: tartib, jami: 25 });
+});
+
+console.log("Routing muvaffaqiyatli sozlandi!");</pre>
+      </div>
+    </div>
+    <div class="result-box" id="nodeRes12">
+      <div class="result-label">🖥️ Server Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟢 Node.js Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Routing muvaffaqiyatli sozlandi!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 Har bir modul uchun alohida <code>routes/user.routes.js</code> fayllar ochish loyihani toza saqlaydi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#express" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Express.js — Backend Freymvork</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Node.js | 12 / 32</span>
+      <a href="#middleware" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Middleware (Oraliq Dasturlar) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Express</span>
+      <span style="font-size:12px; color:var(--text2);">Node.js Mavzu #13</span>
+    </div>
+    <h2 id="middleware" style="color:#22c55e; margin-top:0; font-size:24px;">Middleware (Oraliq Dasturlar)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Middleware</strong> — so'rov (request) kelib tushishi bilan yakuniy javob (response) qaytarilishi orasida ishlaydigan funksiyalardir. Ular log yozish, autentifikatsiya tekshirish va ma'lumotlarni tekshirishda ishlatiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Har bir middleware <code>(req, res, next)</code> parametrlarini qabul qiladi.</li>
+      <li>Keyingi bosqichga o'tish uchun albatta <code>next()</code> chaqirilishi shart.</li>
+      <li><code>app.use(express.json())</code> — kelgan JSON tanasini (req.body) o'qib beruvchi standart middleware.</li>
+      <li>Xatoliklarni ushlovchi maxsus middleware: <code>(err, req, res, next)</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Node.js Server Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('nodeCode13')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('nodeCode13','nodeRes13')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="nodeCode13" contenteditable="true" spellcheck="false">const express = require('express');
+const app = express();
+
+// Shaxsiy Logger Middleware
+const vaqtLogger = (req, res, next) =&gt; {
+  console.log(`[${new Date().toLocaleTimeString()}] ${req.method} ${req.url}`);
+  next(); // Keyingi funksiyaga o'tish
+};
+
+app.use(vaqtLogger);
+app.use(express.json()); // JSON body ni parslash
+
+app.get('/status', (req, res) =&gt; {
+  res.send('Hammasi yaxshi ishlamoqda');
+});
+
+console.log("Middleware tizimi faol!");</pre>
+      </div>
+    </div>
+    <div class="result-box" id="nodeRes13">
+      <div class="result-label">🖥️ Server Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟢 Node.js Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Middleware tizimi faol!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">⚠️ Agar middleware ichida <code>next()</code> chaqirilmasa yoki javob qaytarilmasa, so'rov javobsiz osilib qoladi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#routing" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Routing (Marshrutlash)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Node.js | 13 / 32</span>
+      <a href="#static" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Statik Fayllarni Tarqatish (Images, CSS, JS) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Express</span>
+      <span style="font-size:12px; color:var(--text2);">Node.js Mavzu #14</span>
+    </div>
+    <h2 id="static" style="color:#22c55e; margin-top:0; font-size:24px;">Statik Fayllarni Tarqatish (Images, CSS, JS)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Saytning rasmlari, CSS stillari va brauzer JavaScript fayllarini foydalanuvchilarga to'g'ridan-to'g'ri ko'rsatish uchun Express da <code>express.static</code> ishlatiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Odatda <code>public</code> nomli papka yaratiladi.</li>
+      <li>Ulash kodi: <code>app.use(express.static('public'))</code>.</li>
+      <li>Prefiks bilan ulash: <code>app.use('/static', express.static('public'))</code>.</li>
+      <li>Fayllar to'g'ridan-to'g'ri <code>http://localhost:3000/style.css</code> orqali ochiladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Node.js Server Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('nodeCode14')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('nodeCode14','nodeRes14')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="nodeCode14" contenteditable="true" spellcheck="false">const express = require('express');
+const path = require('path');
+const app = express();
+
+// 'public' papkasini statik qilish
+app.use(express.static(path.join(__dirname, 'public')));
+
+console.log("Rasmlar va CSS fayllar endi to'g'ridan-to'g'ri ochiq!");</pre>
+      </div>
+    </div>
+    <div class="result-box" id="nodeRes14">
+      <div class="result-label">🖥️ Server Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟢 Node.js Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Rasmlar va CSS fayllar endi to'g'ridan-to'g'ri ochiq!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 Statik fayllarni server orqali o'qishda xavfsizlik uchun doimo <code>path.join()</code> bilan to'liq yo'l ko'rsating.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#middleware" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Middleware (Oraliq Dasturlar)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Node.js | 14 / 32</span>
+      <a href="#template" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Template Engine (EJS, Pug) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Express</span>
+      <span style="font-size:12px; color:var(--text2);">Node.js Mavzu #15</span>
+    </div>
+    <h2 id="template" style="color:#22c55e; margin-top:0; font-size:24px;">Template Engine (EJS, Pug)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Template Engine</strong> — server tomonida dinamik HTML sahifalar hosil qilib, foydalanuvchiga yuborish vositasi. Eng ommabop shablonlashtiruvchi — <strong>EJS</strong> (Embedded JavaScript).</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>O'rnatish: <code>npm install ejs</code>.</li>
+      <li>Sozlash: <code>app.set('view engine', 'ejs');</code>.</li>
+      <li>Dinamik o'zgaruvchilarni chiqarish: <code>&lt;%= ism %&gt;</code>.</li>
+      <li>Shartlar va tsikllar: <code>&lt;% if (...) { %&gt;</code>.</li>
+      <li>Sahifani yuborish: <code>res.render('index', { ism: 'Ali' })</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Node.js Server Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('nodeCode15')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('nodeCode15','nodeRes15')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="nodeCode15" contenteditable="true" spellcheck="false">// Express sozlamasi
 const express = require('express');
 const app = express();
 
-// JSON ma'lumotlarni o'qish
+app.set('view engine', 'ejs');
+
+app.get('/profil', (req, res) =&gt; {
+  // views/profil.ejs fayliga ma'lumot uzatish
+  const foydalanuvchi = { ism: "Bobur", ball: 95 };
+  console.log("EJS shabloni ma'lumotlar bilan render bo'ldi!");
+});
+
+console.log("EJS Template Engine muvaffaqiyatli ulandi!");</pre>
+      </div>
+    </div>
+    <div class="result-box" id="nodeRes15">
+      <div class="result-label">🖥️ Server Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟢 Node.js Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;EJS Template Engine muvaffaqiyatli ulandi!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 <code>&lt;%= %&gt;</code> xavfsiz matn chiqaradi, <code>&lt;%- %&gt;</code> esa xom HTML kodini chiqaradi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#static" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Statik Fayllarni Tarqatish (Images, CSS, JS)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Node.js | 15 / 32</span>
+      <a href="#rest" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: REST API Asoslari va Arxitekturasi →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">REST API</span>
+      <span style="font-size:12px; color:var(--text2);">Node.js Mavzu #16</span>
+    </div>
+    <h2 id="rest" style="color:#22c55e; margin-top:0; font-size:24px;">REST API Asoslari va Arxitekturasi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>REST (Representational State Transfer)</strong> — mijoz (Frontend) va server (Backend) o'rtasida ma'lumot almashishning eng mashhur xalqaro arxitektura qoidalari to'plami. U odatda JSON formatida ishlaydi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Resurslar ot so'zlar bilan nomlanadi (masalan, <code>/api/users</code>, fe'llar ishlatilmaydi).</li>
+      <li>Stateless (Holatsiz): har bir so'rov o'zida to'liq ma'lumotni saqlashi kerak.</li>
+      <li>Standart HTTP status kodlari: 200 (OK), 201 (Yaratildi), 400 (Noto'g'ri so'rov), 404 (Topilmadi), 500 (Server xatosi).</li>
+      <li>CRUD amallari HTTP metodlari bilan to'liq mos keladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Node.js Server Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('nodeCode16')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('nodeCode16','nodeRes16')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="nodeCode16" contenteditable="true" spellcheck="false">// REST API standart yo'llari:
+// GET    /api/kitoblar       -&gt; Barcha kitoblarni olish
+// GET    /api/kitoblar/:id   -&gt; Bitta kitobni olish
+// POST   /api/kitoblar       -&gt; Yangi kitob qo'shish
+// PUT    /api/kitoblar/:id   -&gt; Kitobni to'liq yangilash
+// DELETE /api/kitoblar/:id   -&gt; Kitobni o'chirish
+
+console.log("REST API arxitekturasi aniq va tartibli standartdir!");</pre>
+      </div>
+    </div>
+    <div class="result-box" id="nodeRes16">
+      <div class="result-label">🖥️ Server Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟢 Node.js Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;REST API arxitekturasi aniq va tartibli standartdir!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 REST API yordamida bitta backend veb-saytga ham, mobil ilovaga (Flutter, React Native) ham bir vaqtda xizmat qila oladi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#template" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Template Engine (EJS, Pug)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Node.js | 16 / 32</span>
+      <a href="#get-post" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: GET va POST So'rovlarini Yaratish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">REST API</span>
+      <span style="font-size:12px; color:var(--text2);">Node.js Mavzu #17</span>
+    </div>
+    <h2 id="get-post" style="color:#22c55e; margin-top:0; font-size:24px;">GET va POST So'rovlarini Yaratish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><code>GET</code> ma'lumotlarni serverdan o'qib olish, <code>POST</code> esa yangi ma'lumotni serverga yuborib, bazaga qo'shish uchun ishlatiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>GET so'rovlarida ma'lumotlar URL manzilda ketadi (hech qachon parol yuborilmaydi!).</li>
+      <li>POST so'rovlarida ma'lumotlar <code>req.body</code> ichida xavfsiz tarzda uzatiladi.</li>
+      <li>Yangi ma'lumot yaratilganda <code>res.status(201)</code> qaytarish standart hisoblanadi.</li>
+      <li><code>app.use(express.json())</code> bo'lmasa, <code>req.body</code> qiymati <code>undefined</code> bo'lib qoladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Node.js Server Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('nodeCode17')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('nodeCode17','nodeRes17')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="nodeCode17" contenteditable="true" spellcheck="false">const express = require('express');
+const app = express();
 app.use(express.json());
 
-// Foydalanuvchilar ma'lumotlari (misol)
-let foydalanuvchilar = [
-  { id: 1, ism: 'Ali', email: 'ali@example.com' },
-  { id: 2, ism: 'Zulfiya', email: 'zulfiya@example.com' },
-];
+let darslar = [{ id: 1, nom: "Node.js" }];
 
-// GET — barcha foydalanuvchilar
-app.get('/api/users', (req, res) => {
-  res.json({ success: true, data: foydalanuvchilar });
+// GET - Olish
+app.get('/api/darslar', (req, res) =&gt; {
+  res.status(200).json(darslar);
 });
 
-// GET — bitta foydalanuvchi
-app.get('/api/users/:id', (req, res) => {
-  const user = foydalanuvchilar.find(u => u.id == req.params.id);
-  if (!user) return res.status(404).json({ error: 'Topilmadi' });
-  res.json({ success: true, data: user });
+// POST - Qo'shish
+app.post('/api/darslar', (req, res) =&gt; {
+  const yangiDars = { id: darslar.length + 1, nom: req.body.nom };
+  darslar.push(yangiDars);
+  res.status(201).json(yangiDars);
 });
 
-// POST — yangi foydalanuvchi qo'shish
-app.post('/api/users', (req, res) => {
-  const yangi = { id: Date.now(), ...req.body };
-  foydalanuvchilar.push(yangi);
-  res.status(201).json({ success: true, data: yangi });
-});
-
-app.listen(3000, () => console.log('API: http://localhost:3000'));</pre></div>
-  </div>
-
-  <h2 id="jwt">JWT Token bilan Autentifikatsiya</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar"><span class="code-lang">JavaScript (JWT)</span>
-      <div class="code-actions"><button class="btn-copy" onclick="copyCode('code3')">📋 Nusxa</button></div>
+console.log("GET va POST marshrutlari tayyor!");</pre>
+      </div>
     </div>
-    <div class="code-body"><pre id="code3">// npm install jsonwebtoken bcryptjs
-const jwt = require('jsonwebtoken');
-const bcrypt = require('bcryptjs');
+    <div class="result-box" id="nodeRes17">
+      <div class="result-label">🖥️ Server Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟢 Node.js Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;GET va POST marshrutlari tayyor!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
 
-const SECRET = process.env.JWT_SECRET || 'maxfiy_kalit';
+    <div class="note" style="margin-top:16px;">📌 Postman yoki Thunder Client vositalari orqali POST so'rovlarni qulay sinab ko'rish mumkin.</div>
 
-// Parolni shifrlash
-async function parolShifrla(parol) {
-  return await bcrypt.hash(parol, 10);
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#rest" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: REST API Asoslari va Arxitekturasi</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Node.js | 17 / 32</span>
+      <a href="#put-delete" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: PUT, PATCH va DELETE So'rovlari →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">REST API</span>
+      <span style="font-size:12px; color:var(--text2);">Node.js Mavzu #18</span>
+    </div>
+    <h2 id="put-delete" style="color:#22c55e; margin-top:0; font-size:24px;">PUT, PATCH va DELETE So'rovlari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Mavjud ma'lumotni o'zgartirish uchun <code>PUT</code> (to'liq yangilash) yoki <code>PATCH</code> (qisman yangilash), o'chirish uchun esa <code>DELETE</code> metodlari xizmat qiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>PUT: resursning barcha maydonlarini yangilaydi.</li>
+      <li>PATCH: faqat o'zgargan maydonni (masalan, faqat narxini) yangilaydi.</li>
+      <li>DELETE: ko'rsatilgan ID dagi elementni bazadan o'chiradi.</li>
+      <li>Muvaffaqiyatli o'chirilgach <code>res.json({ xabar: "O'chirildi" })</code> qaytariladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Node.js Server Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('nodeCode18')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('nodeCode18','nodeRes18')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="nodeCode18" contenteditable="true" spellcheck="false">const express = require('express');
+const app = express();
+app.use(express.json());
+
+let kitoblar = [{ id: 1, nom: "O'tkan Kunlar", narx: 40000 }];
+
+// PATCH - narxini yangilash
+app.patch('/api/kitoblar/:id', (req, res) =&gt; {
+  const id = parseInt(req.params.id);
+  const kitob = kitoblar.find(k =&gt; k.id === id);
+  if (!kitob) return res.status(404).json({ xato: "Kitob topilmadi" });
+  
+  if (req.body.narx) kitob.narx = req.body.narx;
+  res.json({ status: "Yangilandi", kitob });
+});
+
+// DELETE - o'chirish
+app.delete('/api/kitoblar/:id', (req, res) =&gt; {
+  const id = parseInt(req.params.id);
+  kitoblar = kitoblar.filter(k =&gt; k.id !== id);
+  res.json({ xabar: "Kitob muvaffaqiyatli o'chirildi" });
+});
+
+console.log("PUT, PATCH va DELETE amallari sozlandi!");</pre>
+      </div>
+    </div>
+    <div class="result-box" id="nodeRes18">
+      <div class="result-label">🖥️ Server Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟢 Node.js Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;PUT, PATCH va DELETE amallari sozlandi!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 Amalda butunlay o'chirib tashlash o'rniga, bazada <code>isDeleted: true</code> belgisini qo'yish (Soft Delete) keng qo'llaniladi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#get-post" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: GET va POST So'rovlarini Yaratish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Node.js | 18 / 32</span>
+      <a href="#json" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: JSON Ma'lumotlar bilan Ishlash →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">REST API</span>
+      <span style="font-size:12px; color:var(--text2);">Node.js Mavzu #19</span>
+    </div>
+    <h2 id="json" style="color:#22c55e; margin-top:0; font-size:24px;">JSON Ma'lumotlar bilan Ishlash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Node.js va Express serverlarining asosiy aloqa tili JSON hisoblanadi. JSON ma'lumotlarini qabul qilish, tekshirish va javob sifatida qaytarish asosiy amallardandir.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li><code>res.json(ob'ekt)</code> — avtomatik ravishda <code>Content-Type: application/json</code> sarlavhasini o'rnatadi.</li>
+      <li>Validatsiya: foydalanuvchi yuborgan JSON da barcha kerakli maydonlar bor-yo'qligini tekshirish (masalan, Joi yoki Zod kutubxonalari).</li>
+      <li>Katta hajmdagi JSON ma'lumotlarni siqish (gzip) uchun <code>compression</code> paketi ishlatiladi.</li>
+      <li>JSON da sana (Date) matn (ISO string) ko'rinishida uzatiladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Node.js Server Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('nodeCode19')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('nodeCode19','nodeRes19')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="nodeCode19" contenteditable="true" spellcheck="false">const express = require('express');
+const app = express();
+app.use(express.json());
+
+app.post('/api/tekshir', (req, res) =&gt; {
+  const { email, parol } = req.body;
+  
+  if (!email || !parol) {
+    return res.status(400).json({ xato: "Email va parol kiritilishi shart!" });
+  }
+  
+  res.json({ muvaffaqiyat: true, email: email });
+});
+
+console.log("JSON validatsiyasi faol!");</pre>
+      </div>
+    </div>
+    <div class="result-box" id="nodeRes19">
+      <div class="result-label">🖥️ Server Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟢 Node.js Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;JSON validatsiyasi faol!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 <code>express.json({ limit: '10mb' })</code> orqali qabul qilinadigan JSON ning maksimal hajmini cheklash mumkin.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#put-delete" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: PUT, PATCH va DELETE So'rovlari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Node.js | 19 / 32</span>
+      <a href="#cors" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: CORS (Cross-Origin Resource Sharing) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">REST API</span>
+      <span style="font-size:12px; color:var(--text2);">Node.js Mavzu #20</span>
+    </div>
+    <h2 id="cors" style="color:#22c55e; margin-top:0; font-size:24px;">CORS (Cross-Origin Resource Sharing)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>CORS</strong> — brauzerlarning xavfsizlik mexanizmi bo'lib, bir manzildagi frontend (masalan, <code>localhost:3000</code>) boshqa portdagi backend (<code>localhost:5000</code>) dan ma'lumot olishini bloklaydi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Brauzerda mashhur <code>CORS error: No 'Access-Control-Allow-Origin' header</code> xatosi chiqadi.</li>
+      <li>Buni hal qilish uchun backendda <code>cors</code> paketi o'rnatiladi: <code>npm i cors</code>.</li>
+      <li>Oddiy ulash: <code>app.use(cors())</code> — barcha domenlarga ruxsat beradi.</li>
+      <li>Xavfsiz sozlash: faqat o'zingizning frontend domeningizga ruxsat berish mumkin.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Node.js Server Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('nodeCode20')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('nodeCode20','nodeRes20')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="nodeCode20" contenteditable="true" spellcheck="false">const express = require('express');
+const cors = require('cors');
+const app = express();
+
+// Xavfsiz CORS sozlamasi
+const ruxsatBerilganlar = ['http://localhost:3000', 'https://w3learn.uz'];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || ruxsatBerilganlar.indexOf(origin) !== -1) {
+      callback(null, true);
+    } else {
+      callback(new Error('CORS tomonidan bloklandi!'));
+    }
+  }
+}));
+
+console.log("CORS himoyasi muvaffaqiyatli sozlandi!");</pre>
+      </div>
+    </div>
+    <div class="result-box" id="nodeRes20">
+      <div class="result-label">🖥️ Server Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟢 Node.js Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;CORS himoyasi muvaffaqiyatli sozlandi!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 Ishlab chiqish (Development) vaqtida shunchaki <code>app.use(cors())</code> deb qo'yish kifoya.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#json" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: JSON Ma'lumotlar bilan Ishlash</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Node.js | 20 / 32</span>
+      <a href="#jwt" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: JWT (JSON Web Token) Autentifikatsiya →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Xavfsizlik</span>
+      <span style="font-size:12px; color:var(--text2);">Node.js Mavzu #21</span>
+    </div>
+    <h2 id="jwt" style="color:#22c55e; margin-top:0; font-size:24px;">JWT (JSON Web Token) Autentifikatsiya</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>JWT</strong> — foydalanuvchi tizimga kirganini tasdiqlovchi shifrlangan raqamli kalit (token). Zamonaviy SPA (React, Vue) va mobil ilovalarda sessiya o'rniga aynan JWT ishlatiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>O'rnatish: <code>npm install jsonwebtoken</code>.</li>
+      <li>Uch qismdan iborat: Header, Payload (ma'lumot), Signature (imzo).</li>
+      <li>Token yaratish: <code>jwt.sign({ userId }, maxfiyKalit, { expiresIn: '1d' })</code>.</li>
+      <li>Tokenni tekshirish: <code>jwt.verify(token, maxfiyKalit)</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Node.js Server Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('nodeCode21')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('nodeCode21','nodeRes21')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="nodeCode21" contenteditable="true" spellcheck="false">const jwt = require('jsonwebtoken');
+const MAXFIY_KALIT = "mening_o'ta_maxfiy_kalitim_2026";
+
+// 1. Foydalanuvchiga token berish
+const token = jwt.sign(
+  { id: 101, username: "ali_developer", rol: "admin" },
+  MAXFIY_KALIT,
+  { expiresIn: '2h' } // 2 soat amal qiladi
+);
+
+console.log("Yaratilgan JWT token:\n", token.substring(0, 45) + "...");
+
+// 2. Tokenni tekshirish
+try {
+  const ochilgan = jwt.verify(token, MAXFIY_KALIT);
+  console.log("Token tasdiqlandi! Foydalanuvchi:", ochilgan.username);
+} catch (err) {
+  console.log("Token yaroqsiz!");
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="nodeRes21">
+      <div class="result-label">🖥️ Server Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟢 Node.js Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Yaratilgan JWT token:
+ eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI...
+Token tasdiqlandi! Foydalanuvchi: ali_developer&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 Tokenda parollar kabi nozik ma'lumotlarni saqlamang, chunki payload qismini har kim o'qiy oladi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#cors" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: CORS (Cross-Origin Resource Sharing)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Node.js | 21 / 32</span>
+      <a href="#bcrypt" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: bcrypt — Parollarni Xavfsiz Xeshlash →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Xavfsizlik</span>
+      <span style="font-size:12px; color:var(--text2);">Node.js Mavzu #22</span>
+    </div>
+    <h2 id="bcrypt" style="color:#22c55e; margin-top:0; font-size:24px;">bcrypt — Parollarni Xavfsiz Xeshlash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Foydalanuvchilarning parollarini ma'lumotlar bazasida ochiq (matn) holida saqlash qat'iyan man etiladi! Buning uchun <strong>bcrypt</strong> orqali qaytarib bo'lmas shifrlash (Hashing va Salt) qo'llaniladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>O'rnatish: <code>npm install bcrypt</code>.</li>
+      <li>Xeshlash: <code>await bcrypt.hash(parol, 10)</code> — tuzlash darajasi (salt rounds) bilan.</li>
+      <li>Taqqoslab tekshirish: <code>await bcrypt.compare(kiritilganParol, xeshParol)</code>.</li>
+      <li>Hatto ma'lumotlar bazasi o'g'irlanganda ham parollarni ochib bo'lmaydi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Node.js Server Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('nodeCode22')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('nodeCode22','nodeRes22')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="nodeCode22" contenteditable="true" spellcheck="false">const bcrypt = require('bcrypt');
+
+async function parolTest() {
+  const ochiqParol = "maxfiy_parol_123";
+  
+  // 1. Xeshlash (tuzlash = 10)
+  const xeshParol = await bcrypt.hash(ochiqParol, 10);
+  console.log("Bazada saqlanadigan xesh:\n", xeshParol);
+  
+  // 2. Tekshirish
+  const togriKeldimi = await bcrypt.compare("maxfiy_parol_123", xeshParol);
+  console.log("Parol to'g'rimi?", togriKeldimi);
 }
 
-// Login endpoint
-app.post('/api/login', async (req, res) => {
-  const { email, parol } = req.body;
+parolTest();</pre>
+      </div>
+    </div>
+    <div class="result-box" id="nodeRes22">
+      <div class="result-label">🖥️ Server Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟢 Node.js Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Bazada saqlanadigan xesh:
+ $2b$10$wK1G8eXF7QYwX...
+Parol to'g'rimi? True&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
 
-  // Foydalanuvchini topish (MB dan)
-  const user = await User.findOne({ email });
-  if (!user) return res.status(401).json({ error: 'Noto\'g\'ri email' });
+    <div class="note" style="margin-top:16px;">💡 Bir xil parol ikki marta xeshlansa ham, har safar butunlay boshqacha natija chiqadi, chunki har safar yangi tuz (salt) qo'shiladi.</div>
 
-  // Parolni tekshirish
-  const togri = await bcrypt.compare(parol, user.parolHash);
-  if (!togri) return res.status(401).json({ error: 'Noto\'g\'ri parol' });
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#jwt" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: JWT (JSON Web Token) Autentifikatsiya</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Node.js | 22 / 32</span>
+      <a href="#session" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: express-session va Cookie →</a>
+    </div>
+  </section>
 
-  // JWT token yaratish
-  const token = jwt.sign(
-    { id: user._id, email: user.email },
-    SECRET,
-    { expiresIn: '7d' }
-  );
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Xavfsizlik</span>
+      <span style="font-size:12px; color:var(--text2);">Node.js Mavzu #23</span>
+    </div>
+    <h2 id="session" style="color:#22c55e; margin-top:0; font-size:24px;">express-session va Cookie</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">An'anaviy veb-saytlarda (server tomonida render bo'ladigan saytlar) foydalanuvchining login holatini eslab qolish uchun <strong>Session</strong> va <strong>Cookie</strong> ishlatiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>O'rnatish: <code>npm install express-session</code>.</li>
+      <li>Foydalanuvchi brauzeriga faqat sessiya ID si (Cookie) yuboriladi.</li>
+      <li>Asosiy ma'lumotlar esa server xotirasida (yoki Redis'da) xavfsiz saqlanadi.</li>
+      <li>Foydalanuvchi tizimdan chiqqanda: <code>req.session.destroy()</code>.</li>
+    </ul>
 
-  res.json({ success: true, token });
-});</pre></div>
-  </div>
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Node.js Server Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('nodeCode23')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('nodeCode23','nodeRes23')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="nodeCode23" contenteditable="true" spellcheck="false">const express = require('express');
+const session = require('express-session');
+const app = express();
+
+app.use(session({
+  secret: 'maxfiy-kalit-soz',
+  resave: false,
+  saveUninitialized: true,
+  cookie: { maxAge: 60000 * 60 } // 1 soat
+}));
+
+app.get('/login', (req, res) =&gt; {
+  req.session.foydalanuvchi = "Ali";
+  res.send("Sessiya yaratildi!");
+});
+
+console.log("express-session sozlandi!");</pre>
+      </div>
+    </div>
+    <div class="result-box" id="nodeRes23">
+      <div class="result-label">🖥️ Server Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟢 Node.js Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;express-session sozlandi!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 Production muhitida sessiyalarni RAM da emas, balki albatta Redis bazasida saqlash kerak.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#bcrypt" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: bcrypt — Parollarni Xavfsiz Xeshlash</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Node.js | 23 / 32</span>
+      <a href="#oauth" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: OAuth 2.0 (Google, GitHub orqali Kirish) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Xavfsizlik</span>
+      <span style="font-size:12px; color:var(--text2);">Node.js Mavzu #24</span>
+    </div>
+    <h2 id="oauth" style="color:#22c55e; margin-top:0; font-size:24px;">OAuth 2.0 (Google, GitHub orqali Kirish)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>OAuth</strong> — foydalanuvchilarga saytda yangi parol yaratmasdan, o'zlarining Google, GitHub yoki Telegram akkauntlari orqali birgina tugma bilan xavfsiz ro'yxatdan o'tish imkonini beradi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Node.js da buning uchun <strong>Passport.js</strong> kutubxonasi ishlatiladi: <code>npm i passport passport-google-oauth20</code>.</li>
+      <li>Google Cloud Console dan Client ID va Client Secret olinadi.</li>
+      <li>Foydalanuvchi Google sahifasida tasdiqlaydi va sizga uning ismi, emaili va rasmi qaytadi.</li>
+      <li>Foydalanuvchi tajribasini juda qulay qiladi va ro'yxatdan o'tish foizini oshiradi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Node.js Server Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('nodeCode24')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('nodeCode24','nodeRes24')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="nodeCode24" contenteditable="true" spellcheck="false">// Passport.js Google Strategy namunasi
+// const passport = require('passport');
+// const GoogleStrategy = require('passport-google-oauth20').Strategy;
+
+// passport.use(new GoogleStrategy({
+//     clientID: process.env.GOOGLE_CLIENT_ID,
+//     clientSecret: process.env.GOOGLE_CLIENT_SECRET,
+//     callbackURL: "/auth/google/callback"
+//   },
+//   (accessToken, refreshToken, profile, done) =&gt; {
+//     console.log("Google profili:", profile.displayName);
+//     return done(null, profile);
+//   }
+// ));
+
+console.log("OAuth 2.0 orqali bir marta bosishda kirish imkoniyati!");</pre>
+      </div>
+    </div>
+    <div class="result-box" id="nodeRes24">
+      <div class="result-label">🖥️ Server Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟢 Node.js Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;OAuth 2.0 orqali bir marta bosishda kirish imkoniyati!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 OAuth 2.0 orqali dastur foydalanuvchining parolini hech qachon ko'rmaydi, bu esa 100% xavfsizlikni ta'minlaydi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#session" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: express-session va Cookie</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Node.js | 24 / 32</span>
+      <a href="#mongoose" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Mongoose — MongoDB bilan Ishlash (ODM) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Ma'lumotlar Bazasi</span>
+      <span style="font-size:12px; color:var(--text2);">Node.js Mavzu #25</span>
+    </div>
+    <h2 id="mongoose" style="color:#22c55e; margin-top:0; font-size:24px;">Mongoose — MongoDB bilan Ishlash (ODM)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Mongoose</strong> — Node.js va NoSQL ma'lumotlar bazasi hisoblangan MongoDB o'rtasidagi eng mashhur ko'prikdir (ODM — Object Data Modeling). U sxemalar (Schemas) va modellar yaratishni osonlashtiradi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>O'rnatish: <code>npm install mongoose</code>.</li>
+      <li>Bazaga ulanish: <code>await mongoose.connect('mongodb://localhost:27017/mydb')</code>.</li>
+      <li>Schema — ma'lumotlar qanday maydonlardan iborat bo'lishini (turi, majburiyligi) belgilaydi.</li>
+      <li>Model orqali CRUD amallari: <code>User.create()</code>, <code>User.find()</code>, <code>User.findByIdAndUpdate()</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Node.js Server Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('nodeCode25')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('nodeCode25','nodeRes25')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="nodeCode25" contenteditable="true" spellcheck="false">const mongoose = require('mongoose');
+
+// Sxema yaratish
+const foydalanuvchiSxema = new mongoose.Schema({
+  ism: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  yosh: Number,
+  yaratilgan: { type: Date, default: Date.now }
+});
+
+// Model hosil qilish
+// const Foydalanuvchi = mongoose.model('User', foydalanuvchiSxema);
+
+console.log("Mongoose sxemasi va modeli muvaffaqiyatli tuzildi!");</pre>
+      </div>
+    </div>
+    <div class="result-box" id="nodeRes25">
+      <div class="result-label">🖥️ Server Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟢 Node.js Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Mongoose sxemasi va modeli muvaffaqiyatli tuzildi!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 MongoDB hujjatlarga (Documents) asoslangan NoSQL baza bo'lib, uning ma'lumotlari JSON ga juda o'xshash BSON formatida saqlanadi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#oauth" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: OAuth 2.0 (Google, GitHub orqali Kirish)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Node.js | 25 / 32</span>
+      <a href="#sequelize" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Sequelize — SQL Baza bilan Ishlash (PostgreSQL, MySQL) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Ma'lumotlar Bazasi</span>
+      <span style="font-size:12px; color:var(--text2);">Node.js Mavzu #26</span>
+    </div>
+    <h2 id="sequelize" style="color:#22c55e; margin-top:0; font-size:24px;">Sequelize — SQL Baza bilan Ishlash (PostgreSQL, MySQL)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Sequelize</strong> — Node.js uchun mashhur va kuchli ORM (Object-Relational Mapping). U PostgreSQL, MySQL, SQLite va MariaDB bilan sof SQL so'rovlarsiz, JavaScript metodlari orqali ishlash imkonini beradi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>O'rnatish: <code>npm install sequelize pg pg-hstore</code> (PostgreSQL uchun).</li>
+      <li>Jadvallar JavaScript klasslari ko'rinishida belgilanadi.</li>
+      <li>Aloqalar (Relations): <code>hasOne</code>, <code>hasMany</code>, <code>belongsTo</code>, <code>belongsToMany</code>.</li>
+      <li>Migratsiyalar orqali ma'lumotlar bazasi strukturasini versiyalar bo'yicha boshqarish mumkin.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Node.js Server Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('nodeCode26')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('nodeCode26','nodeRes26')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="nodeCode26" contenteditable="true" spellcheck="false">const { Sequelize, DataTypes } = require('sequelize');
+
+// Bazaga ulanish
+const sequelize = new Sequelize('sqlite::memory:'); // Xotiradagi test baza
+
+// Model aniqlash
+const Mahsulot = sequelize.define('Mahsulot', {
+  nom: { type: DataTypes.STRING, allowNull: false },
+  narx: { type: DataTypes.FLOAT, defaultValue: 0.0 }
+});
+
+console.log("Sequelize SQL ORM tayyor!");</pre>
+      </div>
+    </div>
+    <div class="result-box" id="nodeRes26">
+      <div class="result-label">🖥️ Server Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟢 Node.js Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Sequelize SQL ORM tayyor!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 ORM ishlatganda SQL Injection xujumlaridan avtomatik himoyalanish ta'minlanadi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#mongoose" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Mongoose — MongoDB bilan Ishlash (ODM)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Node.js | 26 / 32</span>
+      <a href="#prisma" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Prisma ORM — Zamonaviy Baza Boshqaruvi →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Ma'lumotlar Bazasi</span>
+      <span style="font-size:12px; color:var(--text2);">Node.js Mavzu #27</span>
+    </div>
+    <h2 id="prisma" style="color:#22c55e; margin-top:0; font-size:24px;">Prisma ORM — Zamonaviy Baza Boshqaruvi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Prisma</strong> — eng yangi avlod ORM tizimi bo'lib, to'liq TypeScript qo'llab-quvvatlovi (Type-safety), avtomatik to'ldirish (Auto-complete) va qulay vizual studiyasi (Prisma Studio) bilan ajralib turadi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>O'rnatish: <code>npm install prisma @prisma/client</code>.</li>
+      <li>Boshlash: <code>npx prisma init</code>.</li>
+      <li><code>schema.prisma</code> faylida deklarativ tarzda modellar yoziladi.</li>
+      <li>Vizual boshqaruv: <code>npx prisma studio</code> brauzerda ma'lumotlarni tahrirlash imkonini beradi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Node.js Server Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('nodeCode27')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('nodeCode27','nodeRes27')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="nodeCode27" contenteditable="true" spellcheck="false">// schema.prisma namunasi:
+// model User {
+//   id        Int      @id @default(autoincrement())
+//   email     String   @unique
+//   name      String?
+//   posts     Post[]
+//   createdAt DateTime @default(now())
+// }
+
+console.log("Prisma — zamonaviy backend dasturchilarning 1-raqamli tanlovi!");</pre>
+      </div>
+    </div>
+    <div class="result-box" id="nodeRes27">
+      <div class="result-label">🖥️ Server Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟢 Node.js Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Prisma — zamonaviy backend dasturchilarning 1-raqamli tanlovi!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 Prisma so'rovlarida yozilgan xatolar kod yozilayotgan paytning o'zida VS Code tomonidan qizil bilan ko'rsatiladi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#sequelize" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Sequelize — SQL Baza bilan Ishlash (PostgreSQL, MySQL)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Node.js | 27 / 32</span>
+      <a href="#async" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Asinxron Dasturlash (Promise va async/await) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Ilg'or</span>
+      <span style="font-size:12px; color:var(--text2);">Node.js Mavzu #28</span>
+    </div>
+    <h2 id="async" style="color:#22c55e; margin-top:0; font-size:24px;">Asinxron Dasturlash (Promise va async/await)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Node.js dagi deyarli barcha amallar (fayl o'qish, bazaga so'rov, tashqi API) asinxron tarzda bajariladi. <code>async/await</code> bu asinxron kodni xuddi sinxron kabi tushunarli va oson o'qiladigan qiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Callback Hell (eski piramida uslubi) dan qutqaradi.</li>
+      <li>Xatoliklarni odatiy <code>try ... catch</code> bloki orqali xavfsiz ushlash mumkin.</li>
+      <li>Parallel so'rovlar yuborish: <code>await Promise.all([vazifa1, vazifa2])</code>.</li>
+      <li>Server resurslarini kutish vaqtida behuda band qilmaydi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Node.js Server Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('nodeCode28')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('nodeCode28','nodeRes28')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="nodeCode28" contenteditable="true" spellcheck="false">// Asinxron so'rov simulyatsiyasi
+function bazadanOlish() {
+  return new Promise(resolve =&gt; setTimeout(() =&gt; resolve("Foydalanuvchi ma'lumotlari"), 500));
+}
+
+async function asosiyIsh() {
+  console.log("⏳ So'rov yuborildi...");
+  try {
+    const natija = await bazadanOlish();
+    console.log("✅ Qabul qilindi:", natija);
+  } catch (xato) {
+    console.error("Xatolik:", xato);
+  }
+}
+
+asosiyIsh();</pre>
+      </div>
+    </div>
+    <div class="result-box" id="nodeRes28">
+      <div class="result-label">🖥️ Server Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟢 Node.js Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;⏳ So'rov yuborildi...
+✅ Qabul qilindi: Foydalanuvchi ma'lumotlari&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 <code>Promise.all()</code> orqali bir vaqtning o'zida 10 ta so'rovni parallel bajarib, umumiy vaqtni 10 barobar tejash mumkin.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#prisma" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Prisma ORM — Zamonaviy Baza Boshqaruvi</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Node.js | 28 / 32</span>
+      <a href="#websocket" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: WebSocket va Socket.io (Real-Time Aloqa) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Ilg'or</span>
+      <span style="font-size:12px; color:var(--text2);">Node.js Mavzu #29</span>
+    </div>
+    <h2 id="websocket" style="color:#22c55e; margin-top:0; font-size:24px;">WebSocket va Socket.io (Real-Time Aloqa)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">An'anaviy HTTP da faqat mijoz so'rov yuboradi. <strong>WebSocket</strong> esa server va mijoz o'rtasida uzluksiz ikki tomonlama (Full-Duplex) ochiq kanal o'rnatadi. Bu onlayn chatlar va o'yinlar uchun asosiy vositadir.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Node.js da eng ommabop kutubxona — <strong>Socket.io</strong>: <code>npm i socket.io</code>.</li>
+      <li>Server mijozga o'zi xohlagan lahzada yangi xabar yubora oladi (Push).</li>
+      <li>Guruhlar (Rooms) va umumiy xabarnomalar (Broadcast).</li>
+      <li>Kriptovalyuta kurslari, xarita harakatlari (Uber/Yandex Go) real vaqt rejimida ishlaydi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Node.js Server Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('nodeCode29')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('nodeCode29','nodeRes29')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="nodeCode29" contenteditable="true" spellcheck="false">const http = require('http');
+const { Server } = require("socket.io");
+
+const server = http.createServer();
+const io = new Server(server, { cors: { origin: "*" } });
+
+io.on('connection', (socket) =&gt; {
+  console.log('👤 Yangi foydalanuvchi chatga ulandi:', socket.id);
+
+  socket.on('xabar_yuborish', (data) =&gt; {
+    // Barcha ulanganlarga tarqatish
+    io.emit('yangi_xabar', data);
+  });
+});
+
+console.log("Socket.io real-time server tayyor!");</pre>
+      </div>
+    </div>
+    <div class="result-box" id="nodeRes29">
+      <div class="result-label">🖥️ Server Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟢 Node.js Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Socket.io real-time server tayyor!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 Agar brauzer WebSocket ni qo'llab-quvvatlamasa, Socket.io avtomatik tarzda HTTP Long-Polling rejimiga o'tadi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#async" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Asinxron Dasturlash (Promise va async/await)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Node.js | 29 / 32</span>
+      <a href="#env" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Environment Variables (.env Fayllari) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Ilg'or</span>
+      <span style="font-size:12px; color:var(--text2);">Node.js Mavzu #30</span>
+    </div>
+    <h2 id="env" style="color:#22c55e; margin-top:0; font-size:24px;">Environment Variables (.env Fayllari)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Ma'lumotlar bazasi parollari, API kalitlari va maxfiy ma'lumotlarni hech qachon ochiq kodda yozmaslik kerak. Ular <code>.env</code> faylida saqlanadi va <strong>dotenv</strong> paketi orqali o'qiladi.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>O'rnatish: <code>npm install dotenv</code>.</li>
+      <li>Kodni boshida chaqirish: <code>require('dotenv').config();</code>.</li>
+      <li>O'qish: <code>process.env.PORT</code>, <code>process.env.DB_PASSWORD</code>.</li>
+      <li><code>.env</code> faylini doimo <code>.gitignore</code> ga qo'shish shart!</li>
+      <li>Loyihaga namuna sifatida <code>.env.example</code> fayli qoldiriladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Node.js Server Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('nodeCode30')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('nodeCode30','nodeRes30')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="nodeCode30" contenteditable="true" spellcheck="false"># .env fayli:
+PORT=5000
+DB_HOST=localhost
+DB_USER=root
+JWT_SECRET=super_secret_key_777
+
+// app.js
+require('dotenv').config();
+
+const port = process.env.PORT || 3000;
+console.log("Server ishlayotgan port:", port);
+console.log("Baza manzili:", process.env.DB_HOST);</pre>
+      </div>
+    </div>
+    <div class="result-box" id="nodeRes30">
+      <div class="result-label">🖥️ Server Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟢 Node.js Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Server ishlayotgan port: 5000
+Baza manzili: localhost&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">⚠️ Hech qachon maxfiy kalitlarni GitHub ga yuklamang — bu xavfsizlikka jiddiy tahdiddir!</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#websocket" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: WebSocket va Socket.io (Real-Time Aloqa)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Node.js | 30 / 32</span>
+      <a href="#pm2" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: PM2 — Jarayonlarni Boshqarish (Process Manager) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Ilg'or</span>
+      <span style="font-size:12px; color:var(--text2);">Node.js Mavzu #31</span>
+    </div>
+    <h2 id="pm2" style="color:#22c55e; margin-top:0; font-size:24px;">PM2 — Jarayonlarni Boshqarish (Process Manager)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>PM2</strong> — ishlab chiqarish (Production) serverlarida Node.js ilovalarini 24/7 rejimida to'xtovsiz ishlashini ta'minlovchi eng mashhur jarayon boshqaruvchisidir.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Global o'rnatish: <code>npm install -g pm2</code>.</li>
+      <li>Serverni ishga tushirish: <code>pm2 start server.js --name "my-app"</code>.</li>
+      <li>Agar serverda xatolik yuz bersa, PM2 uni soniyaning ichida avtomatik qayta yoqadi.</li>
+      <li>Klaster rejimi (Cluster Mode): <code>pm2 start server.js -i max</code> — barcha CPU yadrolarini ishlatadi.</li>
+      <li>Monitoring: <code>pm2 status</code> va <code>pm2 monit</code>.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Node.js Server Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('nodeCode31')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('nodeCode31','nodeRes31')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="nodeCode31" contenteditable="true" spellcheck="false"># PM2 asosiy buyruqlari:
+# $ pm2 start app.js -i max    -&gt; Barcha yadrolarda ishga tushirish
+# $ pm2 list                   -&gt; Jarayonlar ro'yxati
+# $ pm2 logs                   -&gt; Loglarni jonli ko'rish
+# $ pm2 restart all            -&gt; Barchasini qayta yoqish
+# $ pm2 stop all               -&gt; To'xtatish
+
+console.log("PM2 serverni to'xtovsiz 24/7 ishlashini ta'minlaydi!");</pre>
+      </div>
+    </div>
+    <div class="result-box" id="nodeRes31">
+      <div class="result-label">🖥️ Server Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟢 Node.js Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;PM2 serverni to'xtovsiz 24/7 ishlashini ta'minlaydi!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">💡 Server kompyuteri o'chib yonganda ham loyihalar avtomatik qayta yoqilishi uchun <code>pm2 startup</code> va <code>pm2 save</code> qilinadi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#env" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: Environment Variables (.env Fayllari)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Node.js | 31 / 32</span>
+      <a href="#deploy" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi: Node.js Loyihasini Serverga Joylash (Deployment) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Ilg'or</span>
+      <span style="font-size:12px; color:var(--text2);">Node.js Mavzu #32</span>
+    </div>
+    <h2 id="deploy" style="color:#22c55e; margin-top:0; font-size:24px;">Node.js Loyihasini Serverga Joylash (Deployment)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Tayyor Node.js backend ilovasini butun dunyo foydalanishi uchun bulutli serverlarga (VPS, Render, Railway, Vercel, AWS) joylashtirish bosqichlari.</p>
+    <ul style="padding-left:20px; line-height:1.7; margin: 12px 0; color:var(--text);">
+      <li>Bepul/oson xizmatlar: Render.com, Railway.app, Vercel (Serverless).</li>
+      <li>VPS serverlar: Ubuntu Linux o'rnatilgan DigitalOcean, Hetzner, AWS EC2.</li>
+      <li>Nginx — teskari proksi (Reverse Proxy) sifatida 80/443 portlarni Node.js portiga yo'naltiradi.</li>
+      <li>Certbot (Let's Encrypt) orqali bepul SSL (HTTPS) sertifikati o'rnatiladi.</li>
+    </ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">Node.js Server Kodi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('nodeCode32')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('nodeCode32','nodeRes32')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="nodeCode32" contenteditable="true" spellcheck="false"># Ubuntu VPS da standart deploy qilish:
+# 1. Loyihani yuklash
+# git clone https://github.com/foydalanuvchi/loyiha.git
+
+# 2. Paketlarni o'rnatish
+# npm install --production
+
+# 3. PM2 orqali ishga tushirish
+# pm2 start server.js --name "api"
+
+console.log("Backend muvaffaqiyatli butun dunyoga tarqatildi (Deployed)! 🌐");</pre>
+      </div>
+    </div>
+    <div class="result-box" id="nodeRes32">
+      <div class="result-label">🖥️ Server Terminal Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:110px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🟢 Node.js Terminal Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Backend muvaffaqiyatli butun dunyoga tarqatildi (Deployed)! 🌐&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note" style="margin-top:16px;">📌 Doimo serverda <code>NODE_ENV=production</code> o'zgaruvchisini o'rnating, bu Express va boshqa kutubxonalarni 3 barobar tezlashtiradi.</div>
+
+    <div class="topic-nav" style="display:flex; justify-content:space-between; align-items:center; margin-top:30px; padding-top:20px; border-top:1px solid rgba(255,255,255,0.08); flex-wrap:wrap; gap:12px;">
+      <a href="#pm2" class="topic-nav-btn prev" style="display:inline-flex; align-items:center; gap:8px; padding:10px 18px; background:rgba(255,255,255,0.06); color:var(--text); border:1px solid rgba(255,255,255,0.1); border-radius:8px; font-weight:600; font-size:13.5px; text-decoration:none; transition:all 0.2s;">← Oldingi: PM2 — Jarayonlarni Boshqarish (Process Manager)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 Node.js | 32 / 32</span>
+      <a href="php.html" class="topic-nav-btn next" style="display:inline-flex; align-items:center; gap:8px; padding:10px 20px; background:#04AA6D; color:#fff; border-radius:8px; font-weight:700; font-size:13.5px; text-decoration:none; transition:all 0.2s; box-shadow:0 2px 8px rgba(4,170,109,0.3);">Keyingi kurs: PHP Darslari →</a>
+    </div>
+  </section>
 
   <div class="quiz-box">
-    <div class="quiz-q">🧪 Test: Node.js qaysi dvigatelda ishlaydi?</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qr1')">SpiderMonkey</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, true, 'qr1')">V8 (Google Chrome)</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qr1')">JavaScriptCore</div>
-    <div class="quiz-result" id="qr1"></div>
+    <div class="quiz-q">🧪 Test: Node.js qaysi JavaScript dvigateli asosida ishlaydi?</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'nodeQr1')">SpiderMonkey</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, true, 'nodeQr1')">Google Chrome V8</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'nodeQr1')">JavaScriptCore</div>
+    <div class="quiz-result" id="nodeQr1"></div>
   </div>
-  
 
-<div class="nav-btns">
-  <a href="python.html" class="btn-prev">&#8592; Python</a>
-  <a href="php.html" class="btn-next">PHP &#8594;</a>
-</div>
+  <div class="nav-btns" style="margin-top: 30px;">
+    <a href="python.html" class="btn-prev">← Python</a>
+    <a href="php.html" class="btn-next">PHP Darsiga O'tish →</a>
+  </div>
+
+  <div class="note note-blue" style="margin-top: 25px;">
+    📌 <strong>Keyingi qadam:</strong> Node.js backend asoslarini o'rgangach, internetning 77% qismini harakatlantiruvchi <a href="php.html" style="color:var(--green)">PHP darslariga</a> o'ting!
+  </div>
 </main>
 <aside class="right-panel">
   <div class="rp-title">📈 Progress</div>

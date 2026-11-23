@@ -38,17 +38,55 @@ function showToast(msg, type = 'success') {
 function copyCode(id) {
   const el = document.getElementById(id);
   if (!el) return;
-  navigator.clipboard.writeText(el.textContent).then(() => {
-    showToast("Kod nusxalandi!");
-  }).catch(() => {
-    const ta = document.createElement('textarea');
-    ta.value = el.textContent;
-    document.body.appendChild(ta);
-    ta.select();
+
+  // Find triggering button for tactile animation feedback
+  const wrap = el.closest('.code-wrap') || el.closest('.code-block') || el.parentElement?.parentElement;
+  const btn = wrap ? (wrap.querySelector('.btn-copy') || wrap.querySelector('.btn-copy-code')) : null;
+  const prevHtml = btn ? btn.innerHTML : '';
+
+  if (btn) {
+    btn.innerHTML = '✓ Nusxalandi!';
+    btn.classList.add('copied');
+  }
+
+  const restoreBtn = () => {
+    if (btn) {
+      setTimeout(() => {
+        btn.innerHTML = prevHtml || '📋 Nusxa';
+        btn.classList.remove('copied');
+      }, 2000);
+    }
+  };
+
+  const textToCopy = el.textContent;
+  if (navigator.clipboard && navigator.clipboard.writeText) {
+    navigator.clipboard.writeText(textToCopy).then(() => {
+      showToast("📋 Kod muvaffaqiyatli nusxalandi!");
+      restoreBtn();
+    }).catch(() => {
+      fallbackCopy(textToCopy);
+      restoreBtn();
+    });
+  } else {
+    fallbackCopy(textToCopy);
+    restoreBtn();
+  }
+}
+
+function fallbackCopy(text) {
+  const ta = document.createElement('textarea');
+  ta.value = text;
+  ta.style.position = 'fixed';
+  ta.style.opacity = '0';
+  document.body.appendChild(ta);
+  ta.select();
+  try {
     document.execCommand('copy');
-    document.body.removeChild(ta);
-    showToast("Kod nusxalandi!");
-  });
+    showToast("📋 Kod muvaffaqiyatli nusxalandi!");
+  } catch (e) {
+    showToast("⚠️ Nusxalashda xatolik yuz berdi");
+  }
+  document.body.removeChild(ta);
 }
 
 // ── RUN CODE (HTML, CSS, JS, React, Vue, TS qo'llab-quvvatlaydi) ──
@@ -58,6 +96,13 @@ function runCode(codeId, resultId) {
   const rawCode = el.innerText || el.textContent || '';
   let resEl = document.getElementById(resultId);
   if (!resEl) return;
+
+  // Running glow effect on result box
+  resEl.classList.remove('running-glow');
+  void resEl.offsetWidth; // trigger reflow
+  resEl.classList.add('running-glow');
+  setTimeout(() => resEl.classList.remove('running-glow'), 800);
+
   const iframe = resEl.tagName === 'IFRAME' ? resEl : resEl.querySelector('iframe');
   if (!iframe) return;
 
@@ -174,30 +219,68 @@ function checkQuiz(el, isCorrect, resultId) {
   const opts = el.parentElement.querySelectorAll('.quiz-opt');
   opts.forEach(o => {
     o.style.pointerEvents = 'none';
-    o.classList.remove('correct', 'wrong');
+    o.classList.remove('correct', 'wrong', 'anim-correct', 'anim-wrong');
   });
-  el.classList.add(isCorrect ? 'correct' : 'wrong');
-  // Mark correct answer
-  if (!isCorrect) {
+
+  if (isCorrect) {
+    el.classList.add('correct', 'anim-correct');
+    triggerConfetti(el);
+  } else {
+    el.classList.add('wrong', 'anim-wrong');
+    // To'g'ri javobni yashil bilan belgilash
     opts.forEach(o => {
-      if (o.onclick?.toString().includes('true')) o.classList.add('correct');
+      if (o.onclick?.toString().includes('true')) {
+        o.classList.add('correct', 'anim-correct');
+      }
     });
   }
+
   const res = document.getElementById(resultId);
   if (res) {
     res.className = 'quiz-result show ' + (isCorrect ? 'ok' : 'err');
     res.textContent = isCorrect
-      ? '✅ To\'g\'ri! Ajoyib!'
-      : '❌ Noto\'g\'ri. Qayta o\'qib chiqing.';
+      ? '🎉 To\'g\'ri javob! +25 XP hisobingizga qo\'shildi!'
+      : '❌ Noto\'g\'ri. To\'g\'ri javob yashil rang bilan ko\'rsatildi.';
   }
+
   if (isCorrect) {
     addXP(25, "To'g'ri test javobi");
     const pg = window.location.pathname.split('/').pop().replace('.html','');
     const done = JSON.parse(localStorage.getItem('w3completedCourses')||'[]');
-    if(!done.includes(pg)){done.push(pg);localStorage.setItem('w3completedCourses',JSON.stringify(done));}
+    if(!done.includes(pg)){
+      done.push(pg);
+      localStorage.setItem('w3completedCourses', JSON.stringify(done));
+    }
   }
-  // Update progress
   updateProgress();
+}
+
+// Chiroyli bayramona zarrachalar (Confetti) effekti
+function triggerConfetti(target) {
+  const rect = target.getBoundingClientRect();
+  const colors = ['#04AA6D', '#34d399', '#fbbf24', '#60a5fa', '#a78bfa', '#f472b6'];
+  const count = 16;
+
+  for (let i = 0; i < count; i++) {
+    const p = document.createElement('div');
+    p.className = 'confetti-particle';
+    const size = Math.random() * 8 + 6;
+    p.style.width = size + 'px';
+    p.style.height = size + 'px';
+    p.style.background = colors[Math.floor(Math.random() * colors.length)];
+    p.style.left = (rect.left + rect.width / 2 + window.scrollX) + 'px';
+    p.style.top = (rect.top + rect.height / 2 + window.scrollY) + 'px';
+
+    const angle = (Math.PI * 2 / count) * i + (Math.random() - 0.5);
+    const distance = Math.random() * 70 + 40;
+    const tx = Math.cos(angle) * distance;
+    const ty = Math.sin(angle) * distance;
+    p.style.setProperty('--tx', tx + 'px');
+    p.style.setProperty('--ty', ty + 'px');
+
+    document.body.appendChild(p);
+    setTimeout(() => p.remove(), 800);
+  }
 }
 
 // ── PROGRESS ──
@@ -858,3 +941,34 @@ if (document.readyState !== 'loading') {
     });
   });
 }
+
+
+// ── SCROLLSPY (SIDEBAR FAOL MAVZUNI KUZATISH) ──
+(function initScrollSpy() {
+  document.addEventListener('DOMContentLoaded', setupSpy);
+  if (document.readyState !== 'loading') setupSpy();
+
+  function setupSpy() {
+    const sections = document.querySelectorAll('.topic-section h2[id]');
+    const sideLinks = document.querySelectorAll('.sidebar a');
+    if (!sections.length || !sideLinks.length) return;
+
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          const id = entry.target.getAttribute('id');
+          sideLinks.forEach(link => {
+            const href = link.getAttribute('href');
+            if (href === '#' + id) {
+              link.classList.add('active');
+            } else {
+              link.classList.remove('active');
+            }
+          });
+        }
+      });
+    }, { rootMargin: '-80px 0px -70% 0px' });
+
+    sections.forEach(s => observer.observe(s));
+  }
+})();

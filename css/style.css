@@ -2112,3 +2112,238 @@ table {
 ::-webkit-scrollbar-thumb:hover {
   background: #04AA6D;
 }
+
+
+/* ════════════════════════════════════════════════════════════
+   PREMIUM ANIMATSIYALAR VA KO'RINISH EFEKTLARI (W3LEARN 2.0)
+════════════════════════════════════════════════════════════ */
+
+/* Micro-animations */
+@keyframes correctPop {
+  0% { transform: scale(0.96); box-shadow: 0 0 0 rgba(4, 170, 109, 0); }
+  50% { transform: scale(1.03); box-shadow: 0 0 20px rgba(4, 170, 109, 0.5); }
+  100% { transform: scale(1); box-shadow: 0 0 8px rgba(4, 170, 109, 0.25); }
+}
+
+@keyframes wrongShake {
+  0%, 100% { transform: translateX(0); }
+  15%, 45%, 75% { transform: translateX(-6px); }
+  30%, 60%, 90% { transform: translateX(6px); }
+}
+
+@keyframes copyRipple {
+  0% { transform: scale(0.92); }
+  50% { transform: scale(1.06); }
+  100% { transform: scale(1); }
+}
+
+@keyframes runFlash {
+  0% { box-shadow: 0 0 0 0 rgba(4, 170, 109, 0.6); border-color: #04AA6D; }
+  50% { box-shadow: 0 0 25px rgba(4, 170, 109, 0.4); border-color: #10b981; }
+  100% { box-shadow: 0 4px 20px rgba(0, 0, 0, 0.25); border-color: rgba(255,255,255,0.1); }
+}
+
+@keyframes badgeShine {
+  0% { background-position: -150% 0; }
+  100% { background-position: 150% 0; }
+}
+
+@keyframes particleBurst {
+  0% { transform: translate(0, 0) scale(1); opacity: 1; }
+  100% { transform: translate(var(--tx), var(--ty)) scale(0); opacity: 0; }
+}
+
+/* Quiz animatsiyalari */
+.quiz-opt.anim-correct {
+  animation: correctPop 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards !important;
+  background: rgba(4, 170, 109, 0.18) !important;
+  border-color: #04AA6D !important;
+  color: #34d399 !important;
+}
+
+.quiz-opt.anim-wrong {
+  animation: wrongShake 0.45s ease-in-out forwards !important;
+  background: rgba(239, 68, 68, 0.15) !important;
+  border-color: #ef4444 !important;
+  color: #f87171 !important;
+}
+
+.confetti-particle {
+  position: absolute;
+  pointer-events: none;
+  border-radius: 50%;
+  z-index: 9999;
+  animation: particleBurst 0.75s ease-out forwards;
+}
+
+/* Run & Copy tugmalari animatsiyasi */
+.btn-copy.copied, .btn-copy-code.copied {
+  background: #04AA6D !important;
+  border-color: #04AA6D !important;
+  color: #ffffff !important;
+  animation: copyRipple 0.3s ease !important;
+  box-shadow: 0 0 14px rgba(4, 170, 109, 0.5) !important;
+}
+
+.result-box.running-glow {
+  animation: runFlash 0.7s ease-out forwards !important;
+}
+
+/* Yaxshilangan Kod Bloklari (IDE uslubi) */
+.code-wrap {
+  border-radius: 10px !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background: #0e131d !important;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4) !important;
+  transition: border-color 0.25s ease, box-shadow 0.25s ease !important;
+}
+.code-wrap:hover {
+  border-color: rgba(4, 170, 109, 0.4) !important;
+  box-shadow: 0 10px 35px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(4, 170, 109, 0.2) !important;
+}
+
+.code-toolbar {
+  background: linear-gradient(90deg, #161f2e 0%, #0f141d 100%) !important;
+  padding: 10px 14px !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.code-lang {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  font-weight: 700 !important;
+  font-size: 12px !important;
+  color: #94a3b8 !important;
+  letter-spacing: 0.5px !important;
+}
+.code-lang::before {
+  content: '';
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #04AA6D;
+  box-shadow: 0 0 8px #04AA6D;
+}
+
+/* Tugmalar hover va bosilish hissiyoti */
+.btn-run, .btn-run-code {
+  background: linear-gradient(135deg, #04AA6D 0%, #038a56 100%) !important;
+  color: #ffffff !important;
+  border: none !important;
+  font-weight: 700 !important;
+  padding: 7px 15px !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+  box-shadow: 0 2px 10px rgba(4, 170, 109, 0.3) !important;
+}
+.btn-run:hover, .btn-run-code:hover {
+  transform: translateY(-2px) !important;
+  box-shadow: 0 6px 18px rgba(4, 170, 109, 0.45) !important;
+}
+.btn-run:active, .btn-run-code:active {
+  transform: scale(0.96) !important;
+}
+
+.btn-copy, .btn-copy-code {
+  background: rgba(255, 255, 255, 0.07) !important;
+  border: 1px solid rgba(255, 255, 255, 0.12) !important;
+  color: #e2e8f0 !important;
+  font-weight: 600 !important;
+  padding: 7px 13px !important;
+  border-radius: 6px !important;
+  cursor: pointer !important;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+.btn-copy:hover, .btn-copy-code:hover {
+  background: rgba(255, 255, 255, 0.14) !important;
+  color: #fff !important;
+  transform: translateY(-2px) !important;
+}
+.btn-copy:active, .btn-copy-code:active {
+  transform: scale(0.96) !important;
+}
+
+/* Natija qutisi (Terminal) */
+.result-box {
+  background: #090d14 !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-radius: 10px !important;
+  margin: 16px 0 32px !important;
+  overflow: hidden !important;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35) !important;
+  transition: all 0.3s ease !important;
+}
+.result-label {
+  background: #131924 !important;
+  padding: 8px 14px !important;
+  font-size: 12px !important;
+  font-weight: 700 !important;
+  color: #94a3b8 !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+}
+
+/* Mavzular orasidagi silliq ajratuvchi */
+.topic-section {
+  transition: background 0.25s ease, transform 0.25s ease;
+  border-radius: 10px;
+}
+.topic-section:hover {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+/* W3Schools Topic-Nav tugmalari */
+.topic-nav-btn {
+  position: relative;
+  overflow: hidden;
+}
+.topic-nav-btn::after {
+  content: '';
+  position: absolute;
+  top: 0; left: -100%; width: 100%; height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.15), transparent);
+  transition: 0.5s;
+}
+.topic-nav-btn:hover::after {
+  left: 100%;
+}
+.topic-nav-btn:active {
+  transform: scale(0.97) !important;
+}
+
+/* Sidebar faol havola animatsiyasi */
+.sidebar a {
+  position: relative;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1) !important;
+}
+.sidebar a:hover {
+  padding-left: 18px !important;
+  background: rgba(4, 170, 109, 0.1) !important;
+  color: #04AA6D !important;
+}
+.sidebar a.active {
+  background: rgba(4, 170, 109, 0.16) !important;
+  color: #34d399 !important;
+  border-left: 3px solid #04AA6D !important;
+  font-weight: 700 !important;
+  padding-left: 18px !important;
+}
+
+/* Toast xabarnomasi */
+.toast {
+  backdrop-filter: blur(12px) !important;
+  -webkit-backdrop-filter: blur(12px) !important;
+  background: rgba(17, 24, 39, 0.95) !important;
+  border: 1px solid rgba(4, 170, 109, 0.3) !important;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5), 0 0 15px rgba(4, 170, 109, 0.2) !important;
+  border-radius: 10px !important;
+  font-weight: 600 !important;
+}

@@ -2,7 +2,7 @@
 <html lang="uz">
 <head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Django Darslari – W3Learn</title>
-<link rel="stylesheet" href="../css/style.css"/>
+<link rel="stylesheet" href="../css/style.css?v=20261123_4"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"/>
 <style>.cat-label{font-size:11px;font-weight:700;padding:0 4px;}.cat-fe{color:#04AA6D;}.cat-be{color:#2196F3;}.cat-db{color:#FF9800;}</style>
@@ -19,11 +19,15 @@
     <span class="cat-label cat-db">DB:</span>
     <a href="sql.html">SQL</a><a href="mongodb.html">MongoDB</a><a href="postgresql.html">PostgreSQL</a>
   </nav>
-  <div style="display:flex;align-items:center;gap:6px;margin-right:8px;"><a href="../editor.html" style="background:rgba(4,170,109,0.15);color:var(--green-light);padding:4px 8px;border-radius:6px;font-size:12px;font-weight:700;text-decoration:none;"><i class="fa-solid fa-code"></i> Editor</a><a href="../certificate.html" style="background:rgba(255,183,77,0.15);color:#FFB74D;padding:4px 8px;border-radius:6px;font-size:12px;font-weight:700;text-decoration:none;"><i class="fa-solid fa-award"></i> Sertifikat</a></div><div class="search-wrap"><input type="text" id="searchInput" placeholder="Qidirish..."/><button onclick="doSearch()">🔍</button></div>
+  <div class="topbar-extra" style="display:flex;align-items:center;gap:6px;margin-right:8px;"><a href="../editor.html" style="background:rgba(4,170,109,0.15);color:var(--green-light);padding:4px 8px;border-radius:6px;font-size:12px;font-weight:700;text-decoration:none;"><i class="fa-solid fa-code"></i> Editor</a><a href="../certificate.html" style="background:rgba(255,183,77,0.15);color:#FFB74D;padding:4px 8px;border-radius:6px;font-size:12px;font-weight:700;text-decoration:none;"><i class="fa-solid fa-award"></i> Sertifikat</a></div><div class="search-wrap"><input type="text" id="searchInput" placeholder="Qidirish..."/><button onclick="doSearch()">🔍</button></div>
   <button class="dark-btn" id="darkBtn">🌙</button>
 </header>
 <div class="layout">
 <aside class="sidebar">
+  <div class="sb-mobile-close" style="display:none; justify-content:space-between; align-items:center; padding:12px 18px; border-bottom:1px solid rgba(255,255,255,0.08); font-weight:700;">
+    <span>📖 Dars Mundarijasi</span>
+    <button onclick="closeMobileSidebar()" style="background:rgba(255,255,255,0.08); border:none; color:#fff; width:30px; height:30px; border-radius:6px; cursor:pointer; font-size:16px;">✕</button>
+  </div>
   <div class="sb-header">🌿 Django Darslari</div>
   <div class="sb-section">Kirish</div>
   <ul>
@@ -77,6 +81,7 @@
     <li><a href="#deploy">Deployment</a></li>
   </ul>
 </aside>
+<div class="overlay" id="overlay" onclick="closeMobileSidebar()"></div>
 <main class="main">
   <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
     <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
@@ -446,7 +451,7 @@ Context: {'posts': [...], 'page_title': 'Bosh Sahifa'}&lt;/pre&gt;&lt;/body&gt;&
   &lt;meta charset="UTF-8"&gt;
   &lt;title&gt;Mening Saytim&lt;/title&gt;
   &lt;link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}"&gt;
-  &lt;link rel="stylesheet" href="{% static 'css/style.css' %}"&gt;
+  &lt;link rel="stylesheet" href="{% static 'css/style.css?v=20261123_4' %}"&gt;
 &lt;/head&gt;
 &lt;body&gt;
   &lt;img src="{% static 'images/logo.png' %}" alt="Logo"&gt;
@@ -459,7 +464,7 @@ Context: {'posts': [...], 'page_title': 'Bosh Sahifa'}&lt;/pre&gt;&lt;/body&gt;&
       <div class="result-label">🖥️ Django Terminal / Server Natijasi:</div>
       <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐍 Django 5.1 Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Generatsiya qilingan HTML:
 &lt;link rel="stylesheet" href="/static/css/bootstrap.min.css"&gt;
-&lt;link rel="stylesheet" href="/static/css/style.css"&gt;
+&lt;link rel="stylesheet" href="/static/css/style.css?v=20261123_4"&gt;
 &lt;img src="/static/images/logo.png" alt="Logo"&gt;&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
     </div>
 
@@ -1649,6 +1654,6 @@ Site is LIVE at https://w3learn.uz&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></ifra
     <a href="#" style="color:#04AA6D;">Bog'lanish</a>
   </div>
 </div></footer>
-<script src="../js/main.js"></script>
+<script src="../js/main.js?v=20261123_4"></script>
 </body>
 </html>

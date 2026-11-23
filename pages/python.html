@@ -2,7 +2,7 @@
 <html lang="uz">
 <head><meta charset="UTF-8"/><meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <title>Python Darslari – W3Learn</title>
-<link rel="stylesheet" href="../css/style.css"/>
+<link rel="stylesheet" href="../css/style.css?v=20261123_4"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css"/>
 <style>
@@ -24,11 +24,15 @@
     <span class="cat-label cat-dv">DevOps:</span>
     <a href="git.html">Git</a><a href="docker.html">Docker</a><a href="linux.html">Linux</a><a href="restapi.html">REST API</a>
   </nav>
-  <div style="display:flex;align-items:center;gap:6px;margin-right:8px;"><a href="../editor.html" style="background:rgba(4,170,109,0.15);color:var(--green-light);padding:4px 8px;border-radius:6px;font-size:12px;font-weight:700;text-decoration:none;"><i class="fa-solid fa-code"></i> Editor</a><a href="../certificate.html" style="background:rgba(255,183,77,0.15);color:#FFB74D;padding:4px 8px;border-radius:6px;font-size:12px;font-weight:700;text-decoration:none;"><i class="fa-solid fa-award"></i> Sertifikat</a></div><div class="search-wrap"><input type="text" id="searchInput" placeholder="Qidirish..."/><button onclick="doSearch()">🔍</button></div>
+  <div class="topbar-extra" style="display:flex;align-items:center;gap:6px;margin-right:8px;"><a href="../editor.html" style="background:rgba(4,170,109,0.15);color:var(--green-light);padding:4px 8px;border-radius:6px;font-size:12px;font-weight:700;text-decoration:none;"><i class="fa-solid fa-code"></i> Editor</a><a href="../certificate.html" style="background:rgba(255,183,77,0.15);color:#FFB74D;padding:4px 8px;border-radius:6px;font-size:12px;font-weight:700;text-decoration:none;"><i class="fa-solid fa-award"></i> Sertifikat</a></div><div class="search-wrap"><input type="text" id="searchInput" placeholder="Qidirish..."/><button onclick="doSearch()">🔍</button></div>
   <button class="dark-btn" id="darkBtn">🌙</button>
 </header>
 <div class="layout">
 <aside class="sidebar">
+  <div class="sb-mobile-close" style="display:none; justify-content:space-between; align-items:center; padding:12px 18px; border-bottom:1px solid rgba(255,255,255,0.08); font-weight:700;">
+    <span>📖 Dars Mundarijasi</span>
+    <button onclick="closeMobileSidebar()" style="background:rgba(255,255,255,0.08); border:none; color:#fff; width:30px; height:30px; border-radius:6px; cursor:pointer; font-size:16px;">✕</button>
+  </div>
   <div class="sb-header">🐍 Python</div>
   <div class="sb-section">Kirish</div>
   <ul>
@@ -87,6 +91,7 @@
     <li><a href="#regex">re (Regex)</a></li>
   </ul>
 </aside>
+<div class="overlay" id="overlay" onclick="closeMobileSidebar()"></div>
 <main class="main">
   <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">Python</a> › Barcha Mavzular</div>
 
@@ -1889,6 +1894,6 @@ Telefon formati to'g'rimi? True&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
 </aside>
 </div>
 <footer style="text-align:center;padding:20px;color:#888;font-size:13px;">© 2024 W3Learn — Barcha huquqlar himoyalangan</footer>
-<script src="../js/main.js"></script>
+<script src="../js/main.js?v=20261123_4"></script>
 </body>
 </html>

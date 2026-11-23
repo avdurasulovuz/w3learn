@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="description" content="W3Learn — O'zbekcha dasturlash o'quv platformasi. 23+ kurs, 600+ dars, bepul."/>
 <title>W3Learn — O'zbek Dasturlash Platformasi</title>
-<link rel="stylesheet" href="css/style.css"/>
+<link rel="stylesheet" href="css/style.css?v=20261123_4"/>
 <!-- Font Awesome ikonalar -->
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"/>
 <!-- Devicons (til logolari) -->
@@ -86,7 +86,7 @@
     <a href="pages/linux.html"><i class="devicon-linux-plain"></i> Linux</a>
     <a href="pages/restapi.html"><i class="fa-solid fa-plug"></i> REST API</a>
   </nav>
-  <div style="display:flex;align-items:center;gap:6px;flex-shrink:0;">
+  <div class="topbar-extra" style="display:flex;align-items:center;gap:6px;flex-shrink:0;">
     <a href="editor.html" style="background:rgba(4,170,109,0.15);border:1px solid rgba(4,170,109,0.3);color:var(--green-light);padding:5px 10px;border-radius:6px;font-size:12px;font-weight:700;display:inline-flex;align-items:center;gap:5px;">
       <i class="fa-solid fa-code"></i> Editor
     </a>
@@ -100,6 +100,59 @@
   </div>
   <button class="dark-btn" id="darkBtn">🌙</button>
 </header>
+
+<!-- Mobil Navigatsiya Draweri (Barcha kurslar uchun) -->
+<aside class="sidebar mobile-drawer" id="mobileDrawer">
+  <div class="sb-header" style="display:flex; justify-content:space-between; align-items:center; padding:12px 18px; border-bottom:1px solid rgba(255,255,255,0.08);">
+    <span style="font-size:16px; font-weight:700; color:var(--white);">📚 Kurslar Mundarijasi</span>
+    <button onclick="closeMobileSidebar()" style="background:rgba(255,255,255,0.08); border:none; color:#fff; width:32px; height:32px; border-radius:6px; cursor:pointer; font-size:16px;">✕</button>
+  </div>
+  <div style="padding:12px 16px; border-bottom:1px solid rgba(255,255,255,0.08); display:flex; gap:8px;">
+    <a href="editor.html" style="flex:1; text-align:center; background:rgba(4,170,109,0.15); color:var(--green-light); padding:9px; border-radius:6px; font-size:13px; font-weight:700; text-decoration:none;"><i class="fa-solid fa-code"></i> Editor</a>
+    <a href="certificate.html" style="flex:1; text-align:center; background:rgba(255,183,77,0.15); color:#FFB74D; padding:9px; border-radius:6px; font-size:13px; font-weight:700; text-decoration:none;"><i class="fa-solid fa-award"></i> Sertifikat</a>
+  </div>
+  
+  <div class="sb-section" style="color:#04AA6D; padding:14px 18px 6px;">🎨 FRONTEND</div>
+  <ul style="list-style:none; padding:0; margin:0;">
+    <li><a href="pages/html.html">🌐 HTML5 Asoslari</a></li>
+    <li><a href="pages/css.html">🎨 CSS3 Stillar</a></li>
+    <li><a href="pages/javascript.html">⚡ JavaScript</a></li>
+    <li><a href="pages/react.html">⚛️ React.js</a></li>
+    <li><a href="pages/vue.html">💚 Vue.js</a></li>
+    <li><a href="pages/bootstrap.html">🅱️ Bootstrap 5</a></li>
+    <li><a href="pages/typescript.html">🔷 TypeScript</a></li>
+    <li><a href="pages/jquery.html">💲 jQuery</a></li>
+  </ul>
+
+  <div class="sb-section" style="color:#2196F3; padding:14px 18px 6px;">⚙️ BACKEND</div>
+  <ul style="list-style:none; padding:0; margin:0;">
+    <li><a href="pages/python.html">🐍 Python Dasturlash</a></li>
+    <li><a href="pages/nodejs.html">🟢 Node.js & Express</a></li>
+    <li><a href="pages/php.html">🐘 PHP Darslari</a></li>
+    <li><a href="pages/java.html">☕ Java Dasturlash</a></li>
+    <li><a href="pages/django.html">🎸 Django Freymvork</a></li>
+    <li><a href="pages/cpp.html">⚙️ C++ Tili</a></li>
+    <li><a href="pages/csharp.html">🟣 C# & .NET</a></li>
+  </ul>
+
+  <div class="sb-section" style="color:#FF9800; padding:14px 18px 6px;">🗄️ DATABASE</div>
+  <ul style="list-style:none; padding:0; margin:0;">
+    <li><a href="pages/sql.html">🐬 SQL Relyatsion Baza</a></li>
+    <li><a href="pages/mongodb.html">🍃 MongoDB NoSQL</a></li>
+    <li><a href="pages/postgresql.html">🐘 PostgreSQL</a></li>
+    <li><a href="pages/redis.html">🔴 Redis Kesh</a></li>
+  </ul>
+
+  <div class="sb-section" style="color:#9C27B0; padding:14px 18px 6px;">🚀 DEVOPS & VOSITALAR</div>
+  <ul style="list-style:none; padding:0; margin:0;">
+    <li><a href="pages/git.html">🐙 Git & GitHub</a></li>
+    <li><a href="pages/docker.html">🐳 Docker Konteyner</a></li>
+    <li><a href="pages/linux.html">🐧 Linux Buyruqlari</a></li>
+    <li><a href="pages/restapi.html">🔌 REST API Asoslari</a></li>
+  </ul>
+</aside>
+<div class="overlay" id="overlay" onclick="closeMobileSidebar()"></div>
+
 
 <!-- Mobile overlay -->
 <div class="overlay" id="overlay"></div>
@@ -538,6 +591,6 @@
   </div>
 </footer>
 
-<script src="js/main.js"></script>
+<script src="js/main.js?v=20261123_4"></script>
 </body>
 </html>

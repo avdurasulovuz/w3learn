@@ -71,124 +71,1238 @@
   </ul>
 </aside>
 <main class="main">
-  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">MongoDB</a> › MongoDB Nima?</div>
-  <h1 id="kirish">MongoDB Nima?</h1>
-  <div class="meta-tags">
-    <span class="tag tag-green">⏱ 8 daqiqa</span>
-    <span class="tag tag-blue">🟡 O'rta</span>
-    <span class="tag tag-orange">👁 6,340 marta ko'rilgan</span>
-  </div>
-  <p><strong>MongoDB</strong> — NoSQL ma'lumotlar bazasi bo'lib, ma'lumotlarni <strong>JSON-ga o'xshash hujjatlar</strong> (BSON) shaklida saqlaydi. Jadval o'rniga <em>kolleksiyalar</em>, qator o'rniga <em>hujjatlar</em> ishlatiladi.</p>
-  <p>MongoDB moslashuvchan sxema tuzilmasiga ega — har bir hujjat har xil maydonlarga ega bo'lishi mumkin. Bu tez prototyping va o'zgaruvchan ma'lumot tuzilmalari uchun ideal.</p>
-  <div class="note">💡 <strong>Eslatma:</strong> MongoDB da "database → collection → document" ierarxiyasi SQL dagi "database → table → row" ga to'g'ri keladi.</div>
-
-  <h2 id="insert">CRUD — Ma'lumot qo'shish</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar"><span class="code-lang">MongoDB Shell</span>
-      <div class="code-actions"><button class="btn-copy" onclick="copyCode('code1')">📋 Nusxa</button></div>
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Asosiy</span>
+      <span style="font-size:12px; color:var(--text2);">MongoDB Mavzu #1</span>
     </div>
-    <div class="code-body"><pre id="code1">// Ma'lumotlar bazasini tanlash
-use w3learn_db
+    <h2 id="kirish" style="color:#13aa52; background: linear-gradient(90deg, #13aa52, #00ed64); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">MongoDB Nima? NoSQL va Hujjatli Baza</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>MongoDB</strong> — dunyodagi eng mashhur ochiq kodli <strong>NoSQL (Not Only SQL)</strong> hujjatlarga asoslangan ma'lumotlar bazasidir. Unda qat'iy SQL jadvallari o'rniga ma'lumotlar xuddi JSON kabi ko'rinishga ega bo'lgan <strong>BSON (Binary JSON)</strong> formatidagi moslashuvchan hujjatlar (Documents) ko'rinishida saqlanadi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Sxemasiz (Schema-less): har bir hujjat har xil maydonlarga ega bo'lishi mumkin.</li><li>Tuzilma taqqoslash: SQL Database -&gt; MongoDB Database; SQL Table -&gt; MongoDB Collection; SQL Row -&gt; MongoDB Document; SQL Column -&gt; MongoDB Field.</li><li>MERN (MongoDB, Express, React, Node.js) stekining asosiy ma'lumotlar ombori.</li><li>Gorizontal kengayish (Sharding) orqali terabaytlab ma'lumotlarni oson boshqaradi.</li></ul>
 
-// Bitta hujjat qo'shish
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">MongoDB / mongosh</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_mongo_1')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_mongo_1','res_mongo_1')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_mongo_1" contenteditable="true" spellcheck="false">// MongoDB BSON hujjati namunasi:
+{
+  "_id": ObjectId("655f1a8b9a1e4c3d2e1f0001"),
+  "ism": "Jasur Aliyev",
+  "yosh": 24,
+  "konikmalar": ["JavaScript", "Node.js", "MongoDB"],
+  "manzil": {
+    "shahar": "Toshkent",
+    "tuman": "Chilonzor"
+  },
+  "faolmi": true
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_mongo_1">
+      <div class="result-label">🍃 MongoDB Shell / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🍃 mongosh 2.1 JSON Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;MongoDB BSON hujjati:
+- Ichki massivlar (konikmalar) to'g'ridan-to'g'ri bitta hujjatda saqlanadi.
+- Ichki ob'ektlar (manzil) alohida jadval talab qilmaydi (Nested Objects).&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Relyatsion bazalarda 3 ta bog'langan jadval (users, addresses, skills) kerak bo'lgan vazifani MongoDB bitta hujjat ichida hal qiladi.</div>
+
+    <div class="topic-nav">
+      <a href="sql.html" class="topic-nav-btn prev">← SQL Darslari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 MongoDB | 1 / 26</span>
+      <a href="#install" class="topic-nav-btn next">MongoDB O'rnatish va mongosh Terminali →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">O'rnatish</span>
+      <span style="font-size:12px; color:var(--text2);">MongoDB Mavzu #2</span>
+    </div>
+    <h2 id="install" style="color:#13aa52; background: linear-gradient(90deg, #13aa52, #00ed64); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">MongoDB O'rnatish va mongosh Terminali</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">MongoDB ni kompyuterda ishlatish uchun <strong>MongoDB Community Server</strong> va zamonaviy CLI vositasi <strong>mongosh (MongoDB Shell)</strong> o'rnatiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Rasmiy sayt: <code>mongodb.com/try/download/community</code>.</li><li>Standart port: <code>27017</code> (localhost:27017).</li><li>mongosh buyrug'i orqali terminalda JavaScript sintaksisi bilan so'rovlar yoziladi.</li><li>Baza holatini tekshirish: <code>db.version()</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">MongoDB / mongosh</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_mongo_2')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_mongo_2','res_mongo_2')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_mongo_2" contenteditable="true" spellcheck="false"># Terminalda mongosh ni ishga tushirish:
+mongosh
+
+# Bazalar ro'yxatini ko'rish
+show dbs
+
+# Yangi bazani tanlash yoki yaratish
+use w3learn_db</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_mongo_2">
+      <div class="result-label">🍃 MongoDB Shell / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🍃 mongosh 2.1 JSON Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Current Mongosh Log ID: 655f1c2a8b9e...
+Connecting to: mongodb://127.0.0.1:27017/?directConnection=true
+Using MongoDB: 7.0.5
+Using Mongosh: 2.1.1
+
+switched to db w3learn_db&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ MongoDB da bazani yaratish uchun maxsus CREATE buyrug'i shart emas: <code>use yangi_baza</code> deb unga birinchi ma'lumotni kiritishingiz bilan baza avtomatik paydo bo'ladi.</div>
+
+    <div class="topic-nav">
+      <a href="#kirish" class="topic-nav-btn prev">← MongoDB Nima? NoSQL va Hujjatli Baza</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 MongoDB | 2 / 26</span>
+      <a href="#atlas" class="topic-nav-btn next">MongoDB Atlas — Bulutli Ma'lumotlar Bazasi (Cloud) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Cloud</span>
+      <span style="font-size:12px; color:var(--text2);">MongoDB Mavzu #3</span>
+    </div>
+    <h2 id="atlas" style="color:#13aa52; background: linear-gradient(90deg, #13aa52, #00ed64); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">MongoDB Atlas — Bulutli Ma'lumotlar Bazasi (Cloud)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>MongoDB Atlas</strong> — bu hech qanday dastur o'rnatmasdan turib AWS, Google Cloud yoki Azure bulutlarida MongoDB klasterini bepul ishga tushirish imkonini beruvchi to'liq boshqariladigan DBaaS (Database-as-a-Service) xizmatidir.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>512 MB bepul xotira (M0 Sandbox) har qanday o'quv va portfolio loyihalar uchun yetarli.</li><li>Avtomatik zaxira nusxalash (Backup) va SSL xavfsizlik sertifikatlari.</li><li>Ulanish havolasi (Connection String): <code>mongodb+srv://admin:&lt;password&gt;@cluster0.mongodb.net/myDb</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">MongoDB / mongosh</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_mongo_3')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_mongo_3','res_mongo_3')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_mongo_3" contenteditable="true" spellcheck="false">// Node.js yoki mongosh orqali Atlas ga ulanish:
+const uri = "mongodb+srv://dasturchi:Maxfiy123@cluster0.abcde.mongodb.net/w3learn?retryWrites=true&amp;w=majority";
+
+// Mongoose bilan ulanish:
+// mongoose.connect(uri);</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_mongo_3">
+      <div class="result-label">🍃 MongoDB Shell / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🍃 mongosh 2.1 JSON Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Atlas Cluster Status:
+Provider: AWS (Frankfurt eu-central-1)
+Cluster State: AVAILABLE 🟢
+Connections: Active (TLS 1.3 Encryption)&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">🔒 Atlas ga ulanishdan oldin 'Network Access' bo'limida o'z IP manzilingizni (yoki sinov uchun 0.0.0.0/0) ruxsat berilganlar ro'yxatiga qo'shish shart.</div>
+
+    <div class="topic-nav">
+      <a href="#install" class="topic-nav-btn prev">← MongoDB O'rnatish va mongosh Terminali</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 MongoDB | 3 / 26</span>
+      <a href="#compass" class="topic-nav-btn next">MongoDB Compass — Grafik Interfeys (GUI) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">GUI</span>
+      <span style="font-size:12px; color:var(--text2);">MongoDB Mavzu #4</span>
+    </div>
+    <h2 id="compass" style="color:#13aa52; background: linear-gradient(90deg, #13aa52, #00ed64); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">MongoDB Compass — Grafik Interfeys (GUI)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>MongoDB Compass</strong> — bu MongoDB ning rasmiy vizual boshqaruv dasturidir. U orqali ma'lumotlarni jadvallar, JSON ko'rinishida ko'rish, vizual filtrlash, indekslarni tekshirish va Aggregation pipelinelarni bosqichma-bosqich yasash mumkin.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Terminalda buyruq yozmasdan hujjatlarni qo'shish (Add Document), tahrirlash va o'chirish.</li><li>So'rov tezligini o'lchash uchun vizual 'Explain Plan'.</li><li>Kolleksiyalardagi maydonlar turlari va statistikasi bo'yicha 'Schema Analyzer'.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">MongoDB / mongosh</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_mongo_4')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_mongo_4','res_mongo_4')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_mongo_4" contenteditable="true" spellcheck="false">// Compass qidiruv satri (Filter) da yoziladigan qulay JSON:
+{ 
+  "yosh": { "$gte": 18 }, 
+  "manzil.shahar": "Toshkent" 
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_mongo_4">
+      <div class="result-label">🍃 MongoDB Shell / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🍃 mongosh 2.1 JSON Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Compass Interfeysida:
+Filter: { yosh: { $gte: 18 } }
+Natija: 42 ta hujjat topildi (0.002s)
+Ko'rinish: JSON / Table / List&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Compass yangi boshlovchilar uchun murakkab so'rovlar qanday ishlashini ko'z bilan ko'rib tushunishda eng qulay vositadir.</div>
+
+    <div class="topic-nav">
+      <a href="#atlas" class="topic-nav-btn prev">← MongoDB Atlas — Bulutli Ma'lumotlar Bazasi (Cloud)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 MongoDB | 4 / 26</span>
+      <a href="#insert" class="topic-nav-btn next">insertOne va insertMany — Hujjat Qo'shish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">CRUD</span>
+      <span style="font-size:12px; color:var(--text2);">MongoDB Mavzu #5</span>
+    </div>
+    <h2 id="insert" style="color:#13aa52; background: linear-gradient(90deg, #13aa52, #00ed64); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">insertOne va insertMany — Hujjat Qo'shish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Kolleksiyaga bitta hujjat qo'shish uchun <code>insertOne()</code>, bir vaqtning o'zida massiv ko'rinishida bir nechta hujjat kiritish uchun <code>insertMany()</code> ishlatiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Agar hujjatda <code>_id</code> ko'rsatilmasa, MongoDB unga 12-baytli noyob <code>ObjectId</code> ni avtomatik yaratadi.</li><li>Kolleksiya mavjud bo'lmasa, ma'lumot qo'shilganda avtomatik yaratiladi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">MongoDB / mongosh</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_mongo_5')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_mongo_5','res_mongo_5')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_mongo_5" contenteditable="true" spellcheck="false">// Bitta foydalanuvchi qo'shish
 db.foydalanuvchilar.insertOne({
-  ism: "Ali Karimov",
-  yosh: 25,
-  shahar: "Toshkent",
-  ko'nikmalar: ["JavaScript", "React", "Node.js"],
-  royxatdan_otgan: new Date()
-})
-
-// Ko'p hujjat qo'shish
-db.foydalanuvchilar.insertMany([
-  { ism: "Zulfiya Rahimova", yosh: 22, shahar: "Samarqand" },
-  { ism: "Kamol Usmonov", yosh: 30, shahar: "Buxoro" },
-  { ism: "Sarvar Toshmatov", yosh: 28, shahar: "Namangan" }
-])</pre></div>
-  </div>
-
-  <h2 id="find">CRUD — Ma'lumot olish</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar"><span class="code-lang">MongoDB Shell</span>
-      <div class="code-actions"><button class="btn-copy" onclick="copyCode('code2')">📋 Nusxa</button></div>
-    </div>
-    <div class="code-body"><pre id="code2">// Barcha hujjatlarni olish
-db.foydalanuvchilar.find()
-
-// Shart bilan qidirish
-db.foydalanuvchilar.find({ shahar: "Toshkent" })
-
-// Murakkab shartlar
-db.foydalanuvchilar.find({
-  yosh: { $gte: 25 },      // 25 va undan katta
-  shahar: { $in: ["Toshkent", "Samarqand"] }
-})
-
-// Bitta hujjat olish
-db.foydalanuvchilar.findOne({ ism: "Ali Karimov" })
-
-// Sort, Limit, Skip
-db.foydalanuvchilar
-  .find()
-  .sort({ yosh: -1 })   // yoshga ko'ra kamayish tartibida
-  .limit(5)              // faqat 5 ta
-  .skip(10)              // 10 tasini o'tkazib yuborish</pre></div>
-  </div>
-
-  <h2 id="mongoose">Mongoose bilan ishlash (Node.js)</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar"><span class="code-lang">JavaScript (Mongoose)</span>
-      <div class="code-actions"><button class="btn-copy" onclick="copyCode('code3')">📋 Nusxa</button></div>
-    </div>
-    <div class="code-body"><pre id="code3">// npm install mongoose
-const mongoose = require('mongoose');
-
-// Ulanish
-mongoose.connect('mongodb://localhost:27017/w3learn_db');
-
-// Schema (tuzilma) aniqlash
-const FoydalanuvchiSchema = new mongoose.Schema({
-  ism: { type: String, required: true, trim: true },
-  email: { type: String, required: true, unique: true },
-  yosh: { type: Number, min: 0, max: 120 },
-  ko_nikmalar: [String],
-  yaratildi: { type: Date, default: Date.now }
+  ism: "Olim",
+  familiya: "Shokirov",
+  email: "olim@w3learn.uz",
+  yosh: 21,
+  ballar: [85, 92, 78]
 });
 
-// Model yaratish
-const Foydalanuvchi = mongoose.model('Foydalanuvchi', FoydalanuvchiSchema);
+// Bir nechta foydalanuvchini qo'shish
+db.foydalanuvchilar.insertMany([
+  { ism: "Nodira", email: "nodira@uz", yosh: 19 },
+  { ism: "Bobur", email: "bobur@uz", yosh: 25 }
+]);</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_mongo_5">
+      <div class="result-label">🍃 MongoDB Shell / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🍃 mongosh 2.1 JSON Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;{
+  acknowledged: true,
+  insertedId: ObjectId("655f20ab12e34d56f7890001")
+}
+{
+  acknowledged: true,
+  insertedIds: {
+    '0': ObjectId("655f20ab12e34d56f7890002"),
+    '1': ObjectId("655f20ab12e34d56f7890003")
+  }
+}&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
 
-// CRUD amallar
-async function misollar() {
-  // Yaratish
-  const yangi = await Foydalanuvchi.create({
-    ism: 'Ali', email: 'ali@test.com', yosh: 25
-  });
+    <div class="note-box" style="margin-top:16px;">⚡ <code>insertMany()</code> katta hajmdagi ma'lumotlarni yozishda <code>insertOne()</code> ni siklda aylantirishga nisbatan ancha tez ishlaydi.</div>
 
-  // O'qish
-  const barchasi = await Foydalanuvchi.find({ yosh: { $gte: 20 } });
+    <div class="topic-nav">
+      <a href="#compass" class="topic-nav-btn prev">← MongoDB Compass — Grafik Interfeys (GUI)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 MongoDB | 5 / 26</span>
+      <a href="#find" class="topic-nav-btn next">find va findOne — Hujjatlarni Qidirish →</a>
+    </div>
+  </section>
 
-  // Yangilash
-  await Foydalanuvchi.updateOne({ email: 'ali@test.com' }, { yosh: 26 });
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">CRUD</span>
+      <span style="font-size:12px; color:var(--text2);">MongoDB Mavzu #6</span>
+    </div>
+    <h2 id="find" style="color:#13aa52; background: linear-gradient(90deg, #13aa52, #00ed64); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">find va findOne — Hujjatlarni Qidirish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Kolleksiyadan ma'lumotlarni o'qish uchun <code>find()</code> (barcha mos keluvchilar) va <code>findOne()</code> (faqat birinchi topilgan bitta hujjat) ishlatiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Barcha hujjatlarni olish: <code>db.foydalanuvchilar.find()</code>.</li><li>Chiroyli formatda chiqarish: <code>.pretty()</code>.</li><li>Shart bo'yicha qidirish: <code>db.foydalanuvchilar.find({ ism: "Olim" })</code>.</li><li>Ichki ob'ekt bo'yicha qidirish nuqta orqali: <code>{ "manzil.shahar": "Samarqand" }</code>.</li></ul>
 
-  // O'chirish
-  await Foydalanuvchi.deleteOne({ email: 'ali@test.com' });
-}</pre></div>
-  </div>
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">MongoDB / mongosh</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_mongo_6')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_mongo_6','res_mongo_6')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_mongo_6" contenteditable="true" spellcheck="false">// Barcha foydalanuvchilarni qidirish
+db.foydalanuvchilar.find();
+
+// Aniq bittasini topish
+db.foydalanuvchilar.findOne({ email: "olim@w3learn.uz" });</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_mongo_6">
+      <div class="result-label">🍃 MongoDB Shell / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🍃 mongosh 2.1 JSON Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;{
+  _id: ObjectId("655f20ab12e34d56f7890001"),
+  ism: 'Olim',
+  familiya: 'Shokirov',
+  email: 'olim@w3learn.uz',
+  yosh: 21,
+  ballar: [ 85, 92, 78 ]
+}&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Agar <code>find({})</code> bo'sh qavs bilan chaqirilsa, SQL dagi <code>SELECT *</code> kabi barcha hujjatlarni qaytaradi.</div>
+
+    <div class="topic-nav">
+      <a href="#insert" class="topic-nav-btn prev">← insertOne va insertMany — Hujjat Qo'shish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 MongoDB | 6 / 26</span>
+      <a href="#update" class="topic-nav-btn next">updateOne va updateMany — $set va $inc Operatorlari →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">CRUD</span>
+      <span style="font-size:12px; color:var(--text2);">MongoDB Mavzu #7</span>
+    </div>
+    <h2 id="update" style="color:#13aa52; background: linear-gradient(90deg, #13aa52, #00ed64); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">updateOne va updateMany — $set va $inc Operatorlari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Hujjatlarni yangilashda to'g'ridan-to'g'ri yangi ob'ekt yozib yuborilsa butun hujjat o'chib yangisiga almashib qolishi mumkin. Shuning uchun maxsus <code>$set</code> va <code>$inc</code> atomik operatorlari ishlatiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><code>$set</code>: ko'rsatilgan maydon qiymatini o'zgartiradi yoki bo'lmasa yangi maydon qo'shadi.</li><li><code>$inc</code>: sonli maydonni ko'rsatilgan miqdorga oshiradi (masalan yoshini +1 ga).</li><li><code>$push</code>: massiv ichiga yangi element qo'shish.</li><li><code>upsert: true</code>: agar bunday hujjat topilmasa yangisini yaratadi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">MongoDB / mongosh</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_mongo_7')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_mongo_7','res_mongo_7')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_mongo_7" contenteditable="true" spellcheck="false">// Olimning yoshini 22 qilish va yangi telefon maydoni qo'shish
+db.foydalanuvchilar.updateOne(
+  { email: "olim@w3learn.uz" },
+  { 
+    $set: { telefon: "+998901234567" },
+    $inc: { yosh: 1 } // yosh = yosh + 1
+  }
+);</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_mongo_7">
+      <div class="result-label">🍃 MongoDB Shell / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🍃 mongosh 2.1 JSON Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;{
+  acknowledged: true,
+  insertedId: null,
+  matchedCount: 1,
+  modifiedCount: 1,
+  upsertedCount: 0
+}&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">🔒 Hech qachon <code>$set</code> siz oddiy <code>{ yosh: 22 }</code> deb yangilamang, aks holda boshqa barcha maydonlar o'chib ketadi!</div>
+
+    <div class="topic-nav">
+      <a href="#find" class="topic-nav-btn prev">← find va findOne — Hujjatlarni Qidirish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 MongoDB | 7 / 26</span>
+      <a href="#delete" class="topic-nav-btn next">deleteOne va deleteMany — Hujjatlarni O'chirish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">CRUD</span>
+      <span style="font-size:12px; color:var(--text2);">MongoDB Mavzu #8</span>
+    </div>
+    <h2 id="delete" style="color:#13aa52; background: linear-gradient(90deg, #13aa52, #00ed64); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">deleteOne va deleteMany — Hujjatlarni O'chirish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Kolleksiyadan hujjatlarni o'chirish uchun <code>deleteOne()</code> (shartga mos kelgan birinchi hujjatni) va <code>deleteMany()</code> (mos keluvchi barchasini) ishlatiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>ID bo'yicha o'chirish: <code>db.kolleksiya.deleteOne({ _id: ObjectId("...") })</code>.</li><li>Shartli o'chirish: <code>db.kolleksiya.deleteMany({ faolmi: false })</code>.</li><li>Barcha hujjatlarni tozalash: <code>db.kolleksiya.deleteMany({})</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">MongoDB / mongosh</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_mongo_8')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_mongo_8','res_mongo_8')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_mongo_8" contenteditable="true" spellcheck="false">// Faol bo'lmagan foydalanuvchilarni o'chirish
+db.foydalanuvchilar.deleteMany({ faolmi: false });
+
+// Natijani tekshirish
+print("O'chirildi!");</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_mongo_8">
+      <div class="result-label">🍃 MongoDB Shell / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🍃 mongosh 2.1 JSON Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;{
+  acknowledged: true,
+  deletedCount: 2
+}&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ Agar butun kolleksiyani yo'q qilmoqchi bo'lsangiz, <code>deleteMany({})</code> dan ko'ra <code>db.kolleksiya.drop()</code> buyrug'i minglab marta tezroq ishlaydi.</div>
+
+    <div class="topic-nav">
+      <a href="#update" class="topic-nav-btn prev">← updateOne va updateMany — $set va $inc Operatorlari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 MongoDB | 8 / 26</span>
+      <a href="#filter" class="topic-nav-btn next">Filter Operatorlari — $gt, $lt, $in, $and, $or →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Filtr</span>
+      <span style="font-size:12px; color:var(--text2);">MongoDB Mavzu #9</span>
+    </div>
+    <h2 id="filter" style="color:#13aa52; background: linear-gradient(90deg, #13aa52, #00ed64); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Filter Operatorlari — $gt, $lt, $in, $and, $or</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">MongoDB taqqoslash va mantiqiy amallarni bajarish uchun maxsus dollar belgisi bilan boshlanuvchi operatorlarni taqdim etadi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Taqqoslash: <code>$gt</code> (&gt;), <code>$gte</code> (&gt;=), <code>$lt</code> (&lt;), <code>$lte</code> (&lt;=), <code>$ne</code> (!=).</li><li>Ro'yxat tekshiruvi: <code>$in: [18, 20, 25]</code> va <code>$nin</code>.</li><li>Mantiqiy: <code>$and: [{...}, {...}]</code>, <code>$or: [{...}, {...}]</code>, <code>$not</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">MongoDB / mongosh</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_mongo_9')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_mongo_9','res_mongo_9')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_mongo_9" contenteditable="true" spellcheck="false">// Yoshi 20 dan 25 gacha bo'lgan yoki Toshkentlik talabalarni topish
+db.foydalanuvchilar.find({
+  $or: [
+    { yosh: { $gte: 20, $lte: 25 } },
+    { "manzil.shahar": "Toshkent" }
+  ]
+});</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_mongo_9">
+      <div class="result-label">🍃 MongoDB Shell / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🍃 mongosh 2.1 JSON Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;[
+  { _id: ObjectId("..."), ism: 'Olim', yosh: 22 },
+  { _id: ObjectId("..."), ism: 'Bobur', yosh: 25 }
+]&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Bitta maydonga bir nechta shart berilganda (masalan <code>{ yosh: { $gte: 18, $lte: 30 } }</code>) ular avtomatik ravishda <code>AND</code> mantiqi bilan ishlaydi.</div>
+
+    <div class="topic-nav">
+      <a href="#delete" class="topic-nav-btn prev">← deleteOne va deleteMany — Hujjatlarni O'chirish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 MongoDB | 9 / 26</span>
+      <a href="#sort" class="topic-nav-btn next">sort, limit va skip — Saralash va Sahifalash →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Qidiruv</span>
+      <span style="font-size:12px; color:var(--text2);">MongoDB Mavzu #10</span>
+    </div>
+    <h2 id="sort" style="color:#13aa52; background: linear-gradient(90deg, #13aa52, #00ed64); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">sort, limit va skip — Saralash va Sahifalash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Qidiruv natijalarini saralash uchun <code>sort()</code>, sonini cheklash uchun <code>limit()</code> va boshidan o'tkazib yuborish uchun <code>skip()</code> metodlari zanjir (chain) ko'rinishida qo'llaniladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>O'sish tartibida: <code>sort({ yosh: 1 })</code>.</li><li>Kamayish tartibida: <code>sort({ yosh: -1 })</code>.</li><li>Sahifalash formulasi: <code>skip((page - 1) * limit).limit(limit)</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">MongoDB / mongosh</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_mongo_10')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_mongo_10','res_mongo_10')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_mongo_10" contenteditable="true" spellcheck="false">-- Eng yoshi katta 3 ta foydalanuvchini olish (2-sahifa)
+db.foydalanuvchilar
+  .find()
+  .sort({ yosh: -1 })
+  .skip(0)
+  .limit(3);</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_mongo_10">
+      <div class="result-label">🍃 MongoDB Shell / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🍃 mongosh 2.1 JSON Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;+---+-------+------+
+| # | ism   | yosh |
++---+-------+------+
+| 1 | Bobur |   25 |
+| 2 | Olim  |   22 |
+| 3 | Nodira|   19 |
++---+-------+------+&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ Katta ma'lumotlar bazasida <code>skip()</code> sekinlashmasligi uchun saralanadigan ustunlarga albatta indeks o'rnatilishi shart.</div>
+
+    <div class="topic-nav">
+      <a href="#filter" class="topic-nav-btn prev">← Filter Operatorlari — $gt, $lt, $in, $and, $or</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 MongoDB | 10 / 26</span>
+      <a href="#projection" class="topic-nav-btn next">Projection — Faqat Kerakli Maydonlarni Olish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Qidiruv</span>
+      <span style="font-size:12px; color:var(--text2);">MongoDB Mavzu #11</span>
+    </div>
+    <h2 id="projection" style="color:#13aa52; background: linear-gradient(90deg, #13aa52, #00ed64); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Projection — Faqat Kerakli Maydonlarni Olish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Projection</strong> — bu SQL dagi ustunlarni tanlash (SELECT ism, email) ga teng. U tarmoq trafigini tejash uchun hujjatning faqat o'zingizga kerakli maydonlarini olib, qolganlarini tashlab yuborish imkonini beradi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Ko'rsatish: <code>{ maydon: 1 }</code>.</li><li>Yashirish: <code>{ maydon: 0 }</code>.</li><li><code>_id</code> maydoni sukut bo'yicha doimo chiqadi, uni yashirish uchun alohida <code>_id: 0</code> yozish kerak.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">MongoDB / mongosh</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_mongo_11')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_mongo_11','res_mongo_11')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_mongo_11" contenteditable="true" spellcheck="false">// Faqat ism va emailni olish (_id ni yashirish)
+db.foydalanuvchilar.find(
+  { yosh: { $gte: 20 } },       // 1-parametr: Shart (WHERE)
+  { ism: 1, email: 1, _id: 0 }   // 2-parametr: Projection (SELECT)
+);</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_mongo_11">
+      <div class="result-label">🍃 MongoDB Shell / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🍃 mongosh 2.1 JSON Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;[
+  { ism: 'Olim', email: 'olim@w3learn.uz' },
+  { ism: 'Bobur', email: 'bobur@uz' }
+]&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Bitta projection ichida 1 va 0 larni aralashtirib yozib bo'lmaydi (yagona istisno: <code>_id: 0</code>).</div>
+
+    <div class="topic-nav">
+      <a href="#sort" class="topic-nav-btn prev">← sort, limit va skip — Saralash va Sahifalash</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 MongoDB | 11 / 26</span>
+      <a href="#regex" class="topic-nav-btn next">Regex Qidiruv ($regex) — Matn Bo'yicha Qidiruv →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Qidiruv</span>
+      <span style="font-size:12px; color:var(--text2);">MongoDB Mavzu #12</span>
+    </div>
+    <h2 id="regex" style="color:#13aa52; background: linear-gradient(90deg, #13aa52, #00ed64); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Regex Qidiruv ($regex) — Matn Bo'yicha Qidiruv</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Muntazam ifodalar (Regular Expressions) yordamida matnning boshlanishi, tugashi yoki biror so'zni o'z ichiga olishi bo'yicha qulay qidiruv amalga oshiriladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Katta-kichik harf farqsiz (Case-insensitive): <code>$options: "i"</code>.</li><li>Boshlanishi bo'yicha: <code>/^Ali/</code>.</li><li>Gmail manzillarini topish: <code>/@gmail\.com$/i</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">MongoDB / mongosh</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_mongo_12')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_mongo_12','res_mongo_12')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_mongo_12" contenteditable="true" spellcheck="false">// Ismida 'lim' bo'lganlarni harf kattaligidan qat'i nazar topish
+db.foydalanuvchilar.find({
+  ism: { $regex: "lim", $options: "i" }
+});</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_mongo_12">
+      <div class="result-label">🍃 MongoDB Shell / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🍃 mongosh 2.1 JSON Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Topilgan hujjatlar:
+- Olim
+- Salim
+- Muslima&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ Katta matnlarni tezkor qidirish uchun oddiy regex o'rniga MongoDB ning maxsus <strong>Text Index</strong> imkoniyatidan foydalanish tavsiya etiladi.</div>
+
+    <div class="topic-nav">
+      <a href="#projection" class="topic-nav-btn prev">← Projection — Faqat Kerakli Maydonlarni Olish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 MongoDB | 12 / 26</span>
+      <a href="#pipeline" class="topic-nav-btn next">Aggregation Pipeline — Ma'lumotlarni Qayta Ishlash →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Aggregation</span>
+      <span style="font-size:12px; color:var(--text2);">MongoDB Mavzu #13</span>
+    </div>
+    <h2 id="pipeline" style="color:#13aa52; background: linear-gradient(90deg, #13aa52, #00ed64); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Aggregation Pipeline — Ma'lumotlarni Qayta Ishlash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Aggregation Pipeline</strong> — bu zavod konveyeri kabi ishlaydigan kuchli tahlil tizimidir. Hujjatlar bir bosqichdan (Stage) o'tib, keyingisiga filtrlanib, guruhlanib yoki o'zgartirilib uzatiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Sintaksis: <code>db.kolleksiya.aggregate([ { $stage1 }, { $stage2 }, ... ])</code>.</li><li>Asosiy bosqichlar: <code>$match</code>, <code>$group</code>, <code>$project</code>, <code>$sort</code>, <code>$lookup</code>, <code>$unwind</code>.</li><li>Murakkab SQL so'rovlari va hisobotlar aynan Aggregation orqali yoziladi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">MongoDB / mongosh</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_mongo_13')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_mongo_13','res_mongo_13')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_mongo_13" contenteditable="true" spellcheck="false">// Konveyer bosqichlari namunasi:
+db.buyurtmalar.aggregate([
+  // 1-bosqich: Faqat yakunlangan buyurtmalar
+  { $match: { holat: "yakunlandi" } },
+  
+  // 2-bosqich: Mijozlar bo'yicha guruhlash va umumiy summani hisoblash
+  { $group: { _id: "$mijoz_id", jami_summa: { $sum: "$narx" } } },
+  
+  // 3-bosqich: Eng ko'p xarid qilganlar bo'yicha saralash
+  { $sort: { jami_summa: -1 } }
+]);</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_mongo_13">
+      <div class="result-label">🍃 MongoDB Shell / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🍃 mongosh 2.1 JSON Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Aggregation Pipeline Natijasi:
+[
+  { _id: 'user_42', jami_summa: 12500000 },
+  { _id: 'user_17', jami_summa: 8300000 }
+]&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">🚀 Aggregation Pipeline MongoDB ning eng kuchli jihati bo'lib, uning yordamida istalgan murakkablikdagi analitik hisobotlarni tuzish mumkin.</div>
+
+    <div class="topic-nav">
+      <a href="#regex" class="topic-nav-btn prev">← Regex Qidiruv ($regex) — Matn Bo'yicha Qidiruv</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 MongoDB | 13 / 26</span>
+      <a href="#match" class="topic-nav-btn next">$match — Pipeline da Filtrlash Bosqichi →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Aggregation</span>
+      <span style="font-size:12px; color:var(--text2);">MongoDB Mavzu #14</span>
+    </div>
+    <h2 id="match" style="color:#13aa52; background: linear-gradient(90deg, #13aa52, #00ed64); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">$match — Pipeline da Filtrlash Bosqichi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><code>$match</code> bosqichi pipeline ning eng boshiga qo'yiladi va faqat kerakli hujjatlarni keyingi bosqichlarga o'tkazish uchun filtr vazifasini bajaradi (SQL dagi WHERE ga teng).</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Pipeline boshida <code>$match</code> qo'yish indekslardan foydalanish imkonini beradi va tezlikni 10 barobar oshiradi.</li><li>Barcha standart filter operatorlari (<code>$gt</code>, <code>$in</code> va h.k.) bu yerda ham ishlaydi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">MongoDB / mongosh</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_mongo_14')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_mongo_14','res_mongo_14')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_mongo_14" contenteditable="true" spellcheck="false">db.mahsulotlar.aggregate([
+  {
+    $match: {
+      kategoriya: "Elektronika",
+      narx: { $gte: 1000000 }
+    }
+  }
+]);</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_mongo_14">
+      <div class="result-label">🍃 MongoDB Shell / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🍃 mongosh 2.1 JSON Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Pipeline 1-bosqichidan 150 ta mahsulot o'tdi.&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Har doim <code>$match</code> ni pipeline ning imkon qadar eng boshiga qo'ying!</div>
+
+    <div class="topic-nav">
+      <a href="#pipeline" class="topic-nav-btn prev">← Aggregation Pipeline — Ma'lumotlarni Qayta Ishlash</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 MongoDB | 14 / 26</span>
+      <a href="#group" class="topic-nav-btn next">$group — Guruhlarga Ajratish va Hisoblash →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Aggregation</span>
+      <span style="font-size:12px; color:var(--text2);">MongoDB Mavzu #15</span>
+    </div>
+    <h2 id="group" style="color:#13aa52; background: linear-gradient(90deg, #13aa52, #00ed64); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">$group — Guruhlarga Ajratish va Hisoblash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><code>$group</code> bosqichi hujjatlarni biror umumiy kalit (<code>_id</code>) bo'yicha guruhlaydi va hisob-kitoblar (COUNT, SUM, AVG, MIN, MAX) qiladi (SQL dagi GROUP BY ga teng).</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><code>_id: "$kategoriya"</code> — qaysi maydon bo'yicha guruhlash.</li><li><code>$sum: 1</code> — qatorlar sonini sanash (COUNT).</li><li><code>$avg: "$narx"</code> — o'rtacha narx.</li><li><code>$push: "$nomi"</code> — guruhdagi barcha nomlarni bitta massivga to'plash.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">MongoDB / mongosh</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_mongo_15')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_mongo_15','res_mongo_15')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_mongo_15" contenteditable="true" spellcheck="false">// Har bir shahar bo'yicha foydalanuvchilar soni va o'rtacha yoshi
+db.foydalanuvchilar.aggregate([
+  {
+    $group: {
+      _id: "$manzil.shahar",
+      foydalanuvchilarSoni: { $sum: 1 },
+      ortachaYosh: { $avg: "$yosh" }
+    }
+  }
+]);</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_mongo_15">
+      <div class="result-label">🍃 MongoDB Shell / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🍃 mongosh 2.1 JSON Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;[
+  { _id: 'Toshkent', foydalanuvchilarSoni: 1420, ortachaYosh: 23.4 },
+  { _id: 'Samarqand', foydalanuvchilarSoni: 890, ortachaYosh: 22.1 }
+]&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ Agar butun kolleksiya bo'yicha bitta umumiy hisob-kitob kerak bo'lsa, <code>_id: null</code> qilib guruhlanadi.</div>
+
+    <div class="topic-nav">
+      <a href="#match" class="topic-nav-btn prev">← $match — Pipeline da Filtrlash Bosqichi</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 MongoDB | 15 / 26</span>
+      <a href="#lookup" class="topic-nav-btn next">$lookup — Kolleksiyalarni Bog'lash (MongoDB dagi JOIN) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Aggregation</span>
+      <span style="font-size:12px; color:var(--text2);">MongoDB Mavzu #16</span>
+    </div>
+    <h2 id="lookup" style="color:#13aa52; background: linear-gradient(90deg, #13aa52, #00ed64); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">$lookup — Kolleksiyalarni Bog'lash (MongoDB dagi JOIN)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">NoSQL da jadvallar yo'q bo'lsa ham, ba'zan turli kolleksiyalardagi ma'lumotlarni o'zaro bog'lash zarur bo'ladi. Buni <code>$lookup</code> bosqichi bajaradi (SQL dagi LEFT JOIN ga teng).</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><code>from</code>: ulanayotgan ikkinchi kolleksiya nomi.</li><li><code>localField</code>: joriy kolleksiyadagi bog'lovchi kalit.</li><li><code>foreignField</code>: ikkinchi kolleksiyadagi kalit.</li><li><code>as</code>: topilgan ma'lumotlar saqlanadigan yangi massiv nomi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">MongoDB / mongosh</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_mongo_16')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_mongo_16','res_mongo_16')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_mongo_16" contenteditable="true" spellcheck="false">// Buyurtmalarga mijoz ma'lumotlarini birlashtirish
+db.buyurtmalar.aggregate([
+  {
+    $lookup: {
+      from: "foydalanuvchilar",
+      localField: "mijoz_id",
+      foreignField: "_id",
+      as: "mijoz_haqida"
+    }
+  }
+]);</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_mongo_16">
+      <div class="result-label">🍃 MongoDB Shell / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🍃 mongosh 2.1 JSON Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;[
+  {
+    _id: ObjectId("..."),
+    mahsulot: "iPhone 15",
+    narx: 12000000,
+    mijoz_haqida: [
+      { ism: "Jasur", email: "jasur@uz", shahar: "Toshkent" }
+    ]
+  }
+]&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 <code>$lookup</code> natijasida kelgan massivni bitta ob'ektga aylantirish uchun undan keyin <code>{ $unwind: "$mijoz_haqida" }</code> bosqichi qo'yiladi.</div>
+
+    <div class="topic-nav">
+      <a href="#group" class="topic-nav-btn prev">← $group — Guruhlarga Ajratish va Hisoblash</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 MongoDB | 16 / 26</span>
+      <a href="#project" class="topic-nav-btn next">$project — Ma'lumotlarni Qayta Formatlash →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Aggregation</span>
+      <span style="font-size:12px; color:var(--text2);">MongoDB Mavzu #17</span>
+    </div>
+    <h2 id="project" style="color:#13aa52; background: linear-gradient(90deg, #13aa52, #00ed64); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">$project — Ma'lumotlarni Qayta Formatlash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><code>$project</code> bosqichi yakuniy natijada qaysi maydonlar ko'rinishini belgilaydi, yangi hisoblangan maydonlar (Computed fields) hosil qiladi va maydon nomlarini o'zgartiradi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Matnlarni birlashtirish: <code>{ $concat: ["$ism", " ", "$familiya"] }</code>.</li><li>Shartli qiymat berish: <code>$cond</code>.</li><li>Keraksiz maydonlarni yashirish: <code>{ maxfiy_kod: 0 }</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">MongoDB / mongosh</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_mongo_17')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_mongo_17','res_mongo_17')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_mongo_17" contenteditable="true" spellcheck="false">db.foydalanuvchilar.aggregate([
+  {
+    $project: {
+      _id: 0,
+      toliqIsm: { $concat: ["$ism", " ", "$familiya"] },
+      yosh: 1,
+      kattami: { $gte: ["$yosh", 18] }
+    }
+  }
+]);</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_mongo_17">
+      <div class="result-label">🍃 MongoDB Shell / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🍃 mongosh 2.1 JSON Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;[
+  { toliqIsm: 'Olim Shokirov', yosh: 21, kattami: true }
+]&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ <code>$project</code> yordamida frontend ga aynan kerakli chiroyli formatdagi JSON ma'lumot yetkazib beriladi.</div>
+
+    <div class="topic-nav">
+      <a href="#lookup" class="topic-nav-btn prev">← $lookup — Kolleksiyalarni Bog'lash (MongoDB dagi JOIN)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 MongoDB | 17 / 26</span>
+      <a href="#mongoose" class="topic-nav-btn next">Mongoose Kirish — Node.js ODM Kutubxonasi →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Mongoose</span>
+      <span style="font-size:12px; color:var(--text2);">MongoDB Mavzu #18</span>
+    </div>
+    <h2 id="mongoose" style="color:#13aa52; background: linear-gradient(90deg, #13aa52, #00ed64); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Mongoose Kirish — Node.js ODM Kutubxonasi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Mongoose</strong> — bu Node.js dasturchilari uchun MongoDB bilan ishlashning eng mashhur va qulay <strong>ODM (Object Data Modeling)</strong> kutubxonasidir. U sxemasiz MongoDB ga qat'iy ma'lumotlar sxemasi (Schema), turlar tekshiruvi va mantiqiy metodlarni olib keladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>O'rnatish: <code>npm install mongoose</code>.</li><li>Ulanish: <code>mongoose.connect('mongodb://localhost:27017/mydb')</code>.</li><li>Barcha operatsiyalar zamonaviy <code>async / await</code> asosida ishlaydi.</li><li>Ma'lumotlar bazasi xatolarini avtomatik ushlaydi va tozalaydi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">MongoDB / mongosh</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_mongo_18')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_mongo_18','res_mongo_18')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_mongo_18" contenteditable="true" spellcheck="false">// app.js (Node.js)
+const mongoose = require('mongoose');
+
+async function main() {
+  await mongoose.connect('mongodb://127.0.0.1:27017/w3learn');
+  console.log("MongoDB ga muvaffaqiyatli ulandi! 🍃");
+}
+
+main().catch(err =&gt; console.log("Xatolik:", err));</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_mongo_18">
+      <div class="result-label">🍃 MongoDB Shell / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🍃 mongosh 2.1 JSON Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;MongoDB ga muvaffaqiyatli ulandi! 🍃
+Connection Pool: 10 connections active&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Mongoose Node.js loyihalarida MongoDB bilan ishlashning de-fakto standarti hisoblanadi.</div>
+
+    <div class="topic-nav">
+      <a href="#project" class="topic-nav-btn prev">← $project — Ma'lumotlarni Qayta Formatlash</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 MongoDB | 18 / 26</span>
+      <a href="#schema" class="topic-nav-btn next">Schema va Model Yaratish (Mongoose) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Mongoose</span>
+      <span style="font-size:12px; color:var(--text2);">MongoDB Mavzu #19</span>
+    </div>
+    <h2 id="schema" style="color:#13aa52; background: linear-gradient(90deg, #13aa52, #00ed64); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Schema va Model Yaratish (Mongoose)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Mongoose da har bir kolleksiya uchun avval <strong>Schema</strong> (maydonlar va ularning tiplari qolipi), so'ngra shu sxema asosida ma'lumotlarni boshqaruvchi <strong>Model</strong> klassi yaratiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Sxema turlari: <code>String</code>, <code>Number</code>, <code>Boolean</code>, <code>Date</code>, <code>Array</code>, <code>ObjectId</code>.</li><li>Model yaratish: <code>const User = mongoose.model('User', userSchema);</code>.</li><li>MongoDB avtomatik ravishda 'User' nomini ko'plikda kichik harflar bilan 'users' kolleksiyasiga aylantiradi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">MongoDB / mongosh</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_mongo_19')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_mongo_19','res_mongo_19')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_mongo_19" contenteditable="true" spellcheck="false">const mongoose = require('mongoose');
+
+const userSchema = new mongoose.Schema({
+  ism: { type: String, required: true },
+  email: { type: String, required: true, unique: true },
+  yosh: { type: Number, min: 14, max: 100 },
+  rol: { type: String, enum: ['user', 'admin'], default: 'user' }
+}, { timestamps: true }); // createdAt va updatedAt avtomatik qo'shiladi
+
+const User = mongoose.model('User', userSchema);</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_mongo_19">
+      <div class="result-label">🍃 MongoDB Shell / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🍃 mongosh 2.1 JSON Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Model yaratildi: User -&gt; Kolleksiya: 'users'
+Sxema parametrlari: ism (talab qilinadi), email (yagona), timestamps yoqildi&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ <code>{ timestamps: true }</code> opsiyasi hujjat yaratilgan va oxirgi marta yangilangan sanani avtomatik qayd etadi.</div>
+
+    <div class="topic-nav">
+      <a href="#mongoose" class="topic-nav-btn prev">← Mongoose Kirish — Node.js ODM Kutubxonasi</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 MongoDB | 19 / 26</span>
+      <a href="#validation" class="topic-nav-btn next">Mongoose Validatsiya Qoidalari →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Mongoose</span>
+      <span style="font-size:12px; color:var(--text2);">MongoDB Mavzu #20</span>
+    </div>
+    <h2 id="validation" style="color:#13aa52; background: linear-gradient(90deg, #13aa52, #00ed64); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Mongoose Validatsiya Qoidalari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Mongoose noto'g'ri yoki xato ma'lumotlar bazaga yozilishining oldini olish uchun kuchli validatsiya tizimiga ega.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><code>required: [true, 'Ism kiritilishi shart!']</code> — majburiy maydon.</li><li><code>minlength</code> va <code>maxlength</code> — matn uzunligi cheklovi.</li><li><code>min</code> va <code>max</code> — sonlar oralig'i.</li><li><code>match: [/regex/, 'Email formati noto\'g\'ri!']</code> — format tekshirish.</li><li>Custom Validator: o'zingizning maxsus tekshiruvchi funksiyangizni yozish.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">MongoDB / mongosh</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_mongo_20')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_mongo_20','res_mongo_20')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_mongo_20" contenteditable="true" spellcheck="false">const mahsulotSchema = new mongoose.Schema({
+  nomi: {
+    type: String,
+    required: [true, "Mahsulot nomi bo'lishi shart!"],
+    trim: true,
+    minlength: [3, "Nom kamida 3 ta harf bo'lsin"]
+  },
+  narx: {
+    type: Number,
+    required: true,
+    min: [0, "Narx manfiy bo'lishi mumkin emas!"]
+  }
+});</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_mongo_20">
+      <div class="result-label">🍃 MongoDB Shell / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🍃 mongosh 2.1 JSON Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Test:
+const p = new Mahsulot({ nomi: "A", narx: -500 });
+await p.save(); 
+// ValidationError: Mahsulot nomi kamida 3 ta harf bo'lsin, Narx manfiy bo'lishi mumkin emas!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">🔒 Mongoose validatsiyasi tufayli bazangiz doimo toza va kutilgan formatdagi ma'lumotlar bilan to'ladi.</div>
+
+    <div class="topic-nav">
+      <a href="#schema" class="topic-nav-btn prev">← Schema va Model Yaratish (Mongoose)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 MongoDB | 20 / 26</span>
+      <a href="#populate" class="topic-nav-btn next">populate() — Bog'langan Hujjatlarni Yuklash →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Mongoose</span>
+      <span style="font-size:12px; color:var(--text2);">MongoDB Mavzu #21</span>
+    </div>
+    <h2 id="populate" style="color:#13aa52; background: linear-gradient(90deg, #13aa52, #00ed64); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">populate() — Bog'langan Hujjatlarni Yuklash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Bitta hujjat boshqa hujjatning <code>_id</code> sini (ObjectId) saqlagan bo'lsa, <code>populate()</code> metodi orqali xuddi SQL JOIN kabi bog'langan ob'ektning to'liq ma'lumotlarini bitta so'rovda tortib olish mumkin.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Sxemada bog'lash: <code>type: mongoose.Schema.Types.ObjectId, ref: 'User'</code>.</li><li>Chaqirish: <code>Post.find().populate('muallif')</code>.</li><li>Faqat kerakli maydonlarni olish: <code>populate('muallif', 'ism email')</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">MongoDB / mongosh</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_mongo_21')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_mongo_21','res_mongo_21')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_mongo_21" contenteditable="true" spellcheck="false">// Maqola sxemasi muallif ID sini saqlaydi
+const postSchema = new mongoose.Schema({
+  sarlavha: String,
+  matn: String,
+  muallif: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
+});
+
+const Post = mongoose.model('Post', postSchema);
+
+// populate orqali muallif ma'lumotlarini birlashtirib olish:
+const post = await Post.findOne({ sarlavha: "MongoDB darslari" })
+                       .populate('muallif', 'ism email');</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_mongo_21">
+      <div class="result-label">🍃 MongoDB Shell / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🍃 mongosh 2.1 JSON Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;{
+  _id: ObjectId("..."),
+  sarlavha: "MongoDB darslari",
+  muallif: {
+    _id: ObjectId("..."),
+    ism: "Olim",
+    email: "olim@w3learn.uz"
+  }
+}&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 <code>populate()</code> dasturchiga NoSQL hujjatsiz bazasida ham xuddi relyatsion bazalardek aloqalar (Relations) bilan ishlash erkinligini beradi.</div>
+
+    <div class="topic-nav">
+      <a href="#validation" class="topic-nav-btn prev">← Mongoose Validatsiya Qoidalari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 MongoDB | 21 / 26</span>
+      <a href="#middleware-m" class="topic-nav-btn next">Mongoose Middleware — Pre va Post Hooklar →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Mongoose</span>
+      <span style="font-size:12px; color:var(--text2);">MongoDB Mavzu #22</span>
+    </div>
+    <h2 id="middleware-m" style="color:#13aa52; background: linear-gradient(90deg, #13aa52, #00ed64); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Mongoose Middleware — Pre va Post Hooklar</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Mongoose Middleware (Pre va Post hooklar) — bu biror amal (masalan <code>save</code>, <code>remove</code>, <code>updateOne</code>) bajarilishidan oldin yoki keyin avtomatik ishga tushuvchi funksiyalardir.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Eng mashhur qo'llanishi: Parolni bazaga saqlashdan oldin avtomatik bcrypt bilan xesh qilish.</li><li><code>schema.pre('save', async function() { ... })</code>.</li><li><code>schema.post('save', function(doc) { ... })</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">MongoDB / mongosh</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_mongo_22')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_mongo_22','res_mongo_22')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_mongo_22" contenteditable="true" spellcheck="false">const bcrypt = require('bcryptjs');
+
+// Saqlashdan oldin parolni xesh qilish
+userSchema.pre('save', async function() {
+  // Faqat parol o'zgargan bo'lsagina qayta xesh qilinadi
+  if (!this.isModified('parol')) return;
+  
+  const salt = await bcrypt.genSalt(10);
+  this.parol = await bcrypt.hash(this.parol, salt);
+  console.log("Parol xavfsiz xesh qilindi 🔒");
+});</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_mongo_22">
+      <div class="result-label">🍃 MongoDB Shell / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🍃 mongosh 2.1 JSON Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Hodisa:
+user.parol = "MaxfiyParol123";
+await user.save();
+&gt;&gt; Parol xavfsiz xesh qilindi 🔒
+Bazadagi qiymat: $2a$10$e7K0BqH2kL8X...&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">🔒 Pre hooklar orqali controller ichida esdan chiqishi mumkin bo'lgan xavfsizlik amallarini model darajasida kafolatlash mumkin.</div>
+
+    <div class="topic-nav">
+      <a href="#populate" class="topic-nav-btn prev">← populate() — Bog'langan Hujjatlarni Yuklash</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 MongoDB | 22 / 26</span>
+      <a href="#indexes" class="topic-nav-btn next">MongoDB Indekslari — B-Tree va Text Index →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Unumdorlik</span>
+      <span style="font-size:12px; color:var(--text2);">MongoDB Mavzu #23</span>
+    </div>
+    <h2 id="indexes" style="color:#13aa52; background: linear-gradient(90deg, #13aa52, #00ed64); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">MongoDB Indekslari — B-Tree va Text Index</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Indekslarsiz MongoDB har bir so'rovda kolleksiyadagi barcha millionlab hujjatlarni bittalab ko'rib chiqadi (COLLSCAN). Indeks yaratilganda qidiruv vaqti bir necha millisekundga tushadi (IXSCAN).</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Bitta maydon indeksi: <code>db.users.createIndex({ email: 1 })</code>.</li><li>Yagona indeks (Unique index): <code>db.users.createIndex({ email: 1 }, { unique: true })</code>.</li><li>Murakkab indeks (Compound): <code>db.users.createIndex({ shahar: 1, yosh: -1 })</code>.</li><li>Matn indeksi (Full-text search): <code>db.maqolalar.createIndex({ sarlavha: "text", matn: "text" })</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">MongoDB / mongosh</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_mongo_23')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_mongo_23','res_mongo_23')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_mongo_23" contenteditable="true" spellcheck="false">-- Indeks yaratish va tezlikni o'lchash
+db.foydalanuvchilar.createIndex({ email: 1 });
+
+-- So'rov tahlili (Explain)
+db.foydalanuvchilar.find({ email: "olim@w3learn.uz" }).explain("executionStats");</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_mongo_23">
+      <div class="result-label">🍃 MongoDB Shell / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🍃 mongosh 2.1 JSON Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;{
+  stage: 'IXSCAN',
+  indexName: 'email_1',
+  nReturned: 1,
+  executionTimeMillis: 1,
+  totalDocsExamined: 1
+}&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">🚀 <code>executionTimeMillis: 1</code> — indeks tufayli 1 million hujjat orasidan qidiruv atigi 1 millisekundda yakunlandi!</div>
+
+    <div class="topic-nav">
+      <a href="#middleware-m" class="topic-nav-btn prev">← Mongoose Middleware — Pre va Post Hooklar</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 MongoDB | 23 / 26</span>
+      <a href="#transactions" class="topic-nav-btn next">MongoDB Tranzaksiyalari — Multi-Document ACID →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Xavfsizlik</span>
+      <span style="font-size:12px; color:var(--text2);">MongoDB Mavzu #24</span>
+    </div>
+    <h2 id="transactions" style="color:#13aa52; background: linear-gradient(90deg, #13aa52, #00ed64); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">MongoDB Tranzaksiyalari — Multi-Document ACID</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">MongoDB 4.0 versiyasidan boshlab relyatsion bazalardagi kabi <strong>Multi-Document ACID Tranzaksiyalari</strong> ni qo'llab-quvvatlaydi. Agar bir nechta hujjatlar orasida pul o'tkazish yoki buyurtma rasmiylashtirish kerak bo'lsa, tranzaksiya barcha amallarning xatosiz o'tishini ta'minlaydi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Sessiya boshlash: <code>const session = await mongoose.startSession();</code>.</li><li>Tranzaksiyani boshlash: <code>session.startTransaction();</code>.</li><li>Tasdiqlash: <code>await session.commitTransaction();</code>.</li><li>Bekor qilish: <code>await session.abortTransaction();</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">MongoDB / mongosh</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_mongo_24')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_mongo_24','res_mongo_24')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_mongo_24" contenteditable="true" spellcheck="false">const session = await mongoose.startSession();
+session.startTransaction();
+
+try {
+  // 1-amal: Pul yechish
+  await Hisob.updateOne({ _id: userA }, { $inc: { balans: -50000 } }, { session });
+  
+  // 2-amal: Pul qo'shish
+  await Hisob.updateOne({ _id: userB }, { $inc: { balans: 50000 } }, { session });
+
+  await session.commitTransaction();
+  console.log("Tranzaksiya muvaffaqiyatli yakunlandi! 💵");
+} catch (error) {
+  await session.abortTransaction();
+  console.log("Xatolik yuz berdi, barcha amallar bekor qilindi!");
+} finally {
+  session.endSession();
+}</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_mongo_24">
+      <div class="result-label">🍃 MongoDB Shell / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🍃 mongosh 2.1 JSON Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Tranzaksiya muvaffaqiyatli yakunlandi! 💵
+ACID kafolati: Ikkala hisob ham teng o'zgardi.&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ Tranzaksiyalardan foydalanish uchun MongoDB kamida 3 ta tugunli <strong>Replica Set</strong> rejimida ishlashi shart.</div>
+
+    <div class="topic-nav">
+      <a href="#indexes" class="topic-nav-btn prev">← MongoDB Indekslari — B-Tree va Text Index</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 MongoDB | 24 / 26</span>
+      <a href="#replication" class="topic-nav-btn next">Replikatsiya — Replica Set va Yuqori Bardoshlilik →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Klaster</span>
+      <span style="font-size:12px; color:var(--text2);">MongoDB Mavzu #25</span>
+    </div>
+    <h2 id="replication" style="color:#13aa52; background: linear-gradient(90deg, #13aa52, #00ed64); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Replikatsiya — Replica Set va Yuqori Bardoshlilik</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Replication (Nusxalash)</strong> — bu bitta ma'lumotlar bazasining nusxalarini bir nechta mustaqil serverlarda saqlash usulidir. Bu serverlardan biri yonib ketsa yoki elektr o'chsa ham, tizim bir lahzaga ham to'xtamasligini (High Availability) ta'minlaydi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><strong>Primary (Asosiy)</strong>: barcha yozish (write) amallarini qabul qiladi.</li><li><strong>Secondary (Qo'shimcha)</strong>: asosiy tugundan ma'lumotlarni o'ziga nusxalab turadi va o'qish (read) yuklamasini bo'lishadi.</li><li>Avtomatik saylov (Failover): agar Primary server ishdan chiqsa, qolgan Secondary serverlar bir necha soniyada yangi Primary ni o'zlari saylab oladi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">MongoDB / mongosh</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_mongo_25')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_mongo_25','res_mongo_25')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_mongo_25" contenteditable="true" spellcheck="false">// Replica Set holatini tekshirish
+rs.status();
+
+// Konfiguratsiya ko'rinishi:
+// Primary:   192.168.1.10:27017 (ONLINE - WRITE/READ)
+// Secondary: 192.168.1.11:27017 (ONLINE - READ ONLY)
+// Secondary: 192.168.1.12:27017 (ONLINE - READ ONLY)</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_mongo_25">
+      <div class="result-label">🍃 MongoDB Shell / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🍃 mongosh 2.1 JSON Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;{
+  set: 'myReplSet',
+  members: [
+    { _id: 0, name: 'mongo1:27017', stateStr: 'PRIMARY', health: 1 },
+    { _id: 1, name: 'mongo2:27017', stateStr: 'SECONDARY', health: 1 },
+    { _id: 2, name: 'mongo3:27017', stateStr: 'SECONDARY', health: 1 }
+  ],
+  ok: 1
+}&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Produksiya muhitida MongoDB har doim kamida 3 ta serverdan iborat Replica Set shaklida ishlatiladi.</div>
+
+    <div class="topic-nav">
+      <a href="#transactions" class="topic-nav-btn prev">← MongoDB Tranzaksiyalari — Multi-Document ACID</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 MongoDB | 25 / 26</span>
+      <a href="#sharding" class="topic-nav-btn next">Sharding — Gorizontal Kengayish (Masshtablash) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-green">Klaster</span>
+      <span style="font-size:12px; color:var(--text2);">MongoDB Mavzu #26</span>
+    </div>
+    <h2 id="sharding" style="color:#13aa52; background: linear-gradient(90deg, #13aa52, #00ed64); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Sharding — Gorizontal Kengayish (Masshtablash)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Ma'lumotlar hajmi bitta kompyuterning qattiq diskiga yoki xotirasiga sig'maydigan darajada ulkan bo'lib ketganda (petabaytlar darajasida), <strong>Sharding</strong> texnologiyasi ishga tushadi. U ma'lumotlarni bir nechta mustaqil serverlar (Shardlar) orasida taqsimlab saqlaydi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Vertikal masshtablash: bitta kompyuterni kuchaytirish (chegarasi bor, qimmat).</li><li>Gorizontal masshtablash (Sharding): yangi arzon serverlarni klasterga qo'shish (cheksiz kengayish).</li><li><strong>Shard Key</strong>: ma'lumotlar aynan qaysi serverga tushishini belgilovchi maxsus ustun (masalan mamlakat kodi yoki user_id).</li><li><strong>Mongos Router</strong>: so'rovlarni kerakli Shard ga yo'naltiruvchi yuklama taqsimlagich.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">MongoDB / mongosh</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_mongo_26')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_mongo_26','res_mongo_26')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_mongo_26" contenteditable="true" spellcheck="false">// Kolleksiyada Sharding ni yoqish
+sh.enableSharding("w3learn_db");
+
+// Shard kaliti bo'yicha taqsimlash
+sh.shardCollection("w3learn_db.foydalanuvchilar", { "mamlakat": 1, "_id": 1 });</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_mongo_26">
+      <div class="result-label">🍃 MongoDB Shell / Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🍃 mongosh 2.1 JSON Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Sharding Status:
+Shard-1 (Yevropa): 4.2 million hujjat
+Shard-2 (Osiyo):   5.8 million hujjat
+Shard-3 (Amerika): 3.1 million hujjat
+Router (mongos): So'rovlar avtomatik yo'naltirilmoqda 🌐&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">🚀 Sharding tufayli Google, Facebook, Uber kabi kompaniyalar milliardlab foydalanuvchilar ma'lumotlarini kechikishlarsiz qayta ishlay oladi.</div>
+
+    <div class="topic-nav">
+      <a href="#replication" class="topic-nav-btn prev">← Replikatsiya — Replica Set va Yuqori Bardoshlilik</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 MongoDB | 26 / 26</span>
+      <a href="postgresql.html" class="topic-nav-btn next">Keyingi kurs: PostgreSQL Darslari →</a>
+    </div>
+  </section>
 
   <div class="quiz-box">
-    <div class="quiz-q">🧪 Test: MongoDB da ma'lumotlar qanday formatda saqlanadi?</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qr1')">XML formatida</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, true, 'qr1')">BSON (JSON-ga o'xshash) hujjatlar</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qr1')">Jadval (table) ko'rinishida</div>
-    <div class="quiz-result" id="qr1"></div>
+    <div class="quiz-q">🧪 Test: MongoDB da hujjatning boshqa maydonlarini o'chirib yubormasdan faqat ma'lum bitta maydonini xavfsiz yangilash uchun qaysi operator ishlatiladi?</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, true, 'mgQr1')">$set</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'mgQr1')">$update</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'mgQr1')">$push</div>
+    <div class="quiz-result" id="mgQr1"></div>
   </div>
-  
 
-<div class="nav-btns">
-  <a href="sql.html" class="btn-prev">&#8592; SQL</a>
-  <a href="postgresql.html" class="btn-next">PostgreSQL &#8594;</a>
-</div>
+  <div class="nav-btns" style="margin-top: 30px;">
+    <a href="sql.html" class="btn-prev">← SQL Darslari</a>
+    <a href="postgresql.html" class="btn-next">PostgreSQL Darsiga O'tish →</a>
+  </div>
+
+  <div class="note note-blue" style="margin-top: 25px;">
+    📌 <strong>Keyingi qadam:</strong> NoSQL hujjatsiz bazalar yetakchisi MongoDB ni o'rgangach, dunyoning eng ilg'or relyatsion ma'lumotlar bazasi bo'lgan <a href="postgresql.html" style="color:var(--green)">PostgreSQL darslariga</a> o'ting!
+  </div>
 </main>
 <aside class="right-panel">
   <div class="rp-title">📈 Progress</div>

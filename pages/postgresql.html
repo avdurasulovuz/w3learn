@@ -73,132 +73,1261 @@
   </ul>
 </aside>
 <main class="main">
-  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">PostgreSQL</a> › PostgreSQL Nima?</div>
-  <h1 id="kirish">PostgreSQL Nima?</h1>
-  <div class="meta-tags">
-    <span class="tag tag-green">⏱ 8 daqiqa</span>
-    <span class="tag tag-blue">🟡 O'rta</span>
-    <span class="tag tag-orange">👁 4,560 marta ko'rilgan</span>
-  </div>
-  <p><strong>PostgreSQL</strong> — eng kuchli ochiq manbali relyatsion ma'lumotlar bazasi (RDBMS). MySQL dan farqli ravishda JSONB, massivlar, to'liq matn qidiruvi va ilg'or funksiyalarni qo'llaydi.</p>
-  <div class="note">💡 <strong>Eslatma:</strong> PostgreSQL — ACID tranzaksiyalarni to'liq qo'llaydi va yuqori darajada kengaytiriladigan (extensible) MB.</div>
-
-  <h2 id="create">Jadval Yaratish</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar"><span class="code-lang">SQL (PostgreSQL)</span>
-      <div class="code-actions"><button class="btn-copy" onclick="copyCode('code1')">📋 Nusxa</button></div>
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Asosiy</span>
+      <span style="font-size:12px; color:var(--text2);">PostgreSQL Mavzu #1</span>
     </div>
-    <div class="code-body"><pre id="code1">-- Ma'lumotlar bazasi yaratish
-CREATE DATABASE w3learn_db;
+    <h2 id="kirish" style="color:#336791; background: linear-gradient(90deg, #5c93c4, #336791); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">PostgreSQL Nima? Dunyodagi Eng Ilg'or Relyatsion Baza</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>PostgreSQL (Postgres)</strong> — dunyodagi eng kuchli, ishonchli va kengaytiriluvchi ochiq kodli ob'ekt-relyatsion ma'lumotlar bazasi boshqaruv tizimidir (ORDBMS). U 35 yildan ortiq davr mobaynida faol rivojlantirilib kelinmoqda va moliyaviy barqarorlik, ma'lumotlar yaxlitligi (ACID) hamda boy imkoniyatlari bilan mashhur.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>SQL standartlariga eng yuqori darajada mos keluvchi tizim (SQL:2023).</li><li>Ikkala dunyo afzalligi: ham qat'iy relyatsion jadvallar, ham <code>JSONB</code> orqali NoSQL hujjatsiz imkoniyatlar.</li><li>Apple, Reddit, Instagram, Spotify, NASA kabi yirik tashkilotlar asosiy baza sifatida Postgres dan foydalanadi.</li><li>Cheksiz kengayuvchanlik: PostGIS (geografik xaritalar), pgvector (Sun'iy intellekt vektor qidiruvi), TimescaleDB.</li></ul>
 
--- Jadval yaratish
-CREATE TABLE foydalanuvchilar (
-    id          SERIAL PRIMARY KEY,
-    ism         VARCHAR(100) NOT NULL,
-    email       VARCHAR(255) UNIQUE NOT NULL,
-    yosh        INTEGER CHECK (yosh >= 0 AND yosh <= 150),
-    shahar      VARCHAR(100) DEFAULT 'Noma''lum',
-    konikmalari TEXT[],              -- Massiv type
-    malumot     JSONB,               -- JSON type
-    yaratildi   TIMESTAMPTZ DEFAULT NOW(),
-    yangilandi  TIMESTAMPTZ DEFAULT NOW()
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PostgreSQL / psql</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_pg_1')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_pg_1','res_pg_1')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_pg_1" contenteditable="true" spellcheck="false">-- PostgreSQL versiyasi va server vaqtini tekshirish
+SELECT 
+    version() AS postgres_versiyasi,
+    current_setting('server_version') AS qisqa_versiya,
+    NOW() AS hozirgi_vaqt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_pg_1">
+      <div class="result-label">🐘 PostgreSQL 16 Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PostgreSQL psql Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;+-------------------------------------------------------------+---------------+---------------------+
+| postgres_versiyasi                                          | qisqa_versiya | hozirgi_vaqt        |
++-------------------------------------------------------------+---------------+---------------------+
+| PostgreSQL 16.2 on x86_64-pc-linux-gnu, compiled by gcc... | 16.2          | 2026-11-23 15:10:00 |
++-------------------------------------------------------------+---------------+---------------------+
+1 row in set (0.001 sec)&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 PostgreSQL ko'p yillar davomida DB-Engines reytingida 'Yilning eng yaxshi ma'lumotlar bazasi' unvonini eng ko'p qo'lga kiritgan tizimdir.</div>
+
+    <div class="topic-nav">
+      <a href="mongodb.html" class="topic-nav-btn prev">← MongoDB Darslari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PostgreSQL | 1 / 28</span>
+      <a href="#install" class="topic-nav-btn next">PostgreSQL O'rnatish va pgAdmin 4 →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">O'rnatish</span>
+      <span style="font-size:12px; color:var(--text2);">PostgreSQL Mavzu #2</span>
+    </div>
+    <h2 id="install" style="color:#336791; background: linear-gradient(90deg, #5c93c4, #336791); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">PostgreSQL O'rnatish va pgAdmin 4</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">PostgreSQL ni kompyuterga o'rnatish uchun rasmiy distributiv yuklab olinadi. O'rnatish jarayonida standart grafik boshqaruv dasturi <strong>pgAdmin 4</strong> ham birga qo'shiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Rasmiy sayt: <code>postgresql.org/download</code>.</li><li>Standart port: <code>5432</code>.</li><li>Bosh administrator foydalanuvchisi: <code>postgres</code>.</li><li>pgAdmin 4 — brauzer orqali yoki alohida dastur ko'rinishida jadvallarni vizual boshqarish interfeysi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PostgreSQL / psql</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_pg_2')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_pg_2','res_pg_2')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_pg_2" contenteditable="true" spellcheck="false"># Linux Ubuntu da o'rnatish:
+sudo apt update
+sudo apt install postgresql postgresql-contrib
+
+# PostgreSQL xizmatini ishga tushirish:
+sudo systemctl start postgresql
+sudo systemctl enable postgresql</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_pg_2">
+      <div class="result-label">🐘 PostgreSQL 16 Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PostgreSQL psql Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Synchronizing state of postgresql.service with SysV service script...
+Executing: /lib/systemd/systemd-sysv-install enable postgresql
+postgresql.service is active (running) 🟢
+Port: 5432 open for localhost&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ O'rnatish vaqtida <code>postgres</code> superuseri uchun kiritilgan parolni albatta eslab qoling, u bazaga ulanishda kerak bo'ladi.</div>
+
+    <div class="topic-nav">
+      <a href="#kirish" class="topic-nav-btn prev">← PostgreSQL Nima? Dunyodagi Eng Ilg'or Relyatsion Baza</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PostgreSQL | 2 / 28</span>
+      <a href="#psql" class="topic-nav-btn next">psql — Terminal Konsol Vositasida Ishlash →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">psql</span>
+      <span style="font-size:12px; color:var(--text2);">PostgreSQL Mavzu #3</span>
+    </div>
+    <h2 id="psql" style="color:#336791; background: linear-gradient(90deg, #5c93c4, #336791); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">psql — Terminal Konsol Vositasida Ishlash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>psql</strong> — PostgreSQL ning tezkor buyruqlar satri (CLI) vositasidir. Tajribali dasturchilar va DevOps muhandislari bazani to'liq <code>psql</code> orqali boshqaradi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Ulanish: <code>psql -U postgres -d postgres</code>.</li><li>Foydali meta-buyruqlar:</li><li><code>\l</code> — barcha bazalar ro'yxatini ko'rish (List databases).</li><li><code>\c baza_nomi</code> — ko'rsatilgan bazaga ulanish (Connect).</li><li><code>\dt</code> — joriy bazadagi barcha jadvallar (Display tables).</li><li><code>\d jadval_nomi</code> — jadval ustunlari va turlarini ko'rish (Describe).</li><li><code>\q</code> — psql dan chiqish (Quit).</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PostgreSQL / psql</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_pg_3')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_pg_3','res_pg_3')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_pg_3" contenteditable="true" spellcheck="false"># psql ga kirish:
+psql -U postgres
+
+# Yangi baza yaratish va ulanish:
+postgres=# CREATE DATABASE w3learn;
+CREATE DATABASE
+postgres=# \c w3learn
+You are now connected to database "w3learn" as user "postgres".
+w3learn=# \dt</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_pg_3">
+      <div class="result-label">🐘 PostgreSQL 16 Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PostgreSQL psql Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;List of relations
+ Schema | Name | Type  |  Owner   
+--------+------+-------+----------
+(No relations found in current database)&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 psql buyruqlari teskari slesh <code>\</code> bilan boshlanadi va ularning oxiriga nuqta-vergul qo'yish shart emas.</div>
+
+    <div class="topic-nav">
+      <a href="#install" class="topic-nav-btn prev">← PostgreSQL O'rnatish va pgAdmin 4</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PostgreSQL | 3 / 28</span>
+      <a href="#create" class="topic-nav-btn next">CREATE TABLE — SERIAL, BIGSERIAL va UUID →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">DDL</span>
+      <span style="font-size:12px; color:var(--text2);">PostgreSQL Mavzu #4</span>
+    </div>
+    <h2 id="create" style="color:#336791; background: linear-gradient(90deg, #5c93c4, #336791); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">CREATE TABLE — SERIAL, BIGSERIAL va UUID</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">PostgreSQL da jadvallar yaratishda avtomatik o'suvchi ID larni belgilash uchun qulay <code>SERIAL</code>, katta loyihalar uchun <code>BIGSERIAL</code> yoki xavfsiz va tarqatilgan tizimlar uchun <code>UUID</code> ishlatiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><code>SERIAL</code>: 4-baytli butun son (1 dan 2 milliardgacha).</li><li><code>BIGSERIAL</code>: 8-baytli ulkan son.</li><li><code>UUID</code>: 128-bitli noyob global identifikator (tahmin qilib bo'lmaydi).</li><li>Zamonaviy standart sintaksis: <code>id INT GENERATED ALWAYS AS IDENTITY PRIMARY KEY</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PostgreSQL / psql</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_pg_4')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_pg_4','res_pg_4')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_pg_4" contenteditable="true" spellcheck="false">CREATE TABLE mijozlar (
+    id BIGSERIAL PRIMARY KEY,
+    mijoz_uuid UUID DEFAULT gen_random_uuid(),
+    ism VARCHAR(60) NOT NULL,
+    email VARCHAR(120) UNIQUE NOT NULL,
+    balans NUMERIC(15, 2) DEFAULT 0.00,
+    yaratilgan_sana TIMESTAMPTZ DEFAULT NOW()
+);</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_pg_4">
+      <div class="result-label">🐘 PostgreSQL 16 Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PostgreSQL psql Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;CREATE TABLE
+Jadval yaratildi: 'mijozlar'
+Ustunlar: id (BIGSERIAL), mijoz_uuid (UUID avtomatik), ism, email (UNIQUE), balans, yaratilgan_sana&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ <code>TIMESTAMPTZ</code> — vaqt mintaqasini (Timezone) hisobga oluvchi sana turi bo'lib, xalqaro ilovalar uchun doimo <code>TIMESTAMP</code> o'rniga ishlatiladi.</div>
+
+    <div class="topic-nav">
+      <a href="#psql" class="topic-nav-btn prev">← psql — Terminal Konsol Vositasida Ishlash</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PostgreSQL | 4 / 28</span>
+      <a href="#alter" class="topic-nav-btn next">ALTER TABLE — Jadvalni O'zgartirish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">DDL</span>
+      <span style="font-size:12px; color:var(--text2);">PostgreSQL Mavzu #5</span>
+    </div>
+    <h2 id="alter" style="color:#336791; background: linear-gradient(90deg, #5c93c4, #336791); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">ALTER TABLE — Jadvalni O'zgartirish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Mavjud jadvalga yangi ustun qo'shish, ustun nomini yoki turini o'zgartirish uchun <code>ALTER TABLE</code> ishlatiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Yangi ustun: <code>ALTER TABLE mijozlar ADD COLUMN telefon VARCHAR(25);</code>.</li><li>Ustun turini o'zgartirish: <code>ALTER TABLE mijozlar ALTER COLUMN ism TYPE VARCHAR(100);</code>.</li><li>Standart qiymat berish: <code>ALTER TABLE mijozlar ALTER COLUMN balans SET DEFAULT 10000;</code>.</li><li>Ustunni o'chirish: <code>ALTER TABLE mijozlar DROP COLUMN telefon;</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PostgreSQL / psql</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_pg_5')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_pg_5','res_pg_5')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_pg_5" contenteditable="true" spellcheck="false">ALTER TABLE mijozlar 
+ADD COLUMN IF NOT EXISTS status VARCHAR(20) DEFAULT 'faol';
+
+-- Ustun nomini o'zgartirish
+ALTER TABLE mijozlar 
+RENAME COLUMN yaratilgan_sana TO created_at;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_pg_5">
+      <div class="result-label">🐘 PostgreSQL 16 Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PostgreSQL psql Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;ALTER TABLE
+Status: Ustun qo'shildi va qayta nomlandi.&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 PostgreSQL da ustun nomini o'zgartirish (RENAME COLUMN) barcha bog'liq indeks va ko'rinishlarni avtomatik yangilaydi.</div>
+
+    <div class="topic-nav">
+      <a href="#create" class="topic-nav-btn prev">← CREATE TABLE — SERIAL, BIGSERIAL va UUID</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PostgreSQL | 5 / 28</span>
+      <a href="#drop" class="topic-nav-btn next">DROP TABLE va CASCADE →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">DDL</span>
+      <span style="font-size:12px; color:var(--text2);">PostgreSQL Mavzu #6</span>
+    </div>
+    <h2 id="drop" style="color:#336791; background: linear-gradient(90deg, #5c93c4, #336791); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">DROP TABLE va CASCADE</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Jadvalni o'chirish uchun <code>DROP TABLE</code> ishlatiladi. Agar boshqa jadvallar unga Foreign Key orqali bog'langan bo'lsa, Postgres xatolik beradi va o'chirishga yo'l qo'ymaydi. Majburiy o'chirish uchun <code>CASCADE</code> qo'shiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Xavfsiz o'chirish: <code>DROP TABLE IF EXISTS jadval_nomi;</code>.</li><li>Bog'liqliklari bilan birga o'chirish: <code>DROP TABLE buyurtmalar CASCADE;</code>.</li><li>Jadvalni bo'shatish: <code>TRUNCATE TABLE mijozlar RESTART IDENTITY;</code> (ID hisoblagich ham 1 ga qaytadi).</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PostgreSQL / psql</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_pg_6')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_pg_6','res_pg_6')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_pg_6" contenteditable="true" spellcheck="false">-- Barcha bog'liqliklari bilan o'chirish
+DROP TABLE IF EXISTS eski_buyurtmalar CASCADE;
+
+-- Ma'lumotlarni tozalab ID ni 1 ga qaytarish
+TRUNCATE TABLE loglar RESTART IDENTITY;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_pg_6">
+      <div class="result-label">🐘 PostgreSQL 16 Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PostgreSQL psql Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;DROP TABLE
+TRUNCATE TABLE&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">🔒 <code>CASCADE</code> orqali jadval o'chirilganda unga bog'liq bo'lgan barcha VIEW va cheklovlar ham birga o'chib ketadi.</div>
+
+    <div class="topic-nav">
+      <a href="#alter" class="topic-nav-btn prev">← ALTER TABLE — Jadvalni O'zgartirish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PostgreSQL | 6 / 28</span>
+      <a href="#indexes" class="topic-nav-btn next">PostgreSQL Indekslari — B-Tree, GIN, GiST va BRIN →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Unumdorlik</span>
+      <span style="font-size:12px; color:var(--text2);">PostgreSQL Mavzu #7</span>
+    </div>
+    <h2 id="indexes" style="color:#336791; background: linear-gradient(90deg, #5c93c4, #336791); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">PostgreSQL Indekslari — B-Tree, GIN, GiST va BRIN</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">PostgreSQL dunyodagi eng boy indekslar to'plamiga ega. Oddiy sonlar, matnlar, JSON, massivlar va geografik nuqtalar uchun alohida optimallashgan indeks turlari mavjud.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><strong>B-Tree</strong>: Standart indeks turi. Qidiruv, saralash, &lt;, &gt;, = uchun O(log N) tezlik.</li><li><strong>GIN (Generalized Inverted Index)</strong>: JSONB, massivlar va Full-Text qidiruv uchun eng kuchli indeks.</li><li><strong>GiST</strong>: Geografik xaritalar (koordinatalar, poligonlar) va oraliqlar uchun.</li><li><strong>BRIN</strong>: Gigabaytlab vaqt ketma-ketligidagi (Time-series) ma'lumotlar uchun o'ta ixcham indeks.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PostgreSQL / psql</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_pg_7')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_pg_7','res_pg_7')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_pg_7" contenteditable="true" spellcheck="false">-- B-Tree indeksi (Email qidiruvi uchun)
+CREATE INDEX idx_mijozlar_email ON mijozlar(email);
+
+-- Qisman indeks (Partial Index) - faqat faol mijozlarni indekslash (Xotirani 80% tejaydi!)
+CREATE INDEX idx_faol_mijozlar ON mijozlar(email) WHERE status = 'faol';</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_pg_7">
+      <div class="result-label">🐘 PostgreSQL 16 Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PostgreSQL psql Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;CREATE INDEX
+Qisman indeks yaratildi: faqat status='faol' bo'lgan qatorlar indekslandi.&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">🚀 Qisman indeks (Partial Index) PostgreSQL ning ajoyib ustunligidir: u butun jadvalni emas, faqat WHERE shartiga mos qatorlarni indekslab xotirani va tezlikni tejaydi.</div>
+
+    <div class="topic-nav">
+      <a href="#drop" class="topic-nav-btn prev">← DROP TABLE va CASCADE</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PostgreSQL | 7 / 28</span>
+      <a href="#constraints" class="topic-nav-btn next">Cheklovlar (Constraints) — Ma'lumotlar Butunligi →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Xavfsizlik</span>
+      <span style="font-size:12px; color:var(--text2);">PostgreSQL Mavzu #8</span>
+    </div>
+    <h2 id="constraints" style="color:#336791; background: linear-gradient(90deg, #5c93c4, #336791); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Cheklovlar (Constraints) — Ma'lumotlar Butunligi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Cheklovlar ma'lumotlar bazasiga noto'g'ri, mantiqsiz yoki zararli ma'lumotlar kiritilishining oldini oladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><code>PRIMARY KEY</code>: Yagona va NOT NULL bo'lish sharti.</li><li><code>FOREIGN KEY (fk) REFERENCES ota_jadval(id) ON DELETE CASCADE</code>: jadvallar o'rtasidagi mustahkam aloqa.</li><li><code>CHECK (balans &gt;= 0)</code>: qiymat shartga to'g'ri kelishini tekshirish.</li><li><code>UNIQUE</code>: takrorlanmaslik kafolati.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PostgreSQL / psql</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_pg_8')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_pg_8','res_pg_8')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_pg_8" contenteditable="true" spellcheck="false">CREATE TABLE hisoblar (
+    id SERIAL PRIMARY KEY,
+    egasi_id BIGINT REFERENCES mijozlar(id) ON DELETE CASCADE,
+    valyuta VARCHAR(3) CHECK (valyuta IN ('UZS', 'USD', 'EUR')),
+    balans NUMERIC(14, 2) CHECK (balans &gt;= 0)
+);</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_pg_8">
+      <div class="result-label">🐘 PostgreSQL 16 Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PostgreSQL psql Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;CREATE TABLE
+Cheklovlar:
+- egasi_id (Foreign Key -&gt; mijozlar.id)
+- valyuta faqat 'UZS', 'USD', 'EUR' bo'lishi mumkin
+- balans manfiy bo'la olmaydi (CHECK balans &gt;= 0)&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 CHECK cheklovi backend kodida xatolik yuz berganda ham ma'lumotlar bazasi darajasida manfiy balans kabi xatolarning oldini oladi.</div>
+
+    <div class="topic-nav">
+      <a href="#indexes" class="topic-nav-btn prev">← PostgreSQL Indekslari — B-Tree, GIN, GiST va BRIN</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PostgreSQL | 8 / 28</span>
+      <a href="#insert-p" class="topic-nav-btn next">INSERT va ON CONFLICT (Upsert) Imkoniyati →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">DML</span>
+      <span style="font-size:12px; color:var(--text2);">PostgreSQL Mavzu #9</span>
+    </div>
+    <h2 id="insert-p" style="color:#336791; background: linear-gradient(90deg, #5c93c4, #336791); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">INSERT va ON CONFLICT (Upsert) Imkoniyati</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">PostgreSQL da yangi qator kiritishda agar ma'lumot allaqachon mavjud bo'lsa (masalan email takrorlansa), xatolik bermasdan mavjud qatorni yangilash yoki o'tkazib yuborish imkonini beruvchi kuchli <code>ON CONFLICT</code> (Upsert) mexanizmi mavjud.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Oddiy qo'shish: <code>INSERT INTO mijozlar (ism, email) VALUES ('Akmal', 'akmal@uz');</code>.</li><li>Natijani bir zumda qaytarish: <code>RETURNING *;</code>.</li><li>Upsert (To'qnashganda yangilash): <code>ON CONFLICT (email) DO UPDATE SET ism = EXCLUDED.ism;</code>.</li><li>To'qnashganda o'tkazib yuborish: <code>ON CONFLICT (email) DO NOTHING;</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PostgreSQL / psql</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_pg_9')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_pg_9','res_pg_9')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_pg_9" contenteditable="true" spellcheck="false">-- RETURNING orqali yangi yaratilgan ID ni darhol olish:
+INSERT INTO mijozlar (ism, email, balans)
+VALUES ('Akmal', 'akmal@uz', 500000)
+ON CONFLICT (email) 
+DO UPDATE SET balans = mijozlar.balans + EXCLUDED.balans
+RETURNING id, ism, email, balans;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_pg_9">
+      <div class="result-label">🐘 PostgreSQL 16 Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PostgreSQL psql Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;+----+-------+----------+---------+
+| id | ism   | email    | balans  |
++----+-------+----------+---------+
+|  1 | Akmal | akmal@uz | 1000000 |
++----+-------+----------+---------+
+INSERT 0 1&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">🚀 <code>RETURNING id</code> tufayli alohida yana bitta SELECT so'rovi yubormasdan turib yangi qo'shilgan qatorning ID sini bir vaqtning o'zida olishingiz mumkin.</div>
+
+    <div class="topic-nav">
+      <a href="#constraints" class="topic-nav-btn prev">← Cheklovlar (Constraints) — Ma'lumotlar Butunligi</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PostgreSQL | 9 / 28</span>
+      <a href="#select-p" class="topic-nav-btn next">SELECT va DISTINCT ON — Ilg'or Tanlash →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">DQL</span>
+      <span style="font-size:12px; color:var(--text2);">PostgreSQL Mavzu #10</span>
+    </div>
+    <h2 id="select-p" style="color:#336791; background: linear-gradient(90deg, #5c93c4, #336791); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">SELECT va DISTINCT ON — Ilg'or Tanlash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">PostgreSQL standart SQL SELECT imkoniyatlarini o'ziga xos <code>DISTINCT ON</code> operatori bilan boyitadi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><code>DISTINCT ON (ustun)</code> — har bir guruhdan faqat birinchi eng yangi yoki eng katta bitta qatorni tanlab olish.</li><li>Klassik LIMIT va OFFSET orqali sahifalash.</li><li>Matnlarni chiroyli ulash: <code>ism || ' ' || email</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PostgreSQL / psql</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_pg_10')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_pg_10','res_pg_10')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_pg_10" contenteditable="true" spellcheck="false">-- Har bir mijozning eng oxirgi bitta buyurtmasini topish
+SELECT DISTINCT ON (mijoz_id) 
+    mijoz_id, 
+    id AS buyurtma_id, 
+    summa, 
+    created_at
+FROM buyurtmalar
+ORDER BY mijoz_id, created_at DESC;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_pg_10">
+      <div class="result-label">🐘 PostgreSQL 16 Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PostgreSQL psql Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;+----------+--------------+---------+---------------------+
+| mijoz_id | buyurtma_id  | summa   | created_at          |
++----------+--------------+---------+---------------------+
+|        1 |           85 | 1200000 | 2026-11-23 14:30:00 |
+|        2 |           92 |  450000 | 2026-11-23 15:05:00 |
++----------+--------------+---------+---------------------+&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 <code>DISTINCT ON</code> faqat PostgreSQL da mavjud bo'lgan noyob xususiyat bo'lib, boshqa bazalarda buning uchun og'ir Window funksiyalar yozishga to'g'ri keladi.</div>
+
+    <div class="topic-nav">
+      <a href="#insert-p" class="topic-nav-btn prev">← INSERT va ON CONFLICT (Upsert) Imkoniyati</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PostgreSQL | 10 / 28</span>
+      <a href="#update-p" class="topic-nav-btn next">UPDATE va RETURNING →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">DML</span>
+      <span style="font-size:12px; color:var(--text2);">PostgreSQL Mavzu #11</span>
+    </div>
+    <h2 id="update-p" style="color:#336791; background: linear-gradient(90deg, #5c93c4, #336791); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">UPDATE va RETURNING</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Postgres da <code>UPDATE</code> buyrug'i ham <code>RETURNING</code> ni qo'llab-quvvatlaydi, bu orqali yangilangan qatorlarning yangi qiymatlarini darhol qaytarib olish mumkin.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Sintaksis: <code>UPDATE mijozlar SET balans = balans + 10000 WHERE id = 1 RETURNING *;</code>.</li><li>Bir nechta jadvallarni bir vaqtda yangilash (UPDATE FROM).</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PostgreSQL / psql</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_pg_11')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_pg_11','res_pg_11')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_pg_11" contenteditable="true" spellcheck="false">UPDATE mijozlar
+SET balans = balans * 1.05 -- 5% bonus qo'shish
+WHERE status = 'faol'
+RETURNING id, ism, balans AS yangi_balans;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_pg_11">
+      <div class="result-label">🐘 PostgreSQL 16 Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PostgreSQL psql Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;+----+-------+--------------+
+| id | ism   | yangi_balans |
++----+-------+--------------+
+|  1 | Akmal |   1050000.00 |
++----+-------+--------------+
+UPDATE 1&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ <code>RETURNING</code> dasturchilar uchun backend kodini 2 baravar qisqartirishga xizmat qiladi.</div>
+
+    <div class="topic-nav">
+      <a href="#select-p" class="topic-nav-btn prev">← SELECT va DISTINCT ON — Ilg'or Tanlash</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PostgreSQL | 11 / 28</span>
+      <a href="#delete-p" class="topic-nav-btn next">DELETE va RETURNING →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">DML</span>
+      <span style="font-size:12px; color:var(--text2);">PostgreSQL Mavzu #12</span>
+    </div>
+    <h2 id="delete-p" style="color:#336791; background: linear-gradient(90deg, #5c93c4, #336791); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">DELETE va RETURNING</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Qatorlarni o'chirish va bir vaqtning o'zida o'chirilgan ma'lumotlarni arxivlash yoki foydalanuvchiga ko'rsatish uchun <code>DELETE ... RETURNING</code> ishlatiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Sintaksis: <code>DELETE FROM jadval WHERE shart RETURNING *;</code>.</li><li>O'chirilgan yozuvlar xotiradan to'liq chiqarib beriladi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PostgreSQL / psql</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_pg_12')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_pg_12','res_pg_12')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_pg_12" contenteditable="true" spellcheck="false">DELETE FROM mijozlar
+WHERE status = 'bloklangan'
+RETURNING id, ism, email;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_pg_12">
+      <div class="result-label">🐘 PostgreSQL 16 Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PostgreSQL psql Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;+----+-------+---------------+
+| id | ism   | email         |
++----+-------+---------------+
+|  5 | Botir | botir@spam.uz |
++----+-------+---------------+
+DELETE 1&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">🔒 O'chirilgan qatorlarni qaytarib olib, ularni log yoki arxiv jadvaliga yozib qo'yish mumkin.</div>
+
+    <div class="topic-nav">
+      <a href="#update-p" class="topic-nav-btn prev">← UPDATE va RETURNING</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PostgreSQL | 12 / 28</span>
+      <a href="#joins" class="topic-nav-btn next">PostgreSQL JOIN Turlari va CROSS JOIN →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">JOIN</span>
+      <span style="font-size:12px; color:var(--text2);">PostgreSQL Mavzu #13</span>
+    </div>
+    <h2 id="joins" style="color:#336791; background: linear-gradient(90deg, #5c93c4, #336791); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">PostgreSQL JOIN Turlari va CROSS JOIN</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">PostgreSQL relyatsion jadvallarni bog'lashning barcha standart turlarini (INNER, LEFT, RIGHT, FULL OUTER) va har bir qatorni har bir qatorga ko'paytiruvchi <strong>CROSS JOIN</strong> (Dekart ko'paytma) ni qo'llab-quvvatlaydi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><code>INNER JOIN</code>: Ikkala tomonda ham mos kelganlar.</li><li><code>LEFT JOIN</code>: Chap jadval to'liq saqlanadi.</li><li><code>FULL JOIN</code>: Ikkala tomon ham to'liq birlashadi.</li><li><code>CROSS JOIN</code>: Barcha mumkin bo'lgan kombinatsiyalarni hosil qilish.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PostgreSQL / psql</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_pg_13')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_pg_13','res_pg_13')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_pg_13" contenteditable="true" spellcheck="false">-- Barcha o'lchamlar va ranglar kombinatsiyasini hosil qilish
+SELECT o.olcham, r.rang
+FROM (VALUES ('S'), ('M'), ('L')) AS o(olcham)
+CROSS JOIN (VALUES ('Qizil'), ('Ko''k')) AS r(rang);</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_pg_13">
+      <div class="result-label">🐘 PostgreSQL 16 Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PostgreSQL psql Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;+--------+-------+
+| olcham | rang  |
++--------+-------+
+| S      | Qizil |
+| S      | Ko'k  |
+| M      | Qizil |
+| M      | Ko'k  |
+| L      | Qizil |
+| L      | Ko'k  |
++--------+-------+
+6 rows (3 x 2 = 6 kombinatsiya)&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 <code>CROSS JOIN</code> do'konlarda mahsulotlarning barcha variantlarini (o'lcham x rang) avtomatik generatsiya qilish uchun qulaydir.</div>
+
+    <div class="topic-nav">
+      <a href="#delete-p" class="topic-nav-btn prev">← DELETE va RETURNING</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PostgreSQL | 13 / 28</span>
+      <a href="#subquery" class="topic-nav-btn next">Subquery va EXISTS / NOT EXISTS Operatorlari →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Murakkab</span>
+      <span style="font-size:12px; color:var(--text2);">PostgreSQL Mavzu #14</span>
+    </div>
+    <h2 id="subquery" style="color:#336791; background: linear-gradient(90deg, #5c93c4, #336791); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Subquery va EXISTS / NOT EXISTS Operatorlari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Ichki so'rovlarda <code>IN</code> ga qaraganda <code>EXISTS</code> ancha tez ishlaydi, chunki u mos keluvchi birinchi qatorni topishi bilanoq qidiruvni to'xtatadi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><code>WHERE EXISTS (SELECT 1 FROM buyurtmalar WHERE ...)</code>.</li><li>Kamida bitta buyurtma bergan mijozlarni topish.</li><li><code>NOT EXISTS</code>: Hech qachon buyurtma bermaganlarni topish.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PostgreSQL / psql</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_pg_14')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_pg_14','res_pg_14')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_pg_14" contenteditable="true" spellcheck="false">-- Kamida 1 ta buyurtmasi bor mijozlar
+SELECT ism, email
+FROM mijozlar m
+WHERE EXISTS (
+    SELECT 1 
+    FROM buyurtmalar b 
+    WHERE b.mijoz_id = m.id AND b.summa &gt; 100000
+);</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_pg_14">
+      <div class="result-label">🐘 PostgreSQL 16 Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PostgreSQL psql Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;+-------+----------+
+| ism   | email    |
++-------+----------+
+| Akmal | akmal@uz |
++-------+----------+
+1 row in set (0.001 sec)&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ Katta hajmdagi jadvallarda <code>IN (SELECT ...)</code> o'rniga doimo <code>EXISTS</code> ishlatish so'rovni 10 baravargacha tezlashtiradi.</div>
+
+    <div class="topic-nav">
+      <a href="#joins" class="topic-nav-btn prev">← PostgreSQL JOIN Turlari va CROSS JOIN</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PostgreSQL | 14 / 28</span>
+      <a href="#cte" class="topic-nav-btn next">CTE (Common Table Expressions) — WITH So'rovlari →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">CTE</span>
+      <span style="font-size:12px; color:var(--text2);">PostgreSQL Mavzu #15</span>
+    </div>
+    <h2 id="cte" style="color:#336791; background: linear-gradient(90deg, #5c93c4, #336791); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">CTE (Common Table Expressions) — WITH So'rovlari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>CTE (WITH so'rovi)</strong> — murakkab va uzun SQL kodlarini o'qilishi oson, modulli va qismlarga bo'lingan vaqtinchalik jadvallar ko'rinishida yozish imkoniyatidir. Shuningdek, <strong>Recursive CTE</strong> orqali daraxtsimon (daraxt, menyu, xodimlar iyerarxiyasi) tuzilmalarni osongina aylanib chiqish mumkin.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Sintaksis: <code>WITH vaqtinchalik_jadval AS (SELECT ...) SELECT * FROM vaqtinchalik_jadval;</code>.</li><li>Kodning o'qilishini (readability) 100% yaxshilaydi.</li><li>Recursive CTE: o'z-o'zini chaqiruvchi iyerarxik so'rovlar.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PostgreSQL / psql</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_pg_15')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_pg_15','res_pg_15')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_pg_15" contenteditable="true" spellcheck="false">-- O'rtacha hisobdan yuqori balansga ega mijozlar
+WITH ortacha_balans AS (
+    SELECT AVG(balans) AS ortacha FROM mijozlar
+)
+SELECT m.ism, m.balans, round(o.ortacha, 2) AS umumiy_ortacha
+FROM mijozlar m, ortacha_balans o
+WHERE m.balans &gt; o.ortacha;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_pg_15">
+      <div class="result-label">🐘 PostgreSQL 16 Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PostgreSQL psql Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;+-------+------------+----------------+
+| ism   | balans     | umumiy_ortacha |
++-------+------------+----------------+
+| Akmal | 1050000.00 |      500000.00 |
++-------+------------+----------------+&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">🚀 Recursive CTE orqali ko'p pog'onali kategoriyalar (masalan Elektronika -&gt; Smartfonlar -&gt; Apple) ni bitta so'rovda to'liq iyerarxiya bilan chiqarish mumkin.</div>
+
+    <div class="topic-nav">
+      <a href="#subquery" class="topic-nav-btn prev">← Subquery va EXISTS / NOT EXISTS Operatorlari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PostgreSQL | 15 / 28</span>
+      <a href="#window" class="topic-nav-btn next">Window Funksiyalari — ROW_NUMBER, RANK, DENSE_RANK →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Window</span>
+      <span style="font-size:12px; color:var(--text2);">PostgreSQL Mavzu #16</span>
+    </div>
+    <h2 id="window" style="color:#336791; background: linear-gradient(90deg, #5c93c4, #336791); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Window Funksiyalari — ROW_NUMBER, RANK, DENSE_RANK</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Window Funksiyalari</strong> — qatorlarni birlashtirib bitta qilib tashlamasdan (GROUP BY dan farqli ravishda), har bir qatorning o'z o'rnini saqlagan holda oynama-oyna (Window) hisob-kitoblar, reytinglar va o'tgan oydagi ko'rsatkichlar bilan solishtirish imkonini beradi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><code>ROW_NUMBER() OVER (ORDER BY ball DESC)</code> — har bir qatorga tartib raqami berish.</li><li><code>RANK()</code> va <code>DENSE_RANK()</code> — durang bo'lganda o'rinlarni hisoblash.</li><li><code>LAG()</code> va <code>LEAD()</code> — oldingi va keyingi qator qiymatini solishtirish.</li><li>Guruhlar ichida alohida oynalar: <code>PARTITION BY shahar</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PostgreSQL / psql</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_pg_16')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_pg_16','res_pg_16')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_pg_16" contenteditable="true" spellcheck="false">-- Har bir shahar ichida eng katta balansga ega mijozlarni reytinglash
+SELECT 
+    ism, 
+    shahar, 
+    balans,
+    ROW_NUMBER() OVER (PARTITION BY shahar ORDER BY balans DESC) AS shahar_reytingi
+FROM mijozlar;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_pg_16">
+      <div class="result-label">🐘 PostgreSQL 16 Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PostgreSQL psql Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;+--------+----------+------------+----------------+
+| ism    | shahar   | balans     | shahar_reytingi|
++--------+----------+------------+----------------+
+| Akmal  | Toshkent | 1050000.00 |              1 |
+| Sardor | Toshkent |  800000.00 |              2 |
+| Dilnoza| Samarqand|  920000.00 |              1 |
++--------+----------+------------+----------------+&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Window funksiyalari Data Analyst va FinTech sohasidagi eng qimmatli tahliliy vositalardir.</div>
+
+    <div class="topic-nav">
+      <a href="#cte" class="topic-nav-btn prev">← CTE (Common Table Expressions) — WITH So'rovlari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PostgreSQL | 16 / 28</span>
+      <a href="#groupby" class="topic-nav-btn next">Ilg'or Guruhlash — GROUPING SETS, ROLLUP va CUBE →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Guruhlash</span>
+      <span style="font-size:12px; color:var(--text2);">PostgreSQL Mavzu #17</span>
+    </div>
+    <h2 id="groupby" style="color:#336791; background: linear-gradient(90deg, #5c93c4, #336791); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Ilg'or Guruhlash — GROUPING SETS, ROLLUP va CUBE</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">PostgreSQL hisobotlarni bir necha o'lchamda bitta so'rov orqali yig'ish uchun ilg'or guruhlash operatorlarini taqdim etadi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><code>ROLLUP(yil, oy)</code>: yil, oy va umumiy jami (Grand Total) hisobotini bitta so'rovda chiqaradi.</li><li><code>CUBE(shahar, toifa)</code>: barcha mumkin bo'lgan kesimlardagi yig'indilarni hisoblaydi.</li><li><code>GROUPING SETS</code>: faqat o'zingizga kerakli aniq kombinatsiyalar bo'yicha guruhlash.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PostgreSQL / psql</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_pg_17')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_pg_17','res_pg_17')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_pg_17" contenteditable="true" spellcheck="false">SELECT 
+    shahar, 
+    status, 
+    COUNT(*) AS soni,
+    SUM(balans) AS jami_balans
+FROM mijozlar
+GROUP BY ROLLUP(shahar, status);</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_pg_17">
+      <div class="result-label">🐘 PostgreSQL 16 Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PostgreSQL psql Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Har bir shahar va status bo'yicha, shuningdek shahar jami va BUTUN BAZA bo'yicha jami summa bitta jadvalda chiqadi.&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ Excel dagi 'Pivot Table' (Xulosa jadvallari) xuddi shu <code>ROLLUP</code> va <code>CUBE</code> asosida ishlaydi.</div>
+
+    <div class="topic-nav">
+      <a href="#window" class="topic-nav-btn prev">← Window Funksiyalari — ROW_NUMBER, RANK, DENSE_RANK</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PostgreSQL | 17 / 28</span>
+      <a href="#jsonb" class="topic-nav-btn next">JSONB — PostgreSQL da NoSQL Imkoniyatlari →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">JSONB</span>
+      <span style="font-size:12px; color:var(--text2);">PostgreSQL Mavzu #18</span>
+    </div>
+    <h2 id="jsonb" style="color:#336791; background: linear-gradient(90deg, #5c93c4, #336791); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">JSONB — PostgreSQL da NoSQL Imkoniyatlari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">PostgreSQL da <strong>JSONB (Binary JSON)</strong> ma'lumot turi mavjud. U MongoDB kabi moslashuvchan JSON hujjatlarni saqlash, ularning ichki maydonlarini qidirish va hattoki <strong>GIN indekslar</strong> orqali chaqmoqdek tez tahlil qilish imkonini beradi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Maydon qiymatini matn sifatida olish: <code>meta-&gt;&gt;'shahar'</code>.</li><li>Ichki JSON ob'ektni olish: <code>meta-&gt;'manzil'</code>.</li><li>Kalit mavjudligini tekshirish: <code>meta ? 'email'</code>.</li><li>GIN indeksi orqali JSON ichidagi har qanday maydonni to'liq indekslash.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PostgreSQL / psql</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_pg_18')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_pg_18','res_pg_18')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_pg_18" contenteditable="true" spellcheck="false">-- JSONB ustunli jadval yaratish
+CREATE TABLE buyurtmalar_json (
+    id SERIAL PRIMARY KEY,
+    detallar JSONB
 );
-
--- Index yaratish (tezlashtirish uchun)
-CREATE INDEX idx_email ON foydalanuvchilar(email);
-CREATE INDEX idx_ism ON foydalanuvchilar(LOWER(ism));
 
 -- Ma'lumot qo'shish
-INSERT INTO foydalanuvchilar (ism, email, yosh, shahar, konikmalari, malumot)
-VALUES
-    ('Ali Karimov', 'ali@test.com', 25, 'Toshkent',
-     ARRAY['JavaScript', 'React'], '{"daraja": "senior"}'::jsonb),
-    ('Zulfiya Rahimova', 'zulfiya@test.com', 22, 'Samarqand',
-     ARRAY['Python', 'Django'], '{"daraja": "junior"}'::jsonb);</pre></div>
-  </div>
+INSERT INTO buyurtmalar_json (detallar)
+VALUES ('{"mijoz": "Ali", "buyumlar": ["Noutbuk", "Sichqoncha"], "summa": 8500000}');
 
-  <h2 id="joins">JOIN turlari</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar"><span class="code-lang">SQL (PostgreSQL)</span>
-      <div class="code-actions"><button class="btn-copy" onclick="copyCode('code2')">📋 Nusxa</button></div>
+-- JSON ichidan maydonni o'qish
+SELECT 
+    detallar-&gt;&gt;'mijoz' AS mijoz_ismi,
+    detallar-&gt;'buyumlar'-&gt;&gt;0 AS birinchi_buyum
+FROM buyurtmalar_json;</pre>
+      </div>
     </div>
-    <div class="code-body"><pre id="code2">-- Jadvallar
-CREATE TABLE kurslar (
-    id      SERIAL PRIMARY KEY,
-    nomi    VARCHAR(200) NOT NULL,
-    narxi   DECIMAL(10,2)
-);
-
-CREATE TABLE buyurtmalar (
-    id              SERIAL PRIMARY KEY,
-    foydalanuvchi_id INTEGER REFERENCES foydalanuvchilar(id),
-    kurs_id         INTEGER REFERENCES kurslar(id),
-    sana            DATE DEFAULT CURRENT_DATE
-);
-
--- INNER JOIN
-SELECT f.ism, k.nomi AS kurs, b.sana
-FROM buyurtmalar b
-INNER JOIN foydalanuvchilar f ON b.foydalanuvchi_id = f.id
-INNER JOIN kurslar k ON b.kurs_id = k.id
-ORDER BY b.sana DESC;
-
--- LEFT JOIN (hamma foydalanuvchilar, hatto buyurtma yo'q bo'lsa ham)
-SELECT f.ism, COUNT(b.id) AS buyurtmalar_soni
-FROM foydalanuvchilar f
-LEFT JOIN buyurtmalar b ON f.id = b.foydalanuvchi_id
-GROUP BY f.id, f.ism
-ORDER BY buyurtmalar_soni DESC;</pre></div>
-  </div>
-
-  <h2 id="jsonb">JSONB va Window Funksiyalar</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar"><span class="code-lang">SQL (PostgreSQL)</span>
-      <div class="code-actions"><button class="btn-copy" onclick="copyCode('code3')">📋 Nusxa</button></div>
+    <div class="result-box" id="res_pg_18">
+      <div class="result-label">🐘 PostgreSQL 16 Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PostgreSQL psql Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;+-------------+----------------+
+| mijoz_ismi  | birinchi_buyum |
++-------------+----------------+
+| Ali         | Noutbuk        |
++-------------+----------------+&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
     </div>
-    <div class="code-body"><pre id="code3">-- JSONB so'rovlar
-SELECT ism, malumot->>'daraja' AS daraja
-FROM foydalanuvchilar
-WHERE malumot->>'daraja' = 'senior';
 
--- Massiv bilan ishlash
-SELECT ism, konikmalari
-FROM foydalanuvchilar
-WHERE 'JavaScript' = ANY(konikmalari);
+    <div class="note-box" style="margin-top:16px;">🚀 JSONB tufayli ko'plab loyihalarda alohida MongoDB o'rnatish zaruriyati qolmaydi — PostgreSQL har ikkala vazifani mukammal uddalaydi!</div>
 
--- Window funksiyalar
-SELECT
-    ism, shahar, yosh,
-    AVG(yosh) OVER (PARTITION BY shahar) AS shahar_ortacha_yosh,
-    RANK() OVER (PARTITION BY shahar ORDER BY yosh DESC) AS shahar_reyting,
-    ROW_NUMBER() OVER (ORDER BY yaratildi) AS tartib_raqam
-FROM foydalanuvchilar;
+    <div class="topic-nav">
+      <a href="#groupby" class="topic-nav-btn prev">← Ilg'or Guruhlash — GROUPING SETS, ROLLUP va CUBE</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PostgreSQL | 18 / 28</span>
+      <a href="#array-p" class="topic-nav-btn next">Array (Massiv) Ma'lumot Turlari →</a>
+    </div>
+  </section>
 
--- CTE (Common Table Expression)
-WITH yoshlar AS (
-    SELECT shahar, AVG(yosh) AS ortacha
-    FROM foydalanuvchilar
-    GROUP BY shahar
-)
-SELECT f.ism, f.shahar, f.yosh, y.ortacha
-FROM foydalanuvchilar f
-JOIN yoshlar y ON f.shahar = y.shahar
-WHERE f.yosh > y.ortacha;</pre></div>
-  </div>
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Tiplar</span>
+      <span style="font-size:12px; color:var(--text2);">PostgreSQL Mavzu #19</span>
+    </div>
+    <h2 id="array-p" style="color:#336791; background: linear-gradient(90deg, #5c93c4, #336791); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Array (Massiv) Ma'lumot Turlari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">PostgreSQL har qanday ma'lumot turidan massiv yaratishga ruxsat beradi: <code>INTEGER[]</code>, <code>TEXT[]</code> va h.k.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Massiv e'lon qilish: <code>teglar TEXT[]</code>.</li><li>Qo'shish: <code>ARRAY['postgres', 'sql', 'backend']</code>.</li><li>Element mavjudligini tekshirish: <code>'postgres' = ANY(teglar)</code>.</li><li>Massivni alohida qatorlarga yoyish: <code>unnest(teglar)</code>.</li><li>Qatorlarni massivga yig'ish: <code>array_agg(ism)</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PostgreSQL / psql</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_pg_19')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_pg_19','res_pg_19')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_pg_19" contenteditable="true" spellcheck="false">SELECT 
+    ARRAY['Dushanba', 'Seshanba', 'Chorshanba'] AS haftaning_boshi,
+    unnest(ARRAY[10, 20, 30]) AS qatorlarga_yoyilgan;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_pg_19">
+      <div class="result-label">🐘 PostgreSQL 16 Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PostgreSQL psql Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;+----------------------------------+---------------------+
+| haftaning_boshi                  | qatorlarga_yoyilgan |
++----------------------------------+---------------------+
+| {Dushanba,Seshanba,Chorshanba}   |                  10 |
+| {Dushanba,Seshanba,Chorshanba}   |                  20 |
+| {Dushanba,Seshanba,Chorshanba}   |                  30 |
++----------------------------------+---------------------+&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Bitta yozuvga tegishli teglar yoki telefon raqamlarini alohida jadvallarsiz to'g'ridan-to'g'ri massivda saqlash mumkin.</div>
+
+    <div class="topic-nav">
+      <a href="#jsonb" class="topic-nav-btn prev">← JSONB — PostgreSQL da NoSQL Imkoniyatlari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PostgreSQL | 19 / 28</span>
+      <a href="#fulltext" class="topic-nav-btn next">Full-Text Qidiruv — tsvector va tsquery →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Qidiruv</span>
+      <span style="font-size:12px; color:var(--text2);">PostgreSQL Mavzu #20</span>
+    </div>
+    <h2 id="fulltext" style="color:#336791; background: linear-gradient(90deg, #5c93c4, #336791); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Full-Text Qidiruv — tsvector va tsquery</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">PostgreSQL so'zlarning o'zaklarini tushunuvchi, xatolarni hisobga oluvchi va so'zlar ahamiyati bo'yicha saralovchi o'rnatilgan <strong>Full-Text Search (To'liq matnli qidiruv)</strong> dvigateliga ega.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><code>to_tsvector('english', matn)</code>: matnni so'z o'zaklariga (lexemes) ajratadi.</li><li><code>to_tsquery('english', 'sql &amp; postgres')</code>: qidiruv so'rovi.</li><li>Moslik operatori: <code>@@</code>.</li><li>Natijalarni relevatlik bo'yicha saralash: <code>ts_rank()</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PostgreSQL / psql</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_pg_20')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_pg_20','res_pg_20')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_pg_20" contenteditable="true" spellcheck="false">-- Matn ichidan qidirish
+SELECT sarlavha
+FROM maqolalar
+WHERE to_tsvector('english', sarlavha || ' ' || matn) @@ to_tsquery('english', 'database &amp; speed');</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_pg_20">
+      <div class="result-label">🐘 PostgreSQL 16 Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PostgreSQL psql Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;GIN Index bilan bir zumda qidiriladi (ElasticSearch o'rnini bosa oladi).&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ PostgreSQL ning Full-Text qidiruvi ko'plab o'rta va yirik loyihalarda alohida ElasticSearch serverini saqlash xarajatlarini tejaydi.</div>
+
+    <div class="topic-nav">
+      <a href="#array-p" class="topic-nav-btn prev">← Array (Massiv) Ma'lumot Turlari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PostgreSQL | 20 / 28</span>
+      <a href="#functions" class="topic-nav-btn next">PL/pgSQL — Maxsus Funksiyalar va Protseduralar →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Funksiyalar</span>
+      <span style="font-size:12px; color:var(--text2);">PostgreSQL Mavzu #21</span>
+    </div>
+    <h2 id="functions" style="color:#336791; background: linear-gradient(90deg, #5c93c4, #336791); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">PL/pgSQL — Maxsus Funksiyalar va Protseduralar</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">PostgreSQL o'zining ichki dasturlash tili bo'lgan <strong>PL/pgSQL</strong> ga ega. Unda o'zgaruvchilar, shartlar, sikllar va xatolarni qayta ishlash imkoniyatlari mavjud.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Yaratish: <code>CREATE OR REPLACE FUNCTION funksiya_nomi(...) RETURNS tur AS $$ ... $$ LANGUAGE plpgsql;</code>.</li><li>Biznes mantiqni to'g'ridan-to'g'ri ma'lumotlar bazasining ichida bajaradi (tarmoq kechikishini nolga tushiradi).</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PostgreSQL / psql</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_pg_21')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_pg_21','res_pg_21')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_pg_21" contenteditable="true" spellcheck="false">CREATE OR REPLACE FUNCTION qoshilgan_soliq(narx NUMERIC)
+RETURNS NUMERIC AS $$
+BEGIN
+    RETURN narx * 1.12; -- 12% QQS hisoblash
+END;
+$$ LANGUAGE plpgsql;
+
+-- Chaqirish:
+SELECT qoshilgan_soliq(100000);</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_pg_21">
+      <div class="result-label">🐘 PostgreSQL 16 Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PostgreSQL psql Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;+-----------------------+
+| qoshilgan_soliq       |
++-----------------------+
+| 112000.00             |
++-----------------------+&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Serverda bajariluvchi funksiyalar yirik bank va to'lov tizimlarida xavfsizlik va tezlikni kafolatlaydi.</div>
+
+    <div class="topic-nav">
+      <a href="#fulltext" class="topic-nav-btn prev">← Full-Text Qidiruv — tsvector va tsquery</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PostgreSQL | 21 / 28</span>
+      <a href="#triggers" class="topic-nav-btn next">Triggerlar — Hodisalarga Avtomatik Reaksiya →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Trigger</span>
+      <span style="font-size:12px; color:var(--text2);">PostgreSQL Mavzu #22</span>
+    </div>
+    <h2 id="triggers" style="color:#336791; background: linear-gradient(90deg, #5c93c4, #336791); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Triggerlar — Hodisalarga Avtomatik Reaksiya</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Trigger</strong> — jadvalda biror INSERT, UPDATE yoki DELETE amali bajarilganda avtomatik ishga tushuvchi maxsus mexanizmdir. U audit jurnallari yuritish va avtomatik hisob-kitoblar uchun qo'llaniladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Vaqti: <code>BEFORE</code> (amaldan oldin) yoki <code>AFTER</code> (amaldan so'ng).</li><li>Yangi va eski ma'lumotlar: <code>NEW</code> va <code>OLD</code> o'zgaruvchilarida saqlanadi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PostgreSQL / psql</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_pg_22')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_pg_22','res_pg_22')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_pg_22" contenteditable="true" spellcheck="false">-- Oxirgi o'zgartirilgan vaqtni avtomatik yangilovchi trigger funksiyasi
+CREATE OR REPLACE FUNCTION yangilash_vaqti()
+RETURNS TRIGGER AS $$
+BEGIN
+    NEW.updated_at = NOW();
+    RETURN NEW;
+END;
+$$ LANGUAGE plpgsql;
+
+CREATE TRIGGER trg_mijoz_yangilandi
+BEFORE UPDATE ON mijozlar
+FOR EACH ROW
+EXECUTE FUNCTION yangilash_vaqti();</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_pg_22">
+      <div class="result-label">🐘 PostgreSQL 16 Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PostgreSQL psql Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;CREATE FUNCTION
+CREATE TRIGGER
+Endi har safar mijoz ma'lumoti o'zgarganda updated_at avtomatik NOW() ga tenglanadi!&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ Triggerlar dasturchi unutib qoldirishi mumkin bo'lgan o'zgarish vaqti yoki audit jurnallarini 100% kafolatlaydi.</div>
+
+    <div class="topic-nav">
+      <a href="#functions" class="topic-nav-btn prev">← PL/pgSQL — Maxsus Funksiyalar va Protseduralar</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PostgreSQL | 22 / 28</span>
+      <a href="#views" class="topic-nav-btn next">Views va Materialized Views (Keshlanuvchi Ko'rinish) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Views</span>
+      <span style="font-size:12px; color:var(--text2);">PostgreSQL Mavzu #23</span>
+    </div>
+    <h2 id="views" style="color:#336791; background: linear-gradient(90deg, #5c93c4, #336791); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Views va Materialized Views (Keshlanuvchi Ko'rinish)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">PostgreSQL oddiy dinamik VIEW lardan tashqari og'ir so'rovlar natijasini qattiq diskda keshlab saqlab turuvchi <strong>Materialized View</strong> larni ham qo'llab-quvvatlaydi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Oddiy VIEW: Har chaqirilganda so'rov qayta ishlaydi.</li><li><strong>Materialized View</strong>: Og'ir analitik so'rov natijasi jismoniy saqlanadi va chaqirilganda 0.001 soniyada javob beradi.</li><li>Yangilash buyrug'i: <code>REFRESH MATERIALIZED VIEW v_nomi;</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PostgreSQL / psql</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_pg_23')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_pg_23','res_pg_23')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_pg_23" contenteditable="true" spellcheck="false">CREATE MATERIALIZED VIEW v_oylik_tushum AS
+SELECT 
+    DATE_TRUNC('month', created_at) AS oy,
+    COUNT(*) AS buyurtmalar_soni,
+    SUM(summa) AS jami_tushum
+FROM buyurtmalar
+GROUP BY 1;
+
+-- Yangilash:
+REFRESH MATERIALIZED VIEW v_oylik_tushum;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_pg_23">
+      <div class="result-label">🐘 PostgreSQL 16 Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PostgreSQL psql Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;SELECT 12
+Materialized View natijasi keshlandi: chaqirilganda bazaga yuklama bermaydi.&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">🚀 Materialized View katta boshqaruv panellari (Dashboard) va grafiklar uchun eng tezkor yechimdir.</div>
+
+    <div class="topic-nav">
+      <a href="#triggers" class="topic-nav-btn prev">← Triggerlar — Hodisalarga Avtomatik Reaksiya</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PostgreSQL | 23 / 28</span>
+      <a href="#transactions" class="topic-nav-btn next">PostgreSQL Tranzaksiyalari va Izolyatsiya Darajalari →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Xavfsizlik</span>
+      <span style="font-size:12px; color:var(--text2);">PostgreSQL Mavzu #24</span>
+    </div>
+    <h2 id="transactions" style="color:#336791; background: linear-gradient(90deg, #5c93c4, #336791); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">PostgreSQL Tranzaksiyalari va Izolyatsiya Darajalari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">PostgreSQL ACID tamoyillarini eng qat'iy standartlar asosida ta'minlaydi. U parallel so'rovlar bir-birining ma'lumotlarini buzib qo'ymasligi uchun <strong>MVCC (Multi-Version Concurrency Control)</strong> arxitekturasidan foydalanadi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>O'qish vaqtida bloklash bo'lmaydi: 'O'quvchilar yozuvchilarga, yozuvchilar esa o'quvchilarga xalaqit bermaydi'.</li><li>Izolyatsiya darajalari: <code>Read Committed</code> (standart), <code>Repeatable Read</code>, <code>Serializable</code> (eng qat'iy himoya).</li><li>Qatorlarni vaqtincha qulflash: <code>SELECT ... FOR UPDATE;</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PostgreSQL / psql</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_pg_24')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_pg_24','res_pg_24')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_pg_24" contenteditable="true" spellcheck="false">BEGIN;
+
+-- Boshqa hech kim bu qatorni ayni paytda o'zgartira olmasligi uchun qulflash
+SELECT balans FROM hisoblar WHERE id = 1 FOR UPDATE;
+
+UPDATE hisoblar SET balans = balans - 50000 WHERE id = 1;
+
+COMMIT;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_pg_24">
+      <div class="result-label">🐘 PostgreSQL 16 Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PostgreSQL psql Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;BEGIN
+balans: 1000000 (Row locked for transaction)
+UPDATE 1
+COMMIT: Tranzaksiya yakunlandi.&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">🔒 <code>SELECT FOR UPDATE</code> bank tizimlarida bir vaqtning o'zida ikkita joydan pul yechish (Race condition) muammosini butunlay yo'q qiladi.</div>
+
+    <div class="topic-nav">
+      <a href="#views" class="topic-nav-btn prev">← Views va Materialized Views (Keshlanuvchi Ko'rinish)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PostgreSQL | 24 / 28</span>
+      <a href="#replication" class="topic-nav-btn next">Replikatsiya — Streaming va Logical Replication →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Klaster</span>
+      <span style="font-size:12px; color:var(--text2);">PostgreSQL Mavzu #25</span>
+    </div>
+    <h2 id="replication" style="color:#336791; background: linear-gradient(90deg, #5c93c4, #336791); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Replikatsiya — Streaming va Logical Replication</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">PostgreSQL ma'lumotlarni asosiy serverdan zaxira serverlarga real vaqt rejimida nusxalash uchun ikkita kuchli usulni taqdim etadi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><strong>Streaming Replication (Fizik)</strong>: WAL (Write-Ahead Log) baytlarini to'g'ridan-to'g'ri ikkilamchi serverga uzatadi. O'qish yuklamasini (Read Replica) taqsimlash uchun ayni muddao.</li><li><strong>Logical Replication (Mantiqiy)</strong>: Alohida jadvallarni tanlab boshqa turli xil versiyadagi Postgres bazalariga yuborish imkonini beradi (Publish/Subscribe).</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PostgreSQL / psql</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_pg_25')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_pg_25','res_pg_25')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_pg_25" contenteditable="true" spellcheck="false"># Standby server sozlamasi (postgresql.conf)
+# primary_conninfo = 'host=192.168.1.10 port=5432 user=replicator'
+
+-- Replikatsiya holatini tekshirish
+SELECT client_addr, state, sync_state FROM pg_stat_replication;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_pg_25">
+      <div class="result-label">🐘 PostgreSQL 16 Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PostgreSQL psql Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;+--------------+-----------+------------+
+| client_addr  | state     | sync_state |
++--------------+-----------+------------+
+| 192.168.1.11 | streaming | async      |
++--------------+-----------+------------+
+1 replica connected 🟢&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 O'qish ko'p bo'lgan loyihalarda bir nechta Read Replica serverlar qo'yilib, foydalanuvchilar ularga taqsimlanadi.</div>
+
+    <div class="topic-nav">
+      <a href="#transactions" class="topic-nav-btn prev">← PostgreSQL Tranzaksiyalari va Izolyatsiya Darajalari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PostgreSQL | 25 / 28</span>
+      <a href="#partitioning" class="topic-nav-btn next">Table Partitioning — Katta Jadvallarni Bo'lish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Arxitektura</span>
+      <span style="font-size:12px; color:var(--text2);">PostgreSQL Mavzu #26</span>
+    </div>
+    <h2 id="partitioning" style="color:#336791; background: linear-gradient(90deg, #5c93c4, #336791); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Table Partitioning — Katta Jadvallarni Bo'lish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Jadvalda 100 millionlab qatorlar to'planganda uni oylarga yoki yillarga qarab kichik mustaqil qismlarga (Partition) bo'lish usuli. So'rov yuborilganda Postgres faqat kerakli bo'lakni o'qiydi (Partition Pruning).</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Bo'lish turlari: <code>PARTITION BY RANGE</code> (sanalar bo'yicha), <code>LIST</code> (davlatlar bo'yicha), <code>HASH</code>.</li><li>Foydalanuvchi bitta asosiy jadvalga murojaat qiladi, Postgres esa o'zi qatorlarni tegishli bo'lakka joylaydi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PostgreSQL / psql</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_pg_26')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_pg_26','res_pg_26')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_pg_26" contenteditable="true" spellcheck="false">CREATE TABLE loglar (
+    id BIGSERIAL,
+    xabar TEXT,
+    created_at DATE NOT NULL
+) PARTITION BY RANGE (created_at);
+
+-- 2026-yil yanvar oyi uchun bo'lak
+CREATE TABLE loglar_2026_01 PARTITION OF loglar
+FOR VALUES FROM ('2026-01-01') TO ('2026-02-01');</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_pg_26">
+      <div class="result-label">🐘 PostgreSQL 16 Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PostgreSQL psql Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;CREATE TABLE
+Jadval muvaffaqiyatli qismlarga (Partition) bo'lindi.
+Yangi oylar uchun alohida jadvallar avtomatik bog'lanadi.&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">🚀 Partitioning orqali eski oylarning ma'lumotlarini o'chirish <code>DROP TABLE loglar_2024_01</code> buyrug'i bilan bir zumda amalga oshadi.</div>
+
+    <div class="topic-nav">
+      <a href="#replication" class="topic-nav-btn prev">← Replikatsiya — Streaming va Logical Replication</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PostgreSQL | 26 / 28</span>
+      <a href="#performance" class="topic-nav-btn next">Performance Tuning — EXPLAIN ANALYZE va Xotira Sozlamalari →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Optimizatsiya</span>
+      <span style="font-size:12px; color:var(--text2);">PostgreSQL Mavzu #27</span>
+    </div>
+    <h2 id="performance" style="color:#336791; background: linear-gradient(90deg, #5c93c4, #336791); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Performance Tuning — EXPLAIN ANALYZE va Xotira Sozlamalari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">PostgreSQL so'rovlarini tahlil qilish va serverni apparat imkoniyatlariga to'liq moslashtirish dasturchilar va DBAlarning muhim vazifasidir.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><code>EXPLAIN ANALYZE so'rov;</code> — so'rovning har bir bosqichida qancha vaqt va xotira ketganini real ko'rsatadi.</li><li>Asosiy sozlamalar (postgresql.conf):</li><li><code>shared_buffers</code>: RAM ning 25% qismi umumiy kesh uchun ajratiladi.</li><li><code>work_mem</code>: Murakkab saralash va JOIN lar uchun har bir oqimga beriladigan tezkor xotira.</li><li><code>effective_cache_size</code>: Operatsion tizim keshini hisobga oluvchi ko'rsatkich (RAM ning 50-75% i).</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PostgreSQL / psql</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_pg_27')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_pg_27','res_pg_27')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_pg_27" contenteditable="true" spellcheck="false">EXPLAIN ANALYZE
+SELECT ism, email FROM mijozlar WHERE email = 'akmal@uz';</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_pg_27">
+      <div class="result-label">🐘 PostgreSQL 16 Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PostgreSQL psql Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Index Scan using idx_mijozlar_email on mijozlar  (cost=0.28..8.29 rows=1 width=45) (actual time=0.015..0.016 rows=1 loops=1)
+  Index Cond: ((email)::text = 'akmal@uz'::text)
+Planning Time: 0.082 ms
+Execution Time: 0.035 ms ⚡&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ <code>Execution Time: 0.035 ms</code> — to'g'ri sozlangan indeks va parametrlar orqali so'rovlar sekundning o'n mingdan bir ulushida bajariladi.</div>
+
+    <div class="topic-nav">
+      <a href="#partitioning" class="topic-nav-btn prev">← Table Partitioning — Katta Jadvallarni Bo'lish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PostgreSQL | 27 / 28</span>
+      <a href="#backup" class="topic-nav-btn next">Backup va Restore — pg_dump va pg_restore →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Admin</span>
+      <span style="font-size:12px; color:var(--text2);">PostgreSQL Mavzu #28</span>
+    </div>
+    <h2 id="backup" style="color:#336791; background: linear-gradient(90deg, #5c93c4, #336791); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Backup va Restore — pg_dump va pg_restore</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Ma'lumotlar bazasining zaxira nusxasini olish (Backup) va falokat ro'y berganda uni qayta tiklash (Restore) usullari.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Zaxira olish (SQL matn ko'rinishida): <code>pg_dump -U postgres w3learn &gt; backup.sql</code>.</li><li>Maxsus siqilgan formatda (Custom format - tavsiya etiladi): <code>pg_dump -U postgres -Fc w3learn &gt; backup.dump</code>.</li><li>Qayta tiklash: <code>pg_restore -U postgres -d yangi_baza -v backup.dump</code>.</li><li>Barcha bazalar va foydalanuvchilarning zaxirasi: <code>pg_dumpall &gt; all.sql</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">PostgreSQL / psql</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_pg_28')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_pg_28','res_pg_28')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_pg_28" contenteditable="true" spellcheck="false"># Terminalda zaxira nusxa olish:
+pg_dump -U postgres -Fc -b -v -f w3learn_20261123.dump w3learn
+
+# Yangi serverda qayta tiklash:
+pg_restore -U postgres -d w3learn_yangi -v w3learn_20261123.dump</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_pg_28">
+      <div class="result-label">🐘 PostgreSQL 16 Server Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐘 PostgreSQL psql Console Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;pg_dump: saving database definition
+pg_dump: dumping contents of table "mijozlar"
+pg_dump: dumping contents of table "buyurtmalar"
+pg_dump: finished in 0.42 seconds
+Backup fayl muvaffaqiyatli yaratildi: w3learn_20261123.dump (Hajm: 14.2 MB)&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">🔒 Har qanday jiddiy loyihada kunlik avtomatik backup skriptlari (cron job) sozlanishi va fayllar alohida bulutga (S3) yuklanishi shart.</div>
+
+    <div class="topic-nav">
+      <a href="#performance" class="topic-nav-btn prev">← Performance Tuning — EXPLAIN ANALYZE va Xotira Sozlamalari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 PostgreSQL | 28 / 28</span>
+      <a href="redis.html" class="topic-nav-btn next">Keyingi kurs: Redis Darslari →</a>
+    </div>
+  </section>
 
   <div class="quiz-box">
-    <div class="quiz-q">🧪 Test: PostgreSQL da avtomatik o'suvchi son yaratish uchun qaysi type ishlatiladi?</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qr1')">AUTO_INCREMENT</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, true, 'qr1')">SERIAL</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'qr1')">AUTONUM</div>
-    <div class="quiz-result" id="qr1"></div>
+    <div class="quiz-q">🧪 Test: PostgreSQL da yangi qo'shilgan yoki yangilangan qatorning qiymatini alohida SELECT yozmasdan bir zumda qaytarib olish uchun qaysi kalit so'z ishlatiladi?</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, true, 'pgQr1')">RETURNING</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'pgQr1')">OUTPUT</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'pgQr1')">GET VALUES</div>
+    <div class="quiz-result" id="pgQr1"></div>
   </div>
-  
 
-<div class="nav-btns">
-  <a href="mongodb.html" class="btn-prev">&#8592; MongoDB</a>
-  <a href="redis.html" class="btn-next">Redis &#8594;</a>
-</div>
+  <div class="nav-btns" style="margin-top: 30px;">
+    <a href="mongodb.html" class="btn-prev">← MongoDB Darslari</a>
+    <a href="redis.html" class="btn-next">Redis Darsiga O'tish →</a>
+  </div>
+
+  <div class="note note-blue" style="margin-top: 25px;">
+    📌 <strong>Keyingi qadam:</strong> Kuchli relyatsion va JSONB bazani o'rgangach, tezkor xotirada (In-Memory) ishlovchi kesh texnologiyasi bo'lgan <a href="redis.html" style="color:var(--green)">Redis darslariga</a> o'ting!
+  </div>
 </main>
 <aside class="right-panel">
   <div class="rp-title">📈 Progress</div>

@@ -82,315 +82,1337 @@
   </ul>
 </aside>
 <main class="main">
-  <div class="breadcrumb">🏠 <a href="../index.html">Bosh sahifa</a> › <a href="#" style="color:var(--green)">SQL</a> › SQL Nima?</div>
-  <h1 id="kirish">SQL Nima?</h1>
-  <div class="meta-tags">
-    <span class="tag tag-green">⏱ 10 daqiqa</span>
-    <span class="tag tag-blue">🟢 Boshlang'ich</span>
-    <span class="tag tag-orange">👁 29,500 marta ko'rilgan</span>
-  </div>
-  <p><strong>SQL</strong> (Structured Query Language) — relyatsion ma'lumotlar bazalarini boshqarish uchun standart til. 1974-yilda IBM tomonidan yaratilgan.</p>
-  <p>SQL yordamida ma'lumotlar yaratish, o'qish, yangilash va o'chirish (CRUD) amallarini bajarish mumkin. MySQL, PostgreSQL, SQLite, SQL Server, Oracle — bularning barchasi SQL dan foydalanadi.</p>
-  <div class="note">💡 <strong>SQL turlari:</strong> DDL (tuzilma), DML (ma'lumot), DCL (ruxsat), TCL (tranzaksiya).</div>
-
-  <h2 id="create-table">Jadval Yaratish (CREATE TABLE)</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">sql</span>
-      <button class="copy-btn" onclick="copyCode('code1')">📋 Nusxa</button>
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Asosiy</span>
+      <span style="font-size:12px; color:var(--text2);">SQL Mavzu #1</span>
     </div>
-    <div class="code-body">
-      <pre id="code1">-- Ma'lumotlar bazasi yaratish
-CREATE DATABASE maktab;
-USE maktab;
+    <h2 id="kirish" style="color:#00758f; background: linear-gradient(90deg, #33a6b8, #00758f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">SQL Nima? Kirish va Tarixi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>SQL (Structured Query Language)</strong> — relyatsion ma'lumotlar bazalarini (RDBMS) boshqarish, so'rovlar yuborish, ma'lumotlarni saqlash, o'zgartirish va tahlil qilish uchun xalqaro standart dasturlash tilidir. U 1970-yillarda IBM tadqiqotchilari Raymond Boyce va Donald Chamberlin tomonidan yaratilgan.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Dunyoning 90% dan ortiq axborot tizimlari ma'lumotlarni saqlashda SQL dan foydalanadi.</li><li>Deklarativ til: siz kompyuterga <em>qanday</em> qilishni emas, <em>qanday natija kerakligini</em> aytasiz.</li><li>MySQL, PostgreSQL, Oracle, Microsoft SQL Server, SQLite barchasi SQL tilida so'rov qabul qiladi.</li><li>Backend dasturchilar, Data Scientistlar va ma'lumotlar tahlilchilari (Data Analyst) uchun eng birlamchi qurol.</li></ul>
 
--- Jadval yaratish
-CREATE TABLE talabalar (
-    id          INT PRIMARY KEY AUTO_INCREMENT,
-    ism         VARCHAR(50) NOT NULL,
-    familiya    VARCHAR(50) NOT NULL,
-    email       VARCHAR(100) UNIQUE,
-    yoshi       INT CHECK (yoshi >= 16 AND yoshi <= 60),
-    kurs        TINYINT DEFAULT 1,
-    tug_sana    DATE,
-    yaratilgan  TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-);
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">SQL So'rovi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_sql_1')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_sql_1','res_sql_1')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_sql_1" contenteditable="true" spellcheck="false">-- SQL dagi eng mashhur birinchi so'rov
+SELECT 
+    'Assalomu alaykum, SQL Dunyosi! 🗄️' AS Salomlashuv,
+    CURRENT_DATE AS BugungiSana;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_sql_1">
+      <div class="result-label">🗄️ SQL RDBMS Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐬 MySQL / PostgreSQL Engine Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;+----------------------------------+-------------+
+| Salomlashuv                      | BugungiSana |
++----------------------------------+-------------+
+| Assalomu alaykum, SQL Dunyosi! 🗄️ | 2026-11-23  |
++----------------------------------+-------------+
+1 row in set (0.00 sec)&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
 
--- Bog'liq jadval (Foreign Key)
-CREATE TABLE kurslar (
-    id    INT PRIMARY KEY AUTO_INCREMENT,
-    nomi  VARCHAR(100) NOT NULL,
-    narxi DECIMAL(10, 2)
-);
+    <div class="note-box" style="margin-top:16px;">💡 SQL kalit so'zlari katta yoki kichik harflarga sezgir emas (case-insensitive), ammo xalqaro odatga ko'ra kalit so'zlar KATTA harflar bilan yoziladi: <code>SELECT</code>, <code>FROM</code>, <code>WHERE</code>.</div>
 
-CREATE TABLE yozilishlar (
-    id         INT PRIMARY KEY AUTO_INCREMENT,
-    talaba_id  INT NOT NULL,
-    kurs_id    INT NOT NULL,
-    sana       DATE DEFAULT (CURRENT_DATE),
-    FOREIGN KEY (talaba_id) REFERENCES talabalar(id),
-    FOREIGN KEY (kurs_id) REFERENCES kurslar(id)
+    <div class="topic-nav">
+      <a href="csharp.html" class="topic-nav-btn prev">← C# Darslari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 SQL | 1 / 29</span>
+      <a href="#dbms" class="topic-nav-btn next">DBMS Turlari — Relyatsion vs NoSQL →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">DBMS</span>
+      <span style="font-size:12px; color:var(--text2);">SQL Mavzu #2</span>
+    </div>
+    <h2 id="dbms" style="color:#00758f; background: linear-gradient(90deg, #33a6b8, #00758f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">DBMS Turlari — Relyatsion vs NoSQL</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>DBMS (Database Management System)</strong> — ma'lumotlar bazasini xavfsiz saqlash, boshqarish va unga ko'p foydalanuvchili kirishni ta'minlovchi dasturiy majmuadir. Ular asosan Relyatsion (RDBMS) va NoSQL turlariga bo'linadi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><strong>RDBMS (Jadvalli)</strong>: PostgreSQL, MySQL, SQL Server, Oracle, SQLite — qat'iy jadvallar va Primary/Foreign Key aloqalariga ega.</li><li><strong>NoSQL (Hujjatsiz/Grafli)</strong>: MongoDB (JSON hujjatlar), Redis (In-Memory Key-Value), Cassandra.</li><li><strong>SQLite</strong>: Server talab qilmaydigan, to'g'ridan-to'g'ri bitta faylda saqlanuvchi eng ixcham va mobil ilovalar uchun mashhur baza.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">SQL So'rovi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_sql_2')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_sql_2','res_sql_2')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_sql_2" contenteditable="true" spellcheck="false">-- Relyatsion tuzilma: Foydalanuvchilar va Buyurtmalar bog'liqligi
+-- Jadvallar o'zaro ID orqali bog'lanadi (Foreign Key)
+
+SELECT 
+    f.ism, 
+    f.shahar, 
+    b.mahsulot, 
+    b.narx
+FROM foydalanuvchilar f
+JOIN buyurtmalar b ON f.id = b.foydalanuvchi_id;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_sql_2">
+      <div class="result-label">🗄️ SQL RDBMS Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐬 MySQL / PostgreSQL Engine Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;+---------+----------+----------+---------+
+| ism     | shahar   | mahsulot | narx    |
++---------+----------+----------+---------+
+| Jasur   | Toshkent | Noutbuk  | 8500000 |
+| Malika  | Samarqand| Smartfon | 3200000 |
++---------+----------+----------+---------+&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ Relyatsion bazalarning ustunligi — ma'lumotlar yaxlitligi (Integrity) va qat'iy mantiqiy tuzilishidadir.</div>
+
+    <div class="topic-nav">
+      <a href="#kirish" class="topic-nav-btn prev">← SQL Nima? Kirish va Tarixi</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 SQL | 2 / 29</span>
+      <a href="#syntax" class="topic-nav-btn next">SQL Sintaksisi va Buyruqlar Guruhlari →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Sintaksis</span>
+      <span style="font-size:12px; color:var(--text2);">SQL Mavzu #3</span>
+    </div>
+    <h2 id="syntax" style="color:#00758f; background: linear-gradient(90deg, #33a6b8, #00758f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">SQL Sintaksisi va Buyruqlar Guruhlari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">SQL buyruqlari o'z vazifasiga ko'ra to'rtta asosiy guruhga bo'linadi: <strong>DDL</strong>, <strong>DML</strong>, <strong>DQL</strong> va <strong>DCL</strong>.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><strong>DQL (Data Query Language)</strong>: <code>SELECT</code> — ma'lumotlarni o'qish.</li><li><strong>DML (Data Manipulation Language)</strong>: <code>INSERT</code>, <code>UPDATE</code>, <code>DELETE</code> — ma'lumotlarni o'zgartirish.</li><li><strong>DDL (Data Definition Language)</strong>: <code>CREATE</code>, <code>ALTER</code>, <code>DROP</code>, <code>TRUNCATE</code> — jadvallar tuzilishini yaratish va o'chirish.</li><li><strong>DCL / TCL</strong>: <code>GRANT</code>, <code>REVOKE</code>, <code>COMMIT</code>, <code>ROLLBACK</code> — ruxsatlar va tranzaksiyalar.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">SQL So'rovi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_sql_3')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_sql_3','res_sql_3')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_sql_3" contenteditable="true" spellcheck="false">-- SQL izohlari:
+-- Bu bir satrli izoh
+
+/* Bu esa
+   ko'p satrli izoh */
+
+SELECT 100 * 1.12 AS NarxQQS;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_sql_3">
+      <div class="result-label">🗄️ SQL RDBMS Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐬 MySQL / PostgreSQL Engine Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;+----------+
+| NarxQQS  |
++----------+
+| 112.00   |
++----------+&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Har bir to'liq SQL buyrug'i oxiriga nuqta-vergul <code>;</code> qo'yish shart.</div>
+
+    <div class="topic-nav">
+      <a href="#dbms" class="topic-nav-btn prev">← DBMS Turlari — Relyatsion vs NoSQL</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 SQL | 3 / 29</span>
+      <a href="#create-db" class="topic-nav-btn next">CREATE DATABASE va DROP DATABASE →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">DDL</span>
+      <span style="font-size:12px; color:var(--text2);">SQL Mavzu #4</span>
+    </div>
+    <h2 id="create-db" style="color:#00758f; background: linear-gradient(90deg, #33a6b8, #00758f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">CREATE DATABASE va DROP DATABASE</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Yangi ma'lumotlar bazasini yaratish uchun <code>CREATE DATABASE</code>, mavjud bazani barcha jadvallari bilan butunlay o'chirib tashlash uchun <code>DROP DATABASE</code> ishlatiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Yaratish: <code>CREATE DATABASE baza_nomi;</code>.</li><li>Xatolik bermasdan yaratish: <code>CREATE DATABASE IF NOT EXISTS dokon_db;</code>.</li><li>Bazani tanlash: <code>USE dokon_db;</code>.</li><li>O'chirish: <code>DROP DATABASE IF EXISTS test_db;</code> (Ehtiyot bo'ling, qaytarib bo'lmaydi!).</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">SQL So'rovi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_sql_4')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_sql_4','res_sql_4')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_sql_4" contenteditable="true" spellcheck="false">-- Yangi baza yaratish va kodirovkasini UTF-8 qilish
+CREATE DATABASE IF NOT EXISTS w3learn_db
+CHARACTER SET utf8mb4 
+COLLATE utf8mb4_unicode_ci;
+
+-- Bazani faollashtirish
+USE w3learn_db;
+
+SHOW DATABASES;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_sql_4">
+      <div class="result-label">🗄️ SQL RDBMS Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐬 MySQL / PostgreSQL Engine Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Database created successfully.
+Current Database: w3learn_db
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| mysql              |
+| performance_schema |
+| w3learn_db         |
++--------------------+&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">🔒 <code>DROP DATABASE</code> buyrug'ini ishlab turgan (Production) loyihalarda hech qachon ehtiyotsizlik bilan ishlatmang!</div>
+
+    <div class="topic-nav">
+      <a href="#syntax" class="topic-nav-btn prev">← SQL Sintaksisi va Buyruqlar Guruhlari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 SQL | 4 / 29</span>
+      <a href="#create-table" class="topic-nav-btn next">CREATE TABLE — Yangi Jadval Yaratish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">DDL</span>
+      <span style="font-size:12px; color:var(--text2);">SQL Mavzu #5</span>
+    </div>
+    <h2 id="create-table" style="color:#00758f; background: linear-gradient(90deg, #33a6b8, #00758f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">CREATE TABLE — Yangi Jadval Yaratish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Jadval (Table) — bu qatorlar (Rows / Records) va ustunlar (Columns / Fields) dan iborat ma'lumotlar konteyneridir. Har bir ustunga uning nomi, ma'lumot turi va cheklovlari (Constraints) beriladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><code>PRIMARY KEY</code>: har bir qatorning takrorlanmas noyob kaliti (ID).</li><li><code>AUTO_INCREMENT</code> (yoki SERIAL): ID raqami har safar avtomatik 1 ga oshadi.</li><li><code>NOT NULL</code>: ustun bo'sh qolishi taqiqlanadi.</li><li><code>UNIQUE</code>: qiymat takrorlanmasligi kerak (masalan, email).</li><li><code>DEFAULT</code>: agar qiymat berilmasa avtomatik qo'yiladigan standart qiymat.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">SQL So'rovi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_sql_5')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_sql_5','res_sql_5')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_sql_5" contenteditable="true" spellcheck="false">CREATE TABLE talabalar (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    ism VARCHAR(50) NOT NULL,
+    familiya VARCHAR(50) NOT NULL,
+    email VARCHAR(100) UNIQUE NOT NULL,
+    yosh INT CHECK (yosh &gt;= 16),
+    royxatdan_otgan_vaqt TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    faolmi BOOLEAN DEFAULT TRUE
 );</pre>
+      </div>
     </div>
-  </div>
-
-  <h2 id="insert">Ma'lumot Qo'shish (INSERT)</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">sql</span>
-      <button class="copy-btn" onclick="copyCode('code2')">📋 Nusxa</button>
+    <div class="result-box" id="res_sql_5">
+      <div class="result-label">🗄️ SQL RDBMS Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐬 MySQL / PostgreSQL Engine Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Query OK, 0 rows affected (0.02 sec)
+Jadval yaratildi: 'talabalar'
+Ustunlar: id (PK), ism, familiya, email (UQ), yosh, royxatdan_otgan_vaqt, faolmi&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
     </div>
-    <div class="code-body">
-      <pre id="code2">-- Bitta qator qo'shish
-INSERT INTO talabalar (ism, familiya, email, yoshi, kurs)
-VALUES ('Ali', 'Karimov', 'ali@mail.uz', 20, 2);
 
--- Ko'p qator qo'shish
-INSERT INTO talabalar (ism, familiya, yoshi, kurs)
+    <div class="note-box" style="margin-top:16px;">💡 Har bir relyatsion jadvalda kamida bitta <code>PRIMARY KEY</code> ustuni bo'lishi relyatsion dizaynning 1-qoidasidir.</div>
+
+    <div class="topic-nav">
+      <a href="#create-db" class="topic-nav-btn prev">← CREATE DATABASE va DROP DATABASE</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 SQL | 5 / 29</span>
+      <a href="#datatypes" class="topic-nav-btn next">SQL Ma'lumot Turlari (Data Types) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Tiplar</span>
+      <span style="font-size:12px; color:var(--text2);">SQL Mavzu #6</span>
+    </div>
+    <h2 id="datatypes" style="color:#00758f; background: linear-gradient(90deg, #33a6b8, #00758f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">SQL Ma'lumot Turlari (Data Types)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">SQL da ma'lumotlar aniq turlar bo'yicha saqlanadi. To'g'ri tip tanlash xotirani tejaydi va so'rovlar tezligini oshiradi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><strong>Sonlar</strong>: <code>INT</code>, <code>BIGINT</code>, <code>SMALLINT</code>, <code>DECIMAL(10,2)</code> (pul uchun eng aniq), <code>FLOAT</code>.</li><li><strong>Matnlar</strong>: <code>VARCHAR(n)</code> (o'zgaruvchan uzunlikdagi matn), <code>CHAR(n)</code> (qat'iy uzunlik), <code>TEXT</code> (katta matnlar).</li><li><strong>Sana va Vaqt</strong>: <code>DATE</code> ('2026-11-23'), <code>TIME</code>, <code>DATETIME</code>, <code>TIMESTAMP</code>.</li><li><strong>Mantiqiy</strong>: <code>BOOLEAN</code> (TRUE / FALSE).</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">SQL So'rovi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_sql_6')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_sql_6','res_sql_6')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_sql_6" contenteditable="true" spellcheck="false">-- Turli ma'lumot turlarini sinash
+CREATE TABLE tovarlar (
+    id INT PRIMARY KEY,
+    nomi VARCHAR(100),
+    tavsif TEXT,
+    narxi DECIMAL(12, 2), -- 9,999,999,999.99 gacha aniq narx
+    qoldiq_soni INT,
+    ishlab_chiqarilgan_sana DATE
+);</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_sql_6">
+      <div class="result-label">🗄️ SQL RDBMS Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐬 MySQL / PostgreSQL Engine Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;DECIMAL(12,2) -&gt; 12 ta raqam, shundan 2 tasi verguldan keyin.
+Xotira: INT (4 bayt), VARCHAR (uzunlik + 1 bayt), DECIMAL (aniq xotira).&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ Hech qachon narxlar va pul summalarini <code>FLOAT</code> da saqlamang, chunki suzuvchi vergulda yaxlitlash xatolari yuz beradi. Doimo <code>DECIMAL</code> ishlating!</div>
+
+    <div class="topic-nav">
+      <a href="#create-table" class="topic-nav-btn prev">← CREATE TABLE — Yangi Jadval Yaratish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 SQL | 6 / 29</span>
+      <a href="#alter" class="topic-nav-btn next">ALTER TABLE — Jadval Tuzilishini O'zgartirish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">DDL</span>
+      <span style="font-size:12px; color:var(--text2);">SQL Mavzu #7</span>
+    </div>
+    <h2 id="alter" style="color:#00758f; background: linear-gradient(90deg, #33a6b8, #00758f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">ALTER TABLE — Jadval Tuzilishini O'zgartirish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Mavjud jadvalga yangi ustun qo'shish, ustunni o'chirish yoki uning ma'lumot turini o'zgartirish uchun <code>ALTER TABLE</code> buyrug'i qo'llaniladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Yangi ustun qo'shish: <code>ALTER TABLE jadval ADD telefon VARCHAR(20);</code>.</li><li>Ustunni o'chirish: <code>ALTER TABLE jadval DROP COLUMN telefon;</code>.</li><li>Ustun turini o'zgartirish: <code>ALTER TABLE jadval MODIFY COLUMN ism VARCHAR(100);</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">SQL So'rovi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_sql_7')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_sql_7','res_sql_7')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_sql_7" contenteditable="true" spellcheck="false">-- Talabalar jadvaliga yangi ustun qo'shish
+ALTER TABLE talabalar 
+ADD COLUMN telefon VARCHAR(20) AFTER email;
+
+-- Jadval strukturasini ko'rish
+DESCRIBE talabalar;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_sql_7">
+      <div class="result-label">🗄️ SQL RDBMS Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐬 MySQL / PostgreSQL Engine Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;+----------------------+--------------+------+-----+---------+----------------+
+| Field                | Type         | Null | Key | Default | Extra          |
++----------------------+--------------+------+-----+---------+----------------+
+| id                   | int          | NO   | PRI | NULL    | auto_increment |
+| ism                  | varchar(50)  | NO   |     | NULL    |                |
+| familiya             | varchar(50)  | NO   |     | NULL    |                |
+| email                | varchar(100) | NO   | UNI | NULL    |                |
+| telefon              | varchar(20)  | YES  |     | NULL    |                |
+| yosh                 | int          | YES  |     | NULL    |                |
++----------------------+--------------+------+-----+---------+----------------+&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 <code>AFTER ustun_nomi</code> orqali yangi ustun aynan qaysi ustundan keyin joylashishini belgilash mumkin.</div>
+
+    <div class="topic-nav">
+      <a href="#datatypes" class="topic-nav-btn prev">← SQL Ma'lumot Turlari (Data Types)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 SQL | 7 / 29</span>
+      <a href="#drop" class="topic-nav-btn next">DROP TABLE va TRUNCATE TABLE →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">DDL</span>
+      <span style="font-size:12px; color:var(--text2);">SQL Mavzu #8</span>
+    </div>
+    <h2 id="drop" style="color:#00758f; background: linear-gradient(90deg, #33a6b8, #00758f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">DROP TABLE va TRUNCATE TABLE</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Jadvalni butunlay yo'q qilish bilan undagi barcha qatorlarni tozalash o'rtasidagi farqni bilish juda muhimdir.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><strong>DROP TABLE</strong>: Jadvalning tuzilishini ham, barcha ma'lumotlarini ham butunlay yo'q qiladi.</li><li><strong>TRUNCATE TABLE</strong>: Jadval qoladi, lekin ichidagi barcha qatorlar bir zumda o'chiriladi va <code>AUTO_INCREMENT</code> hisoblagich 1 ga qaytariladi.</li><li><code>TRUNCATE</code> buyrug'i oddiy <code>DELETE</code> ga qaraganda 100 baravar tezroq ishlaydi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">SQL So'rovi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_sql_8')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_sql_8','res_sql_8')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_sql_8" contenteditable="true" spellcheck="false">-- Test jadvalini tozalash
+TRUNCATE TABLE test_loglar;
+
+-- Jadvalni butunlay o'chirish
+DROP TABLE IF EXISTS eski_arxiv;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_sql_8">
+      <div class="result-label">🗄️ SQL RDBMS Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐬 MySQL / PostgreSQL Engine Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Query OK, 0 rows affected (0.01 sec)
+Table 'test_loglar' truncated.
+Table 'eski_arxiv' dropped.&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ <code>TRUNCATE</code> jurnallarga yozmasdan xotirani to'g'ridan-to'g'ri bo'shatgani uchun tranzaksiyada bekor qilish (ROLLBACK) qiyin bo'lishi mumkin.</div>
+
+    <div class="topic-nav">
+      <a href="#alter" class="topic-nav-btn prev">← ALTER TABLE — Jadval Tuzilishini O'zgartirish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 SQL | 8 / 29</span>
+      <a href="#insert" class="topic-nav-btn next">INSERT INTO — Ma'lumotlarni Jadvalga Qo'shish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">DML</span>
+      <span style="font-size:12px; color:var(--text2);">SQL Mavzu #9</span>
+    </div>
+    <h2 id="insert" style="color:#00758f; background: linear-gradient(90deg, #33a6b8, #00758f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">INSERT INTO — Ma'lumotlarni Jadvalga Qo'shish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Jadvalga yangi qator (yozuv) qo'shish uchun <code>INSERT INTO</code> operatori ishlatiladi. Bir vaqtning o'zida bitta yoki yuzlab qatorlarni birdaniga kiritish mumkin (Bulk Insert).</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Sintaksis: <code>INSERT INTO jadval (ustun1, ustun2) VALUES (qiymat1, qiymat2);</code>.</li><li>Agar barcha ustunlarga tartib bilan qiymat berilsa, ustun nomlarini yozmaslik ham mumkin.</li><li>Bir necha qatorni bitta so'rovda qo'shish vergul bilan ajratiladi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">SQL So'rovi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_sql_9')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_sql_9','res_sql_9')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_sql_9" contenteditable="true" spellcheck="false">-- Bir nechta talabani bitta so'rovda qo'shish
+INSERT INTO talabalar (ism, familiya, email, yosh)
 VALUES 
-  ('Vali', 'Rahimov', 22, 3),
-  ('Soli', 'Hasanov', 19, 1),
-  ('Nozima', 'Yusupova', 21, 2);
-
--- SELECT dan INSERT
-INSERT INTO arxiv_talabalar
-SELECT * FROM talabalar WHERE kurs = 4;
-
--- UPSERT (mavjud bo'lsa yangilash)
-INSERT INTO talabalar (email, ism, familiya)
-VALUES ('ali@mail.uz', 'Ali', 'Karimov')
-ON DUPLICATE KEY UPDATE ism = VALUES(ism);</pre>
+    ('Ali', 'Valiyev', 'ali@gmail.com', 20),
+    ('Zuhra', 'Karimova', 'zuhra@mail.ru', 19),
+    ('Bekzod', 'Ergashev', 'bekzod@w3learn.uz', 22);</pre>
+      </div>
     </div>
-  </div>
-
-  <h2 id="select">Ma'lumot O'qish (SELECT)</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">sql</span>
-      <button class="copy-btn" onclick="copyCode('code3')">📋 Nusxa</button>
+    <div class="result-box" id="res_sql_9">
+      <div class="result-label">🗄️ SQL RDBMS Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐬 MySQL / PostgreSQL Engine Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Query OK, 3 rows affected (0.01 sec)
+Records: 3  Duplicates: 0  Warnings: 0&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
     </div>
-    <div class="code-body">
-      <pre id="code3">-- Barcha ustunlar
-SELECT * FROM talabalar;
 
--- Tanlangan ustunlar
-SELECT ism, familiya, email FROM talabalar;
+    <div class="note-box" style="margin-top:16px;">💡 Bitta ko'p qatorli <code>INSERT</code> yozish har bir qator uchun alohida INSERT yuborishdan 50 baravar tezroq ishlaydi.</div>
 
--- Taxallus (alias)
+    <div class="topic-nav">
+      <a href="#drop" class="topic-nav-btn prev">← DROP TABLE va TRUNCATE TABLE</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 SQL | 9 / 29</span>
+      <a href="#select" class="topic-nav-btn next">SELECT va SELECT DISTINCT — Ma'lumotlarni O'qish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">DQL</span>
+      <span style="font-size:12px; color:var(--text2);">SQL Mavzu #10</span>
+    </div>
+    <h2 id="select" style="color:#00758f; background: linear-gradient(90deg, #33a6b8, #00758f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">SELECT va SELECT DISTINCT — Ma'lumotlarni O'qish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>SELECT</strong> — SQL tilida eng ko'p ishlatiladigan buyruq bo'lib, jadvallardan kerakli ustunlar va qatorlarni tanlab olish uchun xizmat qiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Barcha ustunlarni olish: <code>SELECT * FROM jadval;</code>.</li><li>Aniq ustunlarni olish: <code>SELECT ism, email FROM talabalar;</code>.</li><li>Takrorlanmas noyob qiymatlarni olish: <code>SELECT DISTINCT shahar FROM mijozlar;</code>.</li><li>Hisob-kitoblar va taxalluslar: <code>SELECT narx * 1.15 AS narx_ustama FROM tovarlar;</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">SQL So'rovi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_sql_10')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_sql_10','res_sql_10')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_sql_10" contenteditable="true" spellcheck="false">-- Talabalar ro'yxatidan faqat ism va emailni olish
 SELECT 
-    ism AS "Ismi",
-    familiya AS "Familiyasi",
-    yoshi AS "Yoshi"
-FROM talabalar;
-
--- Hisoblash
-SELECT 
-    ism,
-    yoshi,
-    yoshi + 5 AS "5 yildan keyin"
-FROM talabalar;
-
--- DISTINCT — takrorlanmaslar
-SELECT DISTINCT kurs FROM talabalar;
-
--- Shart bilan
-SELECT * FROM talabalar WHERE kurs = 2;
-SELECT * FROM talabalar WHERE yoshi BETWEEN 18 AND 25;
-SELECT * FROM talabalar WHERE ism LIKE 'A%';
-SELECT * FROM talabalar WHERE kurs IN (1, 2, 3);
-SELECT * FROM talabalar WHERE email IS NOT NULL;</pre>
+    id, 
+    CONCAT(ism, ' ', familiya) AS toliq_ism, 
+    email,
+    yosh
+FROM talabalar;</pre>
+      </div>
     </div>
-  </div>
-
-  <h2 id="update">Yangilash va O'chirish</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">sql</span>
-      <button class="copy-btn" onclick="copyCode('code4')">📋 Nusxa</button>
+    <div class="result-box" id="res_sql_10">
+      <div class="result-label">🗄️ SQL RDBMS Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐬 MySQL / PostgreSQL Engine Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;+----+-----------------+--------------------+------+
+| id | toliq_ism       | email              | yosh |
++----+-----------------+--------------------+------+
+|  1 | Ali Valiyev     | ali@gmail.com      |   20 |
+|  2 | Zuhra Karimova  | zuhra@mail.ru      |   19 |
+|  3 | Bekzod Ergashev | bekzod@w3learn.uz  |   22 |
++----+-----------------+--------------------+------+
+3 rows in set (0.00 sec)&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
     </div>
-    <div class="code-body">
-      <pre id="code4">-- UPDATE — yangilash
+
+    <div class="note-box" style="margin-top:16px;">⚡ Produksiyada hech qachon <code>SELECT *</code> ishlatmang, faqat o'zingizga kerakli ustunlarni sanab o'ting. Bu tarmoq va xotira yuklamasini keskin kamaytiradi.</div>
+
+    <div class="topic-nav">
+      <a href="#insert" class="topic-nav-btn prev">← INSERT INTO — Ma'lumotlarni Jadvalga Qo'shish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 SQL | 10 / 29</span>
+      <a href="#where" class="topic-nav-btn next">WHERE — Filtrlash Shartlari →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">DQL</span>
+      <span style="font-size:12px; color:var(--text2);">SQL Mavzu #11</span>
+    </div>
+    <h2 id="where" style="color:#00758f; background: linear-gradient(90deg, #33a6b8, #00758f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">WHERE — Filtrlash Shartlari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Jadvaldan faqat ma'lum bir shartga to'g'ri keladigan qatorlarni saralab olish uchun <code>WHERE</code> kalit so'zi ishlatiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Taqqoslash: <code>=</code>, <code>!=</code> yoki <code>&lt;&gt;</code>, <code>&gt;</code>, <code>&lt;</code>, <code>&gt;=</code>, <code>&lt;=</code>.</li><li>Mantiqiy operatorlar: <code>AND</code> (ikkala shart ham to'g'ri bo'lishi shart), <code>OR</code> (kamida bittasi to'g'ri bo'lsa yetarli), <code>NOT</code> (inkor).</li><li>Matnlar doimo bir tirnoq <code>'...'</code> ichiga olinadi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">SQL So'rovi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_sql_11')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_sql_11','res_sql_11')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_sql_11" contenteditable="true" spellcheck="false">-- Yoshi 20 dan katta bo'lgan yoki Toshkentlik talabalarni topish
+SELECT ism, familiya, yosh, email
+FROM talabalar
+WHERE yosh &gt;= 20 AND email LIKE '%@gmail.com';</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_sql_11">
+      <div class="result-label">🗄️ SQL RDBMS Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐬 MySQL / PostgreSQL Engine Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;+-----+----------+------+---------------+
+| ism | familiya | yosh | email         |
++-----+----------+------+---------------+
+| Ali | Valiyev  |   20 | ali@gmail.com |
++-----+----------+------+---------------+
+1 row in set (0.00 sec)&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 <code>WHERE</code> sharti <code>SELECT</code> dan tashqari <code>UPDATE</code> va <code>DELETE</code> buyruqlarida ham eng asosiy xavfsizlik filtri hisoblanadi.</div>
+
+    <div class="topic-nav">
+      <a href="#select" class="topic-nav-btn prev">← SELECT va SELECT DISTINCT — Ma'lumotlarni O'qish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 SQL | 11 / 29</span>
+      <a href="#update" class="topic-nav-btn next">UPDATE — Mavjud Ma'lumotlarni Yangilash →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">DML</span>
+      <span style="font-size:12px; color:var(--text2);">SQL Mavzu #12</span>
+    </div>
+    <h2 id="update" style="color:#00758f; background: linear-gradient(90deg, #33a6b8, #00758f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">UPDATE — Mavjud Ma'lumotlarni Yangilash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Jadvaldagi mavjud qatorlarning qiymatlarini o'zgartirish uchun <code>UPDATE</code> buyrug'i ishlatiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Sintaksis: <code>UPDATE jadval SET ustun1 = yangi_qiymat WHERE shart;</code>.</li><li>Bir nechta ustunni yangilash: vergul bilan ajratiladi.</li><li><strong>DIQQAT</strong>: Agar <code>WHERE</code> sharti yozilmasa, jadvaldagi BARCHA qatorlar o'zgarib ketadi!</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">SQL So'rovi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_sql_12')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_sql_12','res_sql_12')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_sql_12" contenteditable="true" spellcheck="false">-- Ali Valiyevning yoshini 21 ga oshirish
 UPDATE talabalar
-SET kurs = 3, email = 'yangi@mail.uz'
+SET yosh = 21, telefon = '+998901234567'
 WHERE id = 1;
 
--- Ko'p qatorni yangilash
-UPDATE talabalar
-SET kurs = kurs + 1
-WHERE kurs < 4;
-
--- ⚠️ Ehtiyot: WHERE siz BARCHA qatorlar yangilanadi!
-
--- DELETE — o'chirish
-DELETE FROM talabalar WHERE id = 5;
-
--- Shartli o'chirish
-DELETE FROM talabalar 
-WHERE kurs = 4 AND yoshi > 30;
-
--- TRUNCATE — jadvalning barcha ma'lumotlarini o'chirish (tez)
-TRUNCATE TABLE log_jadval;
-
--- ⚠️ DROP — jadvalning o'zi bilan ma'lumotlar
-DROP TABLE eski_jadval;</pre>
+-- Tekshirish:
+SELECT id, ism, yosh, telefon FROM talabalar WHERE id = 1;</pre>
+      </div>
     </div>
-  </div>
+    <div class="result-box" id="res_sql_12">
+      <div class="result-label">🗄️ SQL RDBMS Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐬 MySQL / PostgreSQL Engine Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Query OK, 1 row affected (0.01 sec)
+Rows matched: 1  Changed: 1  Warnings: 0
 
-  <h2 id="agg">Agregat Funksiyalar</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">sql</span>
-      <button class="copy-btn" onclick="copyCode('code5')">📋 Nusxa</button>
++----+-----+------+---------------+
+| id | ism | yosh | telefon       |
++----+-----+------+---------------+
+|  1 | Ali |   21 | +998901234567 |
++----+-----+------+---------------+&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
     </div>
-    <div class="code-body">
-      <pre id="code5">-- Soni
-SELECT COUNT(*) AS "Talabalar soni" FROM talabalar;
-SELECT COUNT(email) AS "Emailli talabalar" FROM talabalar;
 
--- Yig'indisi
-SELECT SUM(narxi) AS "Jami narx" FROM kurslar;
+    <div class="note-box" style="margin-top:16px;">🔒 Har doim <code>UPDATE</code> yozishdan oldin xuddi shu <code>WHERE</code> sharti bilan <code>SELECT</code> qilib qaysi qatorlar o'zgarishini oldindan ko'rib oling!</div>
 
--- O'rtacha
-SELECT AVG(yoshi) AS "O'rtacha yosh" FROM talabalar;
+    <div class="topic-nav">
+      <a href="#where" class="topic-nav-btn prev">← WHERE — Filtrlash Shartlari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 SQL | 12 / 29</span>
+      <a href="#delete" class="topic-nav-btn next">DELETE FROM — Ma'lumotlarni O'chirish →</a>
+    </div>
+  </section>
 
--- Maksimum / Minimum
-SELECT MAX(yoshi), MIN(yoshi) FROM talabalar;
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">DML</span>
+      <span style="font-size:12px; color:var(--text2);">SQL Mavzu #13</span>
+    </div>
+    <h2 id="delete" style="color:#00758f; background: linear-gradient(90deg, #33a6b8, #00758f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">DELETE FROM — Ma'lumotlarni O'chirish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Jadvaldan keraksiz qatorlarni o'chirish uchun <code>DELETE FROM</code> ishlatiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Sintaksis: <code>DELETE FROM jadval WHERE shart;</code>.</li><li>Bitta qatorni o'chirish: <code>WHERE id = 5;</code>.</li><li>Xavfsizlik: <code>WHERE</code> yozilmasa, butun jadval bo'shab qoladi.</li></ul>
 
--- GROUP BY — guruhlab hisoblash
-SELECT kurs, COUNT(*) AS soni, AVG(yoshi) AS ort_yosh
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">SQL So'rovi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_sql_13')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_sql_13','res_sql_13')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_sql_13" contenteditable="true" spellcheck="false">-- Faol bo'lmagan talabalarni o'chirish
+DELETE FROM talabalar
+WHERE faolmi = FALSE;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_sql_13">
+      <div class="result-label">🗄️ SQL RDBMS Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐬 MySQL / PostgreSQL Engine Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Query OK, 0 rows affected (0.00 sec)&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ Zamonaviy tizimlarda ko'pincha jismoniy o'chirish (Hard Delete) o'rniga, mantiqiy o'chirish (Soft Delete: <code>is_deleted = TRUE</code>) qo'llaniladi.</div>
+
+    <div class="topic-nav">
+      <a href="#update" class="topic-nav-btn prev">← UPDATE — Mavjud Ma'lumotlarni Yangilash</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 SQL | 13 / 29</span>
+      <a href="#orderby" class="topic-nav-btn next">ORDER BY — Natijalarni Saralash (Tartiblash) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">DQL</span>
+      <span style="font-size:12px; color:var(--text2);">SQL Mavzu #14</span>
+    </div>
+    <h2 id="orderby" style="color:#00758f; background: linear-gradient(90deg, #33a6b8, #00758f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">ORDER BY — Natijalarni Saralash (Tartiblash)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Natijalarni alifbo yoki raqamlar bo'yicha o'sish yoki kamayish tartibida chiqarish uchun <code>ORDER BY</code> ishlatiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><code>ASC</code> (Ascending) — o'sish tartibida (A dan Z gacha, 1 dan 9 gacha) — sukut bo'yicha.</li><li><code>DESC</code> (Descending) — kamayish tartibida (Z dan A gacha, 9 dan 1 gacha).</li><li>Bir nechta ustun bo'yicha saralash: <code>ORDER BY shahar ASC, yosh DESC;</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">SQL So'rovi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_sql_14')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_sql_14','res_sql_14')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_sql_14" contenteditable="true" spellcheck="false">-- Talabalarni yoshi bo'yicha kattasidan kichigiga saralash
+SELECT ism, familiya, yosh 
 FROM talabalar
-GROUP BY kurs
-ORDER BY kurs;
+ORDER BY yosh DESC;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_sql_14">
+      <div class="result-label">🗄️ SQL RDBMS Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐬 MySQL / PostgreSQL Engine Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;+--------+----------+------+
+| ism    | familiya | yosh |
++--------+----------+------+
+| Bekzod | Ergashev |   22 |
+| Ali    | Valiyev  |   21 |
+| Zuhra  | Karimova |   19 |
++--------+----------+------+
+3 rows in set (0.00 sec)&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
 
--- HAVING — guruh uchun shart (WHERE emas!)
-SELECT kurs, COUNT(*) AS soni
+    <div class="note-box" style="margin-top:16px;">💡 <code>ORDER BY</code> doimo <code>WHERE</code> dan keyin yoziladi.</div>
+
+    <div class="topic-nav">
+      <a href="#delete" class="topic-nav-btn prev">← DELETE FROM — Ma'lumotlarni O'chirish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 SQL | 14 / 29</span>
+      <a href="#limit" class="topic-nav-btn next">LIMIT va OFFSET — Sahifalash (Pagination) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">DQL</span>
+      <span style="font-size:12px; color:var(--text2);">SQL Mavzu #15</span>
+    </div>
+    <h2 id="limit" style="color:#00758f; background: linear-gradient(90deg, #33a6b8, #00758f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">LIMIT va OFFSET — Sahifalash (Pagination)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Jadvalda millionlab qatorlar bo'lganda, ularning barchasini birdaniga yuklab bo'lmaydi. <code>LIMIT</code> qatorlar sonini cheklaydi, <code>OFFSET</code> esa boshidan qanchasini tashlab o'tishni bildiradi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Eng ko'p 5 tasini olish: <code>LIMIT 5;</code>.</li><li>2-sahifa (har sahifada 10 tadan): <code>LIMIT 10 OFFSET 10;</code>.</li><li>Qisqartma sintaksis: <code>LIMIT offset, count;</code> (masalan <code>LIMIT 20, 10</code>).</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">SQL So'rovi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_sql_15')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_sql_15','res_sql_15')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_sql_15" contenteditable="true" spellcheck="false">-- Eng yoshi katta 2 nafar talaba
+SELECT ism, yosh
 FROM talabalar
-GROUP BY kurs
-HAVING COUNT(*) > 5
-ORDER BY soni DESC;</pre>
+ORDER BY yosh DESC
+LIMIT 2 OFFSET 0;</pre>
+      </div>
     </div>
-  </div>
-
-  <h2 id="inner">JOIN — Jadvallarni Birlashtirish</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">sql</span>
-      <button class="copy-btn" onclick="copyCode('code6')">📋 Nusxa</button>
+    <div class="result-box" id="res_sql_15">
+      <div class="result-label">🗄️ SQL RDBMS Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐬 MySQL / PostgreSQL Engine Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;+--------+------+
+| ism    | yosh |
++--------+------+
+| Bekzod |   22 |
+| Ali    |   21 |
++--------+------+
+2 rows in set (0.00 sec)&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
     </div>
-    <div class="code-body">
-      <pre id="code6">-- INNER JOIN — ikkala jadvalda mavjud bo'lganlar
-SELECT t.ism, t.familiya, k.nomi AS kurs_nomi
-FROM talabalar t
-INNER JOIN yozilishlar y ON t.id = y.talaba_id
-INNER JOIN kurslar k ON y.kurs_id = k.id;
 
--- LEFT JOIN — chap jadvalning barchasi + o'ng moslar
-SELECT t.ism, k.nomi
-FROM talabalar t
-LEFT JOIN yozilishlar y ON t.id = y.talaba_id
-LEFT JOIN kurslar k ON y.kurs_id = k.id;
--- Hech qaysi kursga yozilmagan talabalar ham chiqadi (NULL bilan)
+    <div class="note-box" style="margin-top:16px;">⚡ Saytlardagi 'Keyingi sahifaga o'tish' (Pagination) mexanizmi aynan <code>LIMIT</code> va <code>OFFSET</code> asosida ishlaydi.</div>
 
--- Murakkab JOIN misoli
+    <div class="topic-nav">
+      <a href="#orderby" class="topic-nav-btn prev">← ORDER BY — Natijalarni Saralash (Tartiblash)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 SQL | 15 / 29</span>
+      <a href="#like" class="topic-nav-btn next">LIKE, IN va BETWEEN Operatorlari →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">DQL</span>
+      <span style="font-size:12px; color:var(--text2);">SQL Mavzu #16</span>
+    </div>
+    <h2 id="like" style="color:#00758f; background: linear-gradient(90deg, #33a6b8, #00758f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">LIKE, IN va BETWEEN Operatorlari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Matnlar ichidan qidirish va oraliqlarni tekshirish uchun maxsus operatorlar ishlatiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><code>LIKE '%matn%'</code>: qidiruv. <code>%</code> — istalgancha belgi, <code>_</code> — bitta belgi.</li><li><code>IN (qiymat1, qiymat2)</code>: bir nechta <code>OR</code> o'rniga qulay ro'yxat tekshiruvi.</li><li><code>BETWEEN a AND b</code>: oraliqqa kirishini tekshirish (a va b ham kiradi).</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">SQL So'rovi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_sql_16')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_sql_16','res_sql_16')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_sql_16" contenteditable="true" spellcheck="false">-- 'Ali' bilan boshlanadigan ismlar
+SELECT ism FROM talabalar WHERE ism LIKE 'Ali%';
+
+-- Yoshi 18 dan 21 gacha bo'lganlar
+SELECT ism, yosh FROM talabalar WHERE yosh BETWEEN 18 AND 21;
+
+-- Aniq ID lar bo'yicha qidirish
+SELECT ism FROM talabalar WHERE id IN (1, 3, 5, 7);</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_sql_16">
+      <div class="result-label">🗄️ SQL RDBMS Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐬 MySQL / PostgreSQL Engine Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Ali% natijasi: Ali, Alisher, Alijon
+BETWEEN 18 AND 21 natijasi: Zuhra (19), Ali (21)&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Boshida <code>%</code> bo'lgan qidiruvlar (masalan <code>LIKE '%ali'</code>) indekslardan foydalana olmaydi va sekinroq ishlaydi.</div>
+
+    <div class="topic-nav">
+      <a href="#limit" class="topic-nav-btn prev">← LIMIT va OFFSET — Sahifalash (Pagination)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 SQL | 16 / 29</span>
+      <a href="#null" class="topic-nav-btn next">NULL Tekshirish — IS NULL va COALESCE →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">NULL</span>
+      <span style="font-size:12px; color:var(--text2);">SQL Mavzu #17</span>
+    </div>
+    <h2 id="null" style="color:#00758f; background: linear-gradient(90deg, #33a6b8, #00758f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">NULL Tekshirish — IS NULL va COALESCE</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><code>NULL</code> — bu nol (0) yoki bo'sh matn ('') emas, balki <strong>qiymatning umuman mavjud emasligini</strong> bildiradi. Uni <code>= NULL</code> deb tekshirib bo'lmaydi!</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>To'g'ri tekshirish: <code>WHERE telefon IS NULL;</code> yoki <code>WHERE telefon IS NOT NULL;</code>.</li><li><code>COALESCE(telefon, 'Mavjud emas')</code> — agar qiymat NULL bo'lsa, ikkinchi muqobil qiymatni chiqaradi.</li><li><code>IFNULL(ustun, muqobil)</code> funksiyasi MySQL da ishlatiladi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">SQL So'rovi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_sql_17')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_sql_17','res_sql_17')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_sql_17" contenteditable="true" spellcheck="false">-- Telefoni yo'q talabalarni aniqlash va chiroyli chiqarish
 SELECT 
-    t.ism || ' ' || t.familiya AS to_liq_ism,
-    COUNT(y.kurs_id) AS yozilgan_kurslar,
-    GROUP_CONCAT(k.nomi SEPARATOR ', ') AS kurs_nomlari
-FROM talabalar t
-LEFT JOIN yozilishlar y ON t.id = y.talaba_id
-LEFT JOIN kurslar k ON y.kurs_id = k.id
-GROUP BY t.id
-ORDER BY yozilgan_kurslar DESC;</pre>
+    ism, 
+    COALESCE(telefon, 'Raqam kiritilmagan') AS aloqa_telefoni
+FROM talabalar;</pre>
+      </div>
     </div>
-  </div>
+    <div class="result-box" id="res_sql_17">
+      <div class="result-label">🗄️ SQL RDBMS Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐬 MySQL / PostgreSQL Engine Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;+--------+--------------------+
+| ism    | aloqa_telefoni     |
++--------+--------------------+
+| Ali    | +998901234567      |
+| Zuhra  | Raqam kiritilmagan |
+| Bekzod | Raqam kiritilmagan |
++--------+--------------------+&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
 
-  <h2 id="subquery">Subquery va VIEW</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">sql</span>
-      <button class="copy-btn" onclick="copyCode('code7')">📋 Nusxa</button>
+    <div class="note-box" style="margin-top:16px;">⚡ <code>NULL = NULL</code> ifodasi SQL da har doim FALSE (aniqrog'i UNKNOWN) natija beradi, shuning uchun faqat <code>IS NULL</code> ishlatiladi.</div>
+
+    <div class="topic-nav">
+      <a href="#like" class="topic-nav-btn prev">← LIKE, IN va BETWEEN Operatorlari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 SQL | 17 / 29</span>
+      <a href="#agg" class="topic-nav-btn next">Agregat Funksiyalar — COUNT, SUM, AVG, MIN, MAX →</a>
     </div>
-    <div class="code-body">
-      <pre id="code7">-- Subquery — ichki so'rov
-SELECT ism, yoshi
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Agregat</span>
+      <span style="font-size:12px; color:var(--text2);">SQL Mavzu #18</span>
+    </div>
+    <h2 id="agg" style="color:#00758f; background: linear-gradient(90deg, #33a6b8, #00758f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Agregat Funksiyalar — COUNT, SUM, AVG, MIN, MAX</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Agregat funksiyalar butun bir ustun bo'yicha hisob-kitob qilib, yagona yakuniy qiymat qaytaradi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><code>COUNT(*)</code> — qatorlar umumiy sonini hisoblaydi.</li><li><code>SUM(ustun)</code> — barcha sonlarning yig'indisi.</li><li><code>AVG(ustun)</code> — o'rtacha arifmetik qiymat.</li><li><code>MIN(ustun)</code> va <code>MAX(ustun)</code> — eng kichik va eng katta qiymatlar.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">SQL So'rovi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_sql_18')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_sql_18','res_sql_18')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_sql_18" contenteditable="true" spellcheck="false">-- Talabalar statistikasi
+SELECT 
+    COUNT(*) AS jami_talabalar,
+    AVG(yosh) AS ortacha_yosh,
+    MIN(yosh) AS eng_yosh,
+    MAX(yosh) AS eng_katta
+FROM talabalar;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_sql_18">
+      <div class="result-label">🗄️ SQL RDBMS Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐬 MySQL / PostgreSQL Engine Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;+-----------------+--------------+----------+-----------+
+| jami_talabalar  | ortacha_yosh | eng_yosh | eng_katta |
++-----------------+--------------+----------+-----------+
+|               3 |      20.6667 |       19 |        22 |
++-----------------+--------------+----------+-----------+
+1 row in set (0.00 sec)&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 <code>COUNT(ustun)</code> hisoblaganda NULL bo'lgan qatorlarni sanamay tashlab ketadi, <code>COUNT(*)</code> esa barcha qatorlarni to'liq sanaydi.</div>
+
+    <div class="topic-nav">
+      <a href="#null" class="topic-nav-btn prev">← NULL Tekshirish — IS NULL va COALESCE</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 SQL | 18 / 29</span>
+      <a href="#groupby" class="topic-nav-btn next">GROUP BY — Ma'lumotlarni Guruhlash →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Guruhlash</span>
+      <span style="font-size:12px; color:var(--text2);">SQL Mavzu #19</span>
+    </div>
+    <h2 id="groupby" style="color:#00758f; background: linear-gradient(90deg, #33a6b8, #00758f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">GROUP BY — Ma'lumotlarni Guruhlash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Ma'lumotlarni biror ustun bo'yicha guruhlab, har bir guruh uchun alohida agregat hisobotlar chiqarish uchun <code>GROUP BY</code> ishlatiladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Har bir shahar, har bir toifa yoki har bir oy bo'yicha statistikani ko'rish imkonini beradi.</li><li>SELECT da yozilgan agregatlanmagan barcha ustunlar albatta <code>GROUP BY</code> ro'yxatida bo'lishi shart.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">SQL So'rovi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_sql_19')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_sql_19','res_sql_19')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_sql_19" contenteditable="true" spellcheck="false">-- Har bir yosh bo'yicha talabalar soni
+SELECT 
+    yosh, 
+    COUNT(*) AS talabalar_soni
 FROM talabalar
-WHERE yoshi > (SELECT AVG(yoshi) FROM talabalar);
-
--- IN bilan subquery
-SELECT ism FROM talabalar
-WHERE id IN (
-    SELECT talaba_id FROM yozilishlar
-    WHERE kurs_id = 3
-);
-
--- EXISTS
-SELECT ism FROM talabalar t
-WHERE EXISTS (
-    SELECT 1 FROM yozilishlar y WHERE y.talaba_id = t.id
-);
-
--- VIEW — virtual jadval
-CREATE VIEW faol_talabalar AS
-SELECT t.ism, t.familiya, COUNT(y.id) AS kurslar_soni
-FROM talabalar t
-JOIN yozilishlar y ON t.id = y.talaba_id
-GROUP BY t.id
-HAVING kurslar_soni > 0;
-
--- VIEW dan foydalanish
-SELECT * FROM faol_talabalar ORDER BY kurslar_soni DESC;
-
--- INDEX — tezlashtirishuchun
-CREATE INDEX idx_email ON talabalar(email);
-CREATE INDEX idx_kurs_yosh ON talabalar(kurs, yoshi);</pre>
+GROUP BY yosh
+ORDER BY talabalar_soni DESC;</pre>
+      </div>
     </div>
-  </div>
-
-  <h2 id="transactions">Tranzaksiyalar</h2>
-  <div class="code-wrap">
-    <div class="code-toolbar">
-      <span class="code-lang">sql</span>
-      <button class="copy-btn" onclick="copyCode('code8')">📋 Nusxa</button>
+    <div class="result-box" id="res_sql_19">
+      <div class="result-label">🗄️ SQL RDBMS Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐬 MySQL / PostgreSQL Engine Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;+------+----------------+
+| yosh | talabalar_soni |
++------+----------------+
+|   19 |              1 |
+|   21 |              1 |
+|   22 |              1 |
++------+----------------+&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
     </div>
-    <div class="code-body">
-      <pre id="code8">-- Tranzaksiya — atomik amallar guruhi
-BEGIN TRANSACTION;
 
--- Bank o'tkazmasi misoli
-UPDATE hisoblar SET balans = balans - 500 WHERE id = 1;
-UPDATE hisoblar SET balans = balans + 500 WHERE id = 2;
+    <div class="note-box" style="margin-top:16px;">⚡ <code>GROUP BY</code> jadvallardan yillik, oylik tahliliy grafiklar va diagrammalar yasashda eng ko'p ishlatiladigan vositadir.</div>
 
--- Agar muvaffaqiyatli
+    <div class="topic-nav">
+      <a href="#agg" class="topic-nav-btn prev">← Agregat Funksiyalar — COUNT, SUM, AVG, MIN, MAX</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 SQL | 19 / 29</span>
+      <a href="#having" class="topic-nav-btn next">HAVING — Guruhlangan Natijalarni Filtrlash →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Guruhlash</span>
+      <span style="font-size:12px; color:var(--text2);">SQL Mavzu #20</span>
+    </div>
+    <h2 id="having" style="color:#00758f; background: linear-gradient(90deg, #33a6b8, #00758f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">HAVING — Guruhlangan Natijalarni Filtrlash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">Ko'pchilik dasturchilar <code>WHERE</code> va <code>HAVING</code> ni adashtiradi: <code>WHERE</code> alohida qatorlarni guruhlashdan <em>oldin</em> filtrlaydi, <code>HAVING</code> esa <code>GROUP BY</code> bajarilgandan <em>keyin</em> agregat natijalarni filtrlaydi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><code>WHERE</code> ichida agregat funksiyalarni (COUNT, AVG) ishlatib bo'lmaydi!</li><li>Agregat natijalarni filtrlash uchun faqat <code>HAVING</code> ishlatiladi: <code>HAVING COUNT(*) &gt; 5</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">SQL So'rovi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_sql_20')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_sql_20','res_sql_20')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_sql_20" contenteditable="true" spellcheck="false">-- Talabalar soni 1 tadan ko'p bo'lgan yosh guruhlarini topish
+SELECT 
+    yosh, 
+    COUNT(*) AS soni
+FROM talabalar
+GROUP BY yosh
+HAVING COUNT(*) &gt;= 1;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_sql_20">
+      <div class="result-label">🗄️ SQL RDBMS Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐬 MySQL / PostgreSQL Engine Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;+------+------+
+| yosh | soni |
++------+------+
+|   19 |    1 |
+|   21 |    1 |
+|   22 |    1 |
++------+------+&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Qoida: oddiy ustun bo'lsa -> <code>WHERE</code>, agregat funksiya (COUNT, SUM) bo'lsa -> <code>HAVING</code>.</div>
+
+    <div class="topic-nav">
+      <a href="#groupby" class="topic-nav-btn prev">← GROUP BY — Ma'lumotlarni Guruhlash</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 SQL | 20 / 29</span>
+      <a href="#inner" class="topic-nav-btn next">INNER JOIN — Jadvallarni Bog'lash (Kesishma) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">JOIN</span>
+      <span style="font-size:12px; color:var(--text2);">SQL Mavzu #21</span>
+    </div>
+    <h2 id="inner" style="color:#00758f; background: linear-gradient(90deg, #33a6b8, #00758f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">INNER JOIN — Jadvallarni Bog'lash (Kesishma)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>INNER JOIN</strong> — ikkita jadvalni umumiy kalit (ID) orqali birlashtiradi va faqat <strong>ikkala jadvalda ham mavjud bo'lgan</strong> mos keluvchi qatorlarni qaytaradi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Sintaksis: <code>FROM jadvalA INNER JOIN jadvalB ON jadvalA.id = jadvalB.a_id;</code>.</li><li>Mos kelmaydigan qatorlar tashlab yuboriladi.</li><li>Eng ko'p ishlatiladigan standart JOIN turi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">SQL So'rovi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_sql_21')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_sql_21','res_sql_21')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_sql_21" contenteditable="true" spellcheck="false">-- Foydalanuvchilar va ularning buyurtmalari
+SELECT 
+    f.ism, 
+    b.id AS buyurtma_id, 
+    b.summa
+FROM foydalanuvchilar f
+INNER JOIN buyurtmalar b ON f.id = b.user_id;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_sql_21">
+      <div class="result-label">🗄️ SQL RDBMS Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐬 MySQL / PostgreSQL Engine Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;+--------+--------------+---------+
+| ism    | buyurtma_id  | summa   |
++--------+--------------+---------+
+| Ali    |          101 |  150000 |
+| Ali    |          102 |  420000 |
+| Bekzod |          103 |   80000 |
++--------+--------------+---------+&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ Agar buyurtmasi yo'q foydalanuvchi bo'lsa, u INNER JOIN natijasida umuman chiqmaydi.</div>
+
+    <div class="topic-nav">
+      <a href="#having" class="topic-nav-btn prev">← HAVING — Guruhlangan Natijalarni Filtrlash</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 SQL | 21 / 29</span>
+      <a href="#left" class="topic-nav-btn next">LEFT JOIN — Chap Jadvalni To'liq Saqlash →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">JOIN</span>
+      <span style="font-size:12px; color:var(--text2);">SQL Mavzu #22</span>
+    </div>
+    <h2 id="left" style="color:#00758f; background: linear-gradient(90deg, #33a6b8, #00758f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">LEFT JOIN — Chap Jadvalni To'liq Saqlash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>LEFT JOIN (LEFT OUTER JOIN)</strong> — chap tomondagi (FROM dagi) jadvalning BARCHA qatorlarini qaytaradi. O'ng jadvalda mos ma'lumot topilmasa, o'ng tomon ustunlariga <code>NULL</code> qo'yadi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Hech qanday buyurtma bermagan yangi mijozlarni topish uchun ideal.</li><li>Chap jadvaldagi hech bir qator yo'qolib ketmaydi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">SQL So'rovi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_sql_22')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_sql_22','res_sql_22')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_sql_22" contenteditable="true" spellcheck="false">-- Barcha foydalanuvchilar (hatto buyurtmasi yo'qlari ham)
+SELECT 
+    f.ism, 
+    b.id AS buyurtma_id,
+    COALESCE(b.summa, 0) AS summa
+FROM foydalanuvchilar f
+LEFT JOIN buyurtmalar b ON f.id = b.user_id;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_sql_22">
+      <div class="result-label">🗄️ SQL RDBMS Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐬 MySQL / PostgreSQL Engine Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;+--------+--------------+--------+
+| ism    | buyurtma_id  | summa  |
++--------+--------------+--------+
+| Ali    |          101 | 150000 |
+| Ali    |          102 | 420000 |
+| Zuhra  |         NULL |      0 |  &lt;-- Buyurtmasi yo'q, lekin ro'yxatda bor
+| Bekzod |          103 |  80000 |
++--------+--------------+--------+&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 'Hech narsa sotib olmagan mijozlar' ni topish: <code>WHERE b.id IS NULL</code>.</div>
+
+    <div class="topic-nav">
+      <a href="#inner" class="topic-nav-btn prev">← INNER JOIN — Jadvallarni Bog'lash (Kesishma)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 SQL | 22 / 29</span>
+      <a href="#right" class="topic-nav-btn next">RIGHT JOIN — O'ng Jadvalni To'liq Saqlash →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">JOIN</span>
+      <span style="font-size:12px; color:var(--text2);">SQL Mavzu #23</span>
+    </div>
+    <h2 id="right" style="color:#00758f; background: linear-gradient(90deg, #33a6b8, #00758f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">RIGHT JOIN — O'ng Jadvalni To'liq Saqlash</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>RIGHT JOIN</strong> — LEFT JOIN ning teskarisi bo'lib, o'ng tomondagi jadvalning barcha qatorlarini to'liq saqlaydi va chap jadvaldan mos keluvchilarni birlashtiradi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Amalda dasturchilar kamroq ishlatadi, chunki har qanday RIGHT JOIN ni jadvallar o'rnini almashtirib LEFT JOIN bilan yozish qulayroq.</li><li>Sintaksis: <code>FROM jadvalA RIGHT JOIN jadvalB ON ...</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">SQL So'rovi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_sql_23')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_sql_23','res_sql_23')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_sql_23" contenteditable="true" spellcheck="false">SELECT 
+    f.ism, 
+    b.mahsulot_nomi
+FROM foydalanuvchilar f
+RIGHT JOIN buyurtmalar b ON f.id = b.user_id;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_sql_23">
+      <div class="result-label">🗄️ SQL RDBMS Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐬 MySQL / PostgreSQL Engine Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Barcha buyurtmalar kafolatli chiqadi, foydalanuvchisi noma'lum bo'lsa ism NULL bo'ladi.&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ Kod tushunarli bo'lishi uchun har doim <code>LEFT JOIN</code> dan foydalanish eng yaxshi amaliyot sanaladi.</div>
+
+    <div class="topic-nav">
+      <a href="#left" class="topic-nav-btn prev">← LEFT JOIN — Chap Jadvalni To'liq Saqlash</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 SQL | 23 / 29</span>
+      <a href="#full" class="topic-nav-btn next">FULL OUTER JOIN — Barcha Qatorlar Birlashmasi →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">JOIN</span>
+      <span style="font-size:12px; color:var(--text2);">SQL Mavzu #24</span>
+    </div>
+    <h2 id="full" style="color:#00758f; background: linear-gradient(90deg, #33a6b8, #00758f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">FULL OUTER JOIN — Barcha Qatorlar Birlashmasi</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>FULL OUTER JOIN</strong> — chap va o'ng jadvallardagi barcha qatorlarni birlashtiradi. Mos kelmagan tomonlarga <code>NULL</code> qiymatlar joylashtiriladi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>PostgreSQL va Oracle da to'g'ridan-to'g'ri <code>FULL OUTER JOIN</code> qo'llab-quvvatlanadi.</li><li>MySQL da FULL JOIN mavjud emas, uning o'rniga LEFT JOIN va RIGHT JOIN natijalari <code>UNION</code> orqali birlashtiriladi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">SQL So'rovi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_sql_24')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_sql_24','res_sql_24')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_sql_24" contenteditable="true" spellcheck="false">-- PostgreSQL sintaksisi
+SELECT 
+    f.ism, 
+    b.mahsulot
+FROM foydalanuvchilar f
+FULL OUTER JOIN buyurtmalar b ON f.id = b.user_id;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_sql_24">
+      <div class="result-label">🗄️ SQL RDBMS Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐬 MySQL / PostgreSQL Engine Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;+--------+----------+
+| ism    | mahsulot |
++--------+----------+
+| Ali    | Noutbuk  |
+| Zuhra  | NULL     |
+| NULL   | Klaviatura|
++--------+----------+&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 Ikki jadval o'rtasidagi barcha nomuvofiqliklarni (har ikki tomondan) topish uchun FULL OUTER JOIN eng qulaydir.</div>
+
+    <div class="topic-nav">
+      <a href="#right" class="topic-nav-btn prev">← RIGHT JOIN — O'ng Jadvalni To'liq Saqlash</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 SQL | 24 / 29</span>
+      <a href="#subquery" class="topic-nav-btn next">Subquery — Ichki So'rovlar (Nested Queries) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Murakkab</span>
+      <span style="font-size:12px; color:var(--text2);">SQL Mavzu #25</span>
+    </div>
+    <h2 id="subquery" style="color:#00758f; background: linear-gradient(90deg, #33a6b8, #00758f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Subquery — Ichki So'rovlar (Nested Queries)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Subquery</strong> — bu boshqa bir SQL so'rovi (SELECT, INSERT, UPDATE) ichida qavslar <code>(...)</code> ichiga yozilgan ichki so'rovdir.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>O'rtacha qiymatdan katta bo'lganlarni topish: <code>WHERE narx &gt; (SELECT AVG(narx) FROM tovarlar)</code>.</li><li><code>IN</code> yoki <code>EXISTS</code> operatorlari bilan birga qo'llaniladi.</li><li>Correlated Subquery: ichki so'rov tashqi so'rovning har bir qatori uchun alohida bajariladi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">SQL So'rovi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_sql_25')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_sql_25','res_sql_25')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_sql_25" contenteditable="true" spellcheck="false">-- O'rtacha yoshdan katta bo'lgan talabalarni topish
+SELECT ism, yosh
+FROM talabalar
+WHERE yosh &gt; (SELECT AVG(yosh) FROM talabalar);</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_sql_25">
+      <div class="result-label">🗄️ SQL RDBMS Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐬 MySQL / PostgreSQL Engine Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;O'rtacha yosh: 20.66
++--------+------+
+| ism    | yosh |
++--------+------+
+| Bekzod |   22 |
+| Ali    |   21 |
++--------+------+&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">⚡ Agar ichki so'rov juda ko'p qaytarilsa so'rov sekinlashishi mumkin, bunday holatda JOIN ga o'zgartirish tavsiya etiladi.</div>
+
+    <div class="topic-nav">
+      <a href="#full" class="topic-nav-btn prev">← FULL OUTER JOIN — Barcha Qatorlar Birlashmasi</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 SQL | 25 / 29</span>
+      <a href="#indexes" class="topic-nav-btn next">Indexes (Indekslar) — So'rovlarni 100x Tezlashtirish →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Unumdorlik</span>
+      <span style="font-size:12px; color:var(--text2);">SQL Mavzu #26</span>
+    </div>
+    <h2 id="indexes" style="color:#00758f; background: linear-gradient(90deg, #33a6b8, #00758f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Indexes (Indekslar) — So'rovlarni 100x Tezlashtirish</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Index (Indeks)</strong> — bu kitobning oxiridagi mundarija kabi ishlaydigan maxsus ma'lumotlar tuzilmasidir (odatda B-Tree). U ma'lumotlar bazasiga millionlab qatorlar ichidan kerakli ma'lumotni butun jadvalni qidirmasdan (Full Table Scan qilmasdan) bir zumda topish imkonini beradi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Yaratish: <code>CREATE INDEX idx_email ON talabalar(email);</code>.</li><li>Birlashgan indeks (Composite index): <code>CREATE INDEX idx_ism_fam ON talabalar(ism, familiya);</code>.</li><li>Indekslar qidirishni (SELECT) keskin tezlashtiradi, lekin ma'lumot yozishni (INSERT/UPDATE) biroz sekinlashtiradi, chunki indeks daraxti qayta quriladi.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">SQL So'rovi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_sql_26')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_sql_26','res_sql_26')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_sql_26" contenteditable="true" spellcheck="false">-- Email bo'yicha tezkor qidiruv indeksi yaratish
+CREATE INDEX idx_talabalar_email ON talabalar(email);
+
+-- So'rov qanday bajarilishini tekshirish (Execution Plan)
+EXPLAIN SELECT * FROM talabalar WHERE email = 'ali@gmail.com';</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_sql_26">
+      <div class="result-label">🗄️ SQL RDBMS Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐬 MySQL / PostgreSQL Engine Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;+----+-------------+-----------+-------+----------------------+--------------------+
+| id | select_type | table     | type  | possible_keys        | key                |
++----+-------------+-----------+-------+----------------------+--------------------+
+|  1 | SIMPLE      | talabalar | const | idx_talabalar_email  | idx_talabalar_email|
++----+-------------+-----------+-------+----------------------+--------------------+
+1 row in set (B-Tree Index Search: O(log N) - 0.001 sec)&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">🚀 Millionlab qatorli bazada to'g'ri qo'yilgan indeks so'rov bajarilish vaqtini 10 soniyadan 0.002 soniyagacha qisqartiradi!</div>
+
+    <div class="topic-nav">
+      <a href="#subquery" class="topic-nav-btn prev">← Subquery — Ichki So'rovlar (Nested Queries)</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 SQL | 26 / 29</span>
+      <a href="#transactions" class="topic-nav-btn next">Tranzaksiyalar va ACID Tamoyillari →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Xavfsizlik</span>
+      <span style="font-size:12px; color:var(--text2);">SQL Mavzu #27</span>
+    </div>
+    <h2 id="transactions" style="color:#00758f; background: linear-gradient(90deg, #33a6b8, #00758f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">Tranzaksiyalar va ACID Tamoyillari</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>Tranzaksiya</strong> — bu 'hammasi yoki hech narsa' (All or Nothing) qoidasi bo'yicha bajariladigan amallar ketma-ketligidir. Klassik misol: bankda bir hisobdan pul yechilib, ikkinchisiga o'tkazilishi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><strong>A (Atomicity)</strong>: Barcha buyruqlar muvaffaqiyatli bajarilishi shart, bittasi xato bersa hammasi bekor bo'ladi.</li><li><strong>C (Consistency)</strong>: Baza qoidalari va balans buzilmasligi kerak.</li><li><strong>I (Isolation)</strong>: Bir vaqtning o'zida parallel bajarilayotgan tranzaksiyalar bir-biriga xalaqit bermaydi.</li><li><strong>D (Durability)</strong>: Muvaffaqiyatli saqlangan ma'lumot hatto server o'chib qolganda ham yo'qolmaydi.</li><li>Buyruqlar: <code>START TRANSACTION;</code> -&gt; <code>COMMIT;</code> (tasdiqlash) yoki <code>ROLLBACK;</code> (bekor qilish).</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">SQL So'rovi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_sql_27')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_sql_27','res_sql_27')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_sql_27" contenteditable="true" spellcheck="false">-- Pul o'tkazish tranzaksiyasi
+START TRANSACTION;
+
+-- 1-amal: Alining hisobidan 100,000 so'm yechish
+UPDATE hisoblar SET balans = balans - 100000 WHERE id = 1;
+
+-- 2-amal: Valining hisobiga 100,000 so'm qo'shish
+UPDATE hisoblar SET balans = balans + 100000 WHERE id = 2;
+
+-- Agar ikkala amal ham muvaffaqiyatli bo'lsa:
 COMMIT;
 
--- Agar xato yuz berdi — bekor qilish
-ROLLBACK;
-
--- SAVEPOINT — qisman bekor qilish
-BEGIN;
-INSERT INTO talabalar (ism) VALUES ('Test1');
-SAVEPOINT sp1;
-INSERT INTO talabalar (ism) VALUES ('Test2');
-ROLLBACK TO SAVEPOINT sp1;  -- faqat Test2 bekor
-COMMIT;  -- Test1 saqlanadi</pre>
+-- Agar biror xato chiqsa:
+-- ROLLBACK;</pre>
+      </div>
     </div>
-  </div>
+    <div class="result-box" id="res_sql_27">
+      <div class="result-label">🗄️ SQL RDBMS Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐬 MySQL / PostgreSQL Engine Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;Query OK, 0 rows affected (0.00 sec)
+Query OK, 1 row affected (0.01 sec)
+Query OK, 1 row affected (0.01 sec)
+COMMIT: Barcha amallar xavfsiz saqlandi! 🔒&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
 
-  <!-- Quiz -->
+    <div class="note-box" style="margin-top:16px;">🔒 Moliyaviy va to'lov tizimlarida tranzaksiyasiz pul o'tkazmalarini amalga oshirish qat'iyan man etiladi.</div>
+
+    <div class="topic-nav">
+      <a href="#indexes" class="topic-nav-btn prev">← Indexes (Indekslar) — So'rovlarni 100x Tezlashtirish</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 SQL | 27 / 29</span>
+      <a href="#views" class="topic-nav-btn next">CREATE VIEW — Virtual Jadvallar →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Ko'rinish</span>
+      <span style="font-size:12px; color:var(--text2);">SQL Mavzu #28</span>
+    </div>
+    <h2 id="views" style="color:#00758f; background: linear-gradient(90deg, #33a6b8, #00758f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">CREATE VIEW — Virtual Jadvallar</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);"><strong>VIEW</strong> — bu saqlab qo'yilgan murakkab SQL so'rovi bo'lib, unga xuddi oddiy jadval kabi murojaat qilish mumkin. U o'zida alohida ma'lumot saqlamaydi, balki har gal so'ralganda asosiy jadvallardan dinamik yig'ib beradi.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li>Murakkab JOIN larni soddalashtiradi va kodni toza saqlaydi.</li><li>Xavfsizlik: xodimlarga maxfiy ustunlarni (masalan parollarni) ko'rsatmasdan faqat VIEW orqali ruxsat berish mumkin.</li><li>Yaratish: <code>CREATE VIEW v_faol_talabalar AS SELECT ...;</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">SQL So'rovi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_sql_28')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_sql_28','res_sql_28')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_sql_28" contenteditable="true" spellcheck="false">-- Faol talabalar uchun qulay ko'rinish (VIEW)
+CREATE VIEW v_faol_talabalar AS
+SELECT id, CONCAT(ism, ' ', familiya) AS ism_sharif, email
+FROM talabalar
+WHERE faolmi = TRUE;
+
+-- Endi unga oddiy jadvaldek so'rov beramiz:
+SELECT * FROM v_faol_talabalar;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_sql_28">
+      <div class="result-label">🗄️ SQL RDBMS Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐬 MySQL / PostgreSQL Engine Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;+----+-----------------+--------------------+
+| id | ism_sharif      | email              |
++----+-----------------+--------------------+
+|  1 | Ali Valiyev     | ali@gmail.com      |
+|  2 | Zuhra Karimova  | zuhra@mail.ru      |
+|  3 | Bekzod Ergashev | bekzod@w3learn.uz  |
++----+-----------------+--------------------+&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">💡 VIEW tufayli dasturchi yuzlab qatorli uzun JOIN larni qayta-qayta yozmasdan qisqa <code>SELECT * FROM v_nomi</code> deb chaqirishi mumkin.</div>
+
+    <div class="topic-nav">
+      <a href="#transactions" class="topic-nav-btn prev">← Tranzaksiyalar va ACID Tamoyillari</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 SQL | 28 / 29</span>
+      <a href="#functions" class="topic-nav-btn next">SQL Standart Funksiyalari (Matn, Sana va Matematik) →</a>
+    </div>
+  </section>
+
+  <section class="topic-section" style="margin-bottom: 45px; border-bottom: 1px solid rgba(255,255,255,0.06); padding-bottom: 35px;">
+    <div style="display:flex; align-items:center; gap:10px; margin-bottom:8px;">
+      <span class="tag tag-blue">Funksiyalar</span>
+      <span style="font-size:12px; color:var(--text2);">SQL Mavzu #29</span>
+    </div>
+    <h2 id="functions" style="color:#00758f; background: linear-gradient(90deg, #33a6b8, #00758f); -webkit-background-clip: text; -webkit-text-fill-color: transparent; margin-top:0; font-size:24px;">SQL Standart Funksiyalari (Matn, Sana va Matematik)</h2>
+    <p style="font-size:15px; line-height:1.7; color:var(--text);">SQL ma'lumotlarni saralash va formatlash uchun o'rnatilgan boy funksiyalar to'plamiga ega.</p>
+    <ul style="margin: 14px 0 16px 20px; line-height: 1.8; color: var(--text);"><li><strong>Matn funksiyalari</strong>: <code>UPPER()</code>, <code>LOWER()</code>, <code>CONCAT()</code>, <code>LENGTH()</code>, <code>SUBSTRING()</code>, <code>TRIM()</code>.</li><li><strong>Sana funksiyalari</strong>: <code>NOW()</code>, <code>CURDATE()</code>, <code>DATEDIFF()</code>, <code>DATE_ADD()</code>, <code>YEAR()</code>.</li><li><strong>Matematik</strong>: <code>ROUND(narx, 2)</code>, <code>CEIL()</code>, <code>FLOOR()</code>, <code>ABS()</code>, <code>MOD()</code>.</li></ul>
+
+    <div class="code-wrap" style="margin: 18px 0;">
+      <div class="code-toolbar">
+        <span class="code-lang">SQL So'rovi</span>
+        <div class="code-actions">
+          <button class="btn-copy" onclick="copyCode('code_sql_29')">📋 Nusxa</button>
+          <button class="btn-run" onclick="runCode('code_sql_29','res_sql_29')">▶ Run</button>
+        </div>
+      </div>
+      <div class="code-body">
+        <pre id="code_sql_29" contenteditable="true" spellcheck="false">-- SQL dagi foydali funksiyalar
+SELECT 
+    UPPER('w3learn') AS katta_harf,
+    LENGTH('O\'zbekiston') AS harflar_soni,
+    ROUND(125.789, 2) AS yaxlitlangan,
+    NOW() AS joriy_vaqt;</pre>
+      </div>
+    </div>
+    <div class="result-box" id="res_sql_29">
+      <div class="result-label">🗄️ SQL RDBMS Natijasi:</div>
+      <iframe class="result-iframe" style="min-height:115px; width:100%; border:none; border-radius:6px;" srcdoc="&lt;!DOCTYPE html&gt;&lt;html&gt;&lt;body style='margin:0;padding:12px;background:#0d1117;color:#4ade80;font-family:Consolas,monospace;font-size:13.5px;line-height:1.6;'&gt;&lt;div style='color:#6e7681;font-size:11px;margin-bottom:6px;border-bottom:1px solid #21262d;padding-bottom:3px;'&gt;🐬 MySQL / PostgreSQL Engine Output:&lt;/div&gt;&lt;pre style='margin:0;color:#38bdf8;'&gt;+------------+---------------+--------------+---------------------+
+| katta_harf | harflar_soni  | yaxlitlangan | joriy_vaqt          |
++------------+---------------+--------------+---------------------+
+| W3LEARN    |            11 |       125.79 | 2026-11-23 15:00:00 |
++------------+---------------+--------------+---------------------+
+1 row in set (0.00 sec)&lt;/pre&gt;&lt;/body&gt;&lt;/html&gt;"></iframe>
+    </div>
+
+    <div class="note-box" style="margin-top:16px;">🚀 Ushbu funksiyalar orqali ma'lumotlarni backend kodiga yetib bormasidanoq ma'lumotlar bazasining o'zida formatlab olish mumkin.</div>
+
+    <div class="topic-nav">
+      <a href="#views" class="topic-nav-btn prev">← CREATE VIEW — Virtual Jadvallar</a>
+      <span style="font-size:12.5px; color:var(--text2); font-weight:600; padding:4px 10px; background:rgba(255,255,255,0.04); border-radius:12px;">📖 SQL | 29 / 29</span>
+      <a href="mongodb.html" class="topic-nav-btn next">Keyingi kurs: MongoDB Darslari →</a>
+    </div>
+  </section>
+
   <div class="quiz-box">
-    <div class="quiz-q">🧠 SQL da guruh uchun shart qo'yish uchun qaysi kalit so'z ishlatiladi?</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'q1')">WHERE</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, true, 'q1')">HAVING</div>
-    <div class="quiz-opt" onclick="checkQuiz(this, false, 'q1')">FILTER</div>
-    <div class="quiz-result" id="q1"></div>
+    <div class="quiz-q">🧪 Test: SQL da ikkita jadvalning faqat ikkalasida ham mavjud bo'lgan umumiy qatorlarini kesishmasi sifatida olish uchun qaysi JOIN ishlatiladi?</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, true, 'sqlQr1')">INNER JOIN</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'sqlQr1')">LEFT JOIN</div>
+    <div class="quiz-opt" onclick="checkQuiz(this, false, 'sqlQr1')">FULL OUTER JOIN</div>
+    <div class="quiz-result" id="sqlQr1"></div>
   </div>
 
-  
+  <div class="nav-btns" style="margin-top: 30px;">
+    <a href="csharp.html" class="btn-prev">← C# Darslari</a>
+    <a href="mongodb.html" class="btn-next">MongoDB Darsiga O'tish →</a>
+  </div>
 
-<div class="nav-btns">
-  <a href="csharp.html" class="btn-prev">&#8592; C#</a>
-  <a href="mongodb.html" class="btn-next">MongoDB &#8594;</a>
-</div>
+  <div class="note note-blue" style="margin-top: 25px;">
+    📌 <strong>Keyingi qadam:</strong> Relyatsion jadvallar tili bo'lgan SQL ni o'rgandingiz. Zamonaviy hujjatsiz NoSQL ma'lumotlar bazasi hisoblangan <a href="mongodb.html" style="color:var(--green)">MongoDB darslariga</a> o'ting!
+  </div>
 </main>
 <aside class="right-panel">
   <div class="rp-title">📊 Kurs bo'limlari</div>
